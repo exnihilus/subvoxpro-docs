@@ -11,9 +11,8 @@
 }
 
 [data-bs-theme="light"] {
+  --svx-public: #71717a;
   --svx-protected: #6d28d9;
-  --svx-protected-bg: rgba(124, 58, 237, 0.06);
-  --svx-protected-border: rgba(124, 58, 237, 0.28);
   --bs-body-bg: #fafafa;
   --bs-body-color: #18181b;
   --bs-secondary-color: #5b5b66;
@@ -28,9 +27,8 @@
 }
 
 [data-bs-theme="dark"] {
+  --svx-public: #a1a1aa;
   --svx-protected: #c4b5fd;
-  --svx-protected-bg: rgba(196, 181, 253, 0.09);
-  --svx-protected-border: rgba(196, 181, 253, 0.28);
   --bs-body-bg: #0b0b0c;
   --bs-body-color: #ececef;
   --bs-secondary-color: #a1a1aa;
@@ -399,53 +397,58 @@ article dl.parameters dd {
   outline-offset: 2px;
 }
 
+.svx-overview ul.svx-overview-zone {
+  padding: 0.55rem 0 0.5rem;
+  box-shadow: inset 3px 0 0 var(--svx-zone-accent);
+}
+
+.svx-overview ul.svx-overview-zone + ul.svx-overview-zone {
+  border-top: 1px solid var(--svx-rule);
+}
+
+.svx-zone-public {
+  --svx-zone-accent: var(--svx-public);
+}
+
+.svx-zone-protected {
+  --svx-zone-accent: var(--svx-protected);
+}
+
 .svx-overview-access {
   grid-column: 1 / -1;
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--bs-secondary-color);
-  padding: 0.2rem 1rem 0.2rem;
+  color: var(--svx-zone-accent);
+  padding: 0.1rem 1rem 0.3rem;
 }
 
-.svx-overview ul.svx-overview-protected {
-  padding: 0.6rem 0 0.5rem;
-  border-top: 1px solid var(--svx-protected-border);
-  background: var(--svx-protected-bg);
-  box-shadow: inset 3px 0 0 var(--svx-protected);
-}
-
-.svx-overview-protected .svx-overview-access {
-  color: var(--svx-protected);
-}
-
-.svx-protected-zone {
-  margin: 2.4rem -0.9rem 0.6rem;
+.svx-member-zone {
+  margin: 1.4rem -0.9rem 0.8rem;
   padding: 0 0.9rem 0.4rem;
-  border: 1px solid var(--svx-protected-border);
-  border-radius: 14px;
-  background: var(--svx-protected-bg);
+  border: 1px solid var(--svx-rule);
+  border-left: 3px solid var(--svx-zone-accent);
+  border-radius: 12px;
 }
 
-.svx-protected-header {
+.svx-zone-header {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.2rem 0.8rem;
   padding: 0.9rem 0 0.7rem;
-  border-bottom: 1px solid var(--svx-protected-border);
+  border-bottom: 1px solid var(--svx-rule);
 }
 
-.svx-protected-header strong {
+.svx-zone-header strong {
   font-size: 0.95rem;
-  color: var(--svx-protected);
+  color: var(--svx-zone-accent);
 }
 
-.svx-protected-header span {
+.svx-zone-header span {
   font-size: 0.88rem;
   color: var(--bs-secondary-color);
 }
-
 
 .svx-member-badges {
   margin: -0.1rem 0 0.45rem;
