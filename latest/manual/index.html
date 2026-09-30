@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Guide | SubVox Pro Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Guide | SubVox Pro Documentation ">
+      
+      
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css?v=d17fac0633">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/exnihilus/subvoxpro-docs/blob/main/Tools/Docs/ApiReference/manual/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js?v=d17fac0633"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+    <meta name="svx:version" content="1.0.0">
+</head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="SubVox Pro">
+            SubVox Pro
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="subvox-pro">SubVox Pro</h1>
+
+<p>SubVox Pro turns your voice lines into synced subtitles and dubs, right inside Unity:</p>
+<ul>
+<li><strong>Transcribe</strong> an audio clip into timed subtitles — with a cloud service or fully offline.</li>
+<li><strong>Edit</strong> the timing on a waveform, style words, check reading speed.</li>
+<li><strong>Translate</strong> into 37 languages and <strong>dub</strong> with text-to-speech, optionally in each character's own voice.</li>
+<li><strong>Play</strong> everything in game with a few components, trigger <strong>gameplay events</strong> from a line, and drop lines onto
+<strong>Unity Timeline</strong>.</li>
+</ul>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#before-you-start">Before you start</a></li>
+<li><a href="#quick-start">Quick start</a></li>
+<li><a href="#the-subvox-pro-window">The SubVox Pro window</a></li>
+<li><a href="#transcribe">Transcribe</a></li>
+<li><a href="#translate">Translate</a></li>
+<li><a href="#dub-with-text-to-speech">Dub with text-to-speech</a></li>
+<li><a href="#speakers-and-voice-personalities">Speakers and voice personalities</a></li>
+<li><a href="#edit-the-audio">Edit the audio</a></li>
+<li><a href="#play-voice-lines-in-your-game">Play voice lines in your game</a></li>
+<li><a href="#trigger-gameplay-from-a-voice-line">Trigger gameplay from a voice line</a></li>
+<li><a href="#unity-timeline">Unity Timeline</a></li>
+<li><a href="#process-many-files-at-once">Process many files at once</a></li>
+<li><a href="#offline-engines-no-account-no-api-key">Offline engines (no account, no API key)</a></li>
+<li><a href="#human-translation-with-google-sheets">Human translation with Google Sheets</a></li>
+<li><a href="#settings">Settings</a></li>
+<li><a href="#keyboard-and-mouse">Keyboard and mouse</a></li>
+<li><a href="#supported-languages">Supported languages</a></li>
+<li><a href="#where-your-files-go">Where your files go</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+<p>Getting an account and an API key for each service is explained step by step in
+<a href="providers.html">Provider Setup.md</a>.</p>
+<hr>
+<h2 id="before-you-start">Before you start</h2>
+<ul>
+<li><strong>Unity 2022.3 LTS or newer</strong> (Unity 6 included), any render pipeline (Built-in, URP, HDRP).</li>
+<li><strong>TextMesh Pro</strong> — import <em>TMP Essentials</em> once if your project hasn't already. On Unity 2022.3, first install
+the <strong>TextMeshPro</strong> package from the Package Manager (Unity 6 already includes it).</li>
+<li><strong>Unity Timeline</strong> is optional: the Timeline features appear as soon as the package is installed.</li>
+<li><strong>In game</strong>, SubVox Pro runs on every platform Unity supports.</li>
+<li><strong>In the editor</strong>, the cloud services work on Windows, macOS and Linux, with your own API keys. The <strong>offline
+engines</strong> (transcription, translation and dubbing without any account) need the <strong>Windows</strong> editor.</li>
+</ul>
+<hr>
+<h2 id="quick-start">Quick start</h2>
+<p>From one audio clip to synced subtitles on screen in a few minutes.</p>
+<p>Everything in SubVox Pro is also one click away in <strong>Tools ▸ SubVox Pro ▸ Hub</strong>: a window of tiles that opens the
+voice line editor, batch processing, Google Sheets, the provider comparison,
+the additional (offline) models, the example scene, the two guides and the settings.</p>
+<p><strong>1. Pick how you will transcribe.</strong> Either paste an API key for a speech-to-text service in
+<strong>Tools ▸ SubVox Pro ▸ Settings</strong> (<a href="providers.html">where to get one</a>), or, on Windows, use <strong>Whisper</strong> or
+<strong>Parakeet</strong>, which run offline for free (they offer to download their model the first time).</p>
+<p><strong>2. Create a voice line.</strong> <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line</strong>, select it and click <strong>Setup Voiceline</strong>
+in the Inspector. The SubVox Pro window opens on a new voice line: check its <strong>Language</strong> (English the first time,
+then the last one you picked), choose <strong>Add an audio track</strong> and pick your clip, or record one.</p>
+<img src="Documentation/Images/subvoxpro-new-voice-line.png" alt="Start screen of a new voice line: language, add an audio track, add a subtitles track" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><strong>3. Transcribe.</strong> In <strong>AI Tools ▸ Transcription</strong>, pick the provider and the spoken language, click <strong>Analyze</strong>,
+then <strong>Split</strong>. Your subtitles appear on the waveform.</p>
+<p><strong>4. Adjust.</strong> Drag the markers on the waveform, fix the text in the list below, press <strong>Space</strong> to listen.</p>
+<p><strong>5. Show them in game.</strong> Drop the <strong>[SubVox Pro]</strong> and <strong>Subtitle Displayer</strong> prefabs (<code>SubVoxPro/Prefabs</code>) into
+your scene, then play the line:</p>
+<pre><code class="lang-csharp">using SubVoxPro;
+
+SubVox.Play(myVoiceLine);
+</code></pre>
+<p>Want to see it running first? <strong>Tools ▸ SubVox Pro ▸ Open Example Scene</strong> opens a ready-made scene with voice
+lines, a dialogue sequence, language switching and word-by-word reveal — just press <strong>Play</strong>.</p>
+<hr>
+<h2 id="the-subvox-pro-window">The SubVox Pro window</h2>
+<img src="Documentation/Images/subvoxpro-window-overview.png" alt="The SubVox Pro window: source tracks, AI Tools, waveform timeline, live preview and subtitles list" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p>Open it with <strong>Tools ▸ SubVox Pro ▸ Voiceline Setup</strong>, or <strong>Setup Voiceline</strong> on a voice line's Inspector. From
+top to bottom:</p>
+<ul>
+<li><strong>Voice Line Data</strong> — the voice line you are editing, with buttons to create a new one, browse the others and
+delete it. The coloured dot is a <strong>tag</strong> shown on the asset's icon in the Project window, to sort your lines.</li>
+<li><strong>Source</strong> — the <strong>AUDIO</strong> and <strong>SUBTITLES</strong> selectors. Each voice line has one source language (the flag;
+click it to change it) and one track per translated or dubbed language. The two selectors are independent, so
+you can, for example, read the French subtitles while listening to the English audio.</li>
+<li><strong>AI Tools</strong> — transcription, translation and dubbing (<a href="#transcribe">below</a>).</li>
+<li><strong>Timeline</strong> — the waveform with your subtitle <strong>markers</strong>. Each marker is where a subtitle starts; a marker with
+no text clears the screen (a <strong>blank</strong>).</li>
+<li><strong>Live preview</strong> — the subtitle under the playhead, as it will look in game. Pick a colour or a style above it,
+then drag over words to paint them (right-drag erases).</li>
+<li><strong>Subtitles</strong> — one row per subtitle: its name, length, speaker and text, with a button to play it.</li>
+</ul>
+<h3 id="starting-without-audio">Starting without audio</h3>
+<img src="Documentation/Images/subvoxpro-new-voice-line-subtitles.png" alt="Add a subtitles track: import an .srt file, import a .txt file or add lines manually" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p>A voice line can start from text instead of audio: choose <strong>Add a subtitles track</strong>, then import an <strong>.srt</strong> file
+(subtitles with timings), a <strong>.txt</strong> file (one subtitle per line, timed automatically at a comfortable reading
+speed) or type the lines yourself. Set the <strong>Length</strong> of the line; it plays for that long in game until you add
+audio or generate a dub from the text.</p>
+<h3 id="recording-audio">Recording audio</h3>
+<img src="Documentation/Images/subvoxpro-new-voice-line-audio.png" alt="Add an audio track: pick an audio clip or record with a microphone" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><strong>Record with a microphone</strong> (in <strong>Add an audio track</strong> or the <strong>+</strong> next to the AUDIO selector) opens a small
+recorder: pick the microphone, watch the level, record, listen back, then <strong>Use recording</strong>. The take is saved as a
+WAV next to the voice line. On macOS, allow Unity to use the microphone in System Settings.</p>
+<h3 id="checking-your-subtitles">Checking your subtitles</h3>
+<ul>
+<li><strong>Show CPS</strong> (in <a href="#settings">Settings</a>) displays the reading speed of each line and flags lines that go too
+fast.</li>
+<li><strong>Validate</strong> walks through every problem one at a time — empty or duplicate names, lines outside the clip,
+overlaps, lines too fast to read — with one-click fixes. Everything is undoable.</li>
+<li><strong>Auto blanks</strong> hides the subtitle while nobody speaks, without adding markers. Turn it on in its popup and
+adjust how long a silence must be; the hidden parts are shaded on the waveform.</li>
+<li><strong>Export SRT</strong> saves the subtitles as an <code>.srt</code> file.</li>
+</ul>
+<h3 id="deleting-a-voice-line">Deleting a voice line</h3>
+<p>The trash button deletes the voice line. It lists the files that go with it: the ones SubVox Pro generated (dubs,
+recordings) are selected, your own files are not, and a file still used elsewhere is locked. Everything goes to the
+system trash, so it can be recovered.</p>
+<hr>
+<h2 id="transcribe">Transcribe</h2>
+<img src="Documentation/Images/subvoxpro-ai-tools-transcription.png" alt="AI Tools, Transcription tab with local Whisper" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<ol>
+<li>Pick a <strong>Provider</strong> and, when it offers several, a <strong>Model</strong>. The badge on the right says whether it is ready
+(key set, or model downloaded).</li>
+<li>Set the <strong>Audio Language</strong> (some providers detect it on their own).</li>
+<li>Click <strong>Analyze</strong>: the audio is turned into timed words.</li>
+<li>Click <strong>Split</strong>: the words are grouped into subtitles. <strong>Split settings</strong> set the longest a subtitle may last,
+how early it appears before its first word, and whether lines should end on punctuation.</li>
+</ol>
+<p><strong>Word timing</strong> chooses where the timing of each word comes from: <strong>From the provider</strong> (default) keeps the timings
+returned by the transcription, <strong>Qwen3 local</strong> places every word again on the audio right after <strong>Split</strong>, without
+changing the text — the most precise option for word-by-word subtitles (<a href="#qwen3-offline-word-timing">install it once</a>).
+In a language Qwen3 does not support, the provider's timings are kept.</p>
+<p>Providers: AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, OpenAI, or <strong>Whisper</strong> and <strong>Parakeet</strong> offline. Not
+sure which one to take? <strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> puts them side by side — price, free plan,
+commercial use, languages.</p>
+<img src="Documentation/Images/subvoxpro-provider-comparison.png" alt="Provider Comparison window, Transcription tab" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<blockquote>
+<p><strong>Tip:</strong> with OpenAI, pick <strong>whisper-1</strong> when timing matters. The other OpenAI models give an excellent text but
+no timings, so the words are spread evenly over the clip.</p>
+</blockquote>
+<p>Transcription works on the audio selected in the AUDIO selector, so you can also transcribe a dub.</p>
+<hr>
+<h2 id="translate">Translate</h2>
+<img src="Documentation/Images/subvoxpro-ai-tools-translation.png" alt="AI Tools, Translation tab" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<ol>
+<li>Pick a <strong>Provider</strong>: DeepL, Google Translate, OpenAI, Claude, Gemini, DeepSeek, or <strong>Hy-MT2</strong> offline.</li>
+<li>Choose a <strong>Target</strong> language, or a <strong>preset</strong> to create several languages at once.</li>
+<li>Set the <strong>Formality</strong> (formal or casual &quot;you&quot;) if the language has one.</li>
+<li>Click <strong>Translate</strong>. Each language gets its own track; switch between them with the SUBTITLES selector.</li>
+</ol>
+<p><strong>Help the translator.</strong> Ambiguous lines translate better with context: write a <strong>global context</strong> for the whole
+voice line (speech-bubble button) and, if needed, a note on a single line (its speech-bubble button in the list).</p>
+<p><strong>Keep translations in sync.</strong> When you change a source line after translating it, its translations show an <strong>OUT</strong>
+badge: click <strong>Synchronize</strong> to re-translate only the lines that changed, or click the badge once you have checked
+the line. When you move markers so that a sentence is cut in a new place, the translated lines show a <strong>CUT</strong> badge:
+<strong>Fix splits</strong> asks an AI provider to cut the translation at the same meaning, without changing its words. Dubs
+follow automatically.</p>
+<hr>
+<h2 id="dub-with-text-to-speech">Dub with text-to-speech</h2>
+<img src="Documentation/Images/subvoxpro-ai-tools-dubbing.png" alt="AI Tools, Dubbing tab with local Chatterbox" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<ol>
+<li>Select the language to dub in the SUBTITLES selector.</li>
+<li>In <strong>AI Tools ▸ Dubbing</strong>, pick a <strong>Provider</strong> and a <strong>Voice</strong>. The ▶ button next to a voice plays a sample.
+<strong>Use speakers' voices</strong> lets each line use the voice of its <a href="#speakers-and-voice-personalities">speaker</a>.</li>
+<li>Choose the <strong>Generation</strong> mode:
+<ul>
+<li><strong>Each subtitle</strong> — one take per line: easiest to fix line by line;</li>
+<li><strong>Per speaker</strong> — one take per group of lines from the same character: more natural flow;</li>
+<li><strong>All together</strong> — one continuous take: the most natural, but everything is regenerated at once.</li>
+</ul>
+</li>
+<li>Click <strong>Generate audio</strong>. The dub becomes a new audio track, played instead of the original when that language
+is active.</li>
+</ol>
+<p>Providers: InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, and offline <strong>Kokoro</strong> (English) and
+<strong>Chatterbox</strong> (21 languages, keeps each character's voice).</p>
+<ul>
+<li><strong>Word timing</strong> — leave it on <strong>Qwen3 local</strong> for words that appear exactly when they are spoken
+(<a href="#qwen3-offline-word-timing">install it once</a>), or <strong>Estimated</strong> if you don't reveal subtitles word by
+word.</li>
+<li><strong>Voice direction</strong> — the speech-bubble button next to the voice gives the tone of the performance (for example
+<em>calm, whispering</em>), on the providers that understand it.</li>
+<li><strong>REGEN</strong> — when a line's dub no longer matches (text, voice or personality changed), an orange <strong>REGEN</strong> chip
+appears on it. Hover it to see why, click it to regenerate only what is needed.</li>
+<li><strong>Voice cloning</strong> — with ElevenLabs (paid plan) or Chatterbox, pick <strong>Original voice</strong> to dub each character in
+their own voice, cloned from the source audio. You can also clone a voice from a clip placed in the <code>Voices</code>
+folder of your <a href="#where-your-files-go">data folder</a>. Only clone voices you have the right to use.</li>
+</ul>
+<blockquote>
+<p>OpenAI and some other services require telling your players that the voices are AI-generated — see
+<a href="providers.html">Provider Setup.md</a>.</p>
+</blockquote>
+<hr>
+<h2 id="speakers-and-voice-personalities">Speakers and voice personalities</h2>
+<h3 id="speakers">Speakers</h3>
+<img src="Documentation/Images/subvoxpro-speaker-inspector.png" alt="Speaker inspector with name style and voice personalities" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p>A <strong>speaker</strong> is a character: a name shown before their subtitles, in their own colour, and their voices for
+dubbing. Create one with <strong>Assets ▸ Create ▸ SubVox Pro ▸ Speaker</strong> or from the speaker picker in the window.</p>
+<ul>
+<li>Set the speaker of a whole voice line in the <strong>Speaker</strong> field above the list, or of a single line in its row.</li>
+<li>In the speaker's Inspector, <strong>Text-to-speech voices</strong> choose their voice per provider, with a fallback for every
+language and optional overrides per language.</li>
+<li>On the <strong>Subtitle Displayer</strong> (or <strong>Subtitle Document Displayer</strong>), <strong>Speaker Name Mode</strong> shows the name in front
+of the line (<em>Inline</em>), above it (<em>Above</em>), or not at all (<em>Hidden</em>). A speaker can also have its own font: <strong>Font
+(TextMeshPro)</strong> for the Subtitle Displayer, <strong>Font (UI Toolkit)</strong> for the Subtitle Document Displayer.</li>
+</ul>
+<h3 id="voice-personalities">Voice personalities</h3>
+<p>A <strong>personality</strong> is a reusable acting direction — <em>Angry</em>, <em>Mysterious</em>, <em>Whispering</em>… Create one from a speaker
+(<strong>New personality</strong>) or with <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Personality</strong>, then either write the direction
+yourself or combine emotion, speed, volume and delivery.</p>
+<p>Give each line a personality from its chip in the list (in <strong>Each subtitle</strong> mode), or use the speaker's default.
+Every provider applies what it can: some follow the full direction, others only the pace. The chip's tooltip tells
+you what the selected voice will use.</p>
+<hr>
+<h2 id="edit-the-audio">Edit the audio</h2>
+<p>The buttons at the right of the timeline toolbar edit the audio itself. Every edit can be undone with <strong>Ctrl+Z</strong>.</p>
+<ul>
+<li><strong>Crop</strong> — drag the start and end handles, then <strong>Apply crop</strong>. It rewrites the source audio file, so keep a copy
+of the full take if you may need it.</li>
+<li><strong>Insert a pause / remove a segment</strong> (the <code>|↔|</code> button) — left-drag to insert silence, right-drag to cut a part
+out. Subtitles, words and events after it move with the audio. Handy when a TTS voice runs two sentences
+together.</li>
+<li><strong>Audio effects</strong> — volume curve, fades, normalize, compressor, limiter, noise gate, filters, equalizer,
+telephone/radio, pitch, intonation, pan, distance muffling, room reverb. Draw <em>where</em> an effect applies on the
+timeline, set <em>how</em> with the sliders, then <strong>Apply effects</strong>. The <strong>magnet</strong> in the corner of a curve aligns
+points with the base value, 0 and their neighbours (hold <strong>Alt</strong> to place a point freely). SubVox Pro keeps your original audio so effects stay editable;
+<strong>Flatten</strong> makes them permanent, <strong>Discard</strong> removes them all.</li>
+<li><strong>Intonation</strong> — the melody of the voice is shown on top; draw how much to raise (<strong>+</strong>) or lower (<strong>−</strong>) it in
+the lane below, where <strong>0</strong> leaves it unchanged. The <strong>magnet</strong> snaps your stroke to the step next to it
+(0.5 st by default; hold <strong>Alt</strong> to draw freely), and the <strong>wave</strong> smooths new strokes over the time you set
+(0 draws exactly what you trace). Right-drag restores the voice and <strong>Esc</strong> cancels a stroke. The rest of the line stays untouched.
+<strong>Pitch</strong> shifts a whole passage and shows the same melody. Both keep the voice natural; a few semitones
+(st) work best. The <strong>Engine</strong> dropdown offers <strong>WORLD</strong> (natural, default), <strong>PSOLA</strong> (lighter) or <strong>Classic</strong> (fastest; also changes the voice's character).</li>
+</ul>
+<hr>
+<h2 id="play-voice-lines-in-your-game">Play voice lines in your game</h2>
+<h3 id="set-up-the-scene">Set up the scene</h3>
+<ol>
+<li><p>Drop the <strong>[SubVox Pro]</strong> prefab (<code>SubVoxPro/Prefabs</code>) once into your startup scene. It plays voice lines and
+dispatches their events. (If you forget, a default player is created the first time a line plays, with a
+warning.)</p>
+</li>
+<li><p>Drop the <strong>Subtitle Displayer</strong> prefab (<code>SubVoxPro/Prefabs</code>) into the scene: a ready-made subtitle box at the
+bottom of the screen, which grows with long lines and hides between them. Restyle it freely (font, colours,
+position, size), or add the <strong>Subtitle Displayer</strong> component to your own Canvas and assign its <strong>Subtitle Text</strong>
+(and <strong>Background</strong>, to hide it between lines).</p>
+<p><strong>Using UI Toolkit instead of a Canvas?</strong> Drop the <strong>Subtitle Document Displayer</strong> prefab instead. It shows the
+same subtitles, speaker names and styles in a UI Toolkit document. Restyle it in <code>Subtitle Document.uss</code>
+(<code>SubVoxPro/Prefabs/UI Toolkit</code>), or add the <strong>Subtitle Document Displayer</strong> component to your own UI Document
+and give it the name of the Label to fill (and of the element to hide between lines).</p>
+</li>
+</ol>
+<h3 id="play-a-line-from-code">Play a line from code</h3>
+<p>Everything goes through <code>SubVox</code>. Ready-to-copy scripts for the common cases (waiting for a line, reacting to an
+event, a language menu, an options menu, a dialogue log, video subtitles…) are in <code>SubVoxPro/Example/Snippets</code>, and
+your code editor shows a description of every class, method and setting as you type. The full scripting
+reference is online: <a href="https://exnihilus.github.io/subvoxpro-docs/">https://exnihilus.github.io/subvoxpro-docs/</a>.</p>
+<pre><code class="lang-csharp">using SubVoxPro;
+
+SubVox.Play(myVoiceLine);            // plays, with synced subtitles
+SubVox.PauseAll();                   // game paused
+SubVox.ResumeAll();
+SubVox.StopAll();                    // cutscene skipped
+SubVox.CurrentLanguage = &quot;fr&quot;;       // French subtitles and dubs (&quot;&quot; = original)
+</code></pre>
+<p><code>Play</code> gives back the line's playback: check its <code>State</code>, stop it, or wait for it in a coroutine:</p>
+<pre><code class="lang-csharp">yield return SubVox.Play(greeting);  // waits until the line is over
+yield return SubVox.Play(answer);
+</code></pre>
+<p>On the <strong>Voice Line Manager</strong>, <strong>Subtitle Reveal Mode</strong> shows subtitles one full line at a time (the default), word
+by word, or as <strong>Karaoke</strong> (the whole line, with the word being spoken highlighted); Timeline cutscenes follow it
+too. To lower the music while someone speaks, give it two Audio Mixer
+snapshots: <strong>Ducked Snapshot</strong> (music lowered) and <strong>Normal Snapshot</strong>.</p>
+<h3 id="voices-in-3d-and-several-at-once">Voices in 3D and several at once</h3>
+<p>Add a <strong>Voice Line Emitter</strong> to each character that speaks and set its AudioSource to 3D: the voice comes from the
+character, and several characters can talk at the same time.</p>
+<pre><code class="lang-csharp">npc.GetComponent&lt;VoiceLineEmitter&gt;().Play(barkLine, EVoiceLinePriority.Low);
+</code></pre>
+<p><strong>Priorities</strong> keep important lines safe: on one emitter, a new line replaces the current one only if it is at
+least as important; on screen, the subtitle of the most important line wins. To let a line wait for its turn
+instead, play it with <code>EVoiceLinePlayMode.Queue</code>; <code>EVoiceLinePlayMode.IfIdle</code> plays it only if the emitter is free.
+<code>Skip()</code> ends the current line at once, as for a &quot;skip dialogue&quot; button. An emitter's <strong>Show Subtitles</strong> can be
+turned off for background chatter, and its <code>VoiceLineCompleted</code> / <code>VoiceLineInterrupted</code> events tell you when a line
+ends.</p>
+<p><strong>Speech bubbles.</strong> Select a character and use <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>: a bubble appears above
+its head and shows only what this character says. Turn off its emitter's <strong>Show Subtitles</strong> to keep those lines out
+of the bottom of the screen.</p>
+<h3 id="without-code">Without code</h3>
+<ul>
+<li><strong>Voice Line Zone</strong> — plays a line when the player enters a trigger (2D or 3D), once or with a cooldown. It can
+wait for the character to finish speaking (<strong>Play mode: Queue</strong>), stop the line when the player leaves, and play
+again the next time the player comes in.</li>
+<li><strong>Voice Line Play On Start</strong> — plays a line when the object starts, after an optional delay.</li>
+<li><strong>Voice Line Bank</strong> (<strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line Bank</strong>) — several lines to pick from, such as a
+guard's barks: at random without saying the same thing twice in a row, shuffled, or in order. Put it in the
+<strong>Bank</strong> field of a zone or of Play On Start.</li>
+<li><strong>Voice Line Sequence</strong> (<strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line Sequence</strong>) — a dialogue: a list of lines
+that follow each other, automatically or when you call <code>Advance()</code>; <code>Previous()</code> goes back one line, for a
+&quot;previous line&quot; button. Play it with a <strong>Voice Line Sequence Player</strong>, whose Inspector shows the progress in Play
+mode. Set its <strong>Direction</strong> to <strong>Backward</strong> to play the lines from the last to the first. If its character is busy
+with a more important line, the dialogue waits, then picks up after a short <strong>Resume Delay</strong>.</li>
+</ul>
+<p>Each of them has an <strong>Emitter</strong> (empty = the default one) and a <strong>Priority</strong>, and a public <code>Play()</code> you can call
+from a button or any UnityEvent.</p>
+<h3 id="switching-language">Switching language</h3>
+<p>Changing the language switches the subtitles on screen immediately. The dubbed audio follows from the next line,
+since a line can't change language in the middle of a sentence.</p>
+<ul>
+<li><strong>Unity Localization</strong> — if your project uses Unity's Localization package, SubVox Pro follows the language chosen
+there automatically. To set the language yourself instead, set <strong>Language Source</strong> to <strong>Manual</strong> on the Voice Line
+Manager.</li>
+<li><strong>Close languages</strong> — a player in <code>pt-BR</code> hears and reads a <code>pt</code> translation when there is no <code>pt-BR</code> one (and the
+other way round).</li>
+<li><strong>Language menu</strong> — <code>myVoiceLine.GetSubtitleLanguages()</code> and <code>GetAudioLanguages()</code> list what a voice line offers.</li>
+</ul>
+<h3 id="subtitle-options-for-players">Subtitle options for players</h3>
+<p>Wire these to your options menu; every subtitle display follows them at once:</p>
+<pre><code class="lang-csharp">SubVox.SubtitlesEnabled = false;       // no subtitles (voices carry on)
+SubVox.SubtitleScale = 1.5f;           // bigger text
+SubVox.BackgroundOpacity = 1f;         // opaque box behind the text
+SubVox.FadeDuration = 0.2f;            // subtitles fade in and out
+SubVox.RevealMode = EVoiceLineSubtitleRevealMode.Karaoke;  // whole line, spoken word highlighted
+</code></pre>
+<p><code>SubVox.History</code> keeps the last lines shown (text, speaker), to build a dialogue log screen.</p>
+<h3 id="your-own-subtitle-display">Your own subtitle display</h3>
+<p>The displayers cover most needs. To draw subtitles your own way, listen to
+<code>SubVox.SubtitleUpdated</code>, which gives you the subtitle to show whenever it changes (empty text means
+&quot;clear the screen&quot;). <code>SubVox.PublishSubtitle(...)</code> shows your own text on the displayers, for example
+during a video.</p>
+<p>To only tweak a displayer (change the text, animate the box), create a script that inherits from it and override
+<code>ComposeText</code> or <code>SetVisible</code>. The other components can be extended the same way.</p>
+<h3 id="playing-the-audio-with-fmod-wwise-or-a-video">Playing the audio with FMOD, Wwise or a video</h3>
+<p>Import the voice line's audio (and its dubs) into your audio tool as usual, then let the emitter follow your audio
+instead of playing it:</p>
+<pre><code class="lang-csharp">class FmodClock : IVoiceLineAudioClock
+{
+    public FMOD.Studio.EventInstance Instance;
+
+    public float Time { get { Instance.getTimelinePosition(out int ms); return ms / 1000f; } }
+    public bool IsPlaying { get { Instance.getPlaybackState(out var state); return state != FMOD.Studio.PLAYBACK_STATE.STOPPED; } }
+}
+
+emitter.PlayExternal(myVoiceLine, clock);   // subtitles and events follow your audio
+// then start the audio of emitter.CurrentAudioLanguage (&quot;&quot; = original, otherwise that dub)
+</code></pre>
+<p>Pausing or stopping the emitter only affects the subtitles and events: pause or stop your audio as well.</p>
+<hr>
+<h2 id="trigger-gameplay-from-a-voice-line">Trigger gameplay from a voice line</h2>
+<img src="Documentation/Images/subvoxpro-timeline-events.png" alt="Waveform timeline in Events mode, with an event diamond on the event rail" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p>Open a door on &quot;Run!&quot;, shake the camera on a scream: <strong>events</strong> fire at a moment of a voice line.</p>
+<ol>
+<li>Switch the timeline to <strong>Events</strong> and click <strong>+ Event</strong> (or middle-click the waveform).</li>
+<li>Give it a <strong>signal</strong> — a small reusable asset that names the event, such as <em>Camera Shake</em>.</li>
+<li>Choose <strong>when</strong> it fires: at the start or end of the voice, at a time, or on a subtitle or a word (it then
+follows that word if the timing changes). Drag the diamond to move it.</li>
+</ol>
+<p>Then react to it in one of three ways:</p>
+<ul>
+<li><p><strong>No code</strong> — add a <strong>Voice Line Event Receiver</strong> to an object, pick the signal and connect a UnityEvent.</p>
+</li>
+<li><p><strong>An attribute</strong> — mark any method of a MonoBehaviour with the signal's key (the copy button next to the signal
+copies it):</p>
+<pre><code class="lang-csharp">[VoiceLineEvent(&quot;Camera Shake&quot;)]
+private void Shake()
+{
+    // ...
+}
+</code></pre>
+<p>The <strong>[SubVox Pro]</strong> prefab finds these methods on its own. If you create objects at runtime, call
+<code>VoiceLineEventDispatcher.Refresh()</code> afterwards.</p>
+</li>
+<li><p><strong>C#</strong> — <code>SubVox.Subscribe(signal, MyMethod)</code> calls your method each time that signal fires
+(<code>SubVox.Unsubscribe</code> to stop).</p>
+</li>
+</ul>
+<p>An event can also carry a <strong>Payload</strong> — any asset delivered with the event; a method that takes that asset type as
+its parameter receives it — and be limited to <strong>once per playback</strong>.
+Events only run in Play mode, never while you edit or scrub.</p>
+<hr>
+<h2 id="unity-timeline">Unity Timeline</h2>
+<ol>
+<li>In your Timeline, <strong>Add ▸ VoiceLine Track</strong>.</li>
+<li>Drag a voice line onto it. A subtitle clip is created, with its audio on a separate <em>VoiceLine Audio</em> track.</li>
+<li>Bind that audio track to an AudioSource, like any Audio Track.</li>
+<li>Make sure the scene has a Subtitle Displayer (the prefab is the quickest).</li>
+</ol>
+<p>Audio and subtitles stay in sync, including while scrubbing. Dropping a <strong>Voice Line Sequence</strong> lays out all its
+lines. Events of the voice line fire during playback; to move them as Timeline markers, right-click the clip and
+choose <strong>SubVox Pro ▸ Bake Voice Events to Timeline</strong>.</p>
+<p>The cutscene plays the dub of the current language when the line has one, with its subtitles in sync. The language
+is picked when the Timeline starts playing. A clip follows the manager's <strong>Subtitle Reveal Mode</strong>, unless you tick
+<strong>Override Reveal Mode</strong> on it.</p>
+<hr>
+<h2 id="process-many-files-at-once">Process many files at once</h2>
+<img src="Documentation/Images/subvoxpro-batch-window.png" alt="Batch Processing window" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> turns a list of audio or <code>.srt</code> files into voice lines in one go.</p>
+<ol>
+<li>Drop the files, or use <strong>Add files…</strong> / <strong>Add folder…</strong>.</li>
+<li>Turn on the steps you need — <strong>Transcription</strong>, <strong>Translation</strong>, <strong>Dubbing</strong> — and set them up once for all
+files. A file can override its languages.</li>
+<li>Check the <strong>Estimated cost</strong>, then click <strong>Batch</strong>. The button stays greyed out until everything is ready, and
+tells you what is missing.</li>
+</ol>
+<p>Each file becomes its own voice line. The batch does one step for all files before the next one (for example
+every transcription, then every translation, then every dub), which is faster with the offline engines. You can
+cancel at any time and export a report of the run; clicking <strong>Batch</strong> again picks up where each file stopped.</p>
+<hr>
+<h2 id="offline-engines-no-account-no-api-key">Offline engines (no account, no API key)</h2>
+<p>On the <strong>Windows</strong> editor, SubVox Pro can do everything offline, for free, on your own machine. Each engine is
+downloaded once (the button next to its provider says <strong>Setup model</strong> or <strong>Install…</strong>) and shared by all your
+projects. <strong>Tools ▸ SubVox Pro ▸ Additional Models</strong> (also a tile of the Hub) lists them all in one window, with
+their status, a <strong>Download</strong> button for each, and <strong>Uninstall</strong> to free the disk space again. A graphics card makes them much faster, but they also run without one.</p>
+<table>
+<thead>
+<tr>
+<th>Engine</th>
+<th>Does</th>
+<th>Download</th>
+<th>Languages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Whisper</strong></td>
+<td>Transcription</td>
+<td>1.6 GB (up to 3.1 GB for the larger models)</td>
+<td>Many, with automatic detection</td>
+</tr>
+<tr>
+<td><strong>Parakeet</strong></td>
+<td>Transcription, fast even without a graphics card</td>
+<td>670 MB</td>
+<td>25 European languages, detected automatically</td>
+</tr>
+<tr>
+<td><strong>Hy-MT2</strong></td>
+<td>Translation</td>
+<td>1.1 GB, or 4.6 GB for the more accurate model</td>
+<td>All 37 target languages</td>
+</tr>
+<tr>
+<td><strong>Kokoro</strong></td>
+<td>Dubbing</td>
+<td>370 MB</td>
+<td>English (US and UK voices)</td>
+</tr>
+<tr>
+<td><strong>Chatterbox</strong></td>
+<td>Dubbing, in each character's own voice or 24 ready-made ones</td>
+<td>3.3 GB</td>
+<td>21 languages, + Japanese with an optional 6 MB add-on</td>
+</tr>
+<tr>
+<td><strong>Qwen3</strong></td>
+<td>Exact word timing, on transcriptions and dubs</td>
+<td>1.0 GB</td>
+<td>11 languages</td>
+</tr>
+</tbody>
+</table>
+<h3 id="whisper-offline-transcription">Whisper (offline transcription)</h3>
+<img src="Documentation/Images/subvoxpro-whisper-setup.png" alt="Whisper local model setup window" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p>Pick <strong>Whisper</strong> in the Transcription tab and click <strong>Setup model</strong>. <strong>Large v3 Turbo</strong> is the recommended model:
+fast, and nearly as accurate as the full-size ones. With a graphics card, a short voice line is transcribed in about
+a second.</p>
+<h3 id="parakeet-offline-transcription-european-languages">Parakeet (offline transcription, European languages)</h3>
+<img src="Documentation/Images/subvoxpro-parakeet-setup.png" alt="Parakeet local model setup window" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p>Pick <strong>Parakeet</strong> in the Transcription tab and click <strong>Setup model</strong> (670 MB). NVIDIA's Parakeet TDT gives punctuated
+text with word timings and recognizes the spoken language on its own, so there is nothing to set. It is fast on any
+recent processor, even without a graphics card: a short voice line takes a fraction of a second, two minutes of audio
+a few seconds. Languages: Bulgarian, Croatian, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hungarian, Italian, Latvian, Lithuanian, Maltese, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Spanish, Swedish and Ukrainian. For other languages, use Whisper.</p>
+<h3 id="hy-mt2-offline-translation">Hy-MT2 (offline translation)</h3>
+<img src="Documentation/Images/subvoxpro-hymt-setup.png" alt="Hy-MT2 local translation setup window" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p>Pick <strong>Hy-MT2</strong> in the Translation tab and click <strong>Setup model</strong>. The <strong>1.8B</strong> model is fast on any machine; the
+<strong>7B</strong> model follows your context notes better, and is best with a graphics card that has 8 GB of memory. Both
+respect your context notes and the formality setting.</p>
+<h3 id="kokoro-offline-english-dubbing">Kokoro (offline English dubbing)</h3>
+<p>Pick <strong>Kokoro</strong> in the Dubbing tab and click <strong>Install Kokoro…</strong>. It comes with 11 English voices.</p>
+<h3 id="chatterbox-offline-dubbing-in-21-languages">Chatterbox (offline dubbing in 21 languages)</h3>
+<img src="Documentation/Images/subvoxpro-chatterbox-setup.png" alt="Chatterbox local dubbing setup window" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p>Pick <strong>Chatterbox</strong> in the Dubbing tab and click <strong>Install Chatterbox…</strong>. Its voices:</p>
+<ul>
+<li><strong>Original voice</strong> (default) — each character keeps the voice heard in the original audio, in every language;</li>
+<li><strong>24 ready-made voices</strong> (12 female, 12 male), downloaded with the model;</li>
+<li><strong>Chatterbox default voice</strong>;</li>
+<li><strong>your own clips</strong> — any clip placed in the <code>Voices</code> folder of the data folder (5–10 seconds of one clear voice).</li>
+</ul>
+<p>Languages: Arabic, Chinese, Danish, Dutch, English, Finnish, French, German, Greek, Hindi, Italian, Korean, Malay,
+Norwegian, Polish, Portuguese, Russian, Spanish, Swahili, Swedish, Turkish, and Japanese after installing its
+support from the same window. <strong>Exaggeration</strong>, under the provider in the Dubbing panel (also in Batch Processing
+and the Settings), makes the delivery more or less expressive. Each
+generation is slightly different: if a word comes out wrong, generate it again. Some languages come out more reliably than
+others: see <a href="providers.html#chatterbox-accuracy-by-language">how accurate each language is</a>.</p>
+<h3 id="qwen3-offline-word-timing">Qwen3 (offline word timing)</h3>
+<p>Set <strong>Word timing</strong> to <strong>Qwen3 local</strong> in the Transcription or Dubbing tab and click <strong>Install…</strong>. From then on, each
+<strong>Split</strong> of a transcription and every generated dub are aligned word by word automatically, so word-by-word subtitles
+match the voice exactly. It only places the words — it never changes your text. Languages: Chinese, Cantonese,
+English, French, German, Italian, Japanese, Korean, Portuguese, Russian and Spanish, for audio up to 5 minutes.</p>
+<blockquote>
+<p>Downloads stop if scripts recompile or you enter Play mode: just start them again from the same window, they
+resume where they stopped.</p>
+</blockquote>
+<hr>
+<h2 id="human-translation-with-google-sheets">Human translation with Google Sheets</h2>
+<p>Hand your lines to translators in a shared Google Sheet and bring their work back, in both directions.</p>
+<h3 id="setup-once">Setup (once)</h3>
+<ol>
+<li><strong>Google Cloud</strong> — at <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>, create a project and enable the <strong>Google Sheets API</strong>.
+Under <strong>OAuth consent screen</strong>, choose <strong>External</strong> and add yourself and your translators as <strong>Test users</strong>.
+Then create an <strong>OAuth client ID</strong> of type <strong>Desktop app</strong> and copy its <strong>Client ID</strong> and <strong>Client secret</strong>.</li>
+<li><strong>The Sheet</strong> — create an empty Google Sheet, copy its ID from the URL (between <code>/d/</code> and <code>/edit</code>) and share it
+as <strong>Editor</strong> with your translators.</li>
+<li><strong>Unity</strong> — open <strong>Tools ▸ SubVox Pro ▸ Google Sheets Localization</strong>, paste the three values and click
+<strong>Connect</strong>, then sign in in the browser.</li>
+</ol>
+<h3 id="every-day">Every day</h3>
+<p>Translators fill the language columns and mark each line <strong>reviewed</strong> or <strong>final</strong>. Click <strong>Sync with Sheet</strong>:
+SubVox Pro shows every difference, Unity on one side and the Sheet on the other, and you choose which to keep before
+anything is written. The key columns of the Sheet are locked, so translators can only edit translations. Statuses are
+coloured (<strong>reviewed</strong> in amber, <strong>final</strong> in green) and empty translations are tinted, so the remaining work is easy
+to see. Each voice line starts with a dark title row; fold or unfold its lines with the <strong>+ / −</strong> button in the left
+margin.</p>
+<p>A line added only in the Sheet is never imported (a subtitle needs a timing), but it is never deleted without asking
+either. Two kinds of rows are set to <strong>Drop</strong> by default, so one sync cleans them up: a <strong>Duplicate</strong> (the same line
+appears twice in the Sheet) and a <strong>Removed</strong> line (it no longer exists in Unity, for example after re-cutting the
+subtitles). Click <strong>Keep</strong> to leave one in the Sheet.</p>
+<p>The button next to the Spreadsheet ID opens the Sheet in your browser.</p>
+<hr>
+<h2 id="settings">Settings</h2>
+<img src="Documentation/Images/subvoxpro-settings.png" alt="SubVox Pro settings: API keys, preferences, data folder and model catalog" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><strong>Tools ▸ SubVox Pro ▸ Settings</strong>:</p>
+<ul>
+<li><strong>API Keys</strong> — one key per service. Keys stay on this computer: they are never saved in your project, committed
+or shipped. The eye at the end of a row shows or hides the key, the red cross removes it.</li>
+<li><strong>Preferences</strong> — <strong>Show CPS</strong> (reading speed), <strong>Custom inspectors</strong> and <strong>Auto blanks on new lines</strong>.</li>
+<li><strong>Data folder</strong> — where new voice lines, speakers and dubs are created.</li>
+<li><strong>Model catalog</strong> — the list of AI models to choose from, updated online. <strong>Manage models</strong> lets you add one that isn't
+listed yet.</li>
+<li><strong>Local models &amp; services</strong> — each offline engine with its status (<strong>Ready</strong> or <strong>Not installed</strong>), its options
+(graphics card use, Chatterbox expressiveness) and a button to install or set it up; plus the cleanup of
+ElevenLabs voice clones.</li>
+</ul>
+<hr>
+<h2 id="keyboard-and-mouse">Keyboard and mouse</h2>
+<p>In the SubVox Pro window (shortcuts are ignored while you type in a text field):</p>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Space</strong></td>
+<td>Play / pause from the playhead</td>
+</tr>
+<tr>
+<td><strong>← / →</strong></td>
+<td>Nudge the selected marker (or word, or event) by 50 ms</td>
+</tr>
+<tr>
+<td><strong>Shift + ← / →</strong></td>
+<td>Snap the selected marker to the previous / next word</td>
+</tr>
+<tr>
+<td><strong>Ctrl + ← / →</strong></td>
+<td>Select the previous / next marker (or word, or event)</td>
+</tr>
+<tr>
+<td><strong>Delete</strong></td>
+<td>Delete the selected marker or event</td>
+</tr>
+<tr>
+<td><strong>Ctrl + Z</strong></td>
+<td>Undo</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Mouse on the waveform</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Click</strong></td>
+<td>Move the playhead</td>
+</tr>
+<tr>
+<td><strong>Drag</strong></td>
+<td>Move a marker, a word or an event</td>
+</tr>
+<tr>
+<td><strong>Shift + click</strong> or <strong>middle-click</strong></td>
+<td>Add a marker (or an event, in Events mode)</td>
+</tr>
+<tr>
+<td><strong>Right-click</strong></td>
+<td>Delete a marker or an event</td>
+</tr>
+<tr>
+<td><strong>Scroll</strong> / <strong>Ctrl + scroll</strong></td>
+<td>Zoom / pan</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Markers</strong>, <strong>Words</strong> and <strong>Events</strong> buttons above the waveform choose what you edit. In the list,
+double-click a row to play that subtitle.</p>
+<hr>
+<h2 id="supported-languages">Supported languages</h2>
+<p><code>✓</code> available · <code>◐</code> depends on the provider or voice you pick · <code>—</code> not available</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th style="text-align: center;">Transcription</th>
+<th style="text-align: center;">Translation</th>
+<th style="text-align: center;">Dubbing</th>
+<th style="text-align: center;">Word timing on dubs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arabic</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Bengali</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Bulgarian</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Burmese</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Cantonese</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Chinese (Mandarin)</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Chinese (Traditional)</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Croatian</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Czech</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Dutch</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>English</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Estonian</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Filipino</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Finnish</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>French</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>German</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Greek</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Gujarati</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Hebrew</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Hindi</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Hungarian</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Indonesian</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Italian</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Japanese</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Kazakh</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Korean</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Latvian</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Lithuanian</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Malay</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Maltese</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Marathi</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Mongolian</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Norwegian</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Persian</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Polish</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Portuguese</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Romanian</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Russian</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Slovak</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Slovenian</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Spanish</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Swahili</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Swedish</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Tamil</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Telugu</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Thai</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Turkish</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Ukrainian</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Urdu</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Vietnamese</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="where-your-files-go">Where your files go</h2>
+<p>Your work is saved in the <strong>data folder</strong>, <code>Assets/Data/SubVoxPro/</code> by default (change it in
+<a href="#settings">Settings</a>). It sits outside the SubVox Pro folder, so updating the asset never touches it.</p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Voice lines</td>
+<td><code>Voicelines/</code> in the data folder</td>
+</tr>
+<tr>
+<td>Dubs and microphone recordings</td>
+<td><code>Dubs/</code> and <code>Recordings/</code>, next to the voice line</td>
+</tr>
+<tr>
+<td>Speakers and personalities</td>
+<td><code>Speakers/</code> in the data folder</td>
+</tr>
+<tr>
+<td>Event signals</td>
+<td><code>Event Signals/</code> in the data folder</td>
+</tr>
+<tr>
+<td>Clips for voice cloning</td>
+<td><code>Voices/</code> in the data folder</td>
+</tr>
+<tr>
+<td>API keys</td>
+<td>This computer's Unity preferences — never in the project</td>
+</tr>
+<tr>
+<td>Offline engines</td>
+<td>Your user folder (<code>AppData/Local/SubVoxPro</code>), shared by all projects</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li><strong>An offline engine fails to load, mentioning a missing DLL</strong> — install the latest <em>Microsoft Visual C++
+Redistributable (x64)</em> from Microsoft, then restart Unity.</li>
+<li><strong>A download stopped</strong> — scripts recompiled or Play mode started. Open the same setup window again: it resumes.</li>
+<li><strong>Gemini dubbing slows down or stops</strong> — the free Gemini plan allows only a few voice requests per minute and per
+day. SubVox Pro waits and retries on its own; <strong>Per speaker</strong> or <strong>All together</strong> send fewer requests, and
+enabling billing on your Google project lifts the limit.</li>
+<li><strong>The recorder finds no microphone on macOS</strong> — allow Unity in System Settings ▸ Privacy &amp; Security ▸ Microphone.</li>
+<li><strong>Nothing shows on screen in game</strong> — check that the scene has a Subtitle Displayer with its text assigned, and
+that the line plays on an emitter whose <strong>Show Subtitles</strong> is on.</li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          SubVox Pro — © 2026 ExNihilus
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Provider setup | SubVox Pro Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Provider setup | SubVox Pro Documentation ">
+      
+      
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css?v=d17fac0633">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/exnihilus/subvoxpro-docs/blob/main/Tools/Docs/ApiReference/manual/providers.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js?v=d17fac0633"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+    <meta name="svx:version" content="1.0.0">
+</head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="SubVox Pro">
+            SubVox Pro
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="subvox-pro--provider-setup-guide">SubVox Pro — Provider setup guide</h1>
+
+<p>SubVox Pro never ships any API key. Every provider below is accessed with <strong>your own key</strong>,
+which you paste into <strong>Tools ▸ SubVox Pro ▸ Settings</strong> (or the provider panel inside the
+<strong>SubVox Pro</strong> window). Keys are stored only in your machine's Unity Editor preferences
+(<code>EditorPrefs</code>) — never committed to your project, never bundled with a build. See
+<a href="notices.html">Third-Party Notices.md</a> for the legal terms of each service.</p>
+<blockquote>
+<p>⚠️ <strong>Free tiers and pricing change often.</strong> The figures below were accurate at the time of writing;
+always confirm the current offer on the provider's own pricing page before relying on it.</p>
+</blockquote>
+<hr>
+<h2 id="quick-links">Quick links</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Provider docs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transcription</strong></td>
+<td><a href="#assemblyai">AssemblyAI</a> · <a href="#gladia">Gladia</a> · <a href="#deepgram">Deepgram</a> · <a href="#speechmatics">Speechmatics</a> · <a href="#elevenlabs">ElevenLabs</a> · <a href="#rev-ai">Rev AI</a> · <a href="#openai">OpenAI</a></td>
+</tr>
+<tr>
+<td><strong>Translation</strong></td>
+<td><a href="#deepl">DeepL</a> · <a href="#google-cloud-translation">Google Cloud Translation</a> · <a href="#openai">OpenAI</a> · <a href="#anthropic-claude">Anthropic (Claude)</a> · <a href="#google-gemini">Google (Gemini)</a> · <a href="#deepseek">DeepSeek</a> · <a href="index.html#hy-mt2-offline-translation">Hy-MT2 local</a></td>
+</tr>
+<tr>
+<td><strong>Dubbing / Text-to-Speech</strong></td>
+<td><a href="#elevenlabs">ElevenLabs</a> · <a href="#inworld-ai">InWorld AI</a> · <a href="#google-gemini">Gemini</a> · <a href="#openai">OpenAI</a> · <a href="#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="#azure">Azure AI Speech</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro local</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox local</a></td>
+</tr>
+<tr>
+<td><strong>Local alignment</strong></td>
+<td><a href="index.html#qwen3-offline-word-timing">Qwen3 Forced Aligner</a></td>
+</tr>
+<tr>
+<td><strong>Reference</strong></td>
+<td><a href="#best-practices">Best Practices</a> · <a href="#which-provider-do-i-need">Which provider do I need?</a> · <a href="#free-tier-cheat-sheet">Free-tier cheat sheet</a> · <a href="#where-to-paste-your-key-in-subvox-pro">Where to paste your key</a> · <a href="#after-pasting-a-key">After pasting a key</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="language-compatibility-at-a-glance">Language compatibility at a glance</h2>
+<p>This is the language surface exposed by SubVox Pro. <strong>Dynamic catalog</strong> means the exact list comes
+from the provider account and selected model/voice at runtime; the voice picker is the authoritative
+list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grouped under their base language here.</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Provider / engine</th>
+<th>Languages available in SubVox Pro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>STT</strong></td>
+<td>AssemblyAI</td>
+<td>Multilingual, automatic language detection; availability follows the selected model.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Gladia</td>
+<td>Multilingual, automatic language detection; availability follows the selected model.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Deepgram</td>
+<td>Dutch, English, French, German, Hindi, Italian, Japanese, Portuguese, Russian, Spanish; plus multilingual mode.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Speechmatics</td>
+<td>Arabic, Chinese (Mandarin), Dutch, English, French, German, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Turkish.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>ElevenLabs</td>
+<td>Arabic, Chinese, Dutch, English, French, German, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Turkish.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Rev AI</td>
+<td>Arabic, Chinese (Mandarin), Dutch, English, French, German, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Turkish.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>OpenAI (<code>gpt-transcribe</code>, <code>gpt-4o-transcribe</code>, <code>gpt-4o-mini-transcribe</code>, <code>whisper-1</code>)</td>
+<td>Arabic, Chinese, Dutch, English, French, German, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Turkish.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Whisper large-v2 / large-v3 / large-v3-turbo (local)</td>
+<td>Chinese, Dutch, English, French, German, Italian, Japanese, Korean, Portuguese, Russian, Spanish; plus auto-detect.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Parakeet TDT 0.6B v3 (local)</td>
+<td>Bulgarian, Croatian, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hungarian, Italian, Latvian, Lithuanian, Maltese, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Spanish, Swedish and Ukrainian, detected automatically.</td>
+</tr>
+<tr>
+<td><strong>Translation</strong></td>
+<td>DeepL</td>
+<td>Arabic, Bengali, Burmese, Cantonese, Chinese (simplified/traditional), Czech, Dutch, English (US/UK), Filipino, French, German, Gujarati, Hebrew, Hindi, Indonesian, Italian, Japanese, Kazakh, Korean, Malay, Marathi, Mongolian, Persian, Polish, Portuguese (BR/PT), Russian, Spanish, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Vietnamese — the languages every translation provider supports, Hy-MT2 included.</td>
+</tr>
+<tr>
+<td><strong>Translation</strong></td>
+<td>Google Cloud Translation</td>
+<td>Same target picker as above; provider/model support is validated by Google.</td>
+</tr>
+<tr>
+<td><strong>Translation</strong></td>
+<td>OpenAI, Claude, Gemini, DeepSeek</td>
+<td>Same target picker as above; multilingual capability depends on the selected model.</td>
+</tr>
+<tr>
+<td><strong>Translation</strong></td>
+<td>Hy-MT2 1.8B / 7B (local)</td>
+<td>Same target picker as above; every listed language is supported by the pinned models.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>ElevenLabs</td>
+<td>Depends on the model. <strong>Flash v2.5</strong>: Arabic, Bulgarian, Chinese, Croatian, Czech, Danish, Dutch, English, Filipino, Finnish, French, German, Greek, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Malay, Norwegian, Polish, Portuguese, Romanian, Russian, Slovak, Spanish, Swedish, Tamil, Turkish, Ukrainian, Vietnamese. <strong>Multilingual v2</strong>: the same without Hungarian, Norwegian and Vietnamese. <strong>Eleven v3</strong>: 70+ languages, adding among others Bengali, Gujarati, Hebrew, Kazakh, Marathi, Persian, Swahili, Telugu, Thai and Urdu.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>InWorld</td>
+<td><strong>Dynamic catalog</strong> — languages are read from the voices returned for your account.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Gemini (AI Studio key)</td>
+<td>About 75 languages, detected from the text — including Arabic, Chinese, Dutch, English, French, German, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Turkish, Ukrainian and Vietnamese. Every voice speaks every language.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>OpenAI (gpt-4o-mini-tts, tts-1, tts-1-hd)</td>
+<td>About 55 languages, detected from the text — the Whisper languages, including Arabic, Chinese, Dutch, English, French, German, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Turkish, Ukrainian and Vietnamese. Voices are tuned for English but speak every language.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Google Cloud TTS</td>
+<td><strong>Dynamic catalog</strong> — languages are read from Google voices, including compatible Gemini voices.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Azure AI Speech</td>
+<td><strong>Dynamic catalog</strong> — languages are read from Azure neural voices for the configured region.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Kokoro (local)</td>
+<td>English (US and UK voices).</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Chatterbox Multilingual (local)</td>
+<td>Arabic, Chinese, Danish, Dutch, English, Finnish, French, German, Greek, Hindi, Italian, Korean, Malay, Norwegian, Polish, Portuguese, Russian, Spanish, Swahili, Swedish, Turkish; Japanese after installing the optional Japanese support.</td>
+</tr>
+<tr>
+<td><strong>Alignment</strong></td>
+<td>Qwen3-ForcedAligner-0.6B Q4 ONNX (local)</td>
+<td>Cantonese, Chinese, English, French, German, Italian, Japanese, Korean, Portuguese, Russian, Spanish.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Provider language/model catalogs can evolve independently of SubVox Pro. Refresh the model or voice
+catalog in the editor when a provider adds support; for Qwen, Kokoro and Chatterbox, the fixed lists above match
+the pinned local models.</p>
+</blockquote>
+<h3 id="chatterbox-accuracy-by-language">Chatterbox: accuracy by language</h3>
+<p>How reliably the offline <strong>Chatterbox</strong> engine says the right words, measured on 30 dubs per language (15 game-style
+lines, two voices each). Every dub was transcribed back by eight speech-to-text engines, and the table keeps the
+middle result for each line, so one engine mishearing does not count against Chatterbox. The lines are in
+<a href="Documentation/ChatterboxAccuracyCorpus.csv"><code>Documentation/ChatterboxAccuracyCorpus.csv</code></a> (all 22 languages) if
+you want to repeat the test with your own voices.</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Wrong characters</th>
+<th>Rating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portuguese</td>
+<td>0.1 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Italian</td>
+<td>0.2 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Spanish</td>
+<td>0.4 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Hindi</td>
+<td>0.4 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>English</td>
+<td>0.5 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>German</td>
+<td>0.5 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Malay</td>
+<td>0.7 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Russian</td>
+<td>0.8 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Dutch</td>
+<td>1.0 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Finnish</td>
+<td>1.2 %</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Greek</td>
+<td>1.2 %</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Arabic</td>
+<td>1.4 %</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Swedish</td>
+<td>1.6 %</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>French</td>
+<td>1.9 %</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Japanese</td>
+<td>2.1 %</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Chinese</td>
+<td>2.4 %</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>3.8 %</td>
+<td>Review the dubs</td>
+</tr>
+<tr>
+<td>Polish</td>
+<td>4.1 %</td>
+<td>Review the dubs</td>
+</tr>
+<tr>
+<td>Norwegian</td>
+<td>4.8 %</td>
+<td>Review the dubs</td>
+</tr>
+<tr>
+<td>Korean</td>
+<td>5.2 %</td>
+<td>Review the dubs</td>
+</tr>
+<tr>
+<td>Swahili</td>
+<td>5.8 %</td>
+<td>Review the dubs</td>
+</tr>
+<tr>
+<td>Turkish</td>
+<td>8.1 %</td>
+<td>Review the dubs</td>
+</tr>
+</tbody>
+</table>
+<p>Generation is sampled, so two runs of the same line differ slightly; the lower the figure, the rarer a mistake.
+Most mistakes are a first word said wrongly or skipped. In the languages marked <strong>Review the dubs</strong>, up to one line in
+fifteen came out garbled (a sentence in another language, or words that do not exist): listen to the dubs and
+regenerate a bad line with its <strong>REGEN</strong> chip.</p>
+<hr>
+<h2 id="best-practices">Best Practices</h2>
+<p>API keys are passwords for online services. Treat them as secrets, even when you are only testing.</p>
+<ul>
+<li><strong>Create one key per tool or project.</strong> A dedicated <code>SubVoxPro</code> key is easier to revoke later
+without breaking other tools.</li>
+<li><strong>Never paste API keys into source files, scenes, prefabs, support messages, Discord, GitHub issues
+or commits.</strong> SubVox Pro stores keys in Unity <code>EditorPrefs</code>, on
+your machine only, so they do not become part of the Unity project.</li>
+<li><strong>Copy keys immediately when the provider says they are shown once.</strong> Store them in a password
+manager if you need to keep a backup. If you lose a key, revoke it and create a new one.</li>
+<li><strong>Use the smallest permissions available.</strong> If a provider lets you restrict a key, only enable the
+features SubVox Pro needs: speech-to-text for transcription providers, translation for translation
+providers, and TTS only for dubbing.</li>
+<li><strong>Pick an expiration that matches your workflow.</strong> Short-lived keys are safer for tests and demos;
+longer-lived keys are more convenient for ongoing production work. Some providers also allow keys
+that never expire.</li>
+<li><strong>Set budgets, usage limits or billing alerts when the provider supports them.</strong> This protects you
+from accidental loops, repeated imports, or a teammate using the wrong key.</li>
+<li><strong>Rotate keys when they may have leaked.</strong> If a key appears in a screenshot, commit, chat message or
+build artifact, revoke it in the provider dashboard and paste the new one into SubVox Pro.</li>
+<li><strong>Do not share one personal key across a team.</strong> Each teammate should use their own provider account
+or a team-managed key, depending on how the provider handles billing and access.</li>
+<li><strong>Clear unused keys from SubVox Pro.</strong> Use the <strong>Clear API Keys</strong> button in
+<strong>Tools ▸ SubVox Pro ▸ Settings</strong> when you finish testing on a shared machine.</li>
+</ul>
+<hr>
+<h2 id="which-provider-do-i-need">Which provider do I need?</h2>
+<table>
+<thead>
+<tr>
+<th>Feature in SubVox Pro</th>
+<th>Providers you can use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transcription</strong> (audio → timed subtitles)</td>
+<td>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, OpenAI — or <strong>Whisper (local)</strong> and <strong>Parakeet (local)</strong> (fully offline, no key, Windows only — see <a href="index.html#whisper-offline-transcription">Documentation.md</a>)</td>
+</tr>
+<tr>
+<td><strong>Translation</strong> (subtitles → other languages)</td>
+<td>DeepL, Google Cloud Translation, OpenAI, Anthropic (Claude), Google (Gemini), DeepSeek — or <strong>Hy-MT2 (local)</strong> (bundled llama.cpp engine, fully offline, no key, Windows only — see <a href="index.html#hy-mt2-offline-translation">Documentation.md</a>)</td>
+</tr>
+<tr>
+<td><strong>Dubbing / Text-to-Speech</strong></td>
+<td>ElevenLabs, InWorld AI, Gemini (same AI Studio key as Gemini translation), OpenAI (same key as OpenAI translation), Google Cloud Text-to-Speech, Azure AI Speech — or <strong>Kokoro</strong> (local, English) and <strong>Chatterbox</strong> (local, 21 languages + optional Japanese, voice cloning)</td>
+</tr>
+<tr>
+<td><strong>Forced alignment</strong> (exact dub word timings, text preserved)</td>
+<td><strong>Qwen3-ForcedAligner-0.6B Q4 ONNX</strong> (fully offline, no key, no Python/PyTorch, Windows only)</td>
+</tr>
+<tr>
+<td><strong>Human translation round-trip</strong></td>
+<td>Google Sheets (OAuth — see <a href="index.html">Documentation.md</a>)</td>
+</tr>
+</tbody>
+</table>
+<p>In the editor, <strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> shows every provider side by side: what it supports in
+SubVox Pro, its price, its free plan and whether that plan allows commercial use.</p>
+<p>You only need a key for the providers you actually use. For a no-cost, no-account start, use the
+offline <strong>Whisper</strong> or <strong>Parakeet</strong> transcription and the offline <strong>Hy-MT2 (local)</strong> translator (or a free-tier one such as
+<strong>Gemini</strong> or <strong>DeepL</strong>), then
+dub with the offline <strong>Kokoro</strong> or <strong>Chatterbox</strong> engines, or with <strong>Gemini</strong>'s free tier.</p>
+<hr>
+<h2 id="free-tier-cheat-sheet">Free-tier cheat sheet</h2>
+<p>SubVox Pro works the same way with a free or a paid account: the same key, the same requests. A free plan
+only changes how much you can generate — and, for some providers, what you may do with the result.</p>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Free allowance (verify!)</th>
+<th>Credit card required?</th>
+<th>Commercial use on the free plan?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AssemblyAI</td>
+<td>~$50 one-time credit (~330 h)</td>
+<td>No</td>
+<td>Yes. Your data may be used to train their models unless you opt out.</td>
+</tr>
+<tr>
+<td>Gladia</td>
+<td>10 h / month</td>
+<td>No</td>
+<td>Yes. Audio sent on the free plan may be used to train their models.</td>
+</tr>
+<tr>
+<td>Deepgram</td>
+<td>$200 one-time credit</td>
+<td>No</td>
+<td>Yes, including production use.</td>
+</tr>
+<tr>
+<td>Speechmatics</td>
+<td>$100 one-time credit</td>
+<td>No</td>
+<td>Yes. Transcripts may be used to improve their models.</td>
+</tr>
+<tr>
+<td>ElevenLabs</td>
+<td>~10 min / month for voice/transcription usage</td>
+<td>No</td>
+<td><strong>No</strong> — non-commercial only, and you must credit ElevenLabs. Paid plans start at about $5/month.</td>
+</tr>
+<tr>
+<td>Rev AI</td>
+<td>5 h one-time credit</td>
+<td>No</td>
+<td>Not stated — check Rev AI's terms.</td>
+</tr>
+<tr>
+<td>DeepL (Developer plan)</td>
+<td>One-time 1,000,000-character credit</td>
+<td>Card may be required to verify, not charged</td>
+<td>Yes, but DeepL may keep the texts sent on the free API.</td>
+</tr>
+<tr>
+<td>Google Cloud Translation</td>
+<td>500,000 chars / month + $300 trial credits</td>
+<td>Yes (billing account)</td>
+<td>Yes.</td>
+</tr>
+<tr>
+<td>Google Cloud Text-to-Speech</td>
+<td>1M chars/month (Neural2/WaveNet) + 4M (Standard); Gemini/Chirp billed via Vertex AI</td>
+<td>Yes (billing account)</td>
+<td>Yes.</td>
+</tr>
+<tr>
+<td>Azure AI Speech</td>
+<td>F0 free tier: ~0.5M chars/month neural TTS</td>
+<td>Card to verify, not charged on F0</td>
+<td><strong>No</strong> — Microsoft grants commercial rights to the audio only on a paid (S0) resource.</td>
+</tr>
+<tr>
+<td>OpenAI (STT + translation + TTS)</td>
+<td>Prepaid (min $5); occasional trial credits</td>
+<td>Yes</td>
+<td>Yes (no free plan as such). For TTS, OpenAI requires telling players the voices are AI-generated.</td>
+</tr>
+<tr>
+<td>Anthropic (Claude)</td>
+<td>~$5 trial in select regions</td>
+<td>Yes (prepaid credits)</td>
+<td>Yes (no free plan as such).</td>
+</tr>
+<tr>
+<td>Google Gemini (translation + TTS)</td>
+<td>Free tier, rate-limited, <strong>no billing needed</strong></td>
+<td>No</td>
+<td>Yes. Google may use free-tier prompts to improve its products.</td>
+</tr>
+<tr>
+<td>InWorld</td>
+<td>One-time ~70 min of TTS</td>
+<td>No to start</td>
+<td>Yes — the free plan includes a commercial license.</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td>No standing free tier; low pay-as-you-go prices</td>
+<td>Yes (prepaid top-up)</td>
+<td>Yes (prepaid only).</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Commercial use</strong> means shipping what the provider generated — subtitles, translations or dubbed audio —
+in a game or product you sell. A game dubbed with <strong>ElevenLabs</strong> or <strong>Azure</strong> voices needs their paid plan.
+This column summarizes each provider's terms as of September 2026; it is not legal advice, and the
+provider's current terms always prevail. The offline engines (Whisper, Parakeet, Hy-MT2, Kokoro, Chatterbox, Qwen3) are
+free for commercial use (crediting NVIDIA for Parakeet is good practice) — see <a href="notices.html">Third-Party Notices.md</a>.</p>
+</blockquote>
+<hr>
+<h2 id="where-to-paste-your-key-in-subvox-pro">Where to paste your key in SubVox Pro</h2>
+<p>Once you have a key from any provider below, SubVox Pro gives you two equivalent places to store it.
+Keys live only on this machine, in the Unity Editor preferences (<code>EditorPrefs</code>) — never inside the project.</p>
+<p>Open <strong>Tools ▸ SubVox Pro ▸ Settings</strong> for a single panel that lists every provider. Paste each key into
+its row (the field masks the value), and use the type badges — <strong>STT</strong> (transcription), <strong>TR</strong> (translation),
+<strong>TTS</strong> (dubbing) — to find the right one. <strong>Clear API Keys</strong> wipes them all from this machine.</p>
+<img src="Documentation/Images/subvoxpro-settings-api-keys.png" alt="SubVox Pro Settings window listing the API key field for every provider" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p>You can also paste a key straight from a provider's panel inside the <strong>SubVox Pro</strong> window. Enter the key,
+press <strong>Save</strong>, and an <strong>API Ready</strong> badge confirms it was accepted (<strong>Clear</strong> removes it).</p>
+<img src="Documentation/Images/subvoxpro-provider-api-ready.png" alt="A provider panel inside the SubVox Pro window showing the API key field, Save/Clear buttons and the API Ready badge" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<hr>
+<h1 id="transcription-providers">Transcription providers</h1>
+<details id="assemblyai">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>AssemblyAI</strong></summary>
+<p><strong>Used for:</strong> speech-to-text with word-level timing.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Go to <strong><a href="https://www.assemblyai.com/dashboard/signup">https://www.assemblyai.com/dashboard/signup</a></strong> and create an account (email or SSO). No credit card is required; new accounts get roughly <strong>$50 in free credits</strong> (~330 hours).</p>
+<img src="Documentation/Images/assemblyai-signup.png" alt="AssemblyAI sign-up page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> After verifying your email, open <strong>Manage ▸ API Keys</strong> in the left sidebar.</p>
+<img src="Documentation/Images/assemblyai-api-keys-sidebar.png" alt="AssemblyAI API Keys entry in the sidebar" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> AssemblyAI creates a <strong>Default API Key</strong> for the project. You can copy that key, or click <strong>Create new API key</strong> if you want a dedicated key for SubVox Pro.</p>
+<img src="Documentation/Images/assemblyai-api-keys-page.png" alt="AssemblyAI API Keys page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> If you create a new key, give it a recognizable name such as <code>SubVoxPro</code> or your project name, then click <strong>Create</strong>.</p>
+<img src="Documentation/Images/assemblyai-create-api-key-dialog.png" alt="AssemblyAI create API key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Copy the API key from the key row.</p>
+<img src="Documentation/Images/assemblyai-api-key-row.png" alt="AssemblyAI API key row" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Paste it into SubVox Pro (Settings ▸ <em>AssemblyAI</em>).</p>
+<blockquote>
+<p>Free accounts are capped at 2 projects / 2 API keys, which is plenty for SubVox Pro.
+Help article: <a href="https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key">https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key</a></p>
+</blockquote>
+</details>
+<details id="gladia">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>Gladia</strong></summary>
+<p><strong>Used for:</strong> speech-to-text.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Sign up at <strong><a href="https://app.gladia.io">https://app.gladia.io</a></strong> (email or Google).</p>
+<img src="Documentation/Images/gladia-signup.png" alt="Gladia sign-up page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Once logged in, open <strong>API Keys</strong> in the left sidebar. This is where Gladia lists every key attached to your account.</p>
+<img src="Documentation/Images/gladia-api-keys-sidebar.png" alt="Gladia API Keys entry in the sidebar" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> If you want a dedicated key for SubVox Pro, use the creation form and give it a recognizable name
+such as <code>SubVoxPro</code> or your project name.</p>
+<img src="Documentation/Images/gladia-create-api-key.png" alt="Gladia create API key form" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p>After creation, copy the key from the list. Gladia may shorten the displayed value later, so <u>copy it
+immediately while you still have access to the full token</u>.</p>
+<img src="Documentation/Images/gladia-example-key.png" alt="Gladia API key row" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Paste it into SubVox Pro (Settings ▸ <em>Gladia</em>).</p>
+<blockquote>
+<p>Free tier: <strong>10 hours of transcription per month</strong> (max 20 calls/hour, 3 concurrent).
+Help: <a href="https://support.gladia.io/article/how-to-get-the-api-key-from-my-account">https://support.gladia.io/article/how-to-get-the-api-key-from-my-account</a></p>
+</blockquote>
+</details>
+<details id="deepgram">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>Deepgram</strong></summary>
+<p><strong>Used for:</strong> speech-to-text.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Create an account at <strong><a href="https://console.deepgram.com/signup">https://console.deepgram.com/signup</a></strong> — no credit card, and you receive <strong>$200 in free credits</strong> (they expire one year after signup).</p>
+<img src="Documentation/Images/deepgram-signup.png" alt="Deepgram Console sign-up page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> In the Console, open <strong>API Keys</strong> from the left sidebar.</p>
+<img src="Documentation/Images/deepgram-api-keys-sidebar.png" alt="Deepgram API Keys entry in the sidebar" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Click <strong>Create a New API Key</strong>.</p>
+<img src="Documentation/Images/deepgram-create-api-key-button.png" alt="Deepgram create API key button" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Give the key a recognizable name. For <strong>Set expiration</strong>, choose whichever duration fits your workflow; SubVox Pro does not require a specific key duration.</p>
+<img src="Documentation/Images/deepgram-create-api-key-dialog.png" alt="Deepgram create API key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Copy the generated secret and save it somewhere safe. <u>Deepgram cannot show this secret to you again</u>.</p>
+<img src="Documentation/Images/deepgram-new-api-key-secret.png" alt="Deepgram generated API key secret" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Paste it into SubVox Pro (Settings ▸ <em>Deepgram</em>).</p>
+</details>
+<details id="speechmatics">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>Speechmatics</strong></summary>
+<p><strong>Used for:</strong> speech-to-text.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Go to the <strong>Speechmatics Portal</strong> at <strong><a href="https://portal.speechmatics.com">https://portal.speechmatics.com</a></strong> and create an account. The free plan gives a one-time <strong>$100 credit</strong>, with no card required.</p>
+<img src="Documentation/Images/speechmatics-signup.png" alt="Speechmatics Portal sign-up page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> In the project sidebar, open <strong>Manage ▸ API Keys</strong>.</p>
+<img src="Documentation/Images/speechmatics-api-keys-sidebar.png" alt="Speechmatics API Keys entry in the sidebar" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Click <strong>Create new key</strong>.</p>
+<img src="Documentation/Images/speechmatics-create-key-empty.png" alt="Speechmatics create new key button" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Give the key a recognizable name, then click <strong>Generate new key</strong>.</p>
+<img src="Documentation/Images/speechmatics-create-api-key-form.png" alt="Speechmatics create API key form" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Copy the key before closing the dialog. <u>For security reasons, Speechmatics will not display it again</u>.</p>
+<img src="Documentation/Images/speechmatics-save-api-key.png" alt="Speechmatics save API key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Paste it into SubVox Pro (Settings ▸ <em>Speechmatics</em>).</p>
+<blockquote>
+<p>Docs: <a href="https://docs.speechmatics.com/get-started/authentication">https://docs.speechmatics.com/get-started/authentication</a></p>
+</blockquote>
+</details>
+<details id="elevenlabs">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>ElevenLabs</strong></summary>
+<p><strong>Used for:</strong> speech-to-text (ElevenLabs Scribe) and text-to-speech dubbing.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Sign up at <strong><a href="https://elevenlabs.io">https://elevenlabs.io</a></strong> (email or SSO). No credit card needed; the free tier includes a
+small monthly allowance (~10 minutes). The free plan is <strong>non-commercial</strong> and requires crediting ElevenLabs:
+dubbing a game you publish needs a paid plan.</p>
+<img src="Documentation/Images/elevenlabs-signup.png" alt="ElevenLabs sign-up page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Once logged in, open <strong>Developers</strong> from the left sidebar. This is where ElevenLabs groups API access,
+logs, webhooks and environment variables.</p>
+<img src="Documentation/Images/elevenlabs-developers-sidebar.png" alt="ElevenLabs Developers entry in the sidebar" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> In the Developers page, select the <strong>API Keys</strong> tab and click <strong>Create Key</strong>.</p>
+<img src="Documentation/Images/elevenlabs-api-keys-tab.png" alt="ElevenLabs API Keys tab" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Give the key a recognizable name. If you enable <strong>Restrict Key</strong>, make sure <strong>Speech to Text</strong> and <strong>Text to Speech</strong> are both set to <strong>Access</strong>. SubVox Pro uses Scribe for transcription and the Text-to-Speech API when generating dubbed audio.</p>
+<img src="Documentation/Images/elevenlabs-create-api-key-dialog.png" alt="ElevenLabs create API key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<img src="Documentation/Images/elevenlabs-speech-to-text-access.png" alt="ElevenLabs Speech to Text access permission" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<img src="Documentation/Images/elevenlabs-text-to-speech-access.png" alt="ElevenLabs Text to Speech access permission" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Copy the generated API key before closing the dialog. <u>ElevenLabs only shows the full value once</u>.</p>
+<img src="Documentation/Images/elevenlabs-api-key-created.png" alt="ElevenLabs generated API key" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Paste it into SubVox Pro (Settings ▸ <em>ElevenLabs</em>). The same token is used for ElevenLabs transcription and ElevenLabs TTS dubbing.</p>
+<blockquote>
+<p>API reference: the Text-to-Speech endpoint uses the <code>xi-api-key</code> header and converts text through
+<code>POST /v1/text-to-speech/:voice_id</code>: <a href="https://elevenlabs.io/docs/api-reference/text-to-speech/convert">https://elevenlabs.io/docs/api-reference/text-to-speech/convert</a></p>
+</blockquote>
+</details>
+<details id="rev-ai">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>Rev AI</strong></summary>
+<p><strong>Used for:</strong> speech-to-text.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Sign up at <strong><a href="https://www.rev.ai/auth/signup">https://www.rev.ai/auth/signup</a></strong>. No credit card; you get <strong>5 hours of free credits</strong>.</p>
+<img src="Documentation/Images/revai-signup.png" alt="Rev AI sign-up page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Go to the <strong>Access Token</strong> page (<strong><a href="https://www.rev.ai/access_token">https://www.rev.ai/access_token</a></strong>). You can also reach it from
+the left navigation under <strong>Access Token</strong>.</p>
+<img src="Documentation/Images/revai-access-token-sidebar.png" alt="Rev AI Access Token entry in the sidebar" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> If no token exists yet, click <strong>Generate</strong> on the Access Token page. Rev AI allows a maximum of two
+active tokens at a time.</p>
+<img src="Documentation/Images/revai-access-token-empty.png" alt="Rev AI Access Token page before generation" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Copy the generated token immediately. <u>Rev AI only shows the full value once</u>; after that, the list keeps
+only a shortened preview and the creation date.</p>
+<img src="Documentation/Images/revai-access-token-created.png" alt="Rev AI generated access token" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Paste it into SubVox Pro (Settings ▸ <em>Rev AI</em>).</p>
+</details>
+<hr>
+<h1 id="translation-providers">Translation providers</h1>
+<details id="deepl">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>DeepL</strong></summary>
+<p><strong>Used for:</strong> high-quality machine translation (supports formality).</p>
+<ol>
+<li>Sign up for the API at <strong><a href="https://www.deepl.com/pro-api">https://www.deepl.com/pro-api</a></strong>. In the <strong>Developer</strong> plan card, choose
+<strong>Sign up for free</strong>. DeepL asks you to verify your email, then to complete a payment-card
+verification. The card check is used to validate the account, but the Developer plan is not charged.
+The free Developer plan includes a <strong>one-time credit of 1,000,000 characters</strong>.
+<img src="Documentation/Images/deepl-pricing.png" alt="DeepL API pricing — free Developer plan" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Open <strong><a href="https://www.deepl.com/your-account/keys">https://www.deepl.com/your-account/keys</a></strong> (Account ▸ <strong>API Keys</strong>) and copy your
+<strong>Authentication Key</strong>.
+<img src="Documentation/Images/deepl-api-keys.png" alt="DeepL API Keys page showing the authentication key" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Paste it into SubVox Pro (Settings ▸ <em>DeepL</em>). SubVox Pro handles the Free vs Pro endpoint
+automatically.</li>
+</ol>
+<blockquote>
+<p>Help: <a href="https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API">https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API</a></p>
+</blockquote>
+</details>
+<details id="google-cloud-translation">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>Google Cloud Translation</strong></summary>
+<p><strong>Used for:</strong> machine translation.</p>
+<ol>
+<li>Open the <strong>Google Cloud Console</strong> at <strong><a href="https://console.cloud.google.com">https://console.cloud.google.com</a></strong> and create (or pick) a
+project. New Google Cloud accounts get <strong>$300 in trial credits (90 days)</strong>, and Cloud Translation
+includes <strong>500,000 free characters/month</strong>. A billing account is required even on the free tier.</li>
+<li>In <strong>APIs &amp; Services ▸ Library</strong>, search <strong>Cloud Translation API</strong> and click <strong>Enable</strong>.</li>
+<li>In <strong>APIs &amp; Services ▸ Credentials</strong>, click <strong>Create credentials ▸ API key</strong>. Copy the key (and
+optionally restrict it to the Cloud Translation API).</li>
+<li>Paste it into SubVox Pro (Settings ▸ <em>Google Translate</em>).</li>
+</ol>
+<blockquote>
+<p>Tip: set a quota/budget alert to avoid surprises once the trial credits run out.</p>
+</blockquote>
+</details>
+<details id="openai">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>OpenAI</strong></summary>
+<p><strong>Used for:</strong> speech-to-text, LLM translation (and word-style propagation across languages) and
+text-to-speech dubbing. One key covers all three.</p>
+<ol>
+<li>Create an account at <strong><a href="https://platform.openai.com">https://platform.openai.com</a></strong> or sign in with an existing OpenAI account.
+<img src="Documentation/Images/openai-platform-sign-in.png" alt="OpenAI API Platform sign-in page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>In your project sidebar, open <strong>API Keys</strong>.
+<img src="Documentation/Images/openai-api-keys-sidebar.png" alt="OpenAI project sidebar with API Keys selected" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Click <strong>Create new secret key</strong>.
+<img src="Documentation/Images/openai-api-keys-page.png" alt="OpenAI API Keys page with Create new secret key button" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Name the key if you want, keep the correct project selected, choose the permissions you need, then
+click <strong>Create secret key</strong>.
+<img src="Documentation/Images/openai-create-secret-key-dialog.png" alt="OpenAI create new secret key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Copy the key immediately. <u>OpenAI shows the full secret only once; after closing this dialog, you
+cannot reveal it again.</u>
+<img src="Documentation/Images/openai-secret-key-created.png" alt="OpenAI generated secret key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Add prepaid credits from <strong><a href="https://platform.openai.com/settings/organization/billing/overview">https://platform.openai.com/settings/organization/billing/overview</a></strong>.
+You can also open the account menu, go to <strong>Organization settings</strong> or <strong>Profile settings</strong>, then
+choose <strong>Billing</strong> in the settings sidebar.<div style="display: flex; gap: 12px; align-items: flex-start; margin: 10px 0 18px;">
+   <img src="Documentation/Images/openai-account-menu.png" alt="OpenAI account menu with Organization settings and Profile settings entries" style="display: block; width: 220px; max-width: 48%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10);">
+   <img src="Documentation/Images/openai-billing-sidebar.png" alt="OpenAI organization sidebar with Billing selected" style="display: block; width: 220px; max-width: 48%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10);">
+</div>
+</li>
+<li>On the <strong>Billing</strong> overview, click <strong>Add to credit balance</strong>. API calls draw from this balance.
+<img src="Documentation/Images/openai-billing-overview.png" alt="OpenAI Billing overview with credit balance and Add to credit balance button" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Enter the amount to add, choose or add a payment method, then click <strong>Continue</strong>. The minimum top-up
+shown in the platform is usually <strong>$5</strong>.
+<img src="Documentation/Images/openai-add-credit-balance.png" alt="OpenAI Add to credit balance dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Paste the secret key into SubVox Pro (Settings ▸ <em>OpenAI</em>). Pick the model in the translation panel.
+For dubbing, pick <strong>OpenAI</strong> as the provider in the <strong>Text-to-Speech</strong> tab, then the model:
+<strong>gpt-4o-mini-tts</strong> (13 voices, follows the voice direction), <strong>tts-1</strong> (fast) or <strong>tts-1-hd</strong> (higher
+quality) — the last two offer 9 voices and ignore the voice direction.
+For transcription, pick <strong>OpenAI</strong> in the <strong>Speech-to-Text</strong> tab, then the model.</li>
+</ol>
+<blockquote>
+<p><strong>Transcription models — read this before picking one.</strong></p>
+<ul>
+<li><strong><code>gpt-transcribe</code></strong> (default), <strong><code>gpt-4o-transcribe</code></strong>, <strong><code>gpt-4o-mini-transcribe</code></strong>: the best transcript
+(spelling, punctuation), but the OpenAI API returns <strong>no word timestamps</strong> for this family. SubVox Pro
+spreads the words over the sentence segments when there are any, over the whole clip otherwise, like
+importing a <code>.txt</code>: the lines are right, their timings are an estimate to nudge on the timeline.</li>
+<li><strong><code>whisper-1</code></strong>: real word-level timings. Its words come back without punctuation, so SubVox Pro
+re-applies the punctuated transcript over the timed words.</li>
+<li>The other providers (AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, local Whisper and Parakeet)
+return punctuated word timings directly: prefer them when timing matters.</li>
+</ul>
+<p>The transcription endpoint caps uploads at <strong>25 MB</strong>.</p>
+</blockquote>
+<blockquote>
+<p>OpenAI's usage policies require you to tell your players that the voices they hear are AI-generated and
+not human — for example in the game's credits or store page. TTS pricing: <a href="https://openai.com/api/pricing">https://openai.com/api/pricing</a></p>
+</blockquote>
+</details>
+<details id="anthropic-claude">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>Anthropic (Claude)</strong></summary>
+<p><strong>Used for:</strong> LLM translation (and word-style propagation).</p>
+<ol>
+<li>Create an account at <strong><a href="https://console.anthropic.com">https://console.anthropic.com</a></strong> or sign in with an existing Anthropic account.
+<img src="Documentation/Images/anthropic-console-sign-in.png" alt="Anthropic Console sign-in page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Buy usage credits before using the API. Anthropic is prepaid; without credits, API requests fail.
+The console offers a low starting amount, usually <strong>5 USD</strong>.
+<img src="Documentation/Images/anthropic-buy-credits.png" alt="Anthropic Console buy usage credits page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>In the Claude Console sidebar, open <strong>API keys</strong>.
+<img src="Documentation/Images/anthropic-api-keys-sidebar.png" alt="Claude Console sidebar with API keys selected" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Click <strong>Create key</strong>.
+<img src="Documentation/Images/anthropic-api-keys-page.png" alt="Claude Console API keys page with create key button" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Choose the workspace, name the key if you want, then click <strong>Add</strong>.
+<img src="Documentation/Images/anthropic-create-api-key-dialog.png" alt="Claude Console create an API key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Copy the generated key immediately. <u>Anthropic says you will no longer be able to consult the
+full key after this screen.</u>
+<img src="Documentation/Images/anthropic-api-key-created.png" alt="Claude Console generated API key screen" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Paste it into SubVox Pro (Settings ▸ <em>Claude</em>).</li>
+</ol>
+</details>
+<details id="google-gemini">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>Google (Gemini)</strong></summary>
+<p><strong>Used for:</strong> LLM translation and text-to-speech dubbing (Gemini voices) — the easiest free option (no
+billing required). One key covers both.</p>
+<ol>
+<li>Go to <strong>Google AI Studio</strong> at <strong><a href="https://aistudio.google.com">https://aistudio.google.com</a></strong> and sign in with a Google account.
+<img src="Documentation/Images/gemini-ai-studio-home.png" alt="Google AI Studio home page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Open <strong>API keys</strong> directly at <strong><a href="https://aistudio.google.com/app/apikey">https://aistudio.google.com/app/apikey</a></strong>, then click
+<strong>Create an API key</strong>.
+<img src="Documentation/Images/gemini-api-keys-page.png" alt="Google AI Studio API keys page with Create an API key button" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Name the key if you want, choose or create a project, then create the key.
+<img src="Documentation/Images/gemini-create-api-key-dialog.png" alt="Google AI Studio create API key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Copy the API key from the details panel.
+<img src="Documentation/Images/gemini-api-key-details.png" alt="Google AI Studio API key details panel" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>The key then appears in the API keys list, where you can copy, inspect usage or configure billing later.
+<img src="Documentation/Images/gemini-api-key-row.png" alt="Google AI Studio API key row" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Paste it into SubVox Pro (Settings ▸ <em>Gemini</em>). For dubbing, pick <strong>Gemini</strong> as the provider in the
+<strong>Text-to-Speech</strong> tab: it offers 30 multilingual voices (<em>Kore</em>, <em>Puck</em>, <em>Leda</em>…) and the voice
+direction button. Three models are available: <strong>gemini-3.1-flash-tts-preview</strong> (default, most natural),
+<strong>gemini-2.5-flash-preview-tts</strong> (half the price when billed) and <strong>gemini-2.5-pro-preview-tts</strong> (no free
+tier — it needs billing).</li>
+</ol>
+<blockquote>
+<p>The free tier needs <strong>no billing</strong> but is rate-limited; the limits of each model are shown in AI Studio
+(<strong>Rate limit</strong> page). Text-to-speech has the tightest ones — only a few requests per minute and per day.
+SubVox Pro waits and retries when Google says how long to wait, and stops with a clear message once the
+daily quota is used up. Enabling billing on the key's project lifts these limits; nothing else changes in
+SubVox Pro. On the free tier, Google may use your prompts to improve its products.</p>
+</blockquote>
+</details>
+<details id="deepseek">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>DeepSeek</strong></summary>
+<p><strong>Used for:</strong> low-cost LLM translation (OpenAI-compatible API).</p>
+<ol>
+<li>Create an account at <strong><a href="https://platform.deepseek.com">https://platform.deepseek.com</a></strong> or sign in with an existing DeepSeek account.</li>
+<li>DeepSeek is prepaid: open <strong>Top up</strong> in the platform and add a balance before using the API. Without
+credit, API requests fail.</li>
+<li>Open <strong>API keys</strong> (<strong><a href="https://platform.deepseek.com/api_keys">https://platform.deepseek.com/api_keys</a></strong>) and click <strong>Create new API key</strong>. Give it a
+recognizable name such as <code>SubVoxPro</code>, then copy the key immediately — the full key is shown only once.</li>
+<li>Paste it into SubVox Pro (Settings ▸ <em>DeepSeek</em>). Pick the model in the translation panel.</li>
+</ol>
+<blockquote>
+<p>Pricing: <a href="https://api-docs.deepseek.com/quick_start/pricing">https://api-docs.deepseek.com/quick_start/pricing</a></p>
+</blockquote>
+</details>
+<hr>
+<h1 id="dubbing--text-to-speech">Dubbing / Text-to-Speech</h1>
+<p>ElevenLabs TTS uses the same <strong>ElevenLabs</strong> key documented above. If your key is restricted, it must include <strong>Text to Speech: Access</strong>. To use the <strong>ElevenLabs voice cloning</strong> options (Instant Voice Cloning, paid ElevenLabs plan), the key also needs the <strong>Voices</strong> permission with write access, so SubVox Pro can create, find and delete its clones. <strong>Gemini</strong> TTS uses the same <strong>Gemini</strong> key as
+translation (see <a href="#google-gemini">Google (Gemini)</a>): no OAuth and no billing account, unlike the Gemini voices of
+Google Cloud Text-to-Speech below. <strong>OpenAI</strong> TTS uses the same <strong>OpenAI</strong> key as translation (see
+<a href="#openai">OpenAI</a>). The dedicated InWorld setup is below.</p>
+<details id="inworld-ai">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>InWorld AI</strong></summary>
+<p><strong>Used for:</strong> generating dubbed audio (TTS) for a translated track.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Go to <strong>Inworld Studio</strong> (<strong><a href="https://studio.inworld.ai">https://studio.inworld.ai</a></strong>) and create an account.</p>
+<img src="Documentation/Images/inworld-signup.png" alt="Inworld Portal log in / sign up page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> In your workspace, open <strong>API Keys</strong> from the left sidebar.</p>
+<img src="Documentation/Images/inworld-api-keys-sidebar.png" alt="Inworld API Keys entry in the sidebar" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Click <strong>Generate new key</strong>.</p>
+<img src="Documentation/Images/inworld-api-keys-page.png" alt="Inworld API Keys page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Give the key a recognizable display name. Use <strong>Standard</strong> unless you specifically need a realtime-only key, and keep the permissions required for your Inworld TTS workflow.</p>
+<img src="Documentation/Images/inworld-generate-api-key-dialog.png" alt="Inworld generate API key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Copy the <strong>Basic (Base64)</strong> key value.</p>
+<img src="Documentation/Images/inworld-api-key-basic-value.png" alt="Inworld Basic Base64 API key value" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p>The key also appears in the API Keys list, where you can copy it again later if needed.</p>
+<img src="Documentation/Images/inworld-api-key-row.png" alt="Inworld API key row" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Paste it into SubVox Pro (Settings ▸ <em>InWorld</em>).</p>
+<blockquote>
+<p>The free plan is a one-time allowance of about 70 minutes of TTS and includes a commercial license.
+You can audition voices first in the <strong>TTS Playground</strong>. Getting-started docs:
+<a href="https://docs.inworld.ai/docs/tts-api/getting-started/">https://docs.inworld.ai/docs/tts-api/getting-started/</a></p>
+</blockquote>
+</details>
+<details id="google-cloud-tts">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>Google Cloud Text-to-Speech</strong></summary>
+<p><strong>Used for:</strong> generating dubbed audio (TTS) for a translated track. Two voice families share one
+connection: the <strong>classic</strong> voices (Standard, WaveNet, Neural2, Chirp/Chirp3-HD) on the Cloud
+Text-to-Speech API, and the <strong>Gemini</strong> voices (prebuilt names like <em>Leda</em>, <em>Achird</em>, <em>Aoede</em>) which are
+multilingual and accept a free-form <strong>style prompt</strong> — these run through the separate <strong>Vertex AI</strong> API.</p>
+<p>Unlike the other providers, Google Cloud TTS uses <strong>OAuth sign-in</strong>, not an API key. The reason: Gemini
+voices go through Vertex AI, which is IAM-gated (<code>aiplatform.endpoints.predict</code>); an API key carries no
+IAM permissions, but your signed-in Google account does (if it owns/edits the project). One sign-in
+covers both voice families.</p>
+<ol>
+<li>Open the <strong>Google Cloud Console</strong> at <strong><a href="https://console.cloud.google.com">https://console.cloud.google.com</a></strong> and create (or pick) a
+project. New accounts get <strong>$300 in trial credits (90 days)</strong>; a billing account is required even on
+the free tier.</li>
+<li>In <strong>APIs &amp; Services ▸ Library</strong>, enable <strong>Cloud Text-to-Speech API</strong> (classic voices) and — for the
+<strong>Gemini</strong> voices — <strong>Vertex AI API</strong> (<code>aiplatform.googleapis.com</code>, <em>not</em> the legacy &quot;AI Platform&quot;
+<code>ml.googleapis.com</code>). Skip Vertex AI if you only need classic voices.</li>
+<li><strong>APIs &amp; Services ▸ OAuth consent screen:</strong> set the <strong>User type / Audience</strong> to <strong>External</strong> (Internal
+blocks personal Gmail accounts with <code>403: org_internal</code>), and add your Google account under <strong>Test
+users</strong>.</li>
+<li><strong>APIs &amp; Services ▸ Credentials ▸ Create credentials ▸ OAuth client ID</strong>, application type <strong>Desktop
+app</strong>. Copy the <strong>Client ID</strong> and <strong>Client secret</strong>. (A <em>Desktop</em> client is required for the
+<code>http://127.0.0.1</code> loopback sign-in — same as the Google Sheets integration.)</li>
+<li>In SubVox Pro, open the <strong>Text-to-Speech</strong> tab, pick <strong>Google Cloud</strong>, paste the <strong>Client ID</strong> and
+<strong>Client secret</strong>, then click <strong>Connect…</strong> and sign in in the browser. On the <em>&quot;app not verified&quot;</em>
+warning (normal in Testing mode), choose <strong>Continue</strong>. (The billing/quota project is derived from the
+client id, so there is nothing else to enter.) Credentials and the refresh token stay on this machine
+(Editor preferences) — never in the project.</li>
+</ol>
+<p>Then pick a voice. Classic voices show as <code>Tier Leaf (locale)</code> (e.g. <em>Neural2 A (fr-FR)</em>); Gemini voices
+show as <code>Name · Gemini</code> and ignore the language filter (they speak every supported language). With a
+Gemini voice selected, the <strong>voice direction</strong> button (speech bubble, next to the voice picker) becomes
+active — type a tone like <em>&quot;really sad, close to mental breakdown&quot;</em> and it is sent as the Gemini style
+prompt for every line.</p>
+<blockquote>
+<p>Billing note: classic voices draw from the Cloud Text-to-Speech free monthly quota (≈1M characters for
+Neural2/WaveNet, 4M for Standard); <strong>Gemini and Chirp voices are billed through Vertex AI</strong> at a
+different rate. Set a budget alert. TTS pricing: <a href="https://cloud.google.com/text-to-speech/pricing">https://cloud.google.com/text-to-speech/pricing</a></p>
+</blockquote>
+</details>
+<details id="azure">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>Azure AI Speech</strong></summary>
+<p><strong>Used for:</strong> generating dubbed audio (TTS) for a translated track, with high-quality multilingual neural
+voices. Uses a <strong>subscription key + region</strong> (no OAuth).</p>
+<ol>
+<li><p>Create a <strong>Microsoft Azure</strong> account at <strong><a href="https://azure.microsoft.com/free">https://azure.microsoft.com/free</a></strong>. Azure asks for a
+credit card to verify identity, but the Speech <strong>free tier (F0)</strong> is a genuine free SKU (it caps usage
+instead of billing), so the card is not charged on F0.</p>
+</li>
+<li><p>In the <strong>Azure Portal</strong> (<a href="https://portal.azure.com">https://portal.azure.com</a>), click <strong>Create a resource</strong>, search <strong>Speech</strong>,
+and pick the tile titled <strong>Speech</strong> published by <strong>Microsoft</strong> (it has a <strong>Create</strong> button — <em>not</em> the
+third-party Marketplace offers, which say <em>Subscribe</em>). Click <strong>Create</strong>, then choose your subscription
+and resource group, a <strong>Region</strong> (remember it), a name, and <strong>Pricing tier F0 (free)</strong>. Click
+<strong>Review + create</strong>.</p>
+<blockquote>
+<p>Direct link to the right resource: <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices">https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices</a></p>
+</blockquote>
+</li>
+<li><p>When the deployment finishes, open the resource and go to <strong>Keys and Endpoint</strong>. Copy <strong>KEY 1</strong> and
+note the <strong>Location/Region</strong> (e.g. <code>westeurope</code>).</p>
+</li>
+<li><p>Paste the key into SubVox Pro (Settings ▸ <em>Azure Speech</em>). Then in the <strong>Text-to-Speech</strong> tab, pick
+<strong>Azure</strong> and select the <strong>same Region</strong> from the dropdown.</p>
+</li>
+</ol>
+<blockquote>
+<p>The key and the region must match the <strong>same</strong> Speech resource, or Azure rejects the request with a
+<code>401</code>. The region is the short identifier (<code>westeurope</code>, <code>eastus</code>…), picked from the dropdown — not the
+display name (&quot;West Europe&quot;).</p>
+</blockquote>
+<blockquote>
+<p>Free tier (F0): ~0.5M characters/month of neural TTS, for evaluation only — Microsoft grants commercial
+rights to the generated audio only on a paid (S0) resource. Switch the resource to S0 before dubbing a game
+you publish. Pricing: <a href="https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/">https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/</a></p>
+</blockquote>
+</details>
+<hr>
+<h2 id="after-pasting-a-key">After pasting a key</h2>
+<p>In the <strong>SubVox Pro</strong> window, each provider panel shows an <strong>API Ready</strong> badge once a valid key is
+detected. If a request fails, double-check: the key was copied in full, the account has remaining
+credits/quota, and your machine has network access. To wipe every stored key from this machine, use the
+<strong>Clear API Keys</strong> button in <strong>Tools ▸ SubVox Pro ▸ Settings</strong>.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          SubVox Pro — © 2026 ExNihilus
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

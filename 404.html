@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Page not found · SubVox Pro Documentation</title>
+  <script>
+    (async () => {
+      const base = "/subvoxpro-docs/";
+      const path = location.pathname.startsWith(base) ? location.pathname.slice(base.length) : location.pathname.replace(/^\//, "");
+      const catalog = await fetch(base + "versions.json").then(response => response.json()).catch(() => ({ versions: [] }));
+      const folder = path.split("/")[0];
+      if (path && folder !== "latest" && !catalog.versions.includes(folder)) {
+        location.replace(base + "latest/" + path + location.search + location.hash);
+      }
+    })();
+  </script>
+</head>
+<body style="font-family: system-ui, sans-serif; background: #0f1115; color: #ececef; padding: 3rem;">
+  <h1>Page not found</h1>
+  <p>This page does not exist in this version of the documentation. <a style="color: #ffd14d;" href="/subvoxpro-docs/latest/">Open the latest documentation</a>.</p>
+</body>
+</html>
