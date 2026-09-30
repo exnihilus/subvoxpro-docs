@@ -1,4 +1,4 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=4e05828df6";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=032ec60ff0";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
@@ -136,6 +136,7 @@ function firstSentence(element) {
 
 const ACCESS_FILTERS = [["all", "All"], ["public", "Public"], ["protected", "Protected"]];
 const PROTECTED_LABEL = "Protected — for subclasses";
+const PROTECTED_HINT = "Only reachable from a class that derives from this one.";
 
 function memberBlocks(section) {
   const blocks = [];
@@ -194,15 +195,27 @@ function buildMemberOverview(article) {
     const list = document.createElement("ul");
     const group = labelElement("div", "svx-overview-group", "");
     group.append(labelElement("div", "svx-overview-title", section.textContent.trim()), list);
-    const ordered = [...blocks.filter(block => block.access === "public"), ...blocks.filter(block => block.access === "protected")];
+    const publicBlocks = blocks.filter(block => block.access === "public");
+    const protectedBlocks = blocks.filter(block => block.access === "protected");
+    if (publicBlocks.length && protectedBlocks.length) {
+      list.append(labelElement("li", "svx-overview-access", "Public"));
+    }
+
     let insertAfter = section;
-    ordered.forEach((block, index) => {
-      if (block.access === "protected" && ordered[index - 1]?.access !== "protected") {
+    let zone = null;
+    let protectedList = null;
+    [...publicBlocks, ...protectedBlocks].forEach(block => {
+      if (block.access === "protected" && !zone) {
         hasProtected = true;
-        list.append(labelElement("li", "svx-overview-access", PROTECTED_LABEL));
-        const divider = labelElement("div", "svx-access-divider", PROTECTED_LABEL);
-        insertAfter.after(divider);
-        insertAfter = divider;
+        protectedList = labelElement("ul", "svx-overview-protected", "");
+        protectedList.append(labelElement("li", "svx-overview-access", PROTECTED_LABEL));
+        group.append(protectedList);
+        zone = labelElement("div", "svx-protected-zone", "");
+        zone.dataset.svxAccess = "protected";
+        const header = labelElement("div", "svx-protected-header", "");
+        header.append(labelElement("strong", "", PROTECTED_LABEL), labelElement("span", "", PROTECTED_HINT));
+        zone.append(header);
+        insertAfter.after(zone);
       }
 
       const badges = badgesOf(block.signature, block.name);
@@ -215,10 +228,14 @@ function buildMemberOverview(article) {
       const member = labelElement("div", "svx-member", "");
       member.dataset.svxAccess = block.access;
       member.append(...block.elements);
-      insertAfter.after(member);
-      insertAfter = member;
+      if (zone) {
+        zone.append(member);
+      } else {
+        insertAfter.after(member);
+        insertAfter = member;
+      }
 
-      list.append(overviewRow(block, badges));
+      (protectedList ?? list).append(overviewRow(block, badges));
     });
     overview.append(group);
   }
@@ -256,7 +273,10 @@ function applyAccessFilter(article, filter) {
   article.querySelectorAll("[data-svx-access]").forEach(element => {
     element.hidden = filter !== "all" && element.dataset.svxAccess !== filter;
   });
-  article.querySelectorAll(".svx-overview-access, .svx-access-divider").forEach(label => {
+  article.querySelectorAll(".svx-overview-protected").forEach(list => {
+    list.hidden = filter === "public";
+  });
+  article.querySelectorAll(".svx-overview-access").forEach(label => {
     label.hidden = filter !== "all";
   });
   article.querySelectorAll(".svx-overview-group").forEach(group => {
