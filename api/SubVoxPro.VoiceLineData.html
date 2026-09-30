@@ -706,6 +706,12 @@ unknown), then each translation.</p>
 
 
 
+  <h4 class="section" id="SubVoxPro_VoiceLineData_GetSubtitleLanguages_examples">Examples</h4>
+  <pre><code class="lang-csharp">foreach (string code in referenceLine.GetSubtitleLanguages())
+{
+    AddMenuEntry(string.IsNullOrEmpty(code) ? "Original" : code, () =&gt; SubVox.CurrentLanguage = code);
+}</code></pre>
+
 
 
 

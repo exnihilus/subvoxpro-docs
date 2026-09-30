@@ -122,6 +122,14 @@ Class VoiceLineBankData
 
 
 
+  <h2 id="SubVoxPro_VoiceLineBankData_examples">Examples</h2>
+  <pre><code class="lang-csharp">[SerializeField] private VoiceLineBankData _guardBarks = null;
+
+public void OnPlayerSpotted()
+{
+    _guardEmitter.Play(_guardBarks, EVoiceLinePriority.Low, EVoiceLinePlayMode.IfIdle);
+}</code></pre>
+
 
 
 

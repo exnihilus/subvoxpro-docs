@@ -115,6 +115,25 @@ Interface IVoiceLineAudioClock
 
 
 
+  <h2 id="SubVoxPro_IVoiceLineAudioClock_examples">Examples</h2>
+  <pre><code class="lang-csharp">public sealed class FmodVoiceClock : IVoiceLineAudioClock
+{
+    public FMOD.Studio.EventInstance Instance;
+
+    public float Time
+    {
+        get { Instance.getTimelinePosition(out int milliseconds); return milliseconds / 1000f; }
+    }
+
+    public bool IsPlaying
+    {
+        get { Instance.getPlaybackState(out FMOD.Studio.PLAYBACK_STATE state); return state != FMOD.Studio.PLAYBACK_STATE.STOPPED; }
+    }
+}
+
+emitter.PlayExternal(voiceLine, new FmodVoiceClock { Instance = instance });
+instance.start();</code></pre>
+
 
 
 

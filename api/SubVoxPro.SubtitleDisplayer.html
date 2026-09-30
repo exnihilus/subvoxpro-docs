@@ -262,6 +262,15 @@ Override it to change the text, for example to add a prefix or change its case.<
 
 
 
+  <h4 class="section" id="SubVoxPro_SubtitleDisplayer_ComposeText_SubVoxPro_SubtitleInfo__examples">Examples</h4>
+  <pre><code class="lang-csharp">public sealed class UppercaseSubtitleDisplayer : SubtitleDisplayer
+{
+    protected override string ComposeText(SubtitleInfo subtitle_info)
+    {
+        return base.ComposeText(subtitle_info).ToUpperInvariant();
+    }
+}</code></pre>
+
 
 
 

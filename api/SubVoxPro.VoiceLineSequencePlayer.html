@@ -124,6 +124,11 @@ it to be free. Exposes UnityEvents so scene logic can react without code, and th
 
 
 
+  <h2 id="SubVoxPro_VoiceLineSequencePlayer_examples">Examples</h2>
+  <pre><code class="lang-csharp">_player.StepStarted += (index, line) =&gt; _portrait.Show(index);
+_player.SequenceCompleted += () =&gt; _dialogueBox.Close();
+_player.Play();</code></pre>
+
 
 
 

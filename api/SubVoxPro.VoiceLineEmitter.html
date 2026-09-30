@@ -780,6 +780,11 @@ the lines already waiting, <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.ht
 
 
 
+  <h4 class="section" id="SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode__examples">Examples</h4>
+  <pre><code class="lang-csharp">VoiceLineEmitter guard = _guard.GetComponent&lt;VoiceLineEmitter&gt;();
+guard.Play(alertLine, EVoiceLinePriority.High);
+guard.Play(idleBark, EVoiceLinePriority.Low, EVoiceLinePlayMode.Queue);</code></pre>
+
 
 
 

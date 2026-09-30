@@ -123,6 +123,14 @@ instead of a free-text field where a code has to be typed by hand.</p>
 
 
 
+  <h2 id="SubVoxPro_LanguageCodeAttribute_examples">Examples</h2>
+  <pre><code class="lang-csharp">[SerializeField, LanguageCode] private string _menuLanguage = "fr";
+
+public void ApplyLanguage()
+{
+    SubVox.CurrentLanguage = _menuLanguage;
+}</code></pre>
+
 
 
 

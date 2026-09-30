@@ -575,6 +575,15 @@ Class VoiceLineEventContext
 
 
 
+  <h4 class="section" id="SubVoxPro_VoiceLineEventContext_TryGetPayload__1___0___examples">Examples</h4>
+  <pre><code class="lang-csharp">private void HandleEvent(VoiceLineEventContext context)
+{
+    if (context.TryGetPayload(out ParticleSystem effect))
+    {
+        Instantiate(effect, transform.position, Quaternion.identity);
+    }
+}</code></pre>
+
 
 
 

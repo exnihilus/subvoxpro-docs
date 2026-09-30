@@ -122,6 +122,17 @@ follow its <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_Voic
 
 
 
+  <h2 id="SubVoxPro_VoiceLinePlayback_examples">Examples</h2>
+  <pre><code class="lang-csharp">private IEnumerator Dialogue()
+{
+    yield return SubVox.Play(question);
+    yield return new WaitForSeconds(0.5f);
+
+    VoiceLinePlayback answer = SubVox.Play(reply);
+    answer.Finished += done =&gt; Debug.Log($"Answer ended: {done.State}");
+    yield return answer;
+}</code></pre>
+
 
 
 

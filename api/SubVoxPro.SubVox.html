@@ -148,6 +148,15 @@ raises the global events (subtitles, voice lines, voice line events). Every play
 
 
 
+  <h2 id="SubVoxPro_SubVox_examples">Examples</h2>
+  <pre><code class="lang-csharp">SubVox.CurrentLanguage = "fr";
+VoiceLinePlayback playback = SubVox.Play(greeting);
+
+SubVox.PauseAll();
+SubVox.ResumeAll();
+
+SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} starts");</code></pre>
+
 
 
 
@@ -342,6 +351,13 @@ Subtitles already on screen switch at once; a dub starts with the next voice lin
   </dl>
 
 
+
+  <h4 class="section" id="SubVoxPro_SubVox_History_examples">Examples</h4>
+  <pre><code class="lang-csharp">foreach (SubtitleHistoryEntry entry in SubVox.History)
+{
+    string speaker = entry.Speaker != null ? entry.Speaker.DisplayName + ": " : string.Empty;
+    _log.text += speaker + entry.Text + "\n";
+}</code></pre>
 
 
 
@@ -603,6 +619,11 @@ and the displays stay empty.</p>
 
 
 
+  <h4 class="section" id="SubVoxPro_SubVox_SubtitlesEnabled_examples">Examples</h4>
+  <pre><code class="lang-csharp">public void OnSubtitlesToggle(bool enabled) =&gt; SubVox.SubtitlesEnabled = enabled;
+public void OnTextSizeSlider(float scale) =&gt; SubVox.SubtitleScale = scale;
+public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = opacity;</code></pre>
+
 
 
 
@@ -778,6 +799,10 @@ cutscene. It stays until the next subtitle; publish a blank <a class="xref" href
 
 
 
+  <h4 class="section" id="SubVoxPro_SubVox_PublishSubtitle_SubVoxPro_SubtitleInfo__examples">Examples</h4>
+  <pre><code class="lang-csharp">SubVox.PublishSubtitle(new SubtitleInfo("intro", 0f, "Somewhere in the north, ten years ago."));
+SubVox.PublishSubtitle(new SubtitleInfo("intro", 0f, string.Empty));</code></pre>
+
 
 
 
@@ -866,6 +891,17 @@ cutscene. It stays until the next subtitle; publish a blank <a class="xref" href
 
 
 
+
+  <h4 class="section" id="SubVoxPro_SubVox_Subscribe_SubVoxPro_VoiceLineEventSignalData_System_Action_SubVoxPro_VoiceLineEventContext___examples">Examples</h4>
+  <pre><code class="lang-csharp">[SerializeField] private VoiceLineEventSignalData _cameraShake = null;
+
+private void OnEnable() =&gt; SubVox.Subscribe(_cameraShake, Shake);
+private void OnDisable() =&gt; SubVox.Unsubscribe(_cameraShake, Shake);
+
+private void Shake(VoiceLineEventContext context)
+{
+    _camera.Shake(0.3f);
+}</code></pre>
 
 
 

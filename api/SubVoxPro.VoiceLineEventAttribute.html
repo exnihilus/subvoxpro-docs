@@ -126,6 +126,19 @@ public sealed class VoiceLineEventAttribute : PreserveAttribute</code></pre>
 
 
 
+  <h2 id="SubVoxPro_VoiceLineEventAttribute_examples">Examples</h2>
+  <pre><code class="lang-csharp">[VoiceLineEvent("Open Door")]
+private void OpenDoor()
+{
+    _door.Open();
+}
+
+[VoiceLineEvent("Play Sound")]
+private void PlaySound(AudioClip sound)
+{
+    AudioSource.PlayClipAtPoint(sound, transform.position);
+}</code></pre>
+
 
 
 
