@@ -26,8 +26,10 @@ export default {
 
     document.querySelectorAll("article h4.section").forEach(heading => {
       const list = heading.nextElementSibling;
-      if (list?.matches("dl.parameters") && list.children.length === 2 && !list.querySelector("dd")?.textContent.trim()) {
-        heading.classList.add("svx-inline");
+      const describes = list?.matches("dl.parameters") && [...list.querySelectorAll("dd")].some(item => item.textContent.trim());
+      if (list?.matches("dl.parameters") && !describes) {
+        heading.remove();
+        list.remove();
       }
     });
 

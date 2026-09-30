@@ -345,19 +345,3 @@ article dl.parameters dd {
   margin: 0 0 0.25rem 1rem;
   color: var(--bs-secondary-color);
 }
-
-article h4.svx-inline,
-article h4.svx-inline + dl.parameters,
-article h4.svx-inline + dl.parameters dt {
-  display: inline;
-}
-
-article h4.svx-inline {
-  margin-right: 0.5rem;
-}
-
-article h4.svx-inline + dl.parameters::after {
-  content: "";
-  display: block;
-  margin-bottom: 0.3rem;
-}
