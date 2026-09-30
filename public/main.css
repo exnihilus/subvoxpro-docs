@@ -260,7 +260,6 @@ article dl.parameters dd {
 .svx-badge-override { color: #7c3aed; }
 .svx-badge-readonly { color: #15803d; }
 .svx-badge-unity { color: #b45309; }
-.svx-badge-muted { color: var(--bs-secondary-color); }
 
 [data-bs-theme="dark"] .svx-badge-static { color: #67e8f9; }
 [data-bs-theme="dark"] .svx-badge-override { color: #c4b5fd; }
@@ -322,7 +321,7 @@ article dl.parameters dd {
 
 .svx-overview li a {
   text-decoration: none;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 .svx-overview li a code {
@@ -344,6 +343,70 @@ article dl.parameters dd {
 .svx-overview-badges {
   justify-content: flex-end;
   flex-wrap: nowrap;
+}
+
+.svx-access-filter {
+  grid-column: 1 / -1;
+  justify-self: start;
+  display: inline-flex;
+  gap: 2px;
+  margin: 0.8rem 1rem 0.2rem;
+  padding: 3px;
+  border-radius: 9px;
+  border: 1px solid var(--svx-rule);
+  background: var(--bs-body-bg);
+}
+
+.svx-access-filter button {
+  font: 700 0.8rem/1 var(--bs-font-sans-serif);
+  color: var(--bs-secondary-color);
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+}
+
+.svx-access-filter button:hover {
+  color: var(--bs-body-color);
+}
+
+.svx-access-filter button[aria-pressed="true"] {
+  color: var(--bs-body-color);
+  background: var(--svx-highlight);
+  box-shadow: inset 0 0 0 1px var(--svx-rule);
+}
+
+.svx-access-filter button:focus-visible {
+  outline: 2px solid var(--svx-yellow);
+  outline-offset: 2px;
+}
+
+.svx-overview-access {
+  grid-column: 1 / -1;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--bs-secondary-color);
+  padding: 0.7rem 1rem 0.25rem;
+  margin-top: 0.3rem;
+  border-top: 1px dashed var(--svx-rule);
+}
+
+.svx-access-divider {
+  margin: 2rem 0 0.4rem;
+  padding: 0.35rem 0.8rem;
+  border-left: 3px solid var(--svx-yellow);
+  border-radius: 0 6px 6px 0;
+  background: var(--svx-highlight);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--bs-secondary-color);
+}
+
+.svx-access-divider + a + h3[data-uid],
+.svx-access-divider + h3[data-uid] {
+  border-top: 0;
+  padding-top: 0.4rem;
 }
 
 .svx-member-badges {

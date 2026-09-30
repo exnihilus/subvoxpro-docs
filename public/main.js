@@ -1,4 +1,4 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=a4fe1b4a38";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=db0fb87bb7";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
@@ -104,7 +104,6 @@ function badgesOf(signature, name) {
   const declaration = signature.split("{")[0];
   if (/\bstatic\b/.test(declaration)) badges.push(["static", "static"]);
   if (/\bconst\b/.test(declaration)) badges.push(["const", "static"]);
-  if (/\bprotected\b/.test(declaration)) badges.push(["protected", "muted"]);
   if (/\babstract\b/.test(declaration)) badges.push(["abstract", "override"]);
   if (/\bvirtual\b/.test(declaration)) badges.push(["overridable", "override"]);
   if (/\boverride\b/.test(declaration)) badges.push(["override", "override"]);
@@ -135,70 +134,146 @@ function firstSentence(element) {
   return text;
 }
 
-function buildMemberOverview(article) {
-  const sections = [...article.querySelectorAll("h2.section")];
-  if (!sections.length) {
-    return;
+const ACCESS_FILTERS = [["all", "All"], ["public", "Public"], ["protected", "Protected"]];
+const PROTECTED_LABEL = "Protected — for subclasses";
+
+function memberBlocks(section) {
+  const blocks = [];
+  for (let node = section.nextElementSibling; node && node.tagName !== "H2"; node = node.nextElementSibling) {
+    if (node.matches("a[data-uid]") || !blocks.length || (node.matches("h3[data-uid]") && blocks.at(-1).heading)) {
+      blocks.push({ elements: [], heading: null, summary: null, signature: "" });
+    }
+
+    const block = blocks.at(-1);
+    block.elements.push(node);
+    if (node.matches("h3[data-uid]")) block.heading = node;
+    else if (block.heading && !block.summary && node.matches(".summary")) block.summary = node;
+    else if (block.heading && !block.signature && node.matches(".codewrapper")) block.signature = node.textContent;
   }
 
+  return blocks.filter(block => block.heading).map(block => ({
+    ...block,
+    name: block.heading.textContent.replace(/\s+/g, " ").trim(),
+    access: /^\s*protected\b/.test(block.signature) ? "protected" : "public"
+  }));
+}
+
+function labelElement(tag, className, text) {
+  const element = document.createElement(tag);
+  element.className = className;
+  element.textContent = text;
+  return element;
+}
+
+function overviewRow(block, badges) {
+  const item = document.createElement("li");
+  item.dataset.svxAccess = block.access;
+  const link = document.createElement("a");
+  link.href = `#${block.heading.id}`;
+  const code = labelElement("code", "", "");
+  block.name.split(/(?<=\(|, )/).forEach((part, index) => code.append(...(index ? [document.createElement("wbr"), part] : [part])));
+  link.append(code);
+  const tags = labelElement("span", "svx-badges svx-overview-badges", "");
+  tags.append(...badgeElements(badges));
+  item.append(link, labelElement("span", "svx-overview-summary", firstSentence(block.summary)), tags);
+  return item;
+}
+
+function buildMemberOverview(article) {
   const overview = document.createElement("nav");
   overview.className = "svx-overview";
   overview.setAttribute("aria-label", "Members");
-  for (const section of sections) {
-    const group = document.createElement("div");
-    group.className = "svx-overview-group";
-    const title = document.createElement("div");
-    title.className = "svx-overview-title";
-    title.textContent = section.textContent.trim();
+  let hasProtected = false;
+
+  for (const section of article.querySelectorAll("h2.section")) {
+    const blocks = memberBlocks(section);
+    if (!blocks.length) {
+      continue;
+    }
+
     const list = document.createElement("ul");
-    group.append(title, list);
-
-    for (let node = section.nextElementSibling; node && node.tagName !== "H2"; node = node.nextElementSibling) {
-      if (!node.matches("h3[data-uid]")) {
-        continue;
+    const group = labelElement("div", "svx-overview-group", "");
+    group.append(labelElement("div", "svx-overview-title", section.textContent.trim()), list);
+    const ordered = [...blocks.filter(block => block.access === "public"), ...blocks.filter(block => block.access === "protected")];
+    let insertAfter = section;
+    ordered.forEach((block, index) => {
+      if (block.access === "protected" && ordered[index - 1]?.access !== "protected") {
+        hasProtected = true;
+        list.append(labelElement("li", "svx-overview-access", PROTECTED_LABEL));
+        const divider = labelElement("div", "svx-access-divider", PROTECTED_LABEL);
+        insertAfter.after(divider);
+        insertAfter = divider;
       }
 
-      const name = node.textContent.replace(/\s+/g, " ").trim();
-      let summary = null;
-      let signature = "";
-      for (let detail = node.nextElementSibling; detail && !detail.matches("h2, h3, a[data-uid]"); detail = detail.nextElementSibling) {
-        if (!summary && detail.matches(".summary")) summary = detail;
-        if (!signature && detail.matches(".codewrapper")) signature = detail.textContent;
-      }
-
-      const badges = badgesOf(signature, name);
+      const badges = badgesOf(block.signature, block.name);
       if (badges.length) {
-        const row = document.createElement("div");
-        row.className = "svx-badges svx-member-badges";
+        const row = labelElement("div", "svx-badges svx-member-badges", "");
         row.append(...badgeElements(badges));
-        node.after(row);
+        block.elements.splice(block.elements.indexOf(block.heading) + 1, 0, row);
       }
 
-      const item = document.createElement("li");
-      const link = document.createElement("a");
-      link.href = `#${node.id}`;
-      const code = document.createElement("code");
-      code.textContent = name;
-      link.append(code);
-      const description = document.createElement("span");
-      description.className = "svx-overview-summary";
-      description.textContent = firstSentence(summary);
-      const tags = document.createElement("span");
-      tags.className = "svx-badges svx-overview-badges";
-      tags.append(...badgeElements(badges));
-      item.append(link, description, tags);
-      list.append(item);
-    }
+      for (const element of block.elements) {
+        element.dataset.svxAccess = block.access;
+        insertAfter.after(element);
+        insertAfter = element;
+      }
 
-    if (list.children.length) {
-      overview.append(group);
-    }
+      list.append(overviewRow(block, badges));
+    });
+    overview.append(group);
   }
 
-  if (overview.children.length) {
-    const anchor = article.querySelector("h2");
-    anchor.before(overview);
+  if (!overview.children.length) {
+    return;
   }
+
+  if (hasProtected) {
+    overview.prepend(accessFilter(article));
+  }
+
+  article.querySelector("h2").before(overview);
+}
+
+function accessFilter(article) {
+  const bar = labelElement("div", "svx-access-filter", "");
+  bar.setAttribute("role", "group");
+  bar.setAttribute("aria-label", "Show members");
+  for (const [value, label] of ACCESS_FILTERS) {
+    const button = labelElement("button", "", label);
+    button.type = "button";
+    button.setAttribute("aria-pressed", String(value === "all"));
+    button.addEventListener("click", () => {
+      bar.querySelectorAll("button").forEach(other => other.setAttribute("aria-pressed", String(other === button)));
+      applyAccessFilter(article, value);
+    });
+    bar.append(button);
+  }
+
+  return bar;
+}
+
+function applyAccessFilter(article, filter) {
+  article.querySelectorAll("[data-svx-access]").forEach(element => {
+    element.hidden = filter !== "all" && element.dataset.svxAccess !== filter;
+  });
+  article.querySelectorAll(".svx-overview-access, .svx-access-divider").forEach(label => {
+    label.hidden = filter !== "all";
+  });
+  article.querySelectorAll(".svx-overview-group").forEach(group => {
+    group.hidden = !group.querySelector("li[data-svx-access]:not([hidden])");
+  });
+  article.querySelectorAll("h2.section").forEach(section => {
+    let node = section.nextElementSibling;
+    while (node && node.tagName !== "H2" && (node.hidden || !node.dataset.svxAccess)) {
+      node = node.nextElementSibling;
+    }
+
+    section.hidden = !node || node.tagName === "H2";
+  });
+  document.querySelectorAll(".affix a[href^='#']").forEach(link => {
+    const target = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+    link.closest("li").hidden = Boolean(target?.hidden);
+  });
 }
 
 function trimInheritance(article) {
