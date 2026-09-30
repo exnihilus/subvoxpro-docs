@@ -9,7 +9,7 @@
       
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css?v=1d5ab9df3e">
+      <link rel="stylesheet" href="../public/main.css?v=a4fe1b4a38">
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../public/docfx.min.js?v=1d5ab9df3e"></script>
+      <script type="module" src="./../public/docfx.min.js?v=a4fe1b4a38"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'auto'
@@ -268,8 +268,9 @@ in the scene drives it at runtime so the same sequence can be reused by several 
       <dt><a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html">VoiceLineSequencePlayer</a></dt>
       <dd><p>Plays a <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a> at runtime, one line at a time. Each step advances either
 automatically when its line finishes (after an optional delay) or manually via <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Advance">Advance()</a>
-— which can be wired to any UnityEvent, an interaction or a UI button. A step refused by a busy emitter waits for
-it to be free. Exposes UnityEvents so scene logic can react without code, and the same C# events for code.</p>
+— which can be wired to any UnityEvent, an interaction or a UI button — and <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Previous">Previous()</a> goes back one
+line. The steps play in the order of <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a>. A step refused by a busy emitter waits for it to be
+free. Exposes UnityEvents so scene logic can react without code, and the same C# events for code.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -379,6 +380,11 @@ Enums
     <dl class="jumplist">
       <dt><a class="xref" href="SubVoxPro.EVoiceLineSequenceAdvance.html">EVoiceLineSequenceAdvance</a></dt>
       <dd><p>How a sequence moves on after a step.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="SubVoxPro.EVoiceLineSequenceDirection.html">EVoiceLineSequenceDirection</a></dt>
+      <dd><p>Order in which a <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html">VoiceLineSequencePlayer</a> goes through the steps of its sequence.</p>
 </dd>
     </dl>
     <dl class="jumplist">

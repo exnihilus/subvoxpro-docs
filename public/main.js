@@ -1,3 +1,5 @@
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=a4fe1b4a38";
+
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
   { time: 0.05, words: [["The", 0.05], ["gate", 0.18], ["is", 0.33], ["sealed.", 0.42]] },
@@ -48,12 +50,17 @@ function startDemo() {
   const subtitle = demo.querySelector(".svx-subtitle");
   const button = demo.querySelector(".svx-play");
   const progress = demo.querySelector("[data-svx-progress]");
-  const modeName = demo.querySelector("[data-svx-mode-name]");
+  const codeLines = [...demo.querySelectorAll("[data-svx-template]")];
   const modeButtons = [...demo.querySelectorAll("[data-svx-mode]")];
   const audio = demo.querySelector("[data-svx-audio]");
   let mode = "Karaoke";
   let timer = 0;
 
+  const renderCode = changed => codeLines.forEach(line => {
+    line.innerHTML = renderCSharp(line.dataset.svxTemplate.replace("{mode}", mode))
+      .replace('<span class="tk-punctuation">.</span><span class="tk-constant">', '<wbr><span class="tk-punctuation">.</span><span class="tk-constant svx-changed">');
+    line.querySelector(".svx-changed")?.classList.toggle("svx-changed", changed);
+  });
   const playing = () => demo.classList.contains("svx-playing");
   const tick = () => {
     renderSubtitle(subtitle, playing() ? audio.currentTime : 0, playing() ? mode : "FullSubtitle");
@@ -84,13 +91,11 @@ function startDemo() {
   audio.addEventListener("ended", () => setTimeout(stop, 700));
   modeButtons.forEach(modeButton => modeButton.addEventListener("click", () => {
     mode = modeButton.dataset.svxMode;
-    modeName.textContent = mode;
     modeButtons.forEach(other => other.setAttribute("aria-pressed", String(other === modeButton)));
-    modeName.classList.remove("svx-changed");
-    void modeName.offsetWidth;
-    modeName.classList.add("svx-changed");
+    renderCode(true);
     tick();
   }));
+  renderCode(false);
   tick();
 }
 
@@ -221,11 +226,13 @@ function removeEmptyValueSections() {
 }
 
 export default {
+  configureHljs: highlightCSharp,
   iconLinks: [
     { icon: "github", href: "https://github.com/exnihilus/subvoxpro-docs", title: "GitHub" }
   ],
   start: () => {
     document.querySelector("header")?.setAttribute("data-bs-theme", "dark");
+    startCodeThemes();
     removeEmptyValueSections();
     const article = document.querySelector("article[data-uid]");
     if (article) {

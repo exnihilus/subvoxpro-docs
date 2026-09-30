@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class VoiceLineEventAttribute | SubVox Pro API </title>
+      <title>Enum EVoiceLineSequenceDirection | SubVox Pro API </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class VoiceLineEventAttribute | SubVox Pro API ">
+      <meta name="title" content="Enum EVoiceLineSequenceDirection | SubVox Pro API ">
       
-      <meta name="description" content="Calls the marked method whenever a voice line event whose signal has this key fires. The method belongs to a component cached by a  or sharing its GameObject with a , returns void and takes nothing, a , or the type of the event&#39;s payload. Keys ignore case, spaces and punctuation: &amp;quot;Camera Shake&amp;quot; matches &amp;quot;camera-shake&amp;quot;.">
+      <meta name="description" content="Order in which a  goes through the steps of its sequence.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css?v=a4fe1b4a38">
@@ -84,12 +84,13 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="SubVoxPro.VoiceLineEventAttribute">
+        <article data-uid="SubVoxPro.EVoiceLineSequenceDirection">
 
 
 
-  <h1 id="SubVoxPro_VoiceLineEventAttribute" data-uid="SubVoxPro.VoiceLineEventAttribute" class="text-break">
-Class VoiceLineEventAttribute  
+
+  <h1 id="SubVoxPro_EVoiceLineSequenceDirection" data-uid="SubVoxPro.EVoiceLineSequenceDirection" class="text-break">
+Enum EVoiceLineSequenceDirection  
   </h1>
 
   <div class="facts text-secondary">
@@ -97,121 +98,34 @@ Class VoiceLineEventAttribute
   <dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Calls the marked method whenever a voice line event whose signal has this key fires. The method belongs to a
-component cached by a <a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html">VoiceLineEventDispatcher</a> or sharing its GameObject with a
-<a class="xref" href="SubVoxPro.VoiceLineEventListener.html">VoiceLineEventListener</a>, returns void and takes nothing, a <a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a>,
-or the type of the event's payload. Keys ignore case, spaces and punctuation: &quot;Camera Shake&quot; matches
-&quot;camera-shake&quot;.</p>
+  <div class="markdown summary"><p>Order in which a <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html">VoiceLineSequencePlayer</a> goes through the steps of its sequence.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
-public sealed class VoiceLineEventAttribute : PreserveAttribute</code></pre>
+    <pre><code class="lang-csharp hljs">public enum EVoiceLineSequenceDirection</code></pre>
   </div>
 
 
 
 
-  <dl class="typelist inheritance">
-    <dt>Inheritance</dt>
-    <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">VoiceLineEventAttribute</span></div>
-    </dd>
-  </dl>
 
 
 
 
 
-
-  <h2 id="SubVoxPro_VoiceLineEventAttribute_examples">Examples</h2>
-  <pre><code class="lang-csharp">[VoiceLineEvent("Open Door")]
-private void OpenDoor()
-{
-    _door.Open();
-}
-
-[VoiceLineEvent("Play Sound")]
-private void PlaySound(AudioClip sound)
-{
-    AudioSource.PlayClipAtPoint(sound, transform.position);
-}</code></pre>
-
-
-
-
-  <h2 class="section" id="constructors">Constructors
+  <h2 id="fields">Fields
 </h2>
-
-
-  <a id="SubVoxPro_VoiceLineEventAttribute__ctor_" data-uid="SubVoxPro.VoiceLineEventAttribute.#ctor*"></a>
-
-  <h3 id="SubVoxPro_VoiceLineEventAttribute__ctor_System_String_" data-uid="SubVoxPro.VoiceLineEventAttribute.#ctor(System.String)">
-  VoiceLineEventAttribute(string)
-  
-  </h3>
-
-  <div class="markdown level1 summary"><p>Calls the method when a signal with this key fires.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public VoiceLineEventAttribute(string signal_key)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>signal_key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 class="section" id="properties">Properties
-</h2>
-
-
-  <a id="SubVoxPro_VoiceLineEventAttribute_SignalKey_" data-uid="SubVoxPro.VoiceLineEventAttribute.SignalKey*"></a>
-
-  <h3 id="SubVoxPro_VoiceLineEventAttribute_SignalKey" data-uid="SubVoxPro.VoiceLineEventAttribute.SignalKey">
-  SignalKey
+    <dt id="SubVoxPro_EVoiceLineSequenceDirection_Backward"><code>Backward = 1</code></dt>
   
-  </h3>
-
-  <div class="markdown level1 summary"><p>The key of the signal, as written in the attribute.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SignalKey { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+  <dd><p>From the last step to the first.</p>
+</dd>
+    <dt id="SubVoxPro_EVoiceLineSequenceDirection_Forward"><code>Forward = 0</code></dt>
+  
+  <dd><p>From the first step to the last.</p>
+</dd>
   </dl>
-
-
-
-
-
-
 
 
 

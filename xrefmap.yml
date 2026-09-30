@@ -235,6 +235,24 @@ references:
   commentId: F:SubVoxPro.EVoiceLineSequenceAdvance.OnVoiceLineCompleted
   fullName: SubVoxPro.EVoiceLineSequenceAdvance.OnVoiceLineCompleted
   nameWithType: EVoiceLineSequenceAdvance.OnVoiceLineCompleted
+- uid: SubVoxPro.EVoiceLineSequenceDirection
+  name: EVoiceLineSequenceDirection
+  href: api/SubVoxPro.EVoiceLineSequenceDirection.html
+  commentId: T:SubVoxPro.EVoiceLineSequenceDirection
+  fullName: SubVoxPro.EVoiceLineSequenceDirection
+  nameWithType: EVoiceLineSequenceDirection
+- uid: SubVoxPro.EVoiceLineSequenceDirection.Backward
+  name: Backward
+  href: api/SubVoxPro.EVoiceLineSequenceDirection.html#SubVoxPro_EVoiceLineSequenceDirection_Backward
+  commentId: F:SubVoxPro.EVoiceLineSequenceDirection.Backward
+  fullName: SubVoxPro.EVoiceLineSequenceDirection.Backward
+  nameWithType: EVoiceLineSequenceDirection.Backward
+- uid: SubVoxPro.EVoiceLineSequenceDirection.Forward
+  name: Forward
+  href: api/SubVoxPro.EVoiceLineSequenceDirection.html#SubVoxPro_EVoiceLineSequenceDirection_Forward
+  commentId: F:SubVoxPro.EVoiceLineSequenceDirection.Forward
+  fullName: SubVoxPro.EVoiceLineSequenceDirection.Forward
+  nameWithType: EVoiceLineSequenceDirection.Forward
 - uid: SubVoxPro.EVoiceLineSubtitleRevealMode
   name: EVoiceLineSubtitleRevealMode
   href: api/SubVoxPro.EVoiceLineSubtitleRevealMode.html
@@ -4276,6 +4294,18 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineSequencePlayer.CurrentStepIndex
   fullName: SubVoxPro.VoiceLineSequencePlayer.CurrentStepIndex
   nameWithType: VoiceLineSequencePlayer.CurrentStepIndex
+- uid: SubVoxPro.VoiceLineSequencePlayer.Direction
+  name: Direction
+  href: api/SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction
+  commentId: P:SubVoxPro.VoiceLineSequencePlayer.Direction
+  fullName: SubVoxPro.VoiceLineSequencePlayer.Direction
+  nameWithType: VoiceLineSequencePlayer.Direction
+- uid: SubVoxPro.VoiceLineSequencePlayer.Direction*
+  name: Direction
+  href: api/SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction_
+  commentId: Overload:SubVoxPro.VoiceLineSequencePlayer.Direction
+  fullName: SubVoxPro.VoiceLineSequencePlayer.Direction
+  nameWithType: VoiceLineSequencePlayer.Direction
 - uid: SubVoxPro.VoiceLineSequencePlayer.IsPlaying
   name: IsPlaying
   href: api/SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_IsPlaying
@@ -4423,6 +4453,18 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineSequencePlayer.PlayFrom
   fullName: SubVoxPro.VoiceLineSequencePlayer.PlayFrom
   nameWithType: VoiceLineSequencePlayer.PlayFrom
+- uid: SubVoxPro.VoiceLineSequencePlayer.Previous
+  name: Previous()
+  href: api/SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Previous
+  commentId: M:SubVoxPro.VoiceLineSequencePlayer.Previous
+  fullName: SubVoxPro.VoiceLineSequencePlayer.Previous()
+  nameWithType: VoiceLineSequencePlayer.Previous()
+- uid: SubVoxPro.VoiceLineSequencePlayer.Previous*
+  name: Previous
+  href: api/SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Previous_
+  commentId: Overload:SubVoxPro.VoiceLineSequencePlayer.Previous
+  fullName: SubVoxPro.VoiceLineSequencePlayer.Previous
+  nameWithType: VoiceLineSequencePlayer.Previous
 - uid: SubVoxPro.VoiceLineSequencePlayer.Sequence
   name: Sequence
   href: api/SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Sequence
