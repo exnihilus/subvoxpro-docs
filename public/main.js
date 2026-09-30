@@ -1,4 +1,4 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=bebaf22d85";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=f80e8285a0";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
@@ -184,10 +184,13 @@ function overviewRow(block, badges) {
 
 function memberElement(block) {
   const badges = badgesOf(block.signature, block.name);
+  const title = labelElement("div", "svx-member-title", "");
+  block.elements.splice(block.elements.indexOf(block.heading), 1, title);
+  title.append(block.heading);
   if (badges.length) {
     const row = labelElement("div", "svx-badges svx-member-badges", "");
     row.append(...badgeElements(badges));
-    block.elements.splice(block.elements.indexOf(block.heading) + 1, 0, row);
+    title.append(row);
   }
 
   const member = labelElement("div", "svx-member", "");
@@ -196,15 +199,31 @@ function memberElement(block) {
   return { member, row: overviewRow(block, badges) };
 }
 
+function chevron() {
+  return labelElement("i", "bi bi-chevron-down svx-chevron", "");
+}
+
 function accessZone(access) {
-  const zone = labelElement("div", `svx-member-zone svx-zone-${access}`, "");
+  const zone = labelElement("details", `svx-member-zone svx-zone-${access}`, "");
+  zone.open = true;
   zone.dataset.svxAccess = access;
-  const header = labelElement("div", "svx-zone-header", "");
-  header.append(labelElement("strong", "", ACCESS_ZONES[access].label), labelElement("span", "", ACCESS_ZONES[access].hint));
+  const header = labelElement("summary", "svx-zone-header", "");
+  header.append(chevron(), labelElement("strong", "", ACCESS_ZONES[access].label), labelElement("span", "", ACCESS_ZONES[access].hint));
   zone.append(header);
+
   const list = labelElement("ul", `svx-overview-zone svx-zone-${access}`, "");
   list.dataset.svxAccess = access;
-  list.append(labelElement("li", "svx-overview-access", ACCESS_ZONES[access].label));
+  const toggle = labelElement("button", "", "");
+  toggle.type = "button";
+  toggle.setAttribute("aria-expanded", "true");
+  toggle.append(chevron(), ACCESS_ZONES[access].label);
+  toggle.addEventListener("click", () => {
+    const collapsed = list.classList.toggle("svx-collapsed");
+    toggle.setAttribute("aria-expanded", String(!collapsed));
+  });
+  const label = labelElement("li", "svx-overview-access", "");
+  label.append(toggle);
+  list.append(label);
   return { zone, list };
 }
 
@@ -322,14 +341,31 @@ function flashMember(id) {
   setTimeout(waitForScrollEnd, 60);
 }
 
+function revealMember(id) {
+  const zone = id && document.getElementById(decodeURIComponent(id))?.closest("details");
+  if (zone && !zone.open) {
+    zone.open = true;
+    return true;
+  }
+
+  return false;
+}
+
 function startMemberFlash() {
   document.addEventListener("click", event => {
     const link = event.target.closest("a[href*='#']");
     if (link && link.pathname === location.pathname && link.hash) {
+      revealMember(link.hash.slice(1));
       setTimeout(() => flashMember(link.hash.slice(1)));
     }
   });
-  addEventListener("hashchange", () => flashMember(location.hash.slice(1)));
+  addEventListener("hashchange", () => {
+    if (revealMember(location.hash.slice(1))) {
+      document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
+    }
+
+    flashMember(location.hash.slice(1));
+  });
   flashMember(location.hash.slice(1));
 }
 
@@ -359,6 +395,7 @@ function removeEmptyValueSections() {
 
 export default {
   configureHljs: highlightCSharp,
+  defaultTheme: "dark",
   iconLinks: [
     { icon: "github", href: "https://github.com/exnihilus/subvoxpro-docs", title: "GitHub" }
   ],
