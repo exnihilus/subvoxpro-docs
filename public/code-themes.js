@@ -2,6 +2,7 @@ const ROLES = ["text", "keyword", "control", "class", "struct", "interface", "en
   "property", "field", "event",
   "constant", "variable", "namespace", "string", "number", "comment", "operator", "punctuation"];
 const STORAGE_KEY = "svx-code-theme";
+const DEFAULT_THEME = "visual-studio";
 
 function tones(background, text, colors, styles = {}) {
   const palette = { background, ...Object.fromEntries(ROLES.map(role => [role, text])), ...colors };
@@ -257,7 +258,7 @@ function storeTheme(id) {
 }
 
 function applyTheme(id) {
-  const theme = CODE_THEMES[id] ?? CODE_THEMES.subvox;
+  const theme = CODE_THEMES[id] ?? CODE_THEMES[DEFAULT_THEME];
   const siteMode = document.documentElement.getAttribute("data-bs-theme") === "light" ? "light" : "dark";
   const root = document.documentElement.style;
   for (const [prefix, tone] of [["--tk", theme[siteMode]], ["--tkd", theme.dark]]) {
@@ -310,7 +311,7 @@ function buildPicker(current) {
 
   refresh(current);
   new MutationObserver(() => {
-    const selected = CODE_THEMES[readStoredTheme()] ? readStoredTheme() : "subvox";
+    const selected = CODE_THEMES[readStoredTheme()] ? readStoredTheme() : DEFAULT_THEME;
     applyTheme(selected);
     refresh(selected);
   }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-bs-theme"] });
@@ -319,7 +320,7 @@ function buildPicker(current) {
 
 export function startCodeThemes() {
   const stored = readStoredTheme();
-  const current = CODE_THEMES[stored] ? stored : "subvox";
+  const current = CODE_THEMES[stored] ? stored : DEFAULT_THEME;
   injectRoleStyles();
   applyTheme(current);
   const navbar = document.querySelector("#navbar");

@@ -190,20 +190,31 @@ article h3[data-uid] {
   font-family: var(--bs-font-monospace);
   font-size: 1.12rem;
   font-weight: 600;
-  margin: 1.1rem 0 0.35rem !important;
-  padding-top: 1.1rem;
+  margin: 0 0 0.35rem !important;
+}
+
+article .svx-member [id] {
+  scroll-margin-top: calc(60px + 1.6rem) !important;
+}
+
+article .svx-member {
+  position: relative;
+  margin: 0 -0.9rem;
+  padding: 1.1rem 0.9rem 0.4rem;
+  border-radius: 12px;
+}
+
+article .svx-member + .svx-member::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0.9rem;
+  right: 0.9rem;
   border-top: 1px solid var(--svx-rule);
-  scroll-margin-top: 5rem;
 }
 
-article h2 + a + h3[data-uid],
-article h2 + h3[data-uid] {
-  border-top: 0;
-  padding-top: 0;
-}
-
-article h3[data-uid]:target {
-  color: var(--bs-link-color);
+article .svx-member.svx-flash {
+  animation: svx-flash 1s ease;
 }
 
 article .summary p {
@@ -403,11 +414,6 @@ article dl.parameters dd {
   color: var(--bs-secondary-color);
 }
 
-.svx-access-divider + a + h3[data-uid],
-.svx-access-divider + h3[data-uid] {
-  border-top: 0;
-  padding-top: 0.4rem;
-}
 
 .svx-member-badges {
   margin: -0.1rem 0 0.45rem;
@@ -727,7 +733,8 @@ article dl.parameters dd {
     transition: none;
   }
 
-  .svx-snippet .svx-changed {
+  .svx-snippet .svx-changed,
+  article .svx-member.svx-flash {
     animation: none;
   }
 }

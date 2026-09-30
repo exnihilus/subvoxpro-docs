@@ -1,4 +1,4 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=db0fb87bb7";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=4e05828df6";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
@@ -212,11 +212,11 @@ function buildMemberOverview(article) {
         block.elements.splice(block.elements.indexOf(block.heading) + 1, 0, row);
       }
 
-      for (const element of block.elements) {
-        element.dataset.svxAccess = block.access;
-        insertAfter.after(element);
-        insertAfter = element;
-      }
+      const member = labelElement("div", "svx-member", "");
+      member.dataset.svxAccess = block.access;
+      member.append(...block.elements);
+      insertAfter.after(member);
+      insertAfter = member;
 
       list.append(overviewRow(block, badges));
     });
@@ -276,6 +276,39 @@ function applyAccessFilter(article, filter) {
   });
 }
 
+function flashMember(id) {
+  const member = id && document.getElementById(decodeURIComponent(id))?.closest(".svx-member");
+  if (!member) {
+    return;
+  }
+
+  member.classList.remove("svx-flash");
+  let lastTop = null;
+  let checks = 0;
+  const waitForScrollEnd = () => {
+    const top = member.getBoundingClientRect().top;
+    if (top === lastTop || checks++ > 40) {
+      member.classList.add("svx-flash");
+      return;
+    }
+
+    lastTop = top;
+    setTimeout(waitForScrollEnd, 60);
+  };
+  setTimeout(waitForScrollEnd, 60);
+}
+
+function startMemberFlash() {
+  document.addEventListener("click", event => {
+    const link = event.target.closest("a[href*='#']");
+    if (link && link.pathname === location.pathname && link.hash) {
+      setTimeout(() => flashMember(link.hash.slice(1)));
+    }
+  });
+  addEventListener("hashchange", () => flashMember(location.hash.slice(1)));
+  flashMember(location.hash.slice(1));
+}
+
 function trimInheritance(article) {
   const inheritance = article.querySelector("dl.inheritance");
   if (!inheritance) {
@@ -313,6 +346,7 @@ export default {
     if (article) {
       trimInheritance(article);
       buildMemberOverview(article);
+      startMemberFlash();
     }
 
     startDemo();
