@@ -335,6 +335,7 @@ article dl.parameters dd {
 }
 
 .svx-overview li a {
+  color: var(--bs-body-color);
   text-decoration: none;
   overflow-wrap: break-word;
 }
