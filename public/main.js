@@ -175,13 +175,13 @@ function buildMemberOverview(article) {
       const code = document.createElement("code");
       code.textContent = name;
       link.append(code);
-      const nameCell = document.createElement("span");
-      nameCell.className = "svx-overview-name";
-      nameCell.append(link, ...badgeElements(badges));
       const description = document.createElement("span");
       description.className = "svx-overview-summary";
       description.textContent = firstSentence(summary);
-      item.append(nameCell, description);
+      const tags = document.createElement("span");
+      tags.className = "svx-badges svx-overview-badges";
+      tags.append(...badgeElements(badges));
+      item.append(link, description, tags);
       list.append(item);
     }
 
