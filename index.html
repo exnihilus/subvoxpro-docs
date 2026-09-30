@@ -7,7 +7,7 @@
       <meta name="title" content="SubVox Pro API | SubVox Pro API ">
       
       
-      <link rel="icon" href="favicon.ico">
+      <link rel="icon" href="images/logo.svg">
       <link rel="stylesheet" href="public/docfx.min.css">
       <link rel="stylesheet" href="public/main.css">
       <meta name="docfx:navrel" content="toc.html">
@@ -39,13 +39,13 @@
 
   </head>
 
-  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+  <body class="tex2jax_ignore" data-layout="landing" data-yaml-mime="">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="index.html">
-            <img id="logo" class="svg" src="logo.svg" alt="">
-            
+            <img id="logo" class="svg" src="images/logo.svg" alt="SubVox Pro">
+            SubVox Pro
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -71,17 +71,76 @@
         </div>
 
         <article data-uid="">
-<h1 id="subvox-pro-api">SubVox Pro API</h1>
 
-<p>Scripting reference of <strong>SubVox Pro</strong>, the voice line, subtitle and dubbing toolkit for Unity.</p>
-<ul>
-<li>Start with <a class="xref" href="api/SubVoxPro.SubVox.html"><code>SubVox</code></a>, the entry point for code: play voice lines, set the language and the
-subtitle options, and listen to what plays.</li>
-<li><a class="xref" href="api/SubVoxPro.VoiceLineEmitter.html"><code>VoiceLineEmitter</code></a> plays lines from a character, in 3D, with priorities, a queue
-and external audio (FMOD, Wwise, video).</li>
-<li><a class="xref" href="api/SubVoxPro.VoiceLineData.html"><code>VoiceLineData</code></a> is a voice line asset: subtitles, translations, dubs and events.</li>
-</ul>
-<p>The user guide (Documentation.pdf) and ready-to-copy scripts (<code>Example/Snippets</code>) ship with the package.</p>
+<div class="svx-index">
+<section class="svx-hero">
+  <h1>SubVox Pro API</h1>
+  <p class="svx-lead">Play voice lines with synced subtitles, dubs in every language and events on the words that matter, from one line of code.</p>
+  <div class="svx-stage">
+    <button type="button" class="svx-play" aria-label="Play the example line">
+      <svg viewbox="0 0 14 14" aria-hidden="true"><path d="M2 1l11 6-11 6z"></path></svg>
+      <span>SubVox.<span class="svx-method">Play</span>(<span class="svx-arg">greeting</span>);</span>
+    </button>
+    <p class="svx-subtitle" aria-live="off"><span class="svx-speaker">Mara:</span> <span class="svx-word">Hold</span> <span class="svx-word">the</span> <span class="svx-word">gate.</span> <span class="svx-word">Nobody</span> <span class="svx-word">enters</span> <span class="svx-word">before</span> <span class="svx-word">dawn.</span></p>
+    <p class="svx-caption">The Karaoke reveal mode, as your players see it.</p>
+  </div>
+</section>
+<h2>Where to start</h2>
+<dl>
+  <div>
+    <dt><a href="api/SubVoxPro.SubVox.html">SubVox</a></dt>
+    <dd>The entry point for code: play lines, pause or stop them all, set the language and the subtitle options, and listen to what plays.</dd>
+  </div>
+  <div>
+    <dt><a href="api/SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a></dt>
+    <dd>Makes a character speak, in 3D, one line at a time, with priorities and a queue.</dd>
+  </div>
+  <div>
+    <dt><a href="api/SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+    <dd>What every play call returns: follow a line, stop it, or wait for it in a coroutine.</dd>
+  </div>
+  <div>
+    <dt><a href="api/SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+    <dd>A voice line asset, with its subtitles, translations, dubs, speakers and events.</dd>
+  </div>
+</dl>
+<h2>Find it by task</h2>
+<dl class="svx-tasks">
+  <div>
+    <dt>Play a line and wait for it to end</dt>
+    <dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_">SubVox.Play</a></dd>
+  </div>
+  <div>
+    <dt>Let a character speak without cutting the dialogue</dt>
+    <dd><a href="api/SubVoxPro.EVoiceLinePlayMode.html">EVoiceLinePlayMode.Queue</a></dd>
+  </div>
+  <div>
+    <dt>Run code when a word is spoken</dt>
+    <dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_Subscribe_">SubVox.Subscribe</a></dd>
+  </div>
+  <div>
+    <dt>Switch the language of subtitles and dubs</dt>
+    <dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">SubVox.CurrentLanguage</a></dd>
+  </div>
+  <div>
+    <dt>Offer subtitle options to players</dt>
+    <dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_SubtitleScale">SubVox.SubtitleScale</a></dd>
+  </div>
+  <div>
+    <dt>Keep subtitles in sync with FMOD, Wwise or a video</dt>
+    <dd><a href="api/SubVoxPro.IVoiceLineAudioClock.html">IVoiceLineAudioClock</a></dd>
+  </div>
+  <div>
+    <dt>Show a speech bubble above a character</dt>
+    <dd><a href="api/SubVoxPro.SubtitleBubbleDisplayer.html">SubtitleBubbleDisplayer</a></dd>
+  </div>
+  <div>
+    <dt>Build a dialogue log</dt>
+    <dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_History">SubVox.History</a></dd>
+  </div>
+</dl>
+<p class="svx-foot">The user guide (Documentation.pdf) and ready-to-copy scripts for each of these tasks (Example/Snippets) ship with the package.</p>
+</div>
 
 </article>
 
