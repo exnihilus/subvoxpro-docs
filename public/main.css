@@ -288,7 +288,7 @@ article dl.parameters dd {
 
 .svx-overview {
   display: grid;
-  grid-template-columns: minmax(9rem, 14rem) 1fr max-content;
+  grid-template-columns: fit-content(18rem) 1fr max-content;
   margin: 1.8rem 0 0.5rem;
   border: 1px solid var(--svx-rule);
   border-radius: 12px;
@@ -337,7 +337,6 @@ article dl.parameters dd {
 .svx-overview li a {
   color: var(--bs-body-color);
   text-decoration: none;
-  overflow-wrap: break-word;
 }
 
 .svx-overview li a code {

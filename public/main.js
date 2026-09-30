@@ -1,4 +1,4 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=c5468f2121";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=3e2402a567";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
@@ -174,7 +174,7 @@ function overviewRow(block, badges) {
   const link = document.createElement("a");
   link.href = `#${block.heading.id}`;
   const code = labelElement("code", "", "");
-  block.name.split(/(?<=\(|, )/).forEach((part, index) => code.append(...(index ? [document.createElement("wbr"), part] : [part])));
+  block.name.split(/(?<=\((?!\))|, )/).forEach((part, index) => code.append(...(index ? [document.createElement("wbr"), part] : [part])));
   link.append(code);
   const tags = labelElement("span", "svx-badges svx-overview-badges", "");
   tags.append(...badgeElements(badges));
