@@ -24,6 +24,13 @@ export default {
   start: () => {
     document.querySelector("header")?.setAttribute("data-bs-theme", "dark");
 
+    document.querySelectorAll("article h4.section").forEach(heading => {
+      const list = heading.nextElementSibling;
+      if (list?.matches("dl.parameters") && list.children.length === 2 && !list.querySelector("dd")?.textContent.trim()) {
+        heading.classList.add("svx-inline");
+      }
+    });
+
     const subtitle = document.querySelector(".svx-subtitle");
     const button = document.querySelector(".svx-play");
     if (!subtitle || !button) {
