@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Classe VoiceLineData | Documentation SubVox Pro </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineData | Documentation SubVox Pro " name="title"/>
+<meta content="Voiceline avec audio et sous-titres source, traductions, doublages, speakers et événements. Créée et modifiée dans la fenêtre SubVox Pro ; lecture seule depuis le code." name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=9f8cab86d6" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="Sur cette page" name="loc:inThisArticle"/>
+<meta content="{count} résultats pour « {query} »" name="loc:searchResultsCount"/>
+<meta content="Aucun résultat pour « {query} »" name="loc:searchNoResults"/>
+<meta content="Filtrer par titre" name="loc:tocFilter"/>
+<meta content="Suivant" name="loc:nextArticle"/>
+<meta content="Précédent" name="loc:prevArticle"/>
+<meta content="Clair" name="loc:themeLight"/>
+<meta content="Sombre" name="loc:themeDark"/>
+<meta content="Automatique" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=9f8cab86d6" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="fr">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.VoiceLineData.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.VoiceLineData.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Afficher la navigation" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Rechercher" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Rechercher" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Sommaire</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.VoiceLineData">
+<h1 class="text-break" data-uid="SubVoxPro.VoiceLineData" id="SubVoxPro_VoiceLineData">
+Classe VoiceLineData  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>Espace de noms</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>Voiceline avec audio et sous-titres source, traductions, doublages, speakers et événements. Créée et modifiée dans la fenêtre SubVox Pro ; lecture seule depuis le code.</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class VoiceLineData : ScriptableObject</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>Héritage</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineData</span></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">Constructeurs
+</h2>
+<a data-uid="SubVoxPro.VoiceLineData.#ctor*" id="SubVoxPro_VoiceLineData__ctor_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.#ctor" id="SubVoxPro_VoiceLineData__ctor">
+  VoiceLineData()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineData()</code></pre>
+</div>
+<h2 class="section" id="properties">Propriétés
+</h2>
+<a data-uid="SubVoxPro.VoiceLineData.DefaultSpeaker*" id="SubVoxPro_VoiceLineData_DefaultSpeaker_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.DefaultSpeaker" id="SubVoxPro_VoiceLineData_DefaultSpeaker">
+  DefaultSpeaker
+  
+  </h3>
+<div class="markdown level1 summary"><p>Speaker global attribué à tous les sous-titres, prioritaire sur les speakers des lignes. Leurs choix sont conservés et réapparaissent lorsque cette valeur revient à null.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SpeakerData DefaultSpeaker { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.EventCues*" id="SubVoxPro_VoiceLineData_EventCues_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.EventCues" id="SubVoxPro_VoiceLineData_EventCues">
+  EventCues
+  
+  </h3>
+<div class="markdown level1 summary"><p>Événements placés sur cette voiceline.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;VoiceLineEventCue&gt; EventCues { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.VoiceLineEventCue.html">VoiceLineEventCue</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.LocalizedAudioTracks*" id="SubVoxPro_VoiceLineData_LocalizedAudioTracks_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.LocalizedAudioTracks" id="SubVoxPro_VoiceLineData_LocalizedAudioTracks">
+  LocalizedAudioTracks
+  
+  </h3>
+<div class="markdown level1 summary"><p>Doublages, un par langue.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;LocalizedAudioTrack&gt; LocalizedAudioTracks { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.LocalizedAudioTrack.html">LocalizedAudioTrack</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.LocalizedTracks*" id="SubVoxPro_VoiceLineData_LocalizedTracks_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.LocalizedTracks" id="SubVoxPro_VoiceLineData_LocalizedTracks">
+  LocalizedTracks
+  
+  </h3>
+<div class="markdown level1 summary"><p>Traductions des sous-titres, une par langue.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;LocalizedSubtitleTrack&gt; LocalizedTracks { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.LocalizedSubtitleTrack.html">LocalizedSubtitleTrack</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.NoAudioDuration*" id="SubVoxPro_VoiceLineData_NoAudioDuration_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.NoAudioDuration" id="SubVoxPro_VoiceLineData_NoAudioDuration">
+  NoAudioDuration
+  
+  </h3>
+<div class="markdown level1 summary"><p>Durée en secondes sans audio. Les sous-titres plus tardifs l’allongent : une voiceline textuelle joue aussi longtemps que la timeline affichée dans l’éditeur.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float NoAudioDuration { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.SourceClip*" id="SubVoxPro_VoiceLineData_SourceClip_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.SourceClip" id="SubVoxPro_VoiceLineData_SourceClip">
+  SourceClip
+  
+  </h3>
+<div class="markdown level1 summary"><p>Audio source, ou null pour une voiceline sans audio.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public AudioClip SourceClip { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><span class="xref">AudioClip</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.SourceLanguageCode*" id="SubVoxPro_VoiceLineData_SourceLanguageCode_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.SourceLanguageCode" id="SubVoxPro_VoiceLineData_SourceLanguageCode">
+  SourceLanguageCode
+  
+  </h3>
+<div class="markdown level1 summary"><p>Langue source, par exemple fr, ou code vide si inconnue. Demander cette langue joue toujours la source, jamais une piste de même langue.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string SourceLanguageCode { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.Subtitles*" id="SubVoxPro_VoiceLineData_Subtitles_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.Subtitles" id="SubVoxPro_VoiceLineData_Subtitles">
+  Subtitles
+  
+  </h3>
+<div class="markdown level1 summary"><p>Sous-titres source, avec leur langue et leurs timings.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;SubtitleInfo&gt; Subtitles { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">Méthodes
+</h2>
+<a data-uid="SubVoxPro.VoiceLineData.FindAudioTrack*" id="SubVoxPro_VoiceLineData_FindAudioTrack_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.FindAudioTrack(System.String)" id="SubVoxPro_VoiceLineData_FindAudioTrack_System_String_">
+  FindAudioTrack(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Doublage dont le code correspond exactement à language_code, ou null.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public LocalizedAudioTrack FindAudioTrack(string language_code)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.LocalizedAudioTrack.html">LocalizedAudioTrack</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.FindTrack*" id="SubVoxPro_VoiceLineData_FindTrack_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.FindTrack(System.String)" id="SubVoxPro_VoiceLineData_FindTrack_System_String_">
+  FindTrack(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Traduction dont le code correspond exactement à language_code, ou null.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public LocalizedSubtitleTrack FindTrack(string language_code)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.LocalizedSubtitleTrack.html">LocalizedSubtitleTrack</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetAudioClipForLanguage*" id="SubVoxPro_VoiceLineData_GetAudioClipForLanguage_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetAudioClipForLanguage(System.String)" id="SubVoxPro_VoiceLineData_GetAudioClipForLanguage_System_String_">
+  GetAudioClipForLanguage(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Clip doublé de la langue demandée s’il existe, sinon clip source.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public AudioClip GetAudioClipForLanguage(string language_code)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><span class="xref">AudioClip</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetAudioLanguages*" id="SubVoxPro_VoiceLineData_GetAudioLanguages_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetAudioLanguages" id="SubVoxPro_VoiceLineData_GetAudioLanguages">
+  GetAudioLanguages()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Langues audio disponibles : source si elle possède un audio, puis chaque doublage.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; GetAudioLanguages()</code></pre>
+</div>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetDuration*" id="SubVoxPro_VoiceLineData_GetDuration_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetDuration(System.String)" id="SubVoxPro_VoiceLineData_GetDuration_System_String_">
+  GetDuration(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Durée dans la langue demandée : longueur du clip ou <a class="xref" href="SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_NoAudioDuration">NoAudioDuration</a> étendue jusqu’au dernier sous-titre sans audio.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float GetDuration(string language_code)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetEffectiveSpeaker*" id="SubVoxPro_VoiceLineData_GetEffectiveSpeaker_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetEffectiveSpeaker(System.String)" id="SubVoxPro_VoiceLineData_GetEffectiveSpeaker_System_String_">
+  GetEffectiveSpeaker(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Speaker effectivement affiché : le speaker global s’il est défini, prioritaire sur les lignes, sinon celui de la ligne.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SpeakerData GetEffectiveSpeaker(string id)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetSpeakerOverride*" id="SubVoxPro_VoiceLineData_GetSpeakerOverride_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetSpeakerOverride(System.String)" id="SubVoxPro_VoiceLineData_GetSpeakerOverride_System_String_">
+  GetSpeakerOverride(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Speaker propre à une ligne, ou null pour utiliser le speaker par défaut.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SpeakerData GetSpeakerOverride(string id)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetSubtitleLanguages*" id="SubVoxPro_VoiceLineData_GetSubtitleLanguages_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetSubtitleLanguages" id="SubVoxPro_VoiceLineData_GetSubtitleLanguages">
+  GetSubtitleLanguages()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Langues de sous-titres disponibles : source d’abord, code vide si inconnue, puis chaque traduction.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; GetSubtitleLanguages()</code></pre>
+</div>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_VoiceLineData_GetSubtitleLanguages_examples">Examples</h4>
+<pre><code class="lang-csharp">foreach (string code in referenceLine.GetSubtitleLanguages())
+{
+    AddMenuEntry(string.IsNullOrEmpty(code) ? "Original" : code, () =&gt; SubVox.CurrentLanguage = code);
+}</code></pre>
+<a data-uid="SubVoxPro.VoiceLineData.GetSubtitles*" id="SubVoxPro_VoiceLineData_GetSubtitles_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetSubtitles(System.String,System.String)" id="SubVoxPro_VoiceLineData_GetSubtitles_System_String_System_String_">
+  GetSubtitles(string, string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Langue de sous-titres calée sur une piste audio choisie indépendamment. Codes vides : sous-titres et audio source.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;SubtitleInfo&gt; GetSubtitles(string subtitle_language_code, string audio_language_code)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>subtitle_language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+<dt><code>audio_language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetSubtitlesForLanguage*" id="SubVoxPro_VoiceLineData_GetSubtitlesForLanguage_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetSubtitlesForLanguage(System.String)" id="SubVoxPro_VoiceLineData_GetSubtitlesForLanguage_System_String_">
+  GetSubtitlesForLanguage(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Sous-titres de la langue demandée, traduction calée sur la source. Langue vide ou traduction absente : sous-titres source.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;SubtitleInfo&gt; GetSubtitlesForLanguage(string language_code)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.HasLanguage*" id="SubVoxPro_VoiceLineData_HasLanguage_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.HasLanguage(System.String)" id="SubVoxPro_VoiceLineData_HasLanguage_System_String_">
+  HasLanguage(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Vrai si cette langue existe en source, traduction ou doublage, variantes proches comprises : pt-BR trouve pt ou pt-PT.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool HasLanguage(string language_code)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.IsSourceLanguage*" id="SubVoxPro_VoiceLineData_IsSourceLanguage_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.IsSourceLanguage(System.String)" id="SubVoxPro_VoiceLineData_IsSourceLanguage_System_String_">
+  IsSourceLanguage(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Vrai si le code désigne la langue source ; en correspond aussi à en-US.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsSourceLanguage(string language_code)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro — © 2026 ExNihilus
+        </div>
+</div>
+</footer>
+</body>
+</html>

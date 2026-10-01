@@ -1,3 +1,5 @@
+import { localize } from "./languages.js?v=9f8cab86d6";
+
 const ROLES = ["text", "keyword", "control", "class", "struct", "interface", "enum", "delegate", "typeparam", "method",
   "property", "field", "event",
   "constant", "variable", "namespace", "string", "number", "comment", "operator", "punctuation"];
@@ -283,9 +285,10 @@ function swatches(theme) {
 function buildPicker(current) {
   const picker = document.createElement("div");
   picker.className = "dropdown svx-code-theme";
-  picker.innerHTML = `<button class="btn border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="Code colors">
+  const title = localize("Code colors", "Couleurs du code");
+  picker.innerHTML = `<button class="btn border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="${title}">
       <i class="bi bi-code-slash"></i><span class="svx-code-theme-name"></span></button>
-    <ul class="dropdown-menu dropdown-menu-end"><li><h6 class="dropdown-header">Code colors</h6></li></ul>`;
+    <ul class="dropdown-menu dropdown-menu-end"><li><h6 class="dropdown-header">${title}</h6></li></ul>`;
   const menu = picker.querySelector("ul");
   const label = picker.querySelector(".svx-code-theme-name");
   const refresh = selected => {

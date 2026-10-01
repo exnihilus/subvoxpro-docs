@@ -117,10 +117,17 @@ pre code.hljs {
   margin-left: auto;
 }
 
-#navbar .svx-version + .svx-code-theme {
+#navbar .svx-language {
+  order: 1;
+  margin-left: auto;
+}
+
+#navbar .svx-language + .svx-code-theme,
+#navbar .svx-version + .svx-language {
   margin-left: 0;
 }
 
+.svx-language .btn,
 .svx-version .btn {
   display: inline-flex;
   align-items: center;
@@ -137,6 +144,7 @@ pre code.hljs {
   font-variant-numeric: tabular-nums;
 }
 
+.svx-language .dropdown-item.active,
 .svx-version .dropdown-item.active {
   color: var(--bs-body-color);
   background: rgba(255, 209, 77, 0.14);
@@ -212,6 +220,8 @@ pre code.hljs {
 }
 
 @media (max-width: 767.98px) {
+  #navbar .svx-version,
+  #navbar .svx-language,
   #navbar .svx-code-theme {
     margin: 0.4rem auto 0;
   }

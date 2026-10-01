@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
       <title>Guide | SubVox Pro Documentation </title>
@@ -9,7 +9,7 @@
       
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css?v=1942410e80">
+      <link rel="stylesheet" href="../public/main.css?v=9f8cab86d6">
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../public/docfx.min.js?v=1942410e80"></script>
+      <script type="module" src="./../public/docfx.min.js?v=9f8cab86d6"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'dark'
@@ -38,6 +38,9 @@
       </script>
 
     <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="en">
+  <link rel="alternate" hreflang="en" href="../manual/index.html">
+<link rel="alternate" hreflang="fr" href="../fr/manual/index.html">
 </head>
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
@@ -136,7 +139,12 @@ engines</strong> (transcription, translation and dubbing without any account) ne
 <p>From one audio clip to synced subtitles on screen in a few minutes.</p>
 <p>Everything in SubVox Pro is also one click away in <strong>Tools ▸ SubVox Pro ▸ Hub</strong>: a window of tiles that opens the
 voice line editor, batch processing, Google Sheets, the provider comparison,
-the additional (offline) models, the example scene, the two guides, the online documentation and the settings.</p>
+the additional (offline) models, the example scene, the documentation, the provider setup guide and the settings.
+The home screen has <strong>nine tiles</strong>. <strong>Documentation</strong> opens a second screen with just <strong>Online</strong> (guide,
+providers and scripting reference, with an English/French language selector) and <strong>Local</strong> (the English PDF,
+available offline). <strong>Back</strong> returns to the home screen; <strong>Provider Setup</strong> opens the separate English PDF.</p>
+<p><img src="Documentation/Images/subvoxpro-hub.png" alt="The SubVox Pro Hub with its nine tool tiles"></p>
+<p><img src="Documentation/Images/subvoxpro-hub-documentation.png" alt="Documentation screen in the Hub: Online, Local and Back"></p>
 <p><strong>1. Pick how you will transcribe.</strong> Either paste an API key for a speech-to-text service in
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong> (<a href="providers.html">where to get one</a>), or, on Windows, use <strong>Whisper</strong> or
 <strong>Parakeet</strong>, which run offline for free (they offer to download their model the first time).</p>
@@ -173,6 +181,13 @@ no text clears the screen (a <strong>blank</strong>).</li>
 then drag over words to paint them (right-drag erases).</li>
 <li><strong>Subtitles</strong> — one row per subtitle: its name, length, speaker and text, with a button to play it.</li>
 </ul>
+<h3 id="tags-and-languages">Tags and languages</h3>
+<p>Click the tag beside <strong>Voice Line Data</strong> to choose both a colour and a shape. <strong>Clear tag</strong> removes it.
+The shape helps distinguish voice lines without relying on colour alone.</p>
+<p><img src="Documentation/Images/subvoxpro-tag-popup.png" alt="Colour and shape tag popup with a blue diamond selected"></p>
+<p>Click the source flag to choose the spoken language. Flags identify languages, not a speaker's nationality;
+the picker shows their names and codes so you do not have to recognize the flag.</p>
+<p><img src="Documentation/Images/subvoxpro-language-picker.png" alt="Source language picker showing language names, codes and flags"></p>
 <h3 id="starting-without-audio">Starting without audio</h3>
 <img src="Documentation/Images/subvoxpro-new-voice-line-subtitles.png" alt="Add a subtitles track: import an .srt file, import a .txt file or add lines manually" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <p>A voice line can start from text instead of audio: choose <strong>Add a subtitles track</strong>, then import an <strong>.srt</strong> file
@@ -194,6 +209,10 @@ overlaps, lines too fast to read — with one-click fixes. Everything is undoabl
 adjust how long a silence must be; the hidden parts are shaded on the waveform.</li>
 <li><strong>Export SRT</strong> saves the subtitles as an <code>.srt</code> file.</li>
 </ul>
+<p><img src="Documentation/Images/subvoxpro-auto-blanks.png" alt="Auto blanks popup with silence, minimum pause, hold out and lead in settings"></p>
+<p><strong>Silence</strong> sets how much quieter a pause must be than the voice; <strong>Min pause</strong> ignores very short gaps.
+<strong>Hold out</strong> keeps the text briefly after the voice stops, and <strong>Lead in</strong> brings it back before speech resumes.
+<strong>Only between two lines</strong> prevents a subtitle from disappearing and reappearing in the middle of its sentence.</p>
 <h3 id="deleting-a-voice-line">Deleting a voice line</h3>
 <p>The trash button deletes the voice line. It lists the files that go with it: the ones SubVox Pro generated (dubs,
 recordings) are selected, your own files are not, and a file still used elsewhere is locked. Everything goes to the
@@ -231,6 +250,9 @@ no timings, so the words are spread evenly over the clip.</p>
 <li>Set the <strong>Formality</strong> (formal or casual &quot;you&quot;) if the language has one.</li>
 <li>Click <strong>Translate</strong>. Each language gets its own track; switch between them with the SUBTITLES selector.</li>
 </ol>
+<p><img src="Documentation/Images/subvoxpro-translation-targets.png" alt="Translation target popup with a preset of several languages and its editable language list"></p>
+<p>The <strong>Target</strong> popup also edits presets: <strong>+ New</strong> creates a group, and the right-hand column selects its languages.
+Choosing that preset translates into all its languages in one operation.</p>
 <p><strong>Help the translator.</strong> Ambiguous lines translate better with context: write a <strong>global context</strong> for the whole
 voice line (speech-bubble button) and, if needed, a note on a single line (its speech-bubble button in the list).</p>
 <p><strong>Keep translations in sync.</strong> When you change a source line after translating it, its translations show an <strong>OUT</strong>
@@ -289,6 +311,9 @@ of the line (<em>Inline</em>), above it (<em>Above</em>), or not at all (<em>Hid
 <li><strong>Keep Background Between Subtitles</strong> leaves only the subtitle panel visible during a blank between two lines. It
 is on by default; a blank before the first line or after the last one still hides the panel.</li>
 </ul>
+<p><img src="Documentation/Images/subvoxpro-speaker-picker.png" alt="Speaker picker with gender tabs, a selected speaker and a shortcut to create a speaker"></p>
+<p>The speaker picker groups characters by gender. The pencil edits an existing speaker; <strong>New speaker</strong> creates one.
+For a per-line override, the top entry returns to the voice line's default speaker.</p>
 <h3 id="voice-personalities">Voice personalities</h3>
 <p>A <strong>personality</strong> is a reusable acting direction — <em>Angry</em>, <em>Mysterious</em>, <em>Whispering</em>… Create one from a speaker
 (<strong>New personality</strong>) or with <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Personality</strong>, then either write the direction
@@ -299,6 +324,9 @@ you what the selected voice will use.</p>
 <hr>
 <h2 id="edit-the-audio">Edit the audio</h2>
 <p>The buttons at the right of the timeline toolbar edit the audio itself. Every edit can be undone with <strong>Ctrl+Z</strong>.</p>
+<p><img src="Documentation/Images/subvoxpro-audio-effect-picker.png" alt="Audio effects picker separating applied effects from available ones"></p>
+<p>The <strong>Audio effects</strong> button opens the effect list. Applied effects appear first; pick one to edit it,
+or use its cross to reset and remove it.</p>
 <ul>
 <li><strong>Crop</strong> — drag the start and end handles, then <strong>Apply crop</strong>. It rewrites the source audio file, so keep a copy
 of the full take if you may need it.</li>
@@ -317,6 +345,13 @@ the lane below, where <strong>0</strong> leaves it unchanged. The <strong>magnet
 <strong>Pitch</strong> shifts a whole passage and shows the same melody. Both keep the voice natural; a few semitones
 (st) work best. The <strong>Engine</strong> dropdown offers <strong>WORLD</strong> (natural, default), <strong>PSOLA</strong> (lighter) or <strong>Classic</strong> (fastest; also changes the voice's character).</li>
 </ul>
+<p><img src="Documentation/Images/subvoxpro-audio-effects.png" alt="Volume effect editing on the waveform, with a decibel curve and editable points"></p>
+<p>The volume curve above reduces only the selected passages. The waveform keeps the timing visible while the
+points control the gain; <strong>0 dB</strong> leaves the original volume unchanged.</p>
+<p><img src="Documentation/Images/subvoxpro-intonation.png" alt="Intonation editor showing the detected voice melody and a separate pitch-offset drawing lane"></p>
+<p>In <strong>Intonation</strong>, the upper curve shows the detected voice melody. The lower lane is your change, in semitones:
+positive raises the pitch, negative lowers it, and zero keeps the original. They are separate so you can see
+what the voice did and what you are changing.</p>
 <hr>
 <h2 id="play-voice-lines-in-your-game">Play voice lines in your game</h2>
 <h3 id="set-up-the-scene">Set up the scene</h3>
@@ -340,7 +375,7 @@ and give it the name of the Label to fill (and of the element to hide between li
 event, a language menu, an options menu, a dialogue log, video subtitles…) are in <code>SubVoxPro/Example/Snippets</code>, and
 your code editor shows a description of every class, method and setting as you type. The full scripting
 reference is online, next to this guide, with a page per version of SubVox Pro:
-<a href="https://exnihilus.github.io/subvoxpro-docs/">https://exnihilus.github.io/subvoxpro-docs/</a> (also from the <strong>Online Docs</strong> tile of the Hub).</p>
+<a href="https://exnihilus.github.io/subvoxpro-docs/">https://exnihilus.github.io/subvoxpro-docs/</a> (also from <strong>Documentation ▸ Online</strong> in the Hub).</p>
 <pre><code class="lang-csharp">using SubVoxPro;
 
 SubVox.Play(myVoiceLine);            // plays, with synced subtitles

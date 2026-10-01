@@ -1,5 +1,6 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=1942410e80";
-import { startVersionPicker } from "./versions.js?v=1942410e80";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=9f8cab86d6";
+import { startVersionPicker } from "./versions.js?v=9f8cab86d6";
+import { localize, startLanguagePicker } from "./languages.js?v=9f8cab86d6";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
@@ -72,7 +73,7 @@ function startDemo() {
     audio.pause();
     audio.currentTime = 0;
     demo.classList.remove("svx-playing");
-    button.setAttribute("aria-label", "Play the example line");
+    button.setAttribute("aria-label", localize("Play the example line", "Lire la réplique d’exemple"));
     tick();
   };
 
@@ -84,7 +85,7 @@ function startDemo() {
 
     audio.currentTime = 0;
     demo.classList.add("svx-playing");
-    button.setAttribute("aria-label", "Stop the example line");
+    button.setAttribute("aria-label", localize("Stop the example line", "Arrêter la réplique d’exemple"));
     clearInterval(timer);
     timer = setInterval(tick, 30);
     audio.play().catch(stop);
@@ -106,10 +107,10 @@ function badgesOf(signature, name) {
   if (/\bstatic\b/.test(declaration)) badges.push(["static", "static"]);
   if (/\bconst\b/.test(declaration)) badges.push(["const", "static"]);
   if (/\babstract\b/.test(declaration)) badges.push(["abstract", "override"]);
-  if (/\bvirtual\b/.test(declaration)) badges.push(["overridable", "override"]);
+  if (/\bvirtual\b/.test(declaration)) badges.push([localize("overridable", "redéfinissable"), "override"]);
   if (/\boverride\b/.test(declaration)) badges.push(["override", "override"]);
-  if (/\{\s*get;\s*\}/.test(signature) || /\breadonly\b/.test(declaration)) badges.push(["read-only", "readonly"]);
-  if (UNITY_MESSAGES.has(name.replace(/\(.*$/, ""))) badges.push(["Unity message", "unity"]);
+  if (/\{\s*get;\s*\}/.test(signature) || /\breadonly\b/.test(declaration)) badges.push([localize("read-only", "lecture seule"), "readonly"]);
+  if (UNITY_MESSAGES.has(name.replace(/\(.*$/, ""))) badges.push([localize("Unity message", "message Unity"), "unity"]);
   return badges;
 }
 
@@ -135,10 +136,10 @@ function firstSentence(element) {
   return text;
 }
 
-const ACCESS_FILTERS = [["all", "All"], ["public", "Public"], ["protected", "Protected"]];
+const ACCESS_FILTERS = [["all", localize("All", "Tous")], ["public", "Public"], ["protected", "Protected"]];
 const ACCESS_ZONES = {
-  public: { label: "Public", hint: "Call these from any script." },
-  protected: { label: "Protected — for subclasses", hint: "Only reachable from a class that derives from this one." }
+  public: { label: "Public", hint: localize("Call these from any script.", "Accessibles depuis n’importe quel script.") },
+  protected: { label: localize("Protected — for subclasses", "Protected : pour les sous-classes"), hint: localize("Only reachable from a class that derives from this one.", "Accessibles uniquement depuis une classe dérivée.") }
 };
 
 function memberBlocks(section) {
@@ -239,7 +240,7 @@ function buildMemberOverview(article) {
   const zoned = sections.some(entry => entry.blocks.some(block => block.access === "protected"));
   const overview = document.createElement("nav");
   overview.className = "svx-overview";
-  overview.setAttribute("aria-label", "Members");
+  overview.setAttribute("aria-label", localize("Members", "Membres"));
   if (zoned) {
     overview.append(accessFilter(article));
   }
@@ -284,7 +285,7 @@ function buildMemberOverview(article) {
 function accessFilter(article) {
   const bar = labelElement("div", "svx-access-filter", "");
   bar.setAttribute("role", "group");
-  bar.setAttribute("aria-label", "Show members");
+  bar.setAttribute("aria-label", localize("Show members", "Afficher les membres"));
   for (const [value, label] of ACCESS_FILTERS) {
     const button = labelElement("button", "", label);
     button.type = "button";
@@ -403,6 +404,7 @@ export default {
   start: () => {
     document.querySelector("header")?.setAttribute("data-bs-theme", "dark");
     startCodeThemes();
+    startLanguagePicker();
     startVersionPicker();
     removeEmptyValueSections();
     const article = document.querySelector("article[data-uid]");
