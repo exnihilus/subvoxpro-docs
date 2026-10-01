@@ -116,7 +116,7 @@ Classe VoiceLineData
   DefaultSpeaker
   
   </h3>
-<div class="markdown level1 summary"><p>Speaker global attribué à tous les sous-titres, prioritaire sur les speakers des lignes. Leurs choix sont conservés et réapparaissent lorsque cette valeur revient à null.</p>
+<div class="markdown level1 summary"><p>Speaker global attribué à tous les sous-titres, prioritaire sur ceux des lignes. Les choix des lignes sont conservés et reviennent quand cette valeur repasse à null.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -180,7 +180,7 @@ Classe VoiceLineData
   NoAudioDuration
   
   </h3>
-<div class="markdown level1 summary"><p>Durée en secondes sans audio. Les sous-titres plus tardifs l’allongent : une voiceline textuelle joue aussi longtemps que la timeline affichée dans l’éditeur.</p>
+<div class="markdown level1 summary"><p>Durée en secondes d’une voiceline sans audio. Des sous-titres plus tardifs l’allongent : une voiceline sans audio dure aussi longtemps que la timeline affichée dans l’éditeur.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -212,7 +212,7 @@ Classe VoiceLineData
   SourceLanguageCode
   
   </h3>
-<div class="markdown level1 summary"><p>Langue source, par exemple fr, ou code vide si inconnue. Demander cette langue joue toujours la source, jamais une piste de même langue.</p>
+<div class="markdown level1 summary"><p>Langue source, par exemple fr, ou vide si elle est inconnue. Demander cette langue joue toujours la source, jamais une piste de la même langue.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -325,7 +325,7 @@ Classe VoiceLineData
   GetDuration(string)
   
   </h3>
-<div class="markdown level1 summary"><p>Durée dans la langue demandée : longueur du clip ou <a class="xref" href="SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_NoAudioDuration">NoAudioDuration</a> étendue jusqu’au dernier sous-titre sans audio.</p>
+<div class="markdown level1 summary"><p>Durée dans la langue demandée : longueur du clip, ou <a class="xref" href="SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_NoAudioDuration">NoAudioDuration</a> prolongée jusqu’au dernier sous-titre s’il n’y a pas d’audio.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -346,7 +346,7 @@ Classe VoiceLineData
   GetEffectiveSpeaker(string)
   
   </h3>
-<div class="markdown level1 summary"><p>Speaker effectivement affiché : le speaker global s’il est défini, prioritaire sur les lignes, sinon celui de la ligne.</p>
+<div class="markdown level1 summary"><p>Speaker réellement affiché : le speaker global s’il est défini (il prime sur les lignes), sinon celui de la ligne.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -409,7 +409,7 @@ Classe VoiceLineData
   GetSubtitles(string, string)
   
   </h3>
-<div class="markdown level1 summary"><p>Langue de sous-titres calée sur une piste audio choisie indépendamment. Codes vides : sous-titres et audio source.</p>
+<div class="markdown level1 summary"><p>Sous-titres d’une langue, calés sur une piste audio choisie séparément. Codes vides : sous-titres et audio source.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -432,7 +432,7 @@ Classe VoiceLineData
   GetSubtitlesForLanguage(string)
   
   </h3>
-<div class="markdown level1 summary"><p>Sous-titres de la langue demandée, traduction calée sur la source. Langue vide ou traduction absente : sous-titres source.</p>
+<div class="markdown level1 summary"><p>Sous-titres dans la langue demandée, traduction calée sur la source. Langue vide ou traduction absente : sous-titres source.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
