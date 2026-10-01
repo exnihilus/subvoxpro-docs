@@ -9,7 +9,7 @@
       
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css?v=d17fac0633">
+      <link rel="stylesheet" href="../public/main.css?v=1942410e80">
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../public/docfx.min.js?v=d17fac0633"></script>
+      <script type="module" src="./../public/docfx.min.js?v=1942410e80"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'dark'
@@ -136,7 +136,7 @@ engines</strong> (transcription, translation and dubbing without any account) ne
 <p>From one audio clip to synced subtitles on screen in a few minutes.</p>
 <p>Everything in SubVox Pro is also one click away in <strong>Tools ▸ SubVox Pro ▸ Hub</strong>: a window of tiles that opens the
 voice line editor, batch processing, Google Sheets, the provider comparison,
-the additional (offline) models, the example scene, the two guides and the settings.</p>
+the additional (offline) models, the example scene, the two guides, the online documentation and the settings.</p>
 <p><strong>1. Pick how you will transcribe.</strong> Either paste an API key for a speech-to-text service in
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong> (<a href="providers.html">where to get one</a>), or, on Windows, use <strong>Whisper</strong> or
 <strong>Parakeet</strong>, which run offline for free (they offer to download their model the first time).</p>
@@ -286,6 +286,8 @@ language and optional overrides per language.</li>
 <li>On the <strong>Subtitle Displayer</strong> (or <strong>Subtitle Document Displayer</strong>), <strong>Speaker Name Mode</strong> shows the name in front
 of the line (<em>Inline</em>), above it (<em>Above</em>), or not at all (<em>Hidden</em>). A speaker can also have its own font: <strong>Font
 (TextMeshPro)</strong> for the Subtitle Displayer, <strong>Font (UI Toolkit)</strong> for the Subtitle Document Displayer.</li>
+<li><strong>Keep Background Between Subtitles</strong> leaves only the subtitle panel visible during a blank between two lines. It
+is on by default; a blank before the first line or after the last one still hides the panel.</li>
 </ul>
 <h3 id="voice-personalities">Voice personalities</h3>
 <p>A <strong>personality</strong> is a reusable acting direction — <em>Angry</em>, <em>Mysterious</em>, <em>Whispering</em>… Create one from a speaker
@@ -337,7 +339,8 @@ and give it the name of the Label to fill (and of the element to hide between li
 <p>Everything goes through <code>SubVox</code>. Ready-to-copy scripts for the common cases (waiting for a line, reacting to an
 event, a language menu, an options menu, a dialogue log, video subtitles…) are in <code>SubVoxPro/Example/Snippets</code>, and
 your code editor shows a description of every class, method and setting as you type. The full scripting
-reference is online: <a href="https://exnihilus.github.io/subvoxpro-docs/">https://exnihilus.github.io/subvoxpro-docs/</a>.</p>
+reference is online, next to this guide, with a page per version of SubVox Pro:
+<a href="https://exnihilus.github.io/subvoxpro-docs/">https://exnihilus.github.io/subvoxpro-docs/</a> (also from the <strong>Online Docs</strong> tile of the Hub).</p>
 <pre><code class="lang-csharp">using SubVoxPro;
 
 SubVox.Play(myVoiceLine);            // plays, with synced subtitles
@@ -408,8 +411,12 @@ SubVox.RevealMode = EVoiceLineSubtitleRevealMode.Karaoke;  // whole line, spoken
 <h3 id="your-own-subtitle-display">Your own subtitle display</h3>
 <p>The displayers cover most needs. To draw subtitles your own way, listen to
 <code>SubVox.SubtitleUpdated</code>, which gives you the subtitle to show whenever it changes (empty text means
-&quot;clear the screen&quot;). <code>SubVox.PublishSubtitle(...)</code> shows your own text on the displayers, for example
-during a video.</p>
+&quot;clear the screen&quot;). Read <code>SubVox.CurrentSubtitle</code> just after subscribing, so your display also shows a line
+that was already playing. The built-in displayers do this automatically when enabled or re-enabled; a speech
+bubble reads its own emitter's current subtitle instead.</p>
+<p><code>SubVox.DisplayedVoiceLine</code> gives the voice line selected for the global display, including a Timeline clip.
+<code>SubVox.PublishSubtitle(...)</code> shows your own text on the displayers, for example during a video. Custom
+publications are ignored while a SubVox Timeline clip is active, because that clip owns the display.</p>
 <p>To only tweak a displayer (change the text, animate the box), create a script that inherits from it and override
 <code>ComposeText</code> or <code>SetVisible</code>. The other components can be extended the same way.</p>
 <h3 id="playing-the-audio-with-fmod-wwise-or-a-video">Playing the audio with FMOD, Wwise or a video</h3>
@@ -441,14 +448,18 @@ follows that word if the timing changes). Drag the diamond to move it.</li>
 <ul>
 <li><p><strong>No code</strong> — add a <strong>Voice Line Event Receiver</strong> to an object, pick the signal and connect a UnityEvent.</p>
 </li>
-<li><p><strong>An attribute</strong> — mark any method of a MonoBehaviour with the signal's key (the copy button next to the signal
+<li><p><strong>An attribute</strong> — mark any method of a MonoBehaviour with the generated signal constant (the signal Inspector
 copies it):</p>
-<pre><code class="lang-csharp">[VoiceLineEvent(&quot;Camera Shake&quot;)]
+<pre><code class="lang-csharp">[VoiceLineEvent(SubVoxEvents.CAMERA_SHAKE)]
 private void Shake()
 {
     // ...
 }
 </code></pre>
+<p>Set the signal's optional <strong>Category</strong> to a <code>/</code>-separated hierarchy such as <code>Camera/Effects</code> to generate
+<code>SubVoxEvents.Camera.Effects.CAMERA_SHAKE</code>. Constants regenerate when signals are saved, renamed, created or
+deleted. Renaming a key or category deliberately leaves old references as compiler errors; string keys such as
+<code>[VoiceLineEvent(&quot;Camera Shake&quot;)]</code> remain supported.</p>
 <p>The <strong>[SubVox Pro]</strong> prefab finds these methods on its own. If you create objects at runtime, call
 <code>VoiceLineEventDispatcher.Refresh()</code> afterwards.</p>
 </li>
@@ -473,6 +484,14 @@ choose <strong>SubVox Pro ▸ Bake Voice Events to Timeline</strong>.</p>
 <p>The cutscene plays the dub of the current language when the line has one, with its subtitles in sync. The language
 is picked when the Timeline starts playing. A clip follows the manager's <strong>Subtitle Reveal Mode</strong>, unless you tick
 <strong>Override Reveal Mode</strong> on it.</p>
+<p>An active SubVox clip has priority on the global subtitle display. Other voice lines keep playing, but their
+subtitles cannot replace the clip's text, including during a blank or before its first subtitle. A blank inside
+the clip follows <strong>Keep Background Between Subtitles</strong> as usual.</p>
+<p>When the clip ends or the director is stopped, the display immediately returns to the highest-priority emitter
+still playing, at its current position; its audio is not restarted. If no emitter is playing, the panel hides.
+When several SubVox Timeline tracks or directors overlap, the most recently entered clip takes priority;
+ending another clip does not clear its subtitles.
+Pausing the director keeps its selected subtitle until playback resumes or the director is stopped.</p>
 <hr>
 <h2 id="process-many-files-at-once">Process many files at once</h2>
 <img src="Documentation/Images/subvoxpro-batch-window.png" alt="Batch Processing window" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">

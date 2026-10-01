@@ -876,12 +876,19 @@ details.svx-member-zone > summary.svx-zone-header {
   }
 
   .svx-modes {
+    display: flex;
     width: 100%;
+    min-width: 0;
   }
 
   .svx-modes button {
-    flex: 1;
-    padding: 0.55rem 0.4rem;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.55rem 0.3rem;
+    font-size: 0.8rem;
+    line-height: 1.15;
+    white-space: normal;
+    text-align: center;
   }
 }
 

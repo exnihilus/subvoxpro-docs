@@ -9,7 +9,7 @@
       <meta name="description" content="The code entry point of SubVox Pro: plays voice lines, sets the language and the subtitle reveal mode, and raises the global events (subtitles, voice lines, voice line events). Every playback source honors it: the  components and the Timeline integration.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css?v=d17fac0633">
+      <link rel="stylesheet" href="../public/main.css?v=1942410e80">
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../public/docfx.min.js?v=d17fac0633"></script>
+      <script type="module" src="./../public/docfx.min.js?v=1942410e80"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'dark'
@@ -230,6 +230,38 @@ Subtitles already on screen switch at once; a dub starts with the next voice lin
 
 
 
+  <a id="SubVoxPro_SubVox_CurrentSubtitle_" data-uid="SubVoxPro.SubVox.CurrentSubtitle*"></a>
+
+  <h3 id="SubVoxPro_SubVox_CurrentSubtitle" data-uid="SubVoxPro.SubVox.CurrentSubtitle">
+  CurrentSubtitle
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The selected subtitle, including a blank; read it when a display is enabled or re-enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SubtitleInfo CurrentSubtitle { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SubVoxPro_SubVox_DefaultEmitter_" data-uid="SubVoxPro.SubVox.DefaultEmitter*"></a>
 
   <h3 id="SubVoxPro_SubVox_DefaultEmitter" data-uid="SubVoxPro.SubVox.DefaultEmitter">
@@ -269,7 +301,7 @@ Subtitles already on screen switch at once; a dub starts with the next voice lin
   
   </h3>
 
-  <div class="markdown level1 summary"><p>The voice line whose subtitle is on screen, or null.</p>
+  <div class="markdown level1 summary"><p>The voice line selected for the display, from Timeline or an emitter, or null for none or custom text.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -780,7 +812,8 @@ exists). See <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_Voi
   </h3>
 
   <div class="markdown level1 summary"><p>Shows a subtitle on every display, as if a voice line had published it, for example the text of a video
-cutscene. It stays until the next subtitle; publish a blank <a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a> to clear it.</p>
+cutscene. It stays until the next subtitle; publish a blank <a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a> to clear it.
+An active Timeline voice line keeps priority, so custom publications are ignored while its clip is active.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1077,8 +1110,8 @@ private void Shake(VoiceLineEventContext context)
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Raised with the subtitle to display whenever the visible text changes. A blank subtitle means the display
-should clear.</p>
+  <div class="markdown level1 summary"><p>Raised with the selected subtitle whenever it changes. Read <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentSubtitle">CurrentSubtitle</a> when a display
+starts listening, so it also shows a line that was already playing.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
