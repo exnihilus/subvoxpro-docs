@@ -6,7 +6,7 @@
 <title>Classe VoiceLineSequencePlayer | Documentation SubVox Pro </title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="Class VoiceLineSequencePlayer | Documentation SubVox Pro " name="title"/>
-<meta content="Joue une , une réplique à la fois. Avance à la fin avec un délai facultatif, ou via , utilisable depuis un UnityEvent ou bouton.  revient en arrière. Suit  ; une étape refusée attend que l’émetteur se libère. Expose UnityEvents et événements C#." name="description"/>
+<meta content="Joue une , une réplique à la fois. Passe à la suivante en fin de réplique, après un délai facultatif, ou via  (depuis un UnityEvent ou un bouton) ;  revient en arrière. Suit  ; une étape refusée attend que l’émetteur se libère. Expose des UnityEvents et des événements C#." name="description"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
 <link href="../public/main.css?v=9f8cab86d6" rel="stylesheet"/>
@@ -84,7 +84,7 @@ Classe VoiceLineSequencePlayer
 <dl><dt>Espace de noms</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
 <dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
 </div>
-<div class="markdown summary"><p>Joue une <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a>, une réplique à la fois. Avance à la fin avec un délai facultatif, ou via <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Advance">Advance()</a>, utilisable depuis un UnityEvent ou bouton. <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Previous">Previous()</a> revient en arrière. Suit <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a> ; une étape refusée attend que l’émetteur se libère. Expose UnityEvents et événements C#.</p>
+<div class="markdown summary"><p>Joue une <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a>, une réplique à la fois. Passe à la suivante en fin de réplique, après un délai facultatif, ou via <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Advance">Advance()</a> (depuis un UnityEvent ou un bouton) ; <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Previous">Previous()</a> revient en arrière. Suit <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a> ; une étape refusée attend que l’émetteur se libère. Expose des UnityEvents et des événements C#.</p>
 </div>
 <div class="markdown conceptual"></div>
 <div class="codewrapper">
@@ -357,7 +357,7 @@ _player.Play();</code></pre>
   Previous()
   
   </h3>
-<div class="markdown level1 summary"><p>Rejoue la ligne précédant celle en cours. Sur la première ligne, la rejoue.</p>
+<div class="markdown level1 summary"><p>Rejoue la ligne qui précède celle en cours ; sur la première ligne, la rejoue.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -390,7 +390,7 @@ _player.Play();</code></pre>
   Stop(bool)
   
   </h3>
-<div class="markdown level1 summary"><p>Arrête la séquence. stop_line false laisse la réplique finir sa phrase. La séquence s’interrompt aussi lorsque sa réplique est arrêtée ou remplacée par une plus importante, avec Sequence Interrupted.</p>
+<div class="markdown level1 summary"><p>Arrête la séquence ; avec stop_line à false, la réplique termine sa phrase. La séquence s’interrompt aussi (avec Sequence Interrupted) quand sa réplique est arrêtée ou remplacée par une plus importante.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">

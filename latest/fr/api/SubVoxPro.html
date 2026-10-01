@@ -110,12 +110,12 @@ Classes
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.SpeakerSelectorAttribute.html">SpeakerSelectorAttribute</a></dt>
-<dd><p>Marque un champ <a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a> pour utiliser le sélecteur de speakers de la fenêtre de voiceline : groupes par genre, choix aucun et création d’un speaker, plutôt que le champ objet standard.</p>
+<dd><p>Affiche un champ <a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a> avec le sélecteur de speakers de la fenêtre de voiceline (groupes par genre, option « aucun », création d’un speaker) au lieu du champ objet standard.</p>
 </dd>
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.SubVox.html">SubVox</a></dt>
-<dd><p>Point d’entrée de SubVox Pro pour jouer les voicelines, choisir langue et apparition des sous-titres, et recevoir les événements globaux. Toutes les sources le suivent : <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> et l’intégration Timeline.</p>
+<dd><p>Point d’entrée de SubVox Pro : jouer les voicelines, choisir la langue et l’apparition des sous-titres, recevoir les événements globaux. <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> et l’intégration Timeline suivent tous deux ces réglages.</p>
 </dd>
 </dl>
 <dl class="jumplist">
@@ -130,7 +130,7 @@ Classes
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.SubtitleBubbleDisplayer.html">SubtitleBubbleDisplayer</a></dt>
-<dd><p>Bulle d’un personnage, par exemple au-dessus d’un PNJ, qui ne montre que les lignes de son <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a>. L’affichage principal conserve le dialogue. Mêmes réglages que <a class="xref" href="SubVoxPro.SubtitleDisplayer.html">SubtitleDisplayer</a>. Désactivez Show Subtitles sur l’émetteur pour utiliser uniquement la bulle.</p>
+<dd><p>Bulle d’un personnage, au-dessus d’un PNJ par exemple, qui n’affiche que les lignes de son <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a>, tandis que l’affichage principal reste consacré au dialogue. Mêmes réglages que <a class="xref" href="SubVoxPro.SubtitleDisplayer.html">SubtitleDisplayer</a>. Désactivez Show Subtitles sur l’émetteur pour n’utiliser que la bulle.</p>
 </dd>
 </dl>
 <dl class="jumplist">
@@ -145,7 +145,7 @@ Classes
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoiceLineBankData.html">VoiceLineBankData</a></dt>
-<dd><p>Répliques interchangeables, par exemple celles d’un garde, choisies selon <a class="xref" href="SubVoxPro.VoiceLineBankData.html#SubVoxPro_VoiceLineBankData_Order">Order</a>. L’asset conserve la liste ; SubVox Pro suit la prochaine réplique à l’exécution.</p>
+<dd><p>Répliques interchangeables (celles d’un garde, par exemple), choisies selon <a class="xref" href="SubVoxPro.VoiceLineBankData.html#SubVoxPro_VoiceLineBankData_Order">Order</a>. L’asset ne fait que garder la liste ; SubVox Pro retient la prochaine réplique en cours de jeu.</p>
 </dd>
 </dl>
 <dl class="jumplist">
@@ -160,12 +160,12 @@ Classes
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a></dt>
-<dd><p>Joue les voicelines une à la fois via son <a class="xref" href="https://docs.unity3d.com/ScriptReference/AudioSource.html">AudioSource</a>, avec événements et sous-titres synchronisés. Ajoutez-le à chaque personnage et réglez l’audio en 3D. Plusieurs émetteurs peuvent jouer ; <a class="xref" href="SubVoxPro.VoiceLineManager.html">VoiceLineManager</a> affiche la réplique la plus importante.</p>
+<dd><p>Joue les voicelines une à une via son <a class="xref" href="https://docs.unity3d.com/ScriptReference/AudioSource.html">AudioSource</a>, avec événements et sous-titres synchronisés. Ajoutez-le à chaque personnage et passez l’audio en 3D. Plusieurs émetteurs peuvent jouer en même temps ; <a class="xref" href="SubVoxPro.VoiceLineManager.html">VoiceLineManager</a> affiche la réplique la plus importante.</p>
 </dd>
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoiceLineEventAttribute.html">VoiceLineEventAttribute</a></dt>
-<dd><p>Appelle une méthode à chaque événement dont le signal porte cette clé. Le composant est enregistré par <a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html">VoiceLineEventDispatcher</a> ou partage un GameObject avec <a class="xref" href="SubVoxPro.VoiceLineEventListener.html">VoiceLineEventListener</a>. Retour void, sans paramètre, avec <a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a> ou avec le type du payload. La clé ignore casse, espaces et ponctuation : Camera Shake correspond à camera-shake.</p>
+<dd><p>Appelle une méthode à chaque événement dont le signal porte cette clé. Le composant doit être enregistré par <a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html">VoiceLineEventDispatcher</a> ou partager son GameObject avec un <a class="xref" href="SubVoxPro.VoiceLineEventListener.html">VoiceLineEventListener</a>. La méthode renvoie void ; elle peut ne prendre aucun paramètre, ou bien un <a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a> ou le type du payload. La clé ignore la casse, les espaces et la ponctuation : Camera Shake correspond à camera-shake.</p>
 </dd>
 </dl>
 <dl class="jumplist">
@@ -185,7 +185,7 @@ Classes
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html">VoiceLineEventDispatcher</a></dt>
-<dd><p>Appelle les méthodes <a class="xref" href="SubVoxPro.VoiceLineEventAttribute.html">VoiceLineEventAttribute</a> des scènes chargées à chaque signal. Placez-le dans la scène de démarrage ; il est inclus dans le prefab [SubVox Pro].</p>
+<dd><p>Appelle à chaque signal les méthodes <a class="xref" href="SubVoxPro.VoiceLineEventAttribute.html">VoiceLineEventAttribute</a> des scènes chargées. À placer dans la scène de démarrage ; il fait partie du prefab [SubVox Pro].</p>
 </dd>
 </dl>
 <dl class="jumplist">
@@ -215,27 +215,27 @@ Classes
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoiceLineManager.html">VoiceLineManager</a></dt>
-<dd><p>Composant de scène derrière <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a>. Héberge l’émetteur 2D de <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>, gère pause et arrêt globaux, baisse la musique pendant la voix et choisit le sous-titre : priorité la plus élevée, puis lecture la plus récente.</p>
+<dd><p>Composant de scène derrière <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a>. Il porte l’émetteur 2D de <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>, gère la pause et l’arrêt globaux, baisse la musique pendant les dialogues et choisit le sous-titre affiché : priorité la plus élevée, puis lecture la plus récente.</p>
 </dd>
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoiceLinePlayOnStart.html">VoiceLinePlayOnStart</a></dt>
-<dd><p>Joue automatiquement au démarrage ou à la réactivation de l’objet, après un délai facultatif. Utile pour une narration d’introduction. <a class="xref" href="SubVoxPro.VoiceLinePlayOnStart.html#SubVoxPro_VoiceLinePlayOnStart_Play">Play()</a> reste disponible pour un appel manuel.</p>
+<dd><p>Joue une réplique au démarrage ou à la réactivation de l’objet, après un délai facultatif ; pratique pour une narration d’introduction. <a class="xref" href="SubVoxPro.VoiceLinePlayOnStart.html#SubVoxPro_VoiceLinePlayOnStart_Play">Play()</a> reste disponible pour un appel manuel.</p>
 </dd>
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
-<dd><p>Requête de lecture renvoyée par <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> et <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>. Consultez son <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_State">State</a>, arrêtez-la ou attendez-la dans une coroutine avec yield return.</p>
+<dd><p>Lecture renvoyée par <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> et <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> : consultez son <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_State">State</a>, arrêtez-la ou attendez-la dans une coroutine avec yield return.</p>
 </dd>
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a></dt>
-<dd><p>Liste ordonnée réutilisable de voicelines avec le mode d’avance de chaque étape. L’asset définit seulement la séquence ; un <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html">VoiceLineSequencePlayer</a> la pilote à l’exécution. Plusieurs players peuvent utiliser le même asset.</p>
+<dd><p>Liste ordonnée et réutilisable de voicelines, avec le mode d’avance de chaque étape. L’asset ne fait que décrire la séquence ; un <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html">VoiceLineSequencePlayer</a> la joue. Plusieurs players peuvent utiliser le même asset.</p>
 </dd>
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html">VoiceLineSequencePlayer</a></dt>
-<dd><p>Joue une <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a>, une réplique à la fois. Avance à la fin avec un délai facultatif, ou via <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Advance">Advance()</a>, utilisable depuis un UnityEvent ou bouton. <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Previous">Previous()</a> revient en arrière. Suit <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a> ; une étape refusée attend que l’émetteur se libère. Expose UnityEvents et événements C#.</p>
+<dd><p>Joue une <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a>, une réplique à la fois. Passe à la suivante en fin de réplique, après un délai facultatif, ou via <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Advance">Advance()</a> (depuis un UnityEvent ou un bouton) ; <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Previous">Previous()</a> revient en arrière. Suit <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a> ; une étape refusée attend que l’émetteur se libère. Expose des UnityEvents et des événements C#.</p>
 </dd>
 </dl>
 <dl class="jumplist">
@@ -245,12 +245,12 @@ Classes
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoiceLineZone.html">VoiceLineZone</a></dt>
-<dd><p>Joue une voiceline ou la prochaine ligne d’une banque à l’entrée d’un collider 2D ou 3D. Seul le callback adapté au collider de l’objet est utilisé. Filtre layer/tag, lecture unique, cooldown, mode si occupé, arrêt et réarmement à la sortie facultatifs. <a class="xref" href="SubVoxPro.VoiceLineZone.html#SubVoxPro_VoiceLineZone_Play">Play()</a> est réutilisable depuis une interaction ou un UnityEvent.</p>
+<dd><p>Joue une voiceline, ou la prochaine ligne d’une banque, quand un objet entre dans un collider 2D ou 3D (seul le callback adapté au collider est utilisé). Options : filtre par layer et tag, lecture unique, délai d’attente, comportement si l’émetteur est occupé, arrêt et réarmement à la sortie. <a class="xref" href="SubVoxPro.VoiceLineZone.html#SubVoxPro_VoiceLineZone_Play">Play()</a> s’appelle aussi depuis une interaction ou un UnityEvent.</p>
 </dd>
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoicePersonalityData.html">VoicePersonalityData</a></dt>
-<dd><p>Personnalité vocale réutilisable avec nom et direction de jeu libre, transmise aux fournisseurs qui acceptent un style prompt, comme Gemini TTS ou InWorld. Un personnage peut ainsi rester calme, furieux ou chuchotant dans plusieurs voicelines. Les speakers listent leurs personnalités et chaque sous-titre peut en choisir une.</p>
+<dd><p>Personnalité vocale réutilisable : un nom et une direction de jeu libre, transmise aux fournisseurs qui acceptent un style prompt, comme Gemini TTS ou InWorld. Un personnage peut ainsi rester calme, furieux ou chuchotant d’une voiceline à l’autre. Les speakers listent leurs personnalités, et chaque sous-titre peut en choisir une.</p>
 </dd>
 </dl>
 <h3 id="structs">
@@ -263,7 +263,7 @@ Structs
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.SubtitleHistoryEntry.html">SubtitleHistoryEntry</a></dt>
-<dd><p>Sous-titre précédemment affiché, conservé dans <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_History">History</a> pour l’historique des dialogues.</p>
+<dd><p>Sous-titre déjà affiché, conservé dans <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_History">History</a> pour l’historique des dialogues.</p>
 </dd>
 </dl>
 <dl class="jumplist">
@@ -278,7 +278,7 @@ Structs
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.SubtitleWordStyle.html">SubtitleWordStyle</a></dt>
-<dd><p>Style visuel d’un mot, identifié par sa position dans la ligne séparée par espaces. Sérialisé avec l’asset et rendu en rich text TextMeshPro à l’exécution.</p>
+<dd><p>Style visuel d’un mot, repéré par sa position dans la ligne (mots séparés par des espaces). Enregistré avec l’asset et rendu en rich text TextMeshPro à l’exécution.</p>
 </dd>
 </dl>
 <h3 id="interfaces">

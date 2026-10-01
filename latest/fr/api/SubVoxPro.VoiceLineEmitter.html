@@ -6,7 +6,7 @@
 <title>Classe VoiceLineEmitter | Documentation SubVox Pro </title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="Class VoiceLineEmitter | Documentation SubVox Pro " name="title"/>
-<meta content="Joue les voicelines une à la fois via son , avec événements et sous-titres synchronisés. Ajoutez-le à chaque personnage et réglez l’audio en 3D. Plusieurs émetteurs peuvent jouer ;  affiche la réplique la plus importante." name="description"/>
+<meta content="Joue les voicelines une à une via son , avec événements et sous-titres synchronisés. Ajoutez-le à chaque personnage et passez l’audio en 3D. Plusieurs émetteurs peuvent jouer en même temps ;  affiche la réplique la plus importante." name="description"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
 <link href="../public/main.css?v=9f8cab86d6" rel="stylesheet"/>
@@ -84,7 +84,7 @@ Classe VoiceLineEmitter
 <dl><dt>Espace de noms</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
 <dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
 </div>
-<div class="markdown summary"><p>Joue les voicelines une à la fois via son <a class="xref" href="https://docs.unity3d.com/ScriptReference/AudioSource.html">AudioSource</a>, avec événements et sous-titres synchronisés. Ajoutez-le à chaque personnage et réglez l’audio en 3D. Plusieurs émetteurs peuvent jouer ; <a class="xref" href="SubVoxPro.VoiceLineManager.html">VoiceLineManager</a> affiche la réplique la plus importante.</p>
+<div class="markdown summary"><p>Joue les voicelines une à une via son <a class="xref" href="https://docs.unity3d.com/ScriptReference/AudioSource.html">AudioSource</a>, avec événements et sous-titres synchronisés. Ajoutez-le à chaque personnage et passez l’audio en 3D. Plusieurs émetteurs peuvent jouer en même temps ; <a class="xref" href="SubVoxPro.VoiceLineManager.html">VoiceLineManager</a> affiche la réplique la plus importante.</p>
 </div>
 <div class="markdown conceptual"></div>
 <div class="codewrapper">
@@ -116,7 +116,7 @@ Classe VoiceLineEmitter
   AudioSource
   
   </h3>
-<div class="markdown level1 summary"><p>AudioSource des répliques ; réglez-le en 3D pour entendre la voix depuis le personnage.</p>
+<div class="markdown level1 summary"><p>AudioSource des répliques ; passez-le en 3D pour que la voix vienne du personnage.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -132,7 +132,7 @@ Classe VoiceLineEmitter
   CurrentAudioLanguage
   
   </h3>
-<div class="markdown level1 summary"><p>Langue audio actuelle : doublage de <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> si disponible, code vide pour la source. Avec <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a>, indique l’audio à démarrer de votre côté.</p>
+<div class="markdown level1 summary"><p>Langue de l’audio en cours : doublage de <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> s’il existe, vide pour la source. Avec <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a>, indique quel audio démarrer de votre côté.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -292,7 +292,7 @@ Classe VoiceLineEmitter
   ShowSubtitles
   
   </h3>
-<div class="markdown level1 summary"><p>Autorise cet émetteur à prendre l’affichage global. Désactivez pour les conversations d’ambiance.</p>
+<div class="markdown level1 summary"><p>Autorise cet émetteur à occuper l’affichage principal. À désactiver pour les conversations d’ambiance.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -405,7 +405,7 @@ Classe VoiceLineEmitter
   Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)
   
   </h3>
-<div class="markdown level1 summary"><p>Joue une voiceline, avec le doublage de <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> s’il existe. Si l’émetteur est occupé, <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Replace">Replace</a> remplace à priorité au moins égale, sinon refuse ; <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Queue">Queue</a> attend après les lignes déjà en file ; <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_IfIdle">IfIdle</a> refuse.</p>
+<div class="markdown level1 summary"><p>Joue une voiceline, avec le doublage de <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> s’il existe. Si l’émetteur est occupé : <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Replace">Replace</a> remplace à priorité au moins égale et refuse sinon, <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Queue">Queue</a> passe après les lignes déjà en file, <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_IfIdle">IfIdle</a> refuse.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -434,7 +434,7 @@ guard.Play(idleBark, EVoiceLinePriority.Low, EVoiceLinePlayMode.Queue);</code></
   PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)
   
   </h3>
-<div class="markdown level1 summary"><p>Suit l’audio que vous jouez dans FMOD, Wwise ou une vidéo. Sous-titres et événements suivent audio_clock, et la lecture termine quand l’horloge s’arrête. Démarrez alors l’audio de <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_CurrentAudioLanguage">CurrentAudioLanguage</a>. Mêmes règles que <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>. <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause">Pause()</a>, <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Seek_System_Single_">Seek(float)</a> et <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Stop">Stop()</a> ne contrôlent que sous-titres et événements : contrôlez aussi votre audio.</p>
+<div class="markdown level1 summary"><p>Suit un audio que vous jouez dans FMOD, Wwise ou une vidéo : les sous-titres et les événements suivent audio_clock, et la lecture se termine quand l’horloge s’arrête. Démarrez alors l’audio de <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_CurrentAudioLanguage">CurrentAudioLanguage</a>. Mêmes règles que <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>. <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause">Pause()</a>, <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Seek_System_Single_">Seek(float)</a> et <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Stop">Stop()</a> n’agissent que sur les sous-titres et les événements : pilotez aussi votre audio.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -472,7 +472,7 @@ guard.Play(idleBark, EVoiceLinePriority.Low, EVoiceLinePlayMode.Queue);</code></
   Seek(float)
   
   </h3>
-<div class="markdown level1 summary"><p>Déplace la lecture au temps indiqué en secondes, sans déclencher les événements traversés. Sans effet sur <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> : déplacez votre audio, les sous-titres le suivent.</p>
+<div class="markdown level1 summary"><p>Place la lecture au temps indiqué, en secondes, sans déclencher les événements sautés. Sans effet avec <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> : déplacez votre audio, les sous-titres suivront.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -488,7 +488,7 @@ guard.Play(idleBark, EVoiceLinePriority.Low, EVoiceLinePlayMode.Queue);</code></
   Skip()
   
   </h3>
-<div class="markdown level1 summary"><p>Termine immédiatement la réplique comme si elle avait joué jusqu’au bout : événements restants, <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineCompleted">VoiceLineCompleted</a>, puis prochaine réplique en file. Pour un bouton passer le dialogue.</p>
+<div class="markdown level1 summary"><p>Termine aussitôt la réplique comme si elle avait été jouée jusqu’au bout : événements restants, <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineCompleted">VoiceLineCompleted</a>, puis réplique suivante de la file. Idéal pour un bouton « passer le dialogue ».</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -499,7 +499,7 @@ guard.Play(idleBark, EVoiceLinePriority.Low, EVoiceLinePlayMode.Queue);</code></
   Stop()
   
   </h3>
-<div class="markdown level1 summary"><p>Arrête la réplique et vide la file. Les événements restants, fin de voix comprise, ne jouent pas ; <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineInterrupted">VoiceLineInterrupted</a> remplace <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineCompleted">VoiceLineCompleted</a>.</p>
+<div class="markdown level1 summary"><p>Arrête la réplique et vide la file. Les événements restants, fin de voix comprise, ne se déclenchent pas ; <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineInterrupted">VoiceLineInterrupted</a> est émis à la place de <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineCompleted">VoiceLineCompleted</a>.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -522,7 +522,7 @@ guard.Play(idleBark, EVoiceLinePriority.Low, EVoiceLinePlayMode.Queue);</code></
   SubtitleChanged
   
   </h3>
-<div class="markdown level1 summary"><p>Signale chaque changement du sous-titre de cet émetteur, blank compris pour l’effacement, indépendamment de <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_ShowSubtitles">ShowSubtitles</a>. <a class="xref" href="SubVoxPro.SubtitleBubbleDisplayer.html">SubtitleBubbleDisplayer</a> l’utilise pour les lignes propres au personnage.</p>
+<div class="markdown level1 summary"><p>Signale chaque changement du sous-titre de cet émetteur, y compris le blank qui l’efface, que <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_ShowSubtitles">ShowSubtitles</a> soit actif ou non. <a class="xref" href="SubVoxPro.SubtitleBubbleDisplayer.html">SubtitleBubbleDisplayer</a> s’en sert pour afficher les lignes du personnage.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">

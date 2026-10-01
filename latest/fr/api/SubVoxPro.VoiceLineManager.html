@@ -6,7 +6,7 @@
 <title>Classe VoiceLineManager | Documentation SubVox Pro </title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="Class VoiceLineManager | Documentation SubVox Pro " name="title"/>
-<meta content="Composant de scène derrière . Héberge l’émetteur 2D de , gère pause et arrêt globaux, baisse la musique pendant la voix et choisit le sous-titre : priorité la plus élevée, puis lecture la plus récente." name="description"/>
+<meta content="Composant de scène derrière . Il porte l’émetteur 2D de , gère la pause et l’arrêt globaux, baisse la musique pendant les dialogues et choisit le sous-titre affiché : priorité la plus élevée, puis lecture la plus récente." name="description"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
 <link href="../public/main.css?v=9f8cab86d6" rel="stylesheet"/>
@@ -84,7 +84,7 @@ Classe VoiceLineManager
 <dl><dt>Espace de noms</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
 <dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
 </div>
-<div class="markdown summary"><p>Composant de scène derrière <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a>. Héberge l’émetteur 2D de <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>, gère pause et arrêt globaux, baisse la musique pendant la voix et choisit le sous-titre : priorité la plus élevée, puis lecture la plus récente.</p>
+<div class="markdown summary"><p>Composant de scène derrière <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a>. Il porte l’émetteur 2D de <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>, gère la pause et l’arrêt globaux, baisse la musique pendant les dialogues et choisit le sous-titre affiché : priorité la plus élevée, puis lecture la plus récente.</p>
 </div>
 <div class="markdown conceptual"></div>
 <div class="codewrapper">
@@ -148,7 +148,7 @@ Classe VoiceLineManager
   Instance
   
   </h3>
-<div class="markdown level1 summary"><p>Manager actif. En Play mode, en crée un par défaut au premier besoin si la scène n’en possède pas. Ajoutez-le à la scène pour le configurer.</p>
+<div class="markdown level1 summary"><p>Manager actif. En Play mode, un manager par défaut est créé au premier besoin si la scène n’en a pas ; ajoutez-le à la scène pour le configurer.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">

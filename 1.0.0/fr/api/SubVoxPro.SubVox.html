@@ -6,7 +6,7 @@
 <title>Classe SubVox | Documentation SubVox Pro </title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="Class SubVox | Documentation SubVox Pro " name="title"/>
-<meta content="Point d’entrée de SubVox Pro pour jouer les voicelines, choisir langue et apparition des sous-titres, et recevoir les événements globaux. Toutes les sources le suivent :  et l’intégration Timeline." name="description"/>
+<meta content="Point d’entrée de SubVox Pro : jouer les voicelines, choisir la langue et l’apparition des sous-titres, recevoir les événements globaux.  et l’intégration Timeline suivent tous deux ces réglages." name="description"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
 <link href="../public/main.css?v=9f8cab86d6" rel="stylesheet"/>
@@ -84,7 +84,7 @@ Classe SubVox
 <dl><dt>Espace de noms</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
 <dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
 </div>
-<div class="markdown summary"><p>Point d’entrée de SubVox Pro pour jouer les voicelines, choisir langue et apparition des sous-titres, et recevoir les événements globaux. Toutes les sources le suivent : <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> et l’intégration Timeline.</p>
+<div class="markdown summary"><p>Point d’entrée de SubVox Pro : jouer les voicelines, choisir la langue et l’apparition des sous-titres, recevoir les événements globaux. <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> et l’intégration Timeline suivent tous deux ces réglages.</p>
 </div>
 <div class="markdown conceptual"></div>
 <div class="codewrapper">
@@ -153,7 +153,7 @@ SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} st
   CurrentLanguage
   
   </h3>
-<div class="markdown level1 summary"><p>Code de la traduction et du doublage, par exemple fr, ou vide pour la source. Les sous-titres changent immédiatement ; le doublage à la prochaine voiceline.</p>
+<div class="markdown level1 summary"><p>Code de la traduction et du doublage, par exemple fr, ou vide pour la source. Les sous-titres changent aussitôt, le doublage à la voiceline suivante.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -169,7 +169,7 @@ SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} st
   CurrentSubtitle
   
   </h3>
-<div class="markdown level1 summary"><p>Sous-titre sélectionné, blank compris, à lire lors de l’activation ou réactivation d’un afficheur.</p>
+<div class="markdown level1 summary"><p>Sous-titre actuellement retenu pour l’affichage, blank compris. À lire quand un afficheur s’active.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -201,7 +201,7 @@ SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} st
   DisplayedVoiceLine
   
   </h3>
-<div class="markdown level1 summary"><p>Voiceline sélectionnée pour l’affichage, Timeline ou émetteur ; null sans voiceline ou pour un texte personnalisé.</p>
+<div class="markdown level1 summary"><p>Voiceline dont le sous-titre est affiché, depuis Timeline ou un émetteur ; null s’il n’y en a pas ou pour un texte personnalisé.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -319,7 +319,7 @@ SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} st
   LanguageSource
   
   </h3>
-<div class="markdown level1 summary"><p>Origine de <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> : langue Unity Localization s’il est installé, ou uniquement votre code.</p>
+<div class="markdown level1 summary"><p>Origine de <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> : la langue d’Unity Localization si le package est installé, ou uniquement votre code.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -335,7 +335,7 @@ SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} st
   RevealMode
   
   </h3>
-<div class="markdown level1 summary"><p>Mode d’apparition global, pour les émetteurs et les clips Timeline sans override : ligne entière ou mots synchronisés avec l’audio. Modifiable à l’exécution, notamment dans un menu d’accessibilité.</p>
+<div class="markdown level1 summary"><p>Mode d’apparition global, pour les émetteurs et les clips Timeline sans réglage propre : ligne entière ou mots synchronisés avec l’audio. Modifiable en cours de jeu, depuis un menu d’accessibilité par exemple.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -367,7 +367,7 @@ SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} st
   SubtitlesEnabled
   
   </h3>
-<div class="markdown level1 summary"><p>Active ou masque les sous-titres pour l’accessibilité. Les voix et événements continuent lorsque l’affichage est désactivé.</p>
+<div class="markdown level1 summary"><p>Affiche ou masque les sous-titres (accessibilité). Les voix et les événements continuent quand l’affichage est désactivé.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -400,7 +400,7 @@ public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = o
   PauseAll()
   
   </h3>
-<div class="markdown level1 summary"><p>Met en pause toutes les voicelines en cours, par exemple avec le jeu. Celles mises en pause individuellement sur leur émetteur le restent après <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_ResumeAll">ResumeAll()</a>.</p>
+<div class="markdown level1 summary"><p>Met en pause toutes les voicelines en cours, avec le jeu par exemple. Celles mises en pause une à une sur leur émetteur le restent après <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_ResumeAll">ResumeAll()</a>.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -461,7 +461,7 @@ public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = o
   PublishSubtitle(SubtitleInfo)
   
   </h3>
-<div class="markdown level1 summary"><p>Publie un sous-titre sur tous les afficheurs, par exemple pour une vidéo. Il reste jusqu’à la publication suivante ; un <a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a> vide l’efface. Un clip Timeline actif reste prioritaire et ignore ces publications personnalisées.</p>
+<div class="markdown level1 summary"><p>Publie un sous-titre sur tous les afficheurs, pour une vidéo par exemple. Il reste affiché jusqu’à la publication suivante ; un <a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a> vide l’efface. Un clip Timeline actif garde la priorité et ignore ces publications.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -491,7 +491,7 @@ SubVox.PublishSubtitle(new SubtitleInfo("intro", 0f, string.Empty));</code></pre
   StopAll()
   
   </h3>
-<div class="markdown level1 summary"><p>Arrête toutes les lectures et vide toutes les files, par exemple lorsqu’une cinématique est passée.</p>
+<div class="markdown level1 summary"><p>Arrête toutes les lectures et vide toutes les files, par exemple quand une cinématique est passée.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -609,7 +609,7 @@ private void Shake(VoiceLineEventContext context)
   SubtitleUpdated
   
   </h3>
-<div class="markdown level1 summary"><p>Événement émis à chaque changement du sous-titre sélectionné. Lisez <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentSubtitle">CurrentSubtitle</a> au début de l’abonnement pour récupérer une réplique déjà en cours.</p>
+<div class="markdown level1 summary"><p>Émis à chaque changement du sous-titre affiché. Lisez <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentSubtitle">CurrentSubtitle</a> au moment de l’abonnement pour reprendre une réplique déjà en cours.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -654,7 +654,7 @@ private void Shake(VoiceLineEventContext context)
   VoiceLineStarted
   
   </h3>
-<div class="markdown level1 summary"><p>Signale le démarrage d’une voiceline sur un émetteur ou dans Timeline. La lecture indique sa voiceline et son émetteur, null pour Timeline.</p>
+<div class="markdown level1 summary"><p>Signale le début d’une voiceline sur un émetteur ou dans Timeline. La lecture fournie donne la voiceline et l’émetteur (null pour Timeline).</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
