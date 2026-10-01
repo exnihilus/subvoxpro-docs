@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Configuration des fournisseurs | Documentation SubVox Pro </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Configuration des fournisseurs | Documentation SubVox Pro " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=9f8cab86d6" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="Sur cette page" name="loc:inThisArticle"/>
+<meta content="{count} résultats pour « {query} »" name="loc:searchResultsCount"/>
+<meta content="Aucun résultat pour « {query} »" name="loc:searchNoResults"/>
+<meta content="Filtrer par titre" name="loc:tocFilter"/>
+<meta content="Suivant" name="loc:nextArticle"/>
+<meta content="Précédent" name="loc:prevArticle"/>
+<meta content="Clair" name="loc:themeLight"/>
+<meta content="Sombre" name="loc:themeDark"/>
+<meta content="Automatique" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=9f8cab86d6" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="fr">
+  <link rel="alternate" hreflang="en" href="../../manual/providers.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Afficher la navigation" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Rechercher" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Rechercher" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Sommaire</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="subvox-pro--configuration-des-fournisseurs">SubVox Pro : configuration des fournisseurs</h1>
+<p>SubVox Pro n’inclut aucune clé API. Chaque service utilise <strong>votre propre clé</strong>, à coller dans
+<strong>Tools ▸ SubVox Pro ▸ Settings</strong> ou dans le panneau du fournisseur de la fenêtre SubVox Pro.
+Les clés sont enregistrées uniquement dans les préférences Unity de votre ordinateur, <code>EditorPrefs</code>,
+jamais dans le projet, ses commits ou ses builds. Les <a href="notices.html">mentions des tiers</a> détaillent les conditions.</p>
+<blockquote>
+<p><strong>Les offres gratuites et les tarifs changent régulièrement.</strong> Les chiffres ci-dessous reprennent le guide
+anglais et ses conditions de septembre 2026. Vérifiez toujours l’offre actuelle sur le site du fournisseur.
+Les noms des boutons restent ceux de leurs interfaces afin de faciliter le suivi des captures.</p>
+</blockquote>
+<h2 id="quick-links">Accès rapides </h2>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>Fournisseurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transcription</strong></td>
+<td><a href="#assemblyai">AssemblyAI</a> · <a href="#gladia">Gladia</a> · <a href="#deepgram">Deepgram</a> · <a href="#speechmatics">Speechmatics</a> · <a href="#elevenlabs">ElevenLabs</a> · <a href="#rev-ai">Rev AI</a> · <a href="#openai">OpenAI</a></td>
+</tr>
+<tr>
+<td><strong>Traduction</strong></td>
+<td><a href="#deepl">DeepL</a> · <a href="#google-cloud-translation">Google Cloud Translation</a> · <a href="#openai">OpenAI</a> · <a href="#anthropic-claude">Claude</a> · <a href="#google-gemini">Gemini</a> · <a href="#deepseek">DeepSeek</a> · <a href="index.html#hy-mt2-offline-translation">Hy-MT2 local</a></td>
+</tr>
+<tr>
+<td><strong>Doublage</strong></td>
+<td><a href="#elevenlabs">ElevenLabs</a> · <a href="#inworld-ai">InWorld AI</a> · <a href="#google-gemini">Gemini</a> · <a href="#openai">OpenAI</a> · <a href="#google-cloud-tts">Google Cloud TTS</a> · <a href="#azure">Azure</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox</a></td>
+</tr>
+<tr>
+<td><strong>Alignement local</strong></td>
+<td><a href="index.html#qwen3-offline-word-timing">Qwen3 Forced Aligner</a></td>
+</tr>
+<tr>
+<td><strong>Référence</strong></td>
+<td><a href="#best-practices">Bonnes pratiques</a> · <a href="#which-provider-do-i-need">Quel fournisseur choisir ?</a> · <a href="#free-tier-cheat-sheet">Offres gratuites</a> · <a href="#where-to-paste-your-key-in-subvox-pro">Où coller une clé</a> · <a href="#after-pasting-a-key">Après l’enregistrement</a></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="language-compatibility-at-a-glance">Compatibilité des langues </h2>
+<p>Ce tableau décrit les langues proposées dans SubVox Pro. <strong>Catalogue dynamique</strong> signifie que la liste dépend
+du compte, du modèle et des voix du fournisseur : le sélecteur de voix donne la liste qui fait référence.
+Les variantes comme <code>en-US</code> ou <code>pt-BR</code> sont regroupées sous leur langue principale.</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Fournisseur ou moteur</th>
+<th>Langues disponibles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>STT</strong></td>
+<td>AssemblyAI</td>
+<td>Multilingue, détection automatique ; dépend du modèle choisi.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Gladia</td>
+<td>Multilingue, détection automatique ; dépend du modèle choisi.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Deepgram</td>
+<td>Néerlandais, anglais, français, allemand, hindi, italien, japonais, portugais, russe, espagnol et mode multilingue.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Speechmatics</td>
+<td>Arabe, chinois mandarin, néerlandais, anglais, français, allemand, hindi, italien, japonais, coréen, polonais, portugais, russe, espagnol et turc.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>ElevenLabs</td>
+<td>Arabe, chinois, néerlandais, anglais, français, allemand, hindi, italien, japonais, coréen, polonais, portugais, russe, espagnol et turc.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Rev AI</td>
+<td>Arabe, chinois mandarin, néerlandais, anglais, français, allemand, hindi, italien, japonais, coréen, polonais, portugais, russe, espagnol et turc.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>OpenAI, <code>gpt-transcribe</code>, <code>gpt-4o-transcribe</code>, <code>gpt-4o-mini-transcribe</code>, <code>whisper-1</code></td>
+<td>Arabe, chinois, néerlandais, anglais, français, allemand, hindi, italien, japonais, coréen, polonais, portugais, russe, espagnol et turc.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Whisper large-v2, large-v3, large-v3-turbo, local</td>
+<td>Chinois, néerlandais, anglais, français, allemand, italien, japonais, coréen, portugais, russe, espagnol et détection automatique.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Parakeet TDT 0.6B v3, local</td>
+<td>Bulgare, croate, tchèque, danois, néerlandais, anglais, estonien, finnois, français, allemand, grec, hongrois, italien, letton, lituanien, maltais, polonais, portugais, roumain, russe, slovaque, slovène, espagnol, suédois et ukrainien, détectés automatiquement.</td>
+</tr>
+<tr>
+<td><strong>Traduction</strong></td>
+<td>DeepL</td>
+<td>Arabe, bengali, birman, cantonais, chinois simplifié/traditionnel, tchèque, néerlandais, anglais US/UK, filipino, français, allemand, gujarati, hébreu, hindi, indonésien, italien, japonais, kazakh, coréen, malais, marathi, mongol, persan, polonais, portugais BR/PT, russe, espagnol, tamoul, télougou, thaï, turc, ukrainien, ourdou et vietnamien. Ce sélecteur est commun aux fournisseurs de traduction, Hy-MT2 compris.</td>
+</tr>
+<tr>
+<td><strong>Traduction</strong></td>
+<td>Google Cloud Translation</td>
+<td>Même sélecteur ; Google valide la compatibilité du fournisseur et du modèle.</td>
+</tr>
+<tr>
+<td><strong>Traduction</strong></td>
+<td>OpenAI, Claude, Gemini, DeepSeek</td>
+<td>Même sélecteur ; capacités multilingues selon le modèle.</td>
+</tr>
+<tr>
+<td><strong>Traduction</strong></td>
+<td>Hy-MT2 1.8B / 7B, local</td>
+<td>Toutes les langues du sélecteur sont prises en charge par les modèles locaux retenus.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>ElevenLabs</td>
+<td><strong>Flash v2.5</strong> : arabe, bulgare, chinois, croate, tchèque, danois, néerlandais, anglais, filipino, finnois, français, allemand, grec, hindi, hongrois, indonésien, italien, japonais, coréen, malais, norvégien, polonais, portugais, roumain, russe, slovaque, espagnol, suédois, tamoul, turc, ukrainien et vietnamien. <strong>Multilingual v2</strong> : mêmes langues sans hongrois, norvégien ni vietnamien. <strong>Eleven v3</strong> : plus de 70 langues, dont aussi bengali, gujarati, hébreu, kazakh, marathi, persan, swahili, télougou, thaï et ourdou.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>InWorld</td>
+<td><strong>Catalogue dynamique</strong> selon les voix de votre compte.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Gemini, clé AI Studio</td>
+<td>Environ 75 langues détectées dans le texte, dont arabe, chinois, néerlandais, anglais, français, allemand, hindi, italien, japonais, coréen, polonais, portugais, russe, espagnol, turc, ukrainien et vietnamien. Toutes les voix parlent toutes les langues.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>OpenAI, gpt-4o-mini-tts, tts-1, tts-1-hd</td>
+<td>Environ 55 langues détectées dans le texte, celles de Whisper, dont arabe, chinois, néerlandais, anglais, français, allemand, hindi, italien, japonais, coréen, polonais, portugais, russe, espagnol, turc, ukrainien et vietnamien. Voix optimisées pour l’anglais mais multilingues.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Google Cloud TTS</td>
+<td><strong>Catalogue dynamique</strong>, incluant les voix Gemini compatibles.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Azure AI Speech</td>
+<td><strong>Catalogue dynamique</strong> selon les voix neuronales et la région configurée.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Kokoro, local</td>
+<td>Anglais, voix américaines et britanniques.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Chatterbox Multilingual, local</td>
+<td>Arabe, chinois, danois, néerlandais, anglais, finnois, français, allemand, grec, hindi, italien, coréen, malais, norvégien, polonais, portugais, russe, espagnol, swahili, suédois et turc. Japonais avec son ajout facultatif.</td>
+</tr>
+<tr>
+<td><strong>Alignement</strong></td>
+<td>Qwen3-ForcedAligner-0.6B Q4 ONNX, local</td>
+<td>Cantonais, chinois, anglais, français, allemand, italien, japonais, coréen, portugais, russe et espagnol.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Les catalogues des services en ligne évoluent indépendamment de SubVox Pro : actualisez les modèles et les voix
+lorsqu’un service ajoute une langue. Les listes locales de Qwen, Kokoro et Chatterbox correspondent aux modèles
+précis distribués par leurs installations.</p>
+</blockquote>
+<h3 id="chatterbox-accuracy-by-language">Chatterbox : précision par langue </h3>
+<p>Fiabilité des mots prononcés par <strong>Chatterbox</strong>, mesurée sur 30 doublages par langue : 15 répliques de jeu,
+chacune avec deux voix. Huit moteurs STT retranscrivent chaque doublage ; le résultat médian de chaque réplique
+limite l’influence d’un moteur qui entend mal. Le corpus des 22 langues est dans
+<a href="Documentation/ChatterboxAccuracyCorpus.csv"><code>Documentation/ChatterboxAccuracyCorpus.csv</code></a> pour reproduire le test.</p>
+<table>
+<thead>
+<tr>
+<th>Langue</th>
+<th>Caractères incorrects</th>
+<th>Appréciation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portugais</td>
+<td>0,1 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Italien</td>
+<td>0,2 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Espagnol</td>
+<td>0,4 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Hindi</td>
+<td>0,4 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Anglais</td>
+<td>0,5 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Allemand</td>
+<td>0,5 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Malais</td>
+<td>0,7 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Russe</td>
+<td>0,8 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Néerlandais</td>
+<td>1,0 %</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Finnois</td>
+<td>1,2 %</td>
+<td>Bon</td>
+</tr>
+<tr>
+<td>Grec</td>
+<td>1,2 %</td>
+<td>Bon</td>
+</tr>
+<tr>
+<td>Arabe</td>
+<td>1,4 %</td>
+<td>Bon</td>
+</tr>
+<tr>
+<td>Suédois</td>
+<td>1,6 %</td>
+<td>Bon</td>
+</tr>
+<tr>
+<td>Français</td>
+<td>1,9 %</td>
+<td>Bon</td>
+</tr>
+<tr>
+<td>Japonais</td>
+<td>2,1 %</td>
+<td>Bon</td>
+</tr>
+<tr>
+<td>Chinois</td>
+<td>2,4 %</td>
+<td>Bon</td>
+</tr>
+<tr>
+<td>Danois</td>
+<td>3,8 %</td>
+<td>Réécouter les doublages</td>
+</tr>
+<tr>
+<td>Polonais</td>
+<td>4,1 %</td>
+<td>Réécouter les doublages</td>
+</tr>
+<tr>
+<td>Norvégien</td>
+<td>4,8 %</td>
+<td>Réécouter les doublages</td>
+</tr>
+<tr>
+<td>Coréen</td>
+<td>5,2 %</td>
+<td>Réécouter les doublages</td>
+</tr>
+<tr>
+<td>Swahili</td>
+<td>5,8 %</td>
+<td>Réécouter les doublages</td>
+</tr>
+<tr>
+<td>Turc</td>
+<td>8,1 %</td>
+<td>Réécouter les doublages</td>
+</tr>
+</tbody>
+</table>
+<p>La génération comporte une part aléatoire : deux prises diffèrent légèrement. Un faible taux signifie moins
+d’erreurs. Le premier mot est souvent concerné, mal prononcé ou omis. Dans les langues marquées <strong>Réécouter les
+doublages</strong>, jusqu’à une réplique sur quinze était incohérente, dans une autre langue ou avec des mots inventés.
+Écoutez le résultat et régénérez les prises incorrectes avec leur badge <strong>REGEN</strong>.</p>
+<hr/>
+<h2 id="best-practices">Bonnes pratiques </h2>
+<p>Une clé API est un mot de passe de service en ligne. Traitez-la comme un secret, même pour un test.</p>
+<ul>
+<li><strong>Une clé par outil ou projet</strong> facilite sa révocation sans casser les autres outils.</li>
+<li><strong>Ne collez jamais de clé dans un script, une scène, un prefab, un message de support, Discord, une issue GitHub
+ou un commit.</strong> SubVox Pro la stocke dans <code>EditorPrefs</code>, uniquement sur votre machine.</li>
+<li><strong>Copiez immédiatement les clés affichées une seule fois.</strong> Sauvegardez-les dans un gestionnaire de mots de
+passe si nécessaire. Si vous perdez une clé, révoquez-la et créez-en une autre.</li>
+<li><strong>Limitez les permissions</strong> aux fonctions nécessaires : STT pour la transcription, traduction, TTS pour le doublage.</li>
+<li><strong>Choisissez une expiration adaptée.</strong> Courte pour des tests, plus longue pour la production. Certains services
+autorisent les clés sans expiration.</li>
+<li><strong>Fixez un budget, un quota ou une alerte de facturation</strong>, si le service le permet, pour prévenir les boucles
+accidentelles et les imports répétés.</li>
+<li><strong>Remplacez une clé potentiellement exposée</strong> dans une capture, un commit, un message ou un build. Révoquez-la
+sur le site du service, puis enregistrez sa remplaçante dans SubVox Pro.</li>
+<li><strong>Ne partagez pas une clé personnelle dans l’équipe.</strong> Utilisez des comptes individuels ou une clé gérée par
+l’équipe selon les possibilités du service.</li>
+<li><strong>Effacez les clés inutilisées</strong> avec <strong>Clear API Keys</strong> dans Settings, notamment après un test sur une machine partagée.</li>
+</ul>
+<hr/>
+<h2 id="which-provider-do-i-need">Quel fournisseur choisir ? </h2>
+<table>
+<thead>
+<tr>
+<th>Fonction</th>
+<th>Fournisseurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transcription</strong>, audio vers sous-titres datés</td>
+<td>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, OpenAI ; ou <strong>Whisper</strong> et <strong>Parakeet</strong>, hors connexion, sans clé, Windows uniquement. <a href="index.html#whisper-offline-transcription">Guide local</a></td>
+</tr>
+<tr>
+<td><strong>Traduction</strong></td>
+<td>DeepL, Google Cloud Translation, OpenAI, Claude, Gemini, DeepSeek ; ou <strong>Hy-MT2</strong>, avec llama.cpp, hors connexion, sans clé, Windows uniquement. <a href="index.html#hy-mt2-offline-translation">Guide local</a></td>
+</tr>
+<tr>
+<td><strong>Doublage TTS</strong></td>
+<td>ElevenLabs, InWorld AI, Gemini, OpenAI, Google Cloud TTS, Azure ; ou <strong>Kokoro</strong>, anglais local, et <strong>Chatterbox</strong>, 21 langues et japonais facultatif, avec clonage vocal.</td>
+</tr>
+<tr>
+<td><strong>Alignement exact des mots</strong>, texte conservé</td>
+<td><strong>Qwen3-ForcedAligner-0.6B Q4 ONNX</strong>, hors connexion, sans clé ni Python/PyTorch, Windows uniquement.</td>
+</tr>
+<tr>
+<td><strong>Traduction humaine aller-retour</strong></td>
+<td>Google Sheets, connexion OAuth. <a href="index.html#human-translation-with-google-sheets">Guide</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> compare fonctions, prix, offre gratuite et droits commerciaux.
+Une clé n’est nécessaire que pour les services que vous utilisez. Pour démarrer sans compte ni frais, utilisez
+Whisper ou Parakeet, Hy-MT2 et Kokoro ou Chatterbox. DeepL et Gemini offrent également des formules gratuites.</p>
+<hr/>
+<h2 id="free-tier-cheat-sheet">Résumé des offres gratuites </h2>
+<p>SubVox Pro fonctionne de la même manière avec un compte gratuit ou payant : mêmes clés et requêtes.
+L’offre change seulement les quantités autorisées et, parfois, les usages permis des résultats.</p>
+<table>
+<thead>
+<tr>
+<th>Fournisseur</th>
+<th>Gratuité, à vérifier</th>
+<th>Carte bancaire ?</th>
+<th>Utilisation commerciale de l’offre gratuite ?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AssemblyAI</td>
+<td>Crédit unique d’environ 50 $, environ 330 h</td>
+<td>Non</td>
+<td>Oui ; les données peuvent entraîner les modèles sauf opposition.</td>
+</tr>
+<tr>
+<td>Gladia</td>
+<td>10 h/mois</td>
+<td>Non</td>
+<td>Oui ; l’audio de l’offre gratuite peut servir à entraîner les modèles.</td>
+</tr>
+<tr>
+<td>Deepgram</td>
+<td>Crédit unique de 200 $</td>
+<td>Non</td>
+<td>Oui, production comprise.</td>
+</tr>
+<tr>
+<td>Speechmatics</td>
+<td>Crédit unique de 100 $</td>
+<td>Non</td>
+<td>Oui ; les transcriptions peuvent améliorer les modèles.</td>
+</tr>
+<tr>
+<td>ElevenLabs</td>
+<td>Environ 10 min/mois pour voix/transcription</td>
+<td>Non</td>
+<td><strong>Non</strong>, usage non commercial et attribution obligatoire. Offres payantes dès environ 5 $/mois.</td>
+</tr>
+<tr>
+<td>Rev AI</td>
+<td>Crédit unique de 5 h</td>
+<td>Non</td>
+<td>Non précisé : vérifier les conditions.</td>
+</tr>
+<tr>
+<td>DeepL Developer</td>
+<td>Crédit unique de 1 000 000 caractères</td>
+<td>Vérification possible, sans débit</td>
+<td>Oui ; DeepL peut conserver les textes de l’API gratuite.</td>
+</tr>
+<tr>
+<td>Google Cloud Translation</td>
+<td>500 000 caractères/mois et 300 $ d’essai</td>
+<td>Oui, compte de facturation</td>
+<td>Oui.</td>
+</tr>
+<tr>
+<td>Google Cloud TTS</td>
+<td>1 M caractères/mois Neural2/WaveNet, 4 M Standard ; Gemini/Chirp via Vertex AI</td>
+<td>Oui</td>
+<td>Oui.</td>
+</tr>
+<tr>
+<td>Azure AI Speech</td>
+<td>F0, environ 0,5 M caractères/mois en TTS neuronal</td>
+<td>Vérification, sans débit sur F0</td>
+<td><strong>Non</strong> ; les droits commerciaux nécessitent une ressource payante S0.</td>
+</tr>
+<tr>
+<td>OpenAI, STT/traduction/TTS</td>
+<td>Prépayé dès 5 $, parfois crédits d’essai</td>
+<td>Oui</td>
+<td>Oui, sans véritable offre gratuite. Informer les joueurs des voix générées par IA.</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>Environ 5 $ d’essai dans certaines régions</td>
+<td>Oui, crédits prépayés</td>
+<td>Oui, sans véritable offre gratuite.</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td>Offre gratuite limitée en débit, sans facturation</td>
+<td>Non</td>
+<td>Oui ; Google peut utiliser les requêtes gratuites pour améliorer ses produits.</td>
+</tr>
+<tr>
+<td>InWorld</td>
+<td>Environ 70 minutes de TTS, une seule fois</td>
+<td>Non au démarrage</td>
+<td>Oui, licence commerciale incluse.</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td>Pas d’offre gratuite permanente, paiement à l’usage</td>
+<td>Oui, solde prépayé</td>
+<td>Oui, uniquement prépayé.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Utilisation commerciale</strong> signifie distribuer les textes, traductions ou doublages dans un jeu ou produit
+vendu. ElevenLabs et Azure nécessitent une offre payante pour doubler un jeu publié. Ce résumé reprend les
+conditions de septembre 2026 ; ce n’est pas un conseil juridique et les conditions actuelles du fournisseur
+prévalent. Les moteurs locaux Whisper, Parakeet, Hy-MT2, Kokoro, Chatterbox et Qwen3 sont gratuits pour un usage
+commercial. Créditer NVIDIA pour Parakeet est une bonne pratique : <a href="notices.html">mentions des tiers</a>.</p>
+</blockquote>
+<hr/>
+<h2 id="where-to-paste-your-key-in-subvox-pro">Où coller votre clé dans SubVox Pro </h2>
+<p>Deux emplacements équivalents enregistrent la clé dans <code>EditorPrefs</code>, sur cet ordinateur seulement.
+<strong>Tools ▸ SubVox Pro ▸ Settings</strong> réunit tous les fournisseurs. Collez chaque clé dans sa ligne ; le champ masque
+sa valeur. <strong>STT</strong>, <strong>TR</strong> et <strong>TTS</strong> indiquent transcription, traduction et doublage. <strong>Clear API Keys</strong> les efface toutes.</p>
+<p><img alt="Réglages SubVox Pro : un champ de clé API par fournisseur" src="Documentation/Images/subvoxpro-settings-api-keys.png"/></p>
+<p>Vous pouvez aussi ouvrir le panneau du fournisseur dans la fenêtre SubVox Pro, saisir la clé et cliquer sur
+<strong>Save</strong>. Le badge <strong>API Ready</strong> confirme l’enregistrement ; <strong>Clear</strong> la retire.</p>
+<p><img alt="Panneau d’un fournisseur : clé masquée, Save, Clear et API Ready" src="Documentation/Images/subvoxpro-provider-api-ready.png"/></p>
+<hr/>
+<h1 id="transcription-providers">Fournisseurs de transcription </h1>
+<details id="assemblyai">
+<summary><strong>AssemblyAI</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription avec timing par mot.</p>
+<ol>
+<li>Créez un compte, email ou SSO, sur <a href="https://www.assemblyai.com/dashboard/signup">https://www.assemblyai.com/dashboard/signup</a>. Sans carte bancaire,
+environ <strong>50 $ de crédits</strong>, soit 330 heures.
+<img alt="Inscription AssemblyAI" src="Documentation/Images/assemblyai-signup.png"/></li>
+<li>Après vérification de l’email, ouvrez <strong>Manage ▸ API Keys</strong>.
+<img alt="API Keys dans le menu AssemblyAI" src="Documentation/Images/assemblyai-api-keys-sidebar.png"/></li>
+<li>Copiez la <strong>Default API Key</strong>, ou cliquez sur <strong>Create new API key</strong> pour une clé dédiée.
+<img alt="Page des clés AssemblyAI" src="Documentation/Images/assemblyai-api-keys-page.png"/></li>
+<li>Nommez la nouvelle clé, par exemple <code>SubVoxPro</code>, puis cliquez sur <strong>Create</strong>.
+<img alt="Création d’une clé AssemblyAI" src="Documentation/Images/assemblyai-create-api-key-dialog.png"/></li>
+<li>Copiez la clé dans sa ligne.
+<img alt="Ligne de clé AssemblyAI" src="Documentation/Images/assemblyai-api-key-row.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ AssemblyAI</strong>.</li>
+</ol>
+<blockquote>
+<p>L’offre gratuite limite à deux projets et deux clés. <a href="https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key">Aide officielle</a>.</p>
+</blockquote>
+</details>
+<details id="gladia">
+<summary><strong>Gladia</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription.</p>
+<ol>
+<li>Inscrivez-vous sur <a href="https://app.gladia.io">https://app.gladia.io</a>, avec email ou Google.
+<img alt="Inscription Gladia" src="Documentation/Images/gladia-signup.png"/></li>
+<li>Ouvrez <strong>API Keys</strong> dans la barre latérale.
+<img alt="API Keys dans Gladia" src="Documentation/Images/gladia-api-keys-sidebar.png"/></li>
+<li>Créez au besoin une clé dédiée, avec un nom reconnaissable comme <code>SubVoxPro</code>.
+<img alt="Formulaire de création de clé Gladia" src="Documentation/Images/gladia-create-api-key.png"/>
+Copiez immédiatement sa valeur complète : la liste peut ensuite n’en afficher qu’une partie.
+<img alt="Ligne de clé Gladia" src="Documentation/Images/gladia-example-key.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ Gladia</strong>.</li>
+</ol>
+<blockquote>
+<p>Gratuit : <strong>10 h/mois</strong>, au maximum 20 appels/heure et 3 simultanés. <a href="https://support.gladia.io/article/how-to-get-the-api-key-from-my-account">Aide</a>.</p>
+</blockquote>
+</details>
+<details id="deepgram">
+<summary><strong>Deepgram</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription.</p>
+<ol>
+<li>Créez un compte sur <a href="https://console.deepgram.com/signup">https://console.deepgram.com/signup</a>, sans carte bancaire. Le crédit de <strong>200 $</strong> expire
+un an après l’inscription.
+<img alt="Inscription Deepgram" src="Documentation/Images/deepgram-signup.png"/></li>
+<li>Ouvrez <strong>API Keys</strong> dans la console.
+<img alt="Menu API Keys de Deepgram" src="Documentation/Images/deepgram-api-keys-sidebar.png"/></li>
+<li>Cliquez sur <strong>Create a New API Key</strong>.
+<img alt="Bouton de création de clé Deepgram" src="Documentation/Images/deepgram-create-api-key-button.png"/></li>
+<li>Nommez la clé et choisissez une expiration adaptée avec <strong>Set expiration</strong>. SubVox Pro n’impose pas de durée.
+<img alt="Création et expiration d’une clé Deepgram" src="Documentation/Images/deepgram-create-api-key-dialog.png"/></li>
+<li>Copiez le secret et conservez-le en lieu sûr : <strong>Deepgram ne peut plus le montrer ensuite</strong>.
+<img alt="Secret de la nouvelle clé Deepgram" src="Documentation/Images/deepgram-new-api-key-secret.png"/></li>
+<li>Collez-le dans <strong>Settings ▸ Deepgram</strong>.</li>
+</ol>
+</details>
+<details id="speechmatics">
+<summary><strong>Speechmatics</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription.</p>
+<ol>
+<li>Créez un compte sur <a href="https://portal.speechmatics.com">https://portal.speechmatics.com</a>. Crédit gratuit unique de <strong>100 $</strong>, sans carte.
+<img alt="Inscription Speechmatics" src="Documentation/Images/speechmatics-signup.png"/></li>
+<li>Ouvrez <strong>Manage ▸ API Keys</strong> dans le projet.
+<img alt="Menu des clés Speechmatics" src="Documentation/Images/speechmatics-api-keys-sidebar.png"/></li>
+<li>Cliquez sur <strong>Create new key</strong>.
+<img alt="Bouton de nouvelle clé Speechmatics" src="Documentation/Images/speechmatics-create-key-empty.png"/></li>
+<li>Nommez-la puis cliquez sur <strong>Generate new key</strong>.
+<img alt="Formulaire de clé Speechmatics" src="Documentation/Images/speechmatics-create-api-key-form.png"/></li>
+<li>Copiez la clé avant de fermer : <strong>elle ne sera plus affichée</strong>.
+<img alt="Enregistrement du secret Speechmatics" src="Documentation/Images/speechmatics-save-api-key.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ Speechmatics</strong>.</li>
+</ol>
+<blockquote>
+<p><a href="https://docs.speechmatics.com/get-started/authentication">Documentation d’authentification</a>.</p>
+</blockquote>
+</details>
+<details id="elevenlabs">
+<summary><strong>ElevenLabs</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription Scribe et doublage TTS.</p>
+<ol>
+<li>Inscrivez-vous sur <a href="https://elevenlabs.io">https://elevenlabs.io</a>, email ou SSO, sans carte. Le quota gratuit est d’environ 10 minutes
+par mois, <strong>non commercial</strong>, avec attribution obligatoire. Un jeu publié nécessite une offre payante.
+<img alt="Inscription ElevenLabs" src="Documentation/Images/elevenlabs-signup.png"/></li>
+<li>Ouvrez <strong>Developers</strong>, qui regroupe API, journaux, webhooks et variables d’environnement.
+<img alt="Menu Developers d’ElevenLabs" src="Documentation/Images/elevenlabs-developers-sidebar.png"/></li>
+<li>Ouvrez <strong>API Keys</strong> puis <strong>Create Key</strong>.
+<img alt="Onglet API Keys d’ElevenLabs" src="Documentation/Images/elevenlabs-api-keys-tab.png"/></li>
+<li>Nommez la clé. Avec <strong>Restrict Key</strong>, mettez <strong>Speech to Text</strong> et <strong>Text to Speech</strong> sur <strong>Access</strong>.
+<img alt="Création de clé et restrictions ElevenLabs" src="Documentation/Images/elevenlabs-create-api-key-dialog.png"/>
+<img alt="Permission Speech to Text" src="Documentation/Images/elevenlabs-speech-to-text-access.png"/>
+<img alt="Permission Text to Speech" src="Documentation/Images/elevenlabs-text-to-speech-access.png"/></li>
+<li>Copiez la valeur avant de fermer : <strong>la clé complète n’est affichée qu’une fois</strong>.
+<img alt="Nouvelle clé ElevenLabs" src="Documentation/Images/elevenlabs-api-key-created.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ ElevenLabs</strong>. La même clé sert à la transcription et au doublage.</li>
+</ol>
+<blockquote>
+<p>L’API TTS utilise l’en-tête <code>xi-api-key</code> et <code>POST /v1/text-to-speech/:voice_id</code>.
+<a href="https://elevenlabs.io/docs/api-reference/text-to-speech/convert">Référence</a>.</p>
+</blockquote>
+</details>
+<details id="rev-ai">
+<summary><strong>Rev AI</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription.</p>
+<ol>
+<li>Créez un compte sur <a href="https://www.rev.ai/auth/signup">https://www.rev.ai/auth/signup</a>, sans carte, avec <strong>5 h de crédit gratuit</strong>.
+<img alt="Inscription Rev AI" src="Documentation/Images/revai-signup.png"/></li>
+<li>Ouvrez <strong>Access Token</strong>, dans le menu ou sur <a href="https://www.rev.ai/access_token">https://www.rev.ai/access_token</a>.
+<img alt="Menu Access Token de Rev AI" src="Documentation/Images/revai-access-token-sidebar.png"/></li>
+<li>Cliquez sur <strong>Generate</strong> si aucun token n’existe. Deux tokens actifs au maximum.
+<img alt="Page Access Token avant génération" src="Documentation/Images/revai-access-token-empty.png"/></li>
+<li>Copiez immédiatement la valeur complète, <strong>affichée une seule fois</strong>. La liste ne garde ensuite qu’un aperçu.
+<img alt="Token Rev AI généré" src="Documentation/Images/revai-access-token-created.png"/></li>
+<li>Collez-le dans <strong>Settings ▸ Rev AI</strong>.</li>
+</ol>
+</details>
+<hr/>
+<h1 id="translation-providers">Fournisseurs de traduction </h1>
+<details id="deepl">
+<summary><strong>DeepL</strong></summary>
+<p><strong>Utilisé pour :</strong> traduction automatique avec choix de formalité.</p>
+<ol>
+<li>Sur <a href="https://www.deepl.com/pro-api">https://www.deepl.com/pro-api</a>, choisissez <strong>Sign up for free</strong> dans <strong>Developer</strong>.
+Vérifiez votre email et votre carte bancaire. La vérification ne facture pas l’offre Developer, qui inclut
+un crédit unique de <strong>1 000 000 de caractères</strong>.
+<img alt="Offre API Developer de DeepL" src="Documentation/Images/deepl-pricing.png"/></li>
+<li>Ouvrez <strong>Account ▸ API Keys</strong>, <a href="https://www.deepl.com/your-account/keys">https://www.deepl.com/your-account/keys</a>, puis copiez <strong>Authentication Key</strong>.
+<img alt="Clé d’authentification API DeepL" src="Documentation/Images/deepl-api-keys.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ DeepL</strong>. SubVox Pro choisit automatiquement l’endpoint Free ou Pro.</li>
+</ol>
+<blockquote>
+<p><a href="https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API">Aide</a>.</p>
+</blockquote>
+</details>
+<details id="google-cloud-translation">
+<summary><strong>Google Cloud Translation</strong></summary>
+<p><strong>Utilisé pour :</strong> traduction automatique.</p>
+<ol>
+<li>Créez ou choisissez un projet sur <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>. Les nouveaux comptes disposent de
+<strong>300 $ d’essai pendant 90 jours</strong> et Translation de <strong>500 000 caractères gratuits/mois</strong>.
+Un compte de facturation reste nécessaire.</li>
+<li>Dans <strong>APIs &amp; Services ▸ Library</strong>, activez <strong>Cloud Translation API</strong> avec <strong>Enable</strong>.</li>
+<li>Dans <strong>APIs &amp; Services ▸ Credentials</strong>, choisissez <strong>Create credentials ▸ API key</strong>. Copiez la clé et,
+au besoin, limitez-la à Cloud Translation API.</li>
+<li>Collez-la dans <strong>Settings ▸ Google Translate</strong>.</li>
+</ol>
+<blockquote>
+<p>Fixez un quota ou une alerte de budget avant l’épuisement du crédit d’essai.</p>
+</blockquote>
+</details>
+<details id="openai">
+<summary><strong>OpenAI</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription, traduction par modèle de langage, transfert des styles de mots et doublage TTS.
+Une seule clé couvre les trois fonctions.</p>
+<ol>
+<li>Créez un compte ou connectez-vous sur <a href="https://platform.openai.com">https://platform.openai.com</a>.
+<img alt="Connexion à la plateforme API OpenAI" src="Documentation/Images/openai-platform-sign-in.png"/></li>
+<li>Ouvrez <strong>API Keys</strong> dans le projet.
+<img alt="Menu API Keys d’OpenAI" src="Documentation/Images/openai-api-keys-sidebar.png"/></li>
+<li>Cliquez sur <strong>Create new secret key</strong>.
+<img alt="Page des clés API OpenAI" src="Documentation/Images/openai-api-keys-page.png"/></li>
+<li>Nommez-la si nécessaire, vérifiez le projet et les permissions, puis cliquez sur <strong>Create secret key</strong>.
+<img alt="Formulaire de nouvelle clé OpenAI" src="Documentation/Images/openai-create-secret-key-dialog.png"/></li>
+<li>Copiez immédiatement le secret : <strong>OpenAI ne l’affiche qu’une fois</strong>.
+<img alt="Clé secrète OpenAI générée" src="Documentation/Images/openai-secret-key-created.png"/></li>
+<li>Ajoutez des crédits depuis <a href="https://platform.openai.com/settings/organization/billing/overview">https://platform.openai.com/settings/organization/billing/overview</a>.
+Vous pouvez aussi passer par le menu du compte, <strong>Organization settings</strong> ou <strong>Profile settings</strong>, puis <strong>Billing</strong>.
+<img alt="Menu de compte OpenAI et réglages" src="Documentation/Images/openai-account-menu.png"/>
+<img alt="Menu Billing d’OpenAI" src="Documentation/Images/openai-billing-sidebar.png"/></li>
+<li>Dans <strong>Billing</strong>, cliquez sur <strong>Add to credit balance</strong>. L’API consomme ce solde.
+<img alt="Solde et ajout de crédit OpenAI" src="Documentation/Images/openai-billing-overview.png"/></li>
+<li>Choisissez le montant et le paiement, puis <strong>Continue</strong>. Le minimum affiché est habituellement <strong>5 $</strong>.
+<img alt="Ajout de crédit OpenAI" src="Documentation/Images/openai-add-credit-balance.png"/></li>
+<li>Collez la clé dans <strong>Settings ▸ OpenAI</strong> et choisissez le modèle dans le panneau approprié.
+En <strong>Text-to-Speech</strong>, <strong>gpt-4o-mini-tts</strong> fournit 13 voix et suit les directions de jeu ; <strong>tts-1</strong> est rapide
+et <strong>tts-1-hd</strong> privilégie la qualité. Ces deux derniers proposent 9 voix et ignorent les directions.
+En <strong>Speech-to-Text</strong>, choisissez OpenAI puis le modèle de transcription.</li>
+</ol>
+<blockquote>
+<p><strong>Timings de transcription :</strong></p>
+<ul>
+<li><strong><code>gpt-transcribe</code></strong>, par défaut, <strong><code>gpt-4o-transcribe</code></strong> et <strong><code>gpt-4o-mini-transcribe</code></strong> donnent une excellente
+transcription mais <strong>sans timings par mot</strong>. SubVox Pro répartit les mots sur les segments, ou sur le clip
+complet s’il n’y en a pas. Les textes sont corrects, les timings estimés et ajustables sur la timeline.</li>
+<li><strong><code>whisper-1</code></strong> fournit des timings de mots réels. SubVox Pro réapplique sa transcription ponctuée sur les mots,
+car ceux-ci sont renvoyés sans ponctuation.</li>
+<li>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Whisper local et Parakeet fournissent directement
+des mots ponctués et datés. Préférez-les lorsque le timing compte.</li>
+</ul>
+<p>L’endpoint de transcription limite les envois à <strong>25 Mo</strong>.</p>
+</blockquote>
+<blockquote>
+<p>Pour le TTS, les règles OpenAI demandent d’indiquer aux joueurs que les voix sont générées par IA, par exemple
+dans les crédits ou sur la page du jeu. <a href="https://openai.com/api/pricing">Tarifs API</a>.</p>
+</blockquote>
+</details>
+<details id="anthropic-claude">
+<summary><strong>Anthropic, Claude</strong></summary>
+<p><strong>Utilisé pour :</strong> traduction par modèle de langage et transfert des styles de mots.</p>
+<ol>
+<li>Créez un compte ou connectez-vous sur <a href="https://console.anthropic.com">https://console.anthropic.com</a>.
+<img alt="Connexion à la console Anthropic" src="Documentation/Images/anthropic-console-sign-in.png"/></li>
+<li>Achetez des crédits avant les requêtes. L’API est prépayée ; sans solde, elle échoue.
+Le montant initial proposé est souvent <strong>5 $</strong>.
+<img alt="Achat de crédits Anthropic" src="Documentation/Images/anthropic-buy-credits.png"/></li>
+<li>Ouvrez <strong>API keys</strong> dans la console Claude.
+<img alt="Menu API keys de Claude" src="Documentation/Images/anthropic-api-keys-sidebar.png"/></li>
+<li>Cliquez sur <strong>Create key</strong>.
+<img alt="Page des clés Claude" src="Documentation/Images/anthropic-api-keys-page.png"/></li>
+<li>Choisissez l’espace de travail, le nom facultatif, puis <strong>Add</strong>.
+<img alt="Création d’une clé Claude" src="Documentation/Images/anthropic-create-api-key-dialog.png"/></li>
+<li>Copiez la clé immédiatement : <strong>sa valeur complète ne sera plus consultable</strong>.
+<img alt="Clé Claude générée" src="Documentation/Images/anthropic-api-key-created.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ Claude</strong>.</li>
+</ol>
+</details>
+<details id="google-gemini">
+<summary><strong>Google, Gemini</strong></summary>
+<p><strong>Utilisé pour :</strong> traduction par modèle de langage et doublage. L’option gratuite la plus simple, sans compte
+de facturation. Une clé couvre les deux fonctions.</p>
+<ol>
+<li>Connectez-vous avec Google sur <a href="https://aistudio.google.com">https://aistudio.google.com</a>.
+<img alt="Accueil Google AI Studio" src="Documentation/Images/gemini-ai-studio-home.png"/></li>
+<li>Ouvrez <strong>API keys</strong>, <a href="https://aistudio.google.com/app/apikey">https://aistudio.google.com/app/apikey</a>, puis <strong>Create an API key</strong>.
+<img alt="Page des clés AI Studio" src="Documentation/Images/gemini-api-keys-page.png"/></li>
+<li>Nommez la clé, choisissez ou créez un projet, puis créez-la.
+<img alt="Création de clé Gemini" src="Documentation/Images/gemini-create-api-key-dialog.png"/></li>
+<li>Copiez-la depuis son panneau de détails.
+<img alt="Détails de la clé Gemini" src="Documentation/Images/gemini-api-key-details.png"/></li>
+<li>La liste permet ensuite de copier la clé, consulter l’usage ou configurer la facturation.
+<img alt="Ligne de clé Gemini" src="Documentation/Images/gemini-api-key-row.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ Gemini</strong>. Pour doubler, choisissez <strong>Gemini</strong> dans <strong>Text-to-Speech</strong> : 30 voix
+multilingues, comme <em>Kore</em>, <em>Puck</em> et <em>Leda</em>, avec directions de jeu.
+Modèles : <strong>gemini-3.1-flash-tts-preview</strong>, par défaut et le plus naturel ; <strong>gemini-2.5-flash-preview-tts</strong>,
+moitié moins cher en usage facturé ; <strong>gemini-2.5-pro-preview-tts</strong>, sans offre gratuite, nécessite la facturation.</li>
+</ol>
+<blockquote>
+<p>Le gratuit ne demande <strong>aucune facturation</strong>, mais limite le débit. Consultez <strong>Rate limit</strong> dans AI Studio.
+Les limites TTS sont les plus strictes, quelques requêtes par minute et par jour. SubVox Pro attend et réessaie
+quand Google précise un délai, puis affiche un message clair lorsque le quota quotidien est épuisé.
+Activer la facturation augmente ces limites sans autre changement dans SubVox Pro. Les requêtes gratuites
+peuvent servir à améliorer les produits Google.</p>
+</blockquote>
+</details>
+<details id="deepseek">
+<summary><strong>DeepSeek</strong></summary>
+<p><strong>Utilisé pour :</strong> traduction à faible coût, API compatible OpenAI.</p>
+<ol>
+<li>Créez un compte ou connectez-vous sur <a href="https://platform.deepseek.com">https://platform.deepseek.com</a>.</li>
+<li>Ajoutez un solde avec <strong>Top up</strong> avant de commencer. Sans crédit, les requêtes échouent.</li>
+<li>Ouvrez <strong>API keys</strong>, <a href="https://platform.deepseek.com/api_keys">https://platform.deepseek.com/api_keys</a>, puis <strong>Create new API key</strong>. Nommez-la,
+par exemple <code>SubVoxPro</code>, et copiez-la immédiatement : affichage complet unique.</li>
+<li>Collez-la dans <strong>Settings ▸ DeepSeek</strong>, puis choisissez le modèle dans le panneau de traduction.</li>
+</ol>
+<blockquote>
+<p><a href="https://api-docs.deepseek.com/quick_start/pricing">Tarifs</a>.</p>
+</blockquote>
+</details>
+<hr/>
+<h1 id="dubbing--text-to-speech">Doublage par synthèse vocale </h1>
+<p>ElevenLabs TTS utilise la même clé que la transcription. Une clé restreinte nécessite <strong>Text to Speech: Access</strong>.
+Le clonage ElevenLabs, Instant Voice Cloning sur une offre payante, nécessite également <strong>Voices</strong> en écriture
+pour créer, retrouver et supprimer les clones.
+Gemini TTS utilise la clé <a href="#google-gemini">Gemini</a>, sans OAuth ni facturation, contrairement aux voix Gemini de
+Google Cloud ci-dessous. OpenAI TTS utilise sa clé <a href="#openai">OpenAI</a>.</p>
+<details id="inworld-ai">
+<summary><strong>InWorld AI</strong></summary>
+<p><strong>Utilisé pour :</strong> génération d’audio doublé pour une piste traduite.</p>
+<ol>
+<li>Créez un compte sur <a href="https://studio.inworld.ai">https://studio.inworld.ai</a>.
+<img alt="Inscription Inworld Studio" src="Documentation/Images/inworld-signup.png"/></li>
+<li>Ouvrez <strong>API Keys</strong> dans votre espace de travail.
+<img alt="Menu API Keys d’Inworld" src="Documentation/Images/inworld-api-keys-sidebar.png"/></li>
+<li>Cliquez sur <strong>Generate new key</strong>.
+<img alt="Page des clés Inworld" src="Documentation/Images/inworld-api-keys-page.png"/></li>
+<li>Donnez un nom reconnaissable. Choisissez <strong>Standard</strong>, sauf besoin spécifique d’une clé realtime-only,
+et conservez les permissions nécessaires au TTS.
+<img alt="Génération de clé Inworld" src="Documentation/Images/inworld-generate-api-key-dialog.png"/></li>
+<li>Copiez <strong>Basic (Base64)</strong>.
+<img alt="Valeur Basic Base64 d’Inworld" src="Documentation/Images/inworld-api-key-basic-value.png"/>
+La clé reste copiable dans la liste.
+<img alt="Ligne de clé Inworld" src="Documentation/Images/inworld-api-key-row.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ InWorld</strong>.</li>
+</ol>
+<blockquote>
+<p>Gratuit : environ 70 minutes de TTS, une fois, avec licence commerciale. <strong>TTS Playground</strong> permet d’écouter
+les voix. <a href="https://docs.inworld.ai/docs/tts-api/getting-started/">Premiers pas</a>.</p>
+</blockquote>
+</details>
+<details id="google-cloud-tts">
+<summary><strong>Google Cloud Text-to-Speech</strong></summary>
+<p><strong>Utilisé pour :</strong> doublage d’une piste traduite. Une connexion couvre deux familles : les voix <strong>classiques</strong>,
+Standard, WaveNet, Neural2, Chirp/Chirp3-HD, sur Cloud Text-to-Speech API, et les voix <strong>Gemini</strong>, comme <em>Leda</em>,
+<em>Achird</em> et <em>Aoede</em>, multilingues avec direction libre, sur <strong>Vertex AI</strong>.</p>
+<p>Ce fournisseur utilise <strong>OAuth</strong>, pas une clé API. Vertex AI exige la permission <code>aiplatform.endpoints.predict</code> :
+une clé API ne porte pas les droits IAM, contrairement au compte Google connecté s’il possède ou édite le projet.
+Une connexion suffit aux deux familles.</p>
+<ol>
+<li>Créez ou choisissez un projet sur <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>. Nouveau compte : <strong>300 $ d’essai pendant
+90 jours</strong>. Un compte de facturation reste obligatoire.</li>
+<li>Dans <strong>APIs &amp; Services ▸ Library</strong>, activez <strong>Cloud Text-to-Speech API</strong> et, pour Gemini, <strong>Vertex AI API</strong>,
+<code>aiplatform.googleapis.com</code>, <strong>pas</strong> l’ancien AI Platform, <code>ml.googleapis.com</code>.
+Vertex AI est inutile si vous n’utilisez que les voix classiques.</li>
+<li>Dans <strong>OAuth consent screen</strong>, choisissez <strong>External</strong> pour <strong>User type / Audience</strong> et ajoutez votre compte
+aux <strong>Test users</strong>. <strong>Internal</strong> bloque les comptes Gmail personnels avec <code>403: org_internal</code>.</li>
+<li>Dans <strong>Credentials ▸ Create credentials ▸ OAuth client ID</strong>, choisissez <strong>Desktop app</strong> et copiez
+<strong>Client ID</strong> et <strong>Client secret</strong>. Le client Desktop permet la connexion locale <code>http://127.0.0.1</code>,
+comme pour Google Sheets.</li>
+<li>Dans <strong>Text-to-Speech</strong>, choisissez <strong>Google Cloud</strong>, collez ces deux valeurs, puis <strong>Connect…</strong>.
+Connectez-vous dans le navigateur. L’avertissement d’application non vérifiée est normal en mode Testing :
+choisissez <strong>Continue</strong>. Le projet de quota/facturation est déduit du Client ID.
+Les identifiants et le refresh token restent dans les préférences de cet ordinateur.</li>
+</ol>
+<p>Choisissez ensuite une voix. Les classiques apparaissent comme <code>Tier Leaf (locale)</code>, par exemple <em>Neural2 A (fr-FR)</em>.
+Les Gemini apparaissent comme <code>Name · Gemini</code> et ignorent le filtre de langue puisqu’elles sont multilingues.
+Le bouton bulle <strong>voice direction</strong> devient actif : décrivez le ton, par exemple <em>really sad, close to mental
+breakdown</em>. Cette indication est envoyée pour chaque ligne.</p>
+<blockquote>
+<p>Les voix classiques utilisent le quota mensuel Cloud TTS, environ 1 M de caractères Neural2/WaveNet et 4 M
+Standard. Les voix <strong>Gemini et Chirp</strong> sont facturées via <strong>Vertex AI</strong>, à un autre tarif. Fixez une alerte
+de budget. <a href="https://cloud.google.com/text-to-speech/pricing">Tarifs</a>.</p>
+</blockquote>
+</details>
+<details id="azure">
+<summary><strong>Azure AI Speech</strong></summary>
+<p><strong>Utilisé pour :</strong> doublage avec voix neuronales multilingues. Utilise <strong>clé d’abonnement et région</strong>, sans OAuth.</p>
+<ol>
+<li><p>Créez un compte sur <a href="https://azure.microsoft.com/free">https://azure.microsoft.com/free</a>. Une carte vérifie l’identité, mais <strong>F0</strong> limite
+l’usage au lieu de facturer : aucun débit sur cette offre.</p>
+</li>
+<li><p>Dans <a href="https://portal.azure.com">https://portal.azure.com</a>, cliquez sur <strong>Create a resource</strong>, recherchez <strong>Speech</strong> et choisissez
+la tuile <strong>Speech</strong> publiée par <strong>Microsoft</strong>, avec <strong>Create</strong>, pas une offre Marketplace <strong>Subscribe</strong>.
+Choisissez abonnement, groupe de ressources, <strong>Region</strong>, nom et <strong>Pricing tier F0 (free)</strong>, puis
+<strong>Review + create</strong>. Notez la région.</p>
+<p><a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices">Lien direct vers la ressource Speech</a>.</p>
+</li>
+<li><p>Après déploiement, ouvrez <strong>Keys and Endpoint</strong>, copiez <strong>KEY 1</strong> et notez <strong>Location/Region</strong>, par exemple <code>westeurope</code>.</p>
+</li>
+<li><p>Collez la clé dans <strong>Settings ▸ Azure Speech</strong>. Dans <strong>Text-to-Speech</strong>, choisissez <strong>Azure</strong> et la <strong>même région</strong>.</p>
+</li>
+</ol>
+<blockquote>
+<p>La clé et la région doivent correspondre à la même ressource, sinon Azure renvoie <code>401</code>.
+Choisissez le code court, <code>westeurope</code> ou <code>eastus</code>, pas le nom affiché comme « West Europe ».</p>
+</blockquote>
+<blockquote>
+<p><strong>F0</strong> : environ 0,5 M de caractères TTS neuronaux par mois, uniquement pour l’évaluation. Les droits
+commerciaux sur l’audio nécessitent une ressource <strong>S0 payante</strong> avant de doubler un jeu publié.
+<a href="https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/">Tarifs</a>.</p>
+</blockquote>
+</details>
+<hr/>
+<h2 id="after-pasting-a-key">Après l’enregistrement d’une clé </h2>
+<p>Le panneau affiche <strong>API Ready</strong> lorsqu’une clé valide est détectée. En cas d’échec, vérifiez que la clé a été
+copiée entièrement, que le compte dispose encore de crédits ou de quota, et que votre machine accède au réseau.
+<strong>Clear API Keys</strong>, dans <strong>Tools ▸ SubVox Pro ▸ Settings</strong>, efface toutes les clés enregistrées sur cet ordinateur.</p>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro — © 2026 ExNihilus
+        </div>
+</div>
+</footer>
+</body>
+</html>

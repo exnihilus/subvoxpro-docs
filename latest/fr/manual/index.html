@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Guide | Documentation SubVox Pro </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Guide | Documentation SubVox Pro " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=9f8cab86d6" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="Sur cette page" name="loc:inThisArticle"/>
+<meta content="{count} résultats pour « {query} »" name="loc:searchResultsCount"/>
+<meta content="Aucun résultat pour « {query} »" name="loc:searchNoResults"/>
+<meta content="Filtrer par titre" name="loc:tocFilter"/>
+<meta content="Suivant" name="loc:nextArticle"/>
+<meta content="Précédent" name="loc:prevArticle"/>
+<meta content="Clair" name="loc:themeLight"/>
+<meta content="Sombre" name="loc:themeDark"/>
+<meta content="Automatique" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=9f8cab86d6" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="fr">
+  <link rel="alternate" hreflang="en" href="../../manual/index.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/index.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Afficher la navigation" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Rechercher" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Rechercher" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Sommaire</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="subvox-pro">SubVox Pro</h1>
+<p>SubVox Pro transforme vos voicelines en sous-titres synchronisés et en doublages, directement dans Unity :</p>
+<ul>
+<li><strong>Transcrivez</strong> un clip audio en sous-titres datés, avec un service en ligne ou entièrement hors connexion.</li>
+<li><strong>Ajustez</strong> le timing sur une forme d’onde, stylisez les mots et vérifiez la vitesse de lecture.</li>
+<li><strong>Traduisez</strong> dans 37 langues et <strong>doublez</strong> par synthèse vocale, éventuellement avec la voix propre à chaque personnage.</li>
+<li><strong>Jouez</strong> le résultat en jeu avec quelques composants, déclenchez des <strong>événements de gameplay</strong> depuis une réplique
+et placez vos voicelines sur la <strong>Timeline Unity</strong>.</li>
+</ul>
+<p>Les noms des boutons et des champs restent en anglais dans ce guide, comme dans l’interface Unity.
+Le guide et la référence d’API français sont disponibles en ligne ; les PDF inclus dans le plugin restent en anglais.</p>
+<h2 id="contents">Sommaire </h2>
+<ul>
+<li><a href="#before-you-start">Avant de commencer</a></li>
+<li><a href="#quick-start">Démarrage rapide</a></li>
+<li><a href="#the-subvox-pro-window">La fenêtre SubVox Pro</a></li>
+<li><a href="#transcribe">Transcrire</a></li>
+<li><a href="#translate">Traduire</a></li>
+<li><a href="#dub-with-text-to-speech">Doubler par synthèse vocale</a></li>
+<li><a href="#speakers-and-voice-personalities">Speakers et personnalités vocales</a></li>
+<li><a href="#edit-the-audio">Modifier l’audio</a></li>
+<li><a href="#play-voice-lines-in-your-game">Jouer des voicelines dans votre jeu</a></li>
+<li><a href="#trigger-gameplay-from-a-voice-line">Déclencher du gameplay depuis une voiceline</a></li>
+<li><a href="#unity-timeline">Timeline Unity</a></li>
+<li><a href="#process-many-files-at-once">Traiter plusieurs fichiers à la fois</a></li>
+<li><a href="#offline-engines-no-account-no-api-key">Moteurs locaux, sans compte ni clé API</a></li>
+<li><a href="#human-translation-with-google-sheets">Traduction humaine avec Google Sheets</a></li>
+<li><a href="#settings">Réglages</a></li>
+<li><a href="#keyboard-and-mouse">Clavier et souris</a></li>
+<li><a href="#supported-languages">Langues prises en charge</a></li>
+<li><a href="#where-your-files-go">Emplacement de vos fichiers</a></li>
+<li><a href="#troubleshooting">Dépannage</a></li>
+</ul>
+<p>La création des comptes et des clés API est expliquée étape par étape dans le
+<a href="providers.html">guide des fournisseurs</a>.</p>
+<hr/>
+<h2 id="before-you-start">Avant de commencer </h2>
+<ul>
+<li><strong>Unity 2022.3 LTS ou plus récent</strong>, y compris Unity 6, avec n’importe quel pipeline de rendu : Built-in, URP ou HDRP.</li>
+<li><strong>TextMesh Pro</strong> : importez <em>TMP Essentials</em> une fois si ce n’est pas déjà fait. Avec Unity 2022.3, installez d’abord
+le package <strong>TextMeshPro</strong> depuis le Package Manager. Unity 6 l’inclut déjà.</li>
+<li><strong>Unity Timeline</strong> est facultatif : les fonctions Timeline apparaissent dès que son package est installé.</li>
+<li><strong>En jeu</strong>, SubVox Pro fonctionne sur toutes les plateformes prises en charge par Unity.</li>
+<li><strong>Dans l’éditeur</strong>, les services en ligne fonctionnent sous Windows, macOS et Linux avec vos propres clés API.
+Les <strong>moteurs locaux</strong> de transcription, traduction et doublage sans compte nécessitent l’éditeur <strong>Windows</strong>.</li>
+</ul>
+<hr/>
+<h2 id="quick-start">Démarrage rapide </h2>
+<p>Passez d’un clip audio à des sous-titres synchronisés en quelques minutes.</p>
+<p><strong>Tools ▸ SubVox Pro ▸ Hub</strong> donne accès à tous les outils : éditeur de voicelines, traitement par lot,
+Google Sheets, comparaison des fournisseurs, modèles locaux supplémentaires, scène d’exemple, documentation,
+configuration des fournisseurs et réglages. L’accueil contient <strong>neuf tuiles</strong>.</p>
+<p><img alt="Le Hub SubVox Pro avec ses neuf tuiles" src="Documentation/Images/subvoxpro-hub.png"/></p>
+<p>La tuile <strong>Documentation</strong> ouvre un écran contenant uniquement <strong>Online</strong> et <strong>Local</strong>.
+<strong>Online</strong> ouvre le guide, la configuration des fournisseurs et la référence d’API, avec un choix anglais/français.
+<strong>Local</strong> ouvre le PDF anglais, disponible hors connexion. <strong>Back</strong> revient à l’accueil.
+La tuile <strong>Provider Setup</strong> ouvre le PDF anglais consacré aux fournisseurs.</p>
+<p><img alt="Écran Documentation du Hub : Online, Local et Back" src="Documentation/Images/subvoxpro-hub-documentation.png"/></p>
+<p><strong>1. Choisissez comment transcrire.</strong> Collez la clé API d’un service de transcription dans
+<strong>Tools ▸ SubVox Pro ▸ Settings</strong> (<a href="providers.html">obtenir une clé</a>), ou utilisez sous Windows <strong>Whisper</strong> ou
+<strong>Parakeet</strong>, gratuits et hors connexion. Ils proposent de télécharger leur modèle à la première utilisation.</p>
+<p><strong>2. Créez une voiceline.</strong> <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line</strong>, puis sélectionnez l’asset et cliquez sur
+<strong>Setup Voiceline</strong> dans l’Inspector. Vérifiez <strong>Language</strong> : anglais à la première utilisation, puis votre dernier
+choix. Cliquez sur <strong>Add an audio track</strong> pour choisir un clip ou en enregistrer un.</p>
+<p><img alt="Nouvelle voiceline : langue, piste audio et piste de sous-titres" src="Documentation/Images/subvoxpro-new-voice-line.png"/></p>
+<p><strong>3. Transcrivez.</strong> Dans <strong>AI Tools ▸ Transcription</strong>, choisissez le fournisseur et la langue parlée, cliquez sur
+<strong>Analyze</strong>, puis sur <strong>Split</strong>. Les sous-titres apparaissent sur la forme d’onde.</p>
+<p><strong>4. Ajustez.</strong> Déplacez les marqueurs, corrigez le texte dans la liste et appuyez sur <strong>Space</strong> pour écouter.</p>
+<p><strong>5. Affichez le résultat en jeu.</strong> Placez les prefabs <strong>[SubVox Pro]</strong> et <strong>Subtitle Displayer</strong>
+(<code>SubVoxPro/Prefabs</code>) dans votre scène, puis jouez la réplique :</p>
+<pre><code class="lang-csharp">using SubVoxPro;
+
+SubVox.Play(myVoiceLine);
+</code></pre>
+<p>Pour voir un exemple fonctionnel, ouvrez <strong>Tools ▸ SubVox Pro ▸ Open Example Scene</strong> et appuyez sur <strong>Play</strong>.
+La scène montre des voicelines, une séquence de dialogue, le changement de langue et l’apparition mot par mot.</p>
+<hr/>
+<h2 id="the-subvox-pro-window">La fenêtre SubVox Pro </h2>
+<p><img alt="Fenêtre SubVox Pro : sources, outils IA, timeline, aperçu et liste de sous-titres" src="Documentation/Images/subvoxpro-window-overview.png"/></p>
+<p>Ouvrez-la avec <strong>Tools ▸ SubVox Pro ▸ Voiceline Setup</strong> ou <strong>Setup Voiceline</strong> dans l’Inspector d’une voiceline.
+De haut en bas :</p>
+<ul>
+<li><strong>Voice Line Data</strong> : la voiceline en cours, avec les boutons pour en créer une, parcourir les autres ou la
+supprimer. Le point coloré est un <strong>tag</strong>, également visible sur son icône dans la fenêtre Project.</li>
+<li><strong>Source</strong> : les sélecteurs <strong>AUDIO</strong> et <strong>SUBTITLES</strong>. Chaque voiceline a une langue source, représentée par un
+drapeau, et une piste par langue traduite ou doublée. Les sélecteurs sont indépendants : vous pouvez lire les
+sous-titres français tout en écoutant l’audio anglais.</li>
+<li><strong>AI Tools</strong> : transcription, traduction et doublage (<a href="#transcribe">voir ci-dessous</a>).</li>
+<li><strong>Timeline</strong> : la forme d’onde et les <strong>marqueurs</strong> de sous-titres. Chaque marqueur indique le début d’un
+sous-titre ; un marqueur sans texte efface l’affichage, c’est un <strong>blank</strong>.</li>
+<li><strong>Live preview</strong> : le sous-titre à la position de lecture, tel qu’il apparaîtra en jeu. Choisissez une couleur
+ou un style, puis glissez sur les mots pour les appliquer. Le glissement avec le bouton droit les efface.</li>
+<li><strong>Subtitles</strong> : une ligne par sous-titre, avec son nom, sa durée, son speaker, son texte et un bouton de lecture.</li>
+</ul>
+<h3 id="tags-and-languages">Tags et langues </h3>
+<p>Cliquez sur le tag à côté de <strong>Voice Line Data</strong> pour choisir sa couleur et sa forme. <strong>Clear tag</strong> le retire.
+La forme permet de distinguer les voicelines sans dépendre uniquement de la couleur.</p>
+<p><img alt="Popup de tag, avec un losange bleu sélectionné" src="Documentation/Images/subvoxpro-tag-popup.png"/></p>
+<p>Cliquez sur le drapeau source pour choisir la langue parlée. Les drapeaux représentent des langues, pas la
+nationalité des personnages. Le sélecteur indique aussi le nom de chaque langue et son code.</p>
+<p><img alt="Sélecteur de langue source : noms, codes et drapeaux" src="Documentation/Images/subvoxpro-language-picker.png"/></p>
+<h3 id="starting-without-audio">Commencer sans audio </h3>
+<p><img alt="Ajouter une piste de sous-titres : SRT, TXT ou saisie manuelle" src="Documentation/Images/subvoxpro-new-voice-line-subtitles.png"/></p>
+<p>Une voiceline peut commencer par du texte. Choisissez <strong>Add a subtitles track</strong>, puis importez un <strong>.srt</strong>
+avec ses timings, un <strong>.txt</strong> avec un sous-titre par ligne, ou saisissez les lignes vous-même. Pour le TXT,
+les durées sont calculées automatiquement pour une vitesse de lecture confortable.
+Réglez <strong>Length</strong> : la voiceline jouera pendant cette durée jusqu’à l’ajout d’audio ou la génération d’un doublage.</p>
+<h3 id="recording-audio">Enregistrer de l’audio </h3>
+<p><img alt="Ajouter une piste audio : clip ou enregistrement au microphone" src="Documentation/Images/subvoxpro-new-voice-line-audio.png"/></p>
+<p><strong>Record with a microphone</strong>, dans <strong>Add an audio track</strong> ou dans le <strong>+</strong> du sélecteur AUDIO, ouvre un enregistreur.
+Choisissez le microphone, surveillez le niveau, enregistrez, réécoutez, puis cliquez sur <strong>Use recording</strong>.
+La prise est enregistrée en WAV à côté de la voiceline. Sur macOS, autorisez Unity à utiliser le microphone dans
+les Réglages Système.</p>
+<h3 id="checking-your-subtitles">Vérifier vos sous-titres </h3>
+<ul>
+<li><strong>Show CPS</strong>, dans les <a href="#settings">réglages</a>, affiche la vitesse de lecture et signale les lignes trop rapides.</li>
+<li><strong>Validate</strong> parcourt les problèmes un à un : noms vides ou en double, lignes hors du clip, chevauchements,
+texte trop rapide. Les corrections proposées peuvent toutes être annulées.</li>
+<li><strong>Auto blanks</strong> masque le texte quand personne ne parle, sans ajouter de marqueurs. Activez-le dans son popup
+et choisissez la durée minimale du silence. Les parties masquées sont ombrées sur la forme d’onde.</li>
+<li><strong>Export SRT</strong> enregistre les sous-titres dans un fichier <code>.srt</code>.</li>
+</ul>
+<p><img alt="Réglages Auto blanks : silence, pause minimale, maintien et anticipation" src="Documentation/Images/subvoxpro-auto-blanks.png"/></p>
+<p><strong>Silence</strong> définit à quel point une pause doit être plus faible que la voix. <strong>Min pause</strong> ignore les silences
+trop courts. <strong>Hold out</strong> conserve brièvement le texte après l’arrêt de la voix, et <strong>Lead in</strong> le fait réapparaître
+avant la reprise. <strong>Only between two lines</strong> évite de masquer puis de réafficher un sous-titre au milieu de sa phrase.</p>
+<h3 id="deleting-a-voice-line">Supprimer une voiceline </h3>
+<p>Le bouton corbeille liste les fichiers associés à la voiceline. Les fichiers générés par SubVox Pro, comme les
+doublages et les enregistrements, sont cochés ; vos fichiers d’origine ne le sont pas. Un fichier encore utilisé
+ailleurs est verrouillé. La suppression utilise la corbeille système et reste récupérable.</p>
+<hr/>
+<h2 id="transcribe">Transcrire </h2>
+<p><img alt="Onglet Transcription avec Whisper local" src="Documentation/Images/subvoxpro-ai-tools-transcription.png"/></p>
+<ol>
+<li>Choisissez un <strong>Provider</strong> et, s’il en propose plusieurs, un <strong>Model</strong>. Le badge indique si le fournisseur est
+prêt : clé enregistrée ou modèle téléchargé.</li>
+<li>Réglez <strong>Audio Language</strong>. Certains fournisseurs détectent eux-mêmes la langue.</li>
+<li>Cliquez sur <strong>Analyze</strong> pour obtenir les mots et leurs timings.</li>
+<li>Cliquez sur <strong>Split</strong> pour regrouper les mots en sous-titres. <strong>Split settings</strong> règle la durée maximale,
+l’avance avant le premier mot et la coupure sur la ponctuation.</li>
+</ol>
+<p><strong>Word timing</strong> choisit l’origine du timing de chaque mot. <strong>From the provider</strong>, par défaut, conserve celui de
+la transcription. <strong>Qwen3 local</strong> recale chaque mot sur l’audio après <strong>Split</strong>, sans modifier le texte : c’est
+le choix le plus précis pour l’affichage mot par mot (<a href="#qwen3-offline-word-timing">installation</a>).
+Si Qwen3 ne prend pas la langue en charge, les timings du fournisseur sont conservés.</p>
+<p>Fournisseurs : AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, OpenAI, ou <strong>Whisper</strong> et <strong>Parakeet</strong>
+hors connexion. <strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> compare prix, offre gratuite, utilisation commerciale
+et langues.</p>
+<p><img alt="Comparaison des fournisseurs, onglet Transcription" src="Documentation/Images/subvoxpro-provider-comparison.png"/></p>
+<blockquote>
+<p>Avec OpenAI, choisissez <strong>whisper-1</strong> lorsque le timing compte. Les autres modèles OpenAI fournissent un très
+bon texte, mais sans timings de mots : ceux-ci sont répartis de façon estimée sur l’audio.</p>
+</blockquote>
+<p>La transcription utilise la piste du sélecteur AUDIO : vous pouvez donc également transcrire un doublage.</p>
+<hr/>
+<h2 id="translate">Traduire </h2>
+<p><img alt="Onglet Translation" src="Documentation/Images/subvoxpro-ai-tools-translation.png"/></p>
+<ol>
+<li>Choisissez un <strong>Provider</strong> : DeepL, Google Translate, OpenAI, Claude, Gemini, DeepSeek ou <strong>Hy-MT2</strong> local.</li>
+<li>Choisissez une langue <strong>Target</strong>, ou un <strong>preset</strong> pour traduire vers plusieurs langues à la fois.</li>
+<li>Réglez <strong>Formality</strong>, par exemple tutoiement ou vouvoiement, si la langue le permet.</li>
+<li>Cliquez sur <strong>Translate</strong>. Chaque langue reçoit sa propre piste dans le sélecteur SUBTITLES.</li>
+</ol>
+<p><img alt="Popup Target : groupe de langues et édition de sa liste" src="Documentation/Images/subvoxpro-translation-targets.png"/></p>
+<p>Dans le popup <strong>Target</strong>, <strong>+ New</strong> crée un groupe. La colonne de droite choisit ses langues.
+Sélectionner ce preset traduit vers toutes ses langues en une seule opération.</p>
+<p><strong>Donnez du contexte.</strong> Pour une phrase ambiguë, écrivez un <strong>contexte global</strong> avec le bouton bulle de la
+voiceline et, si nécessaire, une note sur une ligne avec son bouton bulle dans la liste.</p>
+<p><strong>Gardez les traductions à jour.</strong> Après une modification du texte source, les traductions affichent <strong>OUT</strong>.
+<strong>Synchronize</strong> ne retraduit que les lignes modifiées ; cliquez sur le badge si vous avez vérifié la ligne vous-même.
+Si vous déplacez les marqueurs et coupez autrement une phrase, le badge <strong>CUT</strong> apparaît.
+<strong>Fix splits</strong> demande à un fournisseur IA de recouper la traduction au même sens, sans changer ses mots.
+Les doublages suivent automatiquement.</p>
+<hr/>
+<h2 id="dub-with-text-to-speech">Doubler par synthèse vocale </h2>
+<p><img alt="Onglet Dubbing avec Chatterbox local" src="Documentation/Images/subvoxpro-ai-tools-dubbing.png"/></p>
+<ol>
+<li>Sélectionnez la langue à doubler dans SUBTITLES.</li>
+<li>Dans <strong>AI Tools ▸ Dubbing</strong>, choisissez un <strong>Provider</strong> et une <strong>Voice</strong>. Le bouton ▶ lit un exemple de voix.
+<strong>Use speakers' voices</strong> utilise la voix propre au <a href="#speakers-and-voice-personalities">speaker</a> de chaque ligne.</li>
+<li>Choisissez <strong>Generation</strong> :
+<ul>
+<li><strong>Each subtitle</strong> : une prise par sous-titre, facile à corriger ligne par ligne.</li>
+<li><strong>Per speaker</strong> : une prise par groupe de lignes du même personnage, avec un enchaînement plus naturel.</li>
+<li><strong>All together</strong> : une prise continue, la plus fluide, mais tout est régénéré ensemble.</li>
+</ul>
+</li>
+<li>Cliquez sur <strong>Generate audio</strong>. Une nouvelle piste audio est jouée à la place de l’original quand cette langue
+est active.</li>
+</ol>
+<p>Fournisseurs : InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, et les moteurs locaux <strong>Kokoro</strong>, en anglais,
+et <strong>Chatterbox</strong>, dans 21 langues et avec conservation de la voix du personnage.</p>
+<ul>
+<li><strong>Word timing</strong> : <strong>Qwen3 local</strong> affiche les mots au moment exact où ils sont prononcés
+(<a href="#qwen3-offline-word-timing">installation</a>). Utilisez <strong>Estimated</strong> si vous n’affichez pas les mots un à un.</li>
+<li><strong>Voice direction</strong> : le bouton bulle à côté de la voix donne une indication de jeu, comme <em>calm, whispering</em>,
+aux fournisseurs qui la comprennent.</li>
+<li><strong>REGEN</strong> : un badge orange signale que le doublage ne correspond plus au texte, à la voix ou à la personnalité.
+Survolez-le pour connaître la raison ; cliquez dessus pour régénérer uniquement ce qui est nécessaire.</li>
+<li><strong>Voice cloning</strong> : avec ElevenLabs, sur une offre payante, ou Chatterbox, <strong>Original voice</strong> conserve la voix
+de chaque personnage à partir de l’audio source. Vous pouvez aussi utiliser un clip du dossier <code>Voices</code> de votre
+<a href="#where-your-files-go">dossier de données</a>. Ne clonez que les voix que vous avez le droit d’utiliser.</li>
+</ul>
+<blockquote>
+<p>OpenAI et certains services demandent d’indiquer aux joueurs que les voix sont générées par IA.
+Consultez le <a href="providers.html">guide des fournisseurs</a>.</p>
+</blockquote>
+<hr/>
+<h2 id="speakers-and-voice-personalities">Speakers et personnalités vocales </h2>
+<h3 id="speakers">Speakers </h3>
+<p><img alt="Inspector d’un speaker : style du nom et personnalités vocales" src="Documentation/Images/subvoxpro-speaker-inspector.png"/></p>
+<p>Un <strong>speaker</strong> représente un personnage : son nom peut précéder ses sous-titres, avec sa couleur, et il définit
+ses voix de doublage. Créez-le avec <strong>Assets ▸ Create ▸ SubVox Pro ▸ Speaker</strong> ou depuis le sélecteur de speaker.</p>
+<ul>
+<li>Le champ <strong>Speaker</strong> au-dessus de la liste s’applique à toute la voiceline. Celui d’une ligne ne concerne que
+ce sous-titre.</li>
+<li><strong>Text-to-speech voices</strong>, dans son Inspector, choisit la voix par fournisseur : un choix de repli pour toutes
+les langues et, au besoin, des exceptions par langue.</li>
+<li>Sur <strong>Subtitle Displayer</strong> ou <strong>Subtitle Document Displayer</strong>, <strong>Speaker Name Mode</strong> place le nom devant le
+texte (<strong>Inline</strong>), au-dessus (<strong>Above</strong>) ou le masque (<strong>Hidden</strong>). Un speaker peut aussi définir sa propre
+police : <strong>Font (TextMeshPro)</strong> ou <strong>Font (UI Toolkit)</strong> selon l’afficheur.</li>
+<li><strong>Keep Background Between Subtitles</strong>, activé par défaut, conserve uniquement le panneau pendant un blank
+entre deux sous-titres. Un blank avant le premier ou après le dernier masque toujours le panneau.</li>
+</ul>
+<p><img alt="Sélecteur de speaker : onglets par genre et création d’un personnage" src="Documentation/Images/subvoxpro-speaker-picker.png"/></p>
+<p>Le sélecteur regroupe les personnages par genre. Le crayon modifie un speaker existant ; <strong>New speaker</strong> en crée un.
+Pour une exception sur une ligne, l’entrée du haut rétablit le speaker par défaut de la voiceline.</p>
+<h3 id="voice-personalities">Personnalités vocales </h3>
+<p>Une <strong>personnalité</strong> est une direction de jeu réutilisable, comme <em>Angry</em>, <em>Mysterious</em> ou <em>Whispering</em>.
+Créez-la depuis un speaker avec <strong>New personality</strong> ou avec <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Personality</strong>.
+Vous pouvez écrire la direction ou combiner émotion, vitesse, volume et manière de parler.</p>
+<p>Choisissez une personnalité avec le badge d’une ligne, en mode <strong>Each subtitle</strong>, ou utilisez celle du speaker.
+Chaque fournisseur applique les indications qu’il comprend : toute la direction pour certains, seulement la
+vitesse pour d’autres. Le survol du badge explique ce que la voix choisie utilisera.</p>
+<hr/>
+<h2 id="edit-the-audio">Modifier l’audio </h2>
+<p>Les boutons à droite de la barre Timeline modifient l’audio lui-même. Chaque modification peut être annulée avec
+<strong>Ctrl+Z</strong>.</p>
+<p><img alt="Sélecteur d’effets audio : effets appliqués et disponibles" src="Documentation/Images/subvoxpro-audio-effect-picker.png"/></p>
+<p><strong>Audio effects</strong> ouvre la liste des effets. Les effets appliqués apparaissent en premier : sélectionnez-en un
+pour le modifier, ou cliquez sur sa croix pour le réinitialiser et le retirer.</p>
+<ul>
+<li><strong>Crop</strong> : déplacez les poignées de début et de fin, puis cliquez sur <strong>Apply crop</strong>. Cette opération réécrit
+le fichier audio source : gardez une copie de la prise complète si vous pourriez en avoir besoin.</li>
+<li><strong>Insérer une pause ou retirer un passage</strong>, bouton <code>|↔|</code> : glissez avec le bouton gauche pour ajouter du silence,
+avec le bouton droit pour couper. Les sous-titres, mots et événements suivants se déplacent avec l’audio.
+C’est utile lorsqu’une voix TTS enchaîne trop vite deux phrases.</li>
+<li><strong>Audio effects</strong> : courbe de volume, fondus, normalisation, compresseur, limiteur, noise gate, filtres, égaliseur,
+téléphone/radio, hauteur, intonation, panoramique, étouffement à distance et réverbération. Dessinez <strong>où</strong> appliquer
+l’effet, réglez <strong>comment</strong> avec les curseurs, puis cliquez sur <strong>Apply effects</strong>. L’<strong>aimant</strong> aligne les points
+sur la valeur de base, zéro et leurs voisins ; maintenez <strong>Alt</strong> pour les placer librement. L’original est conservé
+pour garder les effets modifiables. <strong>Flatten</strong> les rend définitifs, <strong>Discard</strong> les retire tous.</li>
+<li><strong>Intonation</strong> : la mélodie de la voix apparaît au-dessus. Dessinez dans la piste du bas le décalage positif ou
+négatif ; <strong>0</strong> conserve la voix. L’<strong>aimant</strong> suit le pas choisi, <strong>0,5 st</strong> par défaut ; <strong>Alt</strong> permet un tracé
+libre. Le bouton <strong>vague</strong> lisse les nouveaux gestes sur la durée choisie ; zéro conserve le tracé exact.
+Le bouton droit rétablit la voix et <strong>Esc</strong> annule le geste. Les autres passages restent inchangés.
+<strong>Pitch</strong> décale tout un passage et montre la même mélodie. Quelques demi-tons, <strong>st</strong>, donnent généralement le
+meilleur résultat. <strong>Engine</strong> propose <strong>WORLD</strong>, naturel et par défaut, <strong>PSOLA</strong>, plus léger, et <strong>Classic</strong>,
+le plus rapide mais qui change aussi le timbre.</li>
+</ul>
+<p><img alt="Courbe de volume en décibels sur la forme d’onde" src="Documentation/Images/subvoxpro-audio-effects.png"/></p>
+<p>La courbe réduit ici le volume de certains passages. La forme d’onde conserve un repère temporel et les points
+règlent le gain. <strong>0 dB</strong> conserve le volume original.</p>
+<p><img alt="Intonation : mélodie détectée et piste séparée de décalage de hauteur" src="Documentation/Images/subvoxpro-intonation.png"/></p>
+<p>La courbe supérieure montre la mélodie détectée. La piste inférieure contient votre modification en demi-tons :
+une valeur positive monte la voix, une valeur négative la baisse et zéro garde l’original. Les deux restent
+séparées pour distinguer la voix initiale de vos changements.</p>
+<hr/>
+<h2 id="play-voice-lines-in-your-game">Jouer des voicelines dans votre jeu </h2>
+<h3 id="set-up-the-scene">Préparer la scène </h3>
+<ol>
+<li><p>Placez le prefab <strong>[SubVox Pro]</strong>, dans <code>SubVoxPro/Prefabs</code>, une fois dans votre scène de démarrage. Il joue
+les voicelines et distribue leurs événements. Si vous l’oubliez, un lecteur par défaut est créé à la première
+lecture, avec un avertissement.</p>
+</li>
+<li><p>Placez le prefab <strong>Subtitle Displayer</strong> : un panneau de sous-titres prêt à l’emploi en bas de l’écran, qui
+grandit avec les longues lignes et se masque entre elles. Adaptez police, couleur, position et taille, ou ajoutez
+le composant à votre Canvas et renseignez <strong>Subtitle Text</strong>, ainsi que <strong>Background</strong> pour masquer le fond.</p>
+<p><strong>Avec UI Toolkit plutôt qu’un Canvas</strong>, utilisez le prefab <strong>Subtitle Document Displayer</strong>. Il affiche les mêmes
+textes, noms et styles dans un UI Document. Modifiez <code>Subtitle Document.uss</code>, dans <code>SubVoxPro/Prefabs/UI Toolkit</code>,
+ou ajoutez le composant à votre propre UI Document et indiquez le nom du Label à remplir et de l’élément à masquer.</p>
+</li>
+</ol>
+<h3 id="play-a-line-from-code">Jouer une réplique depuis un script </h3>
+<p>Tout passe par <code>SubVox</code>. Les scripts prêts à copier sont dans <code>SubVoxPro/Example/Snippets</code> : attendre une réplique,
+réagir à un événement, changer de langue, proposer des options, afficher un historique, sous-titrer une vidéo.
+L’éditeur de code décrit chaque classe, méthode et réglage pendant la saisie. La référence complète est en ligne,
+avec une page par version, accessible aussi par <strong>Documentation ▸ Online</strong> dans le Hub.</p>
+<pre><code class="lang-csharp">using SubVoxPro;
+
+SubVox.Play(myVoiceLine);            // lecture avec sous-titres synchronisés
+SubVox.PauseAll();                   // jeu en pause
+SubVox.ResumeAll();
+SubVox.StopAll();                    // cinématique passée
+SubVox.CurrentLanguage = "fr";       // sous-titres et doublages français, "" pour la source
+</code></pre>
+<p><code>Play</code> renvoie la lecture de la réplique. Consultez son <code>State</code>, arrêtez-la ou attendez-la dans une coroutine :</p>
+<pre><code class="lang-csharp">yield return SubVox.Play(greeting);
+yield return SubVox.Play(answer);
+</code></pre>
+<p>Sur <strong>Voice Line Manager</strong>, <strong>Subtitle Reveal Mode</strong> affiche la ligne entière, par défaut, les mots un à un ou
+le mode <strong>Karaoke</strong>, avec le mot prononcé en surbrillance. Les cinématiques Timeline le suivent aussi.
+Pour baisser la musique pendant la parole, renseignez deux snapshots d’Audio Mixer : <strong>Ducked Snapshot</strong>, musique
+baissée, et <strong>Normal Snapshot</strong>.</p>
+<h3 id="voices-in-3d-and-several-at-once">Voix en 3D et lectures simultanées </h3>
+<p>Ajoutez <strong>Voice Line Emitter</strong> à chaque personnage et réglez son AudioSource en 3D. Le son vient du personnage ;
+plusieurs personnages peuvent parler en même temps.</p>
+<pre><code class="lang-csharp">npc.GetComponent&lt;VoiceLineEmitter&gt;().Play(barkLine, EVoiceLinePriority.Low);
+</code></pre>
+<p>Les <strong>priorités</strong> protègent les répliques importantes. Sur un émetteur, une nouvelle réplique ne remplace la
+réplique actuelle que si elle est au moins aussi importante. À l’écran, le sous-titre de la plus importante gagne.
+<code>EVoiceLinePlayMode.Queue</code> attend le tour de la réplique ; <code>EVoiceLinePlayMode.IfIdle</code> ne joue que si l’émetteur est
+libre. <code>Skip()</code> termine immédiatement la réplique. Désactivez <strong>Show Subtitles</strong> pour les conversations de fond.
+<code>VoiceLineCompleted</code> et <code>VoiceLineInterrupted</code> signalent la fin ou l’interruption d’une lecture.</p>
+<p><strong>Bulles de dialogue.</strong> Sélectionnez un personnage et utilisez <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>.
+Une bulle au-dessus de sa tête affiche uniquement ses répliques. Désactivez <strong>Show Subtitles</strong> sur son émetteur
+pour éviter de les afficher également en bas de l’écran.</p>
+<h3 id="without-code">Sans code </h3>
+<ul>
+<li><strong>Voice Line Zone</strong> joue une réplique lorsque le joueur entre dans un trigger 2D ou 3D, une fois ou avec un délai
+de réutilisation. <strong>Play mode: Queue</strong> peut attendre la fin de la réplique actuelle. Le composant peut arrêter la
+réplique à la sortie du joueur et la rejouer à son retour.</li>
+<li><strong>Voice Line Play On Start</strong> joue une réplique au démarrage de l’objet, après un délai facultatif.</li>
+<li><strong>Voice Line Bank</strong>, dans <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line Bank</strong>, regroupe des répliques à choisir
+aléatoirement sans répétition immédiate, en mélangeant toutes les lignes, ou dans l’ordre. Placez la banque dans
+le champ <strong>Bank</strong> d’une zone ou de Play On Start.</li>
+<li><strong>Voice Line Sequence</strong>, dans <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line Sequence</strong>, définit un dialogue.
+Les répliques s’enchaînent automatiquement ou avec <code>Advance()</code> ; <code>Previous()</code> revient à la précédente.
+Jouez-la avec <strong>Voice Line Sequence Player</strong>, dont l’Inspector montre la progression en Play mode.
+<strong>Direction: Backward</strong> va de la dernière à la première. Si le personnage joue une réplique plus importante,
+la séquence attend, puis reprend après <strong>Resume Delay</strong>.</li>
+</ul>
+<p>Chaque composant a un <strong>Emitter</strong>, vide pour utiliser celui par défaut, une <strong>Priority</strong> et une méthode <code>Play()</code>
+publique, utilisable depuis un bouton ou un UnityEvent.</p>
+<h3 id="switching-language">Changer de langue </h3>
+<p>Le changement de langue remplace immédiatement les sous-titres affichés. Le doublage change à la réplique suivante,
+pour ne pas changer de langue au milieu d’une phrase.</p>
+<ul>
+<li><strong>Unity Localization</strong> : SubVox Pro suit automatiquement la langue de ce package s’il est installé. Pour gérer
+la langue vous-même, réglez <strong>Language Source</strong> sur <strong>Manual</strong> dans Voice Line Manager.</li>
+<li><strong>Langues proches</strong> : en l’absence de <code>pt-BR</code>, un joueur reçoit la traduction <code>pt</code>, et réciproquement.</li>
+<li><strong>Menu de langues</strong> : <code>myVoiceLine.GetSubtitleLanguages()</code> et <code>GetAudioLanguages()</code> listent les langues disponibles.</li>
+</ul>
+<h3 id="subtitle-options-for-players">Options de sous-titres pour les joueurs </h3>
+<p>Reliez ces réglages à votre menu d’options. Tous les afficheurs les suivent immédiatement :</p>
+<pre><code class="lang-csharp">SubVox.SubtitlesEnabled = false;       // masquer les sous-titres sans arrêter les voix
+SubVox.SubtitleScale = 1.5f;           // agrandir le texte
+SubVox.BackgroundOpacity = 1f;         // fond opaque
+SubVox.FadeDuration = 0.2f;            // durée des fondus
+SubVox.RevealMode = EVoiceLineSubtitleRevealMode.Karaoke;
+</code></pre>
+<p><code>SubVox.History</code> conserve les dernières lignes affichées, avec leur texte et leur speaker, pour votre historique.</p>
+<h3 id="your-own-subtitle-display">Votre propre afficheur </h3>
+<p>Pour afficher autrement les sous-titres, abonnez-vous à <code>SubVox.SubtitleUpdated</code>. Cet événement donne le texte à
+chaque changement ; un texte vide signifie « effacer l’écran ». Lisez <code>SubVox.CurrentSubtitle</code> juste après
+l’abonnement pour récupérer une réplique déjà en cours. Les afficheurs intégrés le font à leur activation ou
+réactivation. Une bulle lit plutôt le sous-titre de son propre émetteur.</p>
+<p><code>SubVox.DisplayedVoiceLine</code> donne la voiceline choisie pour l’affichage global, y compris un clip Timeline.
+<code>SubVox.PublishSubtitle(...)</code> affiche votre propre texte, par exemple pour une vidéo. Ces publications sont ignorées
+pendant un clip SubVox Timeline actif, car ce clip possède l’affichage.</p>
+<p>Pour adapter seulement un afficheur, dérivez votre script de sa classe et redéfinissez <code>ComposeText</code> ou <code>SetVisible</code>.
+Les autres composants peuvent être étendus de la même manière.</p>
+<h3 id="playing-the-audio-with-fmod-wwise-or-a-video">Lire l’audio avec FMOD, Wwise ou une vidéo </h3>
+<p>Importez l’audio et les doublages dans votre outil audio, puis faites suivre sa lecture par l’émetteur :</p>
+<pre><code class="lang-csharp">class FmodClock : IVoiceLineAudioClock
+{
+    public FMOD.Studio.EventInstance Instance;
+
+    public float Time { get { Instance.getTimelinePosition(out int ms); return ms / 1000f; } }
+    public bool IsPlaying { get { Instance.getPlaybackState(out var state); return state != FMOD.Studio.PLAYBACK_STATE.STOPPED; } }
+}
+
+emitter.PlayExternal(myVoiceLine, clock);
+// démarrer ensuite l’audio d’emitter.CurrentAudioLanguage, "" pour la source
+</code></pre>
+<p>Mettre en pause ou arrêter l’émetteur ne touche qu’aux sous-titres et aux événements. Faites de même dans votre
+outil audio.</p>
+<hr/>
+<h2 id="trigger-gameplay-from-a-voice-line">Déclencher du gameplay depuis une voiceline </h2>
+<p><img alt="Mode Events : diamant sur la piste d’événements" src="Documentation/Images/subvoxpro-timeline-events.png"/></p>
+<p>Ouvrir une porte sur « Run! », secouer la caméra sur un cri : les <strong>événements</strong> se déclenchent à un instant précis.</p>
+<ol>
+<li>Passez la timeline en mode <strong>Events</strong> et cliquez sur <strong>+ Event</strong>, ou faites un clic central sur la forme d’onde.</li>
+<li>Donnez-lui un <strong>signal</strong>, un petit asset réutilisable qui nomme l’événement, comme <em>Camera Shake</em>.</li>
+<li>Choisissez son déclenchement : début ou fin de la voix, temps précis, sous-titre ou mot. Dans ce dernier cas,
+il suit le mot si son timing change. Déplacez le diamant pour le recaler.</li>
+</ol>
+<p>Trois façons d’y réagir :</p>
+<ul>
+<li><p><strong>Sans code</strong> : ajoutez <strong>Voice Line Event Receiver</strong>, choisissez le signal et raccordez un UnityEvent.</p>
+</li>
+<li><p><strong>Avec un attribut</strong> : marquez une méthode de MonoBehaviour avec la constante générée, copiée depuis l’Inspector :</p>
+<pre><code class="lang-csharp">[VoiceLineEvent(SubVoxEvents.CAMERA_SHAKE)]
+private void Shake()
+{
+    // ...
+}
+</code></pre>
+<p>La <strong>Category</strong> facultative utilise <code>/</code> pour les niveaux, par exemple <code>Camera/Effects</code> produit
+<code>SubVoxEvents.Camera.Effects.CAMERA_SHAKE</code>. Les constantes se régénèrent à l’enregistrement, à la création,
+au renommage et à la suppression des signaux. Un renommage laisse volontairement les anciennes références
+en erreur de compilation pour vous permettre de les corriger. Les clés texte comme
+<code>[VoiceLineEvent("Camera Shake")]</code> restent prises en charge.</p>
+<p><strong>[SubVox Pro]</strong> trouve automatiquement ces méthodes. Après une création d’objet à l’exécution, appelez
+<code>VoiceLineEventDispatcher.Refresh()</code>.</p>
+</li>
+<li><p><strong>En C#</strong> : <code>SubVox.Subscribe(signal, MyMethod)</code> appelle votre méthode à chaque signal.
+<code>SubVox.Unsubscribe</code> retire l’abonnement.</p>
+</li>
+</ul>
+<p>Un événement peut transporter un <strong>Payload</strong>, un asset transmis à la méthode qui accepte son type en paramètre,
+et être limité à <strong>une fois par lecture</strong>. Les événements ne s’exécutent qu’en Play mode, jamais pendant l’édition
+ou le déplacement manuel de la tête de lecture.</p>
+<hr/>
+<h2 id="unity-timeline">Timeline Unity </h2>
+<ol>
+<li>Dans la Timeline Unity, choisissez <strong>Add ▸ VoiceLine Track</strong>.</li>
+<li>Glissez une voiceline sur la piste. Un clip de sous-titres apparaît avec son audio sur une piste séparée
+<strong>VoiceLine Audio</strong>.</li>
+<li>Reliez cette piste audio à un AudioSource, comme une Audio Track normale.</li>
+<li>Ajoutez un Subtitle Displayer à la scène, le plus vite avec son prefab.</li>
+</ol>
+<p>Audio et sous-titres restent synchronisés, même pendant le déplacement manuel de la tête de lecture.
+Glisser une <strong>Voice Line Sequence</strong> dispose toutes ses répliques. Les événements jouent avec la voiceline.
+Pour les déplacer comme des marqueurs Timeline, faites un clic droit sur le clip puis
+<strong>SubVox Pro ▸ Bake Voice Events to Timeline</strong>.</p>
+<p>La cinématique utilise le doublage de la langue active s’il existe. La langue est choisie au lancement de la
+Timeline. Le clip suit <strong>Subtitle Reveal Mode</strong>, sauf si vous cochez son <strong>Override Reveal Mode</strong>.</p>
+<p>Un clip SubVox actif est prioritaire sur l’affichage global. Les autres voicelines continuent à jouer, mais leurs
+sous-titres ne peuvent pas remplacer ceux du clip, même pendant un blank ou avant son premier sous-titre.
+Les blanks intérieurs suivent normalement <strong>Keep Background Between Subtitles</strong>.</p>
+<p>À la fin du clip ou à l’arrêt du director, l’affichage revient immédiatement à l’émetteur actif le plus prioritaire,
+à sa position actuelle, sans redémarrer son audio. Si aucun émetteur ne joue, le panneau se masque.
+Lorsque plusieurs pistes ou directors SubVox se chevauchent, le dernier clip entré possède l’affichage.
+La fin d’un autre clip ne l’efface pas. Mettre le director en pause conserve son sous-titre jusqu’à la reprise ou
+à l’arrêt.</p>
+<hr/>
+<h2 id="process-many-files-at-once">Traiter plusieurs fichiers à la fois </h2>
+<p><img alt="Fenêtre Batch Processing" src="Documentation/Images/subvoxpro-batch-window.png"/></p>
+<p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> transforme plusieurs fichiers audio ou <code>.srt</code> en voicelines.</p>
+<ol>
+<li>Glissez les fichiers, ou utilisez <strong>Add files…</strong> ou <strong>Add folder…</strong>.</li>
+<li>Activez <strong>Transcription</strong>, <strong>Translation</strong> et <strong>Dubbing</strong> selon vos besoins. Réglez-les une fois pour tout le
+lot ; chaque fichier peut avoir ses propres langues.</li>
+<li>Vérifiez <strong>Estimated cost</strong>, puis cliquez sur <strong>Batch</strong>. Le bouton reste grisé et explique ce qui manque tant
+que le lot n’est pas prêt.</li>
+</ol>
+<p>Chaque fichier devient une voiceline. Le lot effectue une étape pour tous les fichiers avant de passer à la
+suivante, par exemple toutes les transcriptions puis toutes les traductions. Cela accélère les moteurs locaux.
+Vous pouvez annuler et exporter un rapport ; relancer <strong>Batch</strong> reprend chaque fichier à son point d’arrêt.</p>
+<hr/>
+<h2 id="offline-engines-no-account-no-api-key">Moteurs locaux, sans compte ni clé API </h2>
+<p>Dans l’éditeur <strong>Windows</strong>, SubVox Pro peut tout faire gratuitement sur votre machine, sans connexion.
+Téléchargez chaque moteur une fois avec <strong>Setup model</strong> ou <strong>Install…</strong>. Il sera partagé par tous vos projets.
+<strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>, aussi accessible depuis le Hub, affiche leur état,
+<strong>Download</strong> pour les installer et <strong>Uninstall</strong> pour libérer de l’espace. Une carte graphique les accélère,
+mais ils fonctionnent aussi sans elle.</p>
+<table>
+<thead>
+<tr>
+<th>Moteur</th>
+<th>Fonction</th>
+<th>Téléchargement</th>
+<th>Langues</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Whisper</strong></td>
+<td>Transcription</td>
+<td>1,6 Go, jusqu’à 3,1 Go pour les grands modèles</td>
+<td>Nombreuses langues, détection automatique</td>
+</tr>
+<tr>
+<td><strong>Parakeet</strong></td>
+<td>Transcription rapide, même sans carte graphique</td>
+<td>670 Mo</td>
+<td>25 langues européennes, détectées automatiquement</td>
+</tr>
+<tr>
+<td><strong>Hy-MT2</strong></td>
+<td>Traduction</td>
+<td>1,1 Go, ou 4,6 Go pour le modèle plus précis</td>
+<td>Les 37 langues cibles</td>
+</tr>
+<tr>
+<td><strong>Kokoro</strong></td>
+<td>Doublage</td>
+<td>370 Mo</td>
+<td>Anglais, voix américaines et britanniques</td>
+</tr>
+<tr>
+<td><strong>Chatterbox</strong></td>
+<td>Doublage avec voix du personnage ou 24 voix fournies</td>
+<td>3,3 Go</td>
+<td>21 langues et japonais avec un ajout de 6 Mo</td>
+</tr>
+<tr>
+<td><strong>Qwen3</strong></td>
+<td>Timing exact des mots</td>
+<td>1,0 Go</td>
+<td>11 langues</td>
+</tr>
+</tbody>
+</table>
+<h3 id="whisper-offline-transcription">Whisper, transcription locale </h3>
+<p><img alt="Installation du modèle Whisper" src="Documentation/Images/subvoxpro-whisper-setup.png"/></p>
+<p>Choisissez <strong>Whisper</strong> dans Transcription et cliquez sur <strong>Setup model</strong>. <strong>Large v3 Turbo</strong> est recommandé :
+rapide et presque aussi précis que les modèles complets. Avec une carte graphique, une courte voiceline est
+transcrite en environ une seconde.</p>
+<h3 id="parakeet-offline-transcription-european-languages">Parakeet, transcription locale en langues européennes </h3>
+<p><img alt="Installation du modèle Parakeet" src="Documentation/Images/subvoxpro-parakeet-setup.png"/></p>
+<p>Choisissez <strong>Parakeet</strong> et <strong>Setup model</strong>, 670 Mo. Parakeet TDT de NVIDIA fournit du texte ponctué, le timing des
+mots et la détection automatique de la langue. Il est rapide sur un processeur récent sans carte graphique : une
+fraction de seconde pour une courte réplique, quelques secondes pour deux minutes d’audio.
+Langues : bulgare, croate, tchèque, danois, néerlandais, anglais, estonien, finnois, français, allemand, grec,
+hongrois, italien, letton, lituanien, maltais, polonais, portugais, roumain, russe, slovaque, slovène, espagnol,
+suédois et ukrainien. Pour les autres langues, utilisez Whisper.</p>
+<h3 id="hy-mt2-offline-translation">Hy-MT2, traduction locale </h3>
+<p><img alt="Installation du modèle de traduction Hy-MT2" src="Documentation/Images/subvoxpro-hymt-setup.png"/></p>
+<p>Choisissez <strong>Hy-MT2</strong> dans Translation et <strong>Setup model</strong>. <strong>1.8B</strong> est rapide sur toutes les machines.
+<strong>7B</strong> suit mieux vos indications de contexte et convient surtout à une carte graphique avec 8 Go de mémoire.
+Les deux modèles respectent le contexte et le niveau de formalité.</p>
+<h3 id="kokoro-offline-english-dubbing">Kokoro, doublage anglais local </h3>
+<p>Choisissez <strong>Kokoro</strong> dans Dubbing puis <strong>Install Kokoro…</strong>. Il fournit 11 voix anglaises.</p>
+<h3 id="chatterbox-offline-dubbing-in-21-languages">Chatterbox, doublage local dans 21 langues </h3>
+<p><img alt="Installation du moteur Chatterbox" src="Documentation/Images/subvoxpro-chatterbox-setup.png"/></p>
+<p>Choisissez <strong>Chatterbox</strong> dans Dubbing puis <strong>Install Chatterbox…</strong>. Les voix disponibles :</p>
+<ul>
+<li><strong>Original voice</strong>, par défaut, conserve la voix de chaque personnage dans toutes les langues.</li>
+<li><strong>24 voix fournies</strong>, 12 féminines et 12 masculines, téléchargées avec le modèle.</li>
+<li><strong>Chatterbox default voice</strong>.</li>
+<li><strong>Vos clips</strong> dans le dossier <code>Voices</code> : 5 à 10 secondes d’une seule voix clairement enregistrée.</li>
+</ul>
+<p>Langues : arabe, chinois, danois, néerlandais, anglais, finnois, français, allemand, grec, hindi, italien, coréen,
+malais, norvégien, polonais, portugais, russe, espagnol, swahili, suédois, turc, et japonais après installation de
+son support dans la même fenêtre. <strong>Exaggeration</strong>, dans Dubbing, Batch Processing et Settings, règle
+l’expressivité. Chaque génération varie légèrement : si un mot est incorrect, régénérez la ligne.
+Certaines langues sont plus fiables que d’autres : <a href="providers.html#chatterbox-accuracy-by-language">précision par langue</a>.</p>
+<h3 id="qwen3-offline-word-timing">Qwen3, timing local des mots </h3>
+<p>Choisissez <strong>Word timing: Qwen3 local</strong> dans Transcription ou Dubbing et cliquez sur <strong>Install…</strong>.
+Ensuite, chaque <strong>Split</strong> et chaque doublage sont automatiquement alignés mot par mot. Qwen3 ne change jamais
+le texte : il ne fait que placer les mots. Langues : chinois, cantonais, anglais, français, allemand, italien,
+japonais, coréen, portugais, russe et espagnol, sur des audios jusqu’à 5 minutes.</p>
+<blockquote>
+<p>Les téléchargements s’arrêtent si les scripts recompilent ou si vous entrez en Play mode. Relancez-les dans
+la même fenêtre : ils reprennent où ils se sont arrêtés.</p>
+</blockquote>
+<hr/>
+<h2 id="human-translation-with-google-sheets">Traduction humaine avec Google Sheets </h2>
+<p>Partagez vos lignes avec des traducteurs dans une feuille Google Sheets, puis récupérez leur travail.</p>
+<h3 id="setup-once">Configuration initiale </h3>
+<ol>
+<li>Dans <strong>Google Cloud</strong>, sur <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>, créez un projet et activez <strong>Google Sheets API</strong>.
+Dans <strong>OAuth consent screen</strong>, choisissez <strong>External</strong> et ajoutez vous-même et les traducteurs aux <strong>Test users</strong>.
+Créez un <strong>OAuth client ID</strong> de type <strong>Desktop app</strong>, puis copiez <strong>Client ID</strong> et <strong>Client secret</strong>.</li>
+<li>Créez une feuille Google Sheets vide. Copiez son ID dans l’URL, entre <code>/d/</code> et <code>/edit</code>, et partagez-la avec
+les traducteurs avec le rôle <strong>Editor</strong>.</li>
+<li>Dans Unity, ouvrez <strong>Tools ▸ SubVox Pro ▸ Google Sheets Localization</strong>, collez les trois valeurs, cliquez sur
+<strong>Connect</strong>, puis connectez-vous dans le navigateur.</li>
+</ol>
+<h3 id="every-day">Utilisation quotidienne </h3>
+<p>Les traducteurs remplissent les colonnes de langues et marquent les lignes <strong>reviewed</strong> ou <strong>final</strong>.
+<strong>Sync with Sheet</strong> montre chaque différence entre Unity et la feuille. Vous choisissez quoi conserver avant
+toute écriture. Les colonnes de clés sont verrouillées : seules les traductions peuvent être modifiées.
+<strong>reviewed</strong> apparaît en ambre et <strong>final</strong> en vert ; les traductions vides sont teintées. Chaque voiceline a une
+ligne de titre sombre. Le <strong>+ / −</strong> dans la marge gauche replie ou déplie ses lignes.</p>
+<p>Une ligne créée uniquement dans la feuille n’est pas importée, car il lui manque un timing, et n’est jamais
+supprimée sans confirmation. <strong>Duplicate</strong>, une ligne en double, et <strong>Removed</strong>, une ligne supprimée dans Unity,
+ont <strong>Drop</strong> comme choix par défaut pour les nettoyer en une synchronisation. <strong>Keep</strong> conserve une ligne dans
+la feuille. Le bouton à côté de Spreadsheet ID ouvre la feuille dans le navigateur.</p>
+<hr/>
+<h2 id="settings">Réglages </h2>
+<p><img alt="Réglages : clés API, préférences, dossier de données et catalogue" src="Documentation/Images/subvoxpro-settings.png"/></p>
+<p>Dans <strong>Tools ▸ SubVox Pro ▸ Settings</strong> :</p>
+<ul>
+<li><strong>API Keys</strong> : une clé par service, stockée uniquement sur cet ordinateur, jamais dans le projet ou le build.
+L’œil affiche ou masque une clé ; la croix rouge la retire.</li>
+<li><strong>Preferences</strong> : <strong>Show CPS</strong>, <strong>Custom inspectors</strong> et <strong>Auto blanks on new lines</strong>.</li>
+<li><strong>Data folder</strong> : destination des nouvelles voicelines, speakers et doublages.</li>
+<li><strong>Model catalog</strong> : catalogue de modèles IA mis à jour en ligne. <strong>Manage models</strong> ajoute un modèle absent.</li>
+<li><strong>Local models &amp; services</strong> : état <strong>Ready</strong> ou <strong>Not installed</strong>, options comme le GPU et l’expressivité
+Chatterbox, installation ou configuration, et nettoyage des clones ElevenLabs.</li>
+</ul>
+<hr/>
+<h2 id="keyboard-and-mouse">Clavier et souris </h2>
+<p>Les raccourcis de la fenêtre sont ignorés pendant la saisie dans un champ texte.</p>
+<table>
+<thead>
+<tr>
+<th>Raccourci</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Space</strong></td>
+<td>Lecture ou pause depuis la tête de lecture</td>
+</tr>
+<tr>
+<td><strong>← / →</strong></td>
+<td>Décaler le marqueur, mot ou événement sélectionné de 50 ms</td>
+</tr>
+<tr>
+<td><strong>Shift + ← / →</strong></td>
+<td>Aligner le marqueur sur le mot précédent ou suivant</td>
+</tr>
+<tr>
+<td><strong>Ctrl + ← / →</strong></td>
+<td>Sélectionner le marqueur, mot ou événement précédent ou suivant</td>
+</tr>
+<tr>
+<td><strong>Delete</strong></td>
+<td>Supprimer le marqueur ou événement sélectionné</td>
+</tr>
+<tr>
+<td><strong>Ctrl + Z</strong></td>
+<td>Annuler</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Souris sur la forme d’onde</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clic</strong></td>
+<td>Déplacer la tête de lecture</td>
+</tr>
+<tr>
+<td><strong>Glissement</strong></td>
+<td>Déplacer un marqueur, mot ou événement</td>
+</tr>
+<tr>
+<td><strong>Shift + clic</strong> ou <strong>clic central</strong></td>
+<td>Ajouter un marqueur, ou un événement en mode Events</td>
+</tr>
+<tr>
+<td><strong>Clic droit</strong></td>
+<td>Supprimer un marqueur ou événement</td>
+</tr>
+<tr>
+<td><strong>Molette</strong> / <strong>Ctrl + molette</strong></td>
+<td>Zoom / déplacement horizontal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Markers</strong>, <strong>Words</strong> et <strong>Events</strong> choisissent ce que vous modifiez. Dans la liste, un double-clic joue le sous-titre.</p>
+<hr/>
+<h2 id="supported-languages">Langues prises en charge </h2>
+<p><code>✓</code> disponible · <code>◐</code> dépend du fournisseur ou de la voix · <code>—</code> indisponible</p>
+<table>
+<thead>
+<tr>
+<th>Langue</th>
+<th style="text-align: center;">Transcription</th>
+<th style="text-align: center;">Traduction</th>
+<th style="text-align: center;">Doublage</th>
+<th style="text-align: center;">Timing des mots du doublage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arabe</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Bengali</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Bulgare</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Birman</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Cantonais</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Chinois mandarin</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Chinois traditionnel</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Croate</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Tchèque</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Danois</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Néerlandais</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Anglais</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Estonien</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Filipino</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Finnois</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Français</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Allemand</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Grec</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Gujarati</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Hébreu</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Hindi</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Hongrois</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Indonésien</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Italien</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Japonais</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Kazakh</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Coréen</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Letton</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Lituanien</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Malais</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Maltais</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Marathi</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Mongol</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Norvégien</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Persan</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Polonais</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Portugais</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Roumain</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Russe</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Slovaque</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Slovène</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Espagnol</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Swahili</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Suédois</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Tamoul</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Télougou</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Thaï</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Turc</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Ukrainien</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Ourdou</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>Vietnamien</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="where-your-files-go">Emplacement de vos fichiers </h2>
+<p>Votre travail est enregistré dans le <strong>dossier de données</strong>, <code>Assets/Data/SubVoxPro/</code> par défaut.
+Changez-le dans les <a href="#settings">réglages</a>. Il est séparé du plugin : mettre à jour SubVox Pro n’y touche pas.</p>
+<table>
+<thead>
+<tr>
+<th>Contenu</th>
+<th>Emplacement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Voicelines</td>
+<td><code>Voicelines/</code> dans le dossier de données</td>
+</tr>
+<tr>
+<td>Doublages et enregistrements</td>
+<td><code>Dubs/</code> et <code>Recordings/</code>, à côté de la voiceline</td>
+</tr>
+<tr>
+<td>Speakers et personnalités</td>
+<td><code>Speakers/</code> dans le dossier de données</td>
+</tr>
+<tr>
+<td>Signaux d’événements</td>
+<td><code>Event Signals/</code> dans le dossier de données</td>
+</tr>
+<tr>
+<td>Clips de clonage vocal</td>
+<td><code>Voices/</code> dans le dossier de données</td>
+</tr>
+<tr>
+<td>Clés API</td>
+<td>Préférences Unity de cet ordinateur, jamais le projet</td>
+</tr>
+<tr>
+<td>Moteurs locaux</td>
+<td>Dossier utilisateur, <code>AppData/Local/SubVoxPro</code>, partagé entre projets</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="troubleshooting">Dépannage </h2>
+<ul>
+<li><strong>Un moteur local ne charge pas et indique une DLL manquante</strong> : installez le dernier <em>Microsoft Visual C++
+Redistributable x64</em>, puis redémarrez Unity.</li>
+<li><strong>Un téléchargement s’est arrêté</strong> : une recompilation ou le passage en Play mode l’a interrompu.
+Rouvrez la même fenêtre pour reprendre.</li>
+<li><strong>Gemini ralentit ou arrête le doublage</strong> : l’offre gratuite limite les requêtes par minute et par jour.
+SubVox Pro attend et réessaie. <strong>Per speaker</strong> et <strong>All together</strong> envoient moins de requêtes.
+Activer la facturation du projet Google augmente les limites.</li>
+<li><strong>Aucun microphone sur macOS</strong> : autorisez Unity dans Réglages Système ▸ Confidentialité et sécurité ▸ Microphone.</li>
+<li><strong>Aucun sous-titre en jeu</strong> : vérifiez qu’un Subtitle Displayer est présent, que son texte est assigné et que
+<strong>Show Subtitles</strong> est activé sur l’émetteur qui joue la voiceline.</li>
+</ul>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro — © 2026 ExNihilus
+        </div>
+</div>
+</footer>
+</body>
+</html>

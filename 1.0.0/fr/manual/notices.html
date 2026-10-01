@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Mentions des tiers | Documentation SubVox Pro </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Mentions des tiers | Documentation SubVox Pro " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=9f8cab86d6" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="Sur cette page" name="loc:inThisArticle"/>
+<meta content="{count} résultats pour « {query} »" name="loc:searchResultsCount"/>
+<meta content="Aucun résultat pour « {query} »" name="loc:searchNoResults"/>
+<meta content="Filtrer par titre" name="loc:tocFilter"/>
+<meta content="Suivant" name="loc:nextArticle"/>
+<meta content="Précédent" name="loc:prevArticle"/>
+<meta content="Clair" name="loc:themeLight"/>
+<meta content="Sombre" name="loc:themeDark"/>
+<meta content="Automatique" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=9f8cab86d6" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="fr">
+  <link rel="alternate" hreflang="en" href="../../manual/notices.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/notices.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Afficher la navigation" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Rechercher" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Rechercher" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Sommaire</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="mentions-des-tiers">Mentions des tiers</h1>
+<p>SubVox Pro utilise des bibliothèques et des modèles tiers pour ses moteurs locaux, ainsi que des services en ligne
+accessibles avec vos propres comptes. Les dépendances Unity sont installées par le Package Manager ; les modèles
+locaux sont téléchargés à votre demande et ne sont pas redistribués avec votre jeu.</p>
+<p>Les mentions complètes ci-dessous sont conservées dans leur langue d’origine, l’anglais, pour préserver les noms,
+conditions et références juridiques. Les textes de licence officiels fournis avec le plugin restent également
+dans leur langue d’origine. Pour les instructions de configuration en français, consultez le
+<a href="providers.html">guide des fournisseurs</a>.</p>
+<hr/>
+<h1 id="subvox-pro--third-party-notices">SubVox Pro — Third-Party Notices</h1>
+<p><strong>Copyright © 2026 Louis Nillus (publishing as "ExNihilus").</strong></p>
+<p>SubVox Pro bundles the MIT-licensed <strong>ONNX Runtime</strong> binaries and the Microsoft <strong>DirectML</strong> library required for
+local Kokoro and Chatterbox synthesis, Qwen forced alignment and Parakeet transcription, and the MIT-licensed <strong>whisper.cpp</strong> and <strong>llama.cpp</strong>
+binaries used for local transcription and translation.
+Other third-party engines, models and language assets are downloaded on demand by <em>you</em>, the user,
+from their official sources, or accessed as online services using <em>your own</em> account credentials.
+This document lists those components, their licenses where applicable, and your responsibilities.</p>
+<p>The complete copyright notices and license texts for source implementations ported into SubVox Pro are included at
+<code>THIRD-PARTY-SOURCE-LICENSES.txt</code>. The affected source files also identify their upstream work and modifications.</p>
+<hr/>
+<h2 id="1-unity-package-dependencies">1. Unity package dependencies</h2>
+<p>The Asset depends on the following Unity packages, installed through the Unity Package Manager and
+governed by their own license terms (typically the Unity Companion License). They are <strong>not</strong>
+redistributed by the Asset:</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TextMesh Pro</strong> (<code>com.unity.textmeshpro</code>, part of <code>com.unity.ugui</code> on Unity 6+)</td>
+<td>Runtime subtitle rendering.</td>
+</tr>
+<tr>
+<td><strong>Unity Timeline</strong> (<code>com.unity.timeline</code>)</td>
+<td>Optional — enables the Timeline integration when the package is present.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="2-bundled-local-inference-runtime">2. Bundled local inference runtime</h2>
+<p>The Asset redistributes <strong>Microsoft ONNX Runtime 1.24.4</strong> with its DirectML execution provider
+(<code>Microsoft.ML.OnnxRuntime.dll</code> and <code>onnxruntime.dll</code>) and <strong>Microsoft DirectML 1.15.4</strong> (<code>DirectML.dll</code>) for
+in-process Kokoro and Chatterbox synthesis and Qwen forced alignment.</p>
+<ul>
+<li>ONNX Runtime — License: <strong>MIT License</strong>. Source: <a href="https://github.com/microsoft/onnxruntime">https://github.com/microsoft/onnxruntime</a>. The complete
+license text is included at <code>Plugins/ONNX-RUNTIME-LICENSE.txt</code>.</li>
+<li>DirectML — License: <strong>Microsoft DirectML License</strong>, which permits redistributing <code>DirectML.dll</code> inside
+applications built with machine-learning tools and frameworks. Source:
+<a href="https://www.nuget.org/packages/Microsoft.AI.DirectML">https://www.nuget.org/packages/Microsoft.AI.DirectML</a>. The complete license and its third-party notices are
+included at <code>Plugins/x86_64/DIRECTML-LICENSE.txt</code> and <code>Plugins/x86_64/DIRECTML-THIRD-PARTY-NOTICES.txt</code>.</li>
+<li>These editor-only binaries support Windows x64 local authoring, are never included in a player build and are
+not required by SubVox Pro's runtime subtitle playback.</li>
+</ul>
+<hr/>
+<h2 id="3-bundled-offline-transcription-engine-models-downloaded-by-the-user">3. Bundled offline transcription engine (models downloaded by the user)</h2>
+<p>The optional offline transcription feature runs <strong>whisper.cpp</strong> and its <strong>ggml</strong> tensor library in-process
+(<code>whisper.dll</code> and <code>ggml*.dll</code>, built from whisper.cpp release <code>b5130</code> with the Vulkan and CPU backends).</p>
+<ul>
+<li>License: <strong>MIT License</strong>.</li>
+<li>Source: <a href="https://github.com/ggml-org/whisper.cpp">https://github.com/ggml-org/whisper.cpp</a>.</li>
+<li>The complete license text is included at <code>Plugins/x86_64/WhisperCpp/WHISPER-CPP-LICENSE.txt</code>.</li>
+<li>These editor-only binaries are never included in a player build. The Vulkan loader they use is part of your
+graphics driver and is not redistributed.</li>
+<li>The <strong>OpenAI Whisper</strong> models, converted to the ggml format, are <strong>downloaded by you</strong> on request from
+<a href="https://huggingface.co/ggerganov/whisper.cpp">https://huggingface.co/ggerganov/whisper.cpp</a> into your user <strong>AppData</strong> folder. They are released by OpenAI
+under the <strong>MIT License</strong> and are never bundled with, shipped in, or redistributed by the Asset.</li>
+<li>The word-timing rules are a port of OpenAI Whisper's word-timestamp algorithm (MIT License —
+<a href="https://github.com/openai/whisper">https://github.com/openai/whisper</a>). The full OpenAI copyright and MIT license are reproduced in
+<code>THIRD-PARTY-SOURCE-LICENSES.txt</code>.</li>
+</ul>
+<h3 id="offline-transcription-with-parakeet-model-downloaded-by-the-user">Offline transcription with Parakeet (model downloaded by the user)</h3>
+<p>The optional <strong>Parakeet</strong> provider runs NVIDIA's <strong>Parakeet TDT 0.6B v3</strong> speech recognition model in-process on the
+bundled ONNX Runtime (section 2). SubVox Pro implements the preprocessing hand-off, decoding and word timing itself;
+no Parakeet or NeMo source code is included.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Role</th>
+<th>License / source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parakeet TDT 0.6B v3</strong></td>
+<td>Upstream speech recognition model, © NVIDIA Corporation</td>
+<td>Creative Commons Attribution 4.0 (CC BY 4.0) — <a href="https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3">https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3</a></td>
+</tr>
+<tr>
+<td><strong>parakeet-tdt-0.6b-v3-onnx</strong> (INT8)</td>
+<td>Community ONNX export and quantization, used unmodified</td>
+<td>CC BY 4.0 — <a href="https://huggingface.co/istupakov/parakeet-tdt-0.6b-v3-onnx">https://huggingface.co/istupakov/parakeet-tdt-0.6b-v3-onnx</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The model files are <strong>downloaded by you</strong> on request into your user <strong>AppData</strong> folder and are never bundled with,
+shipped in, or redistributed by the Asset. Nothing is included in a player build.</li>
+<li><strong>CC BY 4.0</strong> allows commercial use. Its attribution requirement applies when the model itself is shared; SubVox
+Pro does not redistribute it, and the subtitles it produces are yours. Crediting NVIDIA is still good practice,
+for example in your game's credits: <em>"Speech recognition: NVIDIA Parakeet TDT 0.6B v3, licensed under CC BY 4.0."</em>
+License text: <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>.</li>
+</ul>
+<h3 id="offline-translation-engine-models-downloaded-by-the-user">Offline translation engine (models downloaded by the user)</h3>
+<p>The optional offline translation feature runs <strong>llama.cpp</strong> in-process (<code>llama.dll</code>, built from llama.cpp release
+<code>b10830</code>) on the ggml library listed above, which both engines share.</p>
+<ul>
+<li>License: <strong>MIT License</strong>.</li>
+<li>Source: <a href="https://github.com/ggml-org/llama.cpp">https://github.com/ggml-org/llama.cpp</a>.</li>
+<li>The complete license text is included at <code>Plugins/x86_64/WhisperCpp/LLAMA-CPP-LICENSE.txt</code>.</li>
+<li>This editor-only binary is never included in a player build.</li>
+<li>The <strong>Hy-MT2 1.8B</strong> and <strong>Hy-MT2 7B</strong> translation models (Q4_K_M GGUF) are <strong>downloaded by you</strong> on request
+from <a href="https://huggingface.co/tencent/Hy-MT2-1.8B-GGUF">https://huggingface.co/tencent/Hy-MT2-1.8B-GGUF</a> and <a href="https://huggingface.co/tencent/Hy-MT2-7B-GGUF">https://huggingface.co/tencent/Hy-MT2-7B-GGUF</a> into
+your user <strong>AppData</strong> folder. They are released by Tencent under the <strong>Apache License 2.0</strong> and are never
+bundled with, shipped in, or redistributed by the Asset. The installer pins revisions
+<code>a0c709d9fac510f2c807aa3af52872340dc37a4a</code> (1.8B) and <code>ab8472660ac61fac25f1af43fac2599d52a8a775</code> (7B) and verifies
+each file against its SHA-256.</li>
+</ul>
+<hr/>
+<h2 id="4-optional-offline-dubbing-assets-downloaded-by-the-user">4. Optional offline dubbing assets (downloaded by the user)</h2>
+<p>The local Kokoro feature (English voices) downloads <strong>Kokoro-82M</strong> model weights and voices (Apache License 2.0)
+and the Misaki English pronunciation dictionaries (Apache License 2.0) on request.</p>
+<ul>
+<li>Kokoro-82M: <a href="https://huggingface.co/hexgrad/Kokoro-82M">https://huggingface.co/hexgrad/Kokoro-82M</a></li>
+<li>Kokoro ONNX model files: <a href="https://github.com/thewh1teagle/kokoro-onnx">https://github.com/thewh1teagle/kokoro-onnx</a></li>
+<li>Misaki: <a href="https://github.com/hexgrad/misaki">https://github.com/hexgrad/misaki</a></li>
+</ul>
+<p>See <code>Editor/Dubbing/Kokoro/THIRD-PARTY-NOTICES.md</code> for the detailed file-level notice.</p>
+<p>The local Chatterbox feature (21 languages plus optional Japanese, voice cloning) downloads the following files on request into the
+user's AppData folder. They are never included in the Asset or a player build; inference uses the ONNX Runtime
+attributed above.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+<th>License / source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chatterbox Multilingual</strong> (Resemble AI)</td>
+<td>Upstream text-to-speech model</td>
+<td>MIT License — <a href="https://github.com/resemble-ai/chatterbox">https://github.com/resemble-ai/chatterbox</a></td>
+</tr>
+<tr>
+<td><strong>Chatterbox Multilingual ONNX</strong> (onnx-community)</td>
+<td>ONNX export: speech encoder, token embeddings, language model, decoder weights, tokenizer, Cangjie table, default voice</td>
+<td>MIT License — <a href="https://huggingface.co/onnx-community/chatterbox-multilingual-ONNX">https://huggingface.co/onnx-community/chatterbox-multilingual-ONNX</a> (revision <code>452d3f434aa592098f1eedac9099f33642ab2da5</code>)</td>
+</tr>
+<tr>
+<td><strong>Split decoder graphs</strong></td>
+<td>The export's decoder graph split into 24 smaller graphs (structure only, weights unchanged) so it loads quickly</td>
+<td>MIT License — <a href="https://github.com/exnihilus/subvoxpro-models">https://github.com/exnihilus/subvoxpro-models</a></td>
+</tr>
+<tr>
+<td><strong>Chatterbox voice pack</strong></td>
+<td>24 reference clips (one sentence each, 8–9 s) used as ready-made voices: cut from <strong>LibriTTS-R</strong> (Koizumi et al., 2023; derived from LibriTTS, Zen et al., 2019, itself built from LibriVox public-domain recordings), trimmed, loudness-normalised and renamed. The speakers and utterances are listed in the pack's <code>NOTICE.md</code></td>
+<td>Creative Commons Attribution 4.0 (CC BY 4.0) — <a href="https://www.openslr.org/141/">https://www.openslr.org/141/</a>, hosted at <a href="https://github.com/exnihilus/subvoxpro-models/tree/main/chatterbox-voices">https://github.com/exnihilus/subvoxpro-models/tree/main/chatterbox-voices</a></td>
+</tr>
+<tr>
+<td><strong>IPADIC 2.7.0</strong> (optional Japanese support)</td>
+<td>Japanese dictionary used to find word readings, converted to UTF-8 (entries unchanged)</td>
+<td>NAIST / ICOT license — Copyright 2000-2003 Nara Institute of Science and Technology; freely usable and redistributable with its notice and NO WARRANTY terms, reproduced in full in the downloaded <code>ipadic/COPYING</code> — <a href="https://github.com/taku910/mecab">https://github.com/taku910/mecab</a></td>
+</tr>
+</tbody>
+</table>
+<p>The text preprocessing and sampling loop are modified C# ports of the MIT-licensed Chatterbox reference implementation.
+The Japanese morphological analyzer is an independent C# port of MeCab's lattice algorithm, distributed under MeCab's
+BSD option. The Resemble AI MIT and MeCab BSD copyright and license texts are reproduced in
+<code>THIRD-PARTY-SOURCE-LICENSES.txt</code>.</p>
+<hr/>
+<h2 id="5-optional-offline-forced-alignment-engine-downloaded-by-the-user">5. Optional offline forced-alignment engine (downloaded by the user)</h2>
+<p>The optional exact dub-timing feature uses a pinned, self-contained Q4 ONNX export of
+<strong>Qwen3-ForcedAligner-0.6B</strong>. The one-click installer downloads the model and tokenizer data into the
+user's AppData folder only when requested. They are never included in the Asset or a player build;
+inference uses the ONNX Runtime already attributed above.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+<th>License / source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Qwen3-ForcedAligner-0.6B</strong></td>
+<td>Upstream forced-alignment model</td>
+<td>Apache License 2.0 — <a href="https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B">https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B</a></td>
+</tr>
+<tr>
+<td><strong>Qwen3-ForcedAligner-0.6B Q4 ONNX</strong></td>
+<td>Community ONNX export and checksum-verified packaging</td>
+<td>Apache License 2.0 — <a href="https://huggingface.co/tonythethompson/Qwen3-ForcedAligner-0.6B-ONNX">https://huggingface.co/tonythethompson/Qwen3-ForcedAligner-0.6B-ONNX</a></td>
+</tr>
+<tr>
+<td><strong>Qwen-ASR source</strong></td>
+<td>Reference preprocessing and timestamp-repair behavior ported in SubVox Pro</td>
+<td>Apache License 2.0 — <a href="https://github.com/QwenLM/Qwen3-ASR">https://github.com/QwenLM/Qwen3-ASR</a></td>
+</tr>
+</tbody>
+</table>
+<p>The ported preprocessing, tokenizer layout and timestamp processing are modified C# implementations. The complete
+Apache License 2.0 text and upstream attribution are reproduced in <code>THIRD-PARTY-SOURCE-LICENSES.txt</code>.</p>
+<p>The installer pins revision <code>dfae9e3dfb8a00410d8771158fafb01bac3fe2a5</code> and verifies the 1,048,397,349-byte
+model against SHA-256 <code>59b528896d70b34e57838e160d16d5f7cfc02d86c7c6ad46cdc57c25c15497b7</code>.</p>
+<hr/>
+<h2 id="6-online-services-accessed-with-your-own-api-keys">6. Online services (accessed with your own API keys)</h2>
+<p>The Asset can connect to the following third-party online services. You access each one using
+<strong>your own account and API key</strong>. Keys are stored only in your machine's Unity Editor preferences
+(<code>EditorPrefs</code>); they are never bundled with the Asset, committed to your project, or transmitted by
+the Asset to anyone other than the respective provider.</p>
+<p><strong>Transcription / speech-to-text</strong></p>
+<ul>
+<li>AssemblyAI — <a href="https://www.assemblyai.com/legal/terms-of-service">https://www.assemblyai.com/legal/terms-of-service</a></li>
+<li>Gladia — <a href="https://www.gladia.io/legal-notice">https://www.gladia.io/legal-notice</a></li>
+<li>Deepgram — <a href="https://deepgram.com/terms">https://deepgram.com/terms</a></li>
+<li>Speechmatics — <a href="https://www.speechmatics.com/legal">https://www.speechmatics.com/legal</a></li>
+<li>ElevenLabs — <a href="https://elevenlabs.io/terms">https://elevenlabs.io/terms</a></li>
+<li>Rev AI — <a href="https://www.rev.com/about/terms">https://www.rev.com/about/terms</a></li>
+</ul>
+<p><strong>Translation</strong></p>
+<ul>
+<li>DeepL — <a href="https://www.deepl.com/en/pro-license">https://www.deepl.com/en/pro-license</a></li>
+<li>Google Cloud Translation — <a href="https://cloud.google.com/terms">https://cloud.google.com/terms</a></li>
+<li>OpenAI — <a href="https://openai.com/policies">https://openai.com/policies</a></li>
+<li>Anthropic (Claude) — <a href="https://www.anthropic.com/legal">https://www.anthropic.com/legal</a></li>
+<li>Google (Gemini) — <a href="https://ai.google.dev/gemini-api/terms">https://ai.google.dev/gemini-api/terms</a></li>
+<li>DeepSeek — <a href="https://cdn.deepseek.com/policies/en-US/deepseek-terms-of-use.html">https://cdn.deepseek.com/policies/en-US/deepseek-terms-of-use.html</a></li>
+</ul>
+<p><strong>Text-to-speech / dubbing</strong></p>
+<ul>
+<li>InWorld AI — <a href="https://inworld.ai/terms">https://inworld.ai/terms</a></li>
+<li>ElevenLabs — <a href="https://elevenlabs.io/terms">https://elevenlabs.io/terms</a></li>
+<li>Google (Gemini) — <a href="https://ai.google.dev/gemini-api/terms">https://ai.google.dev/gemini-api/terms</a></li>
+<li>OpenAI — <a href="https://openai.com/policies">https://openai.com/policies</a> (the usage policies require disclosing AI-generated voices to listeners)</li>
+<li>Google Cloud Text-to-Speech — <a href="https://cloud.google.com/terms">https://cloud.google.com/terms</a></li>
+<li>Azure AI Speech — <a href="https://azure.microsoft.com/support/legal">https://azure.microsoft.com/support/legal</a></li>
+</ul>
+<p><strong>Localization round-trip</strong></p>
+<ul>
+<li>Google Sheets API (via Google Cloud) — <a href="https://cloud.google.com/terms">https://cloud.google.com/terms</a> and the Google API
+Services User Data Policy — <a href="https://developers.google.com/terms/api-services-user-data-policy">https://developers.google.com/terms/api-services-user-data-policy</a></li>
+</ul>
+<h3 id="your-responsibilities-when-using-online-services">Your responsibilities when using online services</h3>
+<ul>
+<li><strong>Accounts &amp; costs.</strong> You must supply your own API keys. Any usage fees, quotas, or charges
+billed by these providers are solely your responsibility.</li>
+<li><strong>Data transfer.</strong> When you use these features, your audio, text, and related data are
+transmitted to the selected provider for processing. You are responsible for ensuring you have
+the right to upload that content and for complying with each provider's terms of service and
+privacy policy.</li>
+<li><strong>Rights to generated output.</strong> Transcriptions, translations, and synthesized or dubbed audio are
+produced by third-party services. You are responsible for verifying that your intended use —
+including commercial use and any voice likeness — is permitted under the relevant provider's
+terms.</li>
+<li><strong>No affiliation.</strong> The publisher of SubVox Pro is not affiliated with, endorsed by, or
+sponsored by any of the third-party providers listed above. All product names, logos, and
+trademarks are the property of their respective owners and are used for identification only.</li>
+</ul>
+<h2 id="7-bundled-flag-icons">7. Bundled flag icons</h2>
+<p>The country flags shown next to language names (<code>Editor/Icons/Flags</code>) come from
+<a href="https://flagcdn.com">flagcdn.com</a>, which distributes them as public-domain images. National flags
+themselves are not subject to copyright in most jurisdictions.</p>
+<h2 id="8-world-pitch-engine-c-port">8. WORLD pitch engine (C# port)</h2>
+<p>Pitch and Intonation include a <strong>C# port</strong> of <strong>WORLD</strong>, © Masanori Morise (M. Morise),
+under the <strong>modified BSD license</strong>. Source: <a href="https://github.com/mmorise/World">https://github.com/mmorise/World</a>, commit
+<code>d625e7608ca23a870018f01e7c562ac683d9847f</code>. Harvest, CheapTrick, D4C, Synthesis and their shared
+utilities are adapted in <code>Editor/Subtitles/World/</code>; the managed FFT and buffer handling support this port.
+It runs only in the editor, without a native WORLD binary or external process.
+The complete upstream copyright notice, conditions and disclaimer are reproduced in
+<code>THIRD-PARTY-SOURCE-LICENSES.txt</code> under WORLD.</p>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro — © 2026 ExNihilus
+        </div>
+</div>
+</footer>
+</body>
+</html>

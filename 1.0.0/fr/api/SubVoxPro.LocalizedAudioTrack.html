@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Classe LocalizedAudioTrack | Documentation SubVox Pro </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class LocalizedAudioTrack | Documentation SubVox Pro " name="title"/>
+<meta content="Doublage d’une voiceline dans une langue, avec ses propres timings." name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=9f8cab86d6" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="Sur cette page" name="loc:inThisArticle"/>
+<meta content="{count} résultats pour « {query} »" name="loc:searchResultsCount"/>
+<meta content="Aucun résultat pour « {query} »" name="loc:searchNoResults"/>
+<meta content="Filtrer par titre" name="loc:tocFilter"/>
+<meta content="Suivant" name="loc:nextArticle"/>
+<meta content="Précédent" name="loc:prevArticle"/>
+<meta content="Clair" name="loc:themeLight"/>
+<meta content="Sombre" name="loc:themeDark"/>
+<meta content="Automatique" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=9f8cab86d6" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="fr">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.LocalizedAudioTrack.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.LocalizedAudioTrack.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Afficher la navigation" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Rechercher" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Rechercher" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Sommaire</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.LocalizedAudioTrack">
+<h1 class="text-break" data-uid="SubVoxPro.LocalizedAudioTrack" id="SubVoxPro_LocalizedAudioTrack">
+Classe LocalizedAudioTrack  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>Espace de noms</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>Doublage d’une voiceline dans une langue, avec ses propres timings.</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public sealed class LocalizedAudioTrack</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>Héritage</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">LocalizedAudioTrack</span></div>
+</dd>
+</dl>
+<dl class="typelist inheritedMembers">
+<dt>Membres hérités</dt>
+<dd>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+</div>
+</dd></dl>
+<h2 class="section" id="constructors">Constructeurs
+</h2>
+<a data-uid="SubVoxPro.LocalizedAudioTrack.#ctor*" id="SubVoxPro_LocalizedAudioTrack__ctor_"></a>
+<h3 data-uid="SubVoxPro.LocalizedAudioTrack.#ctor" id="SubVoxPro_LocalizedAudioTrack__ctor">
+  LocalizedAudioTrack()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Crée un doublage vide pour la sérialisation.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public LocalizedAudioTrack()</code></pre>
+</div>
+<h2 class="section" id="properties">Propriétés
+</h2>
+<a data-uid="SubVoxPro.LocalizedAudioTrack.Clip*" id="SubVoxPro_LocalizedAudioTrack_Clip_"></a>
+<h3 data-uid="SubVoxPro.LocalizedAudioTrack.Clip" id="SubVoxPro_LocalizedAudioTrack_Clip">
+  Clip
+  
+  </h3>
+<div class="markdown level1 summary"><p>Audio doublé, ou null tant qu’il n’est pas généré.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public AudioClip Clip { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><span class="xref">AudioClip</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.LocalizedAudioTrack.HasAudio*" id="SubVoxPro_LocalizedAudioTrack_HasAudio_"></a>
+<h3 data-uid="SubVoxPro.LocalizedAudioTrack.HasAudio" id="SubVoxPro_LocalizedAudioTrack_HasAudio">
+  HasAudio
+  
+  </h3>
+<div class="markdown level1 summary"><p>Vrai lorsque le doublage possède de l’audio.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool HasAudio { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.LocalizedAudioTrack.LanguageCode*" id="SubVoxPro_LocalizedAudioTrack_LanguageCode_"></a>
+<h3 data-uid="SubVoxPro.LocalizedAudioTrack.LanguageCode" id="SubVoxPro_LocalizedAudioTrack_LanguageCode">
+  LanguageCode
+  
+  </h3>
+<div class="markdown level1 summary"><p>Langue parlée dans le doublage, par exemple « fr ».</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string LanguageCode { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.LocalizedAudioTrack.Subtitles*" id="SubVoxPro_LocalizedAudioTrack_Subtitles_"></a>
+<h3 data-uid="SubVoxPro.LocalizedAudioTrack.Subtitles" id="SubVoxPro_LocalizedAudioTrack_Subtitles">
+  Subtitles
+  
+  </h3>
+<div class="markdown level1 summary"><p>Lignes calées sur l’audio doublé.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;SubtitleInfo&gt; Subtitles { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a>&gt;</dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro — © 2026 ExNihilus
+        </div>
+</div>
+</footer>
+</body>
+</html>

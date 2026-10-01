@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Namespace SubVoxPro | Documentation SubVox Pro </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Namespace SubVoxPro | Documentation SubVox Pro " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=9f8cab86d6" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="Sur cette page" name="loc:inThisArticle"/>
+<meta content="{count} résultats pour « {query} »" name="loc:searchResultsCount"/>
+<meta content="Aucun résultat pour « {query} »" name="loc:searchNoResults"/>
+<meta content="Filtrer par titre" name="loc:tocFilter"/>
+<meta content="Suivant" name="loc:nextArticle"/>
+<meta content="Précédent" name="loc:prevArticle"/>
+<meta content="Clair" name="loc:themeLight"/>
+<meta content="Sombre" name="loc:themeDark"/>
+<meta content="Automatique" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=9f8cab86d6" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="fr">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Afficher la navigation" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Rechercher" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Rechercher" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Sommaire</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro">
+<h1 class="text-break" data-uid="SubVoxPro" id="SubVoxPro">Namespace SubVoxPro</h1>
+<div class="markdown level0 summary"></div>
+<div class="markdown level0 conceptual"></div>
+<div class="markdown level0 remarks"></div>
+<h3 id="classes">
+Classes
+</h3>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.LanguageCodeAttribute.html">LanguageCodeAttribute</a></dt>
+<dd><p>Marque un champ string comme code de langue. L’Inspector propose les langues présentes dans les assets <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a> du projet, source comprise, au lieu d’une saisie manuelle.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.LocalizedAudioTrack.html">LocalizedAudioTrack</a></dt>
+<dd><p>Doublage d’une voiceline dans une langue, avec ses propres timings.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.LocalizedSubtitleTrack.html">LocalizedSubtitleTrack</a></dt>
+<dd><p>Traduction des sous-titres d’une voiceline dans une langue.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.LocalizedVoiceLineEventBinding.html">LocalizedVoiceLineEventBinding</a></dt>
+<dd><p>Position d’un événement propre à un doublage.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a></dt>
+<dd><p>Speaker nommé et stylisé auquel attribuer des sous-titres. Chaque speaker est un asset réutilisable entre voicelines ; son genre sert uniquement au regroupement dans le sélecteur de l’éditeur.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SpeakerSelectorAttribute.html">SpeakerSelectorAttribute</a></dt>
+<dd><p>Marque un champ <a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a> pour utiliser le sélecteur de speakers de la fenêtre de voiceline : groupes par genre, choix aucun et création d’un speaker, plutôt que le champ objet standard.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubVox.html">SubVox</a></dt>
+<dd><p>Point d’entrée de SubVox Pro pour jouer les voicelines, choisir langue et apparition des sous-titres, et recevoir les événements globaux. Toutes les sources le suivent : <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> et l’intégration Timeline.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubVoxEvents.html">SubVoxEvents</a></dt>
+<dd><p>Clés d’événements de voiceline générées pour ce projet.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubVoxEvents.MyEvents.html">SubVoxEvents.MyEvents</a></dt>
+<dd><p>Clés d’événements MyEvents générées.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleBubbleDisplayer.html">SubtitleBubbleDisplayer</a></dt>
+<dd><p>Bulle d’un personnage, par exemple au-dessus d’un PNJ, qui ne montre que les lignes de son <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a>. L’affichage principal conserve le dialogue. Mêmes réglages que <a class="xref" href="SubVoxPro.SubtitleDisplayer.html">SubtitleDisplayer</a>. Désactivez Show Subtitles sur l’émetteur pour utiliser uniquement la bulle.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleDisplayer.html">SubtitleDisplayer</a></dt>
+<dd><p>Affiche les sous-titres publiés sur <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a> dans un texte TextMeshPro, UI ou 3D, avec le nom et la police du speaker. Suit les options globales : activation, taille, opacité du fond et fondu. Fonctionne avec les émetteurs comme avec Timeline.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleDocumentDisplayer.html">SubtitleDocumentDisplayer</a></dt>
+<dd><p>Affiche les sous-titres de <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a> dans un <a class="xref" href="https://docs.unity3d.com/ScriptReference/UIElements.Label.html">UnityEngine.UIElements.Label</a> de son <a class="xref" href="https://docs.unity3d.com/ScriptReference/UIElements.UIDocument.html">UnityEngine.UIElements.UIDocument</a>, avec le nom et la police UI Toolkit du speaker. Équivalent UI Toolkit de <a class="xref" href="SubVoxPro.SubtitleDisplayer.html">SubtitleDisplayer</a> : mêmes modes de nom, styles rich text et réglages d’affichage.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineBankData.html">VoiceLineBankData</a></dt>
+<dd><p>Répliques interchangeables, par exemple celles d’un garde, choisies selon <a class="xref" href="SubVoxPro.VoiceLineBankData.html#SubVoxPro_VoiceLineBankData_Order">Order</a>. L’asset conserve la liste ; SubVox Pro suit la prochaine réplique à l’exécution.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd><p>Voiceline avec audio et sous-titres source, traductions, doublages, speakers et événements. Créée et modifiée dans la fenêtre SubVox Pro ; lecture seule depuis le code.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineDataEvent.html">VoiceLineDataEvent</a></dt>
+<dd><p>UnityEvent transportant une voiceline, exposé pour l’affichage dans l’Inspector.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a></dt>
+<dd><p>Joue les voicelines une à la fois via son <a class="xref" href="https://docs.unity3d.com/ScriptReference/AudioSource.html">AudioSource</a>, avec événements et sous-titres synchronisés. Ajoutez-le à chaque personnage et réglez l’audio en 3D. Plusieurs émetteurs peuvent jouer ; <a class="xref" href="SubVoxPro.VoiceLineManager.html">VoiceLineManager</a> affiche la réplique la plus importante.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventAttribute.html">VoiceLineEventAttribute</a></dt>
+<dd><p>Appelle une méthode à chaque événement dont le signal porte cette clé. Le composant est enregistré par <a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html">VoiceLineEventDispatcher</a> ou partage un GameObject avec <a class="xref" href="SubVoxPro.VoiceLineEventListener.html">VoiceLineEventListener</a>. Retour void, sans paramètre, avec <a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a> ou avec le type du payload. La clé ignore casse, espaces et ponctuation : Camera Shake correspond à camera-shake.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventBinding.html">VoiceLineEventBinding</a></dt>
+<dd><p>Position d’un événement sur une voiceline : ancre et décalage.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a></dt>
+<dd><p>Informations d’un événement déclenché : voiceline, signal, payload, temps et position.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventCue.html">VoiceLineEventCue</a></dt>
+<dd><p>Événement placé sur une voiceline : signal, position et payload facultatif.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html">VoiceLineEventDispatcher</a></dt>
+<dd><p>Appelle les méthodes <a class="xref" href="SubVoxPro.VoiceLineEventAttribute.html">VoiceLineEventAttribute</a> des scènes chargées à chaque signal. Placez-le dans la scène de démarrage ; il est inclus dans le prefab [SubVox Pro].</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventListener.html">VoiceLineEventListener</a></dt>
+<dd><p>Appelle les méthodes <a class="xref" href="SubVoxPro.VoiceLineEventAttribute.html">VoiceLineEventAttribute</a> des composants de ce GameObject lorsque leur clé de signal correspond. Ignore les composants désactivés.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventReaction.html">VoiceLineEventReaction</a></dt>
+<dd><p>Réaction d’un <a class="xref" href="SubVoxPro.VoiceLineEventReceiver.html">VoiceLineEventReceiver</a> : signal, voiceline facultative et callback.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventReceiver.html">VoiceLineEventReceiver</a></dt>
+<dd><p>Appelle les UnityEvents configurés dans l’Inspector : une réaction par signal, limitée si nécessaire à une voiceline.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventSignalData.html">VoiceLineEventSignalData</a></dt>
+<dd><p>Signal réutilisable, comme Camera Shake, placé sur des voicelines. Réagissez avec <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Subscribe_SubVoxPro_VoiceLineEventSignalData_System_Action_SubVoxPro_VoiceLineEventContext__">Subscribe(VoiceLineEventSignalData, Action&lt;VoiceLineEventContext&gt;)</a>, un receiver ou des méthodes <a class="xref" href="SubVoxPro.VoiceLineEventAttribute.html">VoiceLineEventAttribute</a>.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventUnityEvent.html">VoiceLineEventUnityEvent</a></dt>
+<dd><p>UnityEvent transportant un <a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a>, visible dans l’Inspector.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineManager.html">VoiceLineManager</a></dt>
+<dd><p>Composant de scène derrière <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a>. Héberge l’émetteur 2D de <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>, gère pause et arrêt globaux, baisse la musique pendant la voix et choisit le sous-titre : priorité la plus élevée, puis lecture la plus récente.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayOnStart.html">VoiceLinePlayOnStart</a></dt>
+<dd><p>Joue automatiquement au démarrage ou à la réactivation de l’objet, après un délai facultatif. Utile pour une narration d’introduction. <a class="xref" href="SubVoxPro.VoiceLinePlayOnStart.html#SubVoxPro_VoiceLinePlayOnStart_Play">Play()</a> reste disponible pour un appel manuel.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd><p>Requête de lecture renvoyée par <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> et <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>. Consultez son <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_State">State</a>, arrêtez-la ou attendez-la dans une coroutine avec yield return.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a></dt>
+<dd><p>Liste ordonnée réutilisable de voicelines avec le mode d’avance de chaque étape. L’asset définit seulement la séquence ; un <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html">VoiceLineSequencePlayer</a> la pilote à l’exécution. Plusieurs players peuvent utiliser le même asset.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html">VoiceLineSequencePlayer</a></dt>
+<dd><p>Joue une <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a>, une réplique à la fois. Avance à la fin avec un délai facultatif, ou via <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Advance">Advance()</a>, utilisable depuis un UnityEvent ou bouton. <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Previous">Previous()</a> revient en arrière. Suit <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a> ; une étape refusée attend que l’émetteur se libère. Expose UnityEvents et événements C#.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineSequenceStep.html">VoiceLineSequenceStep</a></dt>
+<dd><p>Étape de séquence : voiceline et mode de passage à la suivante.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineZone.html">VoiceLineZone</a></dt>
+<dd><p>Joue une voiceline ou la prochaine ligne d’une banque à l’entrée d’un collider 2D ou 3D. Seul le callback adapté au collider de l’objet est utilisé. Filtre layer/tag, lecture unique, cooldown, mode si occupé, arrêt et réarmement à la sortie facultatifs. <a class="xref" href="SubVoxPro.VoiceLineZone.html#SubVoxPro_VoiceLineZone_Play">Play()</a> est réutilisable depuis une interaction ou un UnityEvent.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoicePersonalityData.html">VoicePersonalityData</a></dt>
+<dd><p>Personnalité vocale réutilisable avec nom et direction de jeu libre, transmise aux fournisseurs qui acceptent un style prompt, comme Gemini TTS ou InWorld. Un personnage peut ainsi rester calme, furieux ou chuchotant dans plusieurs voicelines. Les speakers listent leurs personnalités et chaque sous-titre peut en choisir une.</p>
+</dd>
+</dl>
+<h3 id="structs">
+Structs
+</h3>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.LocalizedSubtitleLine.html">LocalizedSubtitleLine</a></dt>
+<dd><p>Un sous-titre traduit.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleHistoryEntry.html">SubtitleHistoryEntry</a></dt>
+<dd><p>Sous-titre précédemment affiché, conservé dans <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_History">History</a> pour l’historique des dialogues.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a></dt>
+<dd><p>Sous-titre avec début, texte, timings des mots, styles et speaker.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a></dt>
+<dd><p>Timing d’un mot de sous-titre.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleWordStyle.html">SubtitleWordStyle</a></dt>
+<dd><p>Style visuel d’un mot, identifié par sa position dans la ligne séparée par espaces. Sérialisé avec l’asset et rendu en rich text TextMeshPro à l’exécution.</p>
+</dd>
+</dl>
+<h3 id="interfaces">
+Interfaces
+</h3>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.IVoiceLineAudioClock.html">IVoiceLineAudioClock</a></dt>
+<dd><p>Audio lu en dehors de l’AudioSource Unity, avec FMOD, Wwise ou une vidéo. <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> suit cette horloge pour synchroniser sous-titres et événements.</p>
+</dd>
+</dl>
+<h3 id="enums">
+Enums
+</h3>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.ESpeakerGender.html">ESpeakerGender</a></dt>
+<dd><p>Genre d’un speaker, utilisé pour choisir des voix adaptées au doublage.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.ESpeakerNameMode.html">ESpeakerNameMode</a></dt>
+<dd><p>Position du nom du speaker dans l’affichage.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineBankOrder.html">EVoiceLineBankOrder</a></dt>
+<dd><p>Manière dont <a class="xref" href="SubVoxPro.VoiceLineBankData.html">VoiceLineBankData</a> choisit sa prochaine réplique.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineEventAnchor.html">EVoiceLineEventAnchor</a></dt>
+<dd><p>Repère temporel suivi par un événement.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineLanguageSource.html">EVoiceLineLanguageSource</a></dt>
+<dd><p>Origine de <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a>.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html">EVoiceLinePlayMode</a></dt>
+<dd><p>Comportement d’une nouvelle réplique sur un émetteur déjà occupé.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLinePlaybackState.html">EVoiceLinePlaybackState</a></dt>
+<dd><p>État d’une <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd><p>Importance d’une réplique : elle ne remplace la réplique actuelle que si elle est au moins aussi importante.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineSequenceAdvance.html">EVoiceLineSequenceAdvance</a></dt>
+<dd><p>Manière dont une séquence passe à l’étape suivante.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineSequenceDirection.html">EVoiceLineSequenceDirection</a></dt>
+<dd><p>Ordre des étapes d’un <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html">VoiceLineSequencePlayer</a>.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineSubtitleRevealMode.html">EVoiceLineSubtitleRevealMode</a></dt>
+<dd><p>Apparition des sous-titres pendant la lecture.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityAge.html">EVoicePersonalityAge</a></dt>
+<dd><p>Âge apparent de la voix d’une personnalité guidée.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityArticulation.html">EVoicePersonalityArticulation</a></dt>
+<dd><p>Articulation d’une personnalité guidée.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityDelivery.html">EVoicePersonalityDelivery</a></dt>
+<dd><p>Manière de parler d’une personnalité guidée.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityEmotion.html">EVoicePersonalityEmotion</a></dt>
+<dd><p>Émotion d’une personnalité guidée.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityInstructionMode.html">EVoicePersonalityInstructionMode</a></dt>
+<dd><p>Direction de jeu écrite librement ou construite par choix guidés.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityPace.html">EVoicePersonalityPace</a></dt>
+<dd><p>Vitesse d’élocution d’une personnalité guidée.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityVolume.html">EVoicePersonalityVolume</a></dt>
+<dd><p>Volume de la voix d’une personnalité guidée.</p>
+</dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro — © 2026 ExNihilus
+        </div>
+</div>
+</footer>
+</body>
+</html>

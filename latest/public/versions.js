@@ -1,12 +1,10 @@
+import { documentationRoot, localize } from "./languages.js?v=9f8cab86d6";
+
 const VERSION_META = "svx:version";
 const LATEST_FOLDER = "latest";
 
 function metaContent(name) {
   return document.querySelector(`meta[name="${name}"]`)?.getAttribute("content");
-}
-
-function versionRoot() {
-  return new URL(metaContent("docfx:rel") ?? "", location.href);
 }
 
 async function readCatalog(siteRoot) {
@@ -29,15 +27,24 @@ async function samePageIn(siteRoot, folder, pagePath) {
     console.debug(error);
   }
 
+  const language = pagePath.startsWith("fr/") ? "fr/" : "";
+  if (language) {
+    const english = new URL(`${folder}/${pagePath.slice(3)}`, siteRoot);
+    try {
+      if ((await fetch(english, { method: "HEAD" })).ok) return english.href + location.hash;
+    } catch {
+    }
+  }
   return new URL(`${folder}/`, siteRoot).href;
 }
 
 function buildPicker(current, versions, latest, open) {
   const picker = document.createElement("div");
   picker.className = "dropdown svx-version";
-  picker.innerHTML = `<button class="btn border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="Documentation version">
+  const title = localize("Documentation version", "Version de la documentation");
+  picker.innerHTML = `<button class="btn border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="${title}">
       <i class="bi bi-clock-history"></i><span class="svx-version-name"></span></button>
-    <ul class="dropdown-menu dropdown-menu-end"><li><h6 class="dropdown-header">Documentation version</h6></li></ul>`;
+    <ul class="dropdown-menu dropdown-menu-end"><li><h6 class="dropdown-header">${title}</h6></li></ul>`;
   picker.querySelector(".svx-version-name").textContent = current;
   const menu = picker.querySelector("ul");
   for (const version of versions) {
@@ -49,7 +56,7 @@ function buildPicker(current, versions, latest, open) {
     if (version === latest) {
       const tag = document.createElement("span");
       tag.className = "svx-version-latest";
-      tag.textContent = "latest";
+      tag.textContent = localize("latest", "dernière");
       button.append(tag);
     }
 
@@ -68,14 +75,14 @@ function showOutdatedBanner(current, latest, open) {
   const banner = document.createElement("div");
   banner.className = "svx-outdated";
   banner.setAttribute("role", "note");
-  banner.innerHTML = `<i class="bi bi-info-circle"></i><span>You are reading the documentation of SubVox Pro <strong></strong>. The latest version is <strong></strong>.</span>`;
+  banner.innerHTML = `<i class="bi bi-info-circle"></i><span>${localize("You are reading the documentation of SubVox Pro", "Vous consultez la documentation de SubVox Pro")} <strong></strong>. ${localize("The latest version is", "La dernière version est")} <strong></strong>.</span>`;
   const [shown, newest] = banner.querySelectorAll("strong");
   shown.textContent = current;
   newest.textContent = latest;
   const link = document.createElement("button");
   link.type = "button";
   link.className = "btn btn-sm";
-  link.textContent = `View this page in ${latest}`;
+  link.textContent = localize(`View this page in ${latest}`, `Voir cette page en version ${latest}`);
   link.addEventListener("click", () => open(LATEST_FOLDER));
   banner.append(link);
   (document.querySelector("main .content > article") ?? document.querySelector("main"))?.prepend(banner);
@@ -87,7 +94,7 @@ export async function startVersionPicker() {
     return;
   }
 
-  const root = versionRoot();
+  const root = documentationRoot();
   const siteRoot = new URL("../", root);
   const catalog = await readCatalog(siteRoot);
   const versions = catalog?.versions?.length ? catalog.versions : [current];
@@ -98,7 +105,7 @@ export async function startVersionPicker() {
   };
 
   const navbar = document.querySelector("#navbar");
-  navbar?.insertBefore(buildPicker(current, versions, latest, open), navbar.querySelector(".svx-code-theme") ?? navbar.querySelector("form.search"));
+  navbar?.insertBefore(buildPicker(current, versions, latest, open), navbar.querySelector(".svx-language") ?? navbar.querySelector(".svx-code-theme") ?? navbar.querySelector("form.search"));
   if (catalog && current !== latest) {
     showOutdatedBanner(current, latest, open);
   }
