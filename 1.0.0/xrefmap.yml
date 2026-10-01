@@ -1039,6 +1039,18 @@ references:
   commentId: Overload:SubVoxPro.SubVox.CurrentLanguage
   fullName: SubVoxPro.SubVox.CurrentLanguage
   nameWithType: SubVox.CurrentLanguage
+- uid: SubVoxPro.SubVox.CurrentSubtitle
+  name: CurrentSubtitle
+  href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentSubtitle
+  commentId: P:SubVoxPro.SubVox.CurrentSubtitle
+  fullName: SubVoxPro.SubVox.CurrentSubtitle
+  nameWithType: SubVox.CurrentSubtitle
+- uid: SubVoxPro.SubVox.CurrentSubtitle*
+  name: CurrentSubtitle
+  href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentSubtitle_
+  commentId: Overload:SubVoxPro.SubVox.CurrentSubtitle
+  fullName: SubVoxPro.SubVox.CurrentSubtitle
+  nameWithType: SubVox.CurrentSubtitle
 - uid: SubVoxPro.SubVox.DefaultEmitter
   name: DefaultEmitter
   href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter
@@ -1327,6 +1339,42 @@ references:
   commentId: E:SubVoxPro.SubVox.VoiceLineStarted
   fullName: SubVoxPro.SubVox.VoiceLineStarted
   nameWithType: SubVox.VoiceLineStarted
+- uid: SubVoxPro.SubVoxEvents
+  name: SubVoxEvents
+  href: api/SubVoxPro.SubVoxEvents.html
+  commentId: T:SubVoxPro.SubVoxEvents
+  fullName: SubVoxPro.SubVoxEvents
+  nameWithType: SubVoxEvents
+- uid: SubVoxPro.SubVoxEvents.CAMERA_SHAKE
+  name: CAMERA_SHAKE
+  href: api/SubVoxPro.SubVoxEvents.html#SubVoxPro_SubVoxEvents_CAMERA_SHAKE
+  commentId: F:SubVoxPro.SubVoxEvents.CAMERA_SHAKE
+  fullName: SubVoxPro.SubVoxEvents.CAMERA_SHAKE
+  nameWithType: SubVoxEvents.CAMERA_SHAKE
+- uid: SubVoxPro.SubVoxEvents.MyEvents
+  name: SubVoxEvents.MyEvents
+  href: api/SubVoxPro.SubVoxEvents.MyEvents.html
+  commentId: T:SubVoxPro.SubVoxEvents.MyEvents
+  fullName: SubVoxPro.SubVoxEvents.MyEvents
+  nameWithType: SubVoxEvents.MyEvents
+- uid: SubVoxPro.SubVoxEvents.MyEvents.SUPER_EVENT_YEAH
+  name: SUPER_EVENT_YEAH
+  href: api/SubVoxPro.SubVoxEvents.MyEvents.html#SubVoxPro_SubVoxEvents_MyEvents_SUPER_EVENT_YEAH
+  commentId: F:SubVoxPro.SubVoxEvents.MyEvents.SUPER_EVENT_YEAH
+  fullName: SubVoxPro.SubVoxEvents.MyEvents.SUPER_EVENT_YEAH
+  nameWithType: SubVoxEvents.MyEvents.SUPER_EVENT_YEAH
+- uid: SubVoxPro.SubVoxEvents.VOICE_LINE_EVENT_SIGNAL
+  name: VOICE_LINE_EVENT_SIGNAL
+  href: api/SubVoxPro.SubVoxEvents.html#SubVoxPro_SubVoxEvents_VOICE_LINE_EVENT_SIGNAL
+  commentId: F:SubVoxPro.SubVoxEvents.VOICE_LINE_EVENT_SIGNAL
+  fullName: SubVoxPro.SubVoxEvents.VOICE_LINE_EVENT_SIGNAL
+  nameWithType: SubVoxEvents.VOICE_LINE_EVENT_SIGNAL
+- uid: SubVoxPro.SubVoxEvents.VOICE_LINE_EVENT_SIGNAL_1
+  name: VOICE_LINE_EVENT_SIGNAL_1
+  href: api/SubVoxPro.SubVoxEvents.html#SubVoxPro_SubVoxEvents_VOICE_LINE_EVENT_SIGNAL_1
+  commentId: F:SubVoxPro.SubVoxEvents.VOICE_LINE_EVENT_SIGNAL_1
+  fullName: SubVoxPro.SubVoxEvents.VOICE_LINE_EVENT_SIGNAL_1
+  nameWithType: SubVoxEvents.VOICE_LINE_EVENT_SIGNAL_1
 - uid: SubVoxPro.SubtitleBubbleDisplayer
   name: SubtitleBubbleDisplayer
   href: api/SubVoxPro.SubtitleBubbleDisplayer.html
@@ -1447,6 +1495,18 @@ references:
   commentId: Overload:SubVoxPro.SubtitleDisplayer.ComposeText
   fullName: SubVoxPro.SubtitleDisplayer.ComposeText
   nameWithType: SubtitleDisplayer.ComposeText
+- uid: SubVoxPro.SubtitleDisplayer.KeepBackgroundBetweenSubtitles
+  name: KeepBackgroundBetweenSubtitles
+  href: api/SubVoxPro.SubtitleDisplayer.html#SubVoxPro_SubtitleDisplayer_KeepBackgroundBetweenSubtitles
+  commentId: P:SubVoxPro.SubtitleDisplayer.KeepBackgroundBetweenSubtitles
+  fullName: SubVoxPro.SubtitleDisplayer.KeepBackgroundBetweenSubtitles
+  nameWithType: SubtitleDisplayer.KeepBackgroundBetweenSubtitles
+- uid: SubVoxPro.SubtitleDisplayer.KeepBackgroundBetweenSubtitles*
+  name: KeepBackgroundBetweenSubtitles
+  href: api/SubVoxPro.SubtitleDisplayer.html#SubVoxPro_SubtitleDisplayer_KeepBackgroundBetweenSubtitles_
+  commentId: Overload:SubVoxPro.SubtitleDisplayer.KeepBackgroundBetweenSubtitles
+  fullName: SubVoxPro.SubtitleDisplayer.KeepBackgroundBetweenSubtitles
+  nameWithType: SubtitleDisplayer.KeepBackgroundBetweenSubtitles
 - uid: SubVoxPro.SubtitleDisplayer.OnDisable
   name: OnDisable()
   href: api/SubVoxPro.SubtitleDisplayer.html#SubVoxPro_SubtitleDisplayer_OnDisable
@@ -1606,6 +1666,18 @@ references:
   commentId: F:SubVoxPro.SubtitleDocumentDisplayer.DEFAULT_TEXT_ELEMENT
   fullName: SubVoxPro.SubtitleDocumentDisplayer.DEFAULT_TEXT_ELEMENT
   nameWithType: SubtitleDocumentDisplayer.DEFAULT_TEXT_ELEMENT
+- uid: SubVoxPro.SubtitleDocumentDisplayer.KeepBackgroundBetweenSubtitles
+  name: KeepBackgroundBetweenSubtitles
+  href: api/SubVoxPro.SubtitleDocumentDisplayer.html#SubVoxPro_SubtitleDocumentDisplayer_KeepBackgroundBetweenSubtitles
+  commentId: P:SubVoxPro.SubtitleDocumentDisplayer.KeepBackgroundBetweenSubtitles
+  fullName: SubVoxPro.SubtitleDocumentDisplayer.KeepBackgroundBetweenSubtitles
+  nameWithType: SubtitleDocumentDisplayer.KeepBackgroundBetweenSubtitles
+- uid: SubVoxPro.SubtitleDocumentDisplayer.KeepBackgroundBetweenSubtitles*
+  name: KeepBackgroundBetweenSubtitles
+  href: api/SubVoxPro.SubtitleDocumentDisplayer.html#SubVoxPro_SubtitleDocumentDisplayer_KeepBackgroundBetweenSubtitles_
+  commentId: Overload:SubVoxPro.SubtitleDocumentDisplayer.KeepBackgroundBetweenSubtitles
+  fullName: SubVoxPro.SubtitleDocumentDisplayer.KeepBackgroundBetweenSubtitles
+  nameWithType: SubtitleDocumentDisplayer.KeepBackgroundBetweenSubtitles
 - uid: SubVoxPro.SubtitleDocumentDisplayer.OnDisable
   name: OnDisable()
   href: api/SubVoxPro.SubtitleDocumentDisplayer.html#SubVoxPro_SubtitleDocumentDisplayer_OnDisable

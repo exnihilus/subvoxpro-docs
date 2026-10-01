@@ -1,5 +1,5 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=d17fac0633";
-import { startVersionPicker } from "./versions.js?v=d17fac0633";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=1942410e80";
+import { startVersionPicker } from "./versions.js?v=1942410e80";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [

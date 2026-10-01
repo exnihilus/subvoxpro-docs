@@ -9,7 +9,7 @@
       <meta name="description" content="Calls the marked method whenever a voice line event whose signal has this key fires. The method belongs to a component cached by a  or sharing its GameObject with a , returns void and takes nothing, a , or the type of the event&#39;s payload. Keys ignore case, spaces and punctuation: &amp;quot;Camera Shake&amp;quot; matches &amp;quot;camera-shake&amp;quot;.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css?v=d17fac0633">
+      <link rel="stylesheet" href="../public/main.css?v=1942410e80">
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../public/docfx.min.js?v=d17fac0633"></script>
+      <script type="module" src="./../public/docfx.min.js?v=1942410e80"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'dark'
@@ -128,10 +128,10 @@ public sealed class VoiceLineEventAttribute : PreserveAttribute</code></pre>
 
 
   <h2 id="SubVoxPro_VoiceLineEventAttribute_examples">Examples</h2>
-  <pre><code class="lang-csharp">[VoiceLineEvent("Open Door")]
-private void OpenDoor()
+  <pre><code class="lang-csharp">[VoiceLineEvent(SubVoxEvents.CAMERA_SHAKE)]
+private void ShakeCamera()
 {
-    _door.Open();
+    _camera.Shake();
 }
 
 [VoiceLineEvent("Play Sound")]
