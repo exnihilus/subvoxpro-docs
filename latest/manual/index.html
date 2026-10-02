@@ -9,7 +9,7 @@
       
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css?v=img-1c836658d4">
+      <link rel="stylesheet" href="../public/main.css?v=34433ca566">
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
       
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../public/docfx.min.js?v=9f8cab86d6"></script>
+      <script type="module" src="./../public/docfx.min.js?v=34433ca566"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'dark'
@@ -151,6 +151,8 @@ available offline). <strong>Back</strong> returns to the home screen; <strong>Pr
 <p><strong>2. Create a voice line.</strong> <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line</strong>, select it and click <strong>Setup Voiceline</strong>
 in the Inspector. The SubVox Pro window opens on a new voice line: check its <strong>Language</strong> (English the first time,
 then the last one you picked), choose <strong>Add an audio track</strong> and pick your clip, or record one.</p>
+<p>Alternatively, right-click an audio file in the Project window and choose <strong>SubVox Pro ▸ Setup VoiceLine</strong>.
+Choose where to save the new voice line; the editor opens with that audio already assigned.</p>
 <img src="Documentation/Images/subvoxpro-new-voice-line.png" alt="Start screen of a new voice line: language, add an audio track, add a subtitles track" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <p><strong>3. Transcribe.</strong> In <strong>AI Tools ▸ Transcription</strong>, pick the provider and the spoken language, click <strong>Analyze</strong>,
 then <strong>Split</strong>. Your subtitles appear on the waveform.</p>
@@ -531,6 +533,9 @@ Pausing the director keeps its selected subtitle until playback resumes or the d
 <h2 id="process-many-files-at-once">Process many files at once</h2>
 <img src="Documentation/Images/subvoxpro-batch-window.png" alt="Batch Processing window" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> turns a list of audio or <code>.srt</code> files into voice lines in one go.</p>
+<p>To queue audio already in your project, select several audio files, right-click and choose
+<strong>SubVox Pro ▸ Batch Processing</strong>. The files are added to the existing queue without starting the batch;
+duplicates are ignored. Wait for a running batch to finish before adding files this way.</p>
 <ol>
 <li>Drop the files, or use <strong>Add files…</strong> / <strong>Add folder…</strong>.</li>
 <li>Turn on the steps you need — <strong>Transcription</strong>, <strong>Translation</strong>, <strong>Dubbing</strong> — and set them up once for all
