@@ -8,7 +8,7 @@
 <meta content="Guide | Documentation SubVox Pro " name="title"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
-<link href="../public/main.css?v=img-1c836658d4" rel="stylesheet"/>
+<link href="../public/main.css?v=34433ca566" rel="stylesheet"/>
 <meta content="../toc.html" name="docfx:navrel"/>
 <meta content="toc.html" name="docfx:tocrel"/>
 <meta content="../" name="docfx:rel"/>
@@ -24,7 +24,7 @@
 <meta content="Change theme" name="loc:changeTheme"/>
 <meta content="Copy" name="loc:copy"/>
 <meta content="Download PDF" name="loc:downloadPdf"/>
-<script src="./../public/docfx.min.js?v=9f8cab86d6" type="module"></script>
+<script src="./../public/docfx.min.js?v=34433ca566" type="module"></script>
 <script>
         const theme = localStorage.getItem('theme') || 'dark'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
@@ -140,6 +140,9 @@ La tuile <strong>Provider Setup</strong> ouvre le PDF anglais consacré aux four
 <p><strong>2. Créez une voiceline.</strong> <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line</strong>, puis sélectionnez l’asset et cliquez sur
 <strong>Setup Voiceline</strong> dans l’Inspector. Vérifiez <strong>Language</strong> : anglais la première fois, puis la dernière langue
 choisie. Cliquez sur <strong>Add an audio track</strong> pour choisir un clip ou en enregistrer un.</p>
+<p>Vous pouvez aussi faire un clic droit sur un fichier audio dans la fenêtre Project, puis choisir
+<strong>SubVox Pro ▸ Setup VoiceLine</strong>. Choisissez où enregistrer la nouvelle voiceline : l’éditeur s’ouvre avec
+ce clip audio déjà renseigné.</p>
 <p><img alt="Nouvelle voiceline : langue, piste audio et piste de sous-titres" src="Documentation/Images/subvoxpro-new-voice-line.png"/></p>
 <p><strong>3. Transcrivez.</strong> Dans <strong>AI Tools ▸ Transcription</strong>, choisissez le fournisseur et la langue parlée, cliquez sur
 <strong>Analyze</strong>, puis sur <strong>Split</strong>. Les sous-titres apparaissent sur la forme d’onde.</p>
@@ -515,6 +518,9 @@ l’arrêt.</p>
 <h2 id="process-many-files-at-once">Traiter plusieurs fichiers à la fois </h2>
 <p><img alt="Fenêtre Batch Processing" src="Documentation/Images/subvoxpro-batch-window.png"/></p>
 <p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> transforme toute une liste de fichiers audio ou <code>.srt</code> en voicelines.</p>
+<p>Pour utiliser les audios déjà dans le projet, sélectionnez plusieurs fichiers audio, faites un clic droit,
+puis choisissez <strong>SubVox Pro ▸ Batch Processing</strong>. Les fichiers s’ajoutent à la liste actuelle sans lancer
+le traitement ; les doublons sont ignorés. Si un batch tourne déjà, attendez qu’il soit terminé.</p>
 <ol>
 <li>Glissez les fichiers, ou utilisez <strong>Add files…</strong> ou <strong>Add folder…</strong>.</li>
 <li>Activez les étapes utiles (<strong>Transcription</strong>, <strong>Translation</strong>, <strong>Dubbing</strong>) et réglez-les une fois pour tout le
