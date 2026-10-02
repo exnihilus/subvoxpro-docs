@@ -136,7 +136,8 @@ Ou passez par le menu du compte, <strong>Organization settings</strong> ou <stro
 En <strong>Text-to-Speech</strong>, <strong>gpt-realtime-2.1-mini</strong> propose 10 voix et suit les indications de jeu via Realtime.
 Les anciens choix de modèles migrent automatiquement. Les voix <strong>fable</strong>, <strong>nova</strong> et <strong>onyx</strong> exigent un nouveau choix.
 Realtime reçoit une consigne de lecture exacte du texte : vérifiez les dialogues générés.
-La facturation utilise les tokens texte/audio ; le batch indique donc un prix TTS inconnu.
+L’audio généré coûte environ <strong>0,024 $/minute</strong>, plus les tokens texte (0,60 <span class="math">\(en entrée / 2,40\)</span> en sortie par million).
+Le batch estime l’audio et le texte avec 14 caractères/seconde et 4 caractères/token ; les consignes et le rythme peuvent modifier la facture.
 En <strong>Speech-to-Text</strong>, choisissez OpenAI, puis le modèle de transcription.</li>
 </ol>
 <blockquote>
