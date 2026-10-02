@@ -595,15 +595,11 @@ details.svx-member-zone > summary.svx-zone-header {
 }
 
 .svx-hero {
-  padding: clamp(24px, 5vw, 56px);
+  padding: clamp(24px, 5vw, 56px) 0;
   margin: 0.5rem 0 3rem;
 }
 
 .svx-intro {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  align-items: center;
-  gap: 1rem 3rem;
   margin-bottom: 2rem;
 }
 
@@ -623,18 +619,7 @@ details.svx-member-zone > summary.svx-zone-header {
   margin-top: 0.5rem;
 }
 
-.svx-hero .svx-lead {
-  color: var(--bs-secondary-color);
-  font-size: 1.05rem;
-  max-width: 54ch;
-  margin: 0;
-}
-
 @media (max-width: 767.98px) {
-  .svx-intro {
-    grid-template-columns: 1fr;
-  }
-
   .svx-hero h1 {
     font-size: 2rem;
   }
