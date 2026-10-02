@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Translation providers | SubVox Pro Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Translation providers | SubVox Pro Documentation ">
+
+
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css?v=6167a24fce">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+
+      <meta name="docfx:rel" content="../">
+
+
+      <meta name="docfx:docurl" content="https://github.com/exnihilus/subvoxpro-docs/blob/main/Tools/Docs/ApiReference/manual/providers-translation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js?v=a1330a4078"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+    <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="en">
+  <link rel="alternate" hreflang="en" href="../manual/providers-translation.html">
+<link rel="alternate" hreflang="fr" href="../fr/manual/providers-translation.html">
+</head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="SubVox Pro">
+            SubVox Pro
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="translation-providers">Translation providers</h1>
+
+<details id="deepl">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>DeepL</strong></summary>
+<p><strong>Used for:</strong> high-quality machine translation (supports formality).</p>
+<ol>
+<li>Sign up for the API at <strong><a href="https://www.deepl.com/pro-api">https://www.deepl.com/pro-api</a></strong>. In the <strong>Developer</strong> plan card, choose
+<strong>Sign up for free</strong>. DeepL asks you to verify your email, then to complete a payment-card
+verification. The card check is used to validate the account, but the Developer plan is not charged.
+The free Developer plan includes a <strong>one-time credit of 1,000,000 characters</strong>.
+<img src="Documentation/Images/deepl-pricing.png" alt="DeepL API pricing — free Developer plan" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Open <strong><a href="https://www.deepl.com/your-account/keys">https://www.deepl.com/your-account/keys</a></strong> (Account ▸ <strong>API Keys</strong>) and copy your
+<strong>Authentication Key</strong>.
+<img src="Documentation/Images/deepl-api-keys.png" alt="DeepL API Keys page showing the authentication key" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Paste it into SubVox Pro (Settings ▸ <em>DeepL</em>). SubVox Pro handles the Free vs Pro endpoint
+automatically.</li>
+</ol>
+<blockquote>
+<p>Help: <a href="https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API">https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API</a></p>
+</blockquote>
+</details>
+<details id="google-cloud-translation">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>Google Cloud Translation</strong></summary>
+<p><strong>Used for:</strong> machine translation.</p>
+<ol>
+<li>Open the <strong>Google Cloud Console</strong> at <strong><a href="https://console.cloud.google.com">https://console.cloud.google.com</a></strong> and create (or pick) a
+project. New Google Cloud accounts get <strong>$300 in trial credits (90 days)</strong>, and Cloud Translation
+includes <strong>500,000 free characters/month</strong>. A billing account is required even on the free tier.</li>
+<li>In <strong>APIs &amp; Services ▸ Library</strong>, search <strong>Cloud Translation API</strong> and click <strong>Enable</strong>.</li>
+<li>In <strong>APIs &amp; Services ▸ Credentials</strong>, click <strong>Create credentials ▸ API key</strong>. Copy the key (and
+optionally restrict it to the Cloud Translation API).</li>
+<li>Paste it into SubVox Pro (Settings ▸ <em>Google Translate</em>).</li>
+</ol>
+<blockquote>
+<p>Tip: set a quota/budget alert to avoid surprises once the trial credits run out.</p>
+</blockquote>
+</details>
+<details id="openai">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>OpenAI</strong></summary>
+<p><strong>Used for:</strong> speech-to-text, LLM translation (and word-style propagation across languages) and
+text-to-speech dubbing. One key covers all three.</p>
+<ol>
+<li>Create an account at <strong><a href="https://platform.openai.com">https://platform.openai.com</a></strong> or sign in with an existing OpenAI account.
+<img src="Documentation/Images/openai-platform-sign-in.png" alt="OpenAI API Platform sign-in page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>In your project sidebar, open <strong>API Keys</strong>.
+<img src="Documentation/Images/openai-api-keys-sidebar.png" alt="OpenAI project sidebar with API Keys selected" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Click <strong>Create new secret key</strong>.
+<img src="Documentation/Images/openai-api-keys-page.png" alt="OpenAI API Keys page with Create new secret key button" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Name the key if you want, keep the correct project selected, choose the permissions you need, then
+click <strong>Create secret key</strong>.
+<img src="Documentation/Images/openai-create-secret-key-dialog.png" alt="OpenAI create new secret key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Copy the key immediately. <u>OpenAI shows the full secret only once; after closing this dialog, you
+cannot reveal it again.</u>
+<img src="Documentation/Images/openai-secret-key-created.png" alt="OpenAI generated secret key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Add prepaid credits from <strong><a href="https://platform.openai.com/settings/organization/billing/overview">https://platform.openai.com/settings/organization/billing/overview</a></strong>.
+You can also open the account menu, go to <strong>Organization settings</strong> or <strong>Profile settings</strong>, then
+choose <strong>Billing</strong> in the settings sidebar.<div style="display: flex; gap: 12px; align-items: flex-start; margin: 10px 0 18px;">
+   <img src="Documentation/Images/openai-account-menu.png" alt="OpenAI account menu with Organization settings and Profile settings entries" style="display: block; width: 220px; max-width: 48%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10);">
+   <img src="Documentation/Images/openai-billing-sidebar.png" alt="OpenAI organization sidebar with Billing selected" style="display: block; width: 220px; max-width: 48%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10);">
+</div>
+</li>
+<li>On the <strong>Billing</strong> overview, click <strong>Add to credit balance</strong>. API calls draw from this balance.
+<img src="Documentation/Images/openai-billing-overview.png" alt="OpenAI Billing overview with credit balance and Add to credit balance button" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Enter the amount to add, choose or add a payment method, then click <strong>Continue</strong>. The minimum top-up
+shown in the platform is usually <strong>$5</strong>.
+<img src="Documentation/Images/openai-add-credit-balance.png" alt="OpenAI Add to credit balance dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Paste the secret key into SubVox Pro (Settings ▸ <em>OpenAI</em>). Pick the model in the translation panel.
+For dubbing, pick <strong>OpenAI</strong> as the provider in the <strong>Text-to-Speech</strong> tab, then the model:
+<strong>gpt-4o-mini-tts</strong> (13 voices, follows the voice direction), <strong>tts-1</strong> (fast) or <strong>tts-1-hd</strong> (higher
+quality) — the last two offer 9 voices and ignore the voice direction.
+For transcription, pick <strong>OpenAI</strong> in the <strong>Speech-to-Text</strong> tab, then the model.</li>
+</ol>
+<blockquote>
+<p><strong>Transcription models — read this before picking one.</strong></p>
+<ul>
+<li><strong><code>gpt-transcribe</code></strong> (default), <strong><code>gpt-4o-transcribe</code></strong>, <strong><code>gpt-4o-mini-transcribe</code></strong>: the best transcript
+(spelling, punctuation), but the OpenAI API returns <strong>no word timestamps</strong> for this family. SubVox Pro
+spreads the words over the sentence segments when there are any, over the whole clip otherwise, like
+importing a <code>.txt</code>: the lines are right, their timings are an estimate to nudge on the timeline.</li>
+<li><strong><code>whisper-1</code></strong>: real word-level timings. Its words come back without punctuation, so SubVox Pro
+re-applies the punctuated transcript over the timed words.</li>
+<li>The other providers (AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, local Whisper and Parakeet)
+return punctuated word timings directly: prefer them when timing matters.</li>
+</ul>
+<p>The transcription endpoint caps uploads at <strong>25 MB</strong>.</p>
+</blockquote>
+<blockquote>
+<p>OpenAI's usage policies require you to tell your players that the voices they hear are AI-generated and
+not human — for example in the game's credits or store page. TTS pricing: <a href="https://openai.com/api/pricing">https://openai.com/api/pricing</a></p>
+</blockquote>
+</details>
+<details id="anthropic-claude">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>Anthropic (Claude)</strong></summary>
+<p><strong>Used for:</strong> LLM translation (and word-style propagation).</p>
+<ol>
+<li>Create an account at <strong><a href="https://console.anthropic.com">https://console.anthropic.com</a></strong> or sign in with an existing Anthropic account.
+<img src="Documentation/Images/anthropic-console-sign-in.png" alt="Anthropic Console sign-in page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Buy usage credits before using the API. Anthropic is prepaid; without credits, API requests fail.
+The console offers a low starting amount, usually <strong>5 USD</strong>.
+<img src="Documentation/Images/anthropic-buy-credits.png" alt="Anthropic Console buy usage credits page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>In the Claude Console sidebar, open <strong>API keys</strong>.
+<img src="Documentation/Images/anthropic-api-keys-sidebar.png" alt="Claude Console sidebar with API keys selected" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Click <strong>Create key</strong>.
+<img src="Documentation/Images/anthropic-api-keys-page.png" alt="Claude Console API keys page with create key button" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Choose the workspace, name the key if you want, then click <strong>Add</strong>.
+<img src="Documentation/Images/anthropic-create-api-key-dialog.png" alt="Claude Console create an API key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Copy the generated key immediately. <u>Anthropic says you will no longer be able to consult the
+full key after this screen.</u>
+<img src="Documentation/Images/anthropic-api-key-created.png" alt="Claude Console generated API key screen" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Paste it into SubVox Pro (Settings ▸ <em>Claude</em>).</li>
+</ol>
+</details>
+<details id="google-gemini">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>Google (Gemini)</strong></summary>
+<p><strong>Used for:</strong> LLM translation and text-to-speech dubbing (Gemini voices) — the easiest free option (no
+billing required). One key covers both.</p>
+<ol>
+<li>Go to <strong>Google AI Studio</strong> at <strong><a href="https://aistudio.google.com">https://aistudio.google.com</a></strong> and sign in with a Google account.
+<img src="Documentation/Images/gemini-ai-studio-home.png" alt="Google AI Studio home page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Open <strong>API keys</strong> directly at <strong><a href="https://aistudio.google.com/app/apikey">https://aistudio.google.com/app/apikey</a></strong>, then click
+<strong>Create an API key</strong>.
+<img src="Documentation/Images/gemini-api-keys-page.png" alt="Google AI Studio API keys page with Create an API key button" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Name the key if you want, choose or create a project, then create the key.
+<img src="Documentation/Images/gemini-create-api-key-dialog.png" alt="Google AI Studio create API key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Copy the API key from the details panel.
+<img src="Documentation/Images/gemini-api-key-details.png" alt="Google AI Studio API key details panel" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>The key then appears in the API keys list, where you can copy, inspect usage or configure billing later.
+<img src="Documentation/Images/gemini-api-key-row.png" alt="Google AI Studio API key row" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
+<li>Paste it into SubVox Pro (Settings ▸ <em>Gemini</em>). For dubbing, pick <strong>Gemini</strong> as the provider in the
+<strong>Text-to-Speech</strong> tab: it offers 30 multilingual voices (<em>Kore</em>, <em>Puck</em>, <em>Leda</em>…) and the voice
+direction button. Three models are available: <strong>gemini-3.1-flash-tts-preview</strong> (default, most natural),
+<strong>gemini-2.5-flash-preview-tts</strong> (half the price when billed) and <strong>gemini-2.5-pro-preview-tts</strong> (no free
+tier — it needs billing).</li>
+</ol>
+<blockquote>
+<p>The free tier needs <strong>no billing</strong> but is rate-limited; the limits of each model are shown in AI Studio
+(<strong>Rate limit</strong> page). Text-to-speech has the tightest ones — only a few requests per minute and per day.
+SubVox Pro waits and retries when Google says how long to wait, and stops with a clear message once the
+daily quota is used up. Enabling billing on the key's project lifts these limits; nothing else changes in
+SubVox Pro. On the free tier, Google may use your prompts to improve its products.</p>
+</blockquote>
+</details>
+<details id="deepseek">
+<summary style="cursor: pointer; padding: 8px 0;"><strong>DeepSeek</strong></summary>
+<p><strong>Used for:</strong> low-cost LLM translation (OpenAI-compatible API).</p>
+<ol>
+<li>Create an account at <strong><a href="https://platform.deepseek.com">https://platform.deepseek.com</a></strong> or sign in with an existing DeepSeek account.</li>
+<li>DeepSeek is prepaid: open <strong>Top up</strong> in the platform and add a balance before using the API. Without
+credit, API requests fail.</li>
+<li>Open <strong>API keys</strong> (<strong><a href="https://platform.deepseek.com/api_keys">https://platform.deepseek.com/api_keys</a></strong>) and click <strong>Create new API key</strong>. Give it a
+recognizable name such as <code>SubVoxPro</code>, then copy the key immediately — the full key is shown only once.</li>
+<li>Paste it into SubVox Pro (Settings ▸ <em>DeepSeek</em>). Pick the model in the translation panel.</li>
+</ol>
+<blockquote>
+<p>Pricing: <a href="https://api-docs.deepseek.com/quick_start/pricing">https://api-docs.deepseek.com/quick_start/pricing</a></p>
+</blockquote>
+</details>
+<hr>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          SubVox Pro — © 2026 ExNihilus
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

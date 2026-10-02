@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Fournisseurs de transcription | Documentation SubVox Pro </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Fournisseurs de transcription | Documentation SubVox Pro " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=6167a24fce" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="Sur cette page" name="loc:inThisArticle"/>
+<meta content="{count} résultats pour « {query} »" name="loc:searchResultsCount"/>
+<meta content="Aucun résultat pour « {query} »" name="loc:searchNoResults"/>
+<meta content="Filtrer par titre" name="loc:tocFilter"/>
+<meta content="Suivant" name="loc:nextArticle"/>
+<meta content="Précédent" name="loc:prevArticle"/>
+<meta content="Clair" name="loc:themeLight"/>
+<meta content="Sombre" name="loc:themeDark"/>
+<meta content="Automatique" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=a1330a4078" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="fr">
+  <link rel="alternate" hreflang="en" href="../../manual/providers-transcription.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers-transcription.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Afficher la navigation" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Rechercher" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Rechercher" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Sommaire</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="transcription-providers">Fournisseurs de transcription </h1>
+<details id="assemblyai">
+<summary><strong>AssemblyAI</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription avec timing par mot.</p>
+<ol>
+<li>Créez un compte (e-mail ou SSO) sur <a href="https://www.assemblyai.com/dashboard/signup">https://www.assemblyai.com/dashboard/signup</a>. Sans carte bancaire,
+vous obtenez environ <strong>50 $ de crédits</strong>, soit 330 heures.
+<img alt="Inscription AssemblyAI" src="Documentation/Images/assemblyai-signup.png"/></li>
+<li>Une fois votre e-mail vérifié, ouvrez <strong>Manage ▸ API Keys</strong>.
+<img alt="API Keys dans le menu AssemblyAI" src="Documentation/Images/assemblyai-api-keys-sidebar.png"/></li>
+<li>Copiez la <strong>Default API Key</strong>, ou cliquez sur <strong>Create new API key</strong> pour une clé dédiée.
+<img alt="Page des clés AssemblyAI" src="Documentation/Images/assemblyai-api-keys-page.png"/></li>
+<li>Nommez la nouvelle clé, par exemple <code>SubVoxPro</code>, puis cliquez sur <strong>Create</strong>.
+<img alt="Création d’une clé AssemblyAI" src="Documentation/Images/assemblyai-create-api-key-dialog.png"/></li>
+<li>Copiez la clé depuis sa ligne.
+<img alt="Ligne de clé AssemblyAI" src="Documentation/Images/assemblyai-api-key-row.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ AssemblyAI</strong>.</li>
+</ol>
+<blockquote>
+<p>L’offre gratuite est limitée à deux projets et deux clés. <a href="https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key">Aide officielle</a>.</p>
+</blockquote>
+</details>
+<details id="gladia">
+<summary><strong>Gladia</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription.</p>
+<ol>
+<li>Inscrivez-vous sur <a href="https://app.gladia.io">https://app.gladia.io</a>, par e-mail ou avec Google.
+<img alt="Inscription Gladia" src="Documentation/Images/gladia-signup.png"/></li>
+<li>Ouvrez <strong>API Keys</strong> dans la barre latérale.
+<img alt="API Keys dans Gladia" src="Documentation/Images/gladia-api-keys-sidebar.png"/></li>
+<li>Créez si besoin une clé dédiée, avec un nom facile à reconnaître comme <code>SubVoxPro</code>.
+<img alt="Formulaire de création de clé Gladia" src="Documentation/Images/gladia-create-api-key.png"/>
+Copiez tout de suite sa valeur complète : la liste n’en montre ensuite parfois qu’une partie.
+<img alt="Ligne de clé Gladia" src="Documentation/Images/gladia-example-key.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ Gladia</strong>.</li>
+</ol>
+<blockquote>
+<p>Offre gratuite : <strong>10 h par mois</strong>, 20 appels par heure et 3 en parallèle au maximum. <a href="https://support.gladia.io/article/how-to-get-the-api-key-from-my-account">Aide</a>.</p>
+</blockquote>
+</details>
+<details id="deepgram">
+<summary><strong>Deepgram</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription.</p>
+<ol>
+<li>Créez un compte sur <a href="https://console.deepgram.com/signup">https://console.deepgram.com/signup</a>, sans carte bancaire. Le crédit offert de <strong>200 $</strong>
+expire un an après l’inscription.
+<img alt="Inscription Deepgram" src="Documentation/Images/deepgram-signup.png"/></li>
+<li>Ouvrez <strong>API Keys</strong> dans la console.
+<img alt="Menu API Keys de Deepgram" src="Documentation/Images/deepgram-api-keys-sidebar.png"/></li>
+<li>Cliquez sur <strong>Create a New API Key</strong>.
+<img alt="Bouton de création de clé Deepgram" src="Documentation/Images/deepgram-create-api-key-button.png"/></li>
+<li>Nommez la clé et choisissez sa durée de validité avec <strong>Set expiration</strong> ; SubVox Pro n’impose rien.
+<img alt="Création et expiration d’une clé Deepgram" src="Documentation/Images/deepgram-create-api-key-dialog.png"/></li>
+<li>Copiez le secret et rangez-le en lieu sûr : <strong>Deepgram ne pourra plus l’afficher</strong>.
+<img alt="Secret de la nouvelle clé Deepgram" src="Documentation/Images/deepgram-new-api-key-secret.png"/></li>
+<li>Collez-le dans <strong>Settings ▸ Deepgram</strong>.</li>
+</ol>
+</details>
+<details id="speechmatics">
+<summary><strong>Speechmatics</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription.</p>
+<ol>
+<li>Créez un compte sur <a href="https://portal.speechmatics.com">https://portal.speechmatics.com</a> : <strong>100 $</strong> de crédit offerts une fois, sans carte bancaire.
+<img alt="Inscription Speechmatics" src="Documentation/Images/speechmatics-signup.png"/></li>
+<li>Ouvrez <strong>Manage ▸ API Keys</strong> dans le projet.
+<img alt="Menu des clés Speechmatics" src="Documentation/Images/speechmatics-api-keys-sidebar.png"/></li>
+<li>Cliquez sur <strong>Create new key</strong>.
+<img alt="Bouton de nouvelle clé Speechmatics" src="Documentation/Images/speechmatics-create-key-empty.png"/></li>
+<li>Nommez-la puis cliquez sur <strong>Generate new key</strong>.
+<img alt="Formulaire de clé Speechmatics" src="Documentation/Images/speechmatics-create-api-key-form.png"/></li>
+<li>Copiez la clé avant de fermer la fenêtre : <strong>elle ne sera plus affichée</strong>.
+<img alt="Enregistrement du secret Speechmatics" src="Documentation/Images/speechmatics-save-api-key.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ Speechmatics</strong>.</li>
+</ol>
+<blockquote>
+<p><a href="https://docs.speechmatics.com/get-started/authentication">Documentation d’authentification</a>.</p>
+</blockquote>
+</details>
+<details id="elevenlabs">
+<summary><strong>ElevenLabs</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription Scribe et doublage TTS.</p>
+<ol>
+<li>Inscrivez-vous sur <a href="https://elevenlabs.io">https://elevenlabs.io</a> (e-mail ou SSO), sans carte bancaire. L’offre gratuite donne environ
+10 minutes par mois, pour un usage <strong>non commercial</strong> et avec mention obligatoire. Un jeu publié demande une
+offre payante.
+<img alt="Inscription ElevenLabs" src="Documentation/Images/elevenlabs-signup.png"/></li>
+<li>Ouvrez <strong>Developers</strong>, la section qui regroupe API, journaux, webhooks et variables d’environnement.
+<img alt="Menu Developers d’ElevenLabs" src="Documentation/Images/elevenlabs-developers-sidebar.png"/></li>
+<li>Ouvrez <strong>API Keys</strong> puis <strong>Create Key</strong>.
+<img alt="Onglet API Keys d’ElevenLabs" src="Documentation/Images/elevenlabs-api-keys-tab.png"/></li>
+<li>Nommez la clé. Avec <strong>Restrict Key</strong>, mettez <strong>Speech to Text</strong> et <strong>Text to Speech</strong> sur <strong>Access</strong>.
+<img alt="Création de clé et restrictions ElevenLabs" src="Documentation/Images/elevenlabs-create-api-key-dialog.png"/>
+<img alt="Permission Speech to Text" src="Documentation/Images/elevenlabs-speech-to-text-access.png"/>
+<img alt="Permission Text to Speech" src="Documentation/Images/elevenlabs-text-to-speech-access.png"/></li>
+<li>Copiez la valeur avant de fermer : <strong>la clé complète ne s’affiche qu’une fois</strong>.
+<img alt="Nouvelle clé ElevenLabs" src="Documentation/Images/elevenlabs-api-key-created.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ ElevenLabs</strong>. La même clé sert à la transcription et au doublage.</li>
+</ol>
+<blockquote>
+<p>L’API TTS utilise l’en-tête <code>xi-api-key</code> et <code>POST /v1/text-to-speech/:voice_id</code>.
+<a href="https://elevenlabs.io/docs/api-reference/text-to-speech/convert">Référence</a>.</p>
+</blockquote>
+</details>
+<details id="rev-ai">
+<summary><strong>Rev AI</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription.</p>
+<ol>
+<li>Créez un compte sur <a href="https://www.rev.ai/auth/signup">https://www.rev.ai/auth/signup</a>, sans carte bancaire : <strong>5 h de crédit</strong> sont offertes.
+<img alt="Inscription Rev AI" src="Documentation/Images/revai-signup.png"/></li>
+<li>Ouvrez <strong>Access Token</strong>, dans le menu ou sur <a href="https://www.rev.ai/access_token">https://www.rev.ai/access_token</a>.
+<img alt="Menu Access Token de Rev AI" src="Documentation/Images/revai-access-token-sidebar.png"/></li>
+<li>Cliquez sur <strong>Generate</strong> si vous n’avez pas encore de token (deux au maximum peuvent être actifs).
+<img alt="Page Access Token avant génération" src="Documentation/Images/revai-access-token-empty.png"/></li>
+<li>Copiez tout de suite la valeur complète, <strong>qui ne s’affiche qu’une fois</strong> : la liste n’en garde ensuite qu’un aperçu.
+<img alt="Token Rev AI généré" src="Documentation/Images/revai-access-token-created.png"/></li>
+<li>Collez-le dans <strong>Settings ▸ Rev AI</strong>.</li>
+</ol>
+</details>
+<hr/>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro — © 2026 ExNihilus
+        </div>
+</div>
+</footer>
+</body>
+</html>

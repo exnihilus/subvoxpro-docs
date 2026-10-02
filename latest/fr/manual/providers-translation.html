@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Fournisseurs de traduction | Documentation SubVox Pro </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Fournisseurs de traduction | Documentation SubVox Pro " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=6167a24fce" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="Sur cette page" name="loc:inThisArticle"/>
+<meta content="{count} résultats pour « {query} »" name="loc:searchResultsCount"/>
+<meta content="Aucun résultat pour « {query} »" name="loc:searchNoResults"/>
+<meta content="Filtrer par titre" name="loc:tocFilter"/>
+<meta content="Suivant" name="loc:nextArticle"/>
+<meta content="Précédent" name="loc:prevArticle"/>
+<meta content="Clair" name="loc:themeLight"/>
+<meta content="Sombre" name="loc:themeDark"/>
+<meta content="Automatique" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=a1330a4078" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="fr">
+  <link rel="alternate" hreflang="en" href="../../manual/providers-translation.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers-translation.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Afficher la navigation" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Rechercher" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Rechercher" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Sommaire</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="translation-providers">Fournisseurs de traduction </h1>
+<details id="deepl">
+<summary><strong>DeepL</strong></summary>
+<p><strong>Utilisé pour :</strong> traduction automatique avec choix de formalité.</p>
+<ol>
+<li>Sur <a href="https://www.deepl.com/pro-api">https://www.deepl.com/pro-api</a>, choisissez <strong>Sign up for free</strong> dans <strong>Developer</strong>.
+DeepL vérifie votre e-mail et votre carte bancaire, sans rien prélever pour l’offre Developer, qui comprend
+<strong>1 000 000 de caractères</strong> offerts une fois.
+<img alt="Offre API Developer de DeepL" src="Documentation/Images/deepl-pricing.png"/></li>
+<li>Ouvrez <strong>Account ▸ API Keys</strong>, <a href="https://www.deepl.com/your-account/keys">https://www.deepl.com/your-account/keys</a>, puis copiez <strong>Authentication Key</strong>.
+<img alt="Clé d’authentification API DeepL" src="Documentation/Images/deepl-api-keys.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ DeepL</strong>. SubVox Pro reconnaît seul s’il s’agit d’une clé Free ou Pro.</li>
+</ol>
+<blockquote>
+<p><a href="https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API">Aide</a>.</p>
+</blockquote>
+</details>
+<details id="google-cloud-translation">
+<summary><strong>Google Cloud Translation</strong></summary>
+<p><strong>Utilisé pour :</strong> traduction automatique.</p>
+<ol>
+<li>Créez ou choisissez un projet sur <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>. Les nouveaux comptes reçoivent
+<strong>300 $ d’essai valables 90 jours</strong>, et Translation offre <strong>500 000 caractères par mois</strong>.
+Un compte de facturation est malgré tout obligatoire.</li>
+<li>Dans <strong>APIs &amp; Services ▸ Library</strong>, activez <strong>Cloud Translation API</strong> avec <strong>Enable</strong>.</li>
+<li>Dans <strong>APIs &amp; Services ▸ Credentials</strong>, choisissez <strong>Create credentials ▸ API key</strong>. Copiez la clé et,
+au besoin, limitez-la à Cloud Translation API.</li>
+<li>Collez-la dans <strong>Settings ▸ Google Translate</strong>.</li>
+</ol>
+<blockquote>
+<p>Fixez un quota ou une alerte de budget avant la fin du crédit d’essai.</p>
+</blockquote>
+</details>
+<details id="openai">
+<summary><strong>OpenAI</strong></summary>
+<p><strong>Utilisé pour :</strong> transcription, traduction par modèle de langage, report des styles de mots et doublage.
+Une seule clé sert à tout.</p>
+<ol>
+<li>Créez un compte ou connectez-vous sur <a href="https://platform.openai.com">https://platform.openai.com</a>.
+<img alt="Connexion à la plateforme API OpenAI" src="Documentation/Images/openai-platform-sign-in.png"/></li>
+<li>Ouvrez <strong>API Keys</strong> dans le projet.
+<img alt="Menu API Keys d’OpenAI" src="Documentation/Images/openai-api-keys-sidebar.png"/></li>
+<li>Cliquez sur <strong>Create new secret key</strong>.
+<img alt="Page des clés API OpenAI" src="Documentation/Images/openai-api-keys-page.png"/></li>
+<li>Donnez-lui un nom si vous le souhaitez, vérifiez le projet et les permissions, puis cliquez sur <strong>Create secret key</strong>.
+<img alt="Formulaire de nouvelle clé OpenAI" src="Documentation/Images/openai-create-secret-key-dialog.png"/></li>
+<li>Copiez tout de suite le secret : <strong>OpenAI ne l’affiche qu’une fois</strong>.
+<img alt="Clé secrète OpenAI générée" src="Documentation/Images/openai-secret-key-created.png"/></li>
+<li>Ajoutez des crédits depuis <a href="https://platform.openai.com/settings/organization/billing/overview">https://platform.openai.com/settings/organization/billing/overview</a>.
+Ou passez par le menu du compte, <strong>Organization settings</strong> ou <strong>Profile settings</strong>, puis <strong>Billing</strong>.
+<img alt="Menu de compte OpenAI et réglages" src="Documentation/Images/openai-account-menu.png"/>
+<img alt="Menu Billing d’OpenAI" src="Documentation/Images/openai-billing-sidebar.png"/></li>
+<li>Dans <strong>Billing</strong>, cliquez sur <strong>Add to credit balance</strong> : l’API puise dans ce solde.
+<img alt="Solde et ajout de crédit OpenAI" src="Documentation/Images/openai-billing-overview.png"/></li>
+<li>Choisissez le montant et le moyen de paiement, puis <strong>Continue</strong>. Le minimum est en général de <strong>5 $</strong>.
+<img alt="Ajout de crédit OpenAI" src="Documentation/Images/openai-add-credit-balance.png"/></li>
+<li>Collez la clé dans <strong>Settings ▸ OpenAI</strong> et choisissez le modèle dans le panneau concerné.
+En <strong>Text-to-Speech</strong>, <strong>gpt-4o-mini-tts</strong> propose 13 voix et suit les indications de jeu ; <strong>tts-1</strong> est rapide
+et <strong>tts-1-hd</strong> mise sur la qualité, avec 9 voix chacun et sans indications de jeu.
+En <strong>Speech-to-Text</strong>, choisissez OpenAI, puis le modèle de transcription.</li>
+</ol>
+<blockquote>
+<p><strong>Timings de transcription :</strong></p>
+<ul>
+<li><strong><code>gpt-transcribe</code></strong> (par défaut), <strong><code>gpt-4o-transcribe</code></strong> et <strong><code>gpt-4o-mini-transcribe</code></strong> transcrivent très bien,
+mais <strong>sans timing par mot</strong>. SubVox Pro répartit les mots sur les segments, ou sur tout le clip à défaut.
+Le texte est juste ; les timings sont estimés, et ajustables sur la timeline.</li>
+<li><strong><code>whisper-1</code></strong> donne le vrai timing de chaque mot. Comme les mots arrivent sans ponctuation, SubVox Pro y
+reporte celle de la transcription complète.</li>
+<li>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Whisper local et Parakeet renvoient directement
+des mots ponctués et horodatés : préférez-les quand le timing compte.</li>
+</ul>
+<p>La transcription OpenAI accepte des fichiers de <strong>25 Mo</strong> au maximum.</p>
+</blockquote>
+<blockquote>
+<p>Pour le doublage, les règles d’OpenAI imposent d’indiquer aux joueurs que les voix sont générées par IA, par
+exemple dans les crédits ou sur la page du jeu. <a href="https://openai.com/api/pricing">Tarifs API</a>.</p>
+</blockquote>
+</details>
+<details id="anthropic-claude">
+<summary><strong>Anthropic, Claude</strong></summary>
+<p><strong>Utilisé pour :</strong> traduction par modèle de langage et report des styles de mots.</p>
+<ol>
+<li>Créez un compte ou connectez-vous sur <a href="https://console.anthropic.com">https://console.anthropic.com</a>.
+<img alt="Connexion à la console Anthropic" src="Documentation/Images/anthropic-console-sign-in.png"/></li>
+<li>Achetez des crédits avant toute requête : l’API est prépayée et refuse les appels sans solde.
+Le premier montant proposé est souvent de <strong>5 $</strong>.
+<img alt="Achat de crédits Anthropic" src="Documentation/Images/anthropic-buy-credits.png"/></li>
+<li>Ouvrez <strong>API keys</strong> dans la console Claude.
+<img alt="Menu API keys de Claude" src="Documentation/Images/anthropic-api-keys-sidebar.png"/></li>
+<li>Cliquez sur <strong>Create key</strong>.
+<img alt="Page des clés Claude" src="Documentation/Images/anthropic-api-keys-page.png"/></li>
+<li>Choisissez l’espace de travail, donnez éventuellement un nom, puis cliquez sur <strong>Add</strong>.
+<img alt="Création d’une clé Claude" src="Documentation/Images/anthropic-create-api-key-dialog.png"/></li>
+<li>Copiez la clé tout de suite : <strong>elle ne sera plus affichée en entier</strong>.
+<img alt="Clé Claude générée" src="Documentation/Images/anthropic-api-key-created.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ Claude</strong>.</li>
+</ol>
+</details>
+<details id="google-gemini">
+<summary><strong>Google, Gemini</strong></summary>
+<p><strong>Utilisé pour :</strong> traduction par modèle de langage et doublage. C’est l’option gratuite la plus simple, sans
+compte de facturation, et une seule clé sert aux deux.</p>
+<ol>
+<li>Connectez-vous avec Google sur <a href="https://aistudio.google.com">https://aistudio.google.com</a>.
+<img alt="Accueil Google AI Studio" src="Documentation/Images/gemini-ai-studio-home.png"/></li>
+<li>Ouvrez <strong>API keys</strong>, <a href="https://aistudio.google.com/app/apikey">https://aistudio.google.com/app/apikey</a>, puis <strong>Create an API key</strong>.
+<img alt="Page des clés AI Studio" src="Documentation/Images/gemini-api-keys-page.png"/></li>
+<li>Nommez la clé, choisissez ou créez un projet, puis créez-la.
+<img alt="Création de clé Gemini" src="Documentation/Images/gemini-create-api-key-dialog.png"/></li>
+<li>Copiez-la depuis son panneau de détails.
+<img alt="Détails de la clé Gemini" src="Documentation/Images/gemini-api-key-details.png"/></li>
+<li>Depuis la liste, vous pourrez ensuite recopier la clé, suivre la consommation ou configurer la facturation.
+<img alt="Ligne de clé Gemini" src="Documentation/Images/gemini-api-key-row.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ Gemini</strong>. Pour doubler, choisissez <strong>Gemini</strong> dans <strong>Text-to-Speech</strong> : 30 voix
+multilingues (<em>Kore</em>, <em>Puck</em>, <em>Leda</em>…) qui suivent les indications de jeu.
+Modèles : <strong>gemini-3.1-flash-tts-preview</strong> (par défaut, le plus naturel), <strong>gemini-2.5-flash-preview-tts</strong>
+(moitié moins cher en usage payant) et <strong>gemini-2.5-pro-preview-tts</strong> (sans offre gratuite, facturation requise).</li>
+</ol>
+<blockquote>
+<p>L’offre gratuite ne demande <strong>aucune facturation</strong>, mais limite le débit (voir <strong>Rate limit</strong> dans AI Studio).
+Les limites du doublage sont les plus strictes : quelques requêtes par minute et par jour. SubVox Pro patiente
+et réessaie quand Google indique un délai, et prévient clairement quand le quota du jour est épuisé.
+Activer la facturation relève ces limites, sans rien changer d’autre dans SubVox Pro. Les requêtes gratuites
+peuvent servir à améliorer les produits Google.</p>
+</blockquote>
+</details>
+<details id="deepseek">
+<summary><strong>DeepSeek</strong></summary>
+<p><strong>Utilisé pour :</strong> traduction à bas coût, avec une API compatible OpenAI.</p>
+<ol>
+<li>Créez un compte ou connectez-vous sur <a href="https://platform.deepseek.com">https://platform.deepseek.com</a>.</li>
+<li>Ajoutez du crédit avec <strong>Top up</strong> avant de commencer : sans solde, les requêtes échouent.</li>
+<li>Ouvrez <strong>API keys</strong>, <a href="https://platform.deepseek.com/api_keys">https://platform.deepseek.com/api_keys</a>, puis <strong>Create new API key</strong>. Nommez-la
+(<code>SubVoxPro</code>, par exemple) et copiez-la tout de suite : elle ne s’affiche en entier qu’une fois.</li>
+<li>Collez-la dans <strong>Settings ▸ DeepSeek</strong>, puis choisissez le modèle dans le panneau de traduction.</li>
+</ol>
+<blockquote>
+<p><a href="https://api-docs.deepseek.com/quick_start/pricing">Tarifs</a>.</p>
+</blockquote>
+</details>
+<hr/>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro — © 2026 ExNihilus
+        </div>
+</div>
+</footer>
+</body>
+</html>
