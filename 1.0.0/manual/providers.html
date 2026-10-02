@@ -120,7 +120,7 @@ always confirm the current offer on the provider's own pricing page before relyi
 </tr>
 <tr>
 <td><strong>Dubbing / Text-to-Speech</strong></td>
-<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro local</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox local</a></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro local</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox local</a> · <a href="index.html#orpheus-3b-offline-english-dubbing">Orpheus 3B local</a></td>
 </tr>
 <tr>
 <td><strong>Local alignment</strong></td>
@@ -245,6 +245,11 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 <td><strong>TTS</strong></td>
 <td>Kokoro (local)</td>
 <td>English (US and UK voices).</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Orpheus 3B English Q8 (local)</td>
+<td>English, with eight fixed voices; expressive audio tags.</td>
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
@@ -440,7 +445,7 @@ or a team-managed key, depending on how the provider handles billing and access.
 </tr>
 <tr>
 <td><strong>Dubbing / Text-to-Speech</strong></td>
-<td>ElevenLabs, InWorld AI, Gemini (same AI Studio key as Gemini translation), OpenAI (same key as OpenAI translation), Google Cloud Text-to-Speech, Azure AI Speech — or <strong>Kokoro</strong> (local, English) and <strong>Chatterbox</strong> (local, 21 languages + optional Japanese, voice cloning)</td>
+<td>ElevenLabs, InWorld AI, Gemini (same AI Studio key as Gemini translation), OpenAI (same key as OpenAI translation), Google Cloud Text-to-Speech, Azure AI Speech — or <strong>Kokoro</strong> (local, English) and <strong>Chatterbox</strong> (local, 21 languages + optional Japanese, voice cloning), or <strong>Orpheus 3B</strong> (local English, eight voices and audio tags)</td>
 </tr>
 <tr>
 <td><strong>Forced alignment</strong> (exact dub word timings, text preserved)</td>
@@ -572,6 +577,9 @@ provider's current terms always prevail. The offline engines (Whisper, Parakeet,
 free for commercial use (crediting NVIDIA for Parakeet is good practice) — see <a href="notices.html">Third-Party Notices.md</a>.</p>
 </blockquote>
 <hr>
+<p>Orpheus 3B also works offline without billing. Its weights declare Apache 2.0 and its Llama 3.2 backbone
+retains Meta's community licence and acceptable-use conditions. SNAC is MIT. See the
+<a href="index.html#orpheus-3b-offline-english-dubbing">Orpheus setup guide</a> and <a href="notices.html">Third-Party Notices</a>.</p>
 <h2 id="where-to-paste-your-key-in-subvox-pro">Where to paste your key in SubVox Pro</h2>
 <p>Once you have a key from any provider below, SubVox Pro gives you two equivalent places to store it.
 Keys live only on this machine, in the Unity Editor preferences (<code>EditorPrefs</code>) — never inside the project.</p>
