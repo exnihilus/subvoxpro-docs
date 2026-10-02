@@ -579,6 +579,12 @@ mais ils fonctionnent aussi sans.</p>
 <td>21 langues et japonais avec un ajout de 6 Mo</td>
 </tr>
 <tr>
+<td><strong>Orpheus 3B</strong></td>
+<td>Doublage avec tags expressifs</td>
+<td>4,1 Go</td>
+<td>Anglais, huit voix</td>
+</tr>
+<tr>
 <td><strong>Qwen3</strong></td>
 <td>Timing exact des mots</td>
 <td>1,0 Go</td>
@@ -620,6 +626,30 @@ malais, norvégien, polonais, portugais, russe, espagnol, swahili, suédois et t
 module installé depuis la même fenêtre. <strong>Exaggeration</strong> (dans Dubbing, Batch Processing et Settings) règle
 l’expressivité. Deux générations ne sont jamais tout à fait identiques : si un mot sort mal, régénérez la ligne.
 Toutes les langues ne sont pas aussi fiables : voir la <a href="providers.html#chatterbox-accuracy-by-language">précision par langue</a>.</p>
+<h3 id="orpheus-3b-offline-english-dubbing">Orpheus 3B, doublage anglais local </h3>
+<p>Choisissez <strong>Orpheus 3B</strong> dans Dubbing, puis <strong>Install…</strong>, ou ouvrez <strong>Additional Models</strong> depuis le Hub.
+Le même installateur est accessible dans Settings et Batch Processing. Il télécharge <strong>Orpheus 3B Q8</strong> et
+le décodeur <strong>SNAC 24 kHz</strong>, soit environ <strong>4,1 Go</strong>, dans <code>%LOCALAPPDATA%/SubVoxPro/Orpheus</code> : partagé
+entre projets, hors des builds. Aucun compte, clé API, Python ni serveur externe n'est nécessaire.
+Dans Settings, <strong>Orpheus 3B dubbing ▸ Use GPU</strong> active l'accélération llama.cpp avec repli CPU.
+Le CPU fonctionne mais reste beaucoup plus lent ; une carte graphique avec assez de mémoire libre est conseillée.</p>
+<p>Les huit voix <strong>Tara, Leah, Jess, Leo, Dan, Mia, Zac et Zoe</strong> utilisent le sélecteur habituel, avec préécoute
+locale et affectation aux speakers. Les modes <strong>Each subtitle</strong>, <strong>Per speaker</strong>, <strong>All together</strong>, le batch
+et <strong>Retouch subtitles…</strong> suivent le même workflow : génération, alignement des mots, effets et Undo.
+Les textes longs sont découpés en courts passages pour respecter le contexte du modèle. Cette version
+prend en charge l'anglais uniquement et ne clone pas la voix de l'audio source.</p>
+<p>Les <strong>personnalités</strong> gardent la priorité habituelle : override de ligne, défaut du speaker, puis direction
+de la piste. Orpheus utilise des tags audio : <code>&lt;laugh&gt;</code>, <code>&lt;chuckle&gt;</code>, <code>&lt;sigh&gt;</code>, <code>&lt;cough&gt;</code>, <code>&lt;sniffle&gt;</code>, <code>&lt;groan&gt;</code>,
+<code>&lt;yawn&gt;</code> et <code>&lt;gasp&gt;</code>. Une direction triste devient par exemple <code>&lt;sigh&gt;</code>, la colère <code>&lt;groan&gt;</code>, la joie ou le jeu
+<code>&lt;chuckle&gt;</code>, la peur ou la surprise <code>&lt;gasp&gt;</code>. Ils peuvent ajouter le son vocal correspondant ; ils ne garantissent
+pas une émotion continue. Les tags explicites sont conservés ; les autres consignes, notamment âge, rythme,
+volume et chuchotement, ne sont pas garantis et ne sont jamais récités comme texte.
+Une retouche donne priorité à l'ajustement. <strong>New instructions</strong> ignore la personnalité de base ; les deux modes
+conservent la voix d'origine. <strong>Cancel</strong> interrompt la génération locale des tokens.</p>
+<p>L'installateur propose <strong>Open install folder</strong>, <strong>Re-download model</strong> et <strong>Uninstall</strong> ; Additional Models permet
+aussi de gérer le téléchargement. Les téléchargements interrompus reprennent, avec vérification de taille et SHA-256.
+Voir le <a href="https://github.com/canopyai/Orpheus-TTS">projet officiel</a> et les <a href="notices.html">notices</a> pour Orpheus, SNAC
+et les conditions du modèle Llama sous-jacent.</p>
 <h3 id="qwen3-offline-word-timing">Qwen3, timing local des mots </h3>
 <p>Choisissez <strong>Word timing: Qwen3 local</strong> dans Transcription ou Dubbing, puis cliquez sur <strong>Install…</strong>.
 Chaque <strong>Split</strong> et chaque doublage sont ensuite alignés mot par mot. Qwen3 ne touche jamais au texte : il ne fait

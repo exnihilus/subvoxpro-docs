@@ -358,6 +358,17 @@ utilities are adapted in <code>Editor/Subtitles/World/</code>; the managed FFT a
 It runs only in the editor, without a native WORLD binary or external process.
 The complete upstream copyright notice, conditions and disclaimer are reproduced in
 <code>THIRD-PARTY-SOURCE-LICENSES.txt</code> under WORLD.</p>
+<h2 id="orpheus-3b-local-tts-downloaded-on-request">Orpheus 3B local TTS (downloaded on request)</h2>
+<ul>
+<li>Orpheus model and reference code: Canopy Labs, declared <strong>Apache License 2.0</strong>. <a href="https://github.com/canopyai/Orpheus-TTS">https://github.com/canopyai/Orpheus-TTS</a></li>
+<li>Downloaded Q8 GGUF conversion: lex-au, pinned revision <code>6d58c3d2601e03f2016380cc6069d643d1119501</code>. <a href="https://huggingface.co/lex-au/Orpheus-3b-FT-Q8_0.gguf">https://huggingface.co/lex-au/Orpheus-3b-FT-Q8_0.gguf</a></li>
+<li>Underlying Llama 3.2 backbone: <strong>Llama 3.2 Community License</strong> and Acceptable Use Policy. <a href="https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/LICENSE">https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/LICENSE</a> — Built with Llama.</li>
+<li>SNAC 24 kHz: Hubert Siuzdak, <strong>MIT</strong>. <a href="https://github.com/hubertsiuzdak/snac">https://github.com/hubertsiuzdak/snac</a></li>
+<li>Downloaded ONNX decoder: ONNX Community, <strong>MIT</strong>, revision <code>f317cdff7efb7b2a63148c9e68bbb0320fe629a1</code>. <a href="https://huggingface.co/onnx-community/snac_24khz-ONNX">https://huggingface.co/onnx-community/snac_24khz-ONNX</a></li>
+</ul>
+<p>Model files are downloaded to AppData, shared across projects, and not distributed with the asset or in game builds.
+The provider reuses the bundled llama.cpp and ONNX Runtime libraries covered above. Generated audio remains subject
+to the model licences and acceptable-use conditions; review them before redistribution.</p>
 
 </article>
 
