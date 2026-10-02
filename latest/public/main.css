@@ -595,40 +595,49 @@ details.svx-member-zone > summary.svx-zone-header {
 }
 
 .svx-hero {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(38rem 20rem at 92% -12%, rgba(129, 140, 248, 0.22), transparent 70%),
-    radial-gradient(30rem 16rem at -8% 112%, rgba(255, 209, 77, 0.12), transparent 70%),
-    var(--svx-night);
-  border: 1px solid var(--svx-night-rule);
-  color: #d4d4d8;
-  border-radius: 20px;
   padding: clamp(24px, 5vw, 56px);
   margin: 0.5rem 0 3rem;
 }
 
-.svx-eyebrow {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--svx-yellow);
-  margin: 0 0 0.8rem;
+.svx-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 1rem 3rem;
+  margin-bottom: 2rem;
 }
 
 .svx-hero h1 {
-  color: #fff;
-  font-size: clamp(2.1rem, 4.4vw, 3.2rem);
-  line-height: 1.08;
-  margin: 0 0 0.7rem;
+  color: var(--bs-body-color);
+  font-size: 2.4rem;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.svx-api-label {
+  display: block;
+  color: var(--bs-secondary-color);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-top: 0.5rem;
 }
 
 .svx-hero .svx-lead {
-  color: #a1a1aa;
-  font-size: 1.15rem;
+  color: var(--bs-secondary-color);
+  font-size: 1.05rem;
   max-width: 54ch;
-  margin: 0 0 2rem;
+  margin: 0;
+}
+
+@media (max-width: 767.98px) {
+  .svx-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .svx-hero h1 {
+    font-size: 2rem;
+  }
 }
 
 .svx-demo {
