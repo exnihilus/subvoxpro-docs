@@ -9,7 +9,7 @@
 
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css?v=6167a24fce">
+      <link rel="stylesheet" href="../public/main.css?v=0990a180e6">
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
 
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../public/docfx.min.js?v=a1330a4078"></script>
+      <script type="module" src="./../public/docfx.min.js?v=0990a180e6"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'dark'
@@ -91,8 +91,8 @@
         <article data-uid="">
 <h1 id="translation-providers">Translation providers</h1>
 
-<details id="deepl">
-<summary style="cursor: pointer; padding: 8px 0;"><strong>DeepL</strong></summary>
+<details id="deepl" open>
+<summary style="cursor: pointer; padding: 8px 0;"><h2 id="deepl-setup" class="svx-provider-title"><strong>DeepL</strong></h2></summary>
 <p><strong>Used for:</strong> high-quality machine translation (supports formality).</p>
 <ol>
 <li>Sign up for the API at <strong><a href="https://www.deepl.com/pro-api">https://www.deepl.com/pro-api</a></strong>. In the <strong>Developer</strong> plan card, choose
@@ -110,8 +110,8 @@ automatically.</li>
 <p>Help: <a href="https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API">https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API</a></p>
 </blockquote>
 </details>
-<details id="google-cloud-translation">
-<summary style="cursor: pointer; padding: 8px 0;"><strong>Google Cloud Translation</strong></summary>
+<details id="google-cloud-translation" open>
+<summary style="cursor: pointer; padding: 8px 0;"><h2 id="google-cloud-translation-setup" class="svx-provider-title"><strong>Google Cloud Translation</strong></h2></summary>
 <p><strong>Used for:</strong> machine translation.</p>
 <ol>
 <li>Open the <strong>Google Cloud Console</strong> at <strong><a href="https://console.cloud.google.com">https://console.cloud.google.com</a></strong> and create (or pick) a
@@ -126,8 +126,8 @@ optionally restrict it to the Cloud Translation API).</li>
 <p>Tip: set a quota/budget alert to avoid surprises once the trial credits run out.</p>
 </blockquote>
 </details>
-<details id="openai">
-<summary style="cursor: pointer; padding: 8px 0;"><strong>OpenAI</strong></summary>
+<details id="openai" open>
+<summary style="cursor: pointer; padding: 8px 0;"><h2 id="openai-setup" class="svx-provider-title"><strong>OpenAI</strong></h2></summary>
 <p><strong>Used for:</strong> speech-to-text, LLM translation (and word-style propagation across languages) and
 text-to-speech dubbing. One key covers all three.</p>
 <ol>
@@ -180,8 +180,8 @@ return punctuated word timings directly: prefer them when timing matters.</li>
 not human — for example in the game's credits or store page. TTS pricing: <a href="https://openai.com/api/pricing">https://openai.com/api/pricing</a></p>
 </blockquote>
 </details>
-<details id="anthropic-claude">
-<summary style="cursor: pointer; padding: 8px 0;"><strong>Anthropic (Claude)</strong></summary>
+<details id="anthropic-claude" open>
+<summary style="cursor: pointer; padding: 8px 0;"><h2 id="anthropic-claude-setup" class="svx-provider-title"><strong>Anthropic (Claude)</strong></h2></summary>
 <p><strong>Used for:</strong> LLM translation (and word-style propagation).</p>
 <ol>
 <li>Create an account at <strong><a href="https://console.anthropic.com">https://console.anthropic.com</a></strong> or sign in with an existing Anthropic account.
@@ -201,8 +201,8 @@ full key after this screen.</u>
 <li>Paste it into SubVox Pro (Settings ▸ <em>Claude</em>).</li>
 </ol>
 </details>
-<details id="google-gemini">
-<summary style="cursor: pointer; padding: 8px 0;"><strong>Google (Gemini)</strong></summary>
+<details id="google-gemini" open>
+<summary style="cursor: pointer; padding: 8px 0;"><h2 id="google-gemini-setup" class="svx-provider-title"><strong>Google (Gemini)</strong></h2></summary>
 <p><strong>Used for:</strong> LLM translation and text-to-speech dubbing (Gemini voices) — the easiest free option (no
 billing required). One key covers both.</p>
 <ol>
@@ -231,8 +231,8 @@ daily quota is used up. Enabling billing on the key's project lifts these limits
 SubVox Pro. On the free tier, Google may use your prompts to improve its products.</p>
 </blockquote>
 </details>
-<details id="deepseek">
-<summary style="cursor: pointer; padding: 8px 0;"><strong>DeepSeek</strong></summary>
+<details id="deepseek" open>
+<summary style="cursor: pointer; padding: 8px 0;"><h2 id="deepseek-setup" class="svx-provider-title"><strong>DeepSeek</strong></h2></summary>
 <p><strong>Used for:</strong> low-cost LLM translation (OpenAI-compatible API).</p>
 <ol>
 <li>Create an account at <strong><a href="https://platform.deepseek.com">https://platform.deepseek.com</a></strong> or sign in with an existing DeepSeek account.</li>

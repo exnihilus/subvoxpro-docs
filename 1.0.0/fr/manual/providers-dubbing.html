@@ -8,7 +8,7 @@
 <meta content="Doublage par synthèse vocale | Documentation SubVox Pro " name="title"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
-<link href="../public/main.css?v=6167a24fce" rel="stylesheet"/>
+<link href="../public/main.css?v=0990a180e6" rel="stylesheet"/>
 <meta content="../toc.html" name="docfx:navrel"/>
 <meta content="toc.html" name="docfx:tocrel"/>
 <meta content="../" name="docfx:rel"/>
@@ -24,7 +24,7 @@
 <meta content="Change theme" name="loc:changeTheme"/>
 <meta content="Copy" name="loc:copy"/>
 <meta content="Download PDF" name="loc:downloadPdf"/>
-<script src="./../public/docfx.min.js?v=a1330a4078" type="module"></script>
+<script src="./../public/docfx.min.js?v=0990a180e6" type="module"></script>
 <script>
         const theme = localStorage.getItem('theme') || 'dark'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
@@ -82,8 +82,8 @@
 l’accès en écriture à <strong>Voices</strong>, pour créer, retrouver et supprimer les voix clonées.
 Le doublage Gemini utilise la clé <a href="providers-translation.html#google-gemini">Gemini</a>, sans OAuth ni facturation, contrairement aux voix
 Gemini de Google Cloud décrites plus bas. Le doublage OpenAI utilise la clé <a href="providers-translation.html#openai">OpenAI</a>.</p>
-<details id="inworld-ai">
-<summary><strong>InWorld AI</strong></summary>
+<details id="inworld-ai" open="">
+<summary><h2 class="svx-provider-title" id="inworld-ai-setup"><strong>InWorld AI</strong></h2></summary>
 <p><strong>Utilisé pour :</strong> doublage des pistes traduites.</p>
 <ol>
 <li>Créez un compte sur <a href="https://studio.inworld.ai">https://studio.inworld.ai</a>.
@@ -106,8 +106,8 @@ La clé reste ensuite copiable depuis la liste.
 permet d’écouter les voix. <a href="https://docs.inworld.ai/docs/tts-api/getting-started/">Premiers pas</a>.</p>
 </blockquote>
 </details>
-<details id="google-cloud-tts">
-<summary><strong>Google Cloud Text-to-Speech</strong></summary>
+<details id="google-cloud-tts" open="">
+<summary><h2 class="svx-provider-title" id="google-cloud-tts-setup"><strong>Google Cloud Text-to-Speech</strong></h2></summary>
 <p><strong>Utilisé pour :</strong> doublage des pistes traduites. Une seule connexion donne accès à deux familles de voix : les
 voix <strong>classiques</strong> (Standard, WaveNet, Neural2, Chirp/Chirp3-HD), via Cloud Text-to-Speech API, et les voix
 <strong>Gemini</strong> (<em>Leda</em>, <em>Achird</em>, <em>Aoede</em>…), multilingues et pilotables par une indication libre, via <strong>Vertex AI</strong>.</p>
@@ -140,8 +140,8 @@ multilingues. Le bouton bulle <strong>voice direction</strong> devient alors act
 alerte de budget. <a href="https://cloud.google.com/text-to-speech/pricing">Tarifs</a>.</p>
 </blockquote>
 </details>
-<details id="azure">
-<summary><strong>Azure AI Speech</strong></summary>
+<details id="azure" open="">
+<summary><h2 class="svx-provider-title" id="azure-setup"><strong>Azure AI Speech</strong></h2></summary>
 <p><strong>Utilisé pour :</strong> doublage avec des voix neuronales multilingues. Fonctionne avec une <strong>clé d’abonnement et une
 région</strong>, sans OAuth.</p>
 <ol>
