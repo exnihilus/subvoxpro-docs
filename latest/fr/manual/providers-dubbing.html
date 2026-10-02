@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<title>Doublage par synthèse vocale | Documentation SubVox Pro </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Doublage par synthèse vocale | Documentation SubVox Pro " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=6167a24fce" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="Sur cette page" name="loc:inThisArticle"/>
+<meta content="{count} résultats pour « {query} »" name="loc:searchResultsCount"/>
+<meta content="Aucun résultat pour « {query} »" name="loc:searchNoResults"/>
+<meta content="Filtrer par titre" name="loc:tocFilter"/>
+<meta content="Suivant" name="loc:nextArticle"/>
+<meta content="Précédent" name="loc:prevArticle"/>
+<meta content="Clair" name="loc:themeLight"/>
+<meta content="Sombre" name="loc:themeDark"/>
+<meta content="Automatique" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=a1330a4078" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="fr">
+  <link rel="alternate" hreflang="en" href="../../manual/providers-dubbing.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers-dubbing.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Afficher la navigation" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Rechercher" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Rechercher" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Sommaire</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="dubbing--text-to-speech">Doublage par synthèse vocale </h1>
+<p>Le doublage ElevenLabs utilise la même clé que la transcription ; une clé restreinte doit avoir
+<strong>Text to Speech: Access</strong>. Le clonage ElevenLabs (Instant Voice Cloning, sur une offre payante) demande en plus
+l’accès en écriture à <strong>Voices</strong>, pour créer, retrouver et supprimer les voix clonées.
+Le doublage Gemini utilise la clé <a href="providers-translation.html#google-gemini">Gemini</a>, sans OAuth ni facturation, contrairement aux voix
+Gemini de Google Cloud décrites plus bas. Le doublage OpenAI utilise la clé <a href="providers-translation.html#openai">OpenAI</a>.</p>
+<details id="inworld-ai">
+<summary><strong>InWorld AI</strong></summary>
+<p><strong>Utilisé pour :</strong> doublage des pistes traduites.</p>
+<ol>
+<li>Créez un compte sur <a href="https://studio.inworld.ai">https://studio.inworld.ai</a>.
+<img alt="Inscription Inworld Studio" src="Documentation/Images/inworld-signup.png"/></li>
+<li>Ouvrez <strong>API Keys</strong> dans votre espace de travail.
+<img alt="Menu API Keys d’Inworld" src="Documentation/Images/inworld-api-keys-sidebar.png"/></li>
+<li>Cliquez sur <strong>Generate new key</strong>.
+<img alt="Page des clés Inworld" src="Documentation/Images/inworld-api-keys-page.png"/></li>
+<li>Donnez-lui un nom facile à reconnaître. Choisissez <strong>Standard</strong> (sauf besoin particulier d’une clé
+realtime-only) et gardez les permissions nécessaires au doublage.
+<img alt="Génération de clé Inworld" src="Documentation/Images/inworld-generate-api-key-dialog.png"/></li>
+<li>Copiez <strong>Basic (Base64)</strong>.
+<img alt="Valeur Basic Base64 d’Inworld" src="Documentation/Images/inworld-api-key-basic-value.png"/>
+La clé reste ensuite copiable depuis la liste.
+<img alt="Ligne de clé Inworld" src="Documentation/Images/inworld-api-key-row.png"/></li>
+<li>Collez-la dans <strong>Settings ▸ InWorld</strong>.</li>
+</ol>
+<blockquote>
+<p>Offre gratuite : environ 70 minutes de doublage, une seule fois, avec licence commerciale. <strong>TTS Playground</strong>
+permet d’écouter les voix. <a href="https://docs.inworld.ai/docs/tts-api/getting-started/">Premiers pas</a>.</p>
+</blockquote>
+</details>
+<details id="google-cloud-tts">
+<summary><strong>Google Cloud Text-to-Speech</strong></summary>
+<p><strong>Utilisé pour :</strong> doublage des pistes traduites. Une seule connexion donne accès à deux familles de voix : les
+voix <strong>classiques</strong> (Standard, WaveNet, Neural2, Chirp/Chirp3-HD), via Cloud Text-to-Speech API, et les voix
+<strong>Gemini</strong> (<em>Leda</em>, <em>Achird</em>, <em>Aoede</em>…), multilingues et pilotables par une indication libre, via <strong>Vertex AI</strong>.</p>
+<p>Ce fournisseur passe par <strong>OAuth</strong>, et non par une clé API : Vertex AI exige la permission
+<code>aiplatform.endpoints.predict</code>, qu’une clé API ne porte pas, alors que le compte Google connecté l’a s’il possède
+ou modifie le projet.</p>
+<ol>
+<li>Créez ou choisissez un projet sur <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>. Les nouveaux comptes reçoivent <strong>300 $
+d’essai valables 90 jours</strong>. Un compte de facturation est malgré tout obligatoire.</li>
+<li>Dans <strong>APIs &amp; Services ▸ Library</strong>, activez <strong>Cloud Text-to-Speech API</strong> et, pour Gemini, <strong>Vertex AI API</strong>
+(<code>aiplatform.googleapis.com</code>), <strong>et non</strong> l’ancien AI Platform (<code>ml.googleapis.com</code>).
+Vertex AI n’est pas nécessaire si vous n’utilisez que les voix classiques.</li>
+<li>Dans <strong>OAuth consent screen</strong>, choisissez <strong>External</strong> pour <strong>User type / Audience</strong> et ajoutez votre compte
+aux <strong>Test users</strong>. Avec <strong>Internal</strong>, les comptes Gmail personnels sont refusés (<code>403: org_internal</code>).</li>
+<li>Dans <strong>Credentials ▸ Create credentials ▸ OAuth client ID</strong>, choisissez <strong>Desktop app</strong> et copiez
+<strong>Client ID</strong> et <strong>Client secret</strong>. Le type Desktop autorise la connexion locale <code>http://127.0.0.1</code>,
+comme pour Google Sheets.</li>
+<li>Dans <strong>Text-to-Speech</strong>, choisissez <strong>Google Cloud</strong>, collez ces deux valeurs, puis <strong>Connect…</strong>.
+Connectez-vous dans le navigateur. L’avertissement « application non vérifiée » est normal en mode Testing :
+choisissez <strong>Continue</strong>. Le projet utilisé pour le quota et la facturation est déduit du Client ID.
+Les identifiants et le refresh token restent dans les préférences de cet ordinateur.</li>
+</ol>
+<p>Choisissez ensuite une voix. Les voix classiques s’affichent sous la forme <code>Tier Leaf (locale)</code>, par exemple
+<em>Neural2 A (fr-FR)</em> ; les voix Gemini sous la forme <code>Name · Gemini</code>, sans filtre de langue puisqu’elles sont
+multilingues. Le bouton bulle <strong>voice direction</strong> devient alors actif : décrivez le ton voulu, par exemple
+<em>really sad, close to mental breakdown</em>. Cette indication accompagne chaque ligne.</p>
+<blockquote>
+<p>Les voix classiques puisent dans le quota mensuel de Cloud TTS (environ 1 M de caractères en Neural2/WaveNet et
+4 M en Standard). Les voix <strong>Gemini et Chirp</strong> sont facturées via <strong>Vertex AI</strong>, à un autre tarif : fixez une
+alerte de budget. <a href="https://cloud.google.com/text-to-speech/pricing">Tarifs</a>.</p>
+</blockquote>
+</details>
+<details id="azure">
+<summary><strong>Azure AI Speech</strong></summary>
+<p><strong>Utilisé pour :</strong> doublage avec des voix neuronales multilingues. Fonctionne avec une <strong>clé d’abonnement et une
+région</strong>, sans OAuth.</p>
+<ol>
+<li><p>Créez un compte sur <a href="https://azure.microsoft.com/free">https://azure.microsoft.com/free</a>. Une carte bancaire sert à vérifier votre identité, mais
+l’offre <strong>F0</strong> plafonne l’usage au lieu de le facturer : rien n’est prélevé.</p>
+</li>
+<li><p>Dans <a href="https://portal.azure.com">https://portal.azure.com</a>, cliquez sur <strong>Create a resource</strong>, recherchez <strong>Speech</strong> et choisissez
+la tuile <strong>Speech</strong> publiée par <strong>Microsoft</strong> (bouton <strong>Create</strong>, et non une offre Marketplace <strong>Subscribe</strong>).
+Renseignez l’abonnement, le groupe de ressources, la <strong>Region</strong>, le nom et <strong>Pricing tier F0 (free)</strong>, puis
+<strong>Review + create</strong>. Notez la région.</p>
+<p><a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices">Lien direct vers la ressource Speech</a>.</p>
+</li>
+<li><p>Une fois la ressource déployée, ouvrez <strong>Keys and Endpoint</strong>, copiez <strong>KEY 1</strong> et notez <strong>Location/Region</strong>
+(<code>westeurope</code>, par exemple).</p>
+</li>
+<li><p>Collez la clé dans <strong>Settings ▸ Azure Speech</strong>. Dans <strong>Text-to-Speech</strong>, choisissez <strong>Azure</strong> et la <strong>même région</strong>.</p>
+</li>
+</ol>
+<blockquote>
+<p>La clé et la région doivent venir de la même ressource, sinon Azure répond <code>401</code>.
+Indiquez le code court (<code>westeurope</code>, <code>eastus</code>), pas le nom affiché comme « West Europe ».</p>
+</blockquote>
+<blockquote>
+<p><strong>F0</strong> : environ 0,5 M de caractères de voix neuronales par mois, pour l’évaluation uniquement. Pour exploiter
+l’audio commercialement, il faut une ressource <strong>S0 payante</strong> avant de doubler un jeu publié.
+<a href="https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/">Tarifs</a>.</p>
+</blockquote>
+</details>
+<hr/>
+<h2 id="after-pasting-a-key">Après l’enregistrement d’une clé </h2>
+<p>Le panneau affiche <strong>API Ready</strong> dès qu’une clé est enregistrée. Si un appel échoue, vérifiez que la clé a été
+copiée en entier, qu’il reste du crédit ou du quota sur le compte, et que votre machine a accès au réseau.
+<strong>Clear API Keys</strong>, dans <strong>Tools ▸ SubVox Pro ▸ Settings</strong>, efface toutes les clés enregistrées sur cet ordinateur.</p>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro — © 2026 ExNihilus
+        </div>
+</div>
+</footer>
+</body>
+</html>

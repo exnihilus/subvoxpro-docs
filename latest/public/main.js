@@ -402,6 +402,26 @@ export default {
     { icon: "github", href: "https://github.com/exnihilus/subvoxpro-docs", title: "GitHub" }
   ],
   start: () => {
+    const providerArticles = document.querySelector("[data-svx-provider-articles]");
+    if (providerArticles) {
+      const redirect = () => {
+        const article = JSON.parse(providerArticles.dataset.svxProviderArticles)[decodeURIComponent(location.hash.slice(1))];
+        if (article) {
+          location.replace(article.replace(/\.md$/, ".html") + location.hash);
+        }
+      };
+      addEventListener("hashchange", redirect);
+      redirect();
+    }
+    if (location.pathname.includes("/manual/providers-")) {
+      const reveal = () => {
+        if (revealMember(location.hash.slice(1))) {
+          document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
+        }
+      };
+      addEventListener("hashchange", reveal);
+      reveal();
+    }
     document.querySelector("header")?.setAttribute("data-bs-theme", "dark");
     startCodeThemes();
     startLanguagePicker();
