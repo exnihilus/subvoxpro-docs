@@ -8,7 +8,7 @@
 <meta content="Guide | Documentation SubVox Pro " name="title"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
-<link href="../public/main.css?v=34433ca566" rel="stylesheet"/>
+<link href="../public/main.css?v=0990a180e6" rel="stylesheet"/>
 <meta content="../toc.html" name="docfx:navrel"/>
 <meta content="toc.html" name="docfx:tocrel"/>
 <meta content="../" name="docfx:rel"/>
@@ -24,7 +24,7 @@
 <meta content="Change theme" name="loc:changeTheme"/>
 <meta content="Copy" name="loc:copy"/>
 <meta content="Download PDF" name="loc:downloadPdf"/>
-<script src="./../public/docfx.min.js?v=a1330a4078" type="module"></script>
+<script src="./../public/docfx.min.js?v=0990a180e6" type="module"></script>
 <script>
         const theme = localStorage.getItem('theme') || 'dark'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
@@ -229,8 +229,8 @@ hors connexion. <strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> co
 et langues.</p>
 <p><img alt="Comparaison des fournisseurs, onglet Transcription" src="Documentation/Images/subvoxpro-provider-comparison.png"/></p>
 <blockquote>
-<p>Avec OpenAI, choisissez <strong>whisper-1</strong> si le timing compte. Les autres modèles OpenAI donnent un très bon
-texte, mais sans timing par mot : les mots sont alors répartis sur l’audio par estimation.</p>
+<p>OpenAI <strong>gpt-transcribe</strong> renvoie du texte sans timing par mot ; les timings sont estimés sur le clip.
+Utilisez l’alignement local ou un fournisseur avec horodatage des mots lorsque le timing compte.</p>
 </blockquote>
 <p>La transcription porte sur la piste choisie dans le sélecteur AUDIO, ce qui permet aussi de transcrire un doublage.</p>
 <hr/>

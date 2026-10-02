@@ -5,17 +5,17 @@
       <title>Translation providers | SubVox Pro Documentation </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Translation providers | SubVox Pro Documentation ">
-
-
+      
+      
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css?v=0990a180e6">
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
-
+      
       <meta name="docfx:rel" content="../">
-
-
+      
+      
       <meta name="docfx:docurl" content="https://github.com/exnihilus/subvoxpro-docs/blob/main/Tools/Docs/ApiReference/manual/providers-translation.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
@@ -157,23 +157,23 @@ shown in the platform is usually <strong>$5</strong>.
 <img src="Documentation/Images/openai-add-credit-balance.png" alt="OpenAI Add to credit balance dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"></li>
 <li>Paste the secret key into SubVox Pro (Settings ▸ <em>OpenAI</em>). Pick the model in the translation panel.
 For dubbing, pick <strong>OpenAI</strong> as the provider in the <strong>Text-to-Speech</strong> tab, then the model:
-<strong>gpt-4o-mini-tts</strong> (13 voices, follows the voice direction), <strong>tts-1</strong> (fast) or <strong>tts-1-hd</strong> (higher
-quality) — the last two offer 9 voices and ignore the voice direction.
+<strong>gpt-realtime-2.1-mini</strong> (10 voices, follows voice direction), through the Realtime API.
+Existing model selections migrate automatically. The retired voices <strong>fable</strong>, <strong>nova</strong> and <strong>onyx</strong>
+need a new voice selection. Realtime reads the script under an exact-reading instruction; verify generated dialogue.
+Realtime is billed by text/audio tokens, so the batch cost estimate shows an unknown TTS price.
 For transcription, pick <strong>OpenAI</strong> in the <strong>Speech-to-Text</strong> tab, then the model.</li>
 </ol>
 <blockquote>
 <p><strong>Transcription models — read this before picking one.</strong></p>
 <ul>
-<li><strong><code>gpt-transcribe</code></strong> (default), <strong><code>gpt-4o-transcribe</code></strong>, <strong><code>gpt-4o-mini-transcribe</code></strong>: the best transcript
-(spelling, punctuation), but the OpenAI API returns <strong>no word timestamps</strong> for this family. SubVox Pro
-spreads the words over the sentence segments when there are any, over the whole clip otherwise, like
-importing a <code>.txt</code>: the lines are right, their timings are an estimate to nudge on the timeline.</li>
-<li><strong><code>whisper-1</code></strong>: real word-level timings. Its words come back without punctuation, so SubVox Pro
-re-applies the punctuated transcript over the timed words.</li>
+<li><strong><code>gpt-transcribe</code></strong>: the current model for recorded audio. The API returns text without word timestamps;
+SubVox Pro estimates timings over the clip. Use local alignment or a provider with word timestamps when timing matters.</li>
+<li>Saved selections of <strong><code>whisper-1</code></strong>, <strong><code>gpt-4o-transcribe</code></strong> and <strong><code>gpt-4o-mini-transcribe</code></strong> migrate to
+<code>gpt-transcribe</code>; this removes the word timestamps previously supplied by <code>whisper-1</code>.</li>
 <li>The other providers (AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, local Whisper and Parakeet)
 return punctuated word timings directly: prefer them when timing matters.</li>
 </ul>
-<p>The transcription endpoint caps uploads at <strong>25 MB</strong>.</p>
+<p>The transcription endpoint caps uploads at <strong>25 MB</strong>. See <a href="https://developers.openai.com/api/docs/deprecations">OpenAI deprecations</a>.</p>
 </blockquote>
 <blockquote>
 <p>OpenAI's usage policies require you to tell your players that the voices they hear are AI-generated and

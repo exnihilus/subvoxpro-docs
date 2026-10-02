@@ -133,22 +133,24 @@ Ou passez par le menu du compte, <strong>Organization settings</strong> ou <stro
 <li>Choisissez le montant et le moyen de paiement, puis <strong>Continue</strong>. Le minimum est en général de <strong>5 $</strong>.
 <img alt="Ajout de crédit OpenAI" src="Documentation/Images/openai-add-credit-balance.png"/></li>
 <li>Collez la clé dans <strong>Settings ▸ OpenAI</strong> et choisissez le modèle dans le panneau concerné.
-En <strong>Text-to-Speech</strong>, <strong>gpt-4o-mini-tts</strong> propose 13 voix et suit les indications de jeu ; <strong>tts-1</strong> est rapide
-et <strong>tts-1-hd</strong> mise sur la qualité, avec 9 voix chacun et sans indications de jeu.
+En <strong>Text-to-Speech</strong>, <strong>gpt-realtime-2.1-mini</strong> propose 10 voix et suit les indications de jeu via Realtime.
+Les anciens choix de modèles migrent automatiquement. Les voix <strong>fable</strong>, <strong>nova</strong> et <strong>onyx</strong> exigent un nouveau choix.
+Realtime reçoit une consigne de lecture exacte du texte : vérifiez les dialogues générés.
+La facturation utilise les tokens texte/audio ; le batch indique donc un prix TTS inconnu.
 En <strong>Speech-to-Text</strong>, choisissez OpenAI, puis le modèle de transcription.</li>
 </ol>
 <blockquote>
 <p><strong>Timings de transcription :</strong></p>
 <ul>
-<li><strong><code>gpt-transcribe</code></strong> (par défaut), <strong><code>gpt-4o-transcribe</code></strong> et <strong><code>gpt-4o-mini-transcribe</code></strong> transcrivent très bien,
-mais <strong>sans timing par mot</strong>. SubVox Pro répartit les mots sur les segments, ou sur tout le clip à défaut.
-Le texte est juste ; les timings sont estimés, et ajustables sur la timeline.</li>
-<li><strong><code>whisper-1</code></strong> donne le vrai timing de chaque mot. Comme les mots arrivent sans ponctuation, SubVox Pro y
-reporte celle de la transcription complète.</li>
+<li><strong><code>gpt-transcribe</code></strong> est le modèle actuel pour les enregistrements, <strong>sans timing par mot</strong>.
+SubVox Pro répartit les mots sur le clip par estimation. Utilisez l’alignement local ou un fournisseur
+avec horodatage des mots lorsque le timing compte.</li>
+<li>Les choix enregistrés <strong><code>whisper-1</code></strong>, <strong><code>gpt-4o-transcribe</code></strong> et <strong><code>gpt-4o-mini-transcribe</code></strong> migrent vers
+<code>gpt-transcribe</code> ; le timing par mot fourni auparavant par <code>whisper-1</code> disparaît.</li>
 <li>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Whisper local et Parakeet renvoient directement
 des mots ponctués et horodatés : préférez-les quand le timing compte.</li>
 </ul>
-<p>La transcription OpenAI accepte des fichiers de <strong>25 Mo</strong> au maximum.</p>
+<p>La transcription OpenAI accepte des fichiers de <strong>25 Mo</strong> au maximum. <a href="https://developers.openai.com/api/docs/deprecations">Dépréciations OpenAI</a>.</p>
 </blockquote>
 <blockquote>
 <p>Pour le doublage, les règles d’OpenAI imposent d’indiquer aux joueurs que les voix sont générées par IA, par
