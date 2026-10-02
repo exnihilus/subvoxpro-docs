@@ -594,6 +594,12 @@ details.svx-member-zone > summary.svx-zone-header {
   margin: -0.1rem 0 0.45rem;
 }
 
+.svx-provider-title {
+  display: inline;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
 .svx-hero {
   padding: clamp(24px, 5vw, 56px) 0;
   margin: 0.5rem 0 3rem;

@@ -9,7 +9,7 @@
 
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css?v=6167a24fce">
+      <link rel="stylesheet" href="../public/main.css?v=0990a180e6">
       <meta name="docfx:navrel" content="../toc.html">
       <meta name="docfx:tocrel" content="toc.html">
 
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../public/docfx.min.js?v=a1330a4078"></script>
+      <script type="module" src="./../public/docfx.min.js?v=0990a180e6"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'dark'
@@ -95,8 +95,8 @@
 translation (see <a href="providers-translation.html#google-gemini">Google (Gemini)</a>): no OAuth and no billing account, unlike the Gemini voices of
 Google Cloud Text-to-Speech below. <strong>OpenAI</strong> TTS uses the same <strong>OpenAI</strong> key as translation (see
 <a href="providers-translation.html#openai">OpenAI</a>). The dedicated InWorld setup is below.</p>
-<details id="inworld-ai">
-<summary style="cursor: pointer; padding: 8px 0;"><strong>InWorld AI</strong></summary>
+<details id="inworld-ai" open>
+<summary style="cursor: pointer; padding: 8px 0;"><h2 id="inworld-ai-setup" class="svx-provider-title"><strong>InWorld AI</strong></h2></summary>
 <p><strong>Used for:</strong> generating dubbed audio (TTS) for a translated track.</p>
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Go to <strong>Inworld Studio</strong> (<strong><a href="https://studio.inworld.ai">https://studio.inworld.ai</a></strong>) and create an account.</p>
 <img src="Documentation/Images/inworld-signup.png" alt="Inworld Portal log in / sign up page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
@@ -117,8 +117,8 @@ You can audition voices first in the <strong>TTS Playground</strong>. Getting-st
 <a href="https://docs.inworld.ai/docs/tts-api/getting-started/">https://docs.inworld.ai/docs/tts-api/getting-started/</a></p>
 </blockquote>
 </details>
-<details id="google-cloud-tts">
-<summary style="cursor: pointer; padding: 8px 0;"><strong>Google Cloud Text-to-Speech</strong></summary>
+<details id="google-cloud-tts" open>
+<summary style="cursor: pointer; padding: 8px 0;"><h2 id="google-cloud-tts-setup" class="svx-provider-title"><strong>Google Cloud Text-to-Speech</strong></h2></summary>
 <p><strong>Used for:</strong> generating dubbed audio (TTS) for a translated track. Two voice families share one
 connection: the <strong>classic</strong> voices (Standard, WaveNet, Neural2, Chirp/Chirp3-HD) on the Cloud
 Text-to-Speech API, and the <strong>Gemini</strong> voices (prebuilt names like <em>Leda</em>, <em>Achird</em>, <em>Aoede</em>) which are
@@ -157,8 +157,8 @@ Neural2/WaveNet, 4M for Standard); <strong>Gemini and Chirp voices are billed th
 different rate. Set a budget alert. TTS pricing: <a href="https://cloud.google.com/text-to-speech/pricing">https://cloud.google.com/text-to-speech/pricing</a></p>
 </blockquote>
 </details>
-<details id="azure">
-<summary style="cursor: pointer; padding: 8px 0;"><strong>Azure AI Speech</strong></summary>
+<details id="azure" open>
+<summary style="cursor: pointer; padding: 8px 0;"><h2 id="azure-setup" class="svx-provider-title"><strong>Azure AI Speech</strong></h2></summary>
 <p><strong>Used for:</strong> generating dubbed audio (TTS) for a translated track, with high-quality multilingual neural
 voices. Uses a <strong>subscription key + region</strong> (no OAuth).</p>
 <ol>
