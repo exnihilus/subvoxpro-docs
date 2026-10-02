@@ -117,6 +117,12 @@ pre code.hljs {
   margin-left: auto;
 }
 
+article a:has(> img:only-child) {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+}
+
 #navbar .svx-language {
   order: 1;
   margin-left: auto;
