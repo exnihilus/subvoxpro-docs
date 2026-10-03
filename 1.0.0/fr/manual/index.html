@@ -269,7 +269,7 @@ Les doublages suivent d’eux-mêmes.</p>
 <li>Cliquez sur <strong>Generate audio</strong>. La nouvelle piste remplace l’audio d’origine quand cette langue est active.</li>
 </ol>
 <p>Fournisseurs : InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, et les moteurs locaux <strong>Kokoro</strong>
-(anglais), <strong>Chatterbox</strong> (21 langues, en gardant la voix du personnage) et <strong>Qwen3 TTS 1.7B</strong> (dix langues, neuf voix et consignes de style).</p>
+(anglais), <strong>Chatterbox</strong> (21 langues, en gardant la voix du personnage) et <strong>Qwen3 TTS 1.7B</strong> (dix langues, clonage de références, voix fixes et descriptions de voix).</p>
 <ul>
 <li><strong>Word timing</strong> : <strong>Qwen3 local</strong> affiche les mots au moment exact où ils sont prononcés
 (<a href="#qwen3-offline-word-timing">installation</a>). <strong>Estimated</strong> suffit si vous n’affichez pas les mots un à un.</li>
@@ -580,9 +580,9 @@ mais ils fonctionnent aussi sans.</p>
 </tr>
 <tr>
 <td><strong>Qwen3 TTS 1.7B</strong></td>
-<td>Doublage avec consignes de style</td>
-<td>2,34 Go</td>
-<td>Dix langues, neuf voix</td>
+<td>Clonage, voix fixes ou voix décrites</td>
+<td>2,34–2,37 Go par modèle</td>
+<td>Dix langues, trois variantes</td>
 </tr>
 <tr>
 <td><strong>Qwen3</strong></td>
@@ -627,37 +627,76 @@ module installé depuis la même fenêtre. <strong>Exaggeration</strong> (dans D
 l’expressivité. Deux générations ne sont jamais tout à fait identiques : si un mot sort mal, régénérez la ligne.
 Toutes les langues ne sont pas aussi fiables : voir la <a href="providers.html#chatterbox-accuracy-by-language">précision par langue</a>.</p>
 <h3 id="qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B, doublage multilingue local </h3>
-<p>Choisissez <strong>Qwen3 TTS 1.7B</strong> dans Dubbing, puis <strong>Install…</strong>, ou ouvrez <strong>Additional Models</strong> depuis le Hub.
-Le même installateur est accessible dans Settings et Batch Processing. Il télécharge <strong>Qwen3 TTS 1.7B
-CustomVoice Q8</strong> et son tokenizer audio 12 Hz, soit environ <strong>2,34 Go</strong>, dans
-<code>%LOCALAPPDATA%/SubVoxPro/Qwen3Tts</code>. Les modèles sont partagés entre les projets et exclus des builds.
-Aucun compte ni clé API n'est nécessaire. Le moteur utilise une DLL C++ embarquée, sans installation
-Python, serveur externe ou exécutable. Il fonctionne dans l'<strong>éditeur Windows x64</strong>, sous Unity 2022.3 LTS
-et Unity 6.</p>
-<p>Un seul modèle couvre le <strong>chinois, l'anglais, le japonais, le coréen, l'allemand, le français, le russe,
-le portugais, l'espagnol et l'italien</strong>. Dans Settings, <strong>Qwen3 TTS 1.7B dubbing ▸ Use GPU</strong> active Vulkan,
-avec repli CPU. Désactivez cette option pour utiliser entièrement le CPU. Un pilote graphique compatible
-suffit : aucun SDK Vulkan à installer. Le CPU est plus lent que le GPU.</p>
-<p><strong>Voix :</strong> Vivian, Serena, Uncle Fu, Dylan, Eric, Ryan, Aiden, Ono Anna et Sohee. Chaque voix parle les dix
-langues prises en charge. Le sélecteur affiche les catégories de genre et génère ses extraits localement.
-Les accents natifs sont chinois pour Vivian, Serena, Uncle Fu, Dylan et Eric ; anglais pour Ryan et Aiden ;
-japonais pour Ono Anna ; coréen pour Sohee. La variante <strong>CustomVoice</strong> utilise ces voix fixes ; cette
-intégration ne clone pas la voix de l'audio source.</p>
-<p>Les <strong>personnalités</strong> conservent la priorité habituelle : override du sous-titre → personnalité du speaker
-→ direction de la piste. Leurs instructions écrites sont transmises à l'entrée de style du modèle,
-séparément du texte à prononcer. Par exemple : <code>Un peu plus triste</code>, <code>Parle en chuchotant</code> ou
-<code>Speak angrily, with a tense voice</code>. Le résultat dépend aussi de la voix et du texte.
-Les <strong>retouches</strong> reprennent la voix de la prise originale : <strong>Adjust personality</strong> affine les consignes
-existantes ; <strong>New instructions</strong> les remplace sans reprendre la personnalité de base du sous-titre.
-Les modes <strong>Per subtitle</strong>, <strong>Per speaker</strong>, <strong>All together</strong> et Batch Processing utilisent le même moteur.</p>
-<p>Les textes longs sont découpés autant que possible entre les phrases, en gardant la voix, la langue et
-les consignes pour chaque morceau. L'annulation interrompt la génération native ; une recompilation
-annule l'opération avant de libérer le modèle. Le timing continue d'utiliser le moteur distinct
-<strong>Qwen3 local word timing</strong> quand il est installé et compatible, avec le repli estimé existant.</p>
-<p><strong>Open install folder</strong>, <strong>Re-download model</strong> et <strong>Uninstall</strong> sont disponibles dans l'installateur et
-Additional Models. Les téléchargements interrompus reprennent ; taille et SHA-256 sont vérifiés.
-Voir la <a href="https://github.com/QwenLM/Qwen3-TTS">documentation officielle Qwen3 TTS</a> et les
-<a href="notices.html">notices</a> pour les poids Apache 2.0 et le moteur natif MIT.</p>
+<p>Choisissez <strong>Qwen3 TTS 1.7B</strong> dans Dubbing puis <strong>Install…</strong>, ou ouvrez <strong>Additional Models</strong> depuis le Hub.
+Le même installateur est disponible dans Settings et Batch Processing. Sélectionnez <strong>Base</strong>, <strong>CustomVoice</strong>
+ou <strong>VoiceDesign</strong>, puis installez cette variante. Le tokenizer audio 12 Hz est partagé : <strong>2,37 Go</strong> pour Base,
+<strong>2,34 Go</strong> pour chacune des autres variantes, soit environ <strong>6,46 Go</strong> pour les trois. Base télécharge aussi un
+<strong>pack de références vocales d'environ 11 Mo</strong>. Les fichiers sont stockés dans <code>%LOCALAPPDATA%/SubVoxPro/Qwen3Tts</code>,
+partagés entre projets et exclus des builds. Aucun compte, clé API, Python, serveur externe ou exécutable requis.
+Le moteur C++ embarqué fonctionne dans l'<strong>éditeur Windows x64</strong>, sous Unity 2022.3 LTS et Unity 6.</p>
+<p>Chaque variante prend en charge le <strong>chinois, l'anglais, le japonais, le coréen, l'allemand, le français,
+le russe, le portugais, l'espagnol et l'italien</strong>. <strong>Qwen3 TTS 1.7B dubbing ▸ Use GPU</strong>, dans Settings,
+active Vulkan avec repli CPU. Un pilote graphique compatible suffit, sans SDK Vulkan. Le CPU est plus lent.</p>
+<table>
+<thead>
+<tr>
+<th>Variante</th>
+<th>Sélection de voix</th>
+<th>Consignes écrites de personnalité et retouche</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Base</strong></td>
+<td>Vingt références, audio source ou clips dans <code>Data/Voices</code></td>
+<td>Indisponibles ; reprend la manière de parler de la référence</td>
+</tr>
+<tr>
+<td><strong>CustomVoice</strong></td>
+<td>Vivian, Serena, Uncle Fu, Dylan, Eric, Ryan, Aiden, Ono Anna et Sohee</td>
+<td>Prises en charge</td>
+</tr>
+<tr>
+<td><strong>VoiceDesign</strong></td>
+<td>Description sur chaque SpeakerData, ou description commune dans le panneau TTS</td>
+<td>Prises en charge, combinées à la description de voix</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pack de références :</strong> une voix féminine et une masculine dans chaque langue, créées localement avec
+VoiceDesign à partir de descriptions et de textes originaux, sans enregistrement humain de référence ni
+imitation d'une personne nommée. L'anglais utilise une prononciation américaine neutre, l'espagnol celle
+d'Espagne, le portugais celle du Brésil et le chinois le mandarin. Chaque référence inclut sa transcription
+pour le clonage Base et son extrait audio. Le pack est sous <strong>CC0 1.0</strong> : utilisation commerciale,
+redistribution, modification et clonage autorisés, sans attribution obligatoire pour le pack. Le
+<a href="https://github.com/exnihilus/subvoxpro-models/tree/main/qwen3-voices">manifeste et les notices</a> conservent
+la provenance et les empreintes. Les licences des modèles Qwen restent distinctes. Vous pouvez également
+cloner vos propres clips ou choisir <strong>Original voice</strong> pour recueillir les répliques du speaker dans l'audio source.</p>
+<p><strong>CustomVoice</strong> conserve les neuf voix initiales. Elles parlent toutes les dix langues, mais leur accent
+natif peut rester audible : chinois pour Vivian, Serena, Uncle Fu, Dylan et Eric ; anglais pour Ryan et Aiden ;
+japonais pour Ono Anna ; coréen pour Sohee. Les références de Base offrent une alternative par langue.</p>
+<p><strong>VoiceDesign :</strong> sélectionnez ce modèle dans l'inspecteur du speaker puis renseignez <strong>Voice description</strong>.
+Décrivez l'identité vocale, l'âge approximatif, le timbre, la langue et l'accent. <strong>Use speakers' voices</strong>, dans
+Dubbing ou Batch Processing, utilise ces descriptions. Une voix commune peut aussi être décrite dans le
+panneau TTS ou la configuration du batch. Les personnalités des sous-titres contrôlent séparément le jeu.
+VoiceDesign recrée une performance à chaque requête : une description identique peut donner quelques
+variations de timbre. Base avec une référence enregistrée convient mieux à une identité clonée stable.</p>
+<p>Les <strong>personnalités</strong> gardent la priorité habituelle : override du sous-titre → défaut du speaker → direction
+de la piste. CustomVoice et VoiceDesign reçoivent leurs instructions séparément du texte à prononcer.
+Exemples : <code>Un peu plus triste</code>, <code>Parle en chuchotant</code> ou <code>Speak angrily, with a tense voice</code>.
+Base n'accepte pas les consignes écrites ; cette capacité est désactivée dans l'UI. Les <strong>retouches</strong> conservent
+le modèle et la voix de la prise Qwen initiale, y compris la description VoiceDesign enregistrée, même si le
+speaker est ensuite modifié. <strong>Adjust personality</strong> affine les consignes ; <strong>New instructions</strong> les remplace.
+Les trois variantes fonctionnent dans <strong>Per subtitle</strong>, <strong>Per speaker</strong>, <strong>All together</strong> et Batch Processing.</p>
+<p>Les textes longs sont découpés entre les phrases autant que possible, en gardant voix, langue et consignes.
+L'annulation interrompt la génération native ; la recompilation annule l'opération avant de libérer le modèle.
+Le timing utilise le moteur distinct <strong>Qwen3 local word timing</strong>, avec le repli estimé existant. Changer de
+variante libère le modèle natif précédent.</p>
+<p><strong>Open install folder</strong>, <strong>Re-download model</strong> et <strong>Uninstall model</strong> sont disponibles dans l'installateur.
+La désinstallation d'une variante conserve les autres modèles, le tokenizer partagé et les références.
+Les téléchargements reprennent après interruption ; taille et SHA-256 sont vérifiés. Voir la
+<a href="https://github.com/QwenLM/Qwen3-TTS">documentation officielle</a> et les <a href="notices.html">notices</a> pour les modèles
+Apache 2.0 et le moteur natif MIT.</p>
 <h3 id="qwen3-offline-word-timing">Qwen3, timing local des mots </h3>
 <p>Choisissez <strong>Word timing: Qwen3 local</strong> dans Transcription ou Dubbing, puis cliquez sur <strong>Install…</strong>.
 Chaque <strong>Split</strong> et chaque doublage sont ensuite alignés mot par mot. Qwen3 ne touche jamais au texte : il ne fait

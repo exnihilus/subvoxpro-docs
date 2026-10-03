@@ -233,8 +233,8 @@ Les variantes comme <code>en-US</code> ou <code>pt-BR</code> sont rangées sous 
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
-<td>Qwen3 TTS 1.7B CustomVoice Q8, local</td>
-<td>Chinois, anglais, japonais, coréen, allemand, français, russe, portugais, espagnol et italien ; neuf voix et consignes de style.</td>
+<td>Qwen3 TTS 1.7B Base / CustomVoice / VoiceDesign Q8, local</td>
+<td>Chinois, anglais, japonais, coréen, allemand, français, russe, portugais, espagnol et italien ; clonage de références, neuf voix fixes ou voix décrites ; consignes écrites avec CustomVoice et VoiceDesign.</td>
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
@@ -425,7 +425,7 @@ un test sur une machine partagée.</li>
 </tr>
 <tr>
 <td><strong>Doublage TTS</strong></td>
-<td>ElevenLabs, InWorld AI, Gemini, OpenAI, Google Cloud TTS, Azure ; ou <strong>Kokoro</strong>, anglais local, et <strong>Chatterbox</strong>, 21 langues et japonais facultatif, avec clonage vocal ; ou <strong>Qwen3 TTS 1.7B</strong>, dix langues locales, neuf voix et consignes de style.</td>
+<td>ElevenLabs, InWorld AI, Gemini, OpenAI, Google Cloud TTS, Azure ; ou <strong>Kokoro</strong>, anglais local, et <strong>Chatterbox</strong>, 21 langues et japonais facultatif, avec clonage vocal ; ou <strong>Qwen3 TTS 1.7B</strong>, dix langues locales, clonage de références, neuf voix fixes ou voix décrites ; consignes écrites avec CustomVoice et VoiceDesign.</td>
 </tr>
 <tr>
 <td><strong>Alignement exact des mots</strong> (texte inchangé)</td>
@@ -554,8 +554,9 @@ Les moteurs locaux (Whisper, Parakeet, Hy-MT2, Kokoro, Chatterbox et Qwen3) sont
 fins commerciales. Il est d’usage de créditer NVIDIA pour Parakeet : voir les <a href="notices.html">mentions des tiers</a>.</p>
 </blockquote>
 <hr/>
-<p>Qwen3 TTS 1.7B fonctionne aussi hors ligne et sans facturation. CustomVoice suit les consignes de
-personnalité et de retouche dans dix langues. Les poids sont sous Apache 2.0 ; le moteur C++ embarqué
+<p>Qwen3 TTS 1.7B fonctionne aussi hors ligne et sans facturation. CustomVoice et VoiceDesign suivent les consignes de
+personnalité et de retouche dans dix langues. Base clone les références, sans consignes écrites.
+Les vingt références synthétiques sont sous CC0 1.0. Les poids sont sous Apache 2.0 ; le moteur C++ embarqué
 est sous MIT. Voir le <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">guide Qwen3 TTS</a> et les <a href="notices.html">notices</a>.</p>
 <h2 id="where-to-paste-your-key-in-subvox-pro">Où coller votre clé dans SubVox Pro </h2>
 <p>La clé peut se coller à deux endroits, qui reviennent au même : elle est enregistrée dans <code>EditorPrefs</code>, sur cet
