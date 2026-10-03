@@ -233,8 +233,8 @@ Les variantes comme <code>en-US</code> ou <code>pt-BR</code> sont rangées sous 
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
-<td>Orpheus 3B anglais Q8, local</td>
-<td>Anglais, huit voix fixes et tags audio expressifs.</td>
+<td>Qwen3 TTS 1.7B CustomVoice Q8, local</td>
+<td>Chinois, anglais, japonais, coréen, allemand, français, russe, portugais, espagnol et italien ; neuf voix et consignes de style.</td>
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
@@ -250,7 +250,7 @@ Les variantes comme <code>en-US</code> ou <code>pt-BR</code> sont rangées sous 
 </table>
 <blockquote>
 <p>Les catalogues des services en ligne évoluent sans dépendre de SubVox Pro : actualisez les modèles et les voix
-quand un service ajoute une langue. Pour Qwen, Kokoro, Chatterbox et Orpheus, les listes ci-dessus correspondent aux
+quand un service ajoute une langue. Pour Qwen, Kokoro, Chatterbox et Qwen3 TTS, les listes ci-dessus correspondent aux
 modèles installés par SubVox Pro.</p>
 </blockquote>
 <h3 id="chatterbox-accuracy-by-language">Chatterbox : précision par langue </h3>
@@ -425,7 +425,7 @@ un test sur une machine partagée.</li>
 </tr>
 <tr>
 <td><strong>Doublage TTS</strong></td>
-<td>ElevenLabs, InWorld AI, Gemini, OpenAI, Google Cloud TTS, Azure ; ou <strong>Kokoro</strong>, anglais local, et <strong>Chatterbox</strong>, 21 langues et japonais facultatif, avec clonage vocal ; ou <strong>Orpheus 3B</strong>, anglais local et huit voix expressives.</td>
+<td>ElevenLabs, InWorld AI, Gemini, OpenAI, Google Cloud TTS, Azure ; ou <strong>Kokoro</strong>, anglais local, et <strong>Chatterbox</strong>, 21 langues et japonais facultatif, avec clonage vocal ; ou <strong>Qwen3 TTS 1.7B</strong>, dix langues locales, neuf voix et consignes de style.</td>
 </tr>
 <tr>
 <td><strong>Alignement exact des mots</strong> (texte inchangé)</td>
@@ -439,7 +439,7 @@ un test sur une machine partagée.</li>
 </table>
 <p><strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> compare fonctions, prix, offres gratuites et droits commerciaux.
 Il ne vous faut une clé que pour les services que vous utilisez. Pour démarrer sans compte ni frais : Whisper ou
-Parakeet, Hy-MT2, et Kokoro, Chatterbox ou Orpheus 3B. DeepL et Gemini ont aussi des offres gratuites.</p>
+Parakeet, Hy-MT2, et Kokoro, Chatterbox ou Qwen3 TTS 1.7B. DeepL et Gemini ont aussi des offres gratuites.</p>
 <hr/>
 <h2 id="free-tier-cheat-sheet">Résumé des offres gratuites </h2>
 <p>SubVox Pro fonctionne de la même façon avec un compte gratuit ou payant : mêmes clés, mêmes requêtes.
@@ -554,9 +554,9 @@ Les moteurs locaux (Whisper, Parakeet, Hy-MT2, Kokoro, Chatterbox et Qwen3) sont
 fins commerciales. Il est d’usage de créditer NVIDIA pour Parakeet : voir les <a href="notices.html">mentions des tiers</a>.</p>
 </blockquote>
 <hr/>
-<p>Orpheus 3B fonctionne aussi sans connexion ni facturation. Ses poids déclarent Apache 2.0 ; son modèle Llama 3.2
-reste soumis à la licence communautaire et aux conditions d'utilisation de Meta. SNAC est MIT. Voir le
-<a href="index.html#orpheus-3b-offline-english-dubbing">guide Orpheus</a> et les <a href="notices.html">notices</a>.</p>
+<p>Qwen3 TTS 1.7B fonctionne aussi hors ligne et sans facturation. CustomVoice suit les consignes de
+personnalité et de retouche dans dix langues. Les poids sont sous Apache 2.0 ; le moteur C++ embarqué
+est sous MIT. Voir le <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">guide Qwen3 TTS</a> et les <a href="notices.html">notices</a>.</p>
 <h2 id="where-to-paste-your-key-in-subvox-pro">Où coller votre clé dans SubVox Pro </h2>
 <p>La clé peut se coller à deux endroits, qui reviennent au même : elle est enregistrée dans <code>EditorPrefs</code>, sur cet
 ordinateur seulement. <strong>Tools ▸ SubVox Pro ▸ Settings</strong> réunit tous les fournisseurs : collez chaque clé sur sa

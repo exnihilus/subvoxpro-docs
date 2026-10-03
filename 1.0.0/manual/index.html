@@ -280,7 +280,7 @@ follow automatically.</p>
 is active.</li>
 </ol>
 <p>Providers: InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, and offline <strong>Kokoro</strong> (English) and
-<strong>Chatterbox</strong> (21 languages, keeps each character's voice), plus <strong>Orpheus 3B</strong> (English, eight expressive voices).</p>
+<strong>Chatterbox</strong> (21 languages, keeps each character's voice), plus <strong>Qwen3 TTS 1.7B</strong> (ten languages, nine voices and written style directions).</p>
 <ul>
 <li><strong>Word timing</strong> — leave it on <strong>Qwen3 local</strong> for words that appear exactly when they are spoken
 (<a href="#qwen3-offline-word-timing">install it once</a>), or <strong>Estimated</strong> if you don't reveal subtitles word by
@@ -593,10 +593,10 @@ their status, a <strong>Download</strong> button for each, and <strong>Uninstall
 <td>21 languages, + Japanese with an optional 6 MB add-on</td>
 </tr>
 <tr>
-<td><strong>Orpheus 3B</strong></td>
-<td>Dubbing with expressive audio tags</td>
-<td>4.1 GB</td>
-<td>English, eight voices</td>
+<td><strong>Qwen3 TTS 1.7B</strong></td>
+<td>Dubbing with written style directions</td>
+<td>2.34 GB</td>
+<td>Ten languages, nine voices</td>
 </tr>
 <tr>
 <td><strong>Qwen3</strong></td>
@@ -639,30 +639,37 @@ support from the same window. <strong>Exaggeration</strong>, under the provider 
 and the Settings), makes the delivery more or less expressive. Each
 generation is slightly different: if a word comes out wrong, generate it again. Some languages come out more reliably than
 others: see <a href="providers.html#chatterbox-accuracy-by-language">how accurate each language is</a>.</p>
-<h3 id="orpheus-3b-offline-english-dubbing">Orpheus 3B (offline English dubbing)</h3>
-<p>Pick <strong>Orpheus 3B</strong> in the Dubbing tab and click <strong>Install…</strong>, or use <strong>Additional Models</strong> in the Hub.
-The same installer is available from Settings and Batch Processing. It downloads the English <strong>Orpheus 3B
-Q8</strong> model and <strong>SNAC 24 kHz</strong> decoder (about <strong>4.1 GB</strong>) to <code>%LOCALAPPDATA%/SubVoxPro/Orpheus</code>, shared by
-all projects and excluded from builds. No account, API key, Python installation or external server is needed.
-In Settings, <strong>Orpheus 3B dubbing ▸ Use GPU</strong> enables the bundled llama.cpp GPU backend with CPU fallback.
-CPU synthesis works but is considerably slower; a graphics card with enough free memory is recommended.</p>
-<p>Choose <strong>Tara, Leah, Jess, Leo, Dan, Mia, Zac or Zoe</strong> in the normal voice picker, with local previews and
-speaker voice assignments. <strong>Each subtitle</strong>, <strong>Per speaker</strong>, <strong>All together</strong>, Batch Processing and
-<strong>Retouch subtitles…</strong> use the same generated-audio, word-alignment, effects and Undo workflow as other providers.
-Long text is split into short chunks internally to stay within the audio model's context. Only English is enabled
-for this checkpoint; it does not clone a voice from source audio.</p>
-<p><strong>Personalities</strong> retain the usual line override → speaker default → track direction precedence. Orpheus uses
-audio tags, not a general style prompt. Supported tags are <code>&lt;laugh&gt;</code>, <code>&lt;chuckle&gt;</code>, <code>&lt;sigh&gt;</code>, <code>&lt;cough&gt;</code>, <code>&lt;sniffle&gt;</code>,
-<code>&lt;groan&gt;</code>, <code>&lt;yawn&gt;</code> and <code>&lt;gasp&gt;</code>. For example, sad directions map to <code>&lt;sigh&gt;</code>, anger to <code>&lt;groan&gt;</code>, joyful/playful
-ones to <code>&lt;chuckle&gt;</code> and fear/surprise to <code>&lt;gasp&gt;</code>. These may introduce the corresponding vocal sound;
-they are not guarantees of a particular emotion throughout the line. Explicit tags in a direction are kept;
-other instructions, including vocal age, pace, volume and whispering, are not guaranteed and are not spoken.
-Retouch adjustments take priority over the base emotion. <strong>New instructions</strong> bypasses the base personality;
-the original voice is retained in both retouch modes. <strong>Cancel</strong> interrupts local token generation.</p>
-<p>Use <strong>Open install folder</strong>, <strong>Re-download model</strong> or <strong>Uninstall</strong> in the setup window, or manage the download
-from Additional Models. Interrupted downloads resume and their size and SHA-256 are checked. See the
-<a href="https://github.com/canopyai/Orpheus-TTS">model's official description</a> and <a href="notices.html">Third-Party Notices</a>
-for Orpheus, SNAC and the underlying Llama model terms.</p>
+<h3 id="qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B (offline multilingual dubbing)</h3>
+<p>Pick <strong>Qwen3 TTS 1.7B</strong> in Dubbing and click <strong>Install…</strong>, or open <strong>Additional Models</strong> from the Hub.
+The same installer is available from Settings and Batch Processing. It downloads <strong>Qwen3 TTS 1.7B
+CustomVoice Q8</strong> and its 12 Hz speech tokenizer, about <strong>2.34 GB</strong>, to <code>%LOCALAPPDATA%/SubVoxPro/Qwen3Tts</code>.
+The models are shared across projects and excluded from builds. No account or API key is required.
+The engine runs in-process with the bundled C++ DLL: no Python installation, external server or executable.
+The local engine currently supports the <strong>Windows x64 Editor</strong> in Unity 2022.3 LTS and Unity 6.</p>
+<p>One model covers <strong>Chinese, English, Japanese, Korean, German, French, Russian, Portuguese, Spanish and
+Italian</strong>. In Settings, <strong>Qwen3 TTS 1.7B dubbing ▸ Use GPU</strong> enables Vulkan acceleration with CPU fallback.
+Turn it off to run the entire engine on the CPU. A compatible graphics driver is sufficient; users do not
+install the Vulkan SDK. CPU generation is slower than GPU generation.</p>
+<p><strong>Voices:</strong> Vivian, Serena, Uncle Fu, Dylan, Eric, Ryan, Aiden, Ono Anna and Sohee. Every voice can speak all
+ten supported languages. The voice picker includes gender categories and locally generated previews.
+The strongest native accents are Chinese for Vivian, Serena, Uncle Fu, Dylan and Eric; English for Ryan
+and Aiden; Japanese for Ono Anna; and Korean for Sohee. <strong>CustomVoice</strong> uses these fixed voices; this
+integration does not clone a voice from source audio.</p>
+<p><strong>Personalities</strong> keep the normal line override → speaker default → track direction precedence. Their
+written instructions are passed to the model's dedicated style input, separately from the subtitle text.
+For example, try <code>Speak angrily, with a tense voice</code>, <code>A little sadder</code> or <code>Whisper softly and quietly</code>.
+Instructions guide the performance; the result can vary with the chosen voice and text. Selective
+<strong>Retouches</strong> keep the voice recorded for the original take. <strong>Adjust personality</strong> refines the existing
+instructions; <strong>New instructions</strong> replaces them without inheriting the subtitle's base personality.
+The same provider works in <strong>Per subtitle</strong>, <strong>Per speaker</strong>, <strong>All together</strong> and Batch Processing.</p>
+<p>Long text is split at sentence boundaries where possible; each chunk keeps the same voice, language and
+instructions. Cancellation stops native generation, and recompilation cancels the pending operation
+before releasing the model. Word timing still uses the separate <strong>Qwen3 local word timing</strong> engine when
+installed and supported, with the existing estimated-timing fallback.</p>
+<p>Use <strong>Open install folder</strong>, <strong>Re-download model</strong> or <strong>Uninstall</strong> in the setup window, or manage the model
+from Additional Models. Interrupted downloads resume and their sizes and SHA-256 hashes are checked.
+See the <a href="https://github.com/QwenLM/Qwen3-TTS">official Qwen3 TTS documentation</a> and
+<a href="notices.html">Third-Party Notices</a> for the Apache 2.0 model and MIT native engine licences.</p>
 <h3 id="qwen3-offline-word-timing">Qwen3 (offline word timing)</h3>
 <p>Set <strong>Word timing</strong> to <strong>Qwen3 local</strong> in the Transcription or Dubbing tab and click <strong>Install…</strong>. From then on, each
 <strong>Split</strong> of a transcription and every generated dub are aligned word by word automatically, so word-by-word subtitles
