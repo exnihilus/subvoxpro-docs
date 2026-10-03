@@ -137,7 +137,7 @@
   "api/SubVoxPro.SubVoxEvents.html": {
     "href": "api/SubVoxPro.SubVoxEvents.html",
     "title": "Class SubVoxEvents | SubVox Pro Documentation",
-    "summary": "Class SubVoxEvents Namespace SubVoxPro Assembly SubVoxPro.dll Generated voice line event keys for this project. public static class SubVoxEvents Inheritance object SubVoxEvents Inherited Members object.GetType() object.MemberwiseClone() object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() Fields CAMERA_SHAKE Key for the Camera Shake voice line event. public const string CAMERA_SHAKE = \"Camera Shake\" Field Value string VOICE_LINE_EVENT_SIGNAL_1 Key for the VoiceLine Event Signal 1 voice line event. public const string VOICE_LINE_EVENT_SIGNAL_1 = \"VoiceLine Event Signal 1\" Field Value string"
+    "summary": "Class SubVoxEvents Namespace SubVoxPro Assembly SubVoxPro.dll Generated voice line event keys for this project. public static class SubVoxEvents Inheritance object SubVoxEvents Inherited Members object.GetType() object.MemberwiseClone() object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() Fields CAMERA_SHAKE Key for the Camera Shake voice line event. public const string CAMERA_SHAKE = \"Camera Shake\" Field Value string"
   },
   "api/SubVoxPro.SubtitleBubbleDisplayer.html": {
     "href": "api/SubVoxPro.SubtitleBubbleDisplayer.html",

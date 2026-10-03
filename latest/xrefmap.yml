@@ -1351,12 +1351,6 @@ references:
   commentId: F:SubVoxPro.SubVoxEvents.CAMERA_SHAKE
   fullName: SubVoxPro.SubVoxEvents.CAMERA_SHAKE
   nameWithType: SubVoxEvents.CAMERA_SHAKE
-- uid: SubVoxPro.SubVoxEvents.VOICE_LINE_EVENT_SIGNAL_1
-  name: VOICE_LINE_EVENT_SIGNAL_1
-  href: api/SubVoxPro.SubVoxEvents.html#SubVoxPro_SubVoxEvents_VOICE_LINE_EVENT_SIGNAL_1
-  commentId: F:SubVoxPro.SubVoxEvents.VOICE_LINE_EVENT_SIGNAL_1
-  fullName: SubVoxPro.SubVoxEvents.VOICE_LINE_EVENT_SIGNAL_1
-  nameWithType: SubVoxEvents.VOICE_LINE_EVENT_SIGNAL_1
 - uid: SubVoxPro.SubtitleBubbleDisplayer
   name: SubtitleBubbleDisplayer
   href: api/SubVoxPro.SubtitleBubbleDisplayer.html
