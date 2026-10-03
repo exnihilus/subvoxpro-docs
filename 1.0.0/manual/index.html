@@ -647,8 +647,9 @@ generation is slightly different: if a word comes out wrong, generate it again. 
 others: see <a href="providers.html#chatterbox-accuracy-by-language">how accurate each language is</a>.</p>
 <h3 id="qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B (offline multilingual dubbing)</h3>
 <p>Pick <strong>Qwen3 TTS 1.7B</strong> in Dubbing and click <strong>Install…</strong>, or open <strong>Additional Models</strong> from the Hub.
-The same installer is available from Settings and Batch Processing. Choose <strong>Base</strong>, <strong>CustomVoice</strong> or
-<strong>VoiceDesign</strong> in the model selector, then install that variant. Each uses a shared 12 Hz speech tokenizer:
+The same installer is available from Settings and Batch Processing. The model selector shows <strong>Base - Voice Cloning</strong>,
+<strong>Custom Voice - 9 Preset Voices</strong> and <strong>Voice Design - Text Description</strong>. Choose and install the variant you need.
+Each uses a shared 12 Hz speech tokenizer:
 <strong>2.37 GB</strong> for Base, <strong>2.34 GB</strong> for either other variant, or about <strong>6.46 GB</strong> for all three. Base also downloads
 an approximately <strong>11 MB reference voice pack</strong>. Files live in <code>%LOCALAPPDATA%/SubVoxPro/Qwen3Tts</code>, are shared
 across projects and excluded from builds. No account, API key, Python installation, external server or
@@ -802,8 +803,8 @@ subtitles). Click <strong>Keep</strong> to leave one in the Sheet.</p>
 or shipped. The eye at the end of a row shows or hides the key, the red cross removes it.</li>
 <li><strong>Preferences</strong> — <strong>Show CPS</strong> (reading speed), <strong>Custom inspectors</strong> and <strong>Auto blanks on new lines</strong>.</li>
 <li><strong>Data folder</strong> — where new voice lines, speakers and dubs are created.</li>
-<li><strong>Model catalog</strong> — the list of AI models to choose from, updated online. <strong>Manage models</strong> lets you add one that isn't
-listed yet.</li>
+<li><strong>Cloud Model Catalog</strong> — cloud AI models and their prices, updated online. <strong>Manage models</strong> lets you add one that isn't
+listed yet. Local models are selected and installed through <strong>Additional Models</strong> and their provider's controls.</li>
 <li><strong>Local models &amp; services</strong> — each offline engine with its status (<strong>Ready</strong> or <strong>Not installed</strong>), its options
 (graphics card use, Chatterbox expressiveness) and a button to install or set it up; plus the cleanup of
 ElevenLabs voice clones.</li>

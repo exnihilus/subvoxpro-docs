@@ -634,8 +634,9 @@ l’expressivité. Deux générations ne sont jamais tout à fait identiques : s
 Toutes les langues ne sont pas aussi fiables : voir la <a href="providers.html#chatterbox-accuracy-by-language">précision par langue</a>.</p>
 <h3 id="qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B, doublage multilingue local </h3>
 <p>Choisissez <strong>Qwen3 TTS 1.7B</strong> dans Dubbing puis <strong>Install…</strong>, ou ouvrez <strong>Additional Models</strong> depuis le Hub.
-Le même installateur est disponible dans Settings et Batch Processing. Sélectionnez <strong>Base</strong>, <strong>CustomVoice</strong>
-ou <strong>VoiceDesign</strong>, puis installez cette variante. Le tokenizer audio 12 Hz est partagé : <strong>2,37 Go</strong> pour Base,
+Le même installateur est disponible dans Settings et Batch Processing. Le sélecteur affiche <strong>Base - Voice Cloning</strong>,
+<strong>Custom Voice - 9 Preset Voices</strong> et <strong>Voice Design - Text Description</strong>. Choisissez puis installez la variante souhaitée.
+Le tokenizer audio 12 Hz est partagé : <strong>2,37 Go</strong> pour Base,
 <strong>2,34 Go</strong> pour chacune des autres variantes, soit environ <strong>6,46 Go</strong> pour les trois. Base télécharge aussi un
 <strong>pack de références vocales d'environ 11 Mo</strong>. Les fichiers sont stockés dans <code>%LOCALAPPDATA%/SubVoxPro/Qwen3Tts</code>,
 partagés entre projets et exclus des builds. Aucun compte, clé API, Python, serveur externe ou exécutable requis.
@@ -793,7 +794,8 @@ Spreadsheet ID ouvre la feuille dans le navigateur.</p>
 L’œil affiche ou masque une clé ; la croix rouge la supprime.</li>
 <li><strong>Preferences</strong> : <strong>Show CPS</strong>, <strong>Custom inspectors</strong> et <strong>Auto blanks on new lines</strong>.</li>
 <li><strong>Data folder</strong> : où sont créés les nouvelles voicelines, speakers et doublages.</li>
-<li><strong>Model catalog</strong> : le catalogue des modèles d’IA, tenu à jour en ligne. <strong>Manage models</strong> permet d’en ajouter un.</li>
+<li><strong>Cloud Model Catalog</strong> : les modèles d’IA cloud et leurs prix, tenus à jour en ligne. <strong>Manage models</strong> permet d’en ajouter un.
+Les modèles locaux se sélectionnent et s’installent dans <strong>Additional Models</strong> et les contrôles de leur fournisseur.</li>
 <li><strong>Local models &amp; services</strong> : état de chaque moteur (<strong>Ready</strong> ou <strong>Not installed</strong>), options comme le GPU ou
 l’expressivité de Chatterbox, installation ou configuration, et nettoyage des voix clonées sur ElevenLabs.</li>
 </ul>
