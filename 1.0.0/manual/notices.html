@@ -360,7 +360,7 @@ The complete upstream copyright notice, conditions and disclaimer are reproduced
 <code>THIRD-PARTY-SOURCE-LICENSES.txt</code> under WORLD.</p>
 <h2 id="9-qwen3-tts-17b-local-dubbing">9. Qwen3 TTS 1.7B local dubbing</h2>
 <ul>
-<li>Official CustomVoice and 12 Hz speech tokenizer models: Alibaba Qwen team, <strong>Apache License 2.0</strong>. <a href="https://github.com/QwenLM/Qwen3-TTS">https://github.com/QwenLM/Qwen3-TTS</a> and <a href="https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice">https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice</a></li>
+<li>Official Base, CustomVoice, VoiceDesign and 12 Hz speech tokenizer models: Alibaba Qwen team, <strong>Apache License 2.0</strong>. <a href="https://github.com/QwenLM/Qwen3-TTS">https://github.com/QwenLM/Qwen3-TTS</a> and <a href="https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice">https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice</a></li>
 <li>Downloaded GGUF Q8 conversions: Serveurperso, revision <code>b7ee2e8c7459c3bea99da23e3d178125a7d1713c</code>. <a href="https://huggingface.co/Serveurperso/Qwen3-TTS-GGUF">https://huggingface.co/Serveurperso/Qwen3-TTS-GGUF</a></li>
 <li>Native Qwen3 TTS engine: Danmoreng, derived from predict-woo, <strong>MIT</strong>, revision <code>16bb5afcd06311031c72a8488f8d59660dc2fb46</code>. <a href="https://github.com/Danmoreng/qwen3-tts.cpp">https://github.com/Danmoreng/qwen3-tts.cpp</a></li>
 <li>GGML CPU/Vulkan engine: GGML contributors, <strong>MIT</strong>, revision <code>af97976c7810cdabb1863172f31c432dab767de7</code>. <a href="https://github.com/ggml-org/ggml">https://github.com/ggml-org/ggml</a></li>
@@ -372,6 +372,15 @@ server or executable is installed or launched. The model files are downloaded se
 and are not distributed inside the asset or game builds.
 Complete model, native engine and GGML licences are included as <code>QWEN3-TTS-MODEL-LICENSE.txt</code>,
 <code>QWEN3-TTS-CPP-LICENSE.txt</code> and <code>GGML-LICENSE.txt</code> under <code>Plugins/x86_64/Qwen3Tts/</code>.</p>
+<h3 id="qwen3-synthetic-reference-voice-pack">Qwen3 synthetic reference voice pack</h3>
+<p>Twenty reference recordings and their original texts/descriptions are dedicated to the public domain under
+<strong>CC0 1.0 Universal</strong> by ExNihilus, to the extent any rights apply. Commercial use, redistribution, editing and
+voice cloning are permitted without attribution. These recordings were generated locally with Qwen3 TTS 1.7B
+VoiceDesign from original descriptions, without human reference recordings or instructions to imitate a named
+person. The pack does not purport to identify any actual speaker.</p>
+<p>Full CC0 legal code, model/version provenance, prompts, transcripts and checksums are delivered with the pack
+in AppData and retained at <a href="https://github.com/exnihilus/subvoxpro-models/tree/main/qwen3-voices">https://github.com/exnihilus/subvoxpro-models/tree/main/qwen3-voices</a>. Qwen model weights
+remain Apache 2.0; this dedication applies to the reference pack, not the model or native engine.</p>
 
 </article>
 

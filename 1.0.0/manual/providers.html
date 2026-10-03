@@ -248,8 +248,8 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
-<td>Qwen3 TTS 1.7B CustomVoice Q8 (local)</td>
-<td>Chinese, English, Japanese, Korean, German, French, Russian, Portuguese, Spanish and Italian; nine voices and written style directions.</td>
+<td>Qwen3 TTS 1.7B Base / CustomVoice / VoiceDesign Q8 (local)</td>
+<td>Chinese, English, Japanese, Korean, German, French, Russian, Portuguese, Spanish and Italian; reference cloning, nine fixed voices or designed voices; written directions in CustomVoice and VoiceDesign.</td>
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
@@ -445,7 +445,7 @@ or a team-managed key, depending on how the provider handles billing and access.
 </tr>
 <tr>
 <td><strong>Dubbing / Text-to-Speech</strong></td>
-<td>ElevenLabs, InWorld AI, Gemini (same AI Studio key as Gemini translation), OpenAI (same key as OpenAI translation), Google Cloud Text-to-Speech, Azure AI Speech — or <strong>Kokoro</strong> (local, English) and <strong>Chatterbox</strong> (local, 21 languages + optional Japanese, voice cloning), or <strong>Qwen3 TTS 1.7B</strong> (local, ten languages, nine voices and written style directions)</td>
+<td>ElevenLabs, InWorld AI, Gemini (same AI Studio key as Gemini translation), OpenAI (same key as OpenAI translation), Google Cloud Text-to-Speech, Azure AI Speech — or <strong>Kokoro</strong> (local, English) and <strong>Chatterbox</strong> (local, 21 languages + optional Japanese, voice cloning), or <strong>Qwen3 TTS 1.7B</strong> (local, ten languages, reference cloning, fixed voices or voice design)</td>
 </tr>
 <tr>
 <td><strong>Forced alignment</strong> (exact dub word timings, text preserved)</td>
@@ -577,8 +577,9 @@ provider's current terms always prevail. The offline engines (Whisper, Parakeet,
 free for commercial use (crediting NVIDIA for Parakeet is good practice) — see <a href="notices.html">Third-Party Notices.md</a>.</p>
 </blockquote>
 <hr>
-<p>Qwen3 TTS 1.7B also works offline without billing. CustomVoice follows written personality and retouch
-instructions in ten languages. Its weights use Apache 2.0 and the bundled C++ engine uses MIT. See the
+<p>Qwen3 TTS 1.7B also works offline without billing. CustomVoice and VoiceDesign follow written personality and retouch
+instructions in ten languages; Base clones reference voices without written directions. The twenty synthetic
+references use CC0 1.0. Its weights use Apache 2.0 and the bundled C++ engine uses MIT. See the
 <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS setup guide</a> and <a href="notices.html">Third-Party Notices</a>.</p>
 <h2 id="where-to-paste-your-key-in-subvox-pro">Where to paste your key in SubVox Pro</h2>
 <p>Once you have a key from any provider below, SubVox Pro gives you two equivalent places to store it.
