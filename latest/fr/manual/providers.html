@@ -105,7 +105,7 @@ apparaissent sur chaque site, pour suivre les captures plus facilement.</p>
 </tr>
 <tr>
 <td><strong>Doublage</strong></td>
-<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud TTS</a> · <a href="providers-dubbing.html#azure">Azure</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox</a></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud TTS</a> · <a href="providers-dubbing.html#azure">Azure</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2</a></td>
 </tr>
 <tr>
 <td><strong>Alignement local</strong></td>
@@ -238,6 +238,11 @@ Les variantes comme <code>en-US</code> ou <code>pt-BR</code> sont rangées sous 
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
+<td>VoxCPM2 2B Q8, local</td>
+<td>Arabe, birman, chinois, danois, néerlandais, anglais, finnois, français, allemand, grec, hébreu, hindi, indonésien, italien, japonais, khmer, coréen, lao, malais, norvégien, polonais, portugais, russe, espagnol, swahili, suédois, filipino, thaï, turc et vietnamien ; clonage avec consignes de jeu.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
 <td>Chatterbox Multilingual, local</td>
 <td>Arabe, chinois, danois, néerlandais, anglais, finnois, français, allemand, grec, hindi, italien, coréen, malais, norvégien, polonais, portugais, russe, espagnol, swahili, suédois et turc. Japonais avec son ajout facultatif.</td>
 </tr>
@@ -250,7 +255,7 @@ Les variantes comme <code>en-US</code> ou <code>pt-BR</code> sont rangées sous 
 </table>
 <blockquote>
 <p>Les catalogues des services en ligne évoluent sans dépendre de SubVox Pro : actualisez les modèles et les voix
-quand un service ajoute une langue. Pour Qwen, Kokoro, Chatterbox et Qwen3 TTS, les listes ci-dessus correspondent aux
+quand un service ajoute une langue. Pour Qwen, Kokoro, Chatterbox, Qwen3 TTS et VoxCPM2, les listes ci-dessus correspondent aux
 modèles installés par SubVox Pro.</p>
 </blockquote>
 <h3 id="chatterbox-accuracy-by-language">Chatterbox : précision par langue </h3>
@@ -425,7 +430,7 @@ un test sur une machine partagée.</li>
 </tr>
 <tr>
 <td><strong>Doublage TTS</strong></td>
-<td>ElevenLabs, InWorld AI, Gemini, OpenAI, Google Cloud TTS, Azure ; ou <strong>Kokoro</strong>, anglais local, et <strong>Chatterbox</strong>, 21 langues et japonais facultatif, avec clonage vocal ; ou <strong>Qwen3 TTS 1.7B</strong>, dix langues locales, clonage de références, neuf voix fixes ou voix décrites ; consignes écrites avec CustomVoice et VoiceDesign.</td>
+<td>ElevenLabs, InWorld AI, Gemini, OpenAI, Google Cloud TTS, Azure ; ou <strong>Kokoro</strong>, anglais local, et <strong>Chatterbox</strong>, 21 langues et japonais facultatif, avec clonage vocal ; ou <strong>Qwen3 TTS 1.7B</strong>, dix langues locales, clonage de références, neuf voix fixes ou voix décrites ; consignes écrites avec CustomVoice et VoiceDesign ; <strong>VoxCPM2</strong>, 30 langues locales, clonage avec consignes de jeu.</td>
 </tr>
 <tr>
 <td><strong>Alignement exact des mots</strong> (texte inchangé)</td>
@@ -558,6 +563,11 @@ fins commerciales. Il est d’usage de créditer NVIDIA pour Parakeet : voir les
 personnalité et de retouche dans dix langues. Base clone les références, sans consignes écrites.
 Les vingt références synthétiques sont sous CC0 1.0. Les poids sont sous Apache 2.0 ; le moteur C++ embarqué
 est sous MIT. Voir le <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">guide Qwen3 TTS</a> et les <a href="notices.html">notices</a>.</p>
+<p>VoxCPM2 ajoute le clonage local de références avec des consignes de jeu dans 30 langues, sans clé API.
+L'installateur télécharge 3,55 Go de modèles et le pack partagé CC0 de 11 Mo. Le moteur C++ Windows x64
+utilise Vulkan avec repli CPU, sans Python. Le sélecteur de voix propose l'enregistrement direct d'une
+référence ; les consignes de jeu s'écrivent en anglais ou en chinois. Voir le <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">guide VoxCPM2</a>
+et les <a href="notices.html">notices</a>.</p>
 <h2 id="where-to-paste-your-key-in-subvox-pro">Où coller votre clé dans SubVox Pro </h2>
 <p>La clé peut se coller à deux endroits, qui reviennent au même : elle est enregistrée dans <code>EditorPrefs</code>, sur cet
 ordinateur seulement. <strong>Tools ▸ SubVox Pro ▸ Settings</strong> réunit tous les fournisseurs : collez chaque clé sur sa

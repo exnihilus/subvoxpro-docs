@@ -120,7 +120,7 @@ always confirm the current offer on the provider's own pricing page before relyi
 </tr>
 <tr>
 <td><strong>Dubbing / Text-to-Speech</strong></td>
-<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro local</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox local</a> · <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B local</a></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro local</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox local</a> · <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B local</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 local</a></td>
 </tr>
 <tr>
 <td><strong>Local alignment</strong></td>
@@ -253,6 +253,11 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
+<td>VoxCPM2 2B Q8 (local)</td>
+<td>Arabic, Burmese, Chinese, Danish, Dutch, English, Finnish, French, German, Greek, Hebrew, Hindi, Indonesian, Italian, Japanese, Khmer, Korean, Lao, Malay, Norwegian, Polish, Portuguese, Russian, Spanish, Swahili, Swedish, Filipino, Thai, Turkish and Vietnamese; reference cloning with written delivery instructions.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
 <td>Chatterbox Multilingual (local)</td>
 <td>Arabic, Chinese, Danish, Dutch, English, Finnish, French, German, Greek, Hindi, Italian, Korean, Malay, Norwegian, Polish, Portuguese, Russian, Spanish, Swahili, Swedish, Turkish; Japanese after installing the optional Japanese support.</td>
 </tr>
@@ -265,7 +270,7 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 </table>
 <blockquote>
 <p>Provider language/model catalogs can evolve independently of SubVox Pro. Refresh the model or voice
-catalog in the editor when a provider adds support; for Qwen, Kokoro, Chatterbox and Qwen3 TTS, the fixed lists above match
+catalog in the editor when a provider adds support; for Qwen, Kokoro, Chatterbox, Qwen3 TTS and VoxCPM2, the fixed lists above match
 the pinned local models.</p>
 </blockquote>
 <h3 id="chatterbox-accuracy-by-language">Chatterbox: accuracy by language</h3>
@@ -445,7 +450,7 @@ or a team-managed key, depending on how the provider handles billing and access.
 </tr>
 <tr>
 <td><strong>Dubbing / Text-to-Speech</strong></td>
-<td>ElevenLabs, InWorld AI, Gemini (same AI Studio key as Gemini translation), OpenAI (same key as OpenAI translation), Google Cloud Text-to-Speech, Azure AI Speech — or <strong>Kokoro</strong> (local, English) and <strong>Chatterbox</strong> (local, 21 languages + optional Japanese, voice cloning), or <strong>Qwen3 TTS 1.7B</strong> (local, ten languages, reference cloning, fixed voices or voice design)</td>
+<td>ElevenLabs, InWorld AI, Gemini (same AI Studio key as Gemini translation), OpenAI (same key as OpenAI translation), Google Cloud Text-to-Speech, Azure AI Speech — or <strong>Kokoro</strong> (local, English) and <strong>Chatterbox</strong> (local, 21 languages + optional Japanese, voice cloning), or <strong>Qwen3 TTS 1.7B</strong> (local, ten languages, reference cloning, fixed voices or voice design), or <strong>VoxCPM2</strong> (local, 30 languages, cloning with written style control)</td>
 </tr>
 <tr>
 <td><strong>Forced alignment</strong> (exact dub word timings, text preserved)</td>
@@ -581,6 +586,11 @@ free for commercial use (crediting NVIDIA for Parakeet is good practice) — see
 instructions in ten languages; Base clones reference voices without written directions. The twenty synthetic
 references use CC0 1.0. Its weights use Apache 2.0 and the bundled C++ engine uses MIT. See the
 <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS setup guide</a> and <a href="notices.html">Third-Party Notices</a>.</p>
+<p>VoxCPM2 adds offline reference cloning with written style directions in 30 languages, without an API key.
+Its installer downloads 3.55 GB of weights and the shared 11 MB CC0 reference pack. The Windows x64 C++
+engine uses Vulkan with CPU fallback and needs no Python. The voice picker can record a reference directly;
+English or Chinese directions control delivery. See the <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 setup guide</a>
+and <a href="notices.html">Third-Party Notices</a>.</p>
 <h2 id="where-to-paste-your-key-in-subvox-pro">Where to paste your key in SubVox Pro</h2>
 <p>Once you have a key from any provider below, SubVox Pro gives you two equivalent places to store it.
 Keys live only on this machine, in the Unity Editor preferences (<code>EditorPrefs</code>) — never inside the project.</p>
