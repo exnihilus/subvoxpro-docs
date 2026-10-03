@@ -381,6 +381,20 @@ person. The pack does not purport to identify any actual speaker.</p>
 <p>Full CC0 legal code, model/version provenance, prompts, transcripts and checksums are delivered with the pack
 in AppData and retained at <a href="https://github.com/exnihilus/subvoxpro-models/tree/main/qwen3-voices">https://github.com/exnihilus/subvoxpro-models/tree/main/qwen3-voices</a>. Qwen model weights
 remain Apache 2.0; this dedication applies to the reference pack, not the model or native engine.</p>
+<h2 id="10-voxcpm2-local-dubbing">10. VoxCPM2 local dubbing</h2>
+<ul>
+<li>Official VoxCPM2 model and implementation: OpenBMB, <strong>Apache License 2.0</strong>. <a href="https://github.com/OpenBMB/VoxCPM">https://github.com/OpenBMB/VoxCPM</a> and <a href="https://huggingface.co/openbmb/VoxCPM2">https://huggingface.co/openbmb/VoxCPM2</a></li>
+<li>Downloaded BaseLM Q8_0 and acoustic F16 GGUF conversions: DennisHuang648, revision <code>169f64d8b98bbaab1761e4ca3a83e6af653456cc</code>. <a href="https://huggingface.co/DennisHuang648/VoxCPM2-GGUF">https://huggingface.co/DennisHuang648/VoxCPM2-GGUF</a></li>
+<li>Native VoxCPM2/llama.cpp-omni engine and statically linked GGML: tc-mb and llama.cpp/GGML contributors, <strong>MIT</strong>, revision <code>873056743b74e1a4ce5dcf7290e2298428e214db</code>. <a href="https://github.com/tc-mb/llama.cpp-omni">https://github.com/tc-mb/llama.cpp-omni</a></li>
+</ul>
+<p>The native engine is compiled into <code>Plugins/x86_64/VoxCPM2/subvox_voxcpm2.dll</code>, with a SubVox C ABI,
+cancellation and optional Vulkan loading. GGML is linked statically and isolated from Whisper/llama.cpp
+and Qwen3 TTS. The DLL is copied to Temp before loading, used only in the Windows x64 editor and excluded
+from game builds. No Python, external server or executable is installed or launched. Model files are
+downloaded separately to AppData and are excluded from the asset and game builds.</p>
+<p>Complete licences are included as <code>VOXCPM-MODEL-LICENSE.txt</code>, <code>LLAMA-CPP-LICENSE.txt</code> and <code>GGML-LICENSE.txt</code>
+under <code>Plugins/x86_64/VoxCPM2/</code>. VoxCPM2 reuses the twenty CC0 synthetic references described above;
+their provenance and dedication remain unchanged. Only clone recordings you have the right to use.</p>
 
 </article>
 

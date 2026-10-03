@@ -269,7 +269,7 @@ Les doublages suivent d’eux-mêmes.</p>
 <li>Cliquez sur <strong>Generate audio</strong>. La nouvelle piste remplace l’audio d’origine quand cette langue est active.</li>
 </ol>
 <p>Fournisseurs : InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, et les moteurs locaux <strong>Kokoro</strong>
-(anglais), <strong>Chatterbox</strong> (21 langues, en gardant la voix du personnage) et <strong>Qwen3 TTS 1.7B</strong> (dix langues, clonage de références, voix fixes et descriptions de voix).</p>
+(anglais), <strong>Chatterbox</strong> (21 langues, en gardant la voix du personnage), <strong>Qwen3 TTS 1.7B</strong> (dix langues, clonage de références, voix fixes et descriptions de voix) et <strong>VoxCPM2</strong> (30 langues, clonage avec consignes de jeu).</p>
 <ul>
 <li><strong>Word timing</strong> : <strong>Qwen3 local</strong> affiche les mots au moment exact où ils sont prononcés
 (<a href="#qwen3-offline-word-timing">installation</a>). <strong>Estimated</strong> suffit si vous n’affichez pas les mots un à un.</li>
@@ -277,7 +277,7 @@ Les doublages suivent d’eux-mêmes.</p>
 aux fournisseurs qui la prennent en compte.</li>
 <li><strong>REGEN</strong> : ce badge orange signale qu’un doublage ne correspond plus au texte, à la voix ou à la personnalité.
 Survolez-le pour en voir la raison, cliquez dessus pour ne régénérer que ce qui a changé.</li>
-<li><strong>Voice cloning</strong> : avec ElevenLabs (offre payante) ou Chatterbox, <strong>Original voice</strong> reprend la voix de chaque
+<li><strong>Voice cloning</strong> : avec ElevenLabs (offre payante), Chatterbox, Qwen Base ou VoxCPM2, <strong>Original voice</strong> reprend la voix de chaque
 personnage à partir de l’audio source. Un clip du dossier <code>Voices</code> de votre
 <a href="#where-your-files-go">dossier de données</a> fonctionne aussi. Ne clonez que des voix que vous avez le droit d’utiliser.</li>
 </ul>
@@ -585,6 +585,12 @@ mais ils fonctionnent aussi sans.</p>
 <td>Dix langues, trois variantes</td>
 </tr>
 <tr>
+<td><strong>VoxCPM2</strong></td>
+<td>Clonage de voix avec consignes de jeu</td>
+<td>3,55 Go + pack partagé de 11 Mo</td>
+<td>30 langues</td>
+</tr>
+<tr>
 <td><strong>Qwen3</strong></td>
 <td>Timing exact des mots</td>
 <td>1,0 Go</td>
@@ -672,6 +678,18 @@ redistribution, modification et clonage autorisés, sans attribution obligatoire
 <a href="https://github.com/exnihilus/subvoxpro-models/tree/main/qwen3-voices">manifeste et les notices</a> conservent
 la provenance et les empreintes. Les licences des modèles Qwen restent distinctes. Vous pouvez également
 cloner vos propres clips ou choisir <strong>Original voice</strong> pour recueillir les répliques du speaker dans l'audio source.</p>
+<p><strong>Enregistrer une référence pour Base :</strong> choisissez <strong>Record a reference…</strong> dans le sélecteur de voix.
+La fenêtre d'enregistrement existante s'ouvre depuis Dubbing, l'inspecteur du speaker ou le sélecteur batch.
+La langue choisie fournit un texte éditable dans chacune des dix langues de Qwen. Lisez naturellement avec
+votre voix habituelle dans une pièce calme, sans musique ni écho. Visez <strong>8–12 secondes</strong> ; il faut au moins
+<strong>5 secondes</strong> pour sauvegarder la référence, et la prise s'arrête à <strong>15 secondes</strong>. Le vumètre aide à éviter
+la saturation. Réécoutez, refaites la prise au besoin et corrigez le texte si vous avez changé des mots, puis
+cliquez sur <strong>Use recording</strong>. Le WAV et sa transcription <code>.txt</code> sont sauvegardés dans <code>Voices</code>, sous votre
+dossier de données ; la voix est sélectionnée immédiatement et la préécoute joue votre enregistrement.
+Base utilise la transcription pour le clonage. Un clip importé sans transcription reste utilisable en mode
+audio seul. Les textes originaux proposent des phrases courantes et variées, sans garantir un score
+de clonage particulier. Un audio propre et une transcription exacte suivent les
+<a href="https://github.com/QwenLM/Qwen3-TTS#voice-clone">recommandations officielles de Qwen</a>.</p>
 <p><strong>CustomVoice</strong> conserve les neuf voix initiales. Elles parlent toutes les dix langues, mais leur accent
 natif peut rester audible : chinois pour Vivian, Serena, Uncle Fu, Dylan et Eric ; anglais pour Ryan et Aiden ;
 japonais pour Ono Anna ; coréen pour Sohee. Les références de Base offrent une alternative par langue.</p>
@@ -698,6 +716,42 @@ La désinstallation d'une variante conserve les autres modèles, le tokenizer pa
 Les téléchargements reprennent après interruption ; taille et SHA-256 sont vérifiés. Voir la
 <a href="https://github.com/QwenLM/Qwen3-TTS">documentation officielle</a> et les <a href="notices.html">notices</a> pour les modèles
 Apache 2.0 et le moteur natif MIT.</p>
+<h3 id="voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2, clonage local avec contrôle du style </h3>
+<p>Choisissez <strong>VoxCPM2</strong> dans Dubbing puis <strong>Install…</strong>. Le même installateur est accessible depuis Settings,
+l'inspecteur du speaker, Batch Processing et Additional Models. Le pack <strong>2B Q8</strong> télécharge un BaseLM et
+un modèle acoustique F16, soit <strong>3,55 Go</strong>, ainsi que le <strong>pack partagé de références synthétiques CC0 de
+11 Mo</strong> s'il manque. Les modèles restent dans <code>%LOCALAPPDATA%/SubVoxPro/VoxCPM2</code> ; le pack partagé garde
+son emplacement dans Qwen3Tts. Les téléchargements reprennent après interruption ; taille et SHA-256 sont
+vérifiés. <strong>Open install folder</strong>, <strong>Re-download model</strong> et <strong>Uninstall model</strong> utilisent les contrôles habituels.
+Désinstaller VoxCPM2 conserve les références pour Qwen Base. Aucun compte, clé API, installation de Python,
+serveur ou exécutable externe n'est nécessaire.</p>
+<p>Le moteur C++ embarqué fonctionne dans l'<strong>éditeur Windows x64</strong>, sous Unity 2022.3 LTS et Unity 6.
+<strong>VoxCPM2 dubbing ▸ Use GPU</strong>, dans Settings, active Vulkan avec repli CPU. Un pilote graphique compatible
+suffit, sans SDK Vulkan. Le CPU est plus lent. L'audio produit est mono <strong>48 kHz</strong> ; les modèles et DLL natives
+sont exclus des builds du jeu.</p>
+<p>Choisissez <strong>Original voice</strong>, une référence synthétique du pack, un clip dans votre dossier <code>Voices</code>, ou
+<strong>Record a reference…</strong>. Original voice recueille l'audio source du speaker sélectionné. L'enregistrement
+utilise la même fenêtre et le minimum de cinq secondes que Qwen Base. Des textes sont proposés dans les
+dix langues de Qwen ; saisissez votre propre texte pour les autres langues. VoxCPM2 extrait l'identité
+vocale de l'audio sans exiger de transcription. Le sélecteur valide les langues prises en charge ; la langue
+parlée est déduite du texte. Les vingt références du pack couvrent dix langues natives et peuvent parler les
+autres, mais un accent peut persister. Préférez une référence native et propre si l'accent compte.</p>
+<p>Les <strong>personnalités</strong> gardent la priorité sous-titre → défaut du speaker → direction de la piste. VoxCPM2
+combine la voix de référence avec des consignes de jeu écrites. Préférez des consignes en <strong>anglais ou
+chinois</strong>, les langues documentées pour ce contrôle : <code>Speak softly, with a sad and disappointed tone</code>
+ou <code>Whisper quietly</code>. Les consignes restent séparées du texte des sous-titres. <strong>Adjust personality</strong> affine
+la direction existante ; <strong>New instructions</strong> la remplace. Les retouches réutilisent l'ID de voix de la prise
+initiale, même après modification du sélecteur. Le jeu et la fidélité du clonage peuvent varier entre prises.</p>
+<p><strong>Per subtitle</strong>, <strong>Per speaker</strong>, <strong>All together</strong>, les préécoutes et Batch Processing gardent le workflow
+existant. Les textes longs sont découpés entre les phrases autant que possible, avec la même référence et
+les mêmes consignes. Cancel interrompt le moteur natif ; la recompilation annule avant de libérer le modèle.
+Le moteur d'alignement Qwen3 place les mots dans ses langues prises en charge ; les autres utilisent le
+timing estimé existant.</p>
+<p>Langues : <strong>arabe, birman, chinois, danois, néerlandais, anglais, finnois, français, allemand, grec, hébreu,
+hindi, indonésien, italien, japonais, khmer, coréen, lao, malais, norvégien, polonais, portugais, russe,
+espagnol, swahili, suédois, filipino, thaï, turc et vietnamien</strong>.</p>
+<p>Voir le <a href="https://voxcpm.readthedocs.io/en/latest/usage_guide.html">guide officiel de VoxCPM2</a> et les
+<a href="notices.html">notices</a> pour les modèles Apache 2.0 et le moteur natif MIT.</p>
 <h3 id="qwen3-offline-word-timing">Qwen3, timing local des mots </h3>
 <p>Choisissez <strong>Word timing: Qwen3 local</strong> dans Transcription ou Dubbing, puis cliquez sur <strong>Install…</strong>.
 Chaque <strong>Split</strong> et chaque doublage sont ensuite alignés mot par mot. Qwen3 ne touche jamais au texte : il ne fait
