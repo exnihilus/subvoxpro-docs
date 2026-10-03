@@ -120,7 +120,7 @@ always confirm the current offer on the provider's own pricing page before relyi
 </tr>
 <tr>
 <td><strong>Dubbing / Text-to-Speech</strong></td>
-<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro local</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox local</a> · <a href="index.html#orpheus-3b-offline-english-dubbing">Orpheus 3B local</a></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro local</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox local</a> · <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B local</a></td>
 </tr>
 <tr>
 <td><strong>Local alignment</strong></td>
@@ -248,8 +248,8 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
-<td>Orpheus 3B English Q8 (local)</td>
-<td>English, with eight fixed voices; expressive audio tags.</td>
+<td>Qwen3 TTS 1.7B CustomVoice Q8 (local)</td>
+<td>Chinese, English, Japanese, Korean, German, French, Russian, Portuguese, Spanish and Italian; nine voices and written style directions.</td>
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
@@ -265,7 +265,7 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 </table>
 <blockquote>
 <p>Provider language/model catalogs can evolve independently of SubVox Pro. Refresh the model or voice
-catalog in the editor when a provider adds support; for Qwen, Kokoro, Chatterbox and Orpheus, the fixed lists above match
+catalog in the editor when a provider adds support; for Qwen, Kokoro, Chatterbox and Qwen3 TTS, the fixed lists above match
 the pinned local models.</p>
 </blockquote>
 <h3 id="chatterbox-accuracy-by-language">Chatterbox: accuracy by language</h3>
@@ -445,7 +445,7 @@ or a team-managed key, depending on how the provider handles billing and access.
 </tr>
 <tr>
 <td><strong>Dubbing / Text-to-Speech</strong></td>
-<td>ElevenLabs, InWorld AI, Gemini (same AI Studio key as Gemini translation), OpenAI (same key as OpenAI translation), Google Cloud Text-to-Speech, Azure AI Speech — or <strong>Kokoro</strong> (local, English) and <strong>Chatterbox</strong> (local, 21 languages + optional Japanese, voice cloning), or <strong>Orpheus 3B</strong> (local English, eight voices and audio tags)</td>
+<td>ElevenLabs, InWorld AI, Gemini (same AI Studio key as Gemini translation), OpenAI (same key as OpenAI translation), Google Cloud Text-to-Speech, Azure AI Speech — or <strong>Kokoro</strong> (local, English) and <strong>Chatterbox</strong> (local, 21 languages + optional Japanese, voice cloning), or <strong>Qwen3 TTS 1.7B</strong> (local, ten languages, nine voices and written style directions)</td>
 </tr>
 <tr>
 <td><strong>Forced alignment</strong> (exact dub word timings, text preserved)</td>
@@ -462,7 +462,7 @@ SubVox Pro, its price, its free plan and whether that plan allows commercial use
 <p>You only need a key for the providers you actually use. For a no-cost, no-account start, use the
 offline <strong>Whisper</strong> or <strong>Parakeet</strong> transcription and the offline <strong>Hy-MT2 (local)</strong> translator (or a free-tier one such as
 <strong>Gemini</strong> or <strong>DeepL</strong>), then
-dub with the offline <strong>Kokoro</strong>, <strong>Chatterbox</strong> or <strong>Orpheus 3B</strong> engines, or with <strong>Gemini</strong>'s free tier.</p>
+dub with the offline <strong>Kokoro</strong>, <strong>Chatterbox</strong> or <strong>Qwen3 TTS 1.7B</strong> engines, or with <strong>Gemini</strong>'s free tier.</p>
 <hr>
 <h2 id="free-tier-cheat-sheet">Free-tier cheat sheet</h2>
 <p>SubVox Pro works the same way with a free or a paid account: the same key, the same requests. A free plan
@@ -577,9 +577,9 @@ provider's current terms always prevail. The offline engines (Whisper, Parakeet,
 free for commercial use (crediting NVIDIA for Parakeet is good practice) — see <a href="notices.html">Third-Party Notices.md</a>.</p>
 </blockquote>
 <hr>
-<p>Orpheus 3B also works offline without billing. Its weights declare Apache 2.0 and its Llama 3.2 backbone
-retains Meta's community licence and acceptable-use conditions. SNAC is MIT. See the
-<a href="index.html#orpheus-3b-offline-english-dubbing">Orpheus setup guide</a> and <a href="notices.html">Third-Party Notices</a>.</p>
+<p>Qwen3 TTS 1.7B also works offline without billing. CustomVoice follows written personality and retouch
+instructions in ten languages. Its weights use Apache 2.0 and the bundled C++ engine uses MIT. See the
+<a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS setup guide</a> and <a href="notices.html">Third-Party Notices</a>.</p>
 <h2 id="where-to-paste-your-key-in-subvox-pro">Where to paste your key in SubVox Pro</h2>
 <p>Once you have a key from any provider below, SubVox Pro gives you two equivalent places to store it.
 Keys live only on this machine, in the Unity Editor preferences (<code>EditorPrefs</code>) — never inside the project.</p>
