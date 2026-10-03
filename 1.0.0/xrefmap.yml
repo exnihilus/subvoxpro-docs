@@ -1351,24 +1351,6 @@ references:
   commentId: F:SubVoxPro.SubVoxEvents.CAMERA_SHAKE
   fullName: SubVoxPro.SubVoxEvents.CAMERA_SHAKE
   nameWithType: SubVoxEvents.CAMERA_SHAKE
-- uid: SubVoxPro.SubVoxEvents.MyEvents
-  name: SubVoxEvents.MyEvents
-  href: api/SubVoxPro.SubVoxEvents.MyEvents.html
-  commentId: T:SubVoxPro.SubVoxEvents.MyEvents
-  fullName: SubVoxPro.SubVoxEvents.MyEvents
-  nameWithType: SubVoxEvents.MyEvents
-- uid: SubVoxPro.SubVoxEvents.MyEvents.SUPER_EVENT_YEAH
-  name: SUPER_EVENT_YEAH
-  href: api/SubVoxPro.SubVoxEvents.MyEvents.html#SubVoxPro_SubVoxEvents_MyEvents_SUPER_EVENT_YEAH
-  commentId: F:SubVoxPro.SubVoxEvents.MyEvents.SUPER_EVENT_YEAH
-  fullName: SubVoxPro.SubVoxEvents.MyEvents.SUPER_EVENT_YEAH
-  nameWithType: SubVoxEvents.MyEvents.SUPER_EVENT_YEAH
-- uid: SubVoxPro.SubVoxEvents.VOICE_LINE_EVENT_SIGNAL
-  name: VOICE_LINE_EVENT_SIGNAL
-  href: api/SubVoxPro.SubVoxEvents.html#SubVoxPro_SubVoxEvents_VOICE_LINE_EVENT_SIGNAL
-  commentId: F:SubVoxPro.SubVoxEvents.VOICE_LINE_EVENT_SIGNAL
-  fullName: SubVoxPro.SubVoxEvents.VOICE_LINE_EVENT_SIGNAL
-  nameWithType: SubVoxEvents.VOICE_LINE_EVENT_SIGNAL
 - uid: SubVoxPro.SubVoxEvents.VOICE_LINE_EVENT_SIGNAL_1
   name: VOICE_LINE_EVENT_SIGNAL_1
   href: api/SubVoxPro.SubVoxEvents.html#SubVoxPro_SubVoxEvents_VOICE_LINE_EVENT_SIGNAL_1

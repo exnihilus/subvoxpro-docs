@@ -467,7 +467,7 @@ SubVox Pro, its price, its free plan and whether that plan allows commercial use
 <p>You only need a key for the providers you actually use. For a no-cost, no-account start, use the
 offline <strong>Whisper</strong> or <strong>Parakeet</strong> transcription and the offline <strong>Hy-MT2 (local)</strong> translator (or a free-tier one such as
 <strong>Gemini</strong> or <strong>DeepL</strong>), then
-dub with the offline <strong>Kokoro</strong>, <strong>Chatterbox</strong> or <strong>Qwen3 TTS 1.7B</strong> engines, or with <strong>Gemini</strong>'s free tier.</p>
+dub with the offline <strong>Kokoro</strong>, <strong>Chatterbox</strong>, <strong>Qwen3 TTS 1.7B</strong> or <strong>VoxCPM2</strong> engines, or with <strong>Gemini</strong>'s free tier.</p>
 <hr>
 <h2 id="free-tier-cheat-sheet">Free-tier cheat sheet</h2>
 <p>SubVox Pro works the same way with a free or a paid account: the same key, the same requests. A free plan
@@ -578,19 +578,10 @@ only changes how much you can generate — and, for some providers, what you may
 <p><strong>Commercial use</strong> means shipping what the provider generated — subtitles, translations or dubbed audio —
 in a game or product you sell. A game dubbed with <strong>ElevenLabs</strong> or <strong>Azure</strong> voices needs their paid plan.
 This column summarizes each provider's terms as of September 2026; it is not legal advice, and the
-provider's current terms always prevail. The offline engines (Whisper, Parakeet, Hy-MT2, Kokoro, Chatterbox, Qwen3) are
+provider's current terms always prevail. The offline engines (Whisper, Parakeet, Hy-MT2, Kokoro, Chatterbox, Qwen3, VoxCPM2) are
 free for commercial use (crediting NVIDIA for Parakeet is good practice) — see <a href="notices.html">Third-Party Notices.md</a>.</p>
 </blockquote>
 <hr>
-<p>Qwen3 TTS 1.7B also works offline without billing. CustomVoice and VoiceDesign follow written personality and retouch
-instructions in ten languages; Base clones reference voices without written directions. The twenty synthetic
-references use CC0 1.0. Its weights use Apache 2.0 and the bundled C++ engine uses MIT. See the
-<a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS setup guide</a> and <a href="notices.html">Third-Party Notices</a>.</p>
-<p>VoxCPM2 adds offline reference cloning with written style directions in 30 languages, without an API key.
-Its installer downloads 3.55 GB of weights and the shared 11 MB CC0 reference pack. The Windows x64 C++
-engine uses Vulkan with CPU fallback and needs no Python. The voice picker can record a reference directly;
-English or Chinese directions control delivery. See the <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 setup guide</a>
-and <a href="notices.html">Third-Party Notices</a>.</p>
 <h2 id="where-to-paste-your-key-in-subvox-pro">Where to paste your key in SubVox Pro</h2>
 <p>Once you have a key from any provider below, SubVox Pro gives you two equivalent places to store it.
 Keys live only on this machine, in the Unity Editor preferences (<code>EditorPrefs</code>) — never inside the project.</p>
