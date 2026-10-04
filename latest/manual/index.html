@@ -280,7 +280,7 @@ follow automatically.</p>
 is active.</li>
 </ol>
 <p>Providers: InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, and offline <strong>Kokoro</strong> (English) and
-<strong>Chatterbox</strong> (21 languages, keeps each character's voice), plus <strong>Qwen3 TTS 1.7B</strong> (ten languages, reference cloning, fixed voices and voice design) and <strong>VoxCPM2</strong> (30 languages, reference cloning with written style control).</p>
+<strong>Chatterbox</strong> (21 languages, keeps each character's voice), plus <strong>Qwen3 TTS 1.7B</strong> (ten languages, reference cloning, fixed voices and voice design) and <strong>VoxCPM2</strong> (30 languages, reference cloning with written style control, and voice design).</p>
 <ul>
 <li><strong>Word timing</strong> — leave it on <strong>Qwen3 local</strong> for words that appear exactly when they are spoken
 (<a href="#qwen3-offline-word-timing">install it once</a>), or <strong>Estimated</strong> if you don't reveal subtitles word by
@@ -319,7 +319,8 @@ For a per-line override, the top entry returns to the voice line's default speak
 <h3 id="voice-personalities">Voice personalities</h3>
 <p>A <strong>personality</strong> is a reusable acting direction — <em>Angry</em>, <em>Mysterious</em>, <em>Whispering</em>… Create one from a speaker
 (<strong>New personality</strong>) or with <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Personality</strong>, then either write the direction
-yourself or combine emotion, speed, volume and delivery.</p>
+yourself or combine emotion, speed, volume and delivery. Click its icon to pick one of about forty symbols (emotions,
+moods, voice and character), so you recognise it at a glance in the lists.</p>
 <p>Give each line a personality from its chip in the list (in <strong>Each subtitle</strong> mode), or use the speaker's default.
 Every provider applies what it can: some follow the full direction, others only the pace. The chip's tooltip tells
 you what the selected voice will use.</p>
@@ -694,6 +695,9 @@ Portuguese, Russian, Spanish, Swahili, Swedish, Filipino, Thai, Turkish and Viet
 folder, or <strong>Record a reference…</strong>. Write directions in <strong>English or Chinese</strong>, for example <code>Speak softly, with a sad tone</code> or <code>Whisper quietly</code>: they work best in these two languages, whatever the language of the line. A ready-made
 voice keeps a slight accent outside its own language; for a perfect accent, use a reference recorded in the dubbed
 language. <strong>Use GPU</strong> in the Settings speeds up generation with a graphics card.</p>
+<p>To create a voice that does not exist, pick <strong>Designed voice</strong> and describe it, for example <code>A deep, calm male voice in his fifties</code>. The voice is created the first time you generate, then kept for every line, so a character always
+sounds the same; your personalities still set the tone. For a different voice per character, write the description
+on each speaker and set their voice to <strong>Designed voice</strong>.</p>
 <h3 id="qwen3-offline-word-timing">Qwen3 (offline word timing)</h3>
 <p>Set <strong>Word timing</strong> to <strong>Qwen3 local</strong> in the Transcription or Dubbing tab and click <strong>Install…</strong>. From then on, each
 <strong>Split</strong> of a transcription and every generated dub are aligned word by word automatically, so word-by-word subtitles
