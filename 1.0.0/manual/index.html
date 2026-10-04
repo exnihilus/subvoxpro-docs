@@ -231,7 +231,7 @@ system trash, so it can be recovered.</p>
 how early it appears before its first word, and whether lines should end on punctuation.</li>
 </ol>
 <p><strong>Word timing</strong> chooses where the timing of each word comes from: <strong>From the provider</strong> (default) keeps the timings
-returned by the transcription, <strong>Qwen3 local</strong> places every word again on the audio right after <strong>Split</strong>, without
+returned by the transcription, <strong>Qwen3 Aligner</strong> places every word again on the audio right after <strong>Split</strong>, without
 changing the text — the most precise option for word-by-word subtitles (<a href="#qwen3-offline-word-timing">install it once</a>).
 In a language Qwen3 does not support, the provider's timings are kept.</p>
 <p>Providers: AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, OpenAI, or <strong>Whisper</strong> and <strong>Parakeet</strong> offline. Not
@@ -282,7 +282,7 @@ is active.</li>
 <p>Providers: InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, and offline <strong>Kokoro</strong> (English) and
 <strong>Chatterbox</strong> (21 languages, keeps each character's voice), plus <strong>Qwen3 TTS 1.7B</strong> (ten languages, reference cloning, fixed voices and voice design) and <strong>VoxCPM2</strong> (30 languages, reference cloning with written style control, and voice design).</p>
 <ul>
-<li><strong>Word timing</strong> — leave it on <strong>Qwen3 local</strong> for words that appear exactly when they are spoken
+<li><strong>Word timing</strong> — leave it on <strong>Qwen3 Aligner</strong> for words that appear exactly when they are spoken
 (<a href="#qwen3-offline-word-timing">install it once</a>), or <strong>Estimated</strong> if you don't reveal subtitles word by
 word.</li>
 <li><strong>Voice direction</strong> — the speech-bubble button next to the voice gives the tone of the performance (for example
@@ -699,7 +699,7 @@ language. <strong>Use GPU</strong> in the Settings speeds up generation with a g
 sounds the same; your personalities still set the tone. For a different voice per character, write the description
 on each speaker and set their voice to <strong>Designed voice</strong>.</p>
 <h3 id="qwen3-offline-word-timing">Qwen3 (offline word timing)</h3>
-<p>Set <strong>Word timing</strong> to <strong>Qwen3 local</strong> in the Transcription or Dubbing tab and click <strong>Install…</strong>. From then on, each
+<p>Set <strong>Word timing</strong> to <strong>Qwen3 Aligner</strong> in the Transcription or Dubbing tab and click <strong>Install…</strong>. From then on, each
 <strong>Split</strong> of a transcription and every generated dub are aligned word by word automatically, so word-by-word subtitles
 match the voice exactly. It only places the words — it never changes your text. Languages: Chinese, Cantonese,
 English, French, German, Italian, Japanese, Korean, Portuguese, Russian and Spanish, for audio up to 5 minutes.</p>
