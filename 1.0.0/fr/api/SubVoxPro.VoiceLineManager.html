@@ -177,7 +177,7 @@ Classe VoiceLineManager
   ChooseDisplayedEmitter(IReadOnlyList&lt;VoiceLineEmitter&gt;)
   
   </h3>
-<div class="markdown level1 summary"><p>Choisit l’émetteur dont le sous-titre est affiché, ou null. Par défaut : priorité la plus élevée, puis lecture la plus récente, en ignorant les émetteurs sans Show Subtitles.</p>
+<div class="markdown level1 summary"><p>Choisit, parmi les émetteurs qui jouent une réplique, celui dont le sous-titre sera affiché ; renvoie null s’il n’y en a aucun. Par défaut : priorité la plus élevée, puis réplique démarrée le plus récemment, en ignorant les émetteurs dont Show Subtitles est désactivé.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">

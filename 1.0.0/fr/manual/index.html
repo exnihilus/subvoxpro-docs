@@ -77,7 +77,7 @@
 </div>
 <article data-uid="">
 <h1 id="subvox-pro">SubVox Pro</h1>
-<p>SubVox Pro tire de vos répliques des sous-titres synchronisés et des doublages, sans quitter Unity :</p>
+<p>SubVox Pro transforme vos répliques en sous-titres synchronisés et en doublages, directement dans Unity :</p>
 <ul>
 <li><strong>Transcrivez</strong> un clip audio en sous-titres horodatés, avec un service en ligne ou entièrement hors connexion.</li>
 <li><strong>Ajustez</strong> le timing sur une forme d’onde, stylisez les mots et vérifiez la vitesse de lecture.</li>
@@ -175,7 +175,8 @@ ou un style, puis glissez sur les mots pour les appliquer. Glisser avec le bouto
 </ul>
 <h3 id="tags-and-languages">Tags et langues </h3>
 <p>Cliquez sur le tag à côté de <strong>Voice Line Data</strong> pour choisir sa couleur et sa forme. <strong>Clear tag</strong> le retire.
-La forme distingue les voicelines sans s’appuyer sur la seule couleur.</p>
+La forme permet de distinguer les voicelines sans se fier uniquement à leur couleur. Cliquez sur <strong>A-Z</strong> ou <strong>0-9</strong>
+pour utiliser une lettre ou un chiffre comme forme.</p>
 <p><img alt="Popup de tag, avec un losange bleu sélectionné" src="Documentation/Images/subvoxpro-tag-popup.png"/></p>
 <p>Cliquez sur le drapeau source pour choisir la langue parlée. Les drapeaux représentent des langues, pas la
 nationalité des personnages. Le sélecteur indique aussi le nom de chaque langue et son code.</p>
@@ -185,7 +186,7 @@ nationalité des personnages. Le sélecteur indique aussi le nom de chaque langu
 <p>Une voiceline peut commencer par du texte. Choisissez <strong>Add a subtitles track</strong>, puis importez un <strong>.srt</strong>
 avec ses timings, un <strong>.txt</strong> avec un sous-titre par ligne, ou saisissez les lignes vous-même. Pour un TXT,
 les durées sont calculées pour laisser le temps de lire.
-Réglez <strong>Length</strong> : c’est la durée de la voiceline tant qu’elle n’a ni audio ni doublage.</p>
+Réglez <strong>Length</strong> : c’est la durée de lecture de la voiceline en jeu tant qu’elle n’a ni audio ni doublage.</p>
 <h3 id="recording-audio">Enregistrer de l’audio </h3>
 <p><img alt="Ajouter une piste audio : clip ou enregistrement au microphone" src="Documentation/Images/subvoxpro-new-voice-line-audio.png"/></p>
 <p><strong>Record with a microphone</strong>, dans <strong>Add an audio track</strong> ou dans le <strong>+</strong> du sélecteur AUDIO, ouvre un enregistreur.
@@ -202,11 +203,11 @@ et choisissez la durée minimale du silence. Les parties masquées sont ombrées
 <li><strong>Export SRT</strong> enregistre les sous-titres dans un fichier <code>.srt</code>.</li>
 </ul>
 <p><img alt="Réglages Auto blanks : silence, pause minimale, maintien et anticipation" src="Documentation/Images/subvoxpro-auto-blanks.png"/></p>
-<p><strong>Silence</strong> fixe de combien une pause doit être plus faible que la voix pour compter comme un silence. <strong>Min pause</strong> ignore les silences
+<p><strong>Silence</strong> définit l’écart de volume nécessaire entre une pause et la voix pour que cette pause soit considérée comme un silence. <strong>Min pause</strong> ignore les silences
 trop courts. <strong>Hold out</strong> conserve brièvement le texte après l’arrêt de la voix, et <strong>Lead in</strong> le fait réapparaître
 avant la reprise. <strong>Only between two lines</strong> évite de masquer puis de réafficher un sous-titre au milieu de sa phrase.</p>
 <h3 id="deleting-a-voice-line">Supprimer une voiceline </h3>
-<p>Le bouton corbeille liste les fichiers associés à la voiceline. Les fichiers générés par SubVox Pro, comme les
+<p>Le bouton corbeille supprime la voiceline et affiche la liste des fichiers qui lui sont associés. Les fichiers générés par SubVox Pro, comme les
 doublages et les enregistrements, sont cochés ; vos fichiers d’origine ne le sont pas. Un fichier encore utilisé
 ailleurs est verrouillé. Les fichiers partent dans la corbeille du système : rien n’est perdu définitivement.</p>
 <hr/>
@@ -220,7 +221,7 @@ prêt : clé enregistrée ou modèle téléchargé.</li>
 <li>Cliquez sur <strong>Split</strong> pour regrouper les mots en sous-titres. <strong>Split settings</strong> règle la durée maximale,
 l’avance avant le premier mot et la coupure sur la ponctuation.</li>
 </ol>
-<p><strong>Word timing</strong> choisit l’origine du timing de chaque mot. <strong>From the provider</strong>, par défaut, conserve celui de
+<p><strong>Word timing</strong> permet de choisir la source des timings de mots. <strong>From the provider</strong>, par défaut, conserve celui de
 la transcription. <strong>Qwen3 aligner (local)</strong> recale chaque mot sur l’audio après <strong>Split</strong>, sans modifier le texte : c’est
 le choix le plus précis pour l’affichage mot par mot (<a href="#qwen3-offline-word-timing">installation</a>).
 Si Qwen3 ne prend pas la langue en charge, les timings du fournisseur sont conservés.</p>
@@ -239,25 +240,25 @@ Utilisez l’alignement local ou un fournisseur avec horodatage des mots lorsque
 <ol>
 <li>Choisissez un <strong>Provider</strong> : DeepL, Google Translate, OpenAI, Claude, Gemini, DeepSeek ou <strong>Hy-MT2</strong> local.</li>
 <li>Choisissez une langue <strong>Target</strong>, ou un <strong>preset</strong> pour traduire vers plusieurs langues à la fois.</li>
-<li>Réglez <strong>Formality</strong> (tutoiement ou vouvoiement, par exemple) si la langue le permet.</li>
+<li>Réglez <strong>Formality</strong> pour choisir un registre formel ou familier (vouvoiement ou tutoiement, par exemple), si la langue le permet.</li>
 <li>Cliquez sur <strong>Translate</strong>. Chaque langue obtient sa piste dans le sélecteur SUBTITLES.</li>
 </ol>
 <p><img alt="Popup Target : groupe de langues et édition de sa liste" src="Documentation/Images/subvoxpro-translation-targets.png"/></p>
-<p>Dans le popup <strong>Target</strong>, <strong>+ New</strong> crée un groupe, dont la colonne de droite fixe les langues.
-Choisir ce preset traduit ensuite vers toutes ces langues d’un coup.</p>
+<p>Le popup <strong>Target</strong> permet aussi de modifier les presets : <strong>+ New</strong> crée un groupe, et la colonne de droite
+permet de choisir ses langues. Sélectionnez ce preset pour traduire vers toutes ses langues en une seule opération.</p>
 <p><strong>Donnez du contexte.</strong> Si une phrase est ambiguë, écrivez un <strong>contexte global</strong> avec le bouton bulle de la
 voiceline, et au besoin une note sur la ligne concernée avec son propre bouton bulle dans la liste.</p>
 <p><strong>Gardez les traductions à jour.</strong> Quand le texte source change, les traductions affichent <strong>OUT</strong>.
 <strong>Synchronize</strong> ne retraduit que les lignes modifiées ; cliquez sur le badge si vous avez vérifié la ligne vous-même.
 Si vous déplacez les marqueurs et coupez une phrase autrement, le badge <strong>CUT</strong> apparaît :
-<strong>Fix splits</strong> demande alors à un fournisseur IA de recouper la traduction au même endroit, sans changer ses mots.
-Les doublages suivent d’eux-mêmes.</p>
+<strong>Fix splits</strong> demande alors à un fournisseur IA de redécouper la traduction en respectant le sens du découpage
+source, sans changer ses mots. Les doublages sont mis à jour automatiquement.</p>
 <hr/>
 <h2 id="dub-with-text-to-speech">Doubler par synthèse vocale </h2>
 <p><img alt="Onglet Dubbing avec Chatterbox local" src="Documentation/Images/subvoxpro-ai-tools-dubbing.png"/></p>
 <ol>
 <li>Sélectionnez la langue à doubler dans SUBTITLES.</li>
-<li>Dans <strong>AI Tools ▸ Dubbing</strong>, choisissez un <strong>Provider</strong> et une <strong>Voice</strong>. Le bouton ▶ fait écouter la voix.
+<li>Dans <strong>AI Tools ▸ Dubbing</strong>, choisissez un <strong>Provider</strong> et une <strong>Voice</strong>. Le bouton ▶ permet d’écouter un extrait de la voix.
 <strong>Use speakers' voices</strong> prend la voix du <a href="#speakers-and-voice-personalities">speaker</a> de chaque ligne.</li>
 <li>Choisissez <strong>Generation</strong> :
 <ul>
@@ -267,7 +268,8 @@ Les doublages suivent d’eux-mêmes.</p>
 <li><strong>Groups</strong> : vous choisissez quels mots sont dits d’une seule prise (voir ci-dessous).</li>
 </ul>
 </li>
-<li>Cliquez sur <strong>Generate audio</strong>. La nouvelle piste remplace l’audio d’origine quand cette langue est active.</li>
+<li>Cliquez sur <strong>Generate audio</strong>. Le doublage est ajouté comme nouvelle piste audio et se joue à la place de
+l’original quand cette langue est active.</li>
 </ol>
 <p><strong>Mode Groups.</strong> Choisir <strong>Groups</strong> active l’outil <strong>Groups</strong> au-dessus de la forme d’onde. Chaque groupe est dit
 d’une seule prise, avec la voix et la personnalité de son premier mot, et le texte des sous-titres prend la couleur
@@ -297,8 +299,8 @@ Consultez le <a href="providers.html">guide des fournisseurs</a>.</p>
 <h2 id="speakers-and-voice-personalities">Speakers et personnalités vocales </h2>
 <h3 id="speakers">Speakers </h3>
 <p><img alt="Inspector d’un speaker : style du nom et personnalités vocales" src="Documentation/Images/subvoxpro-speaker-inspector.png"/></p>
-<p>Un <strong>speaker</strong> représente un personnage : son nom, dans sa couleur, peut précéder ses sous-titres, et il porte
-ses voix de doublage. Créez-le avec <strong>Assets ▸ Create ▸ SubVox Pro ▸ Speaker</strong> ou depuis le sélecteur de speaker.</p>
+<p>Un <strong>speaker</strong> représente un personnage : il définit le nom et la couleur à afficher devant ses sous-titres,
+ainsi que ses voix de doublage. Créez-le avec <strong>Assets ▸ Create ▸ SubVox Pro ▸ Speaker</strong> ou depuis le sélecteur de speaker.</p>
 <ul>
 <li>Le champ <strong>Speaker</strong> au-dessus de la liste vaut pour toute la voiceline ; celui d’une ligne ne concerne que
 ce sous-titre.</li>
@@ -316,12 +318,13 @@ Sur une ligne, l’entrée du haut revient au speaker par défaut de la voicelin
 <h3 id="voice-personalities">Personnalités vocales </h3>
 <p>Une <strong>personnalité</strong> est une direction de jeu réutilisable, comme <em>Angry</em>, <em>Mysterious</em> ou <em>Whispering</em>.
 Créez-la depuis un speaker avec <strong>New personality</strong> ou avec <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Personality</strong>.
-La direction s’écrit librement, ou se compose à partir de l’émotion, du rythme, du volume et de la diction.
+Vous pouvez écrire librement les consignes de jeu ou les composer à partir de l’émotion, du rythme, du volume
+et de la manière de parler.
 Cliquez sur son icône pour choisir l’un des quelque quarante symboles (émotions, humeurs, voix et personnage) :
 vous la reconnaissez ainsi d’un coup d’œil dans les listes.</p>
-<p>Choisissez une personnalité avec le badge d’une ligne, en mode <strong>Each subtitle</strong>, ou utilisez celle du speaker.
-Chaque fournisseur applique ce qu’il sait interpréter : toute la direction pour certains, le seul rythme pour
-d’autres. Au survol, le badge indique ce que la voix choisie en retiendra.</p>
+<p>Choisissez une personnalité avec le badge d’une ligne, en mode <strong>Each subtitle</strong>, ou utilisez la personnalité
+par défaut du speaker. Chaque fournisseur applique les consignes qu’il prend en charge : toutes pour certains,
+uniquement le rythme pour d’autres. Au survol, le badge indique celles que la voix choisie utilisera.</p>
 <hr/>
 <h2 id="edit-the-audio">Modifier l’audio </h2>
 <p>Les boutons à droite de la barre Timeline modifient l’audio lui-même. Chaque modification s’annule avec
@@ -342,8 +345,8 @@ sur la valeur de base, zéro et leurs voisins ; maintenez <strong>Alt</strong> p
 pour que les effets restent modifiables. <strong>Flatten</strong> les rend définitifs, <strong>Discard</strong> les retire tous.</li>
 <li><strong>Intonation</strong> : la mélodie de la voix apparaît au-dessus. Dessinez dans la piste du bas le décalage positif ou
 négatif ; <strong>0</strong> conserve la voix. L’<strong>aimant</strong> suit le pas choisi (<strong>0,5 st</strong> par défaut) ; <strong>Alt</strong> permet un tracé
-libre. Le bouton <strong>vague</strong> lisse les nouveaux gestes sur la durée choisie ; à zéro, le tracé est gardé tel quel.
-Le bouton droit rétablit la voix et <strong>Esc</strong> annule le geste en cours. Le reste de l’audio n’est pas touché.
+libre. Le bouton à l’icône d’<strong>onde</strong> lisse les nouveaux tracés sur la durée choisie ; à zéro, le tracé est conservé tel quel.
+Glisser avec le bouton droit rétablit la voix et <strong>Esc</strong> annule le geste en cours. Le reste de l’audio n’est pas touché.
 <strong>Pitch</strong> décale tout un passage, avec la même mélodie affichée. Quelques demi-tons (<strong>st</strong>) donnent en général
 le meilleur résultat. <strong>Engine</strong> propose <strong>WORLD</strong> (par défaut, le plus naturel), <strong>PSOLA</strong> (plus léger) et
 <strong>Classic</strong> (le plus rapide, mais il modifie aussi le timbre).</li>
@@ -353,7 +356,7 @@ le meilleur résultat. <strong>Engine</strong> propose <strong>WORLD</strong> (p
 règlent le gain. <strong>0 dB</strong> conserve le volume original.</p>
 <p><img alt="Intonation : mélodie détectée et piste séparée de décalage de hauteur" src="Documentation/Images/subvoxpro-intonation.png"/></p>
 <p>La courbe supérieure montre la mélodie détectée. La piste inférieure contient votre modification en demi-tons :
-une valeur positive monte la voix, une valeur négative la baisse et zéro garde l’original. Les deux restent
+une valeur positive rend la voix plus aiguë, une valeur négative la rend plus grave et zéro conserve l’original. Les deux restent
 séparées pour bien distinguer la voix d’origine de vos changements.</p>
 <hr/>
 <h2 id="play-voice-lines-in-your-game">Jouer des voicelines dans votre jeu </h2>
@@ -399,16 +402,16 @@ et plusieurs personnages peuvent parler en même temps.</p>
 </code></pre>
 <p>Les <strong>priorités</strong> protègent les répliques importantes. Sur un émetteur, une nouvelle réplique ne remplace celle en
 cours que si elle est au moins aussi importante. À l’écran, c’est le sous-titre de la plus importante qui s’affiche.
-<code>EVoiceLinePlayMode.Queue</code> attend son tour ; <code>EVoiceLinePlayMode.IfIdle</code> ne joue que si l’émetteur est
-libre. <code>Skip()</code> termine la réplique tout de suite. Désactivez <strong>Show Subtitles</strong> pour les conversations de fond.
+<code>EVoiceLinePlayMode.Queue</code> met la réplique en attente ; <code>EVoiceLinePlayMode.IfIdle</code> ne la joue que si l’émetteur
+est libre. <code>Skip()</code> termine la réplique tout de suite. Désactivez <strong>Show Subtitles</strong> pour les conversations de fond.
 <code>VoiceLineCompleted</code> et <code>VoiceLineInterrupted</code> signalent qu’une lecture s’est terminée ou a été interrompue.</p>
 <p><strong>Bulles de dialogue.</strong> Sélectionnez un personnage et utilisez <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>.
 Une bulle au-dessus de sa tête n’affiche que ses répliques. Désactivez <strong>Show Subtitles</strong> sur son émetteur
 pour ne pas les afficher aussi en bas de l’écran.</p>
 <h3 id="without-code">Sans code </h3>
 <ul>
-<li><strong>Voice Line Zone</strong> joue une réplique quand le joueur entre dans un trigger 2D ou 3D, une seule fois ou après un
-délai d’attente. Avec <strong>Play mode: Queue</strong>, elle attend la fin de la réplique en cours. La zone peut aussi arrêter
+<li><strong>Voice Line Zone</strong> joue une réplique quand le joueur entre dans un trigger 2D ou 3D, une seule fois ou avec un
+cooldown entre deux déclenchements. Avec <strong>Play mode: Queue</strong>, elle attend la fin de la réplique en cours. La zone peut aussi arrêter
 la réplique quand le joueur sort, et la rejouer à son retour.</li>
 <li><strong>Voice Line Play On Start</strong> joue une réplique au démarrage de l’objet, après un délai facultatif.</li>
 <li><strong>Voice Line Bank</strong>, dans <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line Bank</strong>, regroupe des répliques tirées au
@@ -428,7 +431,8 @@ pour ne pas passer d’une langue à l’autre au milieu d’une phrase.</p>
 <ul>
 <li><strong>Unity Localization</strong> : si ce package est installé, SubVox Pro suit sa langue. Pour gérer la langue vous-même,
 réglez <strong>Language Source</strong> sur <strong>Manual</strong> dans Voice Line Manager.</li>
-<li><strong>Langues proches</strong> : faute de <code>pt-BR</code>, le joueur obtient la traduction <code>pt</code>, et inversement.</li>
+<li><strong>Variantes régionales</strong> : si la version <code>pt-BR</code> n’est pas disponible, le joueur entend et lit la version <code>pt</code>,
+et inversement.</li>
 <li><strong>Menu de langues</strong> : <code>myVoiceLine.GetSubtitleLanguages()</code> et <code>GetAudioLanguages()</code> listent les langues disponibles.</li>
 </ul>
 <h3 id="subtitle-options-for-players">Options de sous-titres pour les joueurs </h3>
@@ -443,7 +447,7 @@ SubVox.RevealMode = EVoiceLineSubtitleRevealMode.Karaoke;
 <h3 id="your-own-subtitle-display">Votre propre afficheur </h3>
 <p>Pour afficher les sous-titres à votre façon, abonnez-vous à <code>SubVox.SubtitleUpdated</code>, qui fournit le texte à chaque
 changement ; un texte vide veut dire « effacer l’écran ». Lisez <code>SubVox.CurrentSubtitle</code> juste après l’abonnement
-pour reprendre une réplique déjà en cours, comme le font les afficheurs fournis quand ils s’activent. Une bulle,
+pour afficher aussi une réplique déjà en cours, comme le font les afficheurs fournis lorsqu’ils sont activés ou réactivés. Une bulle,
 elle, lit le sous-titre de son propre émetteur.</p>
 <p><code>SubVox.DisplayedVoiceLine</code> indique la voiceline affichée à l’écran, y compris depuis un clip Timeline.
 <code>SubVox.PublishSubtitle(...)</code> affiche votre propre texte, pour une vidéo par exemple. Ce texte est ignoré tant qu’un
@@ -467,14 +471,14 @@ emitter.PlayExternal(myVoiceLine, clock);
 audio.</p>
 <hr/>
 <h2 id="trigger-gameplay-from-a-voice-line">Déclencher du gameplay depuis une voiceline </h2>
-<p><img alt="Mode Events : diamant sur la piste d’événements" src="Documentation/Images/subvoxpro-timeline-events.png"/></p>
+<p><img alt="Mode Events : losange sur la piste d’événements" src="Documentation/Images/subvoxpro-timeline-events.png"/></p>
 <p>Ouvrir une porte sur « Run! », secouer la caméra sur un cri : les <strong>événements</strong> se déclenchent à un moment précis
 d’une réplique.</p>
 <ol>
 <li>Passez la timeline en mode <strong>Events</strong> et cliquez sur <strong>+ Event</strong>, ou faites un clic molette sur la forme d’onde.</li>
 <li>Associez-lui un <strong>signal</strong> : un petit asset réutilisable qui nomme l’événement, par exemple <em>Camera Shake</em>.</li>
-<li>Choisissez quand il se déclenche : au début ou à la fin de la voix, à un instant donné, sur un sous-titre ou
-sur un mot. Accroché à un mot, il le suit si son timing change. Déplacez le losange pour le recaler.</li>
+<li>Choisissez quand il se déclenche : au début ou à la fin de l’audio, à un instant donné, sur un sous-titre ou
+sur un mot. Ancré sur un mot, il suit ce mot si son timing change. Déplacez le losange pour le recaler.</li>
 </ol>
 <p>Il y a trois façons d’y réagir :</p>
 <ul>
@@ -511,7 +515,7 @@ l’édition ni quand on déplace la tête de lecture à la main.</p>
 <li>Ajoutez un Subtitle Displayer à la scène ; le plus simple est d’utiliser son prefab.</li>
 </ol>
 <p>L’audio et les sous-titres restent synchronisés, même quand on déplace la tête de lecture à la main.
-Glisser une <strong>Voice Line Sequence</strong> place toutes ses répliques à la suite. Les événements jouent avec la voiceline ;
+Glisser une <strong>Voice Line Sequence</strong> place toutes ses répliques à la suite. Les événements de la voiceline se déclenchent pendant la lecture ;
 pour les manipuler comme des marqueurs Timeline, faites un clic droit sur le clip, puis
 <strong>SubVox Pro ▸ Bake Voice Events to Timeline</strong>.</p>
 <p>La cinématique joue le doublage de la langue active s’il existe ; la langue est fixée au lancement de la
@@ -521,7 +525,7 @@ sous-titres ne remplacent pas ceux du clip, même pendant un blank ou avant son 
 Les blanks au milieu du clip suivent, comme d’habitude, <strong>Keep Background Between Subtitles</strong>.</p>
 <p>À la fin du clip ou à l’arrêt du director, l’affichage revient aussitôt à l’émetteur le plus prioritaire en cours,
 là où il en est, sans relancer son audio. Si aucun émetteur ne joue, le panneau se masque.
-Quand plusieurs pistes ou directors SubVox se chevauchent, le dernier clip entré garde l’affichage, et la fin
+Quand plusieurs pistes ou directors SubVox se chevauchent, le clip devenu actif le plus récemment a la priorité sur l’affichage, et la fin
 d’un autre clip ne l’efface pas. Un director en pause laisse son sous-titre affiché jusqu’à la reprise ou
 l’arrêt.</p>
 <hr/>
@@ -530,7 +534,7 @@ l’arrêt.</p>
 <p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> transforme toute une liste de fichiers audio ou <code>.srt</code> en voicelines.</p>
 <p>Pour utiliser les audios déjà dans le projet, sélectionnez plusieurs fichiers audio, faites un clic droit,
 puis choisissez <strong>SubVox Pro ▸ Batch Processing</strong>. Les fichiers s’ajoutent à la liste actuelle sans lancer
-le traitement ; les doublons sont ignorés. Si un batch tourne déjà, attendez qu’il soit terminé.</p>
+le traitement ; les doublons sont ignorés. Si un traitement par lot est déjà en cours, attendez qu’il soit terminé.</p>
 <ol>
 <li>Glissez les fichiers, ou utilisez <strong>Add files…</strong> ou <strong>Add folder…</strong>.</li>
 <li>Activez les étapes utiles (<strong>Transcription</strong>, <strong>Translation</strong>, <strong>Dubbing</strong>) et réglez-les une fois pour tout le
@@ -678,8 +682,8 @@ propre voix, choisissez <strong>Record a reference…</strong> dans le sélecteu
 8 à 12 secondes, dans une pièce calme.</li>
 <li>Les voix <strong>Custom Voice</strong> parlent toutes les langues, mais chacune garde un léger accent de sa langue d’origine.</li>
 <li><strong>Voice Design</strong> : décrivez la voix de chaque personnage (âge, timbre, accent…) dans <strong>Voice description</strong> de son
-speaker, puis choisissez <strong>Use speakers' voices</strong>. Pour une seule voix sur toute la ligne, décrivez-la plutôt dans le
-panneau Dubbing. Une même description peut sonner un peu différemment d’une prise à l’autre ; utilisez Base quand
+speaker, puis choisissez <strong>Use speakers' voices</strong>. Pour utiliser une seule voix sur toute la voiceline, décrivez-la plutôt dans le
+panneau Dubbing. Une même description peut produire une voix légèrement différente d’une prise à l’autre ; utilisez Base quand
 la voix doit rester identique.</li>
 </ul>
 <p><strong>Use GPU</strong>, dans les réglages, accélère la génération avec une carte graphique.</p>
@@ -688,7 +692,7 @@ la voix doit rester identique.</li>
 personnalités et consignes de retouche, dans 30 langues : arabe, birman, chinois, danois, néerlandais, anglais,
 finnois, français, allemand, grec, hébreu, hindi, indonésien, italien, japonais, khmer, coréen, lao, malais,
 norvégien, polonais, portugais, russe, espagnol, swahili, suédois, filipino, thaï, turc et vietnamien.</p>
-<p>Ses voix sont celles de Qwen3 Base : <strong>Original voice</strong>, les 20 voix fournies, vos clips du dossier <code>Voices</code>, ou
+<p>VoxCPM2 propose les mêmes références vocales que Qwen3 Base : <strong>Original voice</strong>, les 20 voix fournies, vos clips du dossier <code>Voices</code>, ou
 <strong>Record a reference…</strong>. Écrivez les consignes en <strong>anglais ou en chinois</strong>, par exemple <code>Speak softly, with a sad tone</code> ou <code>Whisper quietly</code> : ce sont les deux langues où elles fonctionnent le mieux, quelle que soit la langue de la
 ligne. Une voix fournie garde un léger accent hors de sa langue ; pour un accent parfait, utilisez une référence
 enregistrée dans la langue doublée. <strong>Use GPU</strong>, dans les réglages, accélère la génération avec une carte graphique.</p>
@@ -719,10 +723,11 @@ les traducteurs en leur donnant le rôle <strong>Editor</strong>.</li>
 </ol>
 <h3 id="every-day">Utilisation quotidienne </h3>
 <p>Les traducteurs remplissent les colonnes de langues et marquent les lignes <strong>reviewed</strong> ou <strong>final</strong>.
-<strong>Sync with Sheet</strong> liste chaque différence entre Unity et la feuille, et vous choisissez ce que vous gardez avant
-que quoi que ce soit ne soit écrit. Les colonnes de clés sont verrouillées : seules les traductions sont modifiables.
-<strong>reviewed</strong> s’affiche en ambre, <strong>final</strong> en vert, et les traductions vides sont teintées. Chaque voiceline a sa
-ligne de titre sombre ; le <strong>+ / −</strong> de la marge gauche replie ou déplie ses lignes.</p>
+<strong>Sync with Sheet</strong> affiche les différences, avec Unity d’un côté et la feuille de l’autre. Vous choisissez
+la version à conserver avant qu’une modification soit enregistrée. Les colonnes de clés sont verrouillées : seules les traductions sont modifiables.
+Le statut <strong>reviewed</strong> apparaît en ambre, <strong>final</strong> en vert, et les traductions vides ont un fond coloré.
+Chaque voiceline commence par une ligne de titre sur fond sombre ; le <strong>+ / −</strong> de la marge gauche permet
+de replier ou de déplier ses lignes.</p>
 <p>Une ligne ajoutée seulement dans la feuille n’est pas importée, faute de timing, et n’est jamais supprimée sans
 votre accord. Les lignes <strong>Duplicate</strong> (en double) et <strong>Removed</strong> (supprimées dans Unity) sont réglées sur <strong>Drop</strong>
 par défaut, pour faire le ménage en une synchronisation ; <strong>Keep</strong> les garde dans la feuille. Le bouton à côté de
@@ -735,9 +740,9 @@ Spreadsheet ID ouvre la feuille dans le navigateur.</p>
 <li><strong>API Keys</strong> : une clé par service, enregistrée sur cet ordinateur uniquement, jamais dans le projet ni dans le build.
 L’œil affiche ou masque une clé ; la croix rouge la supprime.</li>
 <li><strong>Preferences</strong> : <strong>Show CPS</strong>, <strong>Custom inspectors</strong> et <strong>Auto blanks on new lines</strong>.</li>
-<li><strong>Data folder</strong> : où sont créés les nouvelles voicelines, speakers et doublages.</li>
+<li><strong>Data folder</strong> : dossier de création des nouvelles voicelines, des speakers et des doublages.</li>
 <li><strong>Cloud Model Catalog</strong> : les modèles d’IA cloud et leurs prix, tenus à jour en ligne. <strong>Manage models</strong> permet d’en ajouter un.
-Les modèles locaux se sélectionnent et s’installent dans <strong>Additional Models</strong> et les contrôles de leur fournisseur.</li>
+Les modèles locaux se sélectionnent et s’installent dans <strong>Additional Models</strong> ou à l’aide des boutons de leur fournisseur.</li>
 <li><strong>Local models &amp; services</strong> : état de chaque moteur (<strong>Ready</strong> ou <strong>Not installed</strong>), options comme le GPU ou
 l’expressivité de Chatterbox, installation ou configuration, et nettoyage des voix clonées sur ElevenLabs.</li>
 </ul>
@@ -795,7 +800,7 @@ l’expressivité de Chatterbox, installation ou configuration, et nettoyage des
 <td>Déplacer un marqueur, mot ou événement</td>
 </tr>
 <tr>
-<td><strong>Glisser la tête ou le pied de la tête de lecture</strong></td>
+<td><strong>Glisser la poignée supérieure ou inférieure de la tête de lecture</strong></td>
 <td>Déplacer la tête de lecture pendant l’édition d’un effet audio</td>
 </tr>
 <tr>

@@ -77,7 +77,7 @@
 </div>
 <article data-uid="">
 <h1 id="dubbing--text-to-speech">Doublage par synthèse vocale </h1>
-<p>Le doublage ElevenLabs utilise la même clé que la transcription ; une clé restreinte doit avoir
+<p>Le doublage ElevenLabs utilise la même clé que la transcription ; si la clé est restreinte, elle doit autoriser
 <strong>Text to Speech: Access</strong>. Le clonage ElevenLabs (Instant Voice Cloning, sur une offre payante) demande en plus
 l’accès en écriture à <strong>Voices</strong>, pour créer, retrouver et supprimer les voix clonées.
 Le doublage Gemini utilise la clé <a href="providers-translation.html#google-gemini">Gemini</a>, sans OAuth ni facturation, contrairement aux voix
@@ -93,7 +93,7 @@ Gemini de Google Cloud décrites plus bas. Le doublage OpenAI utilise la clé <a
 <li>Cliquez sur <strong>Generate new key</strong>.
 <img alt="Page des clés Inworld" src="Documentation/Images/inworld-api-keys-page.png"/></li>
 <li>Donnez-lui un nom facile à reconnaître. Choisissez <strong>Standard</strong> (sauf besoin particulier d’une clé
-realtime-only) et gardez les permissions nécessaires au doublage.
+réservée au temps réel) et conservez les permissions nécessaires au doublage.
 <img alt="Génération de clé Inworld" src="Documentation/Images/inworld-generate-api-key-dialog.png"/></li>
 <li>Copiez <strong>Basic (Base64)</strong>.
 <img alt="Valeur Basic Base64 d’Inworld" src="Documentation/Images/inworld-api-key-basic-value.png"/>
@@ -110,10 +110,10 @@ permet d’écouter les voix. <a href="https://docs.inworld.ai/docs/tts-api/gett
 <summary><h2 class="svx-provider-title" id="google-cloud-tts-setup"><strong>Google Cloud Text-to-Speech</strong></h2></summary>
 <p><strong>Utilisé pour :</strong> doublage des pistes traduites. Une seule connexion donne accès à deux familles de voix : les
 voix <strong>classiques</strong> (Standard, WaveNet, Neural2, Chirp/Chirp3-HD), via Cloud Text-to-Speech API, et les voix
-<strong>Gemini</strong> (<em>Leda</em>, <em>Achird</em>, <em>Aoede</em>…), multilingues et pilotables par une indication libre, via <strong>Vertex AI</strong>.</p>
+<strong>Gemini</strong> (<em>Leda</em>, <em>Achird</em>, <em>Aoede</em>…), multilingues et capables de suivre des consignes de style rédigées librement, via <strong>Vertex AI</strong>.</p>
 <p>Ce fournisseur passe par <strong>OAuth</strong>, et non par une clé API : Vertex AI exige la permission
-<code>aiplatform.endpoints.predict</code>, qu’une clé API ne porte pas, alors que le compte Google connecté l’a s’il possède
-ou modifie le projet.</p>
+<code>aiplatform.endpoints.predict</code>, qu’une clé API ne fournit pas. Votre compte Google dispose de cette permission s’il a les droits de propriétaire
+ou d’éditeur sur le projet.</p>
 <ol>
 <li>Créez ou choisissez un projet sur <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>. Les nouveaux comptes reçoivent <strong>300 $
 d’essai valables 90 jours</strong>. Un compte de facturation est malgré tout obligatoire.</li>
@@ -123,7 +123,7 @@ Vertex AI n’est pas nécessaire si vous n’utilisez que les voix classiques.<
 <li>Dans <strong>OAuth consent screen</strong>, choisissez <strong>External</strong> pour <strong>User type / Audience</strong> et ajoutez votre compte
 aux <strong>Test users</strong>. Avec <strong>Internal</strong>, les comptes Gmail personnels sont refusés (<code>403: org_internal</code>).</li>
 <li>Dans <strong>Credentials ▸ Create credentials ▸ OAuth client ID</strong>, choisissez <strong>Desktop app</strong> et copiez
-<strong>Client ID</strong> et <strong>Client secret</strong>. Le type Desktop autorise la connexion locale <code>http://127.0.0.1</code>,
+<strong>Client ID</strong> et <strong>Client secret</strong>. Le type <strong>Desktop app</strong> est nécessaire pour la connexion locale <code>http://127.0.0.1</code>,
 comme pour Google Sheets.</li>
 <li>Dans <strong>Text-to-Speech</strong>, choisissez <strong>Google Cloud</strong>, collez ces deux valeurs, puis <strong>Connect…</strong>.
 Connectez-vous dans le navigateur. L’avertissement « application non vérifiée » est normal en mode Testing :
@@ -132,7 +132,7 @@ Les identifiants et le refresh token restent dans les préférences de cet ordin
 </ol>
 <p>Choisissez ensuite une voix. Les voix classiques s’affichent sous la forme <code>Tier Leaf (locale)</code>, par exemple
 <em>Neural2 A (fr-FR)</em> ; les voix Gemini sous la forme <code>Name · Gemini</code>, sans filtre de langue puisqu’elles sont
-multilingues. Le bouton bulle <strong>voice direction</strong> devient alors actif : décrivez le ton voulu, par exemple
+multilingues. Lorsqu’une voix Gemini est sélectionnée, le bouton bulle <strong>voice direction</strong> devient actif : décrivez le ton voulu, par exemple
 <em>really sad, close to mental breakdown</em>. Cette indication accompagne chaque ligne.</p>
 <blockquote>
 <p>Les voix classiques puisent dans le quota mensuel de Cloud TTS (environ 1 M de caractères en Neural2/WaveNet et

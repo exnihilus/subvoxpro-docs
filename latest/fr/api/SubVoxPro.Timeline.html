@@ -90,7 +90,7 @@ Classes
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html">VoiceLineClip</a></dt>
-<dd><p>Clip Timeline lié à un asset <a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html#SubVoxPro_Timeline_VoiceLineClip_VoiceLineData">VoiceLineData</a>. Déposer une voiceline sur <a class="xref" href="SubVoxPro.Timeline.VoiceLineTrack.html">VoiceLineTrack</a> le crée automatiquement, avec la durée du plus long audio source ou doublé. Déposer une <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a> remplit temporairement le champ <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a> ; l’éditeur l’étend en un clip par étape puis remet ce champ à null.</p>
+<dd><p>Clip Timeline lié à un asset <a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html#SubVoxPro_Timeline_VoiceLineClip_VoiceLineData">VoiceLineData</a>. Déposer une voiceline sur <a class="xref" href="SubVoxPro.Timeline.VoiceLineTrack.html">VoiceLineTrack</a> crée automatiquement ce clip ; sa durée par défaut est celle du plus long clip audio de la voiceline, source ou doublage. Déposer une <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a> remplit temporairement le champ <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a> ; l’éditeur crée un clip par étape, puis remet ce champ à null.</p>
 </dd>
 </dl>
 <dl class="jumplist">
@@ -110,7 +110,7 @@ Classes
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.Timeline.VoiceLineTrack.html">VoiceLineTrack</a></dt>
-<dd><p>Piste qui synchronise les sous-titres sur l’horloge du director. L’audio passe par une Audio Track native créée au dépôt ; cette piste ne publie que les sous-titres sur <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a>. Le clip actif a la priorité ; à sa fin, le sous-titre de l’émetteur retenu revient sans relancer l’audio.</p>
+<dd><p>Piste Timeline qui synchronise les sous-titres avec l’horloge du director. L’audio est lu sur une Audio Track native créée automatiquement lorsque vous déposez la voiceline ; cette piste publie uniquement les sous-titres sur <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a>, pour les afficheurs. Le clip actif a la priorité sur l’affichage ; à sa fin, le sous-titre de l’émetteur retenu est réaffiché sans relancer l’audio.</p>
 </dd>
 </dl>
 <h3 id="enums">

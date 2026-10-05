@@ -259,9 +259,9 @@ quand un service ajoute une langue. Pour Qwen, Kokoro, Chatterbox, Qwen3 TTS et 
 modèles installés par SubVox Pro.</p>
 </blockquote>
 <h3 id="chatterbox-accuracy-by-language">Chatterbox : précision par langue </h3>
-<p>Dans quelle mesure le moteur local <strong>Chatterbox</strong> prononce les bons mots, mesuré sur 30 doublages par langue
-(15 répliques de jeu, chacune avec deux voix). Chaque doublage a été retranscrit par huit moteurs de transcription,
-et le tableau retient le résultat du moteur médian : un moteur qui entend mal ne pèse pas sur Chatterbox. Les
+<p>La précision du moteur local <strong>Chatterbox</strong> est mesurée sur 30 doublages par langue
+(15 répliques de jeu, chacune avec deux voix). Chaque doublage a été retranscrit par huit moteurs de transcription.
+Pour chaque réplique, le tableau retient le résultat médian afin de limiter l’influence d’un moteur qui transcrit mal. Les
 répliques, dans les 22 langues, se trouvent dans
 <a href="Documentation/ChatterboxAccuracyCorpus.csv"><code>Documentation/ChatterboxAccuracyCorpus.csv</code></a>, pour refaire le test avec vos voix.</p>
 <table>
@@ -387,18 +387,18 @@ répliques, dans les 22 langues, se trouvent dans
 </table>
 <p>La génération comporte une part de hasard : deux prises de la même réplique diffèrent un peu. Plus le chiffre est
 bas, plus les erreurs sont rares. La plupart concernent le premier mot, mal prononcé ou sauté. Dans les langues
-marquées <strong>Réécouter les doublages</strong>, jusqu’à une réplique sur quinze est sortie brouillée (dans une autre langue,
+marquées <strong>Réécouter les doublages</strong>, jusqu’à une réplique sur quinze était inintelligible (dans une autre langue,
 ou avec des mots qui n’existent pas) : écoutez les doublages et régénérez une prise ratée avec son badge <strong>REGEN</strong>.</p>
 <hr/>
 <h2 id="best-practices">Bonnes pratiques </h2>
 <p>Une clé API est l’équivalent d’un mot de passe : gardez-la secrète, même pour un simple test.</p>
 <ul>
-<li><strong>Une clé par outil ou par projet</strong> : vous pourrez la révoquer sans casser le reste.</li>
+<li><strong>Une clé par outil ou par projet</strong> : vous pourrez la révoquer sans perturber les autres outils.</li>
 <li><strong>Ne collez jamais de clé dans un script, une scène, un prefab, un message de support, Discord, une issue GitHub
 ou un commit.</strong> SubVox Pro la garde dans <code>EditorPrefs</code>, sur votre machine uniquement.</li>
 <li><strong>Copiez tout de suite une clé qui ne s’affiche qu’une fois</strong>, au besoin dans un gestionnaire de mots de passe.
 Une clé perdue se révoque et se remplace.</li>
-<li><strong>Limitez les permissions</strong> à ce dont vous avez besoin : STT pour la transcription, traduction, TTS pour le doublage.</li>
+<li><strong>Limitez les permissions</strong> aux fonctions nécessaires : STT pour transcrire, traduction pour traduire et TTS pour doubler.</li>
 <li><strong>Choisissez une durée de validité adaptée</strong> : courte pour des tests, plus longue en production. Certains services
 proposent des clés sans expiration.</li>
 <li><strong>Fixez un budget, un quota ou une alerte de facturation</strong> si le service le permet, pour éviter les mauvaises
@@ -437,7 +437,7 @@ un test sur une machine partagée.</li>
 <td><strong>Qwen3-ForcedAligner-0.6B Q4 ONNX</strong>, hors connexion, sans clé ni Python/PyTorch, Windows uniquement.</td>
 </tr>
 <tr>
-<td><strong>Traduction humaine aller-retour</strong></td>
+<td><strong>Échanges de traductions humaines avec Unity</strong></td>
 <td>Google Sheets, connexion OAuth. <a href="index.html#human-translation-with-google-sheets">Guide</a></td>
 </tr>
 </tbody>
@@ -453,7 +453,7 @@ Seuls changent les volumes autorisés et, parfois, ce que vous avez le droit de 
 <thead>
 <tr>
 <th>Fournisseur</th>
-<th>Gratuité, à vérifier</th>
+<th>Offre gratuite, à vérifier</th>
 <th>Carte bancaire ?</th>
 <th>Utilisation commerciale de l’offre gratuite ?</th>
 </tr>
@@ -463,7 +463,7 @@ Seuls changent les volumes autorisés et, parfois, ce que vous avez le droit de 
 <td>AssemblyAI</td>
 <td>Crédit unique d’environ 50 $, environ 330 h</td>
 <td>Non</td>
-<td>Oui ; les données peuvent entraîner les modèles sauf opposition.</td>
+<td>Oui ; les données peuvent servir à entraîner les modèles, sauf opposition de votre part.</td>
 </tr>
 <tr>
 <td>Gladia</td>
@@ -560,7 +560,7 @@ fins commerciales. Il est d’usage de créditer NVIDIA pour Parakeet : voir les
 </blockquote>
 <hr/>
 <h2 id="where-to-paste-your-key-in-subvox-pro">Où coller votre clé dans SubVox Pro </h2>
-<p>La clé peut se coller à deux endroits, qui reviennent au même : elle est enregistrée dans <code>EditorPrefs</code>, sur cet
+<p>Vous pouvez enregistrer la clé à deux endroits équivalents : elle est enregistrée dans <code>EditorPrefs</code>, sur cet
 ordinateur seulement. <strong>Tools ▸ SubVox Pro ▸ Settings</strong> réunit tous les fournisseurs : collez chaque clé sur sa
 ligne, le champ la masque. <strong>STT</strong>, <strong>TR</strong> et <strong>TTS</strong> désignent la transcription, la traduction et le doublage.
 <strong>Clear API Keys</strong> les efface toutes.</p>

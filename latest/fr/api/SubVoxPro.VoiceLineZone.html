@@ -6,7 +6,7 @@
 <title>Classe VoiceLineZone | Documentation SubVox Pro </title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="Class VoiceLineZone | Documentation SubVox Pro " name="title"/>
-<meta content="Joue une voiceline, ou la prochaine ligne d’une banque, quand un objet entre dans un collider 2D ou 3D (seul le callback adapté au collider est utilisé). Options : filtre par layer et tag, lecture unique, délai d’attente, comportement si l’émetteur est occupé, arrêt et réarmement à la sortie.  s’appelle aussi depuis une interaction ou un UnityEvent." name="description"/>
+<meta content="Joue une voiceline, ou la prochaine réplique d’une banque, lorsqu’un collider entre dans ce trigger 2D ou 3D. Seul le callback correspondant au collider présent sur cet objet se déclenche. Options : filtre par layer et, facultativement, par tag ; lecture unique ou cooldown ; comportement si l’émetteur est occupé ; arrêt de la réplique ou réarmement à la sortie du joueur.  est public et peut aussi être appelé depuis une interaction, un bouton UI ou un UnityEvent." name="description"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
 <link href="../public/main.css?v=0990a180e6" rel="stylesheet"/>
@@ -84,7 +84,7 @@ Classe VoiceLineZone
 <dl><dt>Espace de noms</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
 <dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
 </div>
-<div class="markdown summary"><p>Joue une voiceline, ou la prochaine ligne d’une banque, quand un objet entre dans un collider 2D ou 3D (seul le callback adapté au collider est utilisé). Options : filtre par layer et tag, lecture unique, délai d’attente, comportement si l’émetteur est occupé, arrêt et réarmement à la sortie. <a class="xref" href="SubVoxPro.VoiceLineZone.html#SubVoxPro_VoiceLineZone_Play">Play()</a> s’appelle aussi depuis une interaction ou un UnityEvent.</p>
+<div class="markdown summary"><p>Joue une voiceline, ou la prochaine réplique d’une banque, lorsqu’un collider entre dans ce trigger 2D ou 3D. Seul le callback correspondant au collider présent sur cet objet se déclenche. Options : filtre par layer et, facultativement, par tag ; lecture unique ou cooldown ; comportement si l’émetteur est occupé ; arrêt de la réplique ou réarmement à la sortie du joueur. <a class="xref" href="SubVoxPro.VoiceLineZone.html#SubVoxPro_VoiceLineZone_Play">Play()</a> est public et peut aussi être appelé depuis une interaction, un bouton UI ou un UnityEvent.</p>
 </div>
 <div class="markdown conceptual"></div>
 <div class="codewrapper">
@@ -201,7 +201,7 @@ Classe VoiceLineZone
   Play()
   
   </h3>
-<div class="markdown level1 summary"><p>Joue la voiceline assignée ou la prochaine ligne de la banque, sur son émetteur ou celui du manager. Respecte la lecture unique, le délai d’attente, le mode et la priorité.</p>
+<div class="markdown level1 summary"><p>Joue la voiceline assignée ou la prochaine réplique de la banque, sur l’émetteur choisi ou celui du manager si aucun n’est renseigné. Respecte les réglages de lecture unique, de cooldown, de mode de lecture et de priorité.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -212,7 +212,7 @@ Classe VoiceLineZone
   ResetZone()
   
   </h3>
-<div class="markdown level1 summary"><p>Réarme la zone en effaçant Play Once et le cooldown, par exemple après un checkpoint.</p>
+<div class="markdown level1 summary"><p>Permet à la zone de jouer à nouveau : réinitialise l’état de lecture unique (Play Once) et le cooldown, par exemple après le rechargement d’un checkpoint.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">

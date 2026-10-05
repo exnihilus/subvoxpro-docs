@@ -87,7 +87,7 @@ DeepL vérifie votre e-mail et votre carte bancaire, sans rien prélever pour l�
 <img alt="Offre API Developer de DeepL" src="Documentation/Images/deepl-pricing.png"/></li>
 <li>Ouvrez <strong>Account ▸ API Keys</strong>, <a href="https://www.deepl.com/your-account/keys">https://www.deepl.com/your-account/keys</a>, puis copiez <strong>Authentication Key</strong>.
 <img alt="Clé d’authentification API DeepL" src="Documentation/Images/deepl-api-keys.png"/></li>
-<li>Collez-la dans <strong>Settings ▸ DeepL</strong>. SubVox Pro reconnaît seul s’il s’agit d’une clé Free ou Pro.</li>
+<li>Collez-la dans <strong>Settings ▸ DeepL</strong>. SubVox Pro choisit automatiquement l’endpoint adapté à votre clé Free ou Pro.</li>
 </ol>
 <blockquote>
 <p><a href="https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API">Aide</a>.</p>
@@ -111,7 +111,7 @@ au besoin, limitez-la à Cloud Translation API.</li>
 </details>
 <details id="openai" open="">
 <summary><h2 class="svx-provider-title" id="openai-setup"><strong>OpenAI</strong></h2></summary>
-<p><strong>Utilisé pour :</strong> transcription, traduction par modèle de langage, report des styles de mots et doublage.
+<p><strong>Utilisé pour :</strong> transcription, traduction par modèle de langage, transfert des styles de mots entre langues et doublage.
 Une seule clé sert à tout.</p>
 <ol>
 <li>Créez un compte ou connectez-vous sur <a href="https://platform.openai.com">https://platform.openai.com</a>.
@@ -134,10 +134,10 @@ Ou passez par le menu du compte, <strong>Organization settings</strong> ou <stro
 <img alt="Ajout de crédit OpenAI" src="Documentation/Images/openai-add-credit-balance.png"/></li>
 <li>Collez la clé dans <strong>Settings ▸ OpenAI</strong> et choisissez le modèle dans le panneau concerné.
 En <strong>Text-to-Speech</strong>, <strong>gpt-realtime-2.1-mini</strong> propose 10 voix et suit les indications de jeu via Realtime.
-Les anciens choix de modèles migrent automatiquement. Les voix <strong>fable</strong>, <strong>nova</strong> et <strong>onyx</strong> exigent un nouveau choix.
-Realtime reçoit une consigne de lecture exacte du texte : vérifiez les dialogues générés.
+Les modèles enregistrés auparavant sont remplacés automatiquement par leurs équivalents actuels. Les voix <strong>fable</strong>, <strong>nova</strong> et <strong>onyx</strong> exigent un nouveau choix.
+Realtime reçoit une consigne lui demandant de lire le texte à l’identique : vérifiez les dialogues générés.
 L’audio généré coûte environ <strong>0,024 $/minute</strong>, plus les tokens texte (0,60 <span class="math">\(en entrée / 2,40\)</span> en sortie par million).
-Le batch estime l’audio et le texte avec 14 caractères/seconde et 4 caractères/token ; les consignes et le rythme peuvent modifier la facture.
+L’estimation du coût en traitement par lot inclut l’audio et le texte, sur la base de 14 caractères/seconde et de 4 caractères/token ; les consignes de jeu et le rythme peuvent modifier le montant facturé.
 En <strong>Speech-to-Text</strong>, choisissez OpenAI, puis le modèle de transcription.</li>
 </ol>
 <blockquote>
@@ -160,7 +160,7 @@ exemple dans les crédits ou sur la page du jeu. <a href="https://openai.com/api
 </details>
 <details id="anthropic-claude" open="">
 <summary><h2 class="svx-provider-title" id="anthropic-claude-setup"><strong>Anthropic, Claude</strong></h2></summary>
-<p><strong>Utilisé pour :</strong> traduction par modèle de langage et report des styles de mots.</p>
+<p><strong>Utilisé pour :</strong> traduction par modèle de langage et transfert des styles de mots entre langues.</p>
 <ol>
 <li>Créez un compte ou connectez-vous sur <a href="https://console.anthropic.com">https://console.anthropic.com</a>.
 <img alt="Connexion à la console Anthropic" src="Documentation/Images/anthropic-console-sign-in.png"/></li>
@@ -191,7 +191,7 @@ compte de facturation, et une seule clé sert aux deux.</p>
 <img alt="Création de clé Gemini" src="Documentation/Images/gemini-create-api-key-dialog.png"/></li>
 <li>Copiez-la depuis son panneau de détails.
 <img alt="Détails de la clé Gemini" src="Documentation/Images/gemini-api-key-details.png"/></li>
-<li>Depuis la liste, vous pourrez ensuite recopier la clé, suivre la consommation ou configurer la facturation.
+<li>Depuis la liste, vous pourrez ensuite copier à nouveau la clé, consulter votre consommation ou configurer la facturation.
 <img alt="Ligne de clé Gemini" src="Documentation/Images/gemini-api-key-row.png"/></li>
 <li>Collez-la dans <strong>Settings ▸ Gemini</strong>. Pour doubler, choisissez <strong>Gemini</strong> dans <strong>Text-to-Speech</strong> : 30 voix
 multilingues (<em>Kore</em>, <em>Puck</em>, <em>Leda</em>…) qui suivent les indications de jeu.

@@ -234,7 +234,7 @@ _player.Play();</code></pre>
   Advance()
   
   </h3>
-<div class="markdown level1 summary"><p>Passe manuellement à l’étape suivante, même si la réplique joue ou attend son délai ou son émetteur.</p>
+<div class="markdown level1 summary"><p>Passe manuellement à l’étape suivante. Passe aussi la réplique en cours, ou une étape qui attend la fin de son délai ou la disponibilité de son émetteur.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -296,7 +296,7 @@ _player.Play();</code></pre>
   OnStepStarted(int, VoiceLineData)
   
   </h3>
-<div class="markdown level1 summary"><p>Appelé au démarrage d’une étape, juste avant Step Started. Redéfinissez pour réagir dans une sous-classe.</p>
+<div class="markdown level1 summary"><p>Appelé au démarrage d’une étape, juste avant Step Started. Redéfinissez cette méthode pour réagir dans une sous-classe.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -341,7 +341,7 @@ _player.Play();</code></pre>
   PlayFrom(int)
   
   </h3>
-<div class="markdown level1 summary"><p>Démarre ou redémarre la séquence assignée à l’étape donnée, par exemple après une sauvegarde. Les étapes suivantes suivent <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a>.</p>
+<div class="markdown level1 summary"><p>Démarre ou redémarre la séquence assignée à l’étape donnée, par exemple pour reprendre un dialogue sauvegardé. Les étapes suivantes sont jouées dans l’ordre défini par <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a>.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -357,7 +357,7 @@ _player.Play();</code></pre>
   Previous()
   
   </h3>
-<div class="markdown level1 summary"><p>Rejoue la ligne qui précède celle en cours ; sur la première ligne, la rejoue.</p>
+<div class="markdown level1 summary"><p>Rejoue la réplique jouée juste avant celle en cours, par exemple depuis un bouton « réplique précédente ». Si la séquence est sur sa première réplique, rejoue celle-ci.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
