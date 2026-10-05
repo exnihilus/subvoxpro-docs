@@ -195,7 +195,7 @@ les Réglages Système.</p>
 <h3 id="checking-your-subtitles">Vérifier vos sous-titres </h3>
 <ul>
 <li><strong>Show CPS</strong>, dans les <a href="#settings">réglages</a>, affiche la vitesse de lecture et signale les lignes trop rapides.</li>
-<li><strong>Validate</strong> parcourt les problèmes un à un : noms vides ou en double, lignes hors du clip, chevauchements,
+<li><strong>Check CPS</strong>, affiché avec <strong>Show CPS</strong>, parcourt les problèmes un à un : noms vides ou en double, lignes hors du clip, chevauchements,
 texte trop rapide. Chaque correction proposée peut être annulée.</li>
 <li><strong>Auto blanks</strong> masque le texte quand personne ne parle, sans ajouter de marqueurs. Activez-le dans son popup
 et choisissez la durée minimale du silence. Les parties masquées sont ombrées sur la forme d’onde.</li>
@@ -221,7 +221,7 @@ prêt : clé enregistrée ou modèle téléchargé.</li>
 l’avance avant le premier mot et la coupure sur la ponctuation.</li>
 </ol>
 <p><strong>Word timing</strong> choisit l’origine du timing de chaque mot. <strong>From the provider</strong>, par défaut, conserve celui de
-la transcription. <strong>Qwen3 local</strong> recale chaque mot sur l’audio après <strong>Split</strong>, sans modifier le texte : c’est
+la transcription. <strong>Qwen3 aligner (local)</strong> recale chaque mot sur l’audio après <strong>Split</strong>, sans modifier le texte : c’est
 le choix le plus précis pour l’affichage mot par mot (<a href="#qwen3-offline-word-timing">installation</a>).
 Si Qwen3 ne prend pas la langue en charge, les timings du fournisseur sont conservés.</p>
 <p>Fournisseurs : AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, OpenAI, ou <strong>Whisper</strong> et <strong>Parakeet</strong>
@@ -264,14 +264,22 @@ Les doublages suivent d’eux-mêmes.</p>
 <li><strong>Each subtitle</strong> : une prise par sous-titre, facile à corriger ligne par ligne.</li>
 <li><strong>Per speaker</strong> : une prise par suite de lignes du même personnage, pour un enchaînement plus naturel.</li>
 <li><strong>All together</strong> : une seule prise, la plus fluide, mais qu’il faut régénérer en entier.</li>
+<li><strong>Groups</strong> : vous choisissez quels mots sont dits d’une seule prise (voir ci-dessous).</li>
 </ul>
 </li>
 <li>Cliquez sur <strong>Generate audio</strong>. La nouvelle piste remplace l’audio d’origine quand cette langue est active.</li>
 </ol>
+<p><strong>Mode Groups.</strong> Choisir <strong>Groups</strong> active l’outil <strong>Groups</strong> au-dessus de la forme d’onde. Chaque groupe est dit
+d’une seule prise, avec la voix et la personnalité de son premier mot, et le texte des sous-titres prend la couleur
+du groupe. Au départ, un seul groupe contient tout. Glissez dans un groupe pour le couper en trois, le nouveau groupe
+au milieu : il peut commencer ou finir au milieu d’une ligne, et chaque nouveau groupe reçoit sa propre couleur.
+Glissez la limite entre deux groupes pour la déplacer : la pousser au-delà d’un groupe entier le supprime, et revenir
+en arrière avant de relâcher le rétablit. Un clic droit sur un groupe le supprime : son voisin prend sa place. Le
+bouton corbeille fusionne tout en un seul groupe. Les groupes sont enregistrés par langue de sous-titres.</p>
 <p>Fournisseurs : InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, et les moteurs locaux <strong>Kokoro</strong>
-(anglais), <strong>Chatterbox</strong> (21 langues, en gardant la voix du personnage), <strong>Qwen3 TTS 1.7B</strong> (dix langues, clonage de références, voix fixes et descriptions de voix) et <strong>VoxCPM2</strong> (30 langues, clonage avec consignes de jeu).</p>
+(anglais), <strong>Chatterbox</strong> (21 langues, en gardant la voix du personnage), <strong>Qwen3 TTS 1.7B</strong> (dix langues, clonage de références, voix fixes et descriptions de voix) et <strong>VoxCPM2</strong> (30 langues, clonage avec consignes de jeu, et voix décrites).</p>
 <ul>
-<li><strong>Word timing</strong> : <strong>Qwen3 local</strong> affiche les mots au moment exact où ils sont prononcés
+<li><strong>Word timing</strong> : <strong>Qwen3 aligner (local)</strong> affiche les mots au moment exact où ils sont prononcés
 (<a href="#qwen3-offline-word-timing">installation</a>). <strong>Estimated</strong> suffit si vous n’affichez pas les mots un à un.</li>
 <li><strong>Voice direction</strong> : le bouton bulle à côté de la voix transmet une indication de jeu (<em>calm, whispering</em>…)
 aux fournisseurs qui la prennent en compte.</li>
@@ -308,7 +316,9 @@ Sur une ligne, l’entrée du haut revient au speaker par défaut de la voicelin
 <h3 id="voice-personalities">Personnalités vocales </h3>
 <p>Une <strong>personnalité</strong> est une direction de jeu réutilisable, comme <em>Angry</em>, <em>Mysterious</em> ou <em>Whispering</em>.
 Créez-la depuis un speaker avec <strong>New personality</strong> ou avec <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Personality</strong>.
-La direction s’écrit librement, ou se compose à partir de l’émotion, du rythme, du volume et de la diction.</p>
+La direction s’écrit librement, ou se compose à partir de l’émotion, du rythme, du volume et de la diction.
+Cliquez sur son icône pour choisir l’un des quelque quarante symboles (émotions, humeurs, voix et personnage) :
+vous la reconnaissez ainsi d’un coup d’œil dans les listes.</p>
 <p>Choisissez une personnalité avec le badge d’une ligne, en mode <strong>Each subtitle</strong>, ou utilisez celle du speaker.
 Chaque fournisseur applique ce qu’il sait interpréter : toute la direction pour certains, le seul rythme pour
 d’autres. Au survol, le badge indique ce que la voix choisie en retiendra.</p>
@@ -682,8 +692,11 @@ norvégien, polonais, portugais, russe, espagnol, swahili, suédois, filipino, t
 <strong>Record a reference…</strong>. Écrivez les consignes en <strong>anglais ou en chinois</strong>, par exemple <code>Speak softly, with a sad tone</code> ou <code>Whisper quietly</code> : ce sont les deux langues où elles fonctionnent le mieux, quelle que soit la langue de la
 ligne. Une voix fournie garde un léger accent hors de sa langue ; pour un accent parfait, utilisez une référence
 enregistrée dans la langue doublée. <strong>Use GPU</strong>, dans les réglages, accélère la génération avec une carte graphique.</p>
+<p>Pour créer une voix qui n’existe pas, choisissez <strong>Designed voice</strong> et décrivez-la, par exemple <code>A deep, calm male voice in his fifties</code>. La voix est créée à la première génération, puis conservée pour toutes les lignes : un
+personnage garde toujours la même voix, et vos personnalités règlent toujours le ton. Pour une voix différente par
+personnage, écrivez la description sur chaque speaker et réglez sa voix sur <strong>Designed voice</strong>.</p>
 <h3 id="qwen3-offline-word-timing">Qwen3, timing local des mots </h3>
-<p>Choisissez <strong>Word timing: Qwen3 local</strong> dans Transcription ou Dubbing, puis cliquez sur <strong>Install…</strong>.
+<p>Choisissez <strong>Word timing: Qwen3 aligner (local)</strong> dans Transcription ou Dubbing, puis cliquez sur <strong>Install…</strong>.
 Chaque <strong>Split</strong> et chaque doublage sont ensuite alignés mot par mot. Qwen3 ne touche jamais au texte : il ne fait
 que placer les mots. Langues : chinois, cantonais, anglais, français, allemand, italien, japonais, coréen,
 portugais, russe et espagnol, pour des audios de 5 minutes maximum.</p>
@@ -780,6 +793,10 @@ l’expressivité de Chatterbox, installation ou configuration, et nettoyage des
 <tr>
 <td><strong>Glissement</strong></td>
 <td>Déplacer un marqueur, mot ou événement</td>
+</tr>
+<tr>
+<td><strong>Glisser la tête ou le pied de la tête de lecture</strong></td>
+<td>Déplacer la tête de lecture pendant l’édition d’un effet audio</td>
 </tr>
 <tr>
 <td><strong>Shift + clic</strong> ou <strong>clic central</strong></td>

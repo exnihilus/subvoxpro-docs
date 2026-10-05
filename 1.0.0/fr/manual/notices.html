@@ -87,8 +87,9 @@ configuration de chaque service en français, voir le <a href="providers.html">g
 <h1 id="subvox-pro--third-party-notices">SubVox Pro — Third-Party Notices</h1>
 <p><strong>Copyright © 2026 Louis Nillus (publishing as "ExNihilus").</strong></p>
 <p>SubVox Pro bundles the MIT-licensed <strong>ONNX Runtime</strong> binaries and the Microsoft <strong>DirectML</strong> library required for
-local Kokoro and Chatterbox synthesis, Qwen forced alignment and Parakeet transcription, and the MIT-licensed <strong>whisper.cpp</strong> and <strong>llama.cpp</strong>
-binaries used for local transcription and translation.
+local Kokoro and Chatterbox synthesis, Qwen forced alignment and Parakeet transcription; the MIT-licensed <strong>whisper.cpp</strong>,
+<strong>llama.cpp</strong> and <strong>ggml</strong> binaries used for local transcription and translation; the native <strong>Qwen3 TTS</strong> and
+<strong>VoxCPM2</strong> engines (MIT) used for local dubbing; and the Apache-licensed <strong>Material Symbols</strong> icons used in the editor.
 Other third-party engines, models and language assets are downloaded on demand by <em>you</em>, the user,
 from their official sources, or accessed as online services using <em>your own</em> account credentials.
 This document lists those components, their licenses where applicable, and your responsibilities.</p>
@@ -114,6 +115,14 @@ redistributed by the Asset:</p>
 <tr>
 <td><strong>Unity Timeline</strong> (<code>com.unity.timeline</code>)</td>
 <td>Optional — enables the Timeline integration when the package is present.</td>
+</tr>
+<tr>
+<td><strong>Unity Localization</strong> (<code>com.unity.localization</code>)</td>
+<td>Optional — the subtitle language follows the Localization package when it is present.</td>
+</tr>
+<tr>
+<td><strong>Input System</strong> (<code>com.unity.inputsystem</code>)</td>
+<td>Optional — used by the example scene's keyboard controls when the package is present.</td>
 </tr>
 </tbody>
 </table>
@@ -201,12 +210,35 @@ each file against its SHA-256.</li>
 <h2 id="4-optional-offline-dubbing-assets-downloaded-by-the-user">4. Optional offline dubbing assets (downloaded by the user)</h2>
 <p>The local Kokoro feature (English voices) downloads <strong>Kokoro-82M</strong> model weights and voices (Apache License 2.0)
 and the Misaki English pronunciation dictionaries (Apache License 2.0) on request.</p>
-<ul>
-<li>Kokoro-82M: <a href="https://huggingface.co/hexgrad/Kokoro-82M">https://huggingface.co/hexgrad/Kokoro-82M</a></li>
-<li>Kokoro ONNX model files: <a href="https://github.com/thewh1teagle/kokoro-onnx">https://github.com/thewh1teagle/kokoro-onnx</a></li>
-<li>Misaki: <a href="https://github.com/hexgrad/misaki">https://github.com/hexgrad/misaki</a></li>
-</ul>
-<p>See <code>Editor/Dubbing/Kokoro/THIRD-PARTY-NOTICES.md</code> for the detailed file-level notice.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+<th>License / source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kokoro-82M</strong> (hexgrad)</td>
+<td>Model weights and voices</td>
+<td>Apache License 2.0 — <a href="https://huggingface.co/hexgrad/Kokoro-82M">https://huggingface.co/hexgrad/Kokoro-82M</a></td>
+</tr>
+<tr>
+<td><strong>Kokoro ONNX model files</strong></td>
+<td>ONNX build and combined voices, release <code>model-files-v1.0</code></td>
+<td><a href="https://github.com/thewh1teagle/kokoro-onnx">https://github.com/thewh1teagle/kokoro-onnx</a></td>
+</tr>
+<tr>
+<td><strong>Misaki</strong> (hexgrad)</td>
+<td>English pronunciation dictionaries <code>us_gold.json</code>, <code>us_silver.json</code>, <code>gb_gold.json</code>, <code>gb_silver.json</code></td>
+<td>Apache License 2.0 — <a href="https://github.com/hexgrad/misaki">https://github.com/hexgrad/misaki</a></td>
+</tr>
+</tbody>
+</table>
+<p>The files are stored in the user's AppData folder and are never bundled with the Asset or a player build. The
+grapheme-to-phoneme code in <code>KokoroG2P.cs</code> is an original implementation; only the pronunciation dictionaries are
+reused.</p>
 <p>The local Chatterbox feature (21 languages plus optional Japanese, voice cloning) downloads the following files on request into the
 user's AppData folder. They are never included in the Asset or a player build; inference uses the ONNX Runtime
 attributed above.</p>
@@ -267,13 +299,18 @@ inference uses the ONNX Runtime already attributed above.</p>
 <tbody>
 <tr>
 <td><strong>Qwen3-ForcedAligner-0.6B</strong></td>
-<td>Upstream forced-alignment model</td>
+<td>Upstream forced-alignment model, revision <code>c7cbfc2048c462b0d63a45797104fc9db3ad62b7</code></td>
 <td>Apache License 2.0 — <a href="https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B">https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B</a></td>
 </tr>
 <tr>
 <td><strong>Qwen3-ForcedAligner-0.6B Q4 ONNX</strong></td>
 <td>Community ONNX export and checksum-verified packaging</td>
 <td>Apache License 2.0 — <a href="https://huggingface.co/tonythethompson/Qwen3-ForcedAligner-0.6B-ONNX">https://huggingface.co/tonythethompson/Qwen3-ForcedAligner-0.6B-ONNX</a></td>
+</tr>
+<tr>
+<td><strong>ONNX export source</strong></td>
+<td>Export the packaging above is built from, revision <code>261c9ed100c1b18a4a1fbc488e05625dc9a4ae5c</code></td>
+<td>Apache License 2.0 — <a href="https://huggingface.co/valoomba/Qwen3-ForcedAligner-0.6B-ONNX">https://huggingface.co/valoomba/Qwen3-ForcedAligner-0.6B-ONNX</a></td>
 </tr>
 <tr>
 <td><strong>Qwen-ASR source</strong></td>
@@ -389,6 +426,13 @@ downloaded separately to AppData and are excluded from the asset and game builds
 <p>Complete licences are included as <code>VOXCPM-MODEL-LICENSE.txt</code>, <code>LLAMA-CPP-LICENSE.txt</code> and <code>GGML-LICENSE.txt</code>
 under <code>Plugins/x86_64/VoxCPM2/</code>. VoxCPM2 reuses the twenty CC0 synthetic references described above;
 their provenance and dedication remain unchanged. Only clone recordings you have the right to use.</p>
+<h2 id="11-voice-personality-icons">11. Voice personality icons</h2>
+<p>The icons shown for voice personalities (<code>Editor/Icons/Personalities</code>) are derived from <strong>Material Symbols
+Rounded</strong> by Google, revision <code>737e3324305806514d7909874fa1818ae1808232</code>, under the <strong>Apache License 2.0</strong>.
+Source: <a href="https://github.com/google/material-design-icons">https://github.com/google/material-design-icons</a>. Modifications: the filled 20 px SVG variants were
+rendered in white, cropped and resized to 64×64 PNG images with transparent padding. The complete license and this
+notice are included at <code>Editor/Icons/Personalities/LICENSE.txt</code> and <code>Editor/Icons/Personalities/NOTICE.txt</code>. The
+icons are used in the editor only and are never included in a player build.</p>
 </article>
 <div class="next-article d-print-none border-top" id="nextArticle"></div>
 </div>

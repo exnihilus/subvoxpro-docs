@@ -273,12 +273,20 @@ follow automatically.</p>
 <ul>
 <li><strong>Each subtitle</strong> — one take per line: easiest to fix line by line;</li>
 <li><strong>Per speaker</strong> — one take per group of lines from the same character: more natural flow;</li>
-<li><strong>All together</strong> — one continuous take: the most natural, but everything is regenerated at once.</li>
+<li><strong>All together</strong> — one continuous take: the most natural, but everything is regenerated at once;</li>
+<li><strong>Groups</strong> — you choose which words are spoken in one take (see below).</li>
 </ul>
 </li>
 <li>Click <strong>Generate audio</strong>. The dub becomes a new audio track, played instead of the original when that language
 is active.</li>
 </ol>
+<p><strong>Groups mode.</strong> Choosing <strong>Groups</strong> turns on the <strong>Groups</strong> tool above the waveform. Each group is spoken in one
+take, with the voice and personality of its first word, and the subtitle text takes the group's color. At first,
+one group holds everything. Drag inside a group to split it in three, with the new group in the middle: it can
+start or end in the middle of a line, and each new group gets its own color. Drag the boundary between two groups
+to move it: pushing it past a whole group removes that group, and dragging back before releasing brings it back.
+Right-click a group to remove it: its neighbor takes its place. The bin button merges everything back into one group. Groups are saved per
+subtitle language.</p>
 <p>Providers: InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, and offline <strong>Kokoro</strong> (English) and
 <strong>Chatterbox</strong> (21 languages, keeps each character's voice), plus <strong>Qwen3 TTS 1.7B</strong> (ten languages, reference cloning, fixed voices and voice design) and <strong>VoxCPM2</strong> (30 languages, reference cloning with written style control, and voice design).</p>
 <ul>
