@@ -283,8 +283,9 @@ article h1 {
 }
 
 article h2 {
-  margin-top: 3.2rem;
-  padding-top: 1.6rem;
+  margin-top: 4.5rem;
+  margin-bottom: 1.2rem;
+  padding-top: 2.2rem;
   border-top: 1px solid var(--svx-rule);
 }
 
@@ -294,6 +295,20 @@ article hr:has(+ h2) {
 
 article h3 {
   font-weight: 700;
+}
+
+article h3:not([data-uid]) {
+  margin-top: 3rem;
+  margin-bottom: 0.9rem;
+}
+
+article h2 + h3:not([data-uid]) {
+  margin-top: 1.6rem;
+}
+
+article h4:not(.section) {
+  margin-top: 2.2rem;
+  margin-bottom: 0.7rem;
 }
 
 article .facts {

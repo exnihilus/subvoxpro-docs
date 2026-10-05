@@ -1,4 +1,4 @@
-import { localize } from "./languages.js?v=e3cc3120e3";
+import { localize } from "./languages.js?v=9c23dbbfe2";
 
 const ROLES = ["text", "keyword", "control", "class", "struct", "interface", "enum", "delegate", "typeparam", "method",
   "property", "field", "event",
