@@ -85,6 +85,45 @@ header .navbar-brand #logo {
   padding-left: 0.5rem;
 }
 
+.affix ul li {
+  position: relative;
+  margin: 0;
+  padding: 0.2rem 0;
+}
+
+.affix ul li:has(> a.link-secondary) {
+  padding-left: 1.1rem;
+  margin-left: 0.3rem;
+}
+
+.affix ul li:has(> a.link-secondary)::before,
+.affix ul li:has(> a.link-secondary)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  border-color: var(--bs-secondary-color);
+  border-style: solid;
+  opacity: 0.55;
+  border-width: 0;
+}
+
+.affix ul li:has(> a.link-secondary)::before {
+  top: 0;
+  bottom: 0;
+  border-left-width: 1px;
+}
+
+.affix ul li:has(> a.link-secondary):not(:has(+ li:not([hidden]) > a.link-secondary))::before {
+  bottom: auto;
+  height: 0.9rem;
+}
+
+.affix ul li:has(> a.link-secondary)::after {
+  top: 0.9rem;
+  width: 0.7rem;
+  border-top-width: 1px;
+}
+
 pre {
   border-radius: 10px;
   border: 1px solid var(--svx-rule);
@@ -244,7 +283,13 @@ article h1 {
 }
 
 article h2 {
-  margin-top: 2.4rem;
+  margin-top: 3.2rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--svx-rule);
+}
+
+article hr:has(+ h2) {
+  display: none;
 }
 
 article h3 {
@@ -811,6 +856,8 @@ details.svx-member-zone > summary.svx-zone-header {
 .svx-index h2 {
   font-size: 1.45rem;
   margin: 2.6rem 0 1rem;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .svx-index dl {

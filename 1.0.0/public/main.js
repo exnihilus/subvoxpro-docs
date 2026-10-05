@@ -1,6 +1,6 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=e3253bcd65";
-import { startVersionPicker } from "./versions.js?v=e3253bcd65";
-import { localize, startLanguagePicker } from "./languages.js?v=e3253bcd65";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=e3cc3120e3";
+import { startVersionPicker } from "./versions.js?v=e3cc3120e3";
+import { localize, startLanguagePicker } from "./languages.js?v=e3cc3120e3";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
