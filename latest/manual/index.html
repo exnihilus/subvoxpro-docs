@@ -148,10 +148,10 @@ available offline). <strong>Back</strong> returns to the home screen; <strong>Pr
 <p><strong>1. Pick how you will transcribe.</strong> Either paste an API key for a speech-to-text service in
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong> (<a href="providers.html">where to get one</a>), or, on Windows, use <strong>Whisper</strong> or
 <strong>Parakeet</strong>, which run offline for free (they offer to download their model the first time).</p>
-<p><strong>2. Create a voice line.</strong> <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line</strong>, select it and click <strong>Setup Voiceline</strong>
+<p><strong>2. Create a voice line.</strong> <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line</strong>, select it and click <strong>Set Up Voice Line</strong>
 in the Inspector. The SubVox Pro window opens on a new voice line: check its <strong>Language</strong> (English the first time,
 then the last one you picked), choose <strong>Add an audio track</strong> and pick your clip, or record one.</p>
-<p>Alternatively, right-click an audio file in the Project window and choose <strong>SubVox Pro ▸ Setup VoiceLine</strong>.
+<p>Alternatively, right-click an audio file in the Project window and choose <strong>SubVox Pro ▸ Set Up Voice Line</strong>.
 Choose where to save the new voice line; the editor opens with that audio already assigned.</p>
 <img src="Documentation/Images/subvoxpro-new-voice-line.png" alt="Start screen of a new voice line: language, add an audio track, add a subtitles track" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <p><strong>3. Transcribe.</strong> In <strong>AI Tools ▸ Transcription</strong>, pick the provider and the spoken language, click <strong>Analyze</strong>,
@@ -168,25 +168,25 @@ lines, a dialogue sequence, language switching and word-by-word reveal — just 
 <hr>
 <h2 id="the-subvox-pro-window">The SubVox Pro window</h2>
 <img src="Documentation/Images/subvoxpro-window-overview.png" alt="The SubVox Pro window: source tracks, AI Tools, waveform timeline, live preview and subtitles list" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
-<p>Open it with <strong>Tools ▸ SubVox Pro ▸ Voiceline Setup</strong>, or <strong>Setup Voiceline</strong> on a voice line's Inspector. From
+<p>Open it with <strong>Tools ▸ SubVox Pro ▸ Voice Line Setup</strong>, or <strong>Set Up Voice Line</strong> on a voice line's Inspector. From
 top to bottom:</p>
 <ul>
 <li><strong>Voice Line Data</strong> — the voice line you are editing, with buttons to create a new one, browse the others and
-delete it. The coloured dot is a <strong>tag</strong> shown on the asset's icon in the Project window, to sort your lines.</li>
+delete it. The colored dot is a <strong>tag</strong> shown on the asset's icon in the Project window, to sort your lines.</li>
 <li><strong>Source</strong> — the <strong>AUDIO</strong> and <strong>SUBTITLES</strong> selectors. Each voice line has one source language (the flag;
 click it to change it) and one track per translated or dubbed language. The two selectors are independent, so
 you can, for example, read the French subtitles while listening to the English audio.</li>
 <li><strong>AI Tools</strong> — transcription, translation and dubbing (<a href="#transcribe">below</a>).</li>
 <li><strong>Timeline</strong> — the waveform with your subtitle <strong>markers</strong>. Each marker is where a subtitle starts; a marker with
 no text clears the screen (a <strong>blank</strong>).</li>
-<li><strong>Live preview</strong> — the subtitle under the playhead, as it will look in game. Pick a colour or a style above it,
+<li><strong>Live preview</strong> — the subtitle under the playhead, as it will look in game. Pick a color or a style above it,
 then drag over words to paint them (right-drag erases).</li>
 <li><strong>Subtitles</strong> — one row per subtitle: its name, length, speaker and text, with a button to play it.</li>
 </ul>
 <h3 id="tags-and-languages">Tags and languages</h3>
-<p>Click the tag beside <strong>Voice Line Data</strong> to choose both a colour and a shape. <strong>Clear tag</strong> removes it.
-The shape helps distinguish voice lines without relying on colour alone. Click <strong>A-Z</strong> or <strong>0-9</strong> to use a letter or a digit as the shape.</p>
-<p><img src="Documentation/Images/subvoxpro-tag-popup.png" alt="Colour and shape tag popup with the A-Z picker open and a blue letter A selected"></p>
+<p>Click the tag beside <strong>Voice Line Data</strong> to choose both a color and a shape. <strong>Clear tag</strong> removes it.
+The shape helps distinguish voice lines without relying on color alone. Click <strong>A-Z</strong> or <strong>0-9</strong> to use a letter or a digit as the shape.</p>
+<p><img src="Documentation/Images/subvoxpro-tag-popup.png" alt="Color and shape tag popup with the A-Z picker open and a blue letter A selected"></p>
 <p>Click the source flag to choose the spoken language. Flags identify languages, not a speaker's nationality;
 the picker shows their names and codes so you do not have to recognize the flag.</p>
 <p><img src="Documentation/Images/subvoxpro-language-picker.png" alt="Source language picker showing language names, codes and flags"></p>
@@ -205,7 +205,7 @@ WAV next to the voice line. On macOS, allow Unity to use the microphone in Syste
 <ul>
 <li><strong>Show CPS</strong> (in <a href="#settings">Settings</a>) displays the reading speed of each line and flags lines that go too
 fast.</li>
-<li><strong>Check CPS</strong> (shown with <strong>Show CPS</strong>) walks through every problem one at a time — empty or duplicate names, lines outside the clip,
+<li><strong>Check Subtitles</strong> (shown with <strong>Show CPS</strong>) walks through every problem one at a time — empty or duplicate names, lines outside the clip,
 overlaps, lines too fast to read — with one-click fixes. Everything is undoable.</li>
 <li><strong>Auto blanks</strong> hides the subtitle while nobody speaks, without adding markers. Turn it on in its popup and
 adjust how long a silence must be; the hidden parts are shaded on the waveform.</li>
@@ -309,7 +309,7 @@ folder of your <a href="#where-your-files-go">data folder</a>. Only clone voices
 <h2 id="speakers-and-voice-personalities">Speakers and voice personalities</h2>
 <h3 id="speakers">Speakers</h3>
 <img src="Documentation/Images/subvoxpro-speaker-inspector.png" alt="Speaker inspector with name style and voice personalities" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
-<p>A <strong>speaker</strong> is a character: a name shown before their subtitles, in their own colour, and their voices for
+<p>A <strong>speaker</strong> is a character: a name shown before their subtitles, in their own color, and their voices for
 dubbing. Create one with <strong>Assets ▸ Create ▸ SubVox Pro ▸ Speaker</strong> or from the speaker picker in the window.</p>
 <ul>
 <li>Set the speaker of a whole voice line in the <strong>Speaker</strong> field above the list, or of a single line in its row.</li>
@@ -328,7 +328,7 @@ For a per-line override, the top entry returns to the voice line's default speak
 <p>A <strong>personality</strong> is a reusable acting direction — <em>Angry</em>, <em>Mysterious</em>, <em>Whispering</em>… Create one from a speaker
 (<strong>New personality</strong>) or with <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Personality</strong>, then either write the direction
 yourself or combine emotion, speed, volume and delivery. Click its icon to pick one of about forty symbols (emotions,
-moods, voice and character), so you recognise it at a glance in the lists.</p>
+moods, voice and character), so you recognize it at a glance in the lists.</p>
 <p>Give each line a personality from its chip in the list (in <strong>Each subtitle</strong> mode), or use the speaker's default.
 Every provider applies what it can: some follow the full direction, others only the pace. The chip's tooltip tells
 you what the selected voice will use.</p>
@@ -347,7 +347,7 @@ together.</li>
 <li><strong>Audio effects</strong> — volume curve, fades, normalize, compressor, limiter, noise gate, filters, equalizer,
 telephone/radio, pitch, intonation, pan, distance muffling, room reverb. Draw <em>where</em> an effect applies on the
 timeline, set <em>how</em> with the sliders, then <strong>Apply effects</strong>. The <strong>magnet</strong> in the corner of a curve aligns
-points with the base value, 0 and their neighbours (hold <strong>Alt</strong> to place a point freely). SubVox Pro keeps your original audio so effects stay editable;
+points with the base value, 0 and their neighbors (hold <strong>Alt</strong> to place a point freely). SubVox Pro keeps your original audio so effects stay editable;
 <strong>Flatten</strong> makes them permanent, <strong>Discard</strong> removes them all.</li>
 <li><strong>Intonation</strong> — the melody of the voice is shown on top; draw how much to raise (<strong>+</strong>) or lower (<strong>−</strong>) it in
 the lane below, where <strong>0</strong> leaves it unchanged. The <strong>magnet</strong> snaps your stroke to the step next to it
@@ -372,7 +372,7 @@ dispatches their events. (If you forget, a default player is created the first t
 warning.)</p>
 </li>
 <li><p>Drop the <strong>Subtitle Displayer</strong> prefab (<code>SubVoxPro/Prefabs</code>) into the scene: a ready-made subtitle box at the
-bottom of the screen, which grows with long lines and hides between them. Restyle it freely (font, colours,
+bottom of the screen, which grows with long lines and hides between them. Restyle it freely (font, colors,
 position, size), or add the <strong>Subtitle Displayer</strong> component to your own Canvas and assign its <strong>Subtitle Text</strong>
 (and <strong>Background</strong>, to hide it between lines).</p>
 <p><strong>Using UI Toolkit instead of a Canvas?</strong> Drop the <strong>Subtitle Document Displayer</strong> prefab instead. It shows the
@@ -519,8 +519,8 @@ Events only run in Play mode, never while you edit or scrub.</p>
 <hr>
 <h2 id="unity-timeline">Unity Timeline</h2>
 <ol>
-<li>In your Timeline, <strong>Add ▸ VoiceLine Track</strong>.</li>
-<li>Drag a voice line onto it. A subtitle clip is created, with its audio on a separate <em>VoiceLine Audio</em> track.</li>
+<li>In your Timeline, <strong>Add ▸ Voice Line Track</strong>.</li>
+<li>Drag a voice line onto it. A subtitle clip is created, with its audio on a separate <em>Voice Line Audio</em> track.</li>
 <li>Bind that audio track to an AudioSource, like any Audio Track.</li>
 <li>Make sure the scene has a Subtitle Displayer (the prefab is the quickest).</li>
 </ol>
@@ -549,7 +549,7 @@ duplicates are ignored. Wait for a running batch to finish before adding files t
 <li>Drop the files, or use <strong>Add files…</strong> / <strong>Add folder…</strong>.</li>
 <li>Turn on the steps you need — <strong>Transcription</strong>, <strong>Translation</strong>, <strong>Dubbing</strong> — and set them up once for all
 files. A file can override its languages.</li>
-<li>Check the <strong>Estimated cost</strong>, then click <strong>Batch</strong>. The button stays greyed out until everything is ready, and
+<li>Check the <strong>Estimated cost</strong>, then click <strong>Batch</strong>. The button stays grayed out until everything is ready, and
 tells you what is missing.</li>
 </ol>
 <p>Each file becomes its own voice line. The batch does one step for all files before the next one (for example
@@ -614,7 +614,7 @@ their status, a <strong>Download</strong> button for each, and <strong>Uninstall
 <td>30 languages</td>
 </tr>
 <tr>
-<td><strong>Qwen3</strong></td>
+<td><strong>Qwen3 Aligner</strong></td>
 <td>Exact word timing, on transcriptions and dubs</td>
 <td>1.0 GB</td>
 <td>11 languages</td>
@@ -732,7 +732,7 @@ as <strong>Editor</strong> with your translators.</li>
 <p>Translators fill the language columns and mark each line <strong>reviewed</strong> or <strong>final</strong>. Click <strong>Sync with Sheet</strong>:
 SubVox Pro shows every difference, Unity on one side and the Sheet on the other, and you choose which to keep before
 anything is written. The key columns of the Sheet are locked, so translators can only edit translations. Statuses are
-coloured (<strong>reviewed</strong> in amber, <strong>final</strong> in green) and empty translations are tinted, so the remaining work is easy
+colored (<strong>reviewed</strong> in amber, <strong>final</strong> in green) and empty translations are tinted, so the remaining work is easy
 to see. Each voice line starts with a dark title row; fold or unfold its lines with the <strong>+ / −</strong> button in the left
 margin.</p>
 <p>A line added only in the Sheet is never imported (a subtitle needs a timing), but it is never deleted without asking

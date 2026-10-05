@@ -138,10 +138,10 @@ La tuile <strong>Provider Setup</strong> ouvre le PDF anglais consacré aux four
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong> (<a href="providers.html">obtenir une clé</a>), ou utilisez sous Windows <strong>Whisper</strong> ou
 <strong>Parakeet</strong>, gratuits et hors connexion. Ils proposent de télécharger leur modèle à la première utilisation.</p>
 <p><strong>2. Créez une voiceline.</strong> <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line</strong>, puis sélectionnez l’asset et cliquez sur
-<strong>Setup Voiceline</strong> dans l’Inspector. Vérifiez <strong>Language</strong> : anglais la première fois, puis la dernière langue
+<strong>Set Up Voice Line</strong> dans l’Inspector. Vérifiez <strong>Language</strong> : anglais la première fois, puis la dernière langue
 choisie. Cliquez sur <strong>Add an audio track</strong> pour choisir un clip ou en enregistrer un.</p>
 <p>Vous pouvez aussi faire un clic droit sur un fichier audio dans la fenêtre Project, puis choisir
-<strong>SubVox Pro ▸ Setup VoiceLine</strong>. Choisissez où enregistrer la nouvelle voiceline : l’éditeur s’ouvre avec
+<strong>SubVox Pro ▸ Set Up Voice Line</strong>. Choisissez où enregistrer la nouvelle voiceline : l’éditeur s’ouvre avec
 ce clip audio déjà renseigné.</p>
 <p><img alt="Nouvelle voiceline : langue, piste audio et piste de sous-titres" src="Documentation/Images/subvoxpro-new-voice-line.png"/></p>
 <p><strong>3. Transcrivez.</strong> Dans <strong>AI Tools ▸ Transcription</strong>, choisissez le fournisseur et la langue parlée, cliquez sur
@@ -158,7 +158,7 @@ La scène montre des voicelines, une séquence de dialogue, le changement de lan
 <hr/>
 <h2 id="the-subvox-pro-window">La fenêtre SubVox Pro </h2>
 <p><img alt="Fenêtre SubVox Pro : sources, outils IA, timeline, aperçu et liste de sous-titres" src="Documentation/Images/subvoxpro-window-overview.png"/></p>
-<p>Ouvrez-la avec <strong>Tools ▸ SubVox Pro ▸ Voiceline Setup</strong> ou <strong>Setup Voiceline</strong> dans l’Inspector d’une voiceline.
+<p>Ouvrez-la avec <strong>Tools ▸ SubVox Pro ▸ Voice Line Setup</strong> ou <strong>Set Up Voice Line</strong> dans l’Inspector d’une voiceline.
 De haut en bas :</p>
 <ul>
 <li><strong>Voice Line Data</strong> : la voiceline en cours, avec les boutons pour en créer une, parcourir les autres ou la
@@ -196,7 +196,7 @@ les Réglages Système.</p>
 <h3 id="checking-your-subtitles">Vérifier vos sous-titres </h3>
 <ul>
 <li><strong>Show CPS</strong>, dans les <a href="#settings">réglages</a>, affiche la vitesse de lecture et signale les lignes trop rapides.</li>
-<li><strong>Check CPS</strong>, affiché avec <strong>Show CPS</strong>, parcourt les problèmes un à un : noms vides ou en double, lignes hors du clip, chevauchements,
+<li><strong>Check Subtitles</strong>, affiché avec <strong>Show CPS</strong>, parcourt les problèmes un à un : noms vides ou en double, lignes hors du clip, chevauchements,
 texte trop rapide. Chaque correction proposée peut être annulée.</li>
 <li><strong>Auto blanks</strong> masque le texte quand personne ne parle, sans ajouter de marqueurs. Activez-le dans son popup
 et choisissez la durée minimale du silence. Les parties masquées sont ombrées sur la forme d’onde.</li>
@@ -508,9 +508,9 @@ l’édition ni quand on déplace la tête de lecture à la main.</p>
 <hr/>
 <h2 id="unity-timeline">Timeline Unity </h2>
 <ol>
-<li>Dans la Timeline Unity, choisissez <strong>Add ▸ VoiceLine Track</strong>.</li>
+<li>Dans la Timeline Unity, choisissez <strong>Add ▸ Voice Line Track</strong>.</li>
 <li>Glissez une voiceline sur la piste : un clip de sous-titres apparaît, et son audio sur une piste à part,
-<strong>VoiceLine Audio</strong>.</li>
+<strong>Voice Line Audio</strong>.</li>
 <li>Reliez cette piste audio à un AudioSource, comme pour une Audio Track classique.</li>
 <li>Ajoutez un Subtitle Displayer à la scène ; le plus simple est d’utiliser son prefab.</li>
 </ol>
@@ -605,7 +605,7 @@ mais ils fonctionnent aussi sans.</p>
 <td>30 langues</td>
 </tr>
 <tr>
-<td><strong>Qwen3</strong></td>
+<td><strong>Qwen3 Aligner</strong></td>
 <td>Timing exact des mots</td>
 <td>1,0 Go</td>
 <td>11 langues</td>
