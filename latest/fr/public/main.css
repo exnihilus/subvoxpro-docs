@@ -121,6 +121,12 @@ article a:has(> img:only-child) {
   display: block;
   width: fit-content;
   max-width: 100%;
+  margin-inline: auto;
+}
+
+article p > img:only-child {
+  display: block;
+  margin-inline: auto;
 }
 
 #navbar .svx-language {
