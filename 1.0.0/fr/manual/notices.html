@@ -93,6 +93,11 @@ local Kokoro and Chatterbox synthesis, Qwen forced alignment and Parakeet transc
 Other third-party engines, models and language assets are downloaded on demand by <em>you</em>, the user,
 from their official sources, or accessed as online services using <em>your own</em> account credentials.
 This document lists those components, their licenses where applicable, and your responsibilities.</p>
+<p>Every downloadable model and language asset (the Whisper, Hy-MT2, Kokoro, Chatterbox, Parakeet, Qwen3 and VoxCPM2
+models, the Misaki and IPADIC dictionaries and the SubVox Pro reference voices) is downloaded from unmodified copies
+at <a href="https://huggingface.co/ExNihilus">https://huggingface.co/ExNihilus</a>, pinned to the source revisions listed below and kept under their original
+licenses, so that downloads stay available. If a copy cannot be reached, SubVox Pro downloads the same file from its
+original source, checked against the same SHA-256. All credit remains with the authors named below.</p>
 <p>The complete copyright notices and license texts for source implementations ported into SubVox Pro are included at
 <code>THIRD-PARTY-SOURCE-LICENSES.txt</code>. The affected source files also identify their upstream work and modifications.</p>
 <hr/>
@@ -152,7 +157,7 @@ not required by SubVox Pro's runtime subtitle playback.</li>
 <li>These editor-only binaries are never included in a player build. The Vulkan loader they use is part of your
 graphics driver and is not redistributed.</li>
 <li>The <strong>OpenAI Whisper</strong> models, converted to the ggml format, are <strong>downloaded by you</strong> on request from
-<a href="https://huggingface.co/ggerganov/whisper.cpp">https://huggingface.co/ggerganov/whisper.cpp</a> into your user <strong>AppData</strong> folder. They are released by OpenAI
+the unmodified ExNihilus copy of <a href="https://huggingface.co/ggerganov/whisper.cpp">https://huggingface.co/ggerganov/whisper.cpp</a> into your user <strong>AppData</strong> folder. They are released by OpenAI
 under the <strong>MIT License</strong> and are never bundled with, shipped in, or redistributed by the Asset.</li>
 <li>The word-timing rules are a port of OpenAI Whisper's word-timestamp algorithm (MIT License —
 <a href="https://github.com/openai/whisper">https://github.com/openai/whisper</a>). The full OpenAI copyright and MIT license are reproduced in
@@ -200,7 +205,7 @@ License text: <a href="https://creativecommons.org/licenses/by/4.0/">https://cre
 <li>The complete license text is included at <code>Plugins/x86_64/WhisperCpp/LLAMA-CPP-LICENSE.txt</code>.</li>
 <li>This editor-only binary is never included in a player build.</li>
 <li>The <strong>Hy-MT2 1.8B</strong> and <strong>Hy-MT2 7B</strong> translation models (Q4_K_M GGUF) are <strong>downloaded by you</strong> on request
-from <a href="https://huggingface.co/tencent/Hy-MT2-1.8B-GGUF">https://huggingface.co/tencent/Hy-MT2-1.8B-GGUF</a> and <a href="https://huggingface.co/tencent/Hy-MT2-7B-GGUF">https://huggingface.co/tencent/Hy-MT2-7B-GGUF</a> into
+from the unmodified ExNihilus copies of <a href="https://huggingface.co/tencent/Hy-MT2-1.8B-GGUF">https://huggingface.co/tencent/Hy-MT2-1.8B-GGUF</a> and <a href="https://huggingface.co/tencent/Hy-MT2-7B-GGUF">https://huggingface.co/tencent/Hy-MT2-7B-GGUF</a> into
 your user <strong>AppData</strong> folder. They are released by Tencent under the <strong>Apache License 2.0</strong> and are never
 bundled with, shipped in, or redistributed by the Asset. The installer pins revisions
 <code>a0c709d9fac510f2c807aa3af52872340dc37a4a</code> (1.8B) and <code>ab8472660ac61fac25f1af43fac2599d52a8a775</code> (7B) and verifies
