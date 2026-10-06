@@ -144,6 +144,38 @@ follow its <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_Voic
 </h2>
 
 
+  <a id="SubVoxPro_VoiceLinePlayback_Duration_" data-uid="SubVoxPro.VoiceLinePlayback.Duration*"></a>
+
+  <h3 id="SubVoxPro_VoiceLinePlayback_Duration" data-uid="SubVoxPro.VoiceLinePlayback.Duration">
+  Duration
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Length of the line, in seconds, known once it starts (0 while queued or refused).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Duration { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SubVoxPro_VoiceLinePlayback_Emitter_" data-uid="SubVoxPro.VoiceLinePlayback.Emitter*"></a>
 
   <h3 id="SubVoxPro_VoiceLinePlayback_Emitter" data-uid="SubVoxPro.VoiceLinePlayback.Emitter">
@@ -176,6 +208,38 @@ follow its <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_Voic
 
 
 
+  <a id="SubVoxPro_VoiceLinePlayback_IsCurrent_" data-uid="SubVoxPro.VoiceLinePlayback.IsCurrent*"></a>
+
+  <h3 id="SubVoxPro_VoiceLinePlayback_IsCurrent" data-uid="SubVoxPro.VoiceLinePlayback.IsCurrent">
+  IsCurrent
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>True while the line plays on its emitter (paused or not).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrent { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SubVoxPro_VoiceLinePlayback_IsDone_" data-uid="SubVoxPro.VoiceLinePlayback.IsDone*"></a>
 
   <h3 id="SubVoxPro_VoiceLinePlayback_IsDone" data-uid="SubVoxPro.VoiceLinePlayback.IsDone">
@@ -189,6 +253,38 @@ follow its <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_Voic
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsDone { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLinePlayback_IsPaused_" data-uid="SubVoxPro.VoiceLinePlayback.IsPaused*"></a>
+
+  <h3 id="SubVoxPro_VoiceLinePlayback_IsPaused" data-uid="SubVoxPro.VoiceLinePlayback.IsPaused">
+  IsPaused
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>True while the line is paused, by <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Pause">Pause()</a>, its emitter or <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_PauseAll">PauseAll()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPaused { get; }</code></pre>
   </div>
 
 
@@ -240,6 +336,38 @@ follow its <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_Voic
 
 
 
+  <a id="SubVoxPro_VoiceLinePlayback_Progress_" data-uid="SubVoxPro.VoiceLinePlayback.Progress*"></a>
+
+  <h3 id="SubVoxPro_VoiceLinePlayback_Progress" data-uid="SubVoxPro.VoiceLinePlayback.Progress">
+  Progress
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>How far the line has played, from 0 to 1.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Progress { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SubVoxPro_VoiceLinePlayback_State_" data-uid="SubVoxPro.VoiceLinePlayback.State*"></a>
 
   <h3 id="SubVoxPro_VoiceLinePlayback_State" data-uid="SubVoxPro.VoiceLinePlayback.State">
@@ -262,6 +390,38 @@ follow its <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_Voic
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="SubVoxPro.EVoiceLinePlaybackState.html">EVoiceLinePlaybackState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLinePlayback_Time_" data-uid="SubVoxPro.VoiceLinePlayback.Time*"></a>
+
+  <h3 id="SubVoxPro_VoiceLinePlayback_Time" data-uid="SubVoxPro.VoiceLinePlayback.Time">
+  Time
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>How far the line has played, in seconds: 0 before it starts, <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Duration">Duration</a> once it completes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Time { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
     <dd></dd>
   </dl>
 
@@ -371,6 +531,60 @@ follow its <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_Voic
 </h2>
 
 
+  <a id="SubVoxPro_VoiceLinePlayback_Pause_" data-uid="SubVoxPro.VoiceLinePlayback.Pause*"></a>
+
+  <h3 id="SubVoxPro_VoiceLinePlayback_Pause" data-uid="SubVoxPro.VoiceLinePlayback.Pause">
+  Pause()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Pauses this line while it plays (see <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause">Pause()</a>). No effect while it is queued.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Pause()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLinePlayback_Resume_" data-uid="SubVoxPro.VoiceLinePlayback.Resume*"></a>
+
+  <h3 id="SubVoxPro_VoiceLinePlayback_Resume" data-uid="SubVoxPro.VoiceLinePlayback.Resume">
+  Resume()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Resumes this line after <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Pause">Pause()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Resume()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="SubVoxPro_VoiceLinePlayback_Stop_" data-uid="SubVoxPro.VoiceLinePlayback.Stop*"></a>
 
   <h3 id="SubVoxPro_VoiceLinePlayback_Stop" data-uid="SubVoxPro.VoiceLinePlayback.Stop">
@@ -403,6 +617,37 @@ follow its <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_Voic
 
 
 
+  <h3 id="SubVoxPro_VoiceLinePlayback_Completed" data-uid="SubVoxPro.VoiceLinePlayback.Completed">
+  Completed
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised when the line plays to its end, or is skipped.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; Completed</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h3 id="SubVoxPro_VoiceLinePlayback_Finished" data-uid="SubVoxPro.VoiceLinePlayback.Finished">
   Finished
   
@@ -414,6 +659,37 @@ follow its <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_Voic
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; Finished</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="SubVoxPro_VoiceLinePlayback_Interrupted" data-uid="SubVoxPro.VoiceLinePlayback.Interrupted">
+  Interrupted
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised when the line is stopped, or replaced by another one, before its end.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; Interrupted</code></pre>
   </div>
 
 

@@ -81,7 +81,7 @@
 <ul>
 <li><strong>Transcrivez</strong> un clip audio en sous-titres horodatés, avec un service en ligne ou entièrement hors connexion.</li>
 <li><strong>Ajustez</strong> le timing sur une forme d’onde, stylisez les mots et vérifiez la vitesse de lecture.</li>
-<li><strong>Traduisez</strong> dans 37 langues et <strong>doublez</strong> par synthèse vocale, si besoin avec la voix de chaque personnage.</li>
+<li><strong>Traduisez</strong> dans 50 langues et <strong>doublez</strong> par synthèse vocale, si besoin avec la voix de chaque personnage.</li>
 <li><strong>Jouez</strong> le résultat en jeu avec quelques composants, déclenchez des <strong>événements de gameplay</strong> depuis une réplique
 et placez vos répliques sur la <strong>Timeline Unity</strong>.</li>
 </ul>
@@ -108,6 +108,7 @@ Le guide et la référence d’API existent en français sur ce site ; les PDF l
 <li><a href="#supported-languages">Langues prises en charge</a></li>
 <li><a href="#where-your-files-go">Emplacement de vos fichiers</a></li>
 <li><a href="#troubleshooting">Dépannage</a></li>
+<li><a href="#support">Support</a></li>
 </ul>
 <p>La création des comptes et des clés API est expliquée étape par étape dans le
 <a href="providers.html">guide des fournisseurs</a>.</p>
@@ -119,8 +120,8 @@ Le guide et la référence d’API existent en français sur ce site ; les PDF l
 le package <strong>TextMeshPro</strong> depuis le Package Manager. Unity 6 l’inclut déjà.</li>
 <li><strong>Unity Timeline</strong> est facultatif : les fonctions Timeline apparaissent dès que son package est installé.</li>
 <li><strong>En jeu</strong>, SubVox Pro fonctionne sur toutes les plateformes prises en charge par Unity.</li>
-<li><strong>Dans l’éditeur</strong>, les services en ligne fonctionnent sous Windows, macOS et Linux avec vos propres clés API.
-Les <strong>moteurs locaux</strong> (transcription, traduction et doublage sans compte) demandent l’éditeur <strong>Windows</strong>.</li>
+<li><strong>Dans l’éditeur</strong>, SubVox Pro est testé sous <strong>Windows</strong>. Les services en ligne, avec vos propres clés API,
+devraient aussi fonctionner sous macOS et Linux, mais n’y ont pas encore été testés. Les <strong>moteurs locaux</strong> (transcription, traduction et doublage sans compte) demandent l’éditeur <strong>Windows</strong>.</li>
 </ul>
 <hr/>
 <h2 id="quick-start">Démarrage rapide </h2>
@@ -387,10 +388,15 @@ SubVox.ResumeAll();
 SubVox.StopAll();                    // cinématique passée
 SubVox.CurrentLanguage = "fr";       // sous-titres et doublages français, "" pour la source
 </code></pre>
-<p><code>Play</code> renvoie la lecture en cours : vous pouvez consulter son <code>State</code>, l’arrêter ou l’attendre dans une coroutine :</p>
+<p><code>Play</code> renvoie la lecture en cours : vous pouvez consulter son <code>State</code>, son <code>Time</code> et son <code>Progress</code>, la mettre
+en pause ou l’arrêter, écouter ses événements <code>Completed</code> / <code>Interrupted</code>, ou l’attendre dans une coroutine :</p>
 <pre><code class="lang-csharp">yield return SubVox.Play(greeting);
 yield return SubVox.Play(answer);
 </code></pre>
+<p><code>SubVox.IsPlaying(line)</code> indique si une réplique est en cours, <code>SubVox.Stop(line)</code> arrête cette seule réplique, et
+<code>SubVox.PlayAt(line, position)</code> la fait entendre une fois en un point du monde, comme une voix de haut-parleur.
+Pour afficher une réplique ailleurs (vidéo, menu), <code>myVoiceLine.GetSubtitleAt(time, language)</code> donne le sous-titre
+à n’importe quel instant, et <code>TryGetWordAt</code> le mot prononcé.</p>
 <p>Sur <strong>Voice Line Manager</strong>, <strong>Subtitle Reveal Mode</strong> affiche la ligne entière (par défaut), les mots un à un, ou
 le mode <strong>Karaoke</strong>, qui met en surbrillance le mot prononcé. Les cinématiques Timeline suivent le même réglage.
 Pour baisser la musique pendant les dialogues, renseignez deux snapshots d’Audio Mixer : <strong>Ducked Snapshot</strong>
@@ -403,8 +409,14 @@ et plusieurs personnages peuvent parler en même temps.</p>
 <p>Les <strong>priorités</strong> protègent les répliques importantes. Sur un émetteur, une nouvelle réplique ne remplace celle en
 cours que si elle est au moins aussi importante. À l’écran, c’est le sous-titre de la plus importante qui s’affiche.
 <code>EVoiceLinePlayMode.Queue</code> met la réplique en attente ; <code>EVoiceLinePlayMode.IfIdle</code> ne la joue que si l’émetteur
-est libre. <code>Skip()</code> termine la réplique tout de suite. Désactivez <strong>Show Subtitles</strong> pour les conversations de fond.
-<code>VoiceLineCompleted</code> et <code>VoiceLineInterrupted</code> signalent qu’une lecture s’est terminée ou a été interrompue.</p>
+est libre. <code>Skip()</code> termine la réplique tout de suite et <code>ClearQueue()</code> vide la file d’attente. Désactivez
+<strong>Show Subtitles</strong> pour les conversations de fond. <code>VoiceLineCompleted</code> et <code>VoiceLineInterrupted</code> signalent qu’une
+lecture s’est terminée ou a été interrompue ; <code>Paused</code> / <code>Resumed</code> suivent les pauses. <code>PlaybackSpeed</code> accélère ou
+ralentit les répliques.</p>
+<p><strong>Lip-sync.</strong> L’événement <code>WordChanged</code> d’un émetteur se déclenche à chaque nouveau mot prononcé (et entre les mots),
+et <code>CurrentWord</code> contient le mot en cours : de quoi animer la bouche d’un personnage ou déclencher un geste.</p>
+<pre><code class="lang-csharp">emitter.WordChanged += word =&gt; mouth.SetBool("Talking", word.Text != null);
+</code></pre>
 <p><strong>Bulles de dialogue.</strong> Sélectionnez un personnage et utilisez <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>.
 Une bulle au-dessus de sa tête n’affiche que ses répliques. Désactivez <strong>Show Subtitles</strong> sur son émetteur
 pour ne pas les afficher aussi en bas de l’écran.</p>
@@ -431,6 +443,9 @@ pour ne pas passer d’une langue à l’autre au milieu d’une phrase.</p>
 <ul>
 <li><strong>Unity Localization</strong> : si ce package est installé, SubVox Pro suit sa langue. Pour gérer la langue vous-même,
 réglez <strong>Language Source</strong> sur <strong>Manual</strong> dans Voice Line Manager.</li>
+<li><strong>Noms des personnages</strong> : un speaker peut afficher un nom différent par langue. Remplissez ses
+<strong>Localized Names</strong>, ou, avec Unity Localization, pointez <strong>Localization Table</strong> et <strong>Localization Entry</strong> vers
+une chaîne.</li>
 <li><strong>Variantes régionales</strong> : si la version <code>pt-BR</code> n’est pas disponible, le joueur entend et lit la version <code>pt</code>,
 et inversement.</li>
 <li><strong>Menu de langues</strong> : <code>myVoiceLine.GetSubtitleLanguages()</code> et <code>GetAudioLanguages()</code> listent les langues disponibles.</li>
@@ -495,6 +510,9 @@ private void Shake()
 <code>SubVoxEvents.Camera.Effects.CAMERA_SHAKE</code>. Les constantes sont régénérées quand un signal est enregistré, créé,
 renommé ou supprimé. Après un renommage, les anciennes références ne compilent plus, volontairement, pour que
 vous les corrigiez. Les clés texte comme <code>[VoiceLineEvent("Camera Shake")]</code> fonctionnent toujours.</p>
+<p>Les constantes sont rangées dans votre dossier de données (<code>Generated/SubVoxEvents.g.cs</code>) : les mises à jour du
+plugin ne les écrasent jamais. Les scripts sans assembly definition les voient directement ; si les vôtres en ont
+une, ajoutez-y une référence à <strong>SubVoxPro.Events</strong>.</p>
 <p><strong>[SubVox Pro]</strong> trouve ces méthodes tout seul. Si vous créez des objets en cours de jeu, appelez
 <code>VoiceLineEventDispatcher.Refresh()</code>.</p>
 </li>
@@ -578,7 +596,7 @@ mais ils fonctionnent aussi sans.</p>
 <td><strong>Hy-MT2</strong></td>
 <td>Traduction</td>
 <td>1,1 Go, ou 4,6 Go pour le modèle plus précis</td>
-<td>Les 37 langues cibles</td>
+<td>37 des 50 langues cibles (ni danois, suédois, finnois, norvégien, grec, hongrois, roumain, bulgare, slovaque, slovène, estonien, letton, lituanien)</td>
 </tr>
 <tr>
 <td><strong>Kokoro</strong></td>
@@ -588,7 +606,7 @@ mais ils fonctionnent aussi sans.</p>
 </tr>
 <tr>
 <td><strong>Chatterbox</strong></td>
-<td>Doublage avec voix du personnage ou 24 voix fournies</td>
+<td>Doublage avec voix du personnage ou 20 voix fournies</td>
 <td>3,3 Go</td>
 <td>21 langues et japonais avec un ajout de 6 Mo</td>
 </tr>
@@ -637,7 +655,7 @@ de mémoire. Les deux modèles respectent le contexte et le niveau de formalité
 <p>Choisissez <strong>Chatterbox</strong> dans Dubbing, puis <strong>Install Chatterbox…</strong>. Voix disponibles :</p>
 <ul>
 <li><strong>Original voice</strong> (par défaut) garde la voix de chaque personnage dans toutes les langues ;</li>
-<li><strong>24 voix fournies</strong> (12 féminines, 12 masculines), téléchargées avec le modèle ;</li>
+<li><strong>20 voix fournies</strong> (une voix féminine et une masculine dans dix langues), synthétiques et libres d’usage commercial — les mêmes que Qwen3 et VoxCPM2 ;</li>
 <li><strong>Chatterbox default voice</strong> ;</li>
 <li><strong>vos propres clips</strong>, placés dans le dossier <code>Voices</code> : 5 à 10 secondes d’une seule voix, bien enregistrée.</li>
 </ul>
@@ -645,7 +663,7 @@ de mémoire. Les deux modèles respectent le contexte et le niveau de formalité
 malais, norvégien, polonais, portugais, russe, espagnol, swahili, suédois et turc, ainsi que le japonais une fois son
 module installé depuis la même fenêtre. <strong>Exaggeration</strong> (dans Dubbing, Batch Processing et Settings) règle
 l’expressivité. Deux générations ne sont jamais tout à fait identiques : si un mot sort mal, régénérez la ligne.
-Toutes les langues ne sont pas aussi fiables : voir la <a href="providers.html#chatterbox-accuracy-by-language">précision par langue</a>.</p>
+Toutes les langues ne sont pas aussi fiables : voir la <a href="providers.html#chatterbox-how-reliable-each-language-is">fiabilité par langue</a>.</p>
 <h3 id="qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B, doublage multilingue local </h3>
 <p>Choisissez <strong>Qwen3 TTS 1.7B</strong> dans Dubbing, puis <strong>Install…</strong>. Il parle chinois, anglais, japonais, coréen,
 allemand, français, russe, portugais, espagnol et italien, et existe en trois modèles ; installez ceux dont vous avez
@@ -1247,6 +1265,10 @@ la facturation sur le projet Google relève les limites.</li>
 <li><strong>Aucun sous-titre en jeu</strong> : vérifiez que la scène contient un Subtitle Displayer, que son champ texte est
 renseigné et que <strong>Show Subtitles</strong> est activé sur l’émetteur qui joue la voiceline.</li>
 </ul>
+<hr/>
+<h2 id="support">Support </h2>
+<p>Questions, bugs et suggestions : **exnihilus.assets@gmail.com**. Indiquez votre version de Unity, le service ou
+moteur concerné, et l’erreur de la Console s’il y en a une.</p>
 </article>
 <div class="next-article d-print-none border-top" id="nextArticle"></div>
 </div>

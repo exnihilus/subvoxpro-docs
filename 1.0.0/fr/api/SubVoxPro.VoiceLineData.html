@@ -383,6 +383,32 @@ Classe VoiceLineData
 <dt><a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a></dt>
 <dd></dd>
 </dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetSubtitleAt*" id="SubVoxPro_VoiceLineData_GetSubtitleAt_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetSubtitleAt(System.Single,System.String)" id="SubVoxPro_VoiceLineData_GetSubtitleAt_System_Single_System_String_">
+  GetSubtitleAt(float, string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Le sous-titre affiché à un instant, en secondes, quand la ligne est jouée dans une langue : la même ligne qu’afficherait un <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> (timings du doublage et blancs automatiques compris), avec tout son texte et ses styles. Vide avant la première ligne, dans une pause ou après un marqueur blanc.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SubtitleInfo GetSubtitleAt(float time, string language_code)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_VoiceLineData_GetSubtitleAt_System_Single_System_String__examples">Examples</h4>
+<pre><code class="lang-csharp">SubtitleInfo line = voiceLine.GetSubtitleAt(_video.time, SubVox.CurrentLanguage);
+_caption.text = line.SubtitleText;</code></pre>
 <a data-uid="SubVoxPro.VoiceLineData.GetSubtitleLanguages*" id="SubVoxPro_VoiceLineData_GetSubtitleLanguages_"></a>
 <h3 data-uid="SubVoxPro.VoiceLineData.GetSubtitleLanguages" id="SubVoxPro_VoiceLineData_GetSubtitleLanguages">
   GetSubtitleLanguages()
@@ -483,6 +509,31 @@ Classe VoiceLineData
 <h4 class="section">Paramètres</h4>
 <dl class="parameters">
 <dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.TryGetWordAt*" id="SubVoxPro_VoiceLineData_TryGetWordAt_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.TryGetWordAt(System.Single,System.String,SubVoxPro.SubtitleWordInfo@)" id="SubVoxPro_VoiceLineData_TryGetWordAt_System_Single_System_String_SubVoxPro_SubtitleWordInfo__">
+  TryGetWordAt(float, string, out SubtitleWordInfo)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Le mot prononcé à un instant, en secondes, quand la ligne est jouée dans une langue. Faux entre deux mots, ou si la ligne n’a pas de timings par mot.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool TryGetWordAt(float time, string language_code, out SubtitleWordInfo word)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+<dt><code>word</code> <a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a></dt>
 <dd></dd>
 </dl>
 <h4 class="section">Retour</h4>

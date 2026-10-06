@@ -95,7 +95,7 @@
 <ul>
 <li><strong>Transcribe</strong> an audio clip into timed subtitles — with a cloud service or fully offline.</li>
 <li><strong>Edit</strong> the timing on a waveform, style words, check reading speed.</li>
-<li><strong>Translate</strong> into 37 languages and <strong>dub</strong> with text-to-speech, optionally in each character's own voice.</li>
+<li><strong>Translate</strong> into 50 languages and <strong>dub</strong> with text-to-speech, optionally in each character's own voice.</li>
 <li><strong>Play</strong> everything in game with a few components, trigger <strong>gameplay events</strong> from a line, and drop lines onto
 <strong>Unity Timeline</strong>.</li>
 </ul>
@@ -120,6 +120,7 @@
 <li><a href="#supported-languages">Supported languages</a></li>
 <li><a href="#where-your-files-go">Where your files go</a></li>
 <li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#support">Support</a></li>
 </ul>
 <p>Getting an account and an API key for each service is explained step by step in
 <a href="providers.html">Provider Setup.md</a>.</p>
@@ -131,8 +132,9 @@
 the <strong>TextMeshPro</strong> package from the Package Manager (Unity 6 already includes it).</li>
 <li><strong>Unity Timeline</strong> is optional: the Timeline features appear as soon as the package is installed.</li>
 <li><strong>In game</strong>, SubVox Pro runs on every platform Unity supports.</li>
-<li><strong>In the editor</strong>, the cloud services work on Windows, macOS and Linux, with your own API keys. The <strong>offline
-engines</strong> (transcription, translation and dubbing without any account) need the <strong>Windows</strong> editor.</li>
+<li><strong>In the editor</strong>, SubVox Pro is tested on <strong>Windows</strong>. The cloud services, with your own API keys, should also
+work in the macOS and Linux editors, but have not been tested there yet. The <strong>offline engines</strong> (transcription,
+translation and dubbing without any account) need the <strong>Windows</strong> editor.</li>
 </ul>
 <hr>
 <h2 id="quick-start">Quick start</h2>
@@ -395,10 +397,15 @@ SubVox.ResumeAll();
 SubVox.StopAll();                    // cutscene skipped
 SubVox.CurrentLanguage = &quot;fr&quot;;       // French subtitles and dubs (&quot;&quot; = original)
 </code></pre>
-<p><code>Play</code> gives back the line's playback: check its <code>State</code>, stop it, or wait for it in a coroutine:</p>
+<p><code>Play</code> gives back the line's playback: check its <code>State</code>, <code>Time</code> and <code>Progress</code>, pause or stop it, listen to its
+<code>Completed</code> / <code>Interrupted</code> events, or wait for it in a coroutine:</p>
 <pre><code class="lang-csharp">yield return SubVox.Play(greeting);  // waits until the line is over
 yield return SubVox.Play(answer);
 </code></pre>
+<p><code>SubVox.IsPlaying(line)</code> tells whether a line is being said, <code>SubVox.Stop(line)</code> stops only that line, and
+<code>SubVox.PlayAt(line, position)</code> says a line once at a point in the world, like a voice from a loudspeaker.
+To show a line somewhere else (a video, a menu), <code>myVoiceLine.GetSubtitleAt(time, language)</code> gives the subtitle at
+any moment, and <code>TryGetWordAt</code> the word being said.</p>
 <p>On the <strong>Voice Line Manager</strong>, <strong>Subtitle Reveal Mode</strong> shows subtitles one full line at a time (the default), word
 by word, or as <strong>Karaoke</strong> (the whole line, with the word being spoken highlighted); Timeline cutscenes follow it
 too. To lower the music while someone speaks, give it two Audio Mixer
@@ -411,9 +418,14 @@ character, and several characters can talk at the same time.</p>
 <p><strong>Priorities</strong> keep important lines safe: on one emitter, a new line replaces the current one only if it is at
 least as important; on screen, the subtitle of the most important line wins. To let a line wait for its turn
 instead, play it with <code>EVoiceLinePlayMode.Queue</code>; <code>EVoiceLinePlayMode.IfIdle</code> plays it only if the emitter is free.
-<code>Skip()</code> ends the current line at once, as for a &quot;skip dialogue&quot; button. An emitter's <strong>Show Subtitles</strong> can be
-turned off for background chatter, and its <code>VoiceLineCompleted</code> / <code>VoiceLineInterrupted</code> events tell you when a line
-ends.</p>
+<code>Skip()</code> ends the current line at once, as for a &quot;skip dialogue&quot; button, and <code>ClearQueue()</code> drops the lines waiting
+their turn. An emitter's <strong>Show Subtitles</strong> can be turned off for background chatter, and its <code>VoiceLineCompleted</code> /
+<code>VoiceLineInterrupted</code> events tell you when a line ends; <code>Paused</code> / <code>Resumed</code> follow pauses. <code>PlaybackSpeed</code> plays
+its lines faster or slower.</p>
+<p><strong>Lip-sync.</strong> An emitter's <code>WordChanged</code> event fires each time a new word is said (and between words), and
+<code>CurrentWord</code> holds the word being said: enough to open a character's mouth or trigger a gesture.</p>
+<pre><code class="lang-csharp">emitter.WordChanged += word =&gt; mouth.SetBool(&quot;Talking&quot;, word.Text != null);
+</code></pre>
 <p><strong>Speech bubbles.</strong> Select a character and use <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>: a bubble appears above
 its head and shows only what this character says. Turn off its emitter's <strong>Show Subtitles</strong> to keep those lines out
 of the bottom of the screen.</p>
@@ -441,6 +453,8 @@ since a line can't change language in the middle of a sentence.</p>
 <li><strong>Unity Localization</strong> — if your project uses Unity's Localization package, SubVox Pro follows the language chosen
 there automatically. To set the language yourself instead, set <strong>Language Source</strong> to <strong>Manual</strong> on the Voice Line
 Manager.</li>
+<li><strong>Speaker names</strong> — a speaker can show a different name in each language: fill in its <strong>Localized Names</strong>, or,
+with Unity Localization, point its <strong>Localization Table</strong> and <strong>Localization Entry</strong> at a string.</li>
 <li><strong>Close languages</strong> — a player in <code>pt-BR</code> hears and reads a <code>pt</code> translation when there is no <code>pt-BR</code> one (and the
 other way round).</li>
 <li><strong>Language menu</strong> — <code>myVoiceLine.GetSubtitleLanguages()</code> and <code>GetAudioLanguages()</code> list what a voice line offers.</li>
@@ -506,6 +520,9 @@ private void Shake()
 <code>SubVoxEvents.Camera.Effects.CAMERA_SHAKE</code>. Constants regenerate when signals are saved, renamed, created or
 deleted. Renaming a key or category deliberately leaves old references as compiler errors; string keys such as
 <code>[VoiceLineEvent(&quot;Camera Shake&quot;)]</code> remain supported.</p>
+<p>The constants live in your data folder (<code>Generated/SubVoxEvents.g.cs</code>), so plugin updates never overwrite them.
+Scripts without an assembly definition see them directly; if your scripts have one, add a reference to
+<strong>SubVoxPro.Events</strong>.</p>
 <p>The <strong>[SubVox Pro]</strong> prefab finds these methods on its own. If you create objects at runtime, call
 <code>VoiceLineEventDispatcher.Refresh()</code> afterwards.</p>
 </li>
@@ -587,7 +604,7 @@ their status, a <strong>Download</strong> button for each, and <strong>Uninstall
 <td><strong>Hy-MT2</strong></td>
 <td>Translation</td>
 <td>1.1 GB, or 4.6 GB for the more accurate model</td>
-<td>All 37 target languages</td>
+<td>37 of the 50 target languages (not Danish, Swedish, Finnish, Norwegian, Greek, Hungarian, Romanian, Bulgarian, Slovak, Slovenian, Estonian, Latvian, Lithuanian)</td>
 </tr>
 <tr>
 <td><strong>Kokoro</strong></td>
@@ -597,7 +614,7 @@ their status, a <strong>Download</strong> button for each, and <strong>Uninstall
 </tr>
 <tr>
 <td><strong>Chatterbox</strong></td>
-<td>Dubbing, in each character's own voice or 24 ready-made ones</td>
+<td>Dubbing, in each character's own voice or 20 ready-made ones</td>
 <td>3.3 GB</td>
 <td>21 languages, + Japanese with an optional 6 MB add-on</td>
 </tr>
@@ -644,7 +661,7 @@ respect your context notes and the formality setting.</p>
 <p>Pick <strong>Chatterbox</strong> in the Dubbing tab and click <strong>Install Chatterbox…</strong>. Its voices:</p>
 <ul>
 <li><strong>Original voice</strong> (default) — each character keeps the voice heard in the original audio, in every language;</li>
-<li><strong>24 ready-made voices</strong> (12 female, 12 male), downloaded with the model;</li>
+<li><strong>20 ready-made voices</strong> (a female and a male voice in ten languages), synthetic and free to use commercially — the same ones as Qwen3 and VoxCPM2;</li>
 <li><strong>Chatterbox default voice</strong>;</li>
 <li><strong>your own clips</strong> — any clip placed in the <code>Voices</code> folder of the data folder (5–10 seconds of one clear voice).</li>
 </ul>
@@ -653,7 +670,7 @@ Norwegian, Polish, Portuguese, Russian, Spanish, Swahili, Swedish, Turkish, and 
 support from the same window. <strong>Exaggeration</strong>, under the provider in the Dubbing panel (also in Batch Processing
 and the Settings), makes the delivery more or less expressive. Each
 generation is slightly different: if a word comes out wrong, generate it again. Some languages come out more reliably than
-others: see <a href="providers.html#chatterbox-accuracy-by-language">how accurate each language is</a>.</p>
+others: see <a href="providers.html#chatterbox-how-reliable-each-language-is">how reliable each language is</a>.</p>
 <h3 id="qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B (offline multilingual dubbing)</h3>
 <p>Pick <strong>Qwen3 TTS 1.7B</strong> in the Dubbing tab and click <strong>Install…</strong>. It speaks Chinese, English, Japanese, Korean,
 German, French, Russian, Portuguese, Spanish and Italian, and comes in three models; install the ones you need
@@ -1256,6 +1273,10 @@ enabling billing on your Google project lifts the limit.</li>
 <li><strong>Nothing shows on screen in game</strong> — check that the scene has a Subtitle Displayer with its text assigned, and
 that the line plays on an emitter whose <strong>Show Subtitles</strong> is on.</li>
 </ul>
+<hr>
+<h2 id="support">Support</h2>
+<p>Questions, bugs and feature requests: **exnihilus.assets@gmail.com**. Please include your Unity version, the
+provider or engine involved, and the error from the Console if there is one.</p>
 
 </article>
 

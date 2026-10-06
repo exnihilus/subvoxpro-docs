@@ -323,6 +323,102 @@ can be reused across voice lines; the gender is only used to group speakers in t
 
 
 
+  <a id="SubVoxPro_SpeakerData_LocalizationEntry_" data-uid="SubVoxPro.SpeakerData.LocalizationEntry*"></a>
+
+  <h3 id="SubVoxPro_SpeakerData_LocalizationEntry" data-uid="SubVoxPro.SpeakerData.LocalizationEntry">
+  LocalizationEntry
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Key of this speaker's name in <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizationTable">LocalizationTable</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LocalizationEntry { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_SpeakerData_LocalizationTable_" data-uid="SubVoxPro.SpeakerData.LocalizationTable*"></a>
+
+  <h3 id="SubVoxPro_SpeakerData_LocalizationTable" data-uid="SubVoxPro.SpeakerData.LocalizationTable">
+  LocalizationTable
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>String table collection holding this speaker's name, used when the Unity Localization package is installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LocalizationTable { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_SpeakerData_LocalizedNames_" data-uid="SubVoxPro.SpeakerData.LocalizedNames*"></a>
+
+  <h3 id="SubVoxPro_SpeakerData_LocalizedNames" data-uid="SubVoxPro.SpeakerData.LocalizedNames">
+  LocalizedNames
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The names this speaker shows in other languages (see <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_GetDisplayName_System_String_">GetDisplayName(string)</a>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;SpeakerLocalizedName&gt; LocalizedNames { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.SpeakerLocalizedName.html">SpeakerLocalizedName</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SubVoxPro_SpeakerData_NameColor_" data-uid="SubVoxPro.SpeakerData.NameColor*"></a>
 
   <h3 id="SubVoxPro_SpeakerData_NameColor" data-uid="SubVoxPro.SpeakerData.NameColor">
@@ -391,25 +487,68 @@ can be reused across voice lines; the gender is only used to group speakers in t
 </h2>
 
 
-  <a id="SubVoxPro_SpeakerData_ToRichText_" data-uid="SubVoxPro.SpeakerData.ToRichText*"></a>
+  <a id="SubVoxPro_SpeakerData_GetDisplayName_" data-uid="SubVoxPro.SpeakerData.GetDisplayName*"></a>
 
-  <h3 id="SubVoxPro_SpeakerData_ToRichText_System_String_" data-uid="SubVoxPro.SpeakerData.ToRichText(System.String)">
-  ToRichText(string)
+  <h3 id="SubVoxPro_SpeakerData_GetDisplayName_System_String_" data-uid="SubVoxPro.SpeakerData.GetDisplayName(System.String)">
+  GetDisplayName(string)
   
   </h3>
 
-  <div class="markdown level1 summary"><p>The display name (plus an optional suffix such as &quot;:&quot;) wrapped in rich-text
-color/bold/italic tags, so the suffix is colored with the name (for TextMeshPro).</p>
+  <div class="markdown level1 summary"><p>The name shown in a language: the Unity Localization entry when one is set and the package is installed,
+then the matching <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizedNames">LocalizedNames</a> entry (exact, then same base language), then <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_DisplayName">DisplayName</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ToRichText(string suffix = &quot;&quot;)</code></pre>
+    <pre><code class="lang-csharp hljs">public string GetDisplayName(string language_code)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="SubVoxPro_SpeakerData_GetDisplayName_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">string name = speaker.GetDisplayName(SubVox.CurrentLanguage);</code></pre>
+
+
+
+
+
+
+  <a id="SubVoxPro_SpeakerData_ToRichText_" data-uid="SubVoxPro.SpeakerData.ToRichText*"></a>
+
+  <h3 id="SubVoxPro_SpeakerData_ToRichText_System_String_System_String_" data-uid="SubVoxPro.SpeakerData.ToRichText(System.String,System.String)">
+  ToRichText(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name (plus an optional suffix such as &quot;:&quot;) wrapped in rich-text color/bold/italic tags, so the suffix
+is colored with the name (for TextMeshPro). With a language, the name is <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_GetDisplayName_System_String_">GetDisplayName(string)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToRichText(string suffix = &quot;&quot;, string language_code = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>suffix</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 

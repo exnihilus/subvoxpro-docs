@@ -191,6 +191,54 @@ Classe SpeakerData
 <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
 <dd></dd>
 </dl>
+<a data-uid="SubVoxPro.SpeakerData.LocalizationEntry*" id="SubVoxPro_SpeakerData_LocalizationEntry_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.LocalizationEntry" id="SubVoxPro_SpeakerData_LocalizationEntry">
+  LocalizationEntry
+  
+  </h3>
+<div class="markdown level1 summary"><p>Clé du nom de ce speaker dans <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizationTable">LocalizationTable</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string LocalizationEntry { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.LocalizationTable*" id="SubVoxPro_SpeakerData_LocalizationTable_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.LocalizationTable" id="SubVoxPro_SpeakerData_LocalizationTable">
+  LocalizationTable
+  
+  </h3>
+<div class="markdown level1 summary"><p>Collection de tables de chaînes qui contient le nom de ce speaker, utilisée quand le package Unity Localization est installé.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string LocalizationTable { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.LocalizedNames*" id="SubVoxPro_SpeakerData_LocalizedNames_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.LocalizedNames" id="SubVoxPro_SpeakerData_LocalizedNames">
+  LocalizedNames
+  
+  </h3>
+<div class="markdown level1 summary"><p>Les noms de ce speaker dans d’autres langues (voir <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_GetDisplayName_System_String_">GetDisplayName(string)</a>).</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;SpeakerLocalizedName&gt; LocalizedNames { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.SpeakerLocalizedName.html">SpeakerLocalizedName</a>&gt;</dt>
+<dd></dd>
+</dl>
 <a data-uid="SubVoxPro.SpeakerData.NameColor*" id="SubVoxPro_SpeakerData_NameColor_"></a>
 <h3 data-uid="SubVoxPro.SpeakerData.NameColor" id="SubVoxPro_SpeakerData_NameColor">
   NameColor
@@ -225,20 +273,45 @@ Classe SpeakerData
 </dl>
 <h2 class="section" id="methods">Méthodes
 </h2>
-<a data-uid="SubVoxPro.SpeakerData.ToRichText*" id="SubVoxPro_SpeakerData_ToRichText_"></a>
-<h3 data-uid="SubVoxPro.SpeakerData.ToRichText(System.String)" id="SubVoxPro_SpeakerData_ToRichText_System_String_">
-  ToRichText(string)
+<a data-uid="SubVoxPro.SpeakerData.GetDisplayName*" id="SubVoxPro_SpeakerData_GetDisplayName_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.GetDisplayName(System.String)" id="SubVoxPro_SpeakerData_GetDisplayName_System_String_">
+  GetDisplayName(string)
   
   </h3>
-<div class="markdown level1 summary"><p>Nom affiché, suivi d’un suffixe facultatif comme « : », avec les balises TextMeshPro de couleur, de gras et d’italique. Le suffixe prend la couleur du nom.</p>
+<div class="markdown level1 summary"><p>Le nom affiché dans une langue : l’entrée Unity Localization si elle est définie et que le package est installé, puis l’entrée de <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizedNames">LocalizedNames</a> correspondante (exacte, puis même langue de base), puis <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_DisplayName">DisplayName</a>.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
-<pre><code class="lang-csharp hljs">public string ToRichText(string suffix = "")</code></pre>
+<pre><code class="lang-csharp hljs">public string GetDisplayName(string language_code)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_SpeakerData_GetDisplayName_System_String__examples">Examples</h4>
+<pre><code class="lang-csharp">string name = speaker.GetDisplayName(SubVox.CurrentLanguage);</code></pre>
+<a data-uid="SubVoxPro.SpeakerData.ToRichText*" id="SubVoxPro_SpeakerData_ToRichText_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.ToRichText(System.String,System.String)" id="SubVoxPro_SpeakerData_ToRichText_System_String_System_String_">
+  ToRichText(string, string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Le nom (plus un suffixe facultatif comme « : ») entouré des balises rich text de couleur, gras et italique, pour que le suffixe prenne la couleur du nom (TextMeshPro). Avec une langue, le nom est celui de <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_GetDisplayName_System_String_">GetDisplayName(string)</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string ToRichText(string suffix = "", string language_code = null)</code></pre>
 </div>
 <h4 class="section">Paramètres</h4>
 <dl class="parameters">
 <dt><code>suffix</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
 <dd></dd>
 </dl>
 <h4 class="section">Retour</h4>

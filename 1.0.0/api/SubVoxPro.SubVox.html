@@ -696,6 +696,43 @@ public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = o
 
 
 
+  <a id="SubVoxPro_SubVox_IsPlaying_" data-uid="SubVoxPro.SubVox.IsPlaying*"></a>
+
+  <h3 id="SubVoxPro_SubVox_IsPlaying_SubVoxPro_VoiceLineData_" data-uid="SubVoxPro.SubVox.IsPlaying(SubVoxPro.VoiceLineData)">
+  IsPlaying(VoiceLineData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>True while this voice line is playing (or paused) on an emitter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsPlaying(VoiceLineData voice_line)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="SubVoxPro_SubVox_PauseAll_" data-uid="SubVoxPro.SubVox.PauseAll*"></a>
 
   <h3 id="SubVoxPro_SubVox_PauseAll" data-uid="SubVoxPro.SubVox.PauseAll">
@@ -807,6 +844,51 @@ exists). See <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_Voi
 
 
 
+  <a id="SubVoxPro_SubVox_PlayAt_" data-uid="SubVoxPro.SubVox.PlayAt*"></a>
+
+  <h3 id="SubVoxPro_SubVox_PlayAt_SubVoxPro_VoiceLineData_UnityEngine_Vector3_SubVoxPro_EVoiceLinePriority_" data-uid="SubVoxPro.SubVox.PlayAt(SubVoxPro.VoiceLineData,UnityEngine.Vector3,SubVoxPro.EVoiceLinePriority)">
+  PlayAt(VoiceLineData, Vector3, EVoiceLinePriority)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Plays a voice line once at a point in the world, on a temporary 3D emitter (like <span class="xref">UnityEngine.AudioSource.PlayClipAtPoint(UnityEngine.AudioClip,UnityEngine.Vector3)</span>).
+Its subtitle competes with the other emitters' by priority.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static VoiceLinePlayback PlayAt(VoiceLineData voice_line, Vector3 position, EVoiceLinePriority priority = EVoiceLinePriority.Normal)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <span class="xref">Vector3</span></dt>
+    <dd></dd>
+    <dt><code>priority</code> <a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="SubVoxPro_SubVox_PlayAt_SubVoxPro_VoiceLineData_UnityEngine_Vector3_SubVoxPro_EVoiceLinePriority__examples">Examples</h4>
+  <pre><code class="lang-csharp">SubVox.PlayAt(explosionShout, transform.position, EVoiceLinePriority.High);</code></pre>
+
+
+
+
+
+
   <a id="SubVoxPro_SubVox_PublishSubtitle_" data-uid="SubVoxPro.SubVox.PublishSubtitle*"></a>
 
   <h3 id="SubVoxPro_SubVox_PublishSubtitle_SubVoxPro_SubtitleInfo_" data-uid="SubVoxPro.SubVox.PublishSubtitle(SubVoxPro.SubtitleInfo)">
@@ -860,6 +942,38 @@ SubVox.PublishSubtitle(new SubtitleInfo("intro", 0f, string.Empty));</code></pre
     <pre><code class="lang-csharp hljs">public static void ResumeAll()</code></pre>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_SubVox_Stop_" data-uid="SubVoxPro.SubVox.Stop*"></a>
+
+  <h3 id="SubVoxPro_SubVox_Stop_SubVoxPro_VoiceLineData_" data-uid="SubVoxPro.SubVox.Stop(SubVoxPro.VoiceLineData)">
+  Stop(VoiceLineData)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Stops a voice line on every emitter playing it, and removes it from every queue. The other lines carry on.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Stop(VoiceLineData voice_line)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

@@ -326,6 +326,38 @@ exists, or empty for the source. With <a class="xref" href="SubVoxPro.VoiceLineE
 
 
 
+  <a id="SubVoxPro_VoiceLineEmitter_CurrentWord_" data-uid="SubVoxPro.VoiceLineEmitter.CurrentWord*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineEmitter_CurrentWord" data-uid="SubVoxPro.VoiceLineEmitter.CurrentWord">
+  CurrentWord
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The word being said, or an empty one (null <a class="xref" href="SubVoxPro.SubtitleWordInfo.html#SubVoxPro_SubtitleWordInfo_Text">Text</a>) between words. See <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_WordChanged">WordChanged</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SubtitleWordInfo CurrentWord { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SubVoxPro_VoiceLineEmitter_Duration_" data-uid="SubVoxPro.VoiceLineEmitter.Duration*"></a>
 
   <h3 id="SubVoxPro_VoiceLineEmitter_Duration" data-uid="SubVoxPro.VoiceLineEmitter.Duration">
@@ -454,6 +486,39 @@ exists, or empty for the source. With <a class="xref" href="SubVoxPro.VoiceLineE
 
 
 
+  <a id="SubVoxPro_VoiceLineEmitter_PlaybackSpeed_" data-uid="SubVoxPro.VoiceLineEmitter.PlaybackSpeed*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineEmitter_PlaybackSpeed" data-uid="SubVoxPro.VoiceLineEmitter.PlaybackSpeed">
+  PlaybackSpeed
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>How fast lines play here (0.1 to 3, 1 = normal). Changes the pitch too, like <span class="xref">UnityEngine.AudioSource.pitch</span>,
+which the emitter sets. Has no effect on a line played with <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PlaybackSpeed { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SubVoxPro_VoiceLineEmitter_PlaybackTime_" data-uid="SubVoxPro.VoiceLineEmitter.PlaybackTime*"></a>
 
   <h3 id="SubVoxPro_VoiceLineEmitter_PlaybackTime" data-uid="SubVoxPro.VoiceLineEmitter.PlaybackTime">
@@ -554,6 +619,33 @@ exists, or empty for the source. With <a class="xref" href="SubVoxPro.VoiceLineE
 </h2>
 
 
+  <a id="SubVoxPro_VoiceLineEmitter_ClearQueue_" data-uid="SubVoxPro.VoiceLineEmitter.ClearQueue*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineEmitter_ClearQueue" data-uid="SubVoxPro.VoiceLineEmitter.ClearQueue">
+  ClearQueue()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes the lines waiting to play after the current one, which carries on. Each one ends as interrupted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearQueue()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="SubVoxPro_VoiceLineEmitter_OnDisable_" data-uid="SubVoxPro.VoiceLineEmitter.OnDisable*"></a>
 
   <h3 id="SubVoxPro_VoiceLineEmitter_OnDisable" data-uid="SubVoxPro.VoiceLineEmitter.OnDisable">
@@ -569,6 +661,70 @@ exists, or empty for the source. With <a class="xref" href="SubVoxPro.VoiceLineE
     <pre><code class="lang-csharp hljs">protected virtual void OnDisable()</code></pre>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineEmitter_OnPaused_" data-uid="SubVoxPro.VoiceLineEmitter.OnPaused*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineEmitter_OnPaused_SubVoxPro_VoiceLinePlayback_" data-uid="SubVoxPro.VoiceLineEmitter.OnPaused(SubVoxPro.VoiceLinePlayback)">
+  OnPaused(VoiceLinePlayback)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called when the current line pauses, just before <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Paused">Paused</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnPaused(VoiceLinePlayback playback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>playback</code> <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineEmitter_OnResumed_" data-uid="SubVoxPro.VoiceLineEmitter.OnResumed*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineEmitter_OnResumed_SubVoxPro_VoiceLinePlayback_" data-uid="SubVoxPro.VoiceLineEmitter.OnResumed(SubVoxPro.VoiceLinePlayback)">
+  OnResumed(VoiceLinePlayback)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called when the current line resumes, just before <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Resumed">Resumed</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnResumed(VoiceLinePlayback playback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>playback</code> <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -663,6 +819,38 @@ exists, or empty for the source. With <a class="xref" href="SubVoxPro.VoiceLineE
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>playback</code> <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineEmitter_OnWordChanged_" data-uid="SubVoxPro.VoiceLineEmitter.OnWordChanged*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineEmitter_OnWordChanged_SubVoxPro_SubtitleWordInfo_" data-uid="SubVoxPro.VoiceLineEmitter.OnWordChanged(SubVoxPro.SubtitleWordInfo)">
+  OnWordChanged(SubtitleWordInfo)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called when the spoken word changes, just before <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_WordChanged">WordChanged</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnWordChanged(SubtitleWordInfo word)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>word</code> <a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a></dt>
     <dd></dd>
   </dl>
 
@@ -989,6 +1177,68 @@ and <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmi
 
 
 
+  <h3 id="SubVoxPro_VoiceLineEmitter_Paused" data-uid="SubVoxPro.VoiceLineEmitter.Paused">
+  Paused
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised when the current line pauses, by <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause">Pause()</a> or by <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_PauseAll">PauseAll()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; Paused</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="SubVoxPro_VoiceLineEmitter_Resumed" data-uid="SubVoxPro.VoiceLineEmitter.Resumed">
+  Resumed
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised when the current line resumes after a pause.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; Resumed</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h3 id="SubVoxPro_VoiceLineEmitter_SubtitleChanged" data-uid="SubVoxPro.VoiceLineEmitter.SubtitleChanged">
   SubtitleChanged
   
@@ -1107,6 +1357,41 @@ and <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmi
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+  <h3 id="SubVoxPro_VoiceLineEmitter_WordChanged" data-uid="SubVoxPro.VoiceLineEmitter.WordChanged">
+  WordChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised when the spoken word changes, with the word being said, or an empty one (null <a class="xref" href="SubVoxPro.SubtitleWordInfo.html#SubVoxPro_SubtitleWordInfo_Text">Text</a>)
+between words and when the line ends. Needs word timings. Handy for lip-sync and gestures.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;SubtitleWordInfo&gt; WordChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section" id="SubVoxPro_VoiceLineEmitter_WordChanged_examples">Examples</h4>
+  <pre><code class="lang-csharp">_emitter.WordChanged += word =&gt; _mouth.SetBool("Talking", word.Text != null);</code></pre>
 
 
 

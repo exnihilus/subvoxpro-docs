@@ -194,22 +194,22 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 <tr>
 <td><strong>Translation</strong></td>
 <td>DeepL</td>
-<td>Arabic, Bengali, Burmese, Cantonese, Chinese (simplified/traditional), Czech, Dutch, English (US/UK), Filipino, French, German, Gujarati, Hebrew, Hindi, Indonesian, Italian, Japanese, Kazakh, Korean, Malay, Marathi, Mongolian, Persian, Polish, Portuguese (BR/PT), Russian, Spanish, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Vietnamese — the languages every translation provider supports, Hy-MT2 included.</td>
+<td>Arabic, Bengali, Burmese, Cantonese, Chinese (simplified/traditional), Czech, Dutch, English (US/UK), Filipino, French, German, Gujarati, Hebrew, Hindi, Indonesian, Italian, Japanese, Kazakh, Korean, Malay, Marathi, Mongolian, Persian, Polish, Portuguese (BR/PT), Russian, Spanish, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Vietnamese, plus Bulgarian, Danish, Estonian, Finnish, Greek, Hungarian, Latvian, Lithuanian, Norwegian, Romanian, Slovak, Slovenian and Swedish (50 targets).</td>
 </tr>
 <tr>
 <td><strong>Translation</strong></td>
 <td>Google Cloud Translation</td>
-<td>Same target picker as above; provider/model support is validated by Google.</td>
+<td>The same 50 targets as DeepL.</td>
 </tr>
 <tr>
 <td><strong>Translation</strong></td>
 <td>OpenAI, Claude, Gemini, DeepSeek</td>
-<td>Same target picker as above; multilingual capability depends on the selected model.</td>
+<td>The same 50 targets as DeepL; quality depends on the selected model.</td>
 </tr>
 <tr>
 <td><strong>Translation</strong></td>
 <td>Hy-MT2 1.8B / 7B (local)</td>
-<td>Same target picker as above; every listed language is supported by the pinned models.</td>
+<td>The 37 first targets of the DeepL list: not Bulgarian, Danish, Estonian, Finnish, Greek, Hungarian, Latvian, Lithuanian, Norwegian, Romanian, Slovak, Slovenian or Swedish.</td>
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
@@ -248,12 +248,12 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
-<td>Qwen3 TTS 1.7B Base / CustomVoice / VoiceDesign Q8 (local)</td>
+<td>Qwen3 TTS 1.7B Base / CustomVoice / VoiceDesign (local)</td>
 <td>Chinese, English, Japanese, Korean, German, French, Russian, Portuguese, Spanish and Italian; reference cloning, nine fixed voices or designed voices; written directions in CustomVoice and VoiceDesign.</td>
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
-<td>VoxCPM2 2B Q8 (local)</td>
+<td>VoxCPM2 (local)</td>
 <td>Arabic, Burmese, Chinese, Danish, Dutch, English, Finnish, French, German, Greek, Hebrew, Hindi, Indonesian, Italian, Japanese, Khmer, Korean, Lao, Malay, Norwegian, Polish, Portuguese, Russian, Spanish, Swahili, Swedish, Filipino, Thai, Turkish and Vietnamese; reference cloning with written delivery instructions.</td>
 </tr>
 <tr>
@@ -263,7 +263,7 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 </tr>
 <tr>
 <td><strong>Alignment</strong></td>
-<td>Qwen3-ForcedAligner-0.6B Q4 ONNX (local)</td>
+<td>Qwen3 Aligner (local)</td>
 <td>Cantonese, Chinese, English, French, German, Italian, Japanese, Korean, Portuguese, Russian, Spanish.</td>
 </tr>
 </tbody>
@@ -273,137 +273,13 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 catalog in the editor when a provider adds support; for Qwen, Kokoro, Chatterbox, Qwen3 TTS and VoxCPM2, the fixed lists above match
 the pinned local models.</p>
 </blockquote>
-<h3 id="chatterbox-accuracy-by-language">Chatterbox: accuracy by language</h3>
-<p>How reliably the offline <strong>Chatterbox</strong> engine says the right words, measured on 30 dubs per language (15 game-style
-lines, two voices each). Every dub was transcribed back by eight speech-to-text engines, and the table keeps the
-middle result for each line, so one engine mishearing does not count against Chatterbox. The lines are in
-<a href="Documentation/Benchmarks/ChatterboxAccuracyCorpus.csv"><code>Documentation/Benchmarks/ChatterboxAccuracyCorpus.csv</code></a> (all 22 languages) if
-you want to repeat the test with your own voices.</p>
-<table>
-<thead>
-<tr>
-<th>Language</th>
-<th>Wrong characters</th>
-<th>Rating</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Portuguese</td>
-<td>0.1 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Italian</td>
-<td>0.2 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Spanish</td>
-<td>0.4 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Hindi</td>
-<td>0.4 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>English</td>
-<td>0.5 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>German</td>
-<td>0.5 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Malay</td>
-<td>0.7 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Russian</td>
-<td>0.8 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Dutch</td>
-<td>1.0 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Finnish</td>
-<td>1.2 %</td>
-<td>Good</td>
-</tr>
-<tr>
-<td>Greek</td>
-<td>1.2 %</td>
-<td>Good</td>
-</tr>
-<tr>
-<td>Arabic</td>
-<td>1.4 %</td>
-<td>Good</td>
-</tr>
-<tr>
-<td>Swedish</td>
-<td>1.6 %</td>
-<td>Good</td>
-</tr>
-<tr>
-<td>French</td>
-<td>1.9 %</td>
-<td>Good</td>
-</tr>
-<tr>
-<td>Japanese</td>
-<td>2.1 %</td>
-<td>Good</td>
-</tr>
-<tr>
-<td>Chinese</td>
-<td>2.4 %</td>
-<td>Good</td>
-</tr>
-<tr>
-<td>Danish</td>
-<td>3.8 %</td>
-<td>Review the dubs</td>
-</tr>
-<tr>
-<td>Polish</td>
-<td>4.1 %</td>
-<td>Review the dubs</td>
-</tr>
-<tr>
-<td>Norwegian</td>
-<td>4.8 %</td>
-<td>Review the dubs</td>
-</tr>
-<tr>
-<td>Korean</td>
-<td>5.2 %</td>
-<td>Review the dubs</td>
-</tr>
-<tr>
-<td>Swahili</td>
-<td>5.8 %</td>
-<td>Review the dubs</td>
-</tr>
-<tr>
-<td>Turkish</td>
-<td>8.1 %</td>
-<td>Review the dubs</td>
-</tr>
-</tbody>
-</table>
-<p>Generation is sampled, so two runs of the same line differ slightly; the lower the figure, the rarer a mistake.
-Most mistakes are a first word said wrongly or skipped. In the languages marked <strong>Review the dubs</strong>, up to one line in
-fifteen came out garbled (a sentence in another language, or words that do not exist): listen to the dubs and
-regenerate a bad line with its <strong>REGEN</strong> chip.</p>
+<h3 id="chatterbox-how-reliable-each-language-is-">Chatterbox: how reliable each language is <a id="chatterbox-how-reliable-each-language-is"></a></h3>
+<ul>
+<li><strong>Very reliable</strong>: Portuguese, Italian, Spanish, Hindi, English, German, Malay, Russian and Dutch.</li>
+<li><strong>Reliable</strong>: Finnish, Greek, Arabic, Swedish, French, Japanese and Chinese — an occasional first word may come out wrong.</li>
+<li><strong>Variable</strong>: Danish, Polish, Norwegian, Korean, Swahili and Turkish — listen to the dubs and regenerate a bad line
+with its <strong>REGEN</strong> chip.</li>
+</ul>
 <hr>
 <h2 id="best-practices">Best Practices</h2>
 <p>API keys are passwords for online services. Treat them as secrets, even when you are only testing.</p>
@@ -454,7 +330,7 @@ or a team-managed key, depending on how the provider handles billing and access.
 </tr>
 <tr>
 <td><strong>Forced alignment</strong> (exact dub word timings, text preserved)</td>
-<td><strong>Qwen3-ForcedAligner-0.6B Q4 ONNX</strong> (fully offline, no key, no Python/PyTorch, Windows only)</td>
+<td><strong>Qwen3 Aligner</strong> (local, fully offline, no key, Windows only)</td>
 </tr>
 <tr>
 <td><strong>Human translation round-trip</strong></td>

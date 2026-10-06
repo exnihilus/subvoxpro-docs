@@ -179,22 +179,22 @@ Les variantes comme <code>en-US</code> ou <code>pt-BR</code> sont rangées sous 
 <tr>
 <td><strong>Traduction</strong></td>
 <td>DeepL</td>
-<td>Arabe, bengali, birman, cantonais, chinois simplifié/traditionnel, tchèque, néerlandais, anglais US/UK, filipino, français, allemand, gujarati, hébreu, hindi, indonésien, italien, japonais, kazakh, coréen, malais, marathi, mongol, persan, polonais, portugais BR/PT, russe, espagnol, tamoul, télougou, thaï, turc, ukrainien, ourdou et vietnamien. Ce sélecteur est le même pour tous les fournisseurs de traduction, Hy-MT2 compris.</td>
+<td>Arabe, bengali, birman, cantonais, chinois simplifié/traditionnel, tchèque, néerlandais, anglais US/UK, filipino, français, allemand, gujarati, hébreu, hindi, indonésien, italien, japonais, kazakh, coréen, malais, marathi, mongol, persan, polonais, portugais BR/PT, russe, espagnol, tamoul, télougou, thaï, turc, ukrainien, ourdou et vietnamien, plus bulgare, danois, estonien, finnois, grec, hongrois, letton, lituanien, norvégien, roumain, slovaque, slovène et suédois (50 langues).</td>
 </tr>
 <tr>
 <td><strong>Traduction</strong></td>
 <td>Google Cloud Translation</td>
-<td>Même sélecteur ; Google vérifie ce que le modèle prend en charge.</td>
+<td>Les mêmes 50 langues que DeepL.</td>
 </tr>
 <tr>
 <td><strong>Traduction</strong></td>
 <td>OpenAI, Claude, Gemini, DeepSeek</td>
-<td>Même sélecteur ; la qualité selon les langues dépend du modèle.</td>
+<td>Les mêmes 50 langues que DeepL ; la qualité dépend du modèle.</td>
 </tr>
 <tr>
 <td><strong>Traduction</strong></td>
 <td>Hy-MT2 1.8B / 7B, local</td>
-<td>Toutes les langues du sélecteur sont prises en charge.</td>
+<td>Les 37 premières langues de la liste DeepL : ni bulgare, danois, estonien, finnois, grec, hongrois, letton, lituanien, norvégien, roumain, slovaque, slovène ni suédois.</td>
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
@@ -233,12 +233,12 @@ Les variantes comme <code>en-US</code> ou <code>pt-BR</code> sont rangées sous 
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
-<td>Qwen3 TTS 1.7B Base / CustomVoice / VoiceDesign Q8, local</td>
+<td>Qwen3 TTS 1.7B Base / CustomVoice / VoiceDesign, local</td>
 <td>Chinois, anglais, japonais, coréen, allemand, français, russe, portugais, espagnol et italien ; clonage de références, neuf voix fixes ou voix décrites ; consignes écrites avec CustomVoice et VoiceDesign.</td>
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
-<td>VoxCPM2 2B Q8, local</td>
+<td>VoxCPM2, local</td>
 <td>Arabe, birman, chinois, danois, néerlandais, anglais, finnois, français, allemand, grec, hébreu, hindi, indonésien, italien, japonais, khmer, coréen, lao, malais, norvégien, polonais, portugais, russe, espagnol, swahili, suédois, filipino, thaï, turc et vietnamien ; clonage avec consignes de jeu.</td>
 </tr>
 <tr>
@@ -248,7 +248,7 @@ Les variantes comme <code>en-US</code> ou <code>pt-BR</code> sont rangées sous 
 </tr>
 <tr>
 <td><strong>Alignement</strong></td>
-<td>Qwen3-ForcedAligner-0.6B Q4 ONNX, local</td>
+<td>Qwen3 Aligner, local</td>
 <td>Cantonais, chinois, anglais, français, allemand, italien, japonais, coréen, portugais, russe et espagnol.</td>
 </tr>
 </tbody>
@@ -258,137 +258,13 @@ Les variantes comme <code>en-US</code> ou <code>pt-BR</code> sont rangées sous 
 quand un service ajoute une langue. Pour Qwen, Kokoro, Chatterbox, Qwen3 TTS et VoxCPM2, les listes ci-dessus correspondent aux
 modèles installés par SubVox Pro.</p>
 </blockquote>
-<h3 id="chatterbox-accuracy-by-language">Chatterbox : précision par langue </h3>
-<p>La précision du moteur local <strong>Chatterbox</strong> est mesurée sur 30 doublages par langue
-(15 répliques de jeu, chacune avec deux voix). Chaque doublage a été retranscrit par huit moteurs de transcription.
-Pour chaque réplique, le tableau retient le résultat médian afin de limiter l’influence d’un moteur qui transcrit mal. Les
-répliques, dans les 22 langues, se trouvent dans
-<a href="Documentation/Benchmarks/ChatterboxAccuracyCorpus.csv"><code>Documentation/Benchmarks/ChatterboxAccuracyCorpus.csv</code></a>, pour refaire le test avec vos voix.</p>
-<table>
-<thead>
-<tr>
-<th>Langue</th>
-<th>Caractères incorrects</th>
-<th>Appréciation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Portugais</td>
-<td>0,1 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Italien</td>
-<td>0,2 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Espagnol</td>
-<td>0,4 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Hindi</td>
-<td>0,4 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Anglais</td>
-<td>0,5 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Allemand</td>
-<td>0,5 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Malais</td>
-<td>0,7 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Russe</td>
-<td>0,8 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Néerlandais</td>
-<td>1,0 %</td>
-<td>Excellent</td>
-</tr>
-<tr>
-<td>Finnois</td>
-<td>1,2 %</td>
-<td>Bon</td>
-</tr>
-<tr>
-<td>Grec</td>
-<td>1,2 %</td>
-<td>Bon</td>
-</tr>
-<tr>
-<td>Arabe</td>
-<td>1,4 %</td>
-<td>Bon</td>
-</tr>
-<tr>
-<td>Suédois</td>
-<td>1,6 %</td>
-<td>Bon</td>
-</tr>
-<tr>
-<td>Français</td>
-<td>1,9 %</td>
-<td>Bon</td>
-</tr>
-<tr>
-<td>Japonais</td>
-<td>2,1 %</td>
-<td>Bon</td>
-</tr>
-<tr>
-<td>Chinois</td>
-<td>2,4 %</td>
-<td>Bon</td>
-</tr>
-<tr>
-<td>Danois</td>
-<td>3,8 %</td>
-<td>Réécouter les doublages</td>
-</tr>
-<tr>
-<td>Polonais</td>
-<td>4,1 %</td>
-<td>Réécouter les doublages</td>
-</tr>
-<tr>
-<td>Norvégien</td>
-<td>4,8 %</td>
-<td>Réécouter les doublages</td>
-</tr>
-<tr>
-<td>Coréen</td>
-<td>5,2 %</td>
-<td>Réécouter les doublages</td>
-</tr>
-<tr>
-<td>Swahili</td>
-<td>5,8 %</td>
-<td>Réécouter les doublages</td>
-</tr>
-<tr>
-<td>Turc</td>
-<td>8,1 %</td>
-<td>Réécouter les doublages</td>
-</tr>
-</tbody>
-</table>
-<p>La génération comporte une part de hasard : deux prises de la même réplique diffèrent un peu. Plus le chiffre est
-bas, plus les erreurs sont rares. La plupart concernent le premier mot, mal prononcé ou sauté. Dans les langues
-marquées <strong>Réécouter les doublages</strong>, jusqu’à une réplique sur quinze était inintelligible (dans une autre langue,
-ou avec des mots qui n’existent pas) : écoutez les doublages et régénérez une prise ratée avec son badge <strong>REGEN</strong>.</p>
+<h3 id="chatterbox-how-reliable-each-language-is">Chatterbox : fiabilité par langue </h3>
+<ul>
+<li><strong>Très fiable</strong> : portugais, italien, espagnol, hindi, anglais, allemand, malais, russe et néerlandais.</li>
+<li><strong>Fiable</strong> : finnois, grec, arabe, suédois, français, japonais et chinois — le premier mot sort parfois mal.</li>
+<li><strong>Variable</strong> : danois, polonais, norvégien, coréen, swahili et turc — réécoutez les doublages et régénérez une
+prise ratée avec son badge <strong>REGEN</strong>.</li>
+</ul>
 <hr/>
 <h2 id="best-practices">Bonnes pratiques </h2>
 <p>Une clé API est l’équivalent d’un mot de passe : gardez-la secrète, même pour un simple test.</p>
@@ -434,7 +310,7 @@ un test sur une machine partagée.</li>
 </tr>
 <tr>
 <td><strong>Alignement exact des mots</strong> (texte inchangé)</td>
-<td><strong>Qwen3-ForcedAligner-0.6B Q4 ONNX</strong>, hors connexion, sans clé ni Python/PyTorch, Windows uniquement.</td>
+<td><strong>Qwen3 Aligner</strong>, local, hors connexion, sans clé, Windows uniquement.</td>
 </tr>
 <tr>
 <td><strong>Échanges de traductions humaines avec Unity</strong></td>

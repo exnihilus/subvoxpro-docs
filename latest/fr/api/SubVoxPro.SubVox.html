@@ -395,6 +395,27 @@ public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = o
 <div class="codewrapper">
 <pre><code class="lang-csharp hljs">public static void ClearHistory()</code></pre>
 </div>
+<a data-uid="SubVoxPro.SubVox.IsPlaying*" id="SubVoxPro_SubVox_IsPlaying_"></a>
+<h3 data-uid="SubVoxPro.SubVox.IsPlaying(SubVoxPro.VoiceLineData)" id="SubVoxPro_SubVox_IsPlaying_SubVoxPro_VoiceLineData_">
+  IsPlaying(VoiceLineData)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Vrai tant que cette voiceline joue (ou est en pause) sur un émetteur.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static bool IsPlaying(VoiceLineData voice_line)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
 <a data-uid="SubVoxPro.SubVox.PauseAll*" id="SubVoxPro_SubVox_PauseAll_"></a>
 <h3 data-uid="SubVoxPro.SubVox.PauseAll" id="SubVoxPro_SubVox_PauseAll">
   PauseAll()
@@ -456,6 +477,33 @@ public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = o
 <dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
 <dd></dd>
 </dl>
+<a data-uid="SubVoxPro.SubVox.PlayAt*" id="SubVoxPro_SubVox_PlayAt_"></a>
+<h3 data-uid="SubVoxPro.SubVox.PlayAt(SubVoxPro.VoiceLineData,UnityEngine.Vector3,SubVoxPro.EVoiceLinePriority)" id="SubVoxPro_SubVox_PlayAt_SubVoxPro_VoiceLineData_UnityEngine_Vector3_SubVoxPro_EVoiceLinePriority_">
+  PlayAt(VoiceLineData, Vector3, EVoiceLinePriority)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Joue une voiceline une fois à un point du monde, sur un émetteur 3D temporaire (comme <span class="xref">UnityEngine.AudioSource.PlayClipAtPoint(UnityEngine.AudioClip,UnityEngine.Vector3)</span>). Son sous-titre est en concurrence avec ceux des autres émetteurs selon la priorité.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static VoiceLinePlayback PlayAt(VoiceLineData voice_line, Vector3 position, EVoiceLinePriority priority = EVoiceLinePriority.Normal)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+<dt><code>position</code> <span class="xref">Vector3</span></dt>
+<dd></dd>
+<dt><code>priority</code> <a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_SubVox_PlayAt_SubVoxPro_VoiceLineData_UnityEngine_Vector3_SubVoxPro_EVoiceLinePriority__examples">Examples</h4>
+<pre><code class="lang-csharp">SubVox.PlayAt(explosionShout, transform.position, EVoiceLinePriority.High);</code></pre>
 <a data-uid="SubVoxPro.SubVox.PublishSubtitle*" id="SubVoxPro_SubVox_PublishSubtitle_"></a>
 <h3 data-uid="SubVoxPro.SubVox.PublishSubtitle(SubVoxPro.SubtitleInfo)" id="SubVoxPro_SubVox_PublishSubtitle_SubVoxPro_SubtitleInfo_">
   PublishSubtitle(SubtitleInfo)
@@ -486,6 +534,22 @@ SubVox.PublishSubtitle(new SubtitleInfo("intro", 0f, string.Empty));</code></pre
 <div class="codewrapper">
 <pre><code class="lang-csharp hljs">public static void ResumeAll()</code></pre>
 </div>
+<a data-uid="SubVoxPro.SubVox.Stop*" id="SubVoxPro_SubVox_Stop_"></a>
+<h3 data-uid="SubVoxPro.SubVox.Stop(SubVoxPro.VoiceLineData)" id="SubVoxPro_SubVox_Stop_SubVoxPro_VoiceLineData_">
+  Stop(VoiceLineData)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Arrête une voiceline sur tous les émetteurs qui la jouent et la retire de toutes les files. Les autres lignes continuent.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static void Stop(VoiceLineData voice_line)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
 <a data-uid="SubVoxPro.SubVox.StopAll*" id="SubVoxPro_SubVox_StopAll_"></a>
 <h3 data-uid="SubVoxPro.SubVox.StopAll" id="SubVoxPro_SubVox_StopAll">
   StopAll()

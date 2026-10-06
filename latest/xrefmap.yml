@@ -922,6 +922,21 @@ references:
   commentId: Overload:SubVoxPro.SpeakerData.Gender
   fullName: SubVoxPro.SpeakerData.Gender
   nameWithType: SpeakerData.Gender
+- uid: SubVoxPro.SpeakerData.GetDisplayName(System.String)
+  name: GetDisplayName(string)
+  href: api/SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_GetDisplayName_System_String_
+  commentId: M:SubVoxPro.SpeakerData.GetDisplayName(System.String)
+  name.vb: GetDisplayName(String)
+  fullName: SubVoxPro.SpeakerData.GetDisplayName(string)
+  fullName.vb: SubVoxPro.SpeakerData.GetDisplayName(String)
+  nameWithType: SpeakerData.GetDisplayName(string)
+  nameWithType.vb: SpeakerData.GetDisplayName(String)
+- uid: SubVoxPro.SpeakerData.GetDisplayName*
+  name: GetDisplayName
+  href: api/SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_GetDisplayName_
+  commentId: Overload:SubVoxPro.SpeakerData.GetDisplayName
+  fullName: SubVoxPro.SpeakerData.GetDisplayName
+  nameWithType: SpeakerData.GetDisplayName
 - uid: SubVoxPro.SpeakerData.Italic
   name: Italic
   href: api/SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_Italic
@@ -934,6 +949,42 @@ references:
   commentId: Overload:SubVoxPro.SpeakerData.Italic
   fullName: SubVoxPro.SpeakerData.Italic
   nameWithType: SpeakerData.Italic
+- uid: SubVoxPro.SpeakerData.LocalizationEntry
+  name: LocalizationEntry
+  href: api/SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizationEntry
+  commentId: P:SubVoxPro.SpeakerData.LocalizationEntry
+  fullName: SubVoxPro.SpeakerData.LocalizationEntry
+  nameWithType: SpeakerData.LocalizationEntry
+- uid: SubVoxPro.SpeakerData.LocalizationEntry*
+  name: LocalizationEntry
+  href: api/SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizationEntry_
+  commentId: Overload:SubVoxPro.SpeakerData.LocalizationEntry
+  fullName: SubVoxPro.SpeakerData.LocalizationEntry
+  nameWithType: SpeakerData.LocalizationEntry
+- uid: SubVoxPro.SpeakerData.LocalizationTable
+  name: LocalizationTable
+  href: api/SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizationTable
+  commentId: P:SubVoxPro.SpeakerData.LocalizationTable
+  fullName: SubVoxPro.SpeakerData.LocalizationTable
+  nameWithType: SpeakerData.LocalizationTable
+- uid: SubVoxPro.SpeakerData.LocalizationTable*
+  name: LocalizationTable
+  href: api/SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizationTable_
+  commentId: Overload:SubVoxPro.SpeakerData.LocalizationTable
+  fullName: SubVoxPro.SpeakerData.LocalizationTable
+  nameWithType: SpeakerData.LocalizationTable
+- uid: SubVoxPro.SpeakerData.LocalizedNames
+  name: LocalizedNames
+  href: api/SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizedNames
+  commentId: P:SubVoxPro.SpeakerData.LocalizedNames
+  fullName: SubVoxPro.SpeakerData.LocalizedNames
+  nameWithType: SpeakerData.LocalizedNames
+- uid: SubVoxPro.SpeakerData.LocalizedNames*
+  name: LocalizedNames
+  href: api/SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizedNames_
+  commentId: Overload:SubVoxPro.SpeakerData.LocalizedNames
+  fullName: SubVoxPro.SpeakerData.LocalizedNames
+  nameWithType: SpeakerData.LocalizedNames
 - uid: SubVoxPro.SpeakerData.NameColor
   name: NameColor
   href: api/SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_NameColor
@@ -946,15 +997,15 @@ references:
   commentId: Overload:SubVoxPro.SpeakerData.NameColor
   fullName: SubVoxPro.SpeakerData.NameColor
   nameWithType: SpeakerData.NameColor
-- uid: SubVoxPro.SpeakerData.ToRichText(System.String)
-  name: ToRichText(string)
-  href: api/SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_ToRichText_System_String_
-  commentId: M:SubVoxPro.SpeakerData.ToRichText(System.String)
-  name.vb: ToRichText(String)
-  fullName: SubVoxPro.SpeakerData.ToRichText(string)
-  fullName.vb: SubVoxPro.SpeakerData.ToRichText(String)
-  nameWithType: SpeakerData.ToRichText(string)
-  nameWithType.vb: SpeakerData.ToRichText(String)
+- uid: SubVoxPro.SpeakerData.ToRichText(System.String,System.String)
+  name: ToRichText(string, string)
+  href: api/SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_ToRichText_System_String_System_String_
+  commentId: M:SubVoxPro.SpeakerData.ToRichText(System.String,System.String)
+  name.vb: ToRichText(String, String)
+  fullName: SubVoxPro.SpeakerData.ToRichText(string, string)
+  fullName.vb: SubVoxPro.SpeakerData.ToRichText(String, String)
+  nameWithType: SpeakerData.ToRichText(string, string)
+  nameWithType.vb: SpeakerData.ToRichText(String, String)
 - uid: SubVoxPro.SpeakerData.ToRichText*
   name: ToRichText
   href: api/SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_ToRichText_
@@ -973,6 +1024,54 @@ references:
   commentId: Overload:SubVoxPro.SpeakerData.UIToolkitFont
   fullName: SubVoxPro.SpeakerData.UIToolkitFont
   nameWithType: SpeakerData.UIToolkitFont
+- uid: SubVoxPro.SpeakerLocalizedName
+  name: SpeakerLocalizedName
+  href: api/SubVoxPro.SpeakerLocalizedName.html
+  commentId: T:SubVoxPro.SpeakerLocalizedName
+  fullName: SubVoxPro.SpeakerLocalizedName
+  nameWithType: SpeakerLocalizedName
+- uid: SubVoxPro.SpeakerLocalizedName.#ctor
+  name: SpeakerLocalizedName()
+  href: api/SubVoxPro.SpeakerLocalizedName.html#SubVoxPro_SpeakerLocalizedName__ctor
+  commentId: M:SubVoxPro.SpeakerLocalizedName.#ctor
+  name.vb: New()
+  fullName: SubVoxPro.SpeakerLocalizedName.SpeakerLocalizedName()
+  fullName.vb: SubVoxPro.SpeakerLocalizedName.New()
+  nameWithType: SpeakerLocalizedName.SpeakerLocalizedName()
+  nameWithType.vb: SpeakerLocalizedName.New()
+- uid: SubVoxPro.SpeakerLocalizedName.#ctor*
+  name: SpeakerLocalizedName
+  href: api/SubVoxPro.SpeakerLocalizedName.html#SubVoxPro_SpeakerLocalizedName__ctor_
+  commentId: Overload:SubVoxPro.SpeakerLocalizedName.#ctor
+  name.vb: New
+  fullName: SubVoxPro.SpeakerLocalizedName.SpeakerLocalizedName
+  fullName.vb: SubVoxPro.SpeakerLocalizedName.New
+  nameWithType: SpeakerLocalizedName.SpeakerLocalizedName
+  nameWithType.vb: SpeakerLocalizedName.New
+- uid: SubVoxPro.SpeakerLocalizedName.LanguageCode
+  name: LanguageCode
+  href: api/SubVoxPro.SpeakerLocalizedName.html#SubVoxPro_SpeakerLocalizedName_LanguageCode
+  commentId: P:SubVoxPro.SpeakerLocalizedName.LanguageCode
+  fullName: SubVoxPro.SpeakerLocalizedName.LanguageCode
+  nameWithType: SpeakerLocalizedName.LanguageCode
+- uid: SubVoxPro.SpeakerLocalizedName.LanguageCode*
+  name: LanguageCode
+  href: api/SubVoxPro.SpeakerLocalizedName.html#SubVoxPro_SpeakerLocalizedName_LanguageCode_
+  commentId: Overload:SubVoxPro.SpeakerLocalizedName.LanguageCode
+  fullName: SubVoxPro.SpeakerLocalizedName.LanguageCode
+  nameWithType: SpeakerLocalizedName.LanguageCode
+- uid: SubVoxPro.SpeakerLocalizedName.Name
+  name: Name
+  href: api/SubVoxPro.SpeakerLocalizedName.html#SubVoxPro_SpeakerLocalizedName_Name
+  commentId: P:SubVoxPro.SpeakerLocalizedName.Name
+  fullName: SubVoxPro.SpeakerLocalizedName.Name
+  nameWithType: SpeakerLocalizedName.Name
+- uid: SubVoxPro.SpeakerLocalizedName.Name*
+  name: Name
+  href: api/SubVoxPro.SpeakerLocalizedName.html#SubVoxPro_SpeakerLocalizedName_Name_
+  commentId: Overload:SubVoxPro.SpeakerLocalizedName.Name
+  fullName: SubVoxPro.SpeakerLocalizedName.Name
+  nameWithType: SpeakerLocalizedName.Name
 - uid: SubVoxPro.SpeakerSelectorAttribute
   name: SpeakerSelectorAttribute
   href: api/SubVoxPro.SpeakerSelectorAttribute.html
@@ -1153,6 +1252,18 @@ references:
   commentId: Overload:SubVoxPro.SubVox.IsPaused
   fullName: SubVoxPro.SubVox.IsPaused
   nameWithType: SubVox.IsPaused
+- uid: SubVoxPro.SubVox.IsPlaying(SubVoxPro.VoiceLineData)
+  name: IsPlaying(VoiceLineData)
+  href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_IsPlaying_SubVoxPro_VoiceLineData_
+  commentId: M:SubVoxPro.SubVox.IsPlaying(SubVoxPro.VoiceLineData)
+  fullName: SubVoxPro.SubVox.IsPlaying(SubVoxPro.VoiceLineData)
+  nameWithType: SubVox.IsPlaying(VoiceLineData)
+- uid: SubVoxPro.SubVox.IsPlaying*
+  name: IsPlaying
+  href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_IsPlaying_
+  commentId: Overload:SubVoxPro.SubVox.IsPlaying
+  fullName: SubVoxPro.SubVox.IsPlaying
+  nameWithType: SubVox.IsPlaying
 - uid: SubVoxPro.SubVox.KaraokeColor
   name: KaraokeColor
   href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_KaraokeColor
@@ -1213,6 +1324,18 @@ references:
   commentId: Overload:SubVoxPro.SubVox.Play
   fullName: SubVoxPro.SubVox.Play
   nameWithType: SubVox.Play
+- uid: SubVoxPro.SubVox.PlayAt(SubVoxPro.VoiceLineData,UnityEngine.Vector3,SubVoxPro.EVoiceLinePriority)
+  name: PlayAt(VoiceLineData, Vector3, EVoiceLinePriority)
+  href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_PlayAt_SubVoxPro_VoiceLineData_UnityEngine_Vector3_SubVoxPro_EVoiceLinePriority_
+  commentId: M:SubVoxPro.SubVox.PlayAt(SubVoxPro.VoiceLineData,UnityEngine.Vector3,SubVoxPro.EVoiceLinePriority)
+  fullName: SubVoxPro.SubVox.PlayAt(SubVoxPro.VoiceLineData, UnityEngine.Vector3, SubVoxPro.EVoiceLinePriority)
+  nameWithType: SubVox.PlayAt(VoiceLineData, Vector3, EVoiceLinePriority)
+- uid: SubVoxPro.SubVox.PlayAt*
+  name: PlayAt
+  href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_PlayAt_
+  commentId: Overload:SubVoxPro.SubVox.PlayAt
+  fullName: SubVoxPro.SubVox.PlayAt
+  nameWithType: SubVox.PlayAt
 - uid: SubVoxPro.SubVox.PublishSubtitle(SubVoxPro.SubtitleInfo)
   name: PublishSubtitle(SubtitleInfo)
   href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_PublishSubtitle_SubVoxPro_SubtitleInfo_
@@ -1249,6 +1372,18 @@ references:
   commentId: Overload:SubVoxPro.SubVox.RevealMode
   fullName: SubVoxPro.SubVox.RevealMode
   nameWithType: SubVox.RevealMode
+- uid: SubVoxPro.SubVox.Stop(SubVoxPro.VoiceLineData)
+  name: Stop(VoiceLineData)
+  href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_Stop_SubVoxPro_VoiceLineData_
+  commentId: M:SubVoxPro.SubVox.Stop(SubVoxPro.VoiceLineData)
+  fullName: SubVoxPro.SubVox.Stop(SubVoxPro.VoiceLineData)
+  nameWithType: SubVox.Stop(VoiceLineData)
+- uid: SubVoxPro.SubVox.Stop*
+  name: Stop
+  href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_Stop_
+  commentId: Overload:SubVoxPro.SubVox.Stop
+  fullName: SubVoxPro.SubVox.Stop
+  nameWithType: SubVox.Stop
 - uid: SubVoxPro.SubVox.StopAll
   name: StopAll()
   href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_StopAll
@@ -2755,6 +2890,21 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineData.GetSpeakerOverride
   fullName: SubVoxPro.VoiceLineData.GetSpeakerOverride
   nameWithType: VoiceLineData.GetSpeakerOverride
+- uid: SubVoxPro.VoiceLineData.GetSubtitleAt(System.Single,System.String)
+  name: GetSubtitleAt(float, string)
+  href: api/SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_GetSubtitleAt_System_Single_System_String_
+  commentId: M:SubVoxPro.VoiceLineData.GetSubtitleAt(System.Single,System.String)
+  name.vb: GetSubtitleAt(Single, String)
+  fullName: SubVoxPro.VoiceLineData.GetSubtitleAt(float, string)
+  fullName.vb: SubVoxPro.VoiceLineData.GetSubtitleAt(Single, String)
+  nameWithType: VoiceLineData.GetSubtitleAt(float, string)
+  nameWithType.vb: VoiceLineData.GetSubtitleAt(Single, String)
+- uid: SubVoxPro.VoiceLineData.GetSubtitleAt*
+  name: GetSubtitleAt
+  href: api/SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_GetSubtitleAt_
+  commentId: Overload:SubVoxPro.VoiceLineData.GetSubtitleAt
+  fullName: SubVoxPro.VoiceLineData.GetSubtitleAt
+  nameWithType: VoiceLineData.GetSubtitleAt
 - uid: SubVoxPro.VoiceLineData.GetSubtitleLanguages
   name: GetSubtitleLanguages()
   href: api/SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_GetSubtitleLanguages
@@ -2899,6 +3049,21 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineData.Subtitles
   fullName: SubVoxPro.VoiceLineData.Subtitles
   nameWithType: VoiceLineData.Subtitles
+- uid: SubVoxPro.VoiceLineData.TryGetWordAt(System.Single,System.String,SubVoxPro.SubtitleWordInfo@)
+  name: TryGetWordAt(float, string, out SubtitleWordInfo)
+  href: api/SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_TryGetWordAt_System_Single_System_String_SubVoxPro_SubtitleWordInfo__
+  commentId: M:SubVoxPro.VoiceLineData.TryGetWordAt(System.Single,System.String,SubVoxPro.SubtitleWordInfo@)
+  name.vb: TryGetWordAt(Single, String, SubtitleWordInfo)
+  fullName: SubVoxPro.VoiceLineData.TryGetWordAt(float, string, out SubVoxPro.SubtitleWordInfo)
+  fullName.vb: SubVoxPro.VoiceLineData.TryGetWordAt(Single, String, SubVoxPro.SubtitleWordInfo)
+  nameWithType: VoiceLineData.TryGetWordAt(float, string, out SubtitleWordInfo)
+  nameWithType.vb: VoiceLineData.TryGetWordAt(Single, String, SubtitleWordInfo)
+- uid: SubVoxPro.VoiceLineData.TryGetWordAt*
+  name: TryGetWordAt
+  href: api/SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_TryGetWordAt_
+  commentId: Overload:SubVoxPro.VoiceLineData.TryGetWordAt
+  fullName: SubVoxPro.VoiceLineData.TryGetWordAt
+  nameWithType: VoiceLineData.TryGetWordAt
 - uid: SubVoxPro.VoiceLineDataEvent
   name: VoiceLineDataEvent
   href: api/SubVoxPro.VoiceLineDataEvent.html
@@ -2959,6 +3124,18 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineEmitter.AudioSource
   fullName: SubVoxPro.VoiceLineEmitter.AudioSource
   nameWithType: VoiceLineEmitter.AudioSource
+- uid: SubVoxPro.VoiceLineEmitter.ClearQueue
+  name: ClearQueue()
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_ClearQueue
+  commentId: M:SubVoxPro.VoiceLineEmitter.ClearQueue
+  fullName: SubVoxPro.VoiceLineEmitter.ClearQueue()
+  nameWithType: VoiceLineEmitter.ClearQueue()
+- uid: SubVoxPro.VoiceLineEmitter.ClearQueue*
+  name: ClearQueue
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_ClearQueue_
+  commentId: Overload:SubVoxPro.VoiceLineEmitter.ClearQueue
+  fullName: SubVoxPro.VoiceLineEmitter.ClearQueue
+  nameWithType: VoiceLineEmitter.ClearQueue
 - uid: SubVoxPro.VoiceLineEmitter.CurrentAudioLanguage
   name: CurrentAudioLanguage
   href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_CurrentAudioLanguage
@@ -3007,6 +3184,18 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineEmitter.CurrentVoiceLine
   fullName: SubVoxPro.VoiceLineEmitter.CurrentVoiceLine
   nameWithType: VoiceLineEmitter.CurrentVoiceLine
+- uid: SubVoxPro.VoiceLineEmitter.CurrentWord
+  name: CurrentWord
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_CurrentWord
+  commentId: P:SubVoxPro.VoiceLineEmitter.CurrentWord
+  fullName: SubVoxPro.VoiceLineEmitter.CurrentWord
+  nameWithType: VoiceLineEmitter.CurrentWord
+- uid: SubVoxPro.VoiceLineEmitter.CurrentWord*
+  name: CurrentWord
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_CurrentWord_
+  commentId: Overload:SubVoxPro.VoiceLineEmitter.CurrentWord
+  fullName: SubVoxPro.VoiceLineEmitter.CurrentWord
+  nameWithType: VoiceLineEmitter.CurrentWord
 - uid: SubVoxPro.VoiceLineEmitter.Duration
   name: Duration
   href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Duration
@@ -3055,6 +3244,30 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineEmitter.OnDisable
   fullName: SubVoxPro.VoiceLineEmitter.OnDisable
   nameWithType: VoiceLineEmitter.OnDisable
+- uid: SubVoxPro.VoiceLineEmitter.OnPaused(SubVoxPro.VoiceLinePlayback)
+  name: OnPaused(VoiceLinePlayback)
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_OnPaused_SubVoxPro_VoiceLinePlayback_
+  commentId: M:SubVoxPro.VoiceLineEmitter.OnPaused(SubVoxPro.VoiceLinePlayback)
+  fullName: SubVoxPro.VoiceLineEmitter.OnPaused(SubVoxPro.VoiceLinePlayback)
+  nameWithType: VoiceLineEmitter.OnPaused(VoiceLinePlayback)
+- uid: SubVoxPro.VoiceLineEmitter.OnPaused*
+  name: OnPaused
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_OnPaused_
+  commentId: Overload:SubVoxPro.VoiceLineEmitter.OnPaused
+  fullName: SubVoxPro.VoiceLineEmitter.OnPaused
+  nameWithType: VoiceLineEmitter.OnPaused
+- uid: SubVoxPro.VoiceLineEmitter.OnResumed(SubVoxPro.VoiceLinePlayback)
+  name: OnResumed(VoiceLinePlayback)
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_OnResumed_SubVoxPro_VoiceLinePlayback_
+  commentId: M:SubVoxPro.VoiceLineEmitter.OnResumed(SubVoxPro.VoiceLinePlayback)
+  fullName: SubVoxPro.VoiceLineEmitter.OnResumed(SubVoxPro.VoiceLinePlayback)
+  nameWithType: VoiceLineEmitter.OnResumed(VoiceLinePlayback)
+- uid: SubVoxPro.VoiceLineEmitter.OnResumed*
+  name: OnResumed
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_OnResumed_
+  commentId: Overload:SubVoxPro.VoiceLineEmitter.OnResumed
+  fullName: SubVoxPro.VoiceLineEmitter.OnResumed
+  nameWithType: VoiceLineEmitter.OnResumed
 - uid: SubVoxPro.VoiceLineEmitter.OnVoiceLineCompleted(SubVoxPro.VoiceLinePlayback)
   name: OnVoiceLineCompleted(VoiceLinePlayback)
   href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_OnVoiceLineCompleted_SubVoxPro_VoiceLinePlayback_
@@ -3091,6 +3304,18 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineEmitter.OnVoiceLineStarted
   fullName: SubVoxPro.VoiceLineEmitter.OnVoiceLineStarted
   nameWithType: VoiceLineEmitter.OnVoiceLineStarted
+- uid: SubVoxPro.VoiceLineEmitter.OnWordChanged(SubVoxPro.SubtitleWordInfo)
+  name: OnWordChanged(SubtitleWordInfo)
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_OnWordChanged_SubVoxPro_SubtitleWordInfo_
+  commentId: M:SubVoxPro.VoiceLineEmitter.OnWordChanged(SubVoxPro.SubtitleWordInfo)
+  fullName: SubVoxPro.VoiceLineEmitter.OnWordChanged(SubVoxPro.SubtitleWordInfo)
+  nameWithType: VoiceLineEmitter.OnWordChanged(SubtitleWordInfo)
+- uid: SubVoxPro.VoiceLineEmitter.OnWordChanged*
+  name: OnWordChanged
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_OnWordChanged_
+  commentId: Overload:SubVoxPro.VoiceLineEmitter.OnWordChanged
+  fullName: SubVoxPro.VoiceLineEmitter.OnWordChanged
+  nameWithType: VoiceLineEmitter.OnWordChanged
 - uid: SubVoxPro.VoiceLineEmitter.Pause
   name: Pause()
   href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause
@@ -3103,6 +3328,12 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineEmitter.Pause
   fullName: SubVoxPro.VoiceLineEmitter.Pause
   nameWithType: VoiceLineEmitter.Pause
+- uid: SubVoxPro.VoiceLineEmitter.Paused
+  name: Paused
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Paused
+  commentId: E:SubVoxPro.VoiceLineEmitter.Paused
+  fullName: SubVoxPro.VoiceLineEmitter.Paused
+  nameWithType: VoiceLineEmitter.Paused
 - uid: SubVoxPro.VoiceLineEmitter.Play(SubVoxPro.VoiceLineBankData,SubVoxPro.EVoiceLinePriority,SubVoxPro.EVoiceLinePlayMode)
   name: Play(VoiceLineBankData, EVoiceLinePriority, EVoiceLinePlayMode)
   href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineBankData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_
@@ -3145,6 +3376,18 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineEmitter.PlaybackProgress
   fullName: SubVoxPro.VoiceLineEmitter.PlaybackProgress
   nameWithType: VoiceLineEmitter.PlaybackProgress
+- uid: SubVoxPro.VoiceLineEmitter.PlaybackSpeed
+  name: PlaybackSpeed
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlaybackSpeed
+  commentId: P:SubVoxPro.VoiceLineEmitter.PlaybackSpeed
+  fullName: SubVoxPro.VoiceLineEmitter.PlaybackSpeed
+  nameWithType: VoiceLineEmitter.PlaybackSpeed
+- uid: SubVoxPro.VoiceLineEmitter.PlaybackSpeed*
+  name: PlaybackSpeed
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlaybackSpeed_
+  commentId: Overload:SubVoxPro.VoiceLineEmitter.PlaybackSpeed
+  fullName: SubVoxPro.VoiceLineEmitter.PlaybackSpeed
+  nameWithType: VoiceLineEmitter.PlaybackSpeed
 - uid: SubVoxPro.VoiceLineEmitter.PlaybackTime
   name: PlaybackTime
   href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlaybackTime
@@ -3181,6 +3424,12 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineEmitter.Resume
   fullName: SubVoxPro.VoiceLineEmitter.Resume
   nameWithType: VoiceLineEmitter.Resume
+- uid: SubVoxPro.VoiceLineEmitter.Resumed
+  name: Resumed
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Resumed
+  commentId: E:SubVoxPro.VoiceLineEmitter.Resumed
+  fullName: SubVoxPro.VoiceLineEmitter.Resumed
+  nameWithType: VoiceLineEmitter.Resumed
 - uid: SubVoxPro.VoiceLineEmitter.Seek(System.Single)
   name: Seek(float)
   href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Seek_System_Single_
@@ -3268,6 +3517,12 @@ references:
   commentId: E:SubVoxPro.VoiceLineEmitter.VoiceLineStarted
   fullName: SubVoxPro.VoiceLineEmitter.VoiceLineStarted
   nameWithType: VoiceLineEmitter.VoiceLineStarted
+- uid: SubVoxPro.VoiceLineEmitter.WordChanged
+  name: WordChanged
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_WordChanged
+  commentId: E:SubVoxPro.VoiceLineEmitter.WordChanged
+  fullName: SubVoxPro.VoiceLineEmitter.WordChanged
+  nameWithType: VoiceLineEmitter.WordChanged
 - uid: SubVoxPro.VoiceLineEventAttribute
   name: VoiceLineEventAttribute
   href: api/SubVoxPro.VoiceLineEventAttribute.html
@@ -4156,6 +4411,24 @@ references:
   commentId: T:SubVoxPro.VoiceLinePlayback
   fullName: SubVoxPro.VoiceLinePlayback
   nameWithType: VoiceLinePlayback
+- uid: SubVoxPro.VoiceLinePlayback.Completed
+  name: Completed
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Completed
+  commentId: E:SubVoxPro.VoiceLinePlayback.Completed
+  fullName: SubVoxPro.VoiceLinePlayback.Completed
+  nameWithType: VoiceLinePlayback.Completed
+- uid: SubVoxPro.VoiceLinePlayback.Duration
+  name: Duration
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Duration
+  commentId: P:SubVoxPro.VoiceLinePlayback.Duration
+  fullName: SubVoxPro.VoiceLinePlayback.Duration
+  nameWithType: VoiceLinePlayback.Duration
+- uid: SubVoxPro.VoiceLinePlayback.Duration*
+  name: Duration
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Duration_
+  commentId: Overload:SubVoxPro.VoiceLinePlayback.Duration
+  fullName: SubVoxPro.VoiceLinePlayback.Duration
+  nameWithType: VoiceLinePlayback.Duration
 - uid: SubVoxPro.VoiceLinePlayback.Emitter
   name: Emitter
   href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Emitter
@@ -4174,6 +4447,24 @@ references:
   commentId: E:SubVoxPro.VoiceLinePlayback.Finished
   fullName: SubVoxPro.VoiceLinePlayback.Finished
   nameWithType: VoiceLinePlayback.Finished
+- uid: SubVoxPro.VoiceLinePlayback.Interrupted
+  name: Interrupted
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Interrupted
+  commentId: E:SubVoxPro.VoiceLinePlayback.Interrupted
+  fullName: SubVoxPro.VoiceLinePlayback.Interrupted
+  nameWithType: VoiceLinePlayback.Interrupted
+- uid: SubVoxPro.VoiceLinePlayback.IsCurrent
+  name: IsCurrent
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_IsCurrent
+  commentId: P:SubVoxPro.VoiceLinePlayback.IsCurrent
+  fullName: SubVoxPro.VoiceLinePlayback.IsCurrent
+  nameWithType: VoiceLinePlayback.IsCurrent
+- uid: SubVoxPro.VoiceLinePlayback.IsCurrent*
+  name: IsCurrent
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_IsCurrent_
+  commentId: Overload:SubVoxPro.VoiceLinePlayback.IsCurrent
+  fullName: SubVoxPro.VoiceLinePlayback.IsCurrent
+  nameWithType: VoiceLinePlayback.IsCurrent
 - uid: SubVoxPro.VoiceLinePlayback.IsDone
   name: IsDone
   href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_IsDone
@@ -4186,6 +4477,30 @@ references:
   commentId: Overload:SubVoxPro.VoiceLinePlayback.IsDone
   fullName: SubVoxPro.VoiceLinePlayback.IsDone
   nameWithType: VoiceLinePlayback.IsDone
+- uid: SubVoxPro.VoiceLinePlayback.IsPaused
+  name: IsPaused
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_IsPaused
+  commentId: P:SubVoxPro.VoiceLinePlayback.IsPaused
+  fullName: SubVoxPro.VoiceLinePlayback.IsPaused
+  nameWithType: VoiceLinePlayback.IsPaused
+- uid: SubVoxPro.VoiceLinePlayback.IsPaused*
+  name: IsPaused
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_IsPaused_
+  commentId: Overload:SubVoxPro.VoiceLinePlayback.IsPaused
+  fullName: SubVoxPro.VoiceLinePlayback.IsPaused
+  nameWithType: VoiceLinePlayback.IsPaused
+- uid: SubVoxPro.VoiceLinePlayback.Pause
+  name: Pause()
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Pause
+  commentId: M:SubVoxPro.VoiceLinePlayback.Pause
+  fullName: SubVoxPro.VoiceLinePlayback.Pause()
+  nameWithType: VoiceLinePlayback.Pause()
+- uid: SubVoxPro.VoiceLinePlayback.Pause*
+  name: Pause
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Pause_
+  commentId: Overload:SubVoxPro.VoiceLinePlayback.Pause
+  fullName: SubVoxPro.VoiceLinePlayback.Pause
+  nameWithType: VoiceLinePlayback.Pause
 - uid: SubVoxPro.VoiceLinePlayback.Priority
   name: Priority
   href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Priority
@@ -4198,6 +4513,30 @@ references:
   commentId: Overload:SubVoxPro.VoiceLinePlayback.Priority
   fullName: SubVoxPro.VoiceLinePlayback.Priority
   nameWithType: VoiceLinePlayback.Priority
+- uid: SubVoxPro.VoiceLinePlayback.Progress
+  name: Progress
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Progress
+  commentId: P:SubVoxPro.VoiceLinePlayback.Progress
+  fullName: SubVoxPro.VoiceLinePlayback.Progress
+  nameWithType: VoiceLinePlayback.Progress
+- uid: SubVoxPro.VoiceLinePlayback.Progress*
+  name: Progress
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Progress_
+  commentId: Overload:SubVoxPro.VoiceLinePlayback.Progress
+  fullName: SubVoxPro.VoiceLinePlayback.Progress
+  nameWithType: VoiceLinePlayback.Progress
+- uid: SubVoxPro.VoiceLinePlayback.Resume
+  name: Resume()
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Resume
+  commentId: M:SubVoxPro.VoiceLinePlayback.Resume
+  fullName: SubVoxPro.VoiceLinePlayback.Resume()
+  nameWithType: VoiceLinePlayback.Resume()
+- uid: SubVoxPro.VoiceLinePlayback.Resume*
+  name: Resume
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Resume_
+  commentId: Overload:SubVoxPro.VoiceLinePlayback.Resume
+  fullName: SubVoxPro.VoiceLinePlayback.Resume
+  nameWithType: VoiceLinePlayback.Resume
 - uid: SubVoxPro.VoiceLinePlayback.State
   name: State
   href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_State
@@ -4222,6 +4561,18 @@ references:
   commentId: Overload:SubVoxPro.VoiceLinePlayback.Stop
   fullName: SubVoxPro.VoiceLinePlayback.Stop
   nameWithType: VoiceLinePlayback.Stop
+- uid: SubVoxPro.VoiceLinePlayback.Time
+  name: Time
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Time
+  commentId: P:SubVoxPro.VoiceLinePlayback.Time
+  fullName: SubVoxPro.VoiceLinePlayback.Time
+  nameWithType: VoiceLinePlayback.Time
+- uid: SubVoxPro.VoiceLinePlayback.Time*
+  name: Time
+  href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Time_
+  commentId: Overload:SubVoxPro.VoiceLinePlayback.Time
+  fullName: SubVoxPro.VoiceLinePlayback.Time
+  nameWithType: VoiceLinePlayback.Time
 - uid: SubVoxPro.VoiceLinePlayback.VoiceLine
   name: VoiceLine
   href: api/SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_VoiceLine
