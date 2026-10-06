@@ -514,7 +514,8 @@ vous les corrigiez. Les clés texte comme <code>[VoiceLineEvent("Camera Shake")]
 plugin ne les écrasent jamais. Les scripts sans assembly definition les voient directement ; si les vôtres en ont
 une, ajoutez-y une référence à <strong>SubVoxPro.Events</strong>.</p>
 <p><strong>[SubVox Pro]</strong> trouve ces méthodes tout seul. Si vous créez des objets en cours de jeu, appelez
-<code>VoiceLineEventDispatcher.Refresh()</code>.</p>
+<code>VoiceLineEventDispatcher.Register(this)</code> depuis ces objets. Sur une très grande scène, vous pouvez décocher
+<strong>Scan Scenes Automatically</strong> sur le dispatcher et enregistrer vos objets vous-même.</p>
 </li>
 <li><p><strong>En C#</strong> : <code>SubVox.Subscribe(signal, MyMethod)</code> appelle votre méthode à chaque déclenchement du signal ;
 <code>SubVox.Unsubscribe</code> met fin à l’abonnement.</p>
