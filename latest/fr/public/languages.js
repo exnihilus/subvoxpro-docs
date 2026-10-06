@@ -1,21 +1,22 @@
-export const isFrench = () => document.documentElement.lang === "fr";
-export const localize = (english, french) => isFrench() ? french : english;
+const LANGUAGES = [["en", "English", ""], ["fr", "Français", "fr/"], ["de", "Deutsch", "de/"]];
+const current = () => LANGUAGES.find(([language]) => language === document.documentElement.lang) ?? LANGUAGES[0];
+export const localize = (english, french, german) => ({ fr: french, de: german })[current()[0]] ?? english;
 
 export function documentationRoot() {
   const relative = document.querySelector('meta[name="docfx:rel"]')?.content ?? "";
   const root = new URL(relative, location.href);
-  return isFrench() ? new URL("../", root) : root;
+  return current()[2] ? new URL("../", root) : root;
 }
 
 export function startLanguagePicker() {
   const root = documentationRoot();
-  const page = location.pathname.slice(root.pathname.length).replace(/^fr\//, "");
+  const page = location.pathname.slice(root.pathname.length).replace(/^(fr|de)\//, "");
   const picker = document.createElement("div");
   picker.className = "dropdown svx-language";
-  picker.innerHTML = `<button class="btn border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="${localize("Documentation language", "Langue de la documentation")}">
-      <i class="bi bi-translate" aria-hidden="true"></i><span>${localize("English", "Français")}</span></button>
+  picker.innerHTML = `<button class="btn border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="${localize("Documentation language", "Langue de la documentation", "Sprache der Dokumentation")}">
+      <i class="bi bi-translate" aria-hidden="true"></i><span>${current()[1]}</span></button>
     <ul class="dropdown-menu dropdown-menu-end"></ul>`;
-  for (const [language, label, folder] of [["en", "English", ""], ["fr", "Français", "fr/"]]) {
+  for (const [language, label, folder] of LANGUAGES) {
     const item = document.createElement("li");
     const link = document.createElement("a");
     link.className = "dropdown-item";

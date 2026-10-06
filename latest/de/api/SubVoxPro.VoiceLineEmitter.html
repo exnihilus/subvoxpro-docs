@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Klasse VoiceLineEmitter | SubVox Pro-Dokumentation </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineEmitter | SubVox Pro-Dokumentation " name="title"/>
+<meta content="Spielt Sprachzeilen nacheinander über eine eigene  ab, zusammen mit den zugehörigen Ereignissen und synchronisierten Untertiteln. Weisen Sie jedem sprechenden Charakter eine solche zu und stellen Sie deren „AudioSource“ auf „3D“ ein, um die Stimme von dort zu hören: Mehrere Emitter spielen gleichzeitig ab, und die  zeigt den Untertitel der gerade abgespielten wichtigsten Zeile an." name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=cdf57e6fc8" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="In diesem Artikel" name="loc:inThisArticle"/>
+<meta content="{count} Ergebnisse für „{query}“" name="loc:searchResultsCount"/>
+<meta content="Keine Ergebnisse für „{query}“" name="loc:searchNoResults"/>
+<meta content="Nach Titel filtern" name="loc:tocFilter"/>
+<meta content="Weiter" name="loc:nextArticle"/>
+<meta content="Zurück" name="loc:prevArticle"/>
+<meta content="Hell" name="loc:themeLight"/>
+<meta content="Dunkel" name="loc:themeDark"/>
+<meta content="Automatisch" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=cdf57e6fc8" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="de">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.VoiceLineEmitter.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.VoiceLineEmitter.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.VoiceLineEmitter.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Navigation umschalten" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Suchen" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Suchen" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Inhaltsverzeichnis</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.VoiceLineEmitter">
+<h1 class="text-break" data-uid="SubVoxPro.VoiceLineEmitter" id="SubVoxPro_VoiceLineEmitter">
+Klasse VoiceLineEmitter  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>Namespace</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>Spielt Sprachzeilen nacheinander über eine eigene <a class="xref" href="https://docs.unity3d.com/ScriptReference/AudioSource.html">AudioSource</a> ab, zusammen mit den zugehörigen Ereignissen und synchronisierten Untertiteln. Weisen Sie jedem sprechenden Charakter eine solche zu und stellen Sie deren „AudioSource“ auf „3D“ ein, um die Stimme von dort zu hören: Mehrere Emitter spielen gleichzeitig ab, und die <a class="xref" href="SubVoxPro.VoiceLineManager.html">VoiceLineManager</a> zeigt den Untertitel der gerade abgespielten wichtigsten Zeile an.</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class VoiceLineEmitter : MonoBehaviour</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>Vererbung</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineEmitter</span></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">Konstruktoren
+</h2>
+<a data-uid="SubVoxPro.VoiceLineEmitter.#ctor*" id="SubVoxPro_VoiceLineEmitter__ctor_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.#ctor" id="SubVoxPro_VoiceLineEmitter__ctor">
+  VoiceLineEmitter()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineEmitter()</code></pre>
+</div>
+<h2 class="section" id="properties">Eigenschaften
+</h2>
+<a data-uid="SubVoxPro.VoiceLineEmitter.AudioSource*" id="SubVoxPro_VoiceLineEmitter_AudioSource_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.AudioSource" id="SubVoxPro_VoiceLineEmitter_AudioSource">
+  AudioSource
+  
+  </h3>
+<div class="markdown level1 summary"><p>Die AudioSource, über die die Voice Lines wiedergegeben werden (stellen Sie diese auf „3D“ ein, um die Stimme des Charakters zu hören).</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public AudioSource AudioSource { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://docs.unity3d.com/ScriptReference/AudioSource.html">AudioSource</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.CurrentAudioLanguage*" id="SubVoxPro_VoiceLineEmitter_CurrentAudioLanguage_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.CurrentAudioLanguage" id="SubVoxPro_VoiceLineEmitter_CurrentAudioLanguage">
+  CurrentAudioLanguage
+  
+  </h3>
+<div class="markdown level1 summary"><p>Sprache des Audios, das die aktuelle Sprachzeile wiedergibt: die generierte Sprachfassung von <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a>, sofern vorhanden, oder leer für die Originalfassung. Mit <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> die Audiodatei, die auf Ihrer Seite abgespielt werden soll.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string CurrentAudioLanguage { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.CurrentPlayback*" id="SubVoxPro_VoiceLineEmitter_CurrentPlayback_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.CurrentPlayback" id="SubVoxPro_VoiceLineEmitter_CurrentPlayback">
+  CurrentPlayback
+  
+  </h3>
+<div class="markdown level1 summary"><p>Die Wiedergabe der aktuellen Voice Line oder null.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLinePlayback CurrentPlayback { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.CurrentPriority*" id="SubVoxPro_VoiceLineEmitter_CurrentPriority_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.CurrentPriority" id="SubVoxPro_VoiceLineEmitter_CurrentPriority">
+  CurrentPriority
+  
+  </h3>
+<div class="markdown level1 summary"><p>Die Priorität, mit der die aktuelle Voice Line abgespielt wurde.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLinePriority CurrentPriority { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.CurrentVoiceLine*" id="SubVoxPro_VoiceLineEmitter_CurrentVoiceLine_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.CurrentVoiceLine" id="SubVoxPro_VoiceLineEmitter_CurrentVoiceLine">
+  CurrentVoiceLine
+  
+  </h3>
+<div class="markdown level1 summary"><p>Die gerade abgespielte Voice Line oder null.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineData CurrentVoiceLine { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.CurrentWord*" id="SubVoxPro_VoiceLineEmitter_CurrentWord_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.CurrentWord" id="SubVoxPro_VoiceLineEmitter_CurrentWord">
+  CurrentWord
+  
+  </h3>
+<div class="markdown level1 summary"><p>Das gerade gesprochene Wort oder ein leeres Wort (Null-<a class="xref" href="SubVoxPro.SubtitleWordInfo.html#SubVoxPro_SubtitleWordInfo_Text">Text</a>) zwischen den Wörtern. Siehe <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_WordChanged">WordChanged</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SubtitleWordInfo CurrentWord { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Duration*" id="SubVoxPro_VoiceLineEmitter_Duration_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Duration" id="SubVoxPro_VoiceLineEmitter_Duration">
+  Duration
+  
+  </h3>
+<div class="markdown level1 summary"><p>Length of the current Voice Line in seconds.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float Duration { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.IsPaused*" id="SubVoxPro_VoiceLineEmitter_IsPaused_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.IsPaused" id="SubVoxPro_VoiceLineEmitter_IsPaused">
+  IsPaused
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wahr, solange die aktuelle Zeile pausiert ist, entweder durch <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause">Pause()</a> oder durch <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_PauseAll">PauseAll()</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsPaused { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.IsPlaying*" id="SubVoxPro_VoiceLineEmitter_IsPlaying_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.IsPlaying" id="SubVoxPro_VoiceLineEmitter_IsPlaying">
+  IsPlaying
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wahr, solange eine Voice Line abgespielt wird oder pausiert ist.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsPlaying { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.PlaybackProgress*" id="SubVoxPro_VoiceLineEmitter_PlaybackProgress_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.PlaybackProgress" id="SubVoxPro_VoiceLineEmitter_PlaybackProgress">
+  PlaybackProgress
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wie weit die aktuelle Voice Line bereits abgespielt wurde, im Bereich von 0 bis 1.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float PlaybackProgress { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.PlaybackSpeed*" id="SubVoxPro_VoiceLineEmitter_PlaybackSpeed_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.PlaybackSpeed" id="SubVoxPro_VoiceLineEmitter_PlaybackSpeed">
+  PlaybackSpeed
+  
+  </h3>
+<div class="markdown level1 summary"><p>Legt fest, wie schnell die Voice Lines hier wiedergegeben werden (0,1 bis 3, wobei 1 dem Normalwert entspricht). Ändert zudem die Tonhöhe, ähnlich wie bei <span class="xref">UnityEngine.AudioSource.pitch</span>, das vom Emitter festgelegt wird. Hat keine Auswirkung auf eine Voice Line, die mit <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> wiedergegeben wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float PlaybackSpeed { get; set; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.PlaybackTime*" id="SubVoxPro_VoiceLineEmitter_PlaybackTime_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.PlaybackTime" id="SubVoxPro_VoiceLineEmitter_PlaybackTime">
+  PlaybackTime
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wie weit die aktuelle Voice Line bereits abgespielt wurde, in Sekunden.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float PlaybackTime { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.QueuedPlaybacks*" id="SubVoxPro_VoiceLineEmitter_QueuedPlaybacks_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.QueuedPlaybacks" id="SubVoxPro_VoiceLineEmitter_QueuedPlaybacks">
+  QueuedPlaybacks
+  
+  </h3>
+<div class="markdown level1 summary"><p>Die Zeilen, die nach der aktuellen zur Wiedergabe anstehen (siehe <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Queue">Queue</a>), in der Reihenfolge ihrer Abfolge.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;VoiceLinePlayback&gt; QueuedPlaybacks { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.ShowSubtitles*" id="SubVoxPro_VoiceLineEmitter_ShowSubtitles_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.ShowSubtitles" id="SubVoxPro_VoiceLineEmitter_ShowSubtitles">
+  ShowSubtitles
+  
+  </h3>
+<div class="markdown level1 summary"><p>Gibt an, ob die Zeilen dieses Emitters in die Untertitel auf dem Bildschirm übernommen werden sollen. Deaktivieren Sie diese Option für Hintergrundgespräche.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool ShowSubtitles { get; set; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">Methoden
+</h2>
+<a data-uid="SubVoxPro.VoiceLineEmitter.ClearQueue*" id="SubVoxPro_VoiceLineEmitter_ClearQueue_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.ClearQueue" id="SubVoxPro_VoiceLineEmitter_ClearQueue">
+  ClearQueue()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Entfernt die Voice Lines, die nach der aktuellen zur Wiedergabe anstehen, während diese fortgesetzt wird. Jede einzelne wird als unterbrochen beendet.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void ClearQueue()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnDisable*" id="SubVoxPro_VoiceLineEmitter_OnDisable_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnDisable" id="SubVoxPro_VoiceLineEmitter_OnDisable">
+  OnDisable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity-Meldung: Rufen Sie die Base-Methode auf, wenn Sie diese überschreiben.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnDisable()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnPaused*" id="SubVoxPro_VoiceLineEmitter_OnPaused_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnPaused(SubVoxPro.VoiceLinePlayback)" id="SubVoxPro_VoiceLineEmitter_OnPaused_SubVoxPro_VoiceLinePlayback_">
+  OnPaused(VoiceLinePlayback)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird aufgerufen, wenn die aktuelle Zeile pausiert, unmittelbar vor dem Aufruf von <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Paused">Paused</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnPaused(VoiceLinePlayback playback)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>playback</code> <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnResumed*" id="SubVoxPro_VoiceLineEmitter_OnResumed_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnResumed(SubVoxPro.VoiceLinePlayback)" id="SubVoxPro_VoiceLineEmitter_OnResumed_SubVoxPro_VoiceLinePlayback_">
+  OnResumed(VoiceLinePlayback)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird aufgerufen, wenn die aktuelle Zeile fortgesetzt wird, unmittelbar vor <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Resumed">Resumed</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnResumed(VoiceLinePlayback playback)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>playback</code> <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnVoiceLineCompleted*" id="SubVoxPro_VoiceLineEmitter_OnVoiceLineCompleted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnVoiceLineCompleted(SubVoxPro.VoiceLinePlayback)" id="SubVoxPro_VoiceLineEmitter_OnVoiceLineCompleted_SubVoxPro_VoiceLinePlayback_">
+  OnVoiceLineCompleted(VoiceLinePlayback)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird aufgerufen, wenn eine Voice Line bis zum Ende abgespielt wurde, unmittelbar vor dem Aufruf von <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineCompleted">VoiceLineCompleted</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnVoiceLineCompleted(VoiceLinePlayback playback)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>playback</code> <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnVoiceLineInterrupted*" id="SubVoxPro_VoiceLineEmitter_OnVoiceLineInterrupted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnVoiceLineInterrupted(SubVoxPro.VoiceLinePlayback)" id="SubVoxPro_VoiceLineEmitter_OnVoiceLineInterrupted_SubVoxPro_VoiceLinePlayback_">
+  OnVoiceLineInterrupted(VoiceLinePlayback)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird aufgerufen, wenn eine Voice Line vor ihrem Ende angehalten oder ersetzt wird, unmittelbar vor dem Aufruf von <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineInterrupted">VoiceLineInterrupted</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnVoiceLineInterrupted(VoiceLinePlayback playback)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>playback</code> <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnVoiceLineStarted*" id="SubVoxPro_VoiceLineEmitter_OnVoiceLineStarted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnVoiceLineStarted(SubVoxPro.VoiceLinePlayback)" id="SubVoxPro_VoiceLineEmitter_OnVoiceLineStarted_SubVoxPro_VoiceLinePlayback_">
+  OnVoiceLineStarted(VoiceLinePlayback)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird aufgerufen, wenn eine Voice Line auf diesem Emitter beginnt, unmittelbar vor dem Aufruf von <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineStarted">VoiceLineStarted</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnVoiceLineStarted(VoiceLinePlayback playback)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>playback</code> <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnWordChanged*" id="SubVoxPro_VoiceLineEmitter_OnWordChanged_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnWordChanged(SubVoxPro.SubtitleWordInfo)" id="SubVoxPro_VoiceLineEmitter_OnWordChanged_SubVoxPro_SubtitleWordInfo_">
+  OnWordChanged(SubtitleWordInfo)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird aufgerufen, wenn sich der gesprochene Text ändert, unmittelbar vor dem Aufruf von <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_WordChanged">WordChanged</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnWordChanged(SubtitleWordInfo word)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>word</code> <a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Pause*" id="SubVoxPro_VoiceLineEmitter_Pause_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Pause" id="SubVoxPro_VoiceLineEmitter_Pause">
+  Pause()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Hält die aktuelle Voice Line an. Der dazugehörige Untertitel bleibt auf dem Bildschirm sichtbar, und es wird kein Ereignis ausgelöst, bis <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Resume">Resume()</a> aufgerufen wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Pause()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Play*" id="SubVoxPro_VoiceLineEmitter_Play_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Play(SubVoxPro.VoiceLineBankData,SubVoxPro.EVoiceLinePriority,SubVoxPro.EVoiceLinePlayMode)" id="SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineBankData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">
+  Play(VoiceLineBankData, EVoiceLinePriority, EVoiceLinePlayMode)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Spielt die nächste Voice Line einer Bank ab (siehe <a class="xref" href="SubVoxPro.VoiceLineBankData.html#SubVoxPro_VoiceLineBankData_Order">Order</a>), wobei dieselben Regeln gelten wie bei <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLinePlayback Play(VoiceLineBankData bank, EVoiceLinePriority priority = EVoiceLinePriority.Normal, EVoiceLinePlayMode mode = EVoiceLinePlayMode.Replace)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>bank</code> <a class="xref" href="SubVoxPro.VoiceLineBankData.html">VoiceLineBankData</a></dt>
+<dd></dd>
+<dt><code>priority</code> <a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd></dd>
+<dt><code>mode</code> <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html">EVoiceLinePlayMode</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Rückgabewert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Play*" id="SubVoxPro_VoiceLineEmitter_Play_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Play(SubVoxPro.VoiceLineData,SubVoxPro.EVoiceLinePriority,SubVoxPro.EVoiceLinePlayMode)" id="SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">
+  Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Spielt eine Voice Line ab (die Sprachvertonung von <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a>, sofern vorhanden). Wenn hier bereits eine Voice Line abgespielt wird, entscheidet der Modus: <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Replace">Replace</a> ersetzt sie, wenn die Priorität mindestens ebenso hoch ist (eine niedrigere wird abgelehnt), <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Queue">Queue</a> spielt sie nach den bereits wartenden Voice Lines ab, <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_IfIdle">IfIdle</a> lehnt sie ab.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLinePlayback Play(VoiceLineData voice_line, EVoiceLinePriority priority = EVoiceLinePriority.Normal, EVoiceLinePlayMode mode = EVoiceLinePlayMode.Replace)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+<dt><code>priority</code> <a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd></dd>
+<dt><code>mode</code> <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html">EVoiceLinePlayMode</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Rückgabewert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode__examples">Examples</h4>
+<pre><code class="lang-csharp">VoiceLineEmitter guard = _guard.GetComponent&lt;VoiceLineEmitter&gt;();
+guard.Play(alertLine, EVoiceLinePriority.High);
+guard.Play(idleBark, EVoiceLinePriority.Low, EVoiceLinePlayMode.Queue);</code></pre>
+<a data-uid="SubVoxPro.VoiceLineEmitter.PlayExternal*" id="SubVoxPro_VoiceLineEmitter_PlayExternal_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.PlayExternal(SubVoxPro.VoiceLineData,SubVoxPro.IVoiceLineAudioClock,SubVoxPro.EVoiceLinePriority,SubVoxPro.EVoiceLinePlayMode)" id="SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">
+  PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Spielt eine Sprachzeile ab, deren Audio Sie selbst abspielen (FMOD, Wwise, ein Video …): Die Subtitles und Events folgen der „audio_clock“ anstelle der „AudioSource“ dieses Emitters und enden, sobald die Wiedergabe der Uhr stoppt. Sobald die Wiedergabe beginnt, starten Sie das Audio von <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_CurrentAudioLanguage">CurrentAudioLanguage</a>. Es gelten dieselben Regeln wie bei <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>; <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause">Pause()</a>, <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Seek_System_Single_">Seek(float)</a> und <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Stop">Stop()</a> wirken sich nur auf die Subtitles und Events aus, steuern Sie daher auch Ihr Audio entsprechend.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLinePlayback PlayExternal(VoiceLineData voice_line, IVoiceLineAudioClock audio_clock, EVoiceLinePriority priority = EVoiceLinePriority.Normal, EVoiceLinePlayMode mode = EVoiceLinePlayMode.Replace)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+<dt><code>audio_clock</code> <a class="xref" href="SubVoxPro.IVoiceLineAudioClock.html">IVoiceLineAudioClock</a></dt>
+<dd></dd>
+<dt><code>priority</code> <a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd></dd>
+<dt><code>mode</code> <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html">EVoiceLinePlayMode</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Rückgabewert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Resume*" id="SubVoxPro_VoiceLineEmitter_Resume_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Resume" id="SubVoxPro_VoiceLineEmitter_Resume">
+  Resume()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Setzt eine von <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause">Pause()</a> pausierte Voice Line an der Stelle fort, an der sie pausiert wurde.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Resume()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Seek*" id="SubVoxPro_VoiceLineEmitter_Seek_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Seek(System.Single)" id="SubVoxPro_VoiceLineEmitter_Seek_System_Single_">
+  Seek(float)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Verschiebt die aktuelle Voice Line um eine bestimmte Zeit in Sekunden. Ereignisse zwischen den beiden Zeitpunkten werden nicht ausgelöst. Hat keine Auswirkung auf eine Voice Line, die mit <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> abgespielt wird: Springen Sie stattdessen in Ihrer Audiodatei, die Voice Line folgt dem Sprung.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Seek(float time)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Skip*" id="SubVoxPro_VoiceLineEmitter_Skip_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Skip" id="SubVoxPro_VoiceLineEmitter_Skip">
+  Skip()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Beendet die aktuelle Voice Line sofort, als wäre sie bis zum Ende abgespielt worden: Die verbleibenden Events werden ausgelöst, das Event <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineCompleted">VoiceLineCompleted</a> wird ausgelöst und die nächste Zeile in der Warteschlange wird gestartet. Für eine Schaltfläche „Dialog überspringen“.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Skip()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Stop*" id="SubVoxPro_VoiceLineEmitter_Stop_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Stop" id="SubVoxPro_VoiceLineEmitter_Stop">
+  Stop()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Beendet die aktuelle Voice Line und leert die Warteschlange. Die verbleibenden Ereignisse (einschließlich „Voice End“) werden nicht ausgelöst, und anstelle von <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineCompleted">VoiceLineCompleted</a> wird <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineInterrupted">VoiceLineInterrupted</a> ausgelöst.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Stop()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Update*" id="SubVoxPro_VoiceLineEmitter_Update_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Update" id="SubVoxPro_VoiceLineEmitter_Update">
+  Update()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity-Meldung: Rufen Sie die Base-Methode auf, wenn Sie diese überschreiben.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void Update()</code></pre>
+</div>
+<h2 class="section" id="events">Ereignisse
+</h2>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Paused" id="SubVoxPro_VoiceLineEmitter_Paused">
+  Paused
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird ausgelöst, wenn die aktuelle Zeile pausiert, durch <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause">Pause()</a> oder durch <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_PauseAll">PauseAll()</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; Paused</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Resumed" id="SubVoxPro_VoiceLineEmitter_Resumed">
+  Resumed
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird ausgelöst, wenn die aktuelle Zeile nach einer Pause fortgesetzt wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; Resumed</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.SubtitleChanged" id="SubVoxPro_VoiceLineEmitter_SubtitleChanged">
+  SubtitleChanged
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird bei jeder Änderung des Untertitels dieses Emitters ausgelöst (ein Leermarker, wenn er gelöscht wird), unabhängig davon, was <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_ShowSubtitles">ShowSubtitles</a> angibt. Wird von <a class="xref" href="SubVoxPro.SubtitleBubbleDisplayer.html">SubtitleBubbleDisplayer</a> verwendet, um die eigenen Zeilen eines Charakters anzuzeigen.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;SubtitleInfo&gt; SubtitleChanged</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.VoiceLineCompleted" id="SubVoxPro_VoiceLineEmitter_VoiceLineCompleted">
+  VoiceLineCompleted
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird ausgelöst, wenn eine Voice Line vollständig abgespielt wurde.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; VoiceLineCompleted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.VoiceLineInterrupted" id="SubVoxPro_VoiceLineEmitter_VoiceLineInterrupted">
+  VoiceLineInterrupted
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird ausgelöst, wenn eine Voice Line vor ihrem Ende angehalten oder durch eine andere ersetzt wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; VoiceLineInterrupted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.VoiceLineStarted" id="SubVoxPro_VoiceLineEmitter_VoiceLineStarted">
+  VoiceLineStarted
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird ausgelöst, wenn eine Voice Line an diesem Emitter beginnt.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; VoiceLineStarted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.WordChanged" id="SubVoxPro_VoiceLineEmitter_WordChanged">
+  WordChanged
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird ausgelöst, wenn sich das gesprochene Wort ändert, während das Wort gesprochen wird, oder durch ein leeres Signal (<a class="xref" href="SubVoxPro.SubtitleWordInfo.html#SubVoxPro_SubtitleWordInfo_Text">Text</a>) zwischen den Wörtern sowie am Ende der Zeile. Erfordert Zeitangaben der Wörter. Nützlich für Lippensynchronisation und Gesten.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;SubtitleWordInfo&gt; WordChanged</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_VoiceLineEmitter_WordChanged_examples">Examples</h4>
+<pre><code class="lang-csharp">_emitter.WordChanged += word =&gt; _mouth.SetBool("Talking", word.Text != null);</code></pre>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

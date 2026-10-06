@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Klasse VoiceLineEventAttribute | SubVox Pro-Dokumentation </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineEventAttribute | SubVox Pro-Dokumentation " name="title"/>
+<meta content="Ruft die markierte Methode auf, sobald ein Voice Line-Ereignis ausgelöst wird, dessen Signal diesen Schlüssel enthält. Die Methode gehört zu einer Komponente, die von einem  zwischengespeichert wird oder deren GameObject mit einem  geteilt wird; sie gibt „void“ zurück und erwartet keine Parameter, einen  oder den Typ der Ereignisdaten. Bei Schlüsseln werden Groß- und Kleinschreibung, Leerzeichen und Satzzeichen ignoriert: „Camera Shake“ entspricht „camera-shake“." name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=cdf57e6fc8" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="In diesem Artikel" name="loc:inThisArticle"/>
+<meta content="{count} Ergebnisse für „{query}“" name="loc:searchResultsCount"/>
+<meta content="Keine Ergebnisse für „{query}“" name="loc:searchNoResults"/>
+<meta content="Nach Titel filtern" name="loc:tocFilter"/>
+<meta content="Weiter" name="loc:nextArticle"/>
+<meta content="Zurück" name="loc:prevArticle"/>
+<meta content="Hell" name="loc:themeLight"/>
+<meta content="Dunkel" name="loc:themeDark"/>
+<meta content="Automatisch" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=cdf57e6fc8" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="de">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.VoiceLineEventAttribute.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.VoiceLineEventAttribute.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.VoiceLineEventAttribute.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Navigation umschalten" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Suchen" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Suchen" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Inhaltsverzeichnis</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.VoiceLineEventAttribute">
+<h1 class="text-break" data-uid="SubVoxPro.VoiceLineEventAttribute" id="SubVoxPro_VoiceLineEventAttribute">
+Klasse VoiceLineEventAttribute  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>Namespace</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>Ruft die markierte Methode auf, sobald ein Voice Line-Ereignis ausgelöst wird, dessen Signal diesen Schlüssel enthält. Die Methode gehört zu einer Komponente, die von einem <a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html">VoiceLineEventDispatcher</a> zwischengespeichert wird oder deren GameObject mit einem <a class="xref" href="SubVoxPro.VoiceLineEventListener.html">VoiceLineEventListener</a> geteilt wird; sie gibt „void“ zurück und erwartet keine Parameter, einen <a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a> oder den Typ der Ereignisdaten. Bei Schlüsseln werden Groß- und Kleinschreibung, Leerzeichen und Satzzeichen ignoriert: „Camera Shake“ entspricht „camera-shake“.</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
+public sealed class VoiceLineEventAttribute : PreserveAttribute</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>Vererbung</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineEventAttribute</span></div>
+</dd>
+</dl>
+<h2 id="SubVoxPro_VoiceLineEventAttribute_examples">Examples</h2>
+<pre><code class="lang-csharp">[VoiceLineEvent(SubVoxEvents.CAMERA_SHAKE)]
+private void ShakeCamera()
+{
+    _camera.Shake();
+}
+
+[VoiceLineEvent("Play Sound")]
+private void PlaySound(AudioClip sound)
+{
+    AudioSource.PlayClipAtPoint(sound, transform.position);
+}</code></pre>
+<h2 class="section" id="constructors">Konstruktoren
+</h2>
+<a data-uid="SubVoxPro.VoiceLineEventAttribute.#ctor*" id="SubVoxPro_VoiceLineEventAttribute__ctor_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventAttribute.#ctor(System.String)" id="SubVoxPro_VoiceLineEventAttribute__ctor_System_String_">
+  VoiceLineEventAttribute(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Ruft die Methode auf, wenn ein Signal mit diesem Schlüssel ausgelöst wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineEventAttribute(string signal_key)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>signal_key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="properties">Eigenschaften
+</h2>
+<a data-uid="SubVoxPro.VoiceLineEventAttribute.SignalKey*" id="SubVoxPro_VoiceLineEventAttribute_SignalKey_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventAttribute.SignalKey" id="SubVoxPro_VoiceLineEventAttribute_SignalKey">
+  SignalKey
+  
+  </h3>
+<div class="markdown level1 summary"><p>Der Schlüssel des Signals, wie im Attribut angegeben.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string SignalKey { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Klasse VoiceLineSequencePlayer | SubVox Pro-Dokumentation </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineSequencePlayer | SubVox Pro-Dokumentation " name="title"/>
+<meta content="Spielt zur Laufzeit eine  ab, Zeile für Zeile. Jeder Schritt wird entweder automatisch fortgesetzt, sobald die jeweilige Zeile beendet ist (nach einer optionalen Verzögerung), oder manuell über  – das mit jedem beliebigen UnityEvent, einer Interaktion oder einer UI-Schaltfläche verknüpft werden kann – und  springt eine Zeile zurück. Die Schritte werden in der Reihenfolge  abgespielt. Ein Schritt, der von einem ausgelasteten Emitter abgelehnt wird, wartet, bis dieser wieder frei ist. Stellt UnityEvents bereit, damit die Szenenlogik ohne Programmcode reagieren kann, sowie dieselben C#-Ereignisse für den Programmcode." name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=cdf57e6fc8" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="In diesem Artikel" name="loc:inThisArticle"/>
+<meta content="{count} Ergebnisse für „{query}“" name="loc:searchResultsCount"/>
+<meta content="Keine Ergebnisse für „{query}“" name="loc:searchNoResults"/>
+<meta content="Nach Titel filtern" name="loc:tocFilter"/>
+<meta content="Weiter" name="loc:nextArticle"/>
+<meta content="Zurück" name="loc:prevArticle"/>
+<meta content="Hell" name="loc:themeLight"/>
+<meta content="Dunkel" name="loc:themeDark"/>
+<meta content="Automatisch" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=cdf57e6fc8" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="de">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.VoiceLineSequencePlayer.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.VoiceLineSequencePlayer.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.VoiceLineSequencePlayer.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Navigation umschalten" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Suchen" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Suchen" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Inhaltsverzeichnis</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.VoiceLineSequencePlayer">
+<h1 class="text-break" data-uid="SubVoxPro.VoiceLineSequencePlayer" id="SubVoxPro_VoiceLineSequencePlayer">
+Klasse VoiceLineSequencePlayer  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>Namespace</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>Spielt zur Laufzeit eine <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a> ab, Zeile für Zeile. Jeder Schritt wird entweder automatisch fortgesetzt, sobald die jeweilige Zeile beendet ist (nach einer optionalen Verzögerung), oder manuell über <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Advance">Advance()</a> – das mit jedem beliebigen UnityEvent, einer Interaktion oder einer UI-Schaltfläche verknüpft werden kann – und <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Previous">Previous()</a> springt eine Zeile zurück. Die Schritte werden in der Reihenfolge <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a> abgespielt. Ein Schritt, der von einem ausgelasteten Emitter abgelehnt wird, wartet, bis dieser wieder frei ist. Stellt UnityEvents bereit, damit die Szenenlogik ohne Programmcode reagieren kann, sowie dieselben C#-Ereignisse für den Programmcode.</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class VoiceLineSequencePlayer : MonoBehaviour</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>Vererbung</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineSequencePlayer</span></div>
+</dd>
+</dl>
+<h2 id="SubVoxPro_VoiceLineSequencePlayer_examples">Examples</h2>
+<pre><code class="lang-csharp">_player.StepStarted += (index, line) =&gt; _portrait.Show(index);
+_player.SequenceCompleted += () =&gt; _dialogueBox.Close();
+_player.Play();</code></pre>
+<h2 class="section" id="constructors">Konstruktoren
+</h2>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.#ctor*" id="SubVoxPro_VoiceLineSequencePlayer__ctor_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.#ctor" id="SubVoxPro_VoiceLineSequencePlayer__ctor">
+  VoiceLineSequencePlayer()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineSequencePlayer()</code></pre>
+</div>
+<h2 class="section" id="properties">Eigenschaften
+</h2>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.CurrentStepIndex*" id="SubVoxPro_VoiceLineSequencePlayer_CurrentStepIndex_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.CurrentStepIndex" id="SubVoxPro_VoiceLineSequencePlayer_CurrentStepIndex">
+  CurrentStepIndex
+  
+  </h3>
+<div class="markdown level1 summary"><p>Index des gerade abgespielten Schritts oder -1, wenn der Player inaktiv ist.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public int CurrentStepIndex { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Direction*" id="SubVoxPro_VoiceLineSequencePlayer_Direction_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Direction" id="SubVoxPro_VoiceLineSequencePlayer_Direction">
+  Direction
+  
+  </h3>
+<div class="markdown level1 summary"><p>Reihenfolge, in der die Schritte ausgeführt werden. <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Play">Play()</a> beginnt mit dem ersten Schritt dieser Reihenfolge; eine Änderung während der Ausführung der Abfolge gilt ab dem nächsten Schritt.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLineSequenceDirection Direction { get; set; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineSequenceDirection.html">EVoiceLineSequenceDirection</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.IsPlaying*" id="SubVoxPro_VoiceLineSequencePlayer_IsPlaying_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.IsPlaying" id="SubVoxPro_VoiceLineSequencePlayer_IsPlaying">
+  IsPlaying
+  
+  </h3>
+<div class="markdown level1 summary"><p>Gilt ab dem Start der Wiedergabe, bis die Sequenz beendet, gestoppt oder unterbrochen wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsPlaying { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.IsWaitingForDelay*" id="SubVoxPro_VoiceLineSequencePlayer_IsWaitingForDelay_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.IsWaitingForDelay" id="SubVoxPro_VoiceLineSequencePlayer_IsWaitingForDelay">
+  IsWaitingForDelay
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wahr, solange die aktuelle Zeile noch nicht beendet ist und die Sequenz ihre Vorlaufverzögerung abwartet.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsWaitingForDelay { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.IsWaitingForEmitter*" id="SubVoxPro_VoiceLineSequencePlayer_IsWaitingForEmitter_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.IsWaitingForEmitter" id="SubVoxPro_VoiceLineSequencePlayer_IsWaitingForEmitter">
+  IsWaitingForEmitter
+  
+  </h3>
+<div class="markdown level1 summary"><p>„True“, solange der aktuelle Schritt darauf wartet, dass sein Emitter frei wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsWaitingForEmitter { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.IsWaitingForManualAdvance*" id="SubVoxPro_VoiceLineSequencePlayer_IsWaitingForManualAdvance_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.IsWaitingForManualAdvance" id="SubVoxPro_VoiceLineSequencePlayer_IsWaitingForManualAdvance">
+  IsWaitingForManualAdvance
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wahr, solange die aktuelle Zeile noch nicht beendet ist und die Sequenz auf <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Advance">Advance()</a> wartet.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsWaitingForManualAdvance { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Sequence*" id="SubVoxPro_VoiceLineSequencePlayer_Sequence_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Sequence" id="SubVoxPro_VoiceLineSequencePlayer_Sequence">
+  Sequence
+  
+  </h3>
+<div class="markdown level1 summary"><p>Die Sequenz, die dieser Player abspielt.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineSequenceData Sequence { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">Methoden
+</h2>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Advance*" id="SubVoxPro_VoiceLineSequencePlayer_Advance_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Advance" id="SubVoxPro_VoiceLineSequencePlayer_Advance">
+  Advance()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wechselt manuell zum nächsten Schritt. Überspringt zudem die gerade abgespielte Voice Line oder eine Voice Line, die auf ihre Verzögerung oder ihren Emitter wartet.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Advance()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.OnDisable*" id="SubVoxPro_VoiceLineSequencePlayer_OnDisable_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.OnDisable" id="SubVoxPro_VoiceLineSequencePlayer_OnDisable">
+  OnDisable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity-Meldung: Rufen Sie die Base-Methode auf, wenn Sie diese überschreiben.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnDisable()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.OnSequenceCompleted*" id="SubVoxPro_VoiceLineSequencePlayer_OnSequenceCompleted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.OnSequenceCompleted" id="SubVoxPro_VoiceLineSequencePlayer_OnSequenceCompleted">
+  OnSequenceCompleted()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird aufgerufen, wenn der letzte Schritt abgeschlossen ist, unmittelbar vor „Sequence Completed“.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnSequenceCompleted()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.OnSequenceInterrupted*" id="SubVoxPro_VoiceLineSequencePlayer_OnSequenceInterrupted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.OnSequenceInterrupted" id="SubVoxPro_VoiceLineSequencePlayer_OnSequenceInterrupted">
+  OnSequenceInterrupted()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird aufgerufen, wenn die Sequenz angehalten wird, weil ihre Zeile angehalten oder ersetzt wurde, unmittelbar vor „Sequence Interrupted“.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnSequenceInterrupted()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.OnStepCompleted*" id="SubVoxPro_VoiceLineSequencePlayer_OnStepCompleted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.OnStepCompleted(System.Int32,SubVoxPro.VoiceLineData)" id="SubVoxPro_VoiceLineSequencePlayer_OnStepCompleted_System_Int32_SubVoxPro_VoiceLineData_">
+  OnStepCompleted(int, VoiceLineData)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird aufgerufen, wenn die Zeile eines Schritts vollständig abgespielt wurde, unmittelbar vor „Step Completed“.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnStepCompleted(int step_index, VoiceLineData voice_line)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>step_index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+<dd></dd>
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.OnStepStarted*" id="SubVoxPro_VoiceLineSequencePlayer_OnStepStarted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.OnStepStarted(System.Int32,SubVoxPro.VoiceLineData)" id="SubVoxPro_VoiceLineSequencePlayer_OnStepStarted_System_Int32_SubVoxPro_VoiceLineData_">
+  OnStepStarted(int, VoiceLineData)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird beim Start eines Schritts aufgerufen, unmittelbar vor „Step Started“. Überschreiben Sie diese Methode, um in einer Unterklasse darauf zu reagieren.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnStepStarted(int step_index, VoiceLineData voice_line)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>step_index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+<dd></dd>
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Play*" id="SubVoxPro_VoiceLineSequencePlayer_Play_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Play" id="SubVoxPro_VoiceLineSequencePlayer_Play">
+  Play()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Startet (oder startet erneut) die zugewiesene Sequenz ab ihrem ersten Schritt (bzw. ab ihrem letzten Schritt, wenn <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a> auf „Backward“ gesetzt ist).</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Play()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Play*" id="SubVoxPro_VoiceLineSequencePlayer_Play_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Play(SubVoxPro.VoiceLineSequenceData)" id="SubVoxPro_VoiceLineSequencePlayer_Play_SubVoxPro_VoiceLineSequenceData_">
+  Play(VoiceLineSequenceData)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Startet (oder startet erneut) die angegebene Sequenz ab ihrem ersten Schritt (bzw. ab ihrem letzten Schritt, wenn <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a> auf „Backward“ gesetzt ist).</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Play(VoiceLineSequenceData sequence)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>sequence</code> <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.PlayFrom*" id="SubVoxPro_VoiceLineSequencePlayer_PlayFrom_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.PlayFrom(System.Int32)" id="SubVoxPro_VoiceLineSequencePlayer_PlayFrom_System_Int32_">
+  PlayFrom(int)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Startet (oder setzt fort) die zugewiesene Sequenz ab dem angegebenen Schritt, beispielsweise um einen gespeicherten Dialog fortzusetzen. Die folgenden Schritte werden in der Reihenfolge <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a> abgespielt.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void PlayFrom(int step_index)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>step_index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Previous*" id="SubVoxPro_VoiceLineSequencePlayer_Previous_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Previous" id="SubVoxPro_VoiceLineSequencePlayer_Previous">
+  Previous()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Springt zur Voice Line zurück, die vor der aktuellen abgespielt wurde, und spielt diese erneut ab, beispielsweise über eine Schaltfläche „Vorherige Voice Line“. Befindet sich der Cursor an der ersten Zeile der Sequenz, wird diese Voice Line erneut abgespielt.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Previous()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Start*" id="SubVoxPro_VoiceLineSequencePlayer_Start_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Start" id="SubVoxPro_VoiceLineSequencePlayer_Start">
+  Start()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity-Meldung: Rufen Sie die Base-Methode auf, wenn Sie diese überschreiben.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void Start()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Stop*" id="SubVoxPro_VoiceLineSequencePlayer_Stop_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Stop" id="SubVoxPro_VoiceLineSequencePlayer_Stop">
+  Stop()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Beendet die Wiedergabe der Sequenz und der gerade abgespielten Zeile.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Stop()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Stop*" id="SubVoxPro_VoiceLineSequencePlayer_Stop_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Stop(System.Boolean)" id="SubVoxPro_VoiceLineSequencePlayer_Stop_System_Boolean_">
+  Stop(bool)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Beendet die Sequenz. Ist „stop_line“ auf „false“ gesetzt, wird der gerade abgespielte Satz zu Ende abgespielt. Eine Sequenz wird zudem automatisch beendet (wobei das Ereignis „Sequence Interrupted“ ausgelöst wird), wenn ihre Voice Line gestoppt oder an ihrem Emitter durch eine wichtigere ersetzt wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Stop(bool stop_line)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>stop_line</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="events">Ereignisse
+</h2>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.SequenceCompleted" id="SubVoxPro_VoiceLineSequencePlayer_SequenceCompleted">
+  SequenceCompleted
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird ausgelöst, wenn der letzte Schritt abgeschlossen ist.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action SequenceCompleted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.SequenceInterrupted" id="SubVoxPro_VoiceLineSequencePlayer_SequenceInterrupted">
+  SequenceInterrupted
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird ausgelöst, wenn die Sequenz von selbst stoppt, weil ihre Zeile am Emitter angehalten oder ersetzt wurde.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action SequenceInterrupted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.StepCompleted" id="SubVoxPro_VoiceLineSequencePlayer_StepCompleted">
+  StepCompleted
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird zusammen mit dem Schrittindex und der zugehörigen Voice Line ausgelöst, sobald die Voice Line eines Schritts vollständig abgespielt wurde.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;int, VoiceLineData&gt; StepCompleted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.StepStarted" id="SubVoxPro_VoiceLineSequencePlayer_StepStarted">
+  StepStarted
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wird zu Beginn eines Schritts zusammen mit dem Schrittindex und der zugehörigen Voice Line ausgegeben.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;int, VoiceLineData&gt; StepStarted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a>&gt;</dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

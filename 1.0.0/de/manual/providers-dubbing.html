@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Synchronisation / Text-to-Speech | SubVox Pro-Dokumentation </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Synchronisation / Text-to-Speech | SubVox Pro-Dokumentation " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=cdf57e6fc8" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="In diesem Artikel" name="loc:inThisArticle"/>
+<meta content="{count} Ergebnisse für „{query}“" name="loc:searchResultsCount"/>
+<meta content="Keine Ergebnisse für „{query}“" name="loc:searchNoResults"/>
+<meta content="Nach Titel filtern" name="loc:tocFilter"/>
+<meta content="Weiter" name="loc:nextArticle"/>
+<meta content="Zurück" name="loc:prevArticle"/>
+<meta content="Hell" name="loc:themeLight"/>
+<meta content="Dunkel" name="loc:themeDark"/>
+<meta content="Automatisch" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=cdf57e6fc8" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="de">
+  <link rel="alternate" hreflang="en" href="../../manual/providers-dubbing.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers-dubbing.html">
+<link rel="alternate" hreflang="de" href="../../de/manual/providers-dubbing.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Navigation umschalten" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Suchen" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Suchen" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Inhaltsverzeichnis</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="dubbing--text-to-speech">Synchronisation / Text-to-Speech </h1>
+<p>ElevenLabs TTS verwendet denselben oben dokumentierten <strong>ElevenLabs</strong>-Schlüssel. Falls Ihr Schlüssel eingeschränkt ist, muss er <strong>Text to Speech: Access</strong> enthalten. Um die Optionen zur <strong>Stimmklonung von ElevenLabs</strong> (Instant Voice Cloning, kostenpflichtiger ElevenLabs-Tarif) nutzen zu können, benötigt der Schlüssel zudem die Berechtigung <strong>Voices</strong> mit Schreibzugriff, damit SubVox Pro seine Klone erstellen, finden und löschen kann. <strong>Gemini</strong> TTS verwendet denselben <strong>Gemini</strong>-Schlüssel wie
+die Übersetzung (siehe <a href="providers-translation.html#google-gemini">Google (Gemini)</a>): kein OAuth und kein Abrechnungskonto, im Gegensatz zu den Gemini-Stimmen von
+Google Cloud Text-to-Speech weiter unten. <strong>OpenAI</strong> TTS verwendet denselben <strong>OpenAI</strong>-Schlüssel wie die Übersetzung (siehe
+<a href="providers-translation.html#openai">OpenAI</a>). Die Anleitung zur Einrichtung von InWorld finden Sie weiter unten.</p>
+<details id="inworld-ai" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="inworld-ai-setup"><strong>InWorld AI</strong></h2></summary>
+<p><strong>Verwendungszweck:</strong> Erzeugen einer Sprachvertonung (TTS) für eine übersetzte Spur.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Rufen Sie <strong>Inworld Studio</strong> (<strong><a href="https://studio.inworld.ai">https://studio.inworld.ai</a></strong>) auf und erstellen Sie ein Konto.</p>
+<img alt="Inworld Portal log in / sign up page" src="Images/inworld-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Öffnen Sie in Ihrem Arbeitsbereich über die linke Seitenleiste <strong>API Keys</strong>.</p>
+<img alt="Inworld API Keys entry in the sidebar" src="Images/inworld-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Klicken Sie auf <strong>Generate new key</strong>.</p>
+<img alt="Inworld API Keys page" src="Images/inworld-api-keys-page.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Geben Sie dem Schlüssel einen aussagekräftigen Anzeigenamen. Verwenden Sie <strong>Standard</strong>, sofern Sie nicht ausdrücklich einen ausschließlich für Echtzeitanwendungen vorgesehenen Schlüssel benötigen, und behalten Sie die für Ihren Inworld-TTS-Workflow erforderlichen Berechtigungen bei.</p>
+<img alt="Inworld generate API key dialog" src="Images/inworld-generate-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Kopieren Sie den Schlüsselwert <strong>Basic (Base64)</strong>.</p>
+<img alt="Inworld Basic Base64 API key value" src="Images/inworld-api-key-basic-value.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>Der Schlüssel erscheint auch in der Liste API Keys, wo Sie ihn bei Bedarf später erneut kopieren können.</p>
+<img alt="Inworld API key row" src="Images/inworld-api-key-row.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Fügen Sie ihn in SubVox Pro ein (Settings ▸ <em>InWorld</em>).</p>
+<blockquote>
+<p>Der kostenlose Tarif umfasst ein einmaliges Kontingent von etwa 70 Minuten TTS und beinhaltet eine kommerzielle Lizenz.
+Sie können die Stimmen zunächst im <strong>TTS Playground</strong> anhören. Dokumentation für den Einstieg:
+<a href="https://docs.inworld.ai/docs/tts-api/getting-started/">https://docs.inworld.ai/docs/tts-api/getting-started/</a></p>
+</blockquote>
+</details>
+<details id="google-cloud-tts" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="google-cloud-tts-setup"><strong>Google Cloud Text-to-Speech</strong></h2></summary>
+<p><strong>Verwendungszweck:</strong> Erzeugen einer Sprachvertonung (TTS) für eine übersetzte Spur. Zwei Stimmenfamilien nutzen dieselbe
+Verbindung: die <strong>klassischen</strong> Stimmen (Standard, WaveNet, Neural2, Chirp/Chirp3-HD) über die Cloud
+Text-to-Speech API und die <strong>Gemini</strong>-Stimmen (vordefinierte Namen wie <em>Leda</em>, <em>Achird</em>, <em>Aoede</em>), die
+mehrsprachig sind und eine frei formulierte <strong>Stilanweisung</strong> akzeptieren – diese laufen über die separate <strong>Vertex AI</strong>-API.</p>
+<p>Im Gegensatz zu den anderen Anbietern verwendet Google Cloud TTS die <strong>OAuth-Anmeldung</strong> statt eines API-Schlüssels. Der Grund: Gemini-
+Stimmen laufen über Vertex AI, dessen Zugriff durch IAM geregelt wird (<code>aiplatform.endpoints.predict</code>); ein API-Schlüssel enthält keine
+IAM-Berechtigungen, Ihr angemeldetes Google-Konto hingegen schon (sofern es Eigentümer des Projekts ist oder dieses bearbeiten darf). Eine Anmeldung
+deckt beide Stimmenfamilien ab.</p>
+<ol>
+<li>Öffnen Sie die <strong>Google Cloud Console</strong> unter <strong><a href="https://console.cloud.google.com">https://console.cloud.google.com</a></strong> und erstellen Sie ein
+Projekt (oder wählen Sie eines aus). Neue Konten erhalten <strong>300 $ Testguthaben (90 Tage)</strong>; ein Abrechnungskonto ist auch in
+der kostenlosen Stufe erforderlich.</li>
+<li>Aktivieren Sie unter <strong>APIs &amp; Services ▸ Library</strong> die <strong>Cloud Text-to-Speech API</strong> (klassische Stimmen) und – für die
+<strong>Gemini</strong>-Stimmen – die <strong>Vertex AI API</strong> (<code>aiplatform.googleapis.com</code>, <em>nicht</em> die veraltete "AI Platform"
+<code>ml.googleapis.com</code>). Überspringen Sie Vertex AI, wenn Sie nur klassische Stimmen benötigen.</li>
+<li><strong>APIs &amp; Services ▸ OAuth consent screen:</strong> Stellen Sie <strong>User type / Audience</strong> auf <strong>External</strong> ein (Internal
+blockiert persönliche Gmail-Konten mit <code>403: org_internal</code>) und fügen Sie Ihr Google-Konto unter <strong>Test
+users</strong> hinzu.</li>
+<li><strong>APIs &amp; Services ▸ Credentials ▸ Create credentials ▸ OAuth client ID</strong>, Anwendungstyp <strong>Desktop
+app</strong>. Kopieren Sie <strong>Client ID</strong> und <strong>Client secret</strong>. (Ein <em>Desktop</em>-Client ist für die
+Loopback-Anmeldung über <code>http://127.0.0.1</code> erforderlich – genau wie bei der Google Sheets-Integration.)</li>
+<li>Öffnen Sie in SubVox Pro die Registerkarte <strong>Text-to-Speech</strong>, wählen Sie <strong>Google Cloud</strong> aus, fügen Sie <strong>Client ID</strong> und
+<strong>Client secret</strong> ein, klicken Sie dann auf <strong>Connect…</strong> und melden Sie sich im Browser an. Wählen Sie bei der Warnung <em>"app not verified"</em>
+(im Testmodus normal) <strong>Continue</strong>. (Das Abrechnungs-/Kontingentprojekt wird aus der
+Client-ID abgeleitet, sodass keine weiteren Angaben erforderlich sind.) Die Anmeldedaten und das Aktualisierungstoken bleiben auf diesem Rechner
+(Editor-Einstellungen) – niemals im Projekt.</li>
+</ol>
+<p>Wählen Sie anschließend eine Stimme aus. Klassische Stimmen werden als <code>Tier Leaf (locale)</code> angezeigt (z. B. <em>Neural2 A (fr-FR)</em>); Gemini-Stimmen
+werden als <code>Name · Gemini</code> angezeigt und ignorieren den Sprachfilter (sie sprechen alle unterstützten Sprachen). Wenn eine
+Gemini-Stimme ausgewählt ist, wird die Schaltfläche <strong>voice direction</strong> (Sprechblase neben der Stimmenauswahl)
+aktiv – geben Sie eine Tonlage wie <em>"sehr traurig, kurz vor einem psychischen Zusammenbruch"</em> ein. Diese wird für jede Zeile als Gemini-
+Stilanweisung gesendet.</p>
+<blockquote>
+<p>Hinweis zur Abrechnung: Klassische Stimmen nutzen das kostenlose monatliche Kontingent von Cloud Text-to-Speech (≈1 Mio. Zeichen für
+Neural2/WaveNet, 4 Mio. für Standard); <strong>Gemini- und Chirp-Stimmen werden über Vertex AI</strong> zu einem
+anderen Tarif abgerechnet. Richten Sie eine Budgetwarnung ein. TTS-Preise: <a href="https://cloud.google.com/text-to-speech/pricing">https://cloud.google.com/text-to-speech/pricing</a></p>
+</blockquote>
+</details>
+<details id="azure" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="azure-setup"><strong>Azure AI Speech</strong></h2></summary>
+<p><strong>Verwendungszweck:</strong> Erzeugen einer Sprachvertonung (TTS) für eine übersetzte Spur mit hochwertigen mehrsprachigen neuronalen
+Stimmen. Verwendet einen <strong>Abonnementschlüssel + Region</strong> (kein OAuth).</p>
+<ol>
+<li><p>Erstellen Sie ein <strong>Microsoft Azure</strong>-Konto unter <strong><a href="https://azure.microsoft.com/free">https://azure.microsoft.com/free</a></strong>. Azure verlangt eine
+Kreditkarte zur Identitätsprüfung, doch die <strong>kostenlose Stufe (F0)</strong> für Speech ist eine tatsächlich kostenlose SKU (sie begrenzt die Nutzung,
+statt sie abzurechnen), sodass die Karte bei F0 nicht belastet wird.</p>
+</li>
+<li><p>Klicken Sie im <strong>Azure Portal</strong> (<a href="https://portal.azure.com">https://portal.azure.com</a>) auf <strong>Create a resource</strong>, suchen Sie nach <strong>Speech</strong>
+und wählen Sie die von <strong>Microsoft</strong> veröffentlichte Kachel mit dem Titel <strong>Speech</strong> aus (sie hat eine Schaltfläche <strong>Create</strong> – <em>nicht</em> die
+Marketplace-Angebote von Drittanbietern, bei denen <em>Subscribe</em> steht). Klicken Sie auf <strong>Create</strong> und wählen Sie dann Ihr Abonnement
+und Ihre Ressourcengruppe, eine <strong>Region</strong> (merken Sie sich diese), einen Namen und <strong>Pricing tier F0 (free)</strong> aus. Klicken Sie auf
+<strong>Review + create</strong>.</p>
+<blockquote>
+<p>Direkter Link zur richtigen Ressource: <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices">https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices</a></p>
+</blockquote>
+</li>
+<li><p>Öffnen Sie nach Abschluss der Bereitstellung die Ressource und gehen Sie zu <strong>Keys and Endpoint</strong>. Kopieren Sie <strong>KEY 1</strong> und
+notieren Sie sich die <strong>Location/Region</strong> (z. B. <code>westeurope</code>).</p>
+</li>
+<li><p>Fügen Sie den Schlüssel in SubVox Pro ein (Settings ▸ <em>Azure Speech</em>). Wählen Sie dann auf der Registerkarte <strong>Text-to-Speech</strong>
+<strong>Azure</strong> und in der Dropdown-Liste die <strong>gleiche Region</strong> aus.</p>
+</li>
+</ol>
+<blockquote>
+<p>Der Schlüssel und die Region müssen zur <strong>gleichen</strong> Speech-Ressource gehören, andernfalls lehnt Azure die Anfrage mit einem
+<code>401</code> ab. Die Region ist die Kurzbezeichnung (<code>westeurope</code>, <code>eastus</code>…), die Sie aus der Dropdown-Liste auswählen – nicht der
+Anzeigename ("West Europe").</p>
+</blockquote>
+<blockquote>
+<p>Kostenlose Stufe (F0): ~0,5 Mio. Zeichen/Monat für neuronale TTS, ausschließlich zu Evaluierungszwecken – Microsoft gewährt kommerzielle
+Rechte an den generierten Audiodateien nur bei einer kostenpflichtigen Ressource (S0). Stellen Sie die Ressource auf S0 um, bevor Sie ein Spiel vertonen,
+das Sie veröffentlichen. Preise: <a href="https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/">https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/</a></p>
+</blockquote>
+</details>
+<div data-svx-provider-articles='{"after-pasting-a-key": "providers-api-key.md"}' hidden=""></div>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

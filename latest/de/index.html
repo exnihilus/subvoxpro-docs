@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>SubVox Pro API | SubVox Pro-Dokumentation </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SubVox Pro API | SubVox Pro-Dokumentation " name="title"/>
+<link href="images/logo.svg" rel="icon"/>
+<link href="public/docfx.min.css" rel="stylesheet"/>
+<link href="public/main.css?v=cdf57e6fc8" rel="stylesheet"/>
+<meta content="toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="" name="docfx:rel"/>
+<meta content="In diesem Artikel" name="loc:inThisArticle"/>
+<meta content="{count} Ergebnisse für „{query}“" name="loc:searchResultsCount"/>
+<meta content="Keine Ergebnisse für „{query}“" name="loc:searchNoResults"/>
+<meta content="Nach Titel filtern" name="loc:tocFilter"/>
+<meta content="Weiter" name="loc:nextArticle"/>
+<meta content="Zurück" name="loc:prevArticle"/>
+<meta content="Hell" name="loc:themeLight"/>
+<meta content="Dunkel" name="loc:themeDark"/>
+<meta content="Automatisch" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./public/docfx.min.js?v=cdf57e6fc8" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="de">
+  <link rel="alternate" hreflang="en" href="../index.html">
+<link rel="alternate" hreflang="fr" href="../fr/index.html">
+<link rel="alternate" hreflang="de" href="../de/index.html">
+</head>
+<body class="tex2jax_ignore" data-layout="landing" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Navigation umschalten" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Suchen" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Suchen" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="content">
+<div class="actionbar">
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<div class="svx-index">
+<section class="svx-hero">
+<div class="svx-intro">
+<h1>SubVox Pro <span class="svx-api-label">API</span></h1>
+</div>
+<div class="svx-demo">
+<div aria-label="Code of the example" class="svx-snippet">
+<span class="svx-code-line" data-svx-template="SubVox.RevealMode = EVoiceLineSubtitleRevealMode.{mode};">SubVox.RevealMode = EVoiceLineSubtitleRevealMode.Karaoke;</span>
+<span class="svx-code-line" data-svx-template="SubVox.Play(gateSealed);">SubVox.Play(gateSealed);</span>
+</div>
+<div class="svx-screen">
+<p aria-live="off" class="svx-subtitle"></p>
+</div>
+<div class="svx-player">
+<button aria-label="Play the example line" class="svx-play" type="button">
+<svg aria-hidden="true" class="svx-icon-play" viewbox="0 0 16 16"><path d="M4.5 2.6v10.8a.6.6 0 0 0 .9.5l8.6-5.4a.6.6 0 0 0 0-1L5.4 2.1a.6.6 0 0 0-.9.5z"></path></svg>
+<svg aria-hidden="true" class="svx-icon-stop" viewbox="0 0 16 16"><rect height="9" rx="1.5" width="9" x="3.5" y="3.5"></rect></svg>
+</button>
+<div aria-hidden="true" class="svx-progress"><span data-svx-progress=""></span></div>
+<div aria-label="Reveal mode" class="svx-modes" role="group">
+<button aria-pressed="false" data-svx-mode="FullSubtitle" type="button">Ganze Zeile</button>
+<button aria-pressed="false" data-svx-mode="TimedWords" type="button">Wort für Wort</button>
+<button aria-pressed="true" data-svx-mode="Karaoke" type="button">Karaoke</button>
+</div>
+</div>
+<audio data-svx-audio="" preload="auto" src="media/gate-sealed.wav"></audio>
+</div>
+<p class="svx-caption">Die Stimme wurde von SubVox Pro mit seiner Offline-Engine Chatterbox generiert; die Zeitangaben für die Wörter stammen aus seiner Offline-Transkription mit Whisper.</p>
+</section>
+<h2>Erste Schritte</h2>
+<dl>
+<div>
+<dt><a href="api/SubVoxPro.SubVox.html">SubVox</a></dt>
+<dd>Der Einstiegspunkt für Ihren Code: Sprachzeilen abspielen, alle Wiedergaben pausieren oder stoppen, die Sprache und die Untertiteloptionen festlegen und die Wiedergabe verfolgen.</dd>
+</div>
+<div>
+<dt><a href="api/SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a></dt>
+<dd>Lässt eine Figur mit 3D-Audio sprechen, eine Zeile nach der anderen, mit Prioritäten und einer Warteschlange.</dd>
+</div>
+<div>
+<dt><a href="api/SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd>Der Rückgabewert jedes Wiedergabeaufrufs: die Wiedergabe einer Sprachzeile verfolgen, sie stoppen oder in einer Coroutine auf ihr Ende warten.</dd>
+</div>
+<div>
+<dt><a href="api/SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd>Ein Sprachzeilen-Asset mit Untertiteln, Übersetzungen, Sprachfassungen, Sprechern und Ereignissen.</dd>
+</div>
+</dl>
+<h2>Funktionen nach Aufgabe finden</h2>
+<dl class="svx-tasks">
+<div>
+<dt>Eine Sprachzeile abspielen und auf ihr Ende warten</dt>
+<dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_">SubVox.Play</a></dd>
+</div>
+<div>
+<dt>Eine Figur sprechen lassen, ohne den Dialog zu unterbrechen</dt>
+<dd><a href="api/SubVoxPro.EVoiceLinePlayMode.html">EVoiceLinePlayMode.Queue</a></dd>
+</div>
+<div>
+<dt>Code ausführen, wenn ein Wort gesprochen wird</dt>
+<dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_Subscribe_">SubVox.Subscribe</a></dd>
+</div>
+<div>
+<dt>Die Sprache von Untertiteln und Sprachfassungen umschalten</dt>
+<dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">SubVox.CurrentLanguage</a></dd>
+</div>
+<div>
+<dt>Den Spielern Untertiteloptionen anbieten</dt>
+<dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_SubtitleScale">SubVox.SubtitleScale</a></dd>
+</div>
+<div>
+<dt>Untertitel mit FMOD, Wwise oder einem Video synchron halten</dt>
+<dd><a href="api/SubVoxPro.IVoiceLineAudioClock.html">IVoiceLineAudioClock</a></dd>
+</div>
+<div>
+<dt>Eine Sprechblase über einer Figur anzeigen</dt>
+<dd><a href="api/SubVoxPro.SubtitleBubbleDisplayer.html">SubtitleBubbleDisplayer</a></dd>
+</div>
+<div>
+<dt>Ein Dialogprotokoll erstellen</dt>
+<dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_History">SubVox.History</a></dd>
+</div>
+</dl>
+<p class="svx-foot">Das Benutzerhandbuch (Documentation.pdf) und kopierfertige Skripte für jede dieser Aufgaben (Example/Snippets) sind im Paket enthalten.</p>
+</div>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

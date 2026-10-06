@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Klasse SubtitleDisplayer | SubVox Pro-Dokumentation </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class SubtitleDisplayer | SubVox Pro-Dokumentation " name="title"/>
+<meta content="Zeigt die auf  veröffentlichten Untertitel in einem TextMeshPro-Text (UI oder 3D) an, einschließlich des Namens des Speakers und der Schriftart, und orientiert sich dabei an den Einstellungen für die Anzeige von  (Ein/Aus, Größe, Hintergrundtransparenz, Ein- oder Ausblenden). Die Funktionsweise ist identisch, unabhängig davon, ob die Wiedergabe über Emitter oder über die Timeline erfolgt." name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=cdf57e6fc8" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="In diesem Artikel" name="loc:inThisArticle"/>
+<meta content="{count} Ergebnisse für „{query}“" name="loc:searchResultsCount"/>
+<meta content="Keine Ergebnisse für „{query}“" name="loc:searchNoResults"/>
+<meta content="Nach Titel filtern" name="loc:tocFilter"/>
+<meta content="Weiter" name="loc:nextArticle"/>
+<meta content="Zurück" name="loc:prevArticle"/>
+<meta content="Hell" name="loc:themeLight"/>
+<meta content="Dunkel" name="loc:themeDark"/>
+<meta content="Automatisch" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=cdf57e6fc8" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="de">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.SubtitleDisplayer.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.SubtitleDisplayer.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.SubtitleDisplayer.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Navigation umschalten" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Suchen" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Suchen" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Inhaltsverzeichnis</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.SubtitleDisplayer">
+<h1 class="text-break" data-uid="SubVoxPro.SubtitleDisplayer" id="SubVoxPro_SubtitleDisplayer">
+Klasse SubtitleDisplayer  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>Namespace</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>Zeigt die auf <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a> veröffentlichten Untertitel in einem TextMeshPro-Text (UI oder 3D) an, einschließlich des Namens des Speakers und der Schriftart, und orientiert sich dabei an den Einstellungen für die Anzeige von <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a> (Ein/Aus, Größe, Hintergrundtransparenz, Ein- oder Ausblenden). Die Funktionsweise ist identisch, unabhängig davon, ob die Wiedergabe über Emitter oder über die Timeline erfolgt.</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class SubtitleDisplayer : MonoBehaviour</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>Vererbung</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">SubtitleDisplayer</span></div>
+</dd>
+</dl>
+<dl class="typelist derived">
+<dt>Derived</dt>
+<dd>
+<div><a class="xref" href="SubVoxPro.SubtitleBubbleDisplayer.html">SubtitleBubbleDisplayer</a></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">Konstruktoren
+</h2>
+<a data-uid="SubVoxPro.SubtitleDisplayer.#ctor*" id="SubVoxPro_SubtitleDisplayer__ctor_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.#ctor" id="SubVoxPro_SubtitleDisplayer__ctor">
+  SubtitleDisplayer()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SubtitleDisplayer()</code></pre>
+</div>
+<h2 class="section" id="properties">Eigenschaften
+</h2>
+<a data-uid="SubVoxPro.SubtitleDisplayer.KeepBackgroundBetweenSubtitles*" id="SubVoxPro_SubtitleDisplayer_KeepBackgroundBetweenSubtitles_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.KeepBackgroundBetweenSubtitles" id="SubVoxPro_SubtitleDisplayer_KeepBackgroundBetweenSubtitles">
+  KeepBackgroundBetweenSubtitles
+  
+  </h3>
+<div class="markdown level1 summary"><p>Ob der Hintergrund während einer Leerstelle zwischen zwei Untertitelzeilen sichtbar bleibt.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool KeepBackgroundBetweenSubtitles { get; set; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubtitleDisplayer.SpeakerNameMode*" id="SubVoxPro_SubtitleDisplayer_SpeakerNameMode_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.SpeakerNameMode" id="SubVoxPro_SubtitleDisplayer_SpeakerNameMode">
+  SpeakerNameMode
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wie der Name des Speakers angezeigt wird: ausgeblendet, vor der Zeile oder darüber.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public ESpeakerNameMode SpeakerNameMode { get; set; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.ESpeakerNameMode.html">ESpeakerNameMode</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">Methoden
+</h2>
+<a data-uid="SubVoxPro.SubtitleDisplayer.ClearSubtitle*" id="SubVoxPro_SubtitleDisplayer_ClearSubtitle_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.ClearSubtitle" id="SubVoxPro_SubtitleDisplayer_ClearSubtitle">
+  ClearSubtitle()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Entfernt den aktuellen Untertitel vom Bildschirm.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void ClearSubtitle()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleDisplayer.ComposeText*" id="SubVoxPro_SubtitleDisplayer_ComposeText_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.ComposeText(SubVoxPro.SubtitleInfo)" id="SubVoxPro_SubtitleDisplayer_ComposeText_SubVoxPro_SubtitleInfo_">
+  ComposeText(SubtitleInfo)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Der Text, der als Untertitel angezeigt werden soll. Standardmäßig: die Zeile mit dem Namen des Speakers gemäß dem „Speaker Name Mode“. Überschreiben Sie diesen Wert, um den Text zu ändern, beispielsweise um ein Präfix hinzuzufügen oder die Groß-/Kleinschreibung anzupassen.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual string ComposeText(SubtitleInfo subtitle_info)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>subtitle_info</code> <a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Rückgabewert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_SubtitleDisplayer_ComposeText_SubVoxPro_SubtitleInfo__examples">Examples</h4>
+<pre><code class="lang-csharp">public sealed class UppercaseSubtitleDisplayer : SubtitleDisplayer
+{
+    protected override string ComposeText(SubtitleInfo subtitle_info)
+    {
+        return base.ComposeText(subtitle_info).ToUpperInvariant();
+    }
+}</code></pre>
+<a data-uid="SubVoxPro.SubtitleDisplayer.OnDisable*" id="SubVoxPro_SubtitleDisplayer_OnDisable_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.OnDisable" id="SubVoxPro_SubtitleDisplayer_OnDisable">
+  OnDisable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity-Meldung: Rufen Sie die Base-Methode auf, wenn Sie sie überschreiben.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnDisable()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleDisplayer.OnEnable*" id="SubVoxPro_SubtitleDisplayer_OnEnable_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.OnEnable" id="SubVoxPro_SubtitleDisplayer_OnEnable">
+  OnEnable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity-Meldung: Rufen Sie die Base-Methode auf, wenn Sie diese überschreiben.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnEnable()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleDisplayer.SetVisible*" id="SubVoxPro_SubtitleDisplayer_SetVisible_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.SetVisible(System.Boolean)" id="SubVoxPro_SubtitleDisplayer_SetVisible_System_Boolean_">
+  SetVisible(bool)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Blendet das Feld für den Untertitel ein oder aus: aktiv, solange ein Untertitel vorhanden ist; inaktiv zwischen den Zeilen, durch Ein- oder Ausblenden von <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_FadeDuration">FadeDuration</a>. Überschreiben Sie diese Einstellung, um das Feld nach Ihren eigenen Vorstellungen zu animieren.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void SetVisible(bool visible)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>visible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubtitleDisplayer.ShowSubtitle*" id="SubVoxPro_SubtitleDisplayer_ShowSubtitle_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.ShowSubtitle(SubVoxPro.SubtitleInfo)" id="SubVoxPro_SubtitleDisplayer_ShowSubtitle_SubVoxPro_SubtitleInfo_">
+  ShowSubtitle(SubtitleInfo)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Zeigt einen Untertitel an; ein leerer Untertitel löscht die Anzeige.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected void ShowSubtitle(SubtitleInfo subtitle_info)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>subtitle_info</code> <a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubtitleDisplayer.SubscribeToSubtitles*" id="SubVoxPro_SubtitleDisplayer_SubscribeToSubtitles_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.SubscribeToSubtitles" id="SubVoxPro_SubtitleDisplayer_SubscribeToSubtitles">
+  SubscribeToSubtitles()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Das Plugin beginnt, nach den anzuzeigenden Untertiteln zu suchen. Standardmäßig: alle auf <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a> veröffentlichten Untertitel. Überschreiben Sie diese Einstellung mit <a class="xref" href="SubVoxPro.SubtitleDisplayer.html#SubVoxPro_SubtitleDisplayer_UnsubscribeFromSubtitles">UnsubscribeFromSubtitles()</a>, um eine andere Source über <a class="xref" href="SubVoxPro.SubtitleDisplayer.html#SubVoxPro_SubtitleDisplayer_ShowSubtitle_SubVoxPro_SubtitleInfo_">ShowSubtitle(SubtitleInfo)</a> anzuzeigen.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void SubscribeToSubtitles()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleDisplayer.UnsubscribeFromSubtitles*" id="SubVoxPro_SubtitleDisplayer_UnsubscribeFromSubtitles_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.UnsubscribeFromSubtitles" id="SubVoxPro_SubtitleDisplayer_UnsubscribeFromSubtitles">
+  UnsubscribeFromSubtitles()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Beendet das Abhören der von <a class="xref" href="SubVoxPro.SubtitleDisplayer.html#SubVoxPro_SubtitleDisplayer_SubscribeToSubtitles">SubscribeToSubtitles()</a> gestarteten Source.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void UnsubscribeFromSubtitles()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleDisplayer.Update*" id="SubVoxPro_SubtitleDisplayer_Update_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.Update" id="SubVoxPro_SubtitleDisplayer_Update">
+  Update()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity-Meldung: Rufen Sie die Base-Methode auf, wenn Sie diese überschreiben.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void Update()</code></pre>
+</div>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Namespace SubVoxPro.Timeline | SubVox Pro-Dokumentation </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Namespace SubVoxPro.Timeline | SubVox Pro-Dokumentation " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=cdf57e6fc8" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="In diesem Artikel" name="loc:inThisArticle"/>
+<meta content="{count} Ergebnisse für „{query}“" name="loc:searchResultsCount"/>
+<meta content="Keine Ergebnisse für „{query}“" name="loc:searchNoResults"/>
+<meta content="Nach Titel filtern" name="loc:tocFilter"/>
+<meta content="Weiter" name="loc:nextArticle"/>
+<meta content="Zurück" name="loc:prevArticle"/>
+<meta content="Hell" name="loc:themeLight"/>
+<meta content="Dunkel" name="loc:themeDark"/>
+<meta content="Automatisch" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=cdf57e6fc8" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="de">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.Timeline.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.Timeline.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.Timeline.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Navigation umschalten" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Suchen" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Suchen" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Inhaltsverzeichnis</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.Timeline">
+<h1 class="text-break" data-uid="SubVoxPro.Timeline" id="SubVoxPro_Timeline">Namespace SubVoxPro.Timeline</h1>
+<div class="markdown level0 summary"></div>
+<div class="markdown level0 conceptual"></div>
+<div class="markdown level0 remarks"></div>
+<h3 id="classes">
+Classes
+</h3>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.Timeline.VoiceLineAudioPlayableAsset.html">VoiceLineAudioPlayableAsset</a></dt>
+<dd><p>Ein Audio-Clip, der mit einem <a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html">VoiceLineClip</a> auf einer nativen Audiospur verknüpft ist. Er zeigt das Quell-Audio im Editor an und ermöglicht eine Vorschau; außerdem wird das Dubbing von <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> abgespielt, sofern eine vorhanden ist. Die Sprache wird beim Erstellen des Timeline-Diagramms (wenn der Regisseur die Wiedergabe startet) ausgelesen, sodass ein Dubbing niemals mitten in einer Zwischensequenz wechselt.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html">VoiceLineClip</a></dt>
+<dd><p>Timeline-Clip, der auf einem <a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html#SubVoxPro_Timeline_VoiceLineClip_VoiceLineData">VoiceLineData</a>-Asset basiert. Durch das Ablegen eines „VoiceLineData“-Objekts auf einem <a class="xref" href="SubVoxPro.Timeline.VoiceLineTrack.html">VoiceLineTrack</a> wird automatisch ein solcher Clip erstellt, dessen Length standardmäßig der des längsten Audioabschnitts der Sprachzeile (Source oder Dubbing) entspricht. Wird stattdessen ein <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a>-Objekt abgelegt, wird dies durch das Feld <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a> erfasst und vom Clip-Editor in einen Clip pro Schritt aufgeteilt (wobei das Feld anschließend wieder auf „null“ zurückgesetzt wird).</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.Timeline.VoiceLineEventMarker.html">VoiceLineEventMarker</a></dt>
+<dd><p>Ein Voice Line-Ereignis, das als Timeline-Marker eingebettet ist und über ein <a class="xref" href="SubVoxPro.Timeline.VoiceLineTimelineEventReceiver.html">VoiceLineTimelineEventReceiver</a> ausgelöst wird.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.Timeline.VoiceLineEventTrack.html">VoiceLineEventTrack</a></dt>
+<dd><p>Timeline mit den Markern, die aus den Voice Line-Ereignissen generiert wurden.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.Timeline.VoiceLineTimelineEventReceiver.html">VoiceLineTimelineEventReceiver</a></dt>
+<dd><p>Löst in SubVox „Baked“-Voice Line-Ereignisse aus, sobald deren Marker erreicht wird. Wird durch die „Bake“-Aktion zum „PlayableDirector“ hinzugefügt.</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.Timeline.VoiceLineTrack.html">VoiceLineTrack</a></dt>
+<dd><p>Timeline-Spur, die die Subtitles zu den Sprachzeilen steuert und mit der Regietaktung synchronisiert ist. Die Audiowiedergabe erfolgt über eine zugehörige native Audio Track (die beim Drop automatisch erstellt wird), sodass diese Spur lediglich Subtitles auf dem <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a> veröffentlicht, die von jedem Display übernommen werden können. Ein aktiver Clip hat Anzeigepriorität; wenn er endet, kehrt der aktuell ausgewählte Emitter-Subtitel zurück, ohne dass die Audiowiedergabe neu gestartet wird.</p>
+</dd>
+</dl>
+<h3 id="enums">
+Enums
+</h3>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.Timeline.EVoiceLineTimelineEventMode.html">EVoiceLineTimelineEventMode</a></dt>
+<dd><p>Wie ein Timeline-Clip die Events seiner Voice Line auslöst.</p>
+</dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

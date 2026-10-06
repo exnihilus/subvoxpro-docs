@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Klasse VoiceLineManager | SubVox Pro-Dokumentation </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineManager | SubVox Pro-Dokumentation " name="title"/>
+<meta content="Die Szenenkomponente hinter : Sie enthält die 2D-, die von  verwendet wird (Erzählung, Dialoge), hält jeden Emitter gleichzeitig an oder stoppt ihn, dämpft die Musik, während eine Stimme abgespielt wird, und veröffentlicht den Untertitel der wichtigsten gerade abgespielten Zeile – zuerst die mit der höchsten Priorität, dann die zuletzt gestartete." name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=cdf57e6fc8" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="In diesem Artikel" name="loc:inThisArticle"/>
+<meta content="{count} Ergebnisse für „{query}“" name="loc:searchResultsCount"/>
+<meta content="Keine Ergebnisse für „{query}“" name="loc:searchNoResults"/>
+<meta content="Nach Titel filtern" name="loc:tocFilter"/>
+<meta content="Weiter" name="loc:nextArticle"/>
+<meta content="Zurück" name="loc:prevArticle"/>
+<meta content="Hell" name="loc:themeLight"/>
+<meta content="Dunkel" name="loc:themeDark"/>
+<meta content="Automatisch" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=cdf57e6fc8" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="de">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.VoiceLineManager.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.VoiceLineManager.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.VoiceLineManager.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Navigation umschalten" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Suchen" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Suchen" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Inhaltsverzeichnis</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.VoiceLineManager">
+<h1 class="text-break" data-uid="SubVoxPro.VoiceLineManager" id="SubVoxPro_VoiceLineManager">
+Klasse VoiceLineManager  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>Namespace</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>Die Szenenkomponente hinter <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a>: Sie enthält die 2D-<a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a>, die von <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> verwendet wird (Erzählung, Dialoge), hält jeden Emitter gleichzeitig an oder stoppt ihn, dämpft die Musik, während eine Stimme abgespielt wird, und veröffentlicht den Untertitel der wichtigsten gerade abgespielten Zeile – zuerst die mit der höchsten Priorität, dann die zuletzt gestartete.</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class VoiceLineManager : MonoBehaviour</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>Vererbung</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineManager</span></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">Konstruktoren
+</h2>
+<a data-uid="SubVoxPro.VoiceLineManager.#ctor*" id="SubVoxPro_VoiceLineManager__ctor_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineManager.#ctor" id="SubVoxPro_VoiceLineManager__ctor">
+  VoiceLineManager()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineManager()</code></pre>
+</div>
+<h2 class="section" id="properties">Eigenschaften
+</h2>
+<a data-uid="SubVoxPro.VoiceLineManager.DefaultEmitter*" id="SubVoxPro_VoiceLineManager_DefaultEmitter_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineManager.DefaultEmitter" id="SubVoxPro_VoiceLineManager_DefaultEmitter">
+  DefaultEmitter
+  
+  </h3>
+<div class="markdown level1 summary"><p>Der 2D-Emitter, auf dem <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> basiert.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineEmitter DefaultEmitter { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineManager.HasInstance*" id="SubVoxPro_VoiceLineManager_HasInstance_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineManager.HasInstance" id="SubVoxPro_VoiceLineManager_HasInstance">
+  HasInstance
+  
+  </h3>
+<div class="markdown level1 summary"><p>Ist „true“, wenn ein Manager vorhanden ist. Im Gegensatz zu <a class="xref" href="SubVoxPro.VoiceLineManager.html#SubVoxPro_VoiceLineManager_Instance">Instance</a> wird niemals ein Manager erstellt.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static bool HasInstance { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineManager.Instance*" id="SubVoxPro_VoiceLineManager_Instance_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineManager.Instance" id="SubVoxPro_VoiceLineManager_Instance">
+  Instance
+  
+  </h3>
+<div class="markdown level1 summary"><p>Der Active Manager. Im Play mode wird bei Bedarf ein Standard-Active Manager erstellt, sofern die Szene noch keinen enthält, sodass Voice Lines stets wiedergegeben werden; fügen Sie der Szene einen hinzu, um ihn zu konfigurieren.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static VoiceLineManager Instance { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineManager.html">VoiceLineManager</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">Methoden
+</h2>
+<a data-uid="SubVoxPro.VoiceLineManager.Awake*" id="SubVoxPro_VoiceLineManager_Awake_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineManager.Awake" id="SubVoxPro_VoiceLineManager_Awake">
+  Awake()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity-Meldung: Rufen Sie die Base-Methode auf, wenn Sie sie überschreiben.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void Awake()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineManager.ChooseDisplayedEmitter*" id="SubVoxPro_VoiceLineManager_ChooseDisplayedEmitter_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineManager.ChooseDisplayedEmitter(System.Collections.Generic.IReadOnlyList{SubVoxPro.VoiceLineEmitter})" id="SubVoxPro_VoiceLineManager_ChooseDisplayedEmitter_System_Collections_Generic_IReadOnlyList_SubVoxPro_VoiceLineEmitter__">
+  ChooseDisplayedEmitter(IReadOnlyList&lt;VoiceLineEmitter&gt;)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wählt unter den Emittern, die eine Voice Line abspielen, denjenigen aus, dessen Untertitel angezeigt wird (null, falls keiner vorhanden ist). Standardmäßig: der Emitter mit der höchsten Priorität, dann der zuletzt gestartete, wobei Emitter übersprungen werden, bei denen die Option „Show Subtitles“ deaktiviert ist.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual VoiceLineEmitter ChooseDisplayedEmitter(IReadOnlyList&lt;VoiceLineEmitter&gt; playing_emitters)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>playing_emitters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h4 class="section">Rückgabewert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineManager.LateUpdate*" id="SubVoxPro_VoiceLineManager_LateUpdate_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineManager.LateUpdate" id="SubVoxPro_VoiceLineManager_LateUpdate">
+  LateUpdate()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity-Meldung: Rufen Sie die Base-Methode auf, wenn Sie diese überschreiben.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void LateUpdate()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineManager.OnDestroy*" id="SubVoxPro_VoiceLineManager_OnDestroy_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineManager.OnDestroy" id="SubVoxPro_VoiceLineManager_OnDestroy">
+  OnDestroy()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity-Meldung: Rufen Sie die Base-Methode auf, wenn Sie diese überschreiben.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnDestroy()</code></pre>
+</div>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

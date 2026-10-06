@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Transkriptionsanbieter | SubVox Pro-Dokumentation </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Transkriptionsanbieter | SubVox Pro-Dokumentation " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=cdf57e6fc8" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="In diesem Artikel" name="loc:inThisArticle"/>
+<meta content="{count} Ergebnisse für „{query}“" name="loc:searchResultsCount"/>
+<meta content="Keine Ergebnisse für „{query}“" name="loc:searchNoResults"/>
+<meta content="Nach Titel filtern" name="loc:tocFilter"/>
+<meta content="Weiter" name="loc:nextArticle"/>
+<meta content="Zurück" name="loc:prevArticle"/>
+<meta content="Hell" name="loc:themeLight"/>
+<meta content="Dunkel" name="loc:themeDark"/>
+<meta content="Automatisch" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=cdf57e6fc8" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="de">
+  <link rel="alternate" hreflang="en" href="../../manual/providers-transcription.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers-transcription.html">
+<link rel="alternate" hreflang="de" href="../../de/manual/providers-transcription.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Navigation umschalten" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Suchen" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Suchen" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Inhaltsverzeichnis</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="transcription-providers">Transkriptionsanbieter </h1>
+<details id="assemblyai" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="assemblyai-setup"><strong>AssemblyAI</strong></h2></summary>
+<p><strong>Verwendungszweck:</strong> Spracherkennung mit Zeitangaben auf Wortebene.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Rufen Sie <strong><a href="https://www.assemblyai.com/dashboard/signup">https://www.assemblyai.com/dashboard/signup</a></strong> auf und erstellen Sie ein Konto (per E-Mail oder SSO). Eine Kreditkarte ist nicht erforderlich; neue Konten erhalten etwa <strong>50 $ an Gratisguthaben</strong> (~330 Stunden).</p>
+<img alt="AssemblyAI sign-up page" src="Images/assemblyai-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Nachdem Sie Ihre E-Mail-Adresse bestätigt haben, öffnen Sie <strong>Manage ▸ API Keys</strong> in der linken Seitenleiste.</p>
+<img alt="AssemblyAI API Keys entry in the sidebar" src="Images/assemblyai-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> AssemblyAI erstellt einen <strong>Default API Key</strong> für das Projekt. Sie können diesen Schlüssel kopieren oder auf <strong>Create new API key</strong> klicken, wenn Sie einen eigens für SubVox Pro vorgesehenen Schlüssel erstellen möchten.</p>
+<img alt="AssemblyAI API Keys page" src="Images/assemblyai-api-keys-page.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Wenn Sie einen neuen Schlüssel erstellen, geben Sie ihm einen aussagekräftigen Namen wie <code>SubVoxPro</code> oder Ihren Projektnamen und klicken Sie anschließend auf <strong>Create</strong>.</p>
+<img alt="AssemblyAI create API key dialog" src="Images/assemblyai-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Kopieren Sie den API-Schlüssel aus der entsprechenden Tabellenzeile.</p>
+<img alt="AssemblyAI API key row" src="Images/assemblyai-api-key-row.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Fügen Sie ihn in SubVox Pro ein (Settings ▸ <em>AssemblyAI</em>).</p>
+<blockquote>
+<p>Kostenlose Konten sind auf 2 Projekte / 2 API-Schlüssel begrenzt, was für SubVox Pro völlig ausreicht.
+Hilfeartikel: <a href="https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key">https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key</a></p>
+</blockquote>
+</details>
+<details id="gladia" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="gladia-setup"><strong>Gladia</strong></h2></summary>
+<p><strong>Verwendungszweck:</strong> Spracherkennung.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Registrieren Sie sich bei <strong><a href="https://app.gladia.io">https://app.gladia.io</a></strong> (per E-Mail oder Google).</p>
+<img alt="Gladia sign-up page" src="Images/gladia-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Öffnen Sie nach der Anmeldung <strong>API Keys</strong> in der linken Seitenleiste. Hier listet Gladia alle mit Ihrem Konto verknüpften Schlüssel auf.</p>
+<img alt="Gladia API Keys entry in the sidebar" src="Images/gladia-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Wenn Sie einen eigenen Schlüssel für SubVox Pro wünschen, verwenden Sie das Erstellungsformular und geben Sie ihm einen aussagekräftigen Namen
+wie <code>SubVoxPro</code> oder Ihren Projektnamen.</p>
+<img alt="Gladia create API key form" src="Images/gladia-create-api-key.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>Kopieren Sie den Schlüssel nach der Erstellung aus der Liste. Gladia kürzt den angezeigten Wert möglicherweise später, daher <u>kopieren Sie ihn
+sofort, solange Sie noch auf das vollständige Token zugreifen können</u>.</p>
+<img alt="Gladia API key row" src="Images/gladia-example-key.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Fügen Sie ihn in SubVox Pro ein (Settings ▸ <em>Gladia</em>).</p>
+<blockquote>
+<p>Kostenloser Tarif: <strong>10 Stunden Transkription pro Monat</strong> (max. 20 API-Aufrufe/Stunde, 3 gleichzeitig).
+Hilfe: <a href="https://support.gladia.io/article/how-to-get-the-api-key-from-my-account">https://support.gladia.io/article/how-to-get-the-api-key-from-my-account</a></p>
+</blockquote>
+</details>
+<details id="deepgram" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="deepgram-setup"><strong>Deepgram</strong></h2></summary>
+<p><strong>Verwendungszweck:</strong> Spracherkennung.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Erstellen Sie ein Konto bei <strong><a href="https://console.deepgram.com/signup">https://console.deepgram.com/signup</a></strong> – eine Kreditkarte ist nicht erforderlich, und Sie erhalten <strong>200 $ an Gratisguthaben</strong> (das Guthaben verfällt ein Jahr nach der Registrierung).</p>
+<img alt="Deepgram Console sign-up page" src="Images/deepgram-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Öffnen Sie in der Console über die linke Seitenleiste den Menüpunkt <strong>API Keys</strong>.</p>
+<img alt="Deepgram API Keys entry in the sidebar" src="Images/deepgram-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Klicken Sie auf <strong>Create a New API Key</strong>.</p>
+<img alt="Deepgram create API key button" src="Images/deepgram-create-api-key-button.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Geben Sie dem Schlüssel einen aussagekräftigen Namen. Wählen Sie unter <strong>Set expiration</strong> die Dauer, die zu Ihrem Arbeitsablauf passt; SubVox Pro erfordert keine bestimmte Gültigkeitsdauer für den Schlüssel.</p>
+<img alt="Deepgram create API key dialog" src="Images/deepgram-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Kopieren Sie den generierten geheimen Schlüssel und bewahren Sie ihn an einem sicheren Ort auf. <u>Deepgram kann Ihnen diesen geheimen Schlüssel nicht erneut anzeigen</u>.</p>
+<img alt="Deepgram generated API key secret" src="Images/deepgram-new-api-key-secret.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Fügen Sie ihn in SubVox Pro ein (Settings ▸ <em>Deepgram</em>).</p>
+</details>
+<details id="speechmatics" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="speechmatics-setup"><strong>Speechmatics</strong></h2></summary>
+<p><strong>Verwendungszweck:</strong> Spracherkennung.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Rufen Sie das <strong>Speechmatics Portal</strong> unter <strong><a href="https://portal.speechmatics.com">https://portal.speechmatics.com</a></strong> auf und erstellen Sie ein Konto. Der kostenlose Tarif bietet ein einmaliges <strong>Guthaben von 100 $</strong>, ohne dass eine Kreditkarte erforderlich ist.</p>
+<img alt="Speechmatics Portal sign-up page" src="Images/speechmatics-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Öffnen Sie in der Projekt-Seitenleiste den Menüpunkt <strong>Manage ▸ API Keys</strong>.</p>
+<img alt="Speechmatics API Keys entry in the sidebar" src="Images/speechmatics-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Klicken Sie auf <strong>Create new key</strong>.</p>
+<img alt="Speechmatics create new key button" src="Images/speechmatics-create-key-empty.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Geben Sie dem Schlüssel einen aussagekräftigen Namen und klicken Sie anschließend auf <strong>Generate new key</strong>.</p>
+<img alt="Speechmatics create API key form" src="Images/speechmatics-create-api-key-form.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Kopieren Sie den Schlüssel, bevor Sie den Dialog schließen. <u>Aus Sicherheitsgründen wird Speechmatics ihn nicht erneut anzeigen</u>.</p>
+<img alt="Speechmatics save API key dialog" src="Images/speechmatics-save-api-key.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Fügen Sie ihn in SubVox Pro ein (Settings ▸ <em>Speechmatics</em>).</p>
+<blockquote>
+<p>Dokumentation: <a href="https://docs.speechmatics.com/get-started/authentication">https://docs.speechmatics.com/get-started/authentication</a></p>
+</blockquote>
+</details>
+<details id="elevenlabs" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="elevenlabs-setup"><strong>ElevenLabs</strong></h2></summary>
+<p><strong>Verwendungszweck:</strong> Spracherkennung (ElevenLabs Scribe) und Synchronisation mittels Sprachsynthese.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Registrieren Sie sich unter <strong><a href="https://elevenlabs.io">https://elevenlabs.io</a></strong> (per E-Mail oder SSO). Eine Kreditkarte ist nicht erforderlich; der kostenlose Tarif umfasst ein
+kleines monatliches Kontingent (~10 Minuten). Der kostenlose Tarif ist <strong>nur für nichtkommerzielle Nutzung</strong> vorgesehen und erfordert die Nennung von ElevenLabs:
+Für die Synchronisation eines Spiels, das Sie veröffentlichen, benötigen Sie einen kostenpflichtigen Tarif.</p>
+<img alt="ElevenLabs sign-up page" src="Images/elevenlabs-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Öffnen Sie nach der Anmeldung <strong>Developers</strong> in der linken Seitenleiste. Hier fasst ElevenLabs den API-Zugriff,
+Protokolle, Webhooks und Umgebungsvariablen zusammen.</p>
+<img alt="ElevenLabs Developers entry in the sidebar" src="Images/elevenlabs-developers-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Wählen Sie auf der Seite Developers die Registerkarte <strong>API Keys</strong> aus und klicken Sie auf <strong>Create Key</strong>.</p>
+<img alt="ElevenLabs API Keys tab" src="Images/elevenlabs-api-keys-tab.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Geben Sie dem Schlüssel einen aussagekräftigen Namen. Wenn Sie <strong>Restrict Key</strong> aktivieren, stellen Sie sicher, dass sowohl <strong>Speech to Text</strong> als auch <strong>Text to Speech</strong> auf <strong>Access</strong> eingestellt sind. SubVox Pro verwendet Scribe für die Transkription und die Text-to-Speech-API zum Erzeugen synchronisierter Audiodateien.</p>
+<img alt="ElevenLabs create API key dialog" src="Images/elevenlabs-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<img alt="ElevenLabs Speech to Text access permission" src="Images/elevenlabs-speech-to-text-access.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<img alt="ElevenLabs Text to Speech access permission" src="Images/elevenlabs-text-to-speech-access.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Kopieren Sie den generierten API-Schlüssel, bevor Sie den Dialog schließen. <u>ElevenLabs zeigt den vollständigen Wert nur einmal an</u>.</p>
+<img alt="ElevenLabs generated API key" src="Images/elevenlabs-api-key-created.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Fügen Sie ihn in SubVox Pro ein (Settings ▸ <em>ElevenLabs</em>). Dasselbe Token wird sowohl für die ElevenLabs-Transkription als auch für die TTS-Synchronisation mit ElevenLabs verwendet.</p>
+<blockquote>
+<p>API-Referenz: Der Text-to-Speech-Endpunkt verwendet den Header <code>xi-api-key</code> und wandelt Text über
+<code>POST /v1/text-to-speech/:voice_id</code> um: <a href="https://elevenlabs.io/docs/api-reference/text-to-speech/convert">https://elevenlabs.io/docs/api-reference/text-to-speech/convert</a></p>
+</blockquote>
+</details>
+<details id="rev-ai" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="rev-ai-setup"><strong>Rev AI</strong></h2></summary>
+<p><strong>Verwendungszweck:</strong> Spracherkennung.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Registrieren Sie sich unter <strong><a href="https://www.rev.ai/auth/signup">https://www.rev.ai/auth/signup</a></strong>. Eine Kreditkarte ist nicht erforderlich; Sie erhalten <strong>Gratisguthaben für 5 Stunden</strong>.</p>
+<img alt="Rev AI sign-up page" src="Images/revai-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Rufen Sie die Seite <strong>Access Token</strong> (<strong><a href="https://www.rev.ai/access_token">https://www.rev.ai/access_token</a></strong>) auf. Sie erreichen sie auch über
+die linke Navigationsleiste unter <strong>Access Token</strong>.</p>
+<img alt="Rev AI Access Token entry in the sidebar" src="Images/revai-access-token-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Falls noch kein Token vorhanden ist, klicken Sie auf der Seite Access Token auf <strong>Generate</strong>. Rev AI erlaubt maximal zwei
+aktive Tokens gleichzeitig.</p>
+<img alt="Rev AI Access Token page before generation" src="Images/revai-access-token-empty.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Kopieren Sie das generierte Token umgehend. <u>Rev AI zeigt den vollständigen Wert nur einmal an</u>; danach enthält die Liste
+nur noch eine verkürzte Vorschau und das Erstellungsdatum.</p>
+<img alt="Rev AI generated access token" src="Images/revai-access-token-created.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Fügen Sie es in SubVox Pro ein (Settings ▸ <em>Rev AI</em>).</p>
+</details>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

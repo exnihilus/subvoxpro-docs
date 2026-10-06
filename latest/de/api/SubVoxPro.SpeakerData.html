@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Klasse SpeakerData | SubVox Pro-Dokumentation </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class SpeakerData | SubVox Pro-Dokumentation " name="title"/>
+<meta content="Ein benannter, stilistisch definierter Speaker, dem Untertitel zugeordnet werden können. Jeder Speaker ist ein eigenständiges Asset und kann daher für verschiedene Voice Lines wiederverwendet werden; das Geschlecht dient lediglich dazu, Speaker in der Editor-Auswahl zu gruppieren." name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=cdf57e6fc8" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="In diesem Artikel" name="loc:inThisArticle"/>
+<meta content="{count} Ergebnisse für „{query}“" name="loc:searchResultsCount"/>
+<meta content="Keine Ergebnisse für „{query}“" name="loc:searchNoResults"/>
+<meta content="Nach Titel filtern" name="loc:tocFilter"/>
+<meta content="Weiter" name="loc:nextArticle"/>
+<meta content="Zurück" name="loc:prevArticle"/>
+<meta content="Hell" name="loc:themeLight"/>
+<meta content="Dunkel" name="loc:themeDark"/>
+<meta content="Automatisch" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=cdf57e6fc8" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="de">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.SpeakerData.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.SpeakerData.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.SpeakerData.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Navigation umschalten" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Suchen" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Suchen" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Inhaltsverzeichnis</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.SpeakerData">
+<h1 class="text-break" data-uid="SubVoxPro.SpeakerData" id="SubVoxPro_SpeakerData">
+Klasse SpeakerData  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>Namespace</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>Ein benannter, stilistisch definierter Speaker, dem Untertitel zugeordnet werden können. Jeder Speaker ist ein eigenständiges Asset und kann daher für verschiedene Voice Lines wiederverwendet werden; das Geschlecht dient lediglich dazu, Speaker in der Editor-Auswahl zu gruppieren.</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class SpeakerData : ScriptableObject</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>Vererbung</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">SpeakerData</span></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">Konstruktoren
+</h2>
+<a data-uid="SubVoxPro.SpeakerData.#ctor*" id="SubVoxPro_SpeakerData__ctor_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.#ctor" id="SubVoxPro_SpeakerData__ctor">
+  SpeakerData()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SpeakerData()</code></pre>
+</div>
+<h2 class="section" id="properties">Eigenschaften
+</h2>
+<a data-uid="SubVoxPro.SpeakerData.Bold*" id="SubVoxPro_SpeakerData_Bold_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.Bold" id="SubVoxPro_SpeakerData_Bold">
+  Bold
+  
+  </h3>
+<div class="markdown level1 summary"><p>Ob der Name des Speakers fett dargestellt wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool Bold { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.DisplayName*" id="SubVoxPro_SpeakerData_DisplayName_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.DisplayName" id="SubVoxPro_SpeakerData_DisplayName">
+  DisplayName
+  
+  </h3>
+<div class="markdown level1 summary"><p>In den Untertiteln angezeigter Name: der Anzeigename oder, falls dieser leer ist, der Name des Assets.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string DisplayName { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.Font*" id="SubVoxPro_SpeakerData_Font_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.Font" id="SubVoxPro_SpeakerData_Font">
+  Font
+  
+  </h3>
+<div class="markdown level1 summary"><p>Optionale Schriftart für die Untertitel dieses Speakers; <code>null</code> bedeutet, dass die Schriftart des Anzeigegeräts beibehalten wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public TMP_FontAsset Font { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://docs.unity3d.com/Packages/com.unity.textmeshpro@3.0/api/TMPro.TMP_FontAsset.html">TMP_FontAsset</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.Gender*" id="SubVoxPro_SpeakerData_Gender_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.Gender" id="SubVoxPro_SpeakerData_Gender">
+  Gender
+  
+  </h3>
+<div class="markdown level1 summary"><p>Geschlecht des Speakers, das zur Auswahl passender Stimmen bei der Sprachvertonung verwendet wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public ESpeakerGender Gender { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.ESpeakerGender.html">ESpeakerGender</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.Italic*" id="SubVoxPro_SpeakerData_Italic_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.Italic" id="SubVoxPro_SpeakerData_Italic">
+  Italic
+  
+  </h3>
+<div class="markdown level1 summary"><p>Ob der Name des Speakers kursiv dargestellt wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool Italic { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.LocalizationEntry*" id="SubVoxPro_SpeakerData_LocalizationEntry_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.LocalizationEntry" id="SubVoxPro_SpeakerData_LocalizationEntry">
+  LocalizationEntry
+  
+  </h3>
+<div class="markdown level1 summary"><p>Key for the name of this Speaker in <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizationTable">LocalizationTable</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string LocalizationEntry { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.LocalizationTable*" id="SubVoxPro_SpeakerData_LocalizationTable_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.LocalizationTable" id="SubVoxPro_SpeakerData_LocalizationTable">
+  LocalizationTable
+  
+  </h3>
+<div class="markdown level1 summary"><p>Eine Sammlung von String-Tabellen, die den Namen dieses Speakers enthält und bei Installation des Unity Localization Packages verwendet wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string LocalizationTable { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.LocalizedNames*" id="SubVoxPro_SpeakerData_LocalizedNames_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.LocalizedNames" id="SubVoxPro_SpeakerData_LocalizedNames">
+  LocalizedNames
+  
+  </h3>
+<div class="markdown level1 summary"><p>The names that this Speaker uses in other languages (see <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_GetDisplayName_System_String_">GetDisplayName(string)</a>).</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;SpeakerLocalizedName&gt; LocalizedNames { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.SpeakerLocalizedName.html">SpeakerLocalizedName</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.NameColor*" id="SubVoxPro_SpeakerData_NameColor_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.NameColor" id="SubVoxPro_SpeakerData_NameColor">
+  NameColor
+  
+  </h3>
+<div class="markdown level1 summary"><p>Farbe des Namens des Speakers in den Untertiteln.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public Color NameColor { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><span class="xref">Color</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.UIToolkitFont*" id="SubVoxPro_SpeakerData_UIToolkitFont_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.UIToolkitFont" id="SubVoxPro_SpeakerData_UIToolkitFont">
+  UIToolkitFont
+  
+  </h3>
+<div class="markdown level1 summary"><p>Optionale Schriftart für die Untertitel dieses Speakers in einem UI Toolkit-Anzeigeprogramm; <code>null</code> behält seine Schriftart bei.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public FontAsset UIToolkitFont { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><span class="xref">FontAsset</span></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">Methoden
+</h2>
+<a data-uid="SubVoxPro.SpeakerData.GetDisplayName*" id="SubVoxPro_SpeakerData_GetDisplayName_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.GetDisplayName(System.String)" id="SubVoxPro_SpeakerData_GetDisplayName_System_String_">
+  GetDisplayName(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>The name displayed in a language: first the Localization Entry under “Unity Localization”, if it is set and the Package is installed, then the corresponding entry under <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizedNames">LocalizedNames</a> (first the exact entry, then the same base language), then <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_DisplayName">DisplayName</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string GetDisplayName(string language_code)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Rückgabewert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_SpeakerData_GetDisplayName_System_String__examples">Examples</h4>
+<pre><code class="lang-csharp">string name = speaker.GetDisplayName(SubVox.CurrentLanguage);</code></pre>
+<a data-uid="SubVoxPro.SpeakerData.ToRichText*" id="SubVoxPro_SpeakerData_ToRichText_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.ToRichText(System.String,System.String)" id="SubVoxPro_SpeakerData_ToRichText_System_String_System_String_">
+  ToRichText(string, string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Der Name (zuzüglich eines optionalen Suffixes wie „:“), umschlossen von Rich-Text-Tags für Farbe, Fettdruck und Kursivschrift, sodass das Suffix in derselben Farbe wie der Name dargestellt wird (für TextMeshPro). Bei Angabe einer Sprache lautet der Name <a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_GetDisplayName_System_String_">GetDisplayName(string)</a>.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string ToRichText(string suffix = "", string language_code = null)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>suffix</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Rückgabewert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

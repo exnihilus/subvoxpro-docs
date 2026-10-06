@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Klasse VoiceLineClip | SubVox Pro-Dokumentation </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineClip | SubVox Pro-Dokumentation " name="title"/>
+<meta content="Timeline-Clip, der auf einem -Asset basiert. Durch das Ablegen eines „VoiceLineData“-Objekts auf einem  wird automatisch ein solcher Clip erstellt, dessen Length standardmäßig der des längsten Audioabschnitts der Sprachzeile (Source oder Dubbing) entspricht. Wird stattdessen ein -Objekt abgelegt, wird dies durch das Feld  erfasst und vom Clip-Editor in einen Clip pro Schritt aufgeteilt (wobei das Feld anschließend wieder auf „null“ zurückgesetzt wird)." name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=cdf57e6fc8" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="In diesem Artikel" name="loc:inThisArticle"/>
+<meta content="{count} Ergebnisse für „{query}“" name="loc:searchResultsCount"/>
+<meta content="Keine Ergebnisse für „{query}“" name="loc:searchNoResults"/>
+<meta content="Nach Titel filtern" name="loc:tocFilter"/>
+<meta content="Weiter" name="loc:nextArticle"/>
+<meta content="Zurück" name="loc:prevArticle"/>
+<meta content="Hell" name="loc:themeLight"/>
+<meta content="Dunkel" name="loc:themeDark"/>
+<meta content="Automatisch" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=cdf57e6fc8" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="de">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.Timeline.VoiceLineClip.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.Timeline.VoiceLineClip.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.Timeline.VoiceLineClip.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Navigation umschalten" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="Suchen" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Suchen" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Inhaltsverzeichnis</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.Timeline.VoiceLineClip">
+<h1 class="text-break" data-uid="SubVoxPro.Timeline.VoiceLineClip" id="SubVoxPro_Timeline_VoiceLineClip">
+Klasse VoiceLineClip  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>Namespace</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a>.<a class="xref" href="SubVoxPro.Timeline.html">Timeline</a></dd></dl>
+<dl><dt>Assembly</dt><dd>SubVoxPro.Timeline.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>Timeline-Clip, der auf einem <a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html#SubVoxPro_Timeline_VoiceLineClip_VoiceLineData">VoiceLineData</a>-Asset basiert. Durch das Ablegen eines „VoiceLineData“-Objekts auf einem <a class="xref" href="SubVoxPro.Timeline.VoiceLineTrack.html">VoiceLineTrack</a> wird automatisch ein solcher Clip erstellt, dessen Length standardmäßig der des längsten Audioabschnitts der Sprachzeile (Source oder Dubbing) entspricht. Wird stattdessen ein <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a>-Objekt abgelegt, wird dies durch das Feld <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a> erfasst und vom Clip-Editor in einen Clip pro Schritt aufgeteilt (wobei das Feld anschließend wieder auf „null“ zurückgesetzt wird).</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public sealed class VoiceLineClip : PlayableAsset, ITimelineClipAsset</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>Vererbung</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineClip</span></div>
+</dd>
+</dl>
+<dl class="typelist implements">
+<dt>Implementiert</dt>
+<dd>
+<div><a class="xref" href="https://docs.unity3d.com/Packages/com.unity.timeline@1.8/api/UnityEngine.Timeline.ITimelineClipAsset.html">ITimelineClipAsset</a></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">Konstruktoren
+</h2>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.#ctor*" id="SubVoxPro_Timeline_VoiceLineClip__ctor_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.#ctor" id="SubVoxPro_Timeline_VoiceLineClip__ctor">
+  VoiceLineClip()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineClip()</code></pre>
+</div>
+<h2 class="section" id="properties">Eigenschaften
+</h2>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.EventMode*" id="SubVoxPro_Timeline_VoiceLineClip_EventMode_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.EventMode" id="SubVoxPro_Timeline_VoiceLineClip_EventMode">
+  EventMode
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wie die Events der Voice Line in der Timeline ausgelöst werden.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLineTimelineEventMode EventMode { get; set; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.Timeline.EVoiceLineTimelineEventMode.html">EVoiceLineTimelineEventMode</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.OverrideRevealMode*" id="SubVoxPro_Timeline_VoiceLineClip_OverrideRevealMode_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.OverrideRevealMode" id="SubVoxPro_Timeline_VoiceLineClip_OverrideRevealMode">
+  OverrideRevealMode
+  
+  </h3>
+<div class="markdown level1 summary"><p>Gilt, wenn dieser Clip <a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html#SubVoxPro_Timeline_VoiceLineClip_RevealMode">RevealMode</a> anstelle von <a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html#SubVoxPro_Timeline_VoiceLineClip_RevealMode">RevealMode</a> verwendet.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool OverrideRevealMode { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.RevealMode*" id="SubVoxPro_Timeline_VoiceLineClip_RevealMode_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.RevealMode" id="SubVoxPro_Timeline_VoiceLineClip_RevealMode">
+  RevealMode
+  
+  </h3>
+<div class="markdown level1 summary"><p>Der „Einblendmodus“ wird verwendet, wenn <a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html#SubVoxPro_Timeline_VoiceLineClip_OverrideRevealMode">OverrideRevealMode</a> aktiviert ist.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLineSubtitleRevealMode RevealMode { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineSubtitleRevealMode.html">EVoiceLineSubtitleRevealMode</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.VoiceLineData*" id="SubVoxPro_Timeline_VoiceLineClip_VoiceLineData_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.VoiceLineData" id="SubVoxPro_Timeline_VoiceLineClip_VoiceLineData">
+  VoiceLineData
+  
+  </h3>
+<div class="markdown level1 summary"><p>The Voice Line of the Clip.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineData VoiceLineData { get; set; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.VoiceLineSequenceData*" id="SubVoxPro_Timeline_VoiceLineClip_VoiceLineSequenceData_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.VoiceLineSequenceData" id="SubVoxPro_Timeline_VoiceLineClip_VoiceLineSequenceData">
+  VoiceLineSequenceData
+  
+  </h3>
+<div class="markdown level1 summary"><p>Eine Sequenz, die auf die Spur abgelegt wurde und vom Editor als ein Clip pro Schritt angelegt wurde.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineSequenceData VoiceLineSequenceData { get; set; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.clipCaps*" id="SubVoxPro_Timeline_VoiceLineClip_clipCaps_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.clipCaps" id="SubVoxPro_Timeline_VoiceLineClip_clipCaps">
+  clipCaps
+  
+  </h3>
+<div class="markdown level1 summary"><p>Funktionen für Timeline-Clips: keine (kein Überblenden, keine Schleifenwiedergabe und keine Geschwindigkeitsänderung).</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public ClipCaps clipCaps { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://docs.unity3d.com/Packages/com.unity.timeline@1.8/api/UnityEngine.Timeline.ClipCaps.html">ClipCaps</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.duration*" id="SubVoxPro_Timeline_VoiceLineClip_duration_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.duration" id="SubVoxPro_Timeline_VoiceLineClip_duration">
+  duration
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public override double duration { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">Methoden
+</h2>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.CreatePlayable*" id="SubVoxPro_Timeline_VoiceLineClip_CreatePlayable_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.CreatePlayable(UnityEngine.Playables.PlayableGraph,UnityEngine.GameObject)" id="SubVoxPro_Timeline_VoiceLineClip_CreatePlayable_UnityEngine_Playables_PlayableGraph_UnityEngine_GameObject_">
+  CreatePlayable(PlayableGraph, GameObject)
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)</code></pre>
+</div>
+<h4 class="section">Parameter</h4>
+<dl class="parameters">
+<dt><code>graph</code> <span class="xref">PlayableGraph</span></dt>
+<dd></dd>
+<dt><code>owner</code> <span class="xref">GameObject</span></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Rückgabewert</h4>
+<dl class="parameters">
+<dt><span class="xref">Playable</span></dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>
