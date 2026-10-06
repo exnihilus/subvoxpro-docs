@@ -129,12 +129,12 @@ devraient aussi fonctionner sous macOS et Linux, mais n’y ont pas encore été
 <p><strong>Tools ▸ SubVox Pro ▸ Hub</strong> regroupe tous les outils en <strong>neuf tuiles</strong> : éditeur de voicelines, traitement par lot,
 Google Sheets, comparaison des fournisseurs, modèles locaux supplémentaires, scène d’exemple, documentation,
 configuration des fournisseurs et réglages.</p>
-<p><img alt="Le Hub SubVox Pro avec ses neuf tuiles" src="Documentation/Images/subvoxpro-hub.png"/></p>
+<p><img alt="Le Hub SubVox Pro avec ses neuf tuiles" src="Images/subvoxpro-hub.png"/></p>
 <p>La tuile <strong>Documentation</strong> propose deux choix, <strong>Online</strong> et <strong>Local</strong>.
 <strong>Online</strong> ouvre ce site (guide, fournisseurs et référence d’API), en anglais ou en français.
 <strong>Local</strong> ouvre le PDF anglais, lisible hors connexion. <strong>Back</strong> revient à l’accueil.
 La tuile <strong>Provider Setup</strong> ouvre le PDF anglais consacré aux fournisseurs.</p>
-<p><img alt="Écran Documentation du Hub : Online, Local et Back" src="Documentation/Images/subvoxpro-hub-documentation.png"/></p>
+<p><img alt="Écran Documentation du Hub : Online, Local et Back" src="Images/subvoxpro-hub-documentation.png"/></p>
 <p><strong>1. Choisissez comment transcrire.</strong> Collez la clé API d’un service de transcription dans
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong> (<a href="providers.html">obtenir une clé</a>), ou utilisez sous Windows <strong>Whisper</strong> ou
 <strong>Parakeet</strong>, gratuits et hors connexion. Ils proposent de télécharger leur modèle à la première utilisation.</p>
@@ -144,7 +144,7 @@ choisie. Cliquez sur <strong>Add an audio track</strong> pour choisir un clip ou
 <p>Vous pouvez aussi faire un clic droit sur un fichier audio dans la fenêtre Project, puis choisir
 <strong>SubVox Pro ▸ Set Up Voice Line</strong>. Choisissez où enregistrer la nouvelle voiceline : l’éditeur s’ouvre avec
 ce clip audio déjà renseigné.</p>
-<p><img alt="Nouvelle voiceline : langue, piste audio et piste de sous-titres" src="Documentation/Images/subvoxpro-new-voice-line.png"/></p>
+<p><img alt="Nouvelle voiceline : langue, piste audio et piste de sous-titres" src="Images/subvoxpro-new-voice-line.png"/></p>
 <p><strong>3. Transcrivez.</strong> Dans <strong>AI Tools ▸ Transcription</strong>, choisissez le fournisseur et la langue parlée, cliquez sur
 <strong>Analyze</strong>, puis sur <strong>Split</strong>. Les sous-titres apparaissent sur la forme d’onde.</p>
 <p><strong>4. Ajustez.</strong> Déplacez les marqueurs, corrigez le texte dans la liste et appuyez sur <strong>Space</strong> pour écouter.</p>
@@ -158,7 +158,7 @@ SubVox.Play(myVoiceLine);
 La scène montre des voicelines, une séquence de dialogue, le changement de langue et l’apparition mot par mot.</p>
 <hr/>
 <h2 id="the-subvox-pro-window">La fenêtre SubVox Pro </h2>
-<p><img alt="Fenêtre SubVox Pro : sources, outils IA, timeline, aperçu et liste de sous-titres" src="Documentation/Images/subvoxpro-window-overview.png"/></p>
+<p><img alt="Fenêtre SubVox Pro : sources, outils IA, timeline, aperçu et liste de sous-titres" src="Images/subvoxpro-window-overview.png"/></p>
 <p>Ouvrez-la avec <strong>Tools ▸ SubVox Pro ▸ Voice Line Setup</strong> ou <strong>Set Up Voice Line</strong> dans l’Inspector d’une voiceline.
 De haut en bas :</p>
 <ul>
@@ -178,18 +178,18 @@ ou un style, puis glissez sur les mots pour les appliquer. Glisser avec le bouto
 <p>Cliquez sur le tag à côté de <strong>Voice Line Data</strong> pour choisir sa couleur et sa forme. <strong>Clear tag</strong> le retire.
 La forme permet de distinguer les voicelines sans se fier uniquement à leur couleur. Cliquez sur <strong>A-Z</strong> ou <strong>0-9</strong>
 pour utiliser une lettre ou un chiffre comme forme.</p>
-<p><img alt="Popup de tag, sélecteur A-Z ouvert et lettre A bleue sélectionnée" src="Documentation/Images/subvoxpro-tag-popup.png"/></p>
+<p><img alt="Popup de tag, sélecteur A-Z ouvert et lettre A bleue sélectionnée" src="Images/subvoxpro-tag-popup.png"/></p>
 <p>Cliquez sur le drapeau source pour choisir la langue parlée. Les drapeaux représentent des langues, pas la
 nationalité des personnages. Le sélecteur indique aussi le nom de chaque langue et son code.</p>
-<p><img alt="Sélecteur de langue source : noms, codes et drapeaux" src="Documentation/Images/subvoxpro-language-picker.png"/></p>
+<p><img alt="Sélecteur de langue source : noms, codes et drapeaux" src="Images/subvoxpro-language-picker.png"/></p>
 <h3 id="starting-without-audio">Commencer sans audio </h3>
-<p><img alt="Ajouter une piste de sous-titres : SRT, TXT ou saisie manuelle" src="Documentation/Images/subvoxpro-new-voice-line-subtitles.png"/></p>
+<p><img alt="Ajouter une piste de sous-titres : SRT, TXT ou saisie manuelle" src="Images/subvoxpro-new-voice-line-subtitles.png"/></p>
 <p>Une voiceline peut commencer par du texte. Choisissez <strong>Add a subtitles track</strong>, puis importez un <strong>.srt</strong>
 avec ses timings, un <strong>.txt</strong> avec un sous-titre par ligne, ou saisissez les lignes vous-même. Pour un TXT,
 les durées sont calculées pour laisser le temps de lire.
 Réglez <strong>Length</strong> : c’est la durée de lecture de la voiceline en jeu tant qu’elle n’a ni audio ni doublage.</p>
 <h3 id="recording-audio">Enregistrer de l’audio </h3>
-<p><img alt="Ajouter une piste audio : clip ou enregistrement au microphone" src="Documentation/Images/subvoxpro-new-voice-line-audio.png"/></p>
+<p><img alt="Ajouter une piste audio : clip ou enregistrement au microphone" src="Images/subvoxpro-new-voice-line-audio.png"/></p>
 <p><strong>Record with a microphone</strong>, dans <strong>Add an audio track</strong> ou dans le <strong>+</strong> du sélecteur AUDIO, ouvre un enregistreur.
 Choisissez le microphone, surveillez le niveau, enregistrez, réécoutez, puis cliquez sur <strong>Use recording</strong>.
 La prise est enregistrée en WAV à côté de la voiceline. Sur macOS, autorisez Unity à utiliser le microphone dans
@@ -203,7 +203,7 @@ texte trop rapide. Chaque correction proposée peut être annulée.</li>
 et choisissez la durée minimale du silence. Les parties masquées sont ombrées sur la forme d’onde.</li>
 <li><strong>Export SRT</strong> enregistre les sous-titres dans un fichier <code>.srt</code>.</li>
 </ul>
-<p><img alt="Réglages Auto blanks : silence, pause minimale, maintien et anticipation" src="Documentation/Images/subvoxpro-auto-blanks.png"/></p>
+<p><img alt="Réglages Auto blanks : silence, pause minimale, maintien et anticipation" src="Images/subvoxpro-auto-blanks.png"/></p>
 <p><strong>Silence</strong> définit l’écart de volume nécessaire entre une pause et la voix pour que cette pause soit considérée comme un silence. <strong>Min pause</strong> ignore les silences
 trop courts. <strong>Hold out</strong> conserve brièvement le texte après l’arrêt de la voix, et <strong>Lead in</strong> le fait réapparaître
 avant la reprise. <strong>Only between two lines</strong> évite de masquer puis de réafficher un sous-titre au milieu de sa phrase.</p>
@@ -213,7 +213,7 @@ doublages et les enregistrements, sont cochés ; vos fichiers d’origine ne le 
 ailleurs est verrouillé. Les fichiers partent dans la corbeille du système : rien n’est perdu définitivement.</p>
 <hr/>
 <h2 id="transcribe">Transcrire </h2>
-<p><img alt="Onglet Transcription avec Whisper local" src="Documentation/Images/subvoxpro-ai-tools-transcription.png"/></p>
+<p><img alt="Onglet Transcription avec Whisper local" src="Images/subvoxpro-ai-tools-transcription.png"/></p>
 <ol>
 <li>Choisissez un <strong>Provider</strong> et, s’il en propose plusieurs, un <strong>Model</strong>. Le badge indique si le fournisseur est
 prêt : clé enregistrée ou modèle téléchargé.</li>
@@ -229,7 +229,7 @@ Si Qwen3 ne prend pas la langue en charge, les timings du fournisseur sont conse
 <p>Fournisseurs : AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, OpenAI, ou <strong>Whisper</strong> et <strong>Parakeet</strong>
 hors connexion. <strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> compare prix, offre gratuite, utilisation commerciale
 et langues.</p>
-<p><img alt="Comparaison des fournisseurs, onglet Transcription" src="Documentation/Images/subvoxpro-provider-comparison.png"/></p>
+<p><img alt="Comparaison des fournisseurs, onglet Transcription" src="Images/subvoxpro-provider-comparison.png"/></p>
 <blockquote>
 <p>OpenAI <strong>gpt-transcribe</strong> renvoie du texte sans timing par mot ; les timings sont estimés sur le clip.
 Utilisez l’alignement local ou un fournisseur avec horodatage des mots lorsque le timing compte.</p>
@@ -237,14 +237,14 @@ Utilisez l’alignement local ou un fournisseur avec horodatage des mots lorsque
 <p>La transcription porte sur la piste choisie dans le sélecteur AUDIO, ce qui permet aussi de transcrire un doublage.</p>
 <hr/>
 <h2 id="translate">Traduire </h2>
-<p><img alt="Onglet Translation" src="Documentation/Images/subvoxpro-ai-tools-translation.png"/></p>
+<p><img alt="Onglet Translation" src="Images/subvoxpro-ai-tools-translation.png"/></p>
 <ol>
 <li>Choisissez un <strong>Provider</strong> : DeepL, Google Translate, OpenAI, Claude, Gemini, DeepSeek ou <strong>Hy-MT2</strong> local.</li>
 <li>Choisissez une langue <strong>Target</strong>, ou un <strong>preset</strong> pour traduire vers plusieurs langues à la fois.</li>
 <li>Réglez <strong>Formality</strong> pour choisir un registre formel ou familier (vouvoiement ou tutoiement, par exemple), si la langue le permet.</li>
 <li>Cliquez sur <strong>Translate</strong>. Chaque langue obtient sa piste dans le sélecteur SUBTITLES.</li>
 </ol>
-<p><img alt="Popup Target : groupe de langues et édition de sa liste" src="Documentation/Images/subvoxpro-translation-targets.png"/></p>
+<p><img alt="Popup Target : groupe de langues et édition de sa liste" src="Images/subvoxpro-translation-targets.png"/></p>
 <p>Le popup <strong>Target</strong> permet aussi de modifier les presets : <strong>+ New</strong> crée un groupe, et la colonne de droite
 permet de choisir ses langues. Sélectionnez ce preset pour traduire vers toutes ses langues en une seule opération.</p>
 <p><strong>Donnez du contexte.</strong> Si une phrase est ambiguë, écrivez un <strong>contexte global</strong> avec le bouton bulle de la
@@ -256,7 +256,7 @@ Si vous déplacez les marqueurs et coupez une phrase autrement, le badge <strong
 source, sans changer ses mots. Les doublages sont mis à jour automatiquement.</p>
 <hr/>
 <h2 id="dub-with-text-to-speech">Doubler par synthèse vocale </h2>
-<p><img alt="Onglet Dubbing avec Chatterbox local" src="Documentation/Images/subvoxpro-ai-tools-dubbing.png"/></p>
+<p><img alt="Onglet Dubbing avec Chatterbox local" src="Images/subvoxpro-ai-tools-dubbing.png"/></p>
 <ol>
 <li>Sélectionnez la langue à doubler dans SUBTITLES.</li>
 <li>Dans <strong>AI Tools ▸ Dubbing</strong>, choisissez un <strong>Provider</strong> et une <strong>Voice</strong>. Le bouton ▶ permet d’écouter un extrait de la voix.
@@ -299,7 +299,7 @@ Consultez le <a href="providers.html">guide des fournisseurs</a>.</p>
 <hr/>
 <h2 id="speakers-and-voice-personalities">Speakers et personnalités vocales </h2>
 <h3 id="speakers">Speakers </h3>
-<p><img alt="Inspector d’un speaker : style du nom et personnalités vocales" src="Documentation/Images/subvoxpro-speaker-inspector.png"/></p>
+<p><img alt="Inspector d’un speaker : style du nom et personnalités vocales" src="Images/subvoxpro-speaker-inspector.png"/></p>
 <p>Un <strong>speaker</strong> représente un personnage : il définit le nom et la couleur à afficher devant ses sous-titres,
 ainsi que ses voix de doublage. Créez-le avec <strong>Assets ▸ Create ▸ SubVox Pro ▸ Speaker</strong> ou depuis le sélecteur de speaker.</p>
 <ul>
@@ -313,7 +313,7 @@ police : <strong>Font (TextMeshPro)</strong> ou <strong>Font (UI Toolkit)</stron
 <li><strong>Keep Background Between Subtitles</strong>, activé par défaut, laisse le panneau affiché, sans texte, pendant un blank
 entre deux sous-titres. Un blank avant le premier ou après le dernier masque toujours le panneau.</li>
 </ul>
-<p><img alt="Sélecteur de speaker : onglets par genre et création d’un personnage" src="Documentation/Images/subvoxpro-speaker-picker.png"/></p>
+<p><img alt="Sélecteur de speaker : onglets par genre et création d’un personnage" src="Images/subvoxpro-speaker-picker.png"/></p>
 <p>Le sélecteur regroupe les personnages par genre. Le crayon modifie un speaker existant ; <strong>New speaker</strong> en crée un.
 Sur une ligne, l’entrée du haut revient au speaker par défaut de la voiceline.</p>
 <h3 id="voice-personalities">Personnalités vocales </h3>
@@ -330,7 +330,7 @@ uniquement le rythme pour d’autres. Au survol, le badge indique celles que la 
 <h2 id="edit-the-audio">Modifier l’audio </h2>
 <p>Les boutons à droite de la barre Timeline modifient l’audio lui-même. Chaque modification s’annule avec
 <strong>Ctrl+Z</strong>.</p>
-<p><img alt="Sélecteur d’effets audio : effets appliqués et disponibles" src="Documentation/Images/subvoxpro-audio-effect-picker.png"/></p>
+<p><img alt="Sélecteur d’effets audio : effets appliqués et disponibles" src="Images/subvoxpro-audio-effect-picker.png"/></p>
 <p><strong>Audio effects</strong> ouvre la liste des effets. Les effets déjà appliqués viennent en premier : sélectionnez-en un
 pour le modifier, ou cliquez sur sa croix pour l’annuler et le retirer.</p>
 <ul>
@@ -352,10 +352,10 @@ Glisser avec le bouton droit rétablit la voix et <strong>Esc</strong> annule le
 le meilleur résultat. <strong>Engine</strong> propose <strong>WORLD</strong> (par défaut, le plus naturel), <strong>PSOLA</strong> (plus léger) et
 <strong>Classic</strong> (le plus rapide, mais il modifie aussi le timbre).</li>
 </ul>
-<p><img alt="Courbe de volume en décibels sur la forme d’onde" src="Documentation/Images/subvoxpro-audio-effects.png"/></p>
+<p><img alt="Courbe de volume en décibels sur la forme d’onde" src="Images/subvoxpro-audio-effects.png"/></p>
 <p>Ici, la courbe baisse le volume de certains passages. La forme d’onde sert de repère dans le temps, et les points
 règlent le gain. <strong>0 dB</strong> conserve le volume original.</p>
-<p><img alt="Intonation : mélodie détectée et piste séparée de décalage de hauteur" src="Documentation/Images/subvoxpro-intonation.png"/></p>
+<p><img alt="Intonation : mélodie détectée et piste séparée de décalage de hauteur" src="Images/subvoxpro-intonation.png"/></p>
 <p>La courbe supérieure montre la mélodie détectée. La piste inférieure contient votre modification en demi-tons :
 une valeur positive rend la voix plus aiguë, une valeur négative la rend plus grave et zéro conserve l’original. Les deux restent
 séparées pour bien distinguer la voix d’origine de vos changements.</p>
@@ -486,7 +486,7 @@ emitter.PlayExternal(myVoiceLine, clock);
 audio.</p>
 <hr/>
 <h2 id="trigger-gameplay-from-a-voice-line">Déclencher du gameplay depuis une voiceline </h2>
-<p><img alt="Mode Events : losange sur la piste d’événements" src="Documentation/Images/subvoxpro-timeline-events.png"/></p>
+<p><img alt="Mode Events : losange sur la piste d’événements" src="Images/subvoxpro-timeline-events.png"/></p>
 <p>Ouvrir une porte sur « Run! », secouer la caméra sur un cri : les <strong>événements</strong> se déclenchent à un moment précis
 d’une réplique.</p>
 <ol>
@@ -548,7 +548,7 @@ d’un autre clip ne l’efface pas. Un director en pause laisse son sous-titre 
 l’arrêt.</p>
 <hr/>
 <h2 id="process-many-files-at-once">Traiter plusieurs fichiers à la fois </h2>
-<p><img alt="Fenêtre Batch Processing" src="Documentation/Images/subvoxpro-batch-window.png"/></p>
+<p><img alt="Fenêtre Batch Processing" src="Images/subvoxpro-batch-window.png"/></p>
 <p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> transforme toute une liste de fichiers audio ou <code>.srt</code> en voicelines.</p>
 <p>Pour utiliser les audios déjà dans le projet, sélectionnez plusieurs fichiers audio, faites un clic droit,
 puis choisissez <strong>SubVox Pro ▸ Batch Processing</strong>. Les fichiers s’ajoutent à la liste actuelle sans lancer
@@ -631,12 +631,12 @@ mais ils fonctionnent aussi sans.</p>
 </tbody>
 </table>
 <h3 id="whisper-offline-transcription">Whisper, transcription locale </h3>
-<p><img alt="Installation du modèle Whisper" src="Documentation/Images/subvoxpro-whisper-setup.png"/></p>
+<p><img alt="Installation du modèle Whisper" src="Images/subvoxpro-whisper-setup.png"/></p>
 <p>Choisissez <strong>Whisper</strong> dans Transcription et cliquez sur <strong>Setup model</strong>. Nous recommandons <strong>Large v3 Turbo</strong> :
 rapide, et presque aussi précis que les modèles complets. Avec une carte graphique, une courte voiceline est
 transcrite en environ une seconde.</p>
 <h3 id="parakeet-offline-transcription-european-languages">Parakeet, transcription locale en langues européennes </h3>
-<p><img alt="Installation du modèle Parakeet" src="Documentation/Images/subvoxpro-parakeet-setup.png"/></p>
+<p><img alt="Installation du modèle Parakeet" src="Images/subvoxpro-parakeet-setup.png"/></p>
 <p>Choisissez <strong>Parakeet</strong>, puis <strong>Setup model</strong> (670 Mo). Parakeet TDT, de NVIDIA, donne un texte ponctué, le timing
 des mots et détecte la langue tout seul. Il est rapide sur un processeur récent, même sans carte graphique :
 une fraction de seconde pour une courte réplique, quelques secondes pour deux minutes d’audio.
@@ -644,14 +644,14 @@ Langues : bulgare, croate, tchèque, danois, néerlandais, anglais, estonien, fi
 hongrois, italien, letton, lituanien, maltais, polonais, portugais, roumain, russe, slovaque, slovène, espagnol,
 suédois et ukrainien. Pour les autres langues, utilisez Whisper.</p>
 <h3 id="hy-mt2-offline-translation">Hy-MT2, traduction locale </h3>
-<p><img alt="Installation du modèle de traduction Hy-MT2" src="Documentation/Images/subvoxpro-hymt-setup.png"/></p>
+<p><img alt="Installation du modèle de traduction Hy-MT2" src="Images/subvoxpro-hymt-setup.png"/></p>
 <p>Choisissez <strong>Hy-MT2</strong> dans Translation et <strong>Setup model</strong>. <strong>1.8B</strong> est rapide sur toutes les machines.
 <strong>7B</strong> tient mieux compte de vos indications de contexte ; il est surtout adapté aux cartes graphiques de 8 Go
 de mémoire. Les deux modèles respectent le contexte et le niveau de formalité.</p>
 <h3 id="kokoro-offline-english-dubbing">Kokoro, doublage anglais local </h3>
 <p>Choisissez <strong>Kokoro</strong> dans Dubbing puis <strong>Install Kokoro…</strong>. Il fournit 11 voix anglaises.</p>
 <h3 id="chatterbox-offline-dubbing-in-21-languages">Chatterbox, doublage local dans 21 langues </h3>
-<p><img alt="Installation du moteur Chatterbox" src="Documentation/Images/subvoxpro-chatterbox-setup.png"/></p>
+<p><img alt="Installation du moteur Chatterbox" src="Images/subvoxpro-chatterbox-setup.png"/></p>
 <p>Choisissez <strong>Chatterbox</strong> dans Dubbing, puis <strong>Install Chatterbox…</strong>. Voix disponibles :</p>
 <ul>
 <li><strong>Original voice</strong> (par défaut) garde la voix de chaque personnage dans toutes les langues ;</li>
@@ -752,7 +752,7 @@ par défaut, pour faire le ménage en une synchronisation ; <strong>Keep</strong
 Spreadsheet ID ouvre la feuille dans le navigateur.</p>
 <hr/>
 <h2 id="settings">Réglages </h2>
-<p><img alt="Réglages : clés API, préférences, dossier de données et catalogue" src="Documentation/Images/subvoxpro-settings.png"/></p>
+<p><img alt="Réglages : clés API, préférences, dossier de données et catalogue" src="Images/subvoxpro-settings.png"/></p>
 <p>Dans <strong>Tools ▸ SubVox Pro ▸ Settings</strong> :</p>
 <ul>
 <li><strong>API Keys</strong> : une clé par service, enregistrée sur cet ordinateur uniquement, jamais dans le projet ni dans le build.
