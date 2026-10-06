@@ -106,7 +106,10 @@ Le guide et la référence d’API existent en français sur ce site ; le PDF li
 <li><a href="#settings">Réglages</a></li>
 <li><a href="#keyboard-and-mouse">Clavier et souris</a></li>
 <li><a href="#supported-languages">Langues prises en charge</a></li>
+<li><a href="#your-data-and-online-services">Vos données et les services en ligne</a></li>
+<li><a href="#ai-generated-voices-in-your-game">Voix générées par IA dans votre jeu</a></li>
 <li><a href="#where-your-files-go">Emplacement de vos fichiers</a></li>
+<li><a href="#updating-and-uninstalling">Mettre à jour et désinstaller</a></li>
 <li><a href="#troubleshooting">Dépannage</a></li>
 <li><a href="#support">Support</a></li>
 </ul>
@@ -1211,6 +1214,55 @@ l’expressivité de Chatterbox, installation ou configuration, et nettoyage des
 </tbody>
 </table>
 <hr/>
+<h2 id="your-data-and-online-services">Vos données et les services en ligne </h2>
+<p>SubVox Pro n’envoie quelque chose à un service en ligne que lorsque vous lancez une action qui l’utilise. L’envoi part
+directement de votre ordinateur, avec votre propre clé API, et ne contient que ce dont l’action a besoin :</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Ce que reçoit le fournisseur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transcribe</td>
+<td>L’audio de la voiceline</td>
+</tr>
+<tr>
+<td>Translate, <strong>Fix splits</strong></td>
+<td>Le texte des sous-titres, les noms des langues et les notes de contexte que vous avez écrites</td>
+</tr>
+<tr>
+<td>Dub, aperçu de voix</td>
+<td>Le texte à prononcer, les réglages de voix et de personnalité, et l’audio de référence quand vous clonez une voix</td>
+</tr>
+<tr>
+<td>Google Sheets</td>
+<td>Le texte des sous-titres, envoyé dans une feuille de votre propre compte Google</td>
+</tr>
+</tbody>
+</table>
+<p>Rien n’est envoyé à l’éditeur de SubVox Pro : il n’y a ni compte ni suivi d’utilisation. SubVox Pro télécharge
+seulement la liste des modèles depuis GitHub, et les modèles eux-mêmes quand vous cliquez sur <strong>Download</strong>. Les
+<a href="#offline-engines-no-account-no-api-key">moteurs locaux</a> gardent tout sur votre ordinateur.</p>
+<p>Ce qu’un fournisseur fait de vos données (conservation, entraînement, usage commercial des offres gratuites) dépend
+de ses propres conditions, résumées dans <a href="providers.html">Configuration des fournisseurs</a>. Pour des scripts ou des
+enregistrements que vous ne pouvez pas partager, utilisez les moteurs locaux.</p>
+<hr/>
+<h2 id="ai-generated-voices-in-your-game">Voix générées par IA dans votre jeu </h2>
+<ul>
+<li><strong>Prévenez vos joueurs.</strong> OpenAI exige d’indiquer aux joueurs que les voix qu’ils entendent sont générées par IA,
+et certaines boutiques, comme Steam, demandent de déclarer le contenu généré par IA à la publication. Une ligne
+dans les crédits ou le menu des options suffit en général.</li>
+<li><strong>Ne clonez que des voix que vous avez le droit d’utiliser.</strong> Obtenez le consentement écrit des comédiens dont vous
+clonez la voix. Les voix de référence fournies avec les moteurs locaux sont libres d’utilisation.</li>
+<li><strong>Vérifiez l’offre que vous utilisez.</strong> Certaines offres gratuites interdisent l’usage commercial : voir le tableau
+des offres gratuites dans <a href="providers.html">Configuration des fournisseurs</a>.</li>
+<li><strong>Faites relire les traductions.</strong> Avant la sortie, un locuteur natif peut les vérifier dans
+<a href="#human-translation-with-google-sheets">Google Sheets</a>.</li>
+</ul>
+<hr/>
 <h2 id="where-your-files-go">Emplacement de vos fichiers </h2>
 <p>Votre travail est enregistré dans le <strong>dossier de données</strong>, <code>Assets/Data/SubVoxPro/</code> par défaut, modifiable dans
 les <a href="#settings">réglages</a>. Il est indépendant du plugin : une mise à jour de SubVox Pro n’y touche pas.</p>
@@ -1252,6 +1304,29 @@ les <a href="#settings">réglages</a>. Il est indépendant du plugin : une mise 
 </tr>
 </tbody>
 </table>
+<hr/>
+<h2 id="updating-and-uninstalling">Mettre à jour et désinstaller </h2>
+<p><strong>Mettre à jour</strong></p>
+<ol>
+<li>Committez ou sauvegardez votre projet.</li>
+<li>Importez la nouvelle version depuis <strong>Window ▸ Package Manager ▸ My Assets</strong>. Votre dossier de données, vos
+réglages, vos clés API et les modèles téléchargés sont conservés. Si vous avez déplacé le dossier SubVox Pro, la
+mise à jour le suit.</li>
+<li>Redémarrez Unity pour que les nouveaux fichiers des moteurs locaux soient utilisés.</li>
+</ol>
+<p><strong>Désinstaller</strong></p>
+<ol>
+<li>Retirez les composants SubVox Pro de vos scènes et prefabs.</li>
+<li>Pour effacer les clés API de cet ordinateur, cliquez sur <strong>Clear API Keys</strong> dans les <a href="#settings">Réglages</a>. Si
+vous avez connecté un compte Google, cliquez aussi sur <strong>Disconnect</strong> dans la fenêtre Google Sheets et dans la
+connexion Google Cloud TTS.</li>
+<li>Pour libérer l’espace disque des moteurs locaux, cliquez sur <strong>Uninstall</strong> pour chacun dans <strong>Additional Models</strong>.
+Ils sont partagés par tous vos projets : ne le faites que si aucun autre projet ne les utilise.</li>
+<li>Supprimez le dossier SubVox Pro, <code>Assets/Editor/SubVoxPro</code> (les réglages) et, si vous n’avez plus besoin de vos
+voicelines, le dossier de données (<code>Assets/Data/SubVoxPro</code> par défaut). Si vous le gardez, supprimez au moins
+son dossier <code>Generated</code>, qui a besoin de SubVox Pro pour compiler.</li>
+</ol>
+<p>Les fichiers temporaires sont supprimés par Unity à sa fermeture.</p>
 <hr/>
 <h2 id="troubleshooting">Dépannage </h2>
 <ul>

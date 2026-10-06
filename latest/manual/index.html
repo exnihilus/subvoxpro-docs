@@ -118,7 +118,10 @@
 <li><a href="#settings">Settings</a></li>
 <li><a href="#keyboard-and-mouse">Keyboard and mouse</a></li>
 <li><a href="#supported-languages">Supported languages</a></li>
+<li><a href="#your-data-and-online-services">Your data and online services</a></li>
+<li><a href="#ai-generated-voices-in-your-game">AI-generated voices in your game</a></li>
 <li><a href="#where-your-files-go">Where your files go</a></li>
+<li><a href="#updating-and-uninstalling">Updating and uninstalling</a></li>
 <li><a href="#troubleshooting">Troubleshooting</a></li>
 <li><a href="#support">Support</a></li>
 </ul>
@@ -1220,6 +1223,55 @@ double-click a row to play that subtitle.</p>
 </tbody>
 </table>
 <hr>
+<h2 id="your-data-and-online-services">Your data and online services</h2>
+<p>SubVox Pro sends something to an online service only when you start an action that uses it. It sends it straight
+from your computer, with your own API key, and only what that action needs:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>What the provider receives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transcribe</td>
+<td>The audio of the voice line</td>
+</tr>
+<tr>
+<td>Translate, <strong>Fix splits</strong></td>
+<td>The subtitle text, the language names and the context notes you wrote</td>
+</tr>
+<tr>
+<td>Dub, voice preview</td>
+<td>The text to speak, the voice and personality settings, and the reference audio when you clone a voice</td>
+</tr>
+<tr>
+<td>Google Sheets</td>
+<td>The subtitle text, sent to a sheet in your own Google account</td>
+</tr>
+</tbody>
+</table>
+<p>Nothing is sent to the publisher of SubVox Pro: there is no account and no usage tracking. SubVox Pro only
+downloads the list of models from GitHub, and the models themselves when you click <strong>Download</strong>. The
+<a href="#offline-engines-no-account-no-api-key">offline engines</a> keep everything on your computer.</p>
+<p>What a provider does with your data (storage, use for training, commercial use on free plans) depends on its own
+terms, summarized in <a href="providers.html">Provider Setup</a>. For scripts or recordings you may not share, use the
+offline engines.</p>
+<hr>
+<h2 id="ai-generated-voices-in-your-game">AI-generated voices in your game</h2>
+<ul>
+<li><strong>Tell your players.</strong> OpenAI requires telling players that the voices they hear are AI-generated, and some
+stores, such as Steam, ask you to declare AI-generated content when you publish. A line in the credits or the
+settings menu is a common way to do it.</li>
+<li><strong>Clone only voices you have the right to use.</strong> Get the written consent of the actors whose voices you clone.
+The reference voices that come with the offline engines are free to use.</li>
+<li><strong>Check the plan you use.</strong> Some free plans forbid commercial use: see the free-tier table in
+<a href="providers.html">Provider Setup</a>.</li>
+<li><strong>Have translations reviewed.</strong> Before shipping, a native speaker can check them in
+<a href="#human-translation-with-google-sheets">Google Sheets</a>.</li>
+</ul>
+<hr>
 <h2 id="where-your-files-go">Where your files go</h2>
 <p>Your work is saved in the <strong>data folder</strong>, <code>Assets/Data/SubVoxPro/</code> by default (change it in
 <a href="#settings">Settings</a>). It sits outside the SubVox Pro folder, so updating the asset never touches it.</p>
@@ -1261,6 +1313,27 @@ double-click a row to play that subtitle.</p>
 </tr>
 </tbody>
 </table>
+<hr>
+<h2 id="updating-and-uninstalling">Updating and uninstalling</h2>
+<p><strong>Updating</strong></p>
+<ol>
+<li>Commit or back up your project.</li>
+<li>Import the new version from <strong>Window ▸ Package Manager ▸ My Assets</strong>. Your data folder, settings, API keys and
+downloaded models are kept. If you moved the SubVox Pro folder, the update follows it.</li>
+<li>Restart Unity, so the new offline engine files are used.</li>
+</ol>
+<p><strong>Uninstalling</strong></p>
+<ol>
+<li>Remove the SubVox Pro components from your scenes and prefabs.</li>
+<li>To remove the API keys from this computer, click <strong>Clear API Keys</strong> in <a href="#settings">Settings</a>. If you connected
+a Google account, also click <strong>Disconnect</strong> in the Google Sheets window and in the Google Cloud TTS sign-in.</li>
+<li>To free the disk space used by the offline engines, click <strong>Uninstall</strong> for each one in <strong>Additional Models</strong>.
+They are shared by all your projects, so only do this if no other project uses them.</li>
+<li>Delete the SubVox Pro folder, <code>Assets/Editor/SubVoxPro</code> (the settings) and, if you no longer need your voice
+lines, the data folder (<code>Assets/Data/SubVoxPro</code> by default). If you keep it, delete at least its <code>Generated</code>
+folder, which needs SubVox Pro to compile.</li>
+</ol>
+<p>Temporary files are deleted by Unity when it closes.</p>
 <hr>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <ul>
