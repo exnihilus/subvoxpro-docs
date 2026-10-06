@@ -4018,6 +4018,18 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineEventDispatcher.Register
   fullName: SubVoxPro.VoiceLineEventDispatcher.Register
   nameWithType: VoiceLineEventDispatcher.Register
+- uid: SubVoxPro.VoiceLineEventDispatcher.ScanScenesAutomatically
+  name: ScanScenesAutomatically
+  href: api/SubVoxPro.VoiceLineEventDispatcher.html#SubVoxPro_VoiceLineEventDispatcher_ScanScenesAutomatically
+  commentId: P:SubVoxPro.VoiceLineEventDispatcher.ScanScenesAutomatically
+  fullName: SubVoxPro.VoiceLineEventDispatcher.ScanScenesAutomatically
+  nameWithType: VoiceLineEventDispatcher.ScanScenesAutomatically
+- uid: SubVoxPro.VoiceLineEventDispatcher.ScanScenesAutomatically*
+  name: ScanScenesAutomatically
+  href: api/SubVoxPro.VoiceLineEventDispatcher.html#SubVoxPro_VoiceLineEventDispatcher_ScanScenesAutomatically_
+  commentId: Overload:SubVoxPro.VoiceLineEventDispatcher.ScanScenesAutomatically
+  fullName: SubVoxPro.VoiceLineEventDispatcher.ScanScenesAutomatically
+  nameWithType: VoiceLineEventDispatcher.ScanScenesAutomatically
 - uid: SubVoxPro.VoiceLineEventDispatcher.Unregister(UnityEngine.MonoBehaviour)
   name: Unregister(MonoBehaviour)
   href: api/SubVoxPro.VoiceLineEventDispatcher.html#SubVoxPro_VoiceLineEventDispatcher_Unregister_UnityEngine_MonoBehaviour_

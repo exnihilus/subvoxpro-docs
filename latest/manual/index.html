@@ -524,7 +524,8 @@ deleted. Renaming a key or category deliberately leaves old references as compil
 Scripts without an assembly definition see them directly; if your scripts have one, add a reference to
 <strong>SubVoxPro.Events</strong>.</p>
 <p>The <strong>[SubVox Pro]</strong> prefab finds these methods on its own. If you create objects at runtime, call
-<code>VoiceLineEventDispatcher.Refresh()</code> afterwards.</p>
+<code>VoiceLineEventDispatcher.Register(this)</code> from them. On a very large scene, you can untick
+<strong>Scan Scenes Automatically</strong> on the dispatcher and register your objects yourself.</p>
 </li>
 <li><p><strong>C#</strong> — <code>SubVox.Subscribe(signal, MyMethod)</code> calls your method each time that signal fires
 (<code>SubVox.Unsubscribe</code> to stop).</p>

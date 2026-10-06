@@ -134,11 +134,13 @@ redistributed by the Asset:</p>
 <hr/>
 <h2 id="2-bundled-local-inference-runtime">2. Bundled local inference runtime</h2>
 <p>The Asset redistributes <strong>Microsoft ONNX Runtime 1.24.4</strong> with its DirectML execution provider
-(<code>Microsoft.ML.OnnxRuntime.dll</code> and <code>onnxruntime.dll</code>) and <strong>Microsoft DirectML 1.15.4</strong> (<code>DirectML.dll</code>) for
+(<code>SubVoxPro.OnnxRuntime.dll</code> and <code>subvox_onnxruntime.dll</code>) and <strong>Microsoft DirectML 1.15.4</strong> (<code>DirectML.dll</code>) for
 in-process Kokoro and Chatterbox synthesis and Qwen forced alignment.</p>
 <ul>
 <li>ONNX Runtime — License: <strong>MIT License</strong>. Source: <a href="https://github.com/microsoft/onnxruntime">https://github.com/microsoft/onnxruntime</a>. The complete
-license text is included at <code>Plugins/ONNX-RUNTIME-LICENSE.txt</code>.</li>
+license text is included at <code>Plugins/ONNX-RUNTIME-LICENSE.txt</code>. Modification: the official NuGet binaries
+(<code>Microsoft.ML.OnnxRuntime.dll</code>, <code>onnxruntime.dll</code>) are renamed, and the managed assembly is re-targeted to the
+renamed native library and left unsigned, so they cannot clash with another copy of ONNX Runtime in the project.</li>
 <li>DirectML — License: <strong>Microsoft DirectML License</strong>, which permits redistributing <code>DirectML.dll</code> inside
 applications built with machine-learning tools and frameworks. Source:
 <a href="https://www.nuget.org/packages/Microsoft.AI.DirectML">https://www.nuget.org/packages/Microsoft.AI.DirectML</a>. The complete license and its third-party notices are
@@ -149,7 +151,8 @@ not required by SubVox Pro's runtime subtitle playback.</li>
 <hr/>
 <h2 id="3-bundled-offline-transcription-engine-models-downloaded-by-the-user">3. Bundled offline transcription engine (models downloaded by the user)</h2>
 <p>The optional offline transcription feature runs <strong>whisper.cpp</strong> and its <strong>ggml</strong> tensor library in-process
-(<code>whisper.dll</code> and <code>ggml*.dll</code>, built from whisper.cpp release <code>b5130</code> with the Vulkan and CPU backends).</p>
+(<code>subvox_whisper.dll</code> and <code>subvox_ggml*.dll</code>, built from whisper.cpp release <code>b5130</code> with the Vulkan and CPU
+backends; the only modification is the <code>subvox_</code> file-name prefix, which avoids clashes with other builds).</p>
 <ul>
 <li>License: <strong>MIT License</strong>.</li>
 <li>Source: <a href="https://github.com/ggml-org/whisper.cpp">https://github.com/ggml-org/whisper.cpp</a>.</li>
@@ -197,7 +200,7 @@ for example in your game's credits: <em>"Speech recognition: NVIDIA Parakeet TDT
 License text: <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>.</li>
 </ul>
 <h3 id="offline-translation-engine-models-downloaded-by-the-user">Offline translation engine (models downloaded by the user)</h3>
-<p>The optional offline translation feature runs <strong>llama.cpp</strong> in-process (<code>llama.dll</code>, built from llama.cpp release
+<p>The optional offline translation feature runs <strong>llama.cpp</strong> in-process (<code>subvox_llama.dll</code>, built from llama.cpp release
 <code>b10830</code>) on the ggml library listed above, which both engines share.</p>
 <ul>
 <li>License: <strong>MIT License</strong>.</li>
