@@ -297,9 +297,10 @@ subtitle language.</p>
 <p>Providers: InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, and offline <strong>Kokoro</strong> (English) and
 <strong>Chatterbox</strong> (21 languages, keeps each character's voice), plus <strong>Qwen3 TTS 1.7B</strong> (ten languages, reference cloning, fixed voices and voice design) and <strong>VoxCPM2</strong> (30 languages, reference cloning with written style control, and voice design).</p>
 <ul>
-<li><strong>Word timing</strong> — leave it on <strong>Qwen3 aligner (local)</strong> for words that appear exactly when they are spoken
-(<a href="#qwen3-offline-word-timing">install it once</a>), or <strong>Estimated</strong> if you don't reveal subtitles word by
-word.</li>
+<li><strong>Word timing</strong> — <strong>Qwen3 aligner (local)</strong> makes words appear exactly when they are spoken
+(<a href="#qwen3-offline-word-timing">install it once</a>); <strong>Estimated</strong> spreads each line's words over its length;
+<strong>None</strong> keeps line timings only, if you don't reveal subtitles word by word. It starts on <strong>Qwen3 aligner</strong> once
+the aligner is installed, and on <strong>None</strong> before that.</li>
 <li><strong>Voice direction</strong> — the speech-bubble button next to the voice gives the tone of the performance (for example
 <em>calm, whispering</em>), on the providers that understand it.</li>
 <li><strong>REGEN</strong> — when a line's dub no longer matches (text, voice or personality changed), an orange <strong>REGEN</strong> chip
@@ -573,8 +574,9 @@ duplicates are ignored. Wait for a running batch to finish before adding files t
 buttons tells you how many files were added.</li>
 <li>Turn on the steps you need — <strong>Transcription</strong>, <strong>Translation</strong>, <strong>Dubbing</strong> — and set them up once for all
 files. A file can override its languages. To clear a voice chosen for a language, right-click it. The batch
-offers <strong>One per line</strong> and <strong>All together</strong> for dubbing; <strong>Groups</strong> are drawn per voice line in the editor.</li>
-<li>Check the <strong>Estimated cost</strong>, then click <strong>Run batch</strong>. The button stays grayed out until everything is ready, and
+offers <strong>One per line</strong> and <strong>All together</strong> for dubbing; <strong>Groups</strong> are drawn per voice line in the editor.
+With many languages, the voice list scrolls.</li>
+<li>Check the <strong>Estimated cost</strong> (its total is shown on the folded header; click it to see the detail), then click <strong>Run batch</strong>. The button stays grayed out until everything is ready, and
 tells you what is missing. If the length of an audio file cannot be read, the estimate says so and does not
 count it.</li>
 </ol>
