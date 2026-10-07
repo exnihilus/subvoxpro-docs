@@ -572,13 +572,18 @@ duplicates are ignored. Wait for a running batch to finish before adding files t
 <li>Drop files or folders, or use <strong>Add files…</strong> / <strong>Add folder…</strong> (subfolders included). A line under the
 buttons tells you how many files were added.</li>
 <li>Turn on the steps you need — <strong>Transcription</strong>, <strong>Translation</strong>, <strong>Dubbing</strong> — and set them up once for all
-files. A file can override its languages.</li>
+files. A file can override its languages. To clear a voice chosen for a language, right-click it. The batch
+offers <strong>One per line</strong> and <strong>All together</strong> for dubbing; <strong>Groups</strong> are drawn per voice line in the editor.</li>
 <li>Check the <strong>Estimated cost</strong>, then click <strong>Run batch</strong>. The button stays grayed out until everything is ready, and
-tells you what is missing.</li>
+tells you what is missing. If the length of an audio file cannot be read, the estimate says so and does not
+count it.</li>
 </ol>
 <p>Each file becomes its own voice line. The batch does one step for all files before the next one (for example
 every transcription, then every translation, then every dub), which is faster with the offline engines. You can
-cancel at any time and export a report of the run; clicking <strong>Run batch</strong> again picks up where each file stopped.
+cancel at any time and export a report of the run; clicking <strong>Run batch</strong> again picks up where each file stopped,
+even after restarting Unity, without copying the audio a second time. When a step is skipped (for example a
+language the dubbing provider cannot voice), a ⚠ line under the file explains why and the file reads
+<strong>Done with warnings</strong>.
 Once a file is done, <strong>Open</strong> shows its voice line in the editor, and <strong>Re-run</strong> queues its translation and
 dubbing again (for example after adding a language).</p>
 <hr>
