@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>翻訳プロバイダー | SubVox Pro ドキュメント </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="翻訳プロバイダー | SubVox Pro ドキュメント " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=78ab4245ab" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="この記事の内容" name="loc:inThisArticle"/>
+<meta content="「{query}」の検索結果：{count} 件" name="loc:searchResultsCount"/>
+<meta content="「{query}」に一致する結果はありません" name="loc:searchNoResults"/>
+<meta content="タイトルで絞り込み" name="loc:tocFilter"/>
+<meta content="次へ" name="loc:nextArticle"/>
+<meta content="前へ" name="loc:prevArticle"/>
+<meta content="ライト" name="loc:themeLight"/>
+<meta content="ダーク" name="loc:themeDark"/>
+<meta content="自動" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=78ab4245ab" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="ja">
+  <link rel="alternate" hreflang="en" href="../../manual/providers-translation.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers-translation.html">
+<link rel="alternate" hreflang="de" href="../../de/manual/providers-translation.html">
+<link rel="alternate" hreflang="ja" href="../../ja/manual/providers-translation.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="ナビゲーションの切り替え" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="検索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="検索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目次</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="translation-providers">翻訳プロバイダー </h1>
+<details id="deepl" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="deepl-setup"><strong>DeepL</strong></h2></summary>
+<p><strong>用途：</strong>高品質な機械翻訳（文体の丁寧さに対応）。</p>
+<ol>
+<li><strong><a href="https://www.deepl.com/pro-api">https://www.deepl.com/pro-api</a></strong>でAPIの利用登録をします。<strong>Developer</strong>プランのカードで、
+<strong>Sign up for free</strong>を選択します。DeepLでメールアドレスを認証した後、支払いカードの確認手続きを完了します。カードの確認はアカウントの検証に使用されますが、Developerプランには課金されません。無料のDeveloperプランには、<strong>1,000,000文字分の1回限りのクレジット</strong>が含まれています。
+<img alt="DeepL API pricing — free Developer plan" src="Images/deepl-pricing.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li><strong><a href="https://www.deepl.com/your-account/keys">https://www.deepl.com/your-account/keys</a></strong>（Account ▸ <strong>API Keys</strong>）を開き、
+<strong>Authentication Key</strong>をコピーします。
+<img alt="DeepL API Keys page showing the authentication key" src="Images/deepl-api-keys.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>キーをSubVox Pro（Settings ▸ <em>DeepL</em>）に貼り付けます。SubVox Proは、FreeとProのエンドポイントを自動的に判別します。</li>
+</ol>
+<blockquote>
+<p>ヘルプ：<a href="https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API">https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API</a></p>
+</blockquote>
+</details>
+<details id="google-cloud-translation" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="google-cloud-translation-setup"><strong>Google Cloud Translation</strong></h2></summary>
+<p><strong>用途：</strong>機械翻訳。</p>
+<ol>
+<li><strong><a href="https://console.cloud.google.com">https://console.cloud.google.com</a></strong>で<strong>Google Cloud Console</strong>を開き、プロジェクトを作成（または選択）します。新しいGoogle Cloudアカウントには<strong>$300の試用クレジット（90日間）</strong>が付与され、Cloud Translation
+には<strong>月間500,000文字の無料利用枠</strong>が含まれています。無料枠を利用する場合でも、請求先アカウントが必要です。</li>
+<li><strong>APIs &amp; Services ▸ Library</strong>で<strong>Cloud Translation API</strong>を検索し、<strong>Enable</strong>をクリックします。</li>
+<li><strong>APIs &amp; Services ▸ Credentials</strong>で、<strong>Create credentials ▸ API key</strong>をクリックします。キーをコピーします（必要に応じて、使用先をCloud Translation APIに制限します）。</li>
+<li>SubVox Pro（Settings ▸ <em>Google Translate</em>）にキーを貼り付けます。</li>
+</ol>
+<blockquote>
+<p>ヒント：試用クレジットが切れた際の予期せぬ出費を避けるため、クォータ／予算のアラートを設定してください。</p>
+</blockquote>
+</details>
+<details id="openai" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="openai-setup"><strong>OpenAI</strong></h2></summary>
+<p><strong>用途：</strong>音声認識、LLMによる翻訳（および単語のスタイルを他の言語に引き継ぐ処理）、音声合成による吹き替え。1つのキーでこれら3つすべてに対応します。</p>
+<ol>
+<li><strong><a href="https://platform.openai.com">https://platform.openai.com</a></strong>でアカウントを作成するか、既存のOpenAIアカウントでログインします。
+<img alt="OpenAI API Platform sign-in page" src="Images/openai-platform-sign-in.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>プロジェクトのサイドバーで、<strong>API Keys</strong>を開きます。
+<img alt="OpenAI project sidebar with API Keys selected" src="Images/openai-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li><strong>Create new secret key</strong>をクリックします。
+<img alt="OpenAI API Keys page with Create new secret key button" src="Images/openai-api-keys-page.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>必要に応じてキーに名前を付け、正しいプロジェクトが選択されていることを確認し、必要な権限を選択してから、
+<strong>Create secret key</strong>をクリックします。
+<img alt="OpenAI create new secret key dialog" src="Images/openai-create-secret-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>すぐにキーをコピーしてください。<u>OpenAIではシークレットキーの全文は1回しか表示されません。このダイアログを閉じると、再度表示できません。</u>
+<img alt="OpenAI generated secret key dialog" src="Images/openai-secret-key-created.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li><strong><a href="https://platform.openai.com/settings/organization/billing/overview">https://platform.openai.com/settings/organization/billing/overview</a></strong>からプリペイドクレジットを追加します。また、アカウントメニューを開き、<strong>Organization settings</strong>または<strong>Profile settings</strong>に移動し、設定サイドバーで<strong>Billing</strong>を選択する方法もあります。<div style="display: flex; gap: 12px; align-items: flex-start; margin: 10px 0 18px;">
+<img alt="OpenAI account menu with Organization settings and Profile settings entries" src="Images/openai-account-menu.png" style="display: block; width: 220px; max-width: 48%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10);"/>
+<img alt="OpenAI organization sidebar with Billing selected" src="Images/openai-billing-sidebar.png" style="display: block; width: 220px; max-width: 48%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10);"/>
+</div>
+</li>
+<li><strong>Billing</strong>の概要画面で、<strong>Add to credit balance</strong>をクリックします。API呼び出しの料金はこの残高から差し引かれます。
+<img alt="OpenAI Billing overview with credit balance and Add to credit balance button" src="Images/openai-billing-overview.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>追加する金額を入力し、支払い方法を選択または追加してから、<strong>Continue</strong>をクリックします。プラットフォームに表示される最低追加額は、通常<strong>$5</strong>です。
+<img alt="OpenAI Add to credit balance dialog" src="Images/openai-add-credit-balance.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>シークレットキーをSubVox Pro（Settings ▸ <em>OpenAI</em>）に貼り付けます。翻訳パネルでモデルを選択します。吹き替えを行う場合は、<strong>Text-to-Speech</strong>タブでプロバイダーとして<strong>OpenAI</strong>を選択し、次にモデルとして
+<strong>gpt-realtime-2.1-mini</strong>（10種類のボイス、voice direction（演技指示）に対応）を選択します。このモデルはRealtime API経由で利用します。既存のモデル選択は自動的に移行されます。廃止されたボイス<strong>fable</strong>、<strong>nova</strong>、<strong>onyx</strong>
+については、新しいボイスを選択する必要があります。Realtimeは、台本を一字一句そのまま読み上げる指示のもとで動作します。生成されたセリフを確認してください。
+Realtime音声出力料金は、<strong>1分あたり約$0.024</strong>に加え、テキストトークン料金（入力100万トークンあたり$0.60、出力100万トークンあたり$2.40）がかかります。
+Batch（バッチ）の料金見積もりには音声とテキストの両方が含まれ、1秒あたり14文字、1トークンあたり4文字を基準としています。voice directionや話すテンポによって、請求額が変動する場合があります。文字起こしを行う場合は、<strong>Speech-to-Text</strong>タブで<strong>OpenAI</strong>を選択し、その後モデルを選択します。</li>
+</ol>
+<blockquote>
+<p><strong>Transcriptionモデル — 選択する前にお読みください。</strong></p>
+<ul>
+<li>**<code>gpt-transcribe</code><strong>：録音音声用の現在のモデルです。APIは単語（word）のタイムスタンプを含まないテキストを返します。
+SubVox Proがクリップ全体にわたってタイミングを推定します。タイミングが重要な場合は、ローカルのアラインメント機能または単語のタイムスタンプを提供するプロバイダーを使用してください。</strong></li>
+<li>保存済みの<code>whisper-1</code><strong>、</strong><code>gpt-4o-transcribe</code><strong>、</strong><code>gpt-4o-mini-transcribe</code>**の選択は、
+<code>gpt-transcribe</code>へ移行されます。これにより、<code>whisper-1</code>が以前提供していた単語のタイムスタンプは提供されなくなります。</li>
+<li>その他のプロバイダー（AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、ローカルのWhisperおよびParakeet）は、句読点付きの単語とその時刻（time）情報を直接返します。タイミングが重要な場合は、これらを優先して使用してください。</li>
+</ul>
+<p>文字起こしエンドポイントのアップロード上限は<strong>25 MB</strong>です。<a href="https://developers.openai.com/api/docs/deprecations">OpenAIの非推奨機能</a>を参照してください。</p>
+</blockquote>
+<blockquote>
+<p>OpenAIの利用ポリシーでは、プレイヤーに対し、再生される音声がAIで生成されたものであり、人間によるものではないことを明示することが求められています。例えば、ゲームのクレジットやストアページに記載してください。TTSの料金：<a href="https://openai.com/api/pricing">https://openai.com/api/pricing</a></p>
+</blockquote>
+</details>
+<details id="anthropic-claude" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="anthropic-claude-setup"><strong>Anthropic (Claude)</strong></h2></summary>
+<p><strong>用途：</strong> LLMによる翻訳（および単語のスタイルの引き継ぎ）。</p>
+<ol>
+<li><strong><a href="https://console.anthropic.com">https://console.anthropic.com</a></strong>でアカウントを作成するか、既存のAnthropicアカウントでログインします。
+<img alt="Anthropic Console sign-in page" src="Images/anthropic-console-sign-in.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>APIを使用する前に、利用クレジットを購入します。Anthropicはプリペイド方式で、クレジットがないとAPIリクエストは失敗します。コンソールでは、通常<strong>5 USD</strong>という少額から購入できます。
+<img alt="Anthropic Console buy usage credits page" src="Images/anthropic-buy-credits.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>Claudeコンソールのサイドバーで、<strong>API keys</strong>を開きます。
+<img alt="Claude Console sidebar with API keys selected" src="Images/anthropic-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li><strong>Create key</strong>をクリックします。
+<img alt="Claude Console API keys page with create key button" src="Images/anthropic-api-keys-page.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>ワークスペースを選択し、必要に応じてキーに名前を付けてから、<strong>Add</strong>をクリックします。
+<img alt="Claude Console create an API key dialog" src="Images/anthropic-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>生成されたキーをすぐにコピーしてください。<u>Anthropicは、この画面を閉じるとキーの全文を確認できなくなると説明しています。</u>
+<img alt="Claude Console generated API key screen" src="Images/anthropic-api-key-created.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>SubVox Pro（Settings ▸ <em>Claude</em>）にキーを貼り付けます。</li>
+</ol>
+</details>
+<details id="google-gemini" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="google-gemini-setup"><strong>Google (Gemini)</strong></h2></summary>
+<p><strong>用途：</strong> LLMによる翻訳および音声合成による吹き替え（Geminiのボイス）。最も手軽な無料の選択肢です（課金不要）。1つのキーで両方を利用できます。</p>
+<ol>
+<li><strong><a href="https://aistudio.google.com">https://aistudio.google.com</a></strong>の<strong>Google AI Studio</strong>にアクセスし、Googleアカウントでログインします。
+<img alt="Google AI Studio home page" src="Images/gemini-ai-studio-home.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li><strong><a href="https://aistudio.google.com/app/apikey">https://aistudio.google.com/app/apikey</a></strong>で<strong>API keys</strong>を直接開き、
+<strong>Create an API key</strong>をクリックします。
+<img alt="Google AI Studio API keys page with Create an API key button" src="Images/gemini-api-keys-page.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>必要に応じてキーに名前を付け、プロジェクトを選択または作成してから、キーを作成します。
+<img alt="Google AI Studio create API key dialog" src="Images/gemini-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>詳細パネルからAPIキーをコピーします。
+<img alt="Google AI Studio API key details panel" src="Images/gemini-api-key-details.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>キーがAPI keysの一覧に表示されます。ここでは、キーのコピーや使用状況の確認ができ、課金の設定も後から行えます。
+<img alt="Google AI Studio API key row" src="Images/gemini-api-key-row.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>SubVox Pro（Settings ▸ <em>Gemini</em>）にキーを貼り付けます。吹き替えを行う場合は、プロバイダーとして<strong>Gemini</strong>を
+<strong>Text-to-Speech</strong>タブで選択します。30種類の多言語ボイス（<em>Kore</em>、<em>Puck</em>、<em>Leda</em>など）と、
+voice directionを設定するボタンを利用できます。利用可能なモデルは3つあります。<strong>gemini-3.1-flash-tts-preview</strong>（デフォルト、最も自然）、
+<strong>gemini-2.5-flash-preview-tts</strong>（有料利用時の料金が半額）、<strong>gemini-2.5-pro-preview-tts</strong>（無料枠なし、課金が必要）です。</li>
+</ol>
+<blockquote>
+<p>無料枠では<strong>課金不要</strong>ですが、レート制限があります。各モデルの制限はAI Studio
+（<strong>Rate limit</strong>ページ）に表示されています。音声合成の制限が最も厳しく、1分あたりおよび1日あたりのリクエスト数は数回に限られます。
+SubVox Proは、Googleが待機時間を通知した場合、その時間だけ待機して再試行し、
+1日のクォータを使い切ると、明確なメッセージを表示して停止します。キーのプロジェクトで課金を有効にすると、これらの制限が解除されます。それ以外は、SubVox Proの動作は変わりません。無料枠では、Googleが自社製品の改善のために、入力したプロンプトを使用する場合があります。</p>
+</blockquote>
+</details>
+<details id="deepseek" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="deepseek-setup"><strong>DeepSeek</strong></h2></summary>
+<p><strong>用途：</strong>低コストのLLMによる翻訳（OpenAI互換API）。</p>
+<ol>
+<li><strong><a href="https://platform.deepseek.com">https://platform.deepseek.com</a></strong>でアカウントを作成するか、既存のDeepSeekアカウントでログインします。</li>
+<li>DeepSeekはプリペイド方式です。プラットフォームで<strong>Top up</strong>を開き、APIを使用する前に残高を追加します。残高がない場合、APIリクエストは失敗します。</li>
+<li><strong>API keys</strong>（<strong><a href="https://platform.deepseek.com/api_keys">https://platform.deepseek.com/api_keys</a></strong>）を開き、<strong>Create new API key</strong>をクリックします。
+<code>SubVoxPro</code>のような識別しやすい名前を付け、すぐにキーをコピーしてください。キーの全文が表示されるのは1回だけです。</li>
+<li>そのキーをSubVox Pro（Settings ▸ <em>DeepSeek</em>）に貼り付けます。翻訳パネルでモデルを選択します。</li>
+</ol>
+<blockquote>
+<p>料金：<a href="https://api-docs.deepseek.com/quick_start/pricing">https://api-docs.deepseek.com/quick_start/pricing</a></p>
+</blockquote>
+</details>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

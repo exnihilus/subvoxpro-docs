@@ -1,6 +1,6 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=cdf57e6fc8";
-import { startVersionPicker } from "./versions.js?v=cdf57e6fc8";
-import { localize, startLanguagePicker } from "./languages.js?v=cdf57e6fc8";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=78ab4245ab";
+import { startVersionPicker } from "./versions.js?v=78ab4245ab";
+import { localize, startLanguagePicker } from "./languages.js?v=78ab4245ab";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
@@ -73,7 +73,7 @@ function startDemo() {
     audio.pause();
     audio.currentTime = 0;
     demo.classList.remove("svx-playing");
-    button.setAttribute("aria-label", localize("Play the example line", "Lire la réplique d’exemple", "Beispielzeile abspielen"));
+    button.setAttribute("aria-label", localize("Play the example line", "Lire la réplique d’exemple", "Beispielzeile abspielen", "サンプルのセリフを再生"));
     tick();
   };
 
@@ -85,7 +85,7 @@ function startDemo() {
 
     audio.currentTime = 0;
     demo.classList.add("svx-playing");
-    button.setAttribute("aria-label", localize("Stop the example line", "Arrêter la réplique d’exemple", "Beispielzeile stoppen"));
+    button.setAttribute("aria-label", localize("Stop the example line", "Arrêter la réplique d’exemple", "Beispielzeile stoppen", "サンプルのセリフを停止"));
     clearInterval(timer);
     timer = setInterval(tick, 30);
     audio.play().catch(stop);
@@ -107,10 +107,10 @@ function badgesOf(signature, name) {
   if (/\bstatic\b/.test(declaration)) badges.push(["static", "static"]);
   if (/\bconst\b/.test(declaration)) badges.push(["const", "static"]);
   if (/\babstract\b/.test(declaration)) badges.push(["abstract", "override"]);
-  if (/\bvirtual\b/.test(declaration)) badges.push([localize("overridable", "redéfinissable", "überschreibbar"), "override"]);
+  if (/\bvirtual\b/.test(declaration)) badges.push([localize("overridable", "redéfinissable", "überschreibbar", "オーバーライド可能"), "override"]);
   if (/\boverride\b/.test(declaration)) badges.push(["override", "override"]);
-  if (/\{\s*get;\s*\}/.test(signature) || /\breadonly\b/.test(declaration)) badges.push([localize("read-only", "lecture seule", "schreibgeschützt"), "readonly"]);
-  if (UNITY_MESSAGES.has(name.replace(/\(.*$/, ""))) badges.push([localize("Unity message", "message Unity", "Unity-Nachricht"), "unity"]);
+  if (/\{\s*get;\s*\}/.test(signature) || /\breadonly\b/.test(declaration)) badges.push([localize("read-only", "lecture seule", "schreibgeschützt", "読み取り専用"), "readonly"]);
+  if (UNITY_MESSAGES.has(name.replace(/\(.*$/, ""))) badges.push([localize("Unity message", "message Unity", "Unity-Nachricht", "Unity メッセージ"), "unity"]);
   return badges;
 }
 
@@ -136,10 +136,10 @@ function firstSentence(element) {
   return text;
 }
 
-const ACCESS_FILTERS = [["all", localize("All", "Tous", "Alle")], ["public", "Public"], ["protected", "Protected"]];
+const ACCESS_FILTERS = [["all", localize("All", "Tous", "Alle", "すべて")], ["public", "Public"], ["protected", "Protected"]];
 const ACCESS_ZONES = {
-  public: { label: "Public", hint: localize("Call these from any script.", "Accessibles depuis n’importe quel script.", "Aus jedem Skript aufrufbar.") },
-  protected: { label: localize("Protected — for subclasses", "Protected : pour les sous-classes", "Protected – für Unterklassen"), hint: localize("Only reachable from a class that derives from this one.", "Accessibles uniquement depuis une classe dérivée.", "Nur aus einer abgeleiteten Klasse erreichbar.") }
+  public: { label: "Public", hint: localize("Call these from any script.", "Accessibles depuis n’importe quel script.", "Aus jedem Skript aufrufbar.", "どのスクリプトからでも呼び出せます。") },
+  protected: { label: localize("Protected — for subclasses", "Protected : pour les sous-classes", "Protected – für Unterklassen", "Protected：サブクラス向け"), hint: localize("Only reachable from a class that derives from this one.", "Accessibles uniquement depuis une classe dérivée.", "Nur aus einer abgeleiteten Klasse erreichbar.", "このクラスを継承したクラスからのみアクセスできます。") }
 };
 
 function memberBlocks(section) {
@@ -240,7 +240,7 @@ function buildMemberOverview(article) {
   const zoned = sections.some(entry => entry.blocks.some(block => block.access === "protected"));
   const overview = document.createElement("nav");
   overview.className = "svx-overview";
-  overview.setAttribute("aria-label", localize("Members", "Membres", "Member"));
+  overview.setAttribute("aria-label", localize("Members", "Membres", "Member", "メンバー"));
   if (zoned) {
     overview.append(accessFilter(article));
   }
@@ -285,7 +285,7 @@ function buildMemberOverview(article) {
 function accessFilter(article) {
   const bar = labelElement("div", "svx-access-filter", "");
   bar.setAttribute("role", "group");
-  bar.setAttribute("aria-label", localize("Show members", "Afficher les membres", "Member anzeigen"));
+  bar.setAttribute("aria-label", localize("Show members", "Afficher les membres", "Member anzeigen", "メンバーを表示"));
   for (const [value, label] of ACCESS_FILTERS) {
     const button = labelElement("button", "", label);
     button.type = "button";

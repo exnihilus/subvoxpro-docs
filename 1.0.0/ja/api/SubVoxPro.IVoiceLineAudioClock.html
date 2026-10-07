@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>Interface IVoiceLineAudioClock | SubVox Pro ドキュメント </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Interface IVoiceLineAudioClock | SubVox Pro ドキュメント " name="title"/>
+<meta content="UnityのAudioSource以外で再生するオーディオ（FMOD、Wwise、動画など）のクロックです。がこのクロックを追跡し、字幕とイベントをオーディオに同期させます。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=78ab4245ab" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="この記事の内容" name="loc:inThisArticle"/>
+<meta content="「{query}」の検索結果：{count} 件" name="loc:searchResultsCount"/>
+<meta content="「{query}」に一致する結果はありません" name="loc:searchNoResults"/>
+<meta content="タイトルで絞り込み" name="loc:tocFilter"/>
+<meta content="次へ" name="loc:nextArticle"/>
+<meta content="前へ" name="loc:prevArticle"/>
+<meta content="ライト" name="loc:themeLight"/>
+<meta content="ダーク" name="loc:themeDark"/>
+<meta content="自動" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=78ab4245ab" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="ja">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.IVoiceLineAudioClock.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.IVoiceLineAudioClock.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.IVoiceLineAudioClock.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.IVoiceLineAudioClock.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="ナビゲーションの切り替え" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="検索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="検索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目次</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.IVoiceLineAudioClock">
+<h1 class="text-break" data-uid="SubVoxPro.IVoiceLineAudioClock" id="SubVoxPro_IVoiceLineAudioClock">
+Interface IVoiceLineAudioClock  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>名前空間</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>アセンブリ</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>UnityのAudioSource以外で再生するオーディオ（FMOD、Wwise、動画など）のクロックです。<a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a>がこのクロックを追跡し、字幕とイベントをオーディオに同期させます。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public interface IVoiceLineAudioClock</code></pre>
+</div>
+<h2 id="SubVoxPro_IVoiceLineAudioClock_examples">Examples</h2>
+<pre><code class="lang-csharp">public sealed class FmodVoiceClock : IVoiceLineAudioClock
+{
+    public FMOD.Studio.EventInstance Instance;
+
+    public float Time
+    {
+        get { Instance.getTimelinePosition(out int milliseconds); return milliseconds / 1000f; }
+    }
+
+    public bool IsPlaying
+    {
+        get { Instance.getPlaybackState(out FMOD.Studio.PLAYBACK_STATE state); return state != FMOD.Studio.PLAYBACK_STATE.STOPPED; }
+    }
+}
+
+emitter.PlayExternal(voiceLine, new FmodVoiceClock { Instance = instance });
+instance.start();</code></pre>
+<h2 class="section" id="properties">プロパティ
+</h2>
+<a data-uid="SubVoxPro.IVoiceLineAudioClock.IsPlaying*" id="SubVoxPro_IVoiceLineAudioClock_IsPlaying_"></a>
+<h3 data-uid="SubVoxPro.IVoiceLineAudioClock.IsPlaying" id="SubVoxPro_IVoiceLineAudioClock_IsPlaying">
+  IsPlaying
+  
+  </h3>
+<div class="markdown level1 summary"><p>オーディオの再生を開始した時点から終了するまで、読み込み中も含めてtrueになります。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">bool IsPlaying { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.IVoiceLineAudioClock.Time*" id="SubVoxPro_IVoiceLineAudioClock_Time_"></a>
+<h3 data-uid="SubVoxPro.IVoiceLineAudioClock.Time" id="SubVoxPro_IVoiceLineAudioClock_Time">
+  Time
+  
+  </h3>
+<div class="markdown level1 summary"><p>オーディオの位置（秒単位）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">float Time { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>マニュアル | SubVox Pro ドキュメント </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="マニュアル | SubVox Pro ドキュメント " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=78ab4245ab" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="この記事の内容" name="loc:inThisArticle"/>
+<meta content="「{query}」の検索結果：{count} 件" name="loc:searchResultsCount"/>
+<meta content="「{query}」に一致する結果はありません" name="loc:searchNoResults"/>
+<meta content="タイトルで絞り込み" name="loc:tocFilter"/>
+<meta content="次へ" name="loc:nextArticle"/>
+<meta content="前へ" name="loc:prevArticle"/>
+<meta content="ライト" name="loc:themeLight"/>
+<meta content="ダーク" name="loc:themeDark"/>
+<meta content="自動" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=78ab4245ab" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="ja">
+  <link rel="alternate" hreflang="en" href="../../manual/index.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/index.html">
+<link rel="alternate" hreflang="de" href="../../de/manual/index.html">
+<link rel="alternate" hreflang="ja" href="../../ja/manual/index.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="ナビゲーションの切り替え" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="検索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="検索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目次</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="subvox-pro">SubVox Pro</h1>
+<p>SubVox Proを使うと、Unity内で直接、ボイスラインから音声と同期した字幕や吹き替え音声を作成できます。</p>
+<ul>
+<li><strong>文字起こし</strong>：クラウドサービスを利用するか、完全にオフラインで、オーディオクリップをタイミング情報付き字幕に変換します。</li>
+<li><strong>編集</strong>：波形上でタイミングを調整し、単語のスタイルを設定し、字幕の読み取り速度を確認します。</li>
+<li><strong>翻訳</strong>：50言語に翻訳し、音声合成で<strong>吹き替え</strong>を作成します。必要に応じて、各キャラクター固有の声も使用できます。</li>
+<li><strong>再生</strong>：少数のコンポーネントでゲーム内の字幕と音声を再生し、ボイスラインから<strong>ゲームプレイイベント</strong>をトリガーし、ボイスラインを
+<strong>Unity Timeline</strong>にドラッグ＆ドロップします。</li>
+</ul>
+<h2 id="contents">目次 </h2>
+<ul>
+<li><a href="#before-you-start">開始する前に</a></li>
+<li><a href="#quick-start">クイックスタート</a></li>
+<li><a href="#the-subvox-pro-window">SubVox Proのウィンドウ</a></li>
+<li><a href="#transcribe">文字起こし</a></li>
+<li><a href="#translate">翻訳</a></li>
+<li><a href="#dub-with-text-to-speech">音声合成による吹き替え</a></li>
+<li><a href="#speakers-and-voice-personalities">話者と声の個性</a></li>
+<li><a href="#edit-the-audio">オーディオの編集</a></li>
+<li><a href="#play-voice-lines-in-your-game">ゲーム内でのボイスラインの再生</a></li>
+<li><a href="#trigger-gameplay-from-a-voice-line">ボイスラインからゲームプレイをトリガーする</a></li>
+<li><a href="#unity-timeline">Unity Timeline</a></li>
+<li><a href="#process-many-files-at-once">複数のファイルを一度に処理する</a></li>
+<li><a href="#offline-engines-no-account-no-api-key">オフラインエンジン（アカウント不要、APIキー不要）</a></li>
+<li><a href="#human-translation-with-google-sheets">Google Sheetsを使った人手による翻訳</a></li>
+<li><a href="#settings">設定</a></li>
+<li><a href="#keyboard-and-mouse">キーボードとマウス</a></li>
+<li><a href="#supported-languages">対応言語</a></li>
+<li><a href="#your-data-and-online-services">データとオンラインサービス</a></li>
+<li><a href="#ai-generated-voices-in-your-game">ゲーム内で使用するAI生成音声</a></li>
+<li><a href="#where-your-files-go">ファイルの保存先</a></li>
+<li><a href="#updating-and-uninstalling">更新とアンインストール</a></li>
+<li><a href="#troubleshooting">トラブルシューティング</a></li>
+<li><a href="#support">サポート</a></li>
+</ul>
+<p>各サービスのアカウントとAPIキーの取得方法は、
+<a href="providers.html">プロバイダーの設定</a>で手順を追って説明しています。</p>
+<hr/>
+<h2 id="before-you-start">開始する前に </h2>
+<ul>
+<li><strong>Unity 2022.3 LTS以降</strong>（Unity 6を含む）。レンダーパイプラインはBuilt-in、URP、HDRPのいずれも使用できます。</li>
+<li><strong>TextMesh Pro</strong> — プロジェクトにまだインポートしていない場合は、<em>TMP Essentials</em>を一度インポートします。Unity 2022.3では、まず
+Package Managerから<strong>TextMeshPro</strong>パッケージをインストールします（Unity 6にはすでに含まれています）。</li>
+<li><strong>Unity Timeline</strong>は任意です。パッケージをインストールすると、Timelineの機能が表示されます。</li>
+<li><strong>ゲーム内</strong>では、SubVox ProはUnityがサポートするすべてのプラットフォームで動作します。</li>
+<li><strong>エディター内</strong>では、SubVox Proは<strong>Windows</strong>で動作確認済みです。自分のAPIキーを使用するクラウドサービスは、
+macOSおよびLinuxのエディターでも動作すると考えられますが、まだ検証していません。<strong>オフラインエンジン</strong>（アカウント不要の文字起こし、翻訳、吹き替え）を利用するには、<strong>Windows</strong>のエディターが必要です。</li>
+</ul>
+<hr/>
+<h2 id="quick-start">クイックスタート </h2>
+<p>1つのオーディオクリップから、数分で画面上に音声と同期した字幕を表示できます。</p>
+<p>SubVox Proのすべての機能には、<strong>Tools ▸ SubVox Pro ▸ Hub</strong>からワンクリックでアクセスできます。このタイル形式のウィンドウから、ボイスラインエディター、バッチ処理、Google Sheets、プロバイダーの比較、追加のオフラインモデル、サンプルシーン、ドキュメント、プロバイダーの設定ガイド、設定を開けます。ホーム画面には<strong>9つのタイル</strong>があります。<strong>Documentation</strong>を選択すると、<strong>Online</strong>（ガイド、プロバイダーのガイド、スクリプトリファレンス。英語／フランス語の切り替えが可能）と<strong>Local</strong>（オフラインで利用できる英語のPDF）だけの画面が開きます。
+<strong>Back</strong>でホーム画面に戻り、<strong>Provider Setup</strong>で同じPDFのProvider Setupセクションを直接開けます。</p>
+<p><img alt="9つのツールタイルを備えたSubVox Pro Hub" src="Images/subvoxpro-hub.png"/></p>
+<p><img alt="Hub内のDocumentation画面：Online、Local、Back" src="Images/subvoxpro-hub-documentation.png"/></p>
+<p><strong>1. 文字起こしの方法を選択します。</strong>音声認識サービスのAPIキーを
+<strong>Tools ▸ SubVox Pro ▸ Settings</strong>に貼り付けるか（<a href="providers.html">取得方法はこちら</a>）、Windowsでは<strong>Whisper</strong>または
+<strong>Parakeet</strong>を使用します。これらは無料でオフラインで動作します（初回利用時にモデルのダウンロードを案内します）。</p>
+<p><strong>2. ボイスラインを作成します。</strong> <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line</strong>で作成し、そのアセットを選択して、Inspectorの<strong>Set Up Voice Line</strong>
+をクリックします。新しいボイスラインのSubVox Proウィンドウが開きます。<strong>Language</strong>（初回は英語、その後は前回選択した言語）を確認し、<strong>Add an audio track</strong>を選択してクリップを指定するか、音声を録音します。</p>
+<p>または、Projectウィンドウでオーディオファイルを右クリックし、<strong>SubVox Pro ▸ Set Up Voice Line</strong>を選択します。新しいボイスラインの保存先を選択すると、そのオーディオが割り当てられた状態でエディターが開きます。</p>
+<img alt="新しいボイスラインの開始画面：言語、オーディオトラックの追加、字幕トラックの追加" src="Images/subvoxpro-new-voice-line.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><strong>3. 文字起こしします。</strong> <strong>AI Tools ▸ Transcription</strong>でプロバイダーと音声の言語を選択し、<strong>Analyze</strong>、続いて<strong>Split</strong>をクリックします。字幕が波形上に表示されます。</p>
+<p><strong>4. 調整します。</strong>波形上のマーカーをドラッグし、下のリストでテキストを修正して、<strong>Space</strong>を押して音声を確認します。</p>
+<p><strong>5. ゲーム内で表示します。</strong> <strong>[SubVox Pro]</strong>と<strong>Subtitle Displayer</strong>のプレハブ（<code>SubVoxPro/Prefabs</code>）をシーンにドラッグ＆ドロップし、ボイスラインを再生します。</p>
+<pre><code class="lang-csharp">using SubVoxPro;
+
+SubVox.Play(myVoiceLine);
+</code></pre>
+<p>まず動作を確認してみたい場合は、<strong>Tools ▸ SubVox Pro ▸ Open Example Scene</strong>で、ボイスライン、会話シーケンス、言語切り替え、単語ごとの表示機能を備えたサンプルシーンを開けます。<strong>Play</strong>を押すだけで再生できます。</p>
+<hr/>
+<h2 id="the-subvox-pro-window">SubVox Proのウィンドウ </h2>
+<img alt="SubVox Proのウィンドウ：ソーストラック、AI Tools、波形タイムライン、ライブプレビュー、字幕リスト" src="Images/subvoxpro-window-overview.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><strong>Tools ▸ SubVox Pro ▸ Voice Line Editor</strong>、またはボイスラインのInspectorにある<strong>Set Up Voice Line</strong>から開けます。上から順に説明します。</p>
+<ul>
+<li><strong>Voice Line Data</strong> — 編集中のボイスラインです。新規作成、他のボイスラインの参照、削除用のボタンがあります。色付きのドットは、Projectウィンドウのアセットアイコンに表示される<strong>タグ</strong>で、ボイスラインの分類に使います。</li>
+<li><strong>Source</strong> — <strong>AUDIO</strong>と<strong>SUBTITLES</strong>のセレクターです。各ボイスラインには1つのソース言語（旗アイコン。クリックすると変更できます）があり、翻訳または吹き替えされた言語ごとに1つのトラックがあります。2つのセレクターは独立しているため、例えば英語の音声を聞きながらフランス語の字幕を読むこともできます。</li>
+<li><strong>AI Tools</strong> — 文字起こし、翻訳、吹き替え（<a href="#transcribe">下記</a>）です。</li>
+<li><strong>Timeline</strong> — 字幕の<strong>マーカー</strong>が表示された波形です。各マーカーは字幕の開始位置を示します。テキストのないマーカーは画面の字幕を消去します（<strong>空白</strong>）。</li>
+<li><strong>Live preview</strong> — 再生ヘッドの位置にある字幕を、ゲーム内と同じ見た目で表示します。その上にある色やスタイルを選択し、単語の上をドラッグして適用します（右ボタンを押しながらドラッグすると消去します）。</li>
+<li><strong>Subtitles</strong> — 字幕ごとに1行ずつ、名前、長さ、話者、テキスト、再生ボタンが表示されます。</li>
+</ul>
+<h3 id="tags-and-languages">タグと言語 </h3>
+<p><strong>Voice Line Data</strong>の横にあるタグをクリックして、色と形状を選択します。<strong>Clear tag</strong>でタグを削除できます。形状を使うと、色だけに頼らずにボイスラインを区別できます。<strong>A-Z</strong>または<strong>0-9</strong>をクリックすると、英字や数字を形状として使用できます。</p>
+<p><img alt="A-Zピッカーが開き、青い文字Aが選択されている色と形状のタグポップアップ" src="Images/subvoxpro-tag-popup.png"/></p>
+<p>ソース言語の旗アイコンをクリックして、音声の言語を選択します。旗アイコンは言語を示し、話者の国籍を示すものではありません。ピッカーには言語名とコードが表示されるため、旗を見分けられなくても言語を選択できます。</p>
+<p><img alt="言語名、コード、旗アイコンが表示されたソース言語ピッカー" src="Images/subvoxpro-language-picker.png"/></p>
+<h3 id="starting-without-audio">オーディオなしで開始 </h3>
+<img alt="Add a subtitles track: import an .srt file, import a .txt file or add lines manually" src="Images/subvoxpro-new-voice-line-subtitles.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>ボイスラインは、オーディオではなくテキストから作成できます。「<strong>Add a subtitles track</strong>」を選択し、<strong>.srt</strong>ファイル（タイミング付きの字幕）、<strong>.txt</strong>ファイル（1行につき1つの字幕。読みやすい速度になるようにタイミングが自動設定されます）をインポートするか、字幕を直接入力します。ボイスラインの「<strong>Length</strong>」を設定します。オーディオを追加するか、テキストから吹き替え音声を生成するまでは、ゲーム内でその長さだけ再生されます。</p>
+<h3 id="recording-audio">オーディオの録音 </h3>
+<img alt="Add an audio track: pick an audio clip or record with a microphone" src="Images/subvoxpro-new-voice-line-audio.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>「<strong>Record with a microphone</strong>」（「<strong>Add an audio track</strong>」内、またはAUDIOセレクターの横にある「<strong>+</strong>」から選択）を選択すると、小さな録音ウィンドウが開きます。マイクを選択し、レベルを確認しながら録音します。再生して確認した後、「<strong>Use recording</strong>」を選択します。録音した音声は、ボイスラインと同じフォルダーにWAV形式で保存されます。macOSでは、システム設定でUnityによるマイクの使用を許可してください。</p>
+<h3 id="checking-your-subtitles">字幕の確認 </h3>
+<ul>
+<li>「<strong>Show CPS</strong>」（<a href="#settings">「Settings」</a>内）を有効にすると、各字幕の読み取り速度が表示され、速すぎる字幕が示されます。</li>
+<li>「<strong>Check Subtitles</strong>」（「<strong>Show CPS</strong>」を有効にすると表示されます）では、空の名前や重複した名前、クリップの時間範囲外にある字幕、字幕の重なり、速すぎて読み切れない字幕などの問題を1つずつ順に確認し、ワンクリックで修正できます。すべての操作は元に戻せます。</li>
+<li>「<strong>Auto blanks</strong>」は、誰も話していない間、マーカーを追加せずに字幕を非表示にします。ポップアップで有効にし、非表示にする無音区間の長さを調整します。字幕が非表示になる区間は、波形上で網掛け表示されます。</li>
+<li>「<strong>Export SRT</strong>」は、字幕を<code>.srt</code>ファイルとして保存します。</li>
+</ul>
+<p><img alt="Auto blanks popup with silence, minimum pause, hold out and lead in settings" src="Images/subvoxpro-auto-blanks.png"/></p>
+<p>「<strong>Silence</strong>」では、無音区間と判定するために、声よりどの程度音量が小さい必要があるかを設定します。「<strong>Min pause</strong>」では、ごく短い無音区間を無視します。「<strong>Hold out</strong>」では、声が止まった後もテキストを短時間表示し続け、「<strong>Lead in</strong>」では、発話が再開する前にテキストを再び表示します。「<strong>Only between two lines</strong>」では、文の途中で字幕が消えたり再表示されたりするのを防ぎます。</p>
+<h3 id="deleting-a-voice-line">ボイスラインの削除 </h3>
+<p>ごみ箱ボタンでボイスラインを削除します。関連するファイルが一覧表示されます。SubVox Proが生成したファイル（吹き替え音声、録音）は選択済みで、自分で用意したファイルは選択されていません。他で使用中のファイルはロックされています。削除した項目はすべてシステムのごみ箱に移動するため、復元できます。</p>
+<hr/>
+<h2 id="transcribe">文字起こし </h2>
+<img alt="AI Tools, Transcription tab with local Whisper" src="Images/subvoxpro-ai-tools-transcription.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<ol>
+<li>「<strong>Provider</strong>」を選択し、そのプロバイダーが複数のモデルを提供している場合は「<strong>Model</strong>」を選択します。右側のバッジには、準備が整っているかどうか（キーが設定済み、またはモデルがダウンロード済み）が表示されます。</li>
+<li>「<strong>Audio Language</strong>」を設定します（一部のプロバイダーは自動的に検出します）。</li>
+<li>「<strong>Analyze</strong>」をクリックします。オーディオがタイミング付きの単語データに変換されます。</li>
+<li>「<strong>Split</strong>」をクリックします。単語が字幕にまとめられます。「<strong>Split settings</strong>」では、字幕の最大表示時間、最初の単語が発話されるどれくらい前に字幕を表示するか、字幕の区切りを句読点に合わせるかどうかを設定します。</li>
+</ol>
+<p>「<strong>Word timing</strong>」では、各単語のタイミングの取得元を選択します。「<strong>From the provider</strong>」（デフォルト）は、文字起こしによって返されたタイミングをそのまま保持します。「<strong>Qwen3 aligner (local)</strong>」は、「<strong>Split</strong>」直後に、テキストを変更せずに、オーディオに合わせて各単語のタイミングを再調整します。単語単位の字幕には最も正確なオプションです（<a href="#qwen3-offline-word-timing">初回のみインストールが必要です</a>）。
+Qwen3が対応していない言語の場合は、プロバイダーのタイミングがそのまま使用されます。</p>
+<p>プロバイダー：AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、OpenAI、またはオフライン版の<strong>Whisper</strong>および<strong>Parakeet</strong>。選択に迷った場合は、「<strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong>」で、価格、無料プラン、商用利用、対応言語を並べて比較できます。</p>
+<img alt="Provider Comparison window, Transcription tab" src="Images/subvoxpro-provider-comparison.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<blockquote>
+<p><strong>ヒント：</strong> OpenAIの<strong>gpt-transcribe</strong>は、単語のタイムスタンプを含まないテキストを返します。タイミングはクリップ全体にわたって推定されます。タイミングが重要な場合は、ローカルでのアラインメントを使用するか、単語のタイムスタンプを提供するプロバイダーを使用してください。</p>
+</blockquote>
+<p>文字起こしは、AUDIOセレクターで選択されたオーディオに対して行われるため、吹き替え音声も文字起こしできます。</p>
+<hr/>
+<h2 id="translate">翻訳 </h2>
+<img alt="AI Tools, Translation tab" src="Images/subvoxpro-ai-tools-translation.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<ol>
+<li>「<strong>Provider</strong>」を選択します。DeepL、Google Translate、OpenAI、Claude、Gemini、DeepSeek、またはオフライン版の<strong>Hy-MT2</strong>を選択できます。</li>
+<li>「<strong>Target</strong>」で翻訳先の言語を選択するか、<strong>プリセット</strong>を選択して複数言語の翻訳を一度に作成します。</li>
+<li>その言語で設定できる場合は、「<strong>Formality</strong>」で文体の丁寧さ（二人称の丁寧な表現またはくだけた表現）を設定します。</li>
+<li>「<strong>Translate</strong>」をクリックします。言語ごとに個別のトラックが作成されます。SUBTITLESセレクターで切り替えられます。</li>
+</ol>
+<p><img alt="Translation target popup with a preset of several languages and its editable language list" src="Images/subvoxpro-translation-targets.png"/></p>
+<p>「<strong>Target</strong>」ポップアップではプリセットも編集できます。「<strong>+ New</strong>」でグループを作成し、右側の列でそのグループに含める言語を選択します。そのプリセットを選択すると、1回の操作でプリセットに含まれるすべての言語に翻訳されます。</p>
+<p><strong>翻訳に役立つ情報の追加。</strong>曖昧な字幕は、コンテキストがあると翻訳の質が向上します。吹き出しボタンからボイスライン全体の<strong>コンテキスト</strong>を入力し、必要に応じて個々の字幕にも注釈を追加します（リスト内の該当する字幕の吹き出しボタン）。</p>
+<p><strong>翻訳の同期。</strong>翻訳後に原文の字幕を変更すると、その翻訳には「<strong>OUT</strong>」バッジが表示されます。「<strong>Synchronize</strong>」をクリックすると、原文が変更された字幕のみが再翻訳されます。または、字幕を確認した後でバッジをクリックします。マーカーを移動して文の区切り位置を変更すると、翻訳された字幕に「<strong>CUT</strong>」バッジが表示されます。「<strong>Fix splits</strong>」では、AIプロバイダーに、単語を変更せずに原文の区切りに意味上対応する位置で翻訳を分割するよう依頼します。吹き替え音声も、変更後の区切りに自動的に合わせられます。</p>
+<hr/>
+<h2 id="dub-with-text-to-speech">音声合成による吹き替え </h2>
+<img alt="AI Tools, Dubbing tab with local Chatterbox" src="Images/subvoxpro-ai-tools-dubbing.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<ol>
+<li>SUBTITLESセレクターで吹き替えに使用する言語を選択します。</li>
+<li><strong>AI Tools ▸ Dubbing</strong>で、<strong>Provider</strong>と<strong>Voice</strong>を選択します。ボイスの横にある▶ボタンをクリックすると、サンプル音声が再生されます。
+<strong>Use speakers' voices</strong>を有効にすると、各字幕にその<a href="#speakers-and-voice-personalities">話者</a>のボイスが使用されます。</li>
+<li><strong>Generation</strong>モードを選択します。
+<ul>
+<li><strong>Each subtitle</strong> — 字幕ごとに1テイク生成します。字幕単位で最も修正しやすい方式です。</li>
+<li><strong>Per speaker</strong> — 同じキャラクターの字幕をまとめて、グループごとに1テイク生成します。より自然な流れになります。</li>
+<li><strong>All together</strong> — 全体を1つの連続したテイクとして生成します。最も自然な仕上がりになりますが、再生成する場合は全体がやり直しになります。</li>
+<li><strong>Groups</strong> — どの単語を1つのテイクで読み上げるかを指定します（下記参照）。</li>
+</ul>
+</li>
+<li><strong>Generate audio</strong>をクリックします。吹き替え音声が新しいオーディオトラックとして追加され、その言語がアクティブなときに、元の音声の代わりに再生されます。</li>
+</ol>
+<p><strong>グループモード。</strong> <strong>Groups</strong>を選択すると、波形の上にある<strong>Groups</strong>ツールが有効になります。各グループは、最初の単語に設定されたボイスと音声演技プリセットを使って1つのテイクとして読み上げられ、字幕テキストはグループの色で表示されます。最初は、
+1つのグループにすべてが含まれています。グループ内をドラッグすると3つに分割され、新しいグループが中央に配置されます。グループの開始位置や終了位置は字幕の途中にも設定でき、新しいグループにはそれぞれ独自の色が割り当てられます。2つのグループ間の境界線をドラッグすると移動できます。境界線を隣のグループ全体を越えるまで移動すると、そのグループが削除されます。マウスボタンを離す前にドラッグして戻すと、そのグループが復元されます。グループを右クリックすると削除され、隣接するグループがその範囲を引き継ぎます。ゴミ箱ボタンをクリックすると、すべてが再び1つのグループに統合されます。グループは字幕の言語ごとに保存されます。</p>
+<p>プロバイダー：InWorld、ElevenLabs、Gemini、OpenAI、Google Cloud、Azure、およびオフラインで利用できる<strong>Kokoro</strong>（英語）、
+<strong>Chatterbox</strong>（21言語、各キャラクターの声を維持）、<strong>Qwen3 TTS 1.7B</strong>（10言語、参照音声によるボイスクローニング、固定ボイス、ボイスデザイン）、<strong>VoxCPM2</strong>（30言語、文章によるスタイル指定を併用できる参照音声によるボイスクローニング、ボイスデザイン）。</p>
+<ul>
+<li><strong>Word timing</strong> — 単語を発話のタイミングに合わせて正確に表示するには、<strong>Qwen3 aligner (local)</strong>のままにします（<a href="#qwen3-offline-word-timing">初回のみインストール</a>）。字幕を単語ごとに表示しない場合は、<strong>Estimated</strong>に設定します。</li>
+<li><strong>Voice direction</strong> — 対応しているプロバイダーでは、ボイスの横にある吹き出しボタンで演技のトーンを指定します（例：
+<em>落ち着いた口調、ささやき声</em>）。</li>
+<li><strong>REGEN</strong> — 字幕の吹き替え音声が現在の設定と一致しなくなると（テキスト、ボイス、音声演技プリセットの変更など）、その字幕にオレンジ色の<strong>REGEN</strong>チップが表示されます。カーソルを合わせると理由を確認でき、クリックすると必要な部分のみを再生成できます。</li>
+<li><strong>ボイスクローニング</strong> — ElevenLabs（有料プラン）、Chatterbox、Qwen Base、VoxCPM2では、<strong>Original voice</strong>を選択すると、ソース音声から声をクローンし、各キャラクターをそれぞれの声で吹き替えられます。また、<a href="#where-your-files-go">データフォルダー</a>内の<code>Voices</code>
+フォルダーに配置したクリップから声をクローンすることもできます。使用する権利のある声のみをクローンしてください。</li>
+</ul>
+<blockquote>
+<p>OpenAIなど一部のサービスでは、音声がAIで生成されたものであることをプレイヤーに開示する必要があります。詳しくは
+<a href="providers.html">Provider Setup</a>を参照してください。</p>
+</blockquote>
+<hr/>
+<h2 id="speakers-and-voice-personalities">話者と音声演技プリセット </h2>
+<h3 id="speakers">話者 </h3>
+<img alt="Speaker inspector with name style and voice personalities" src="Images/subvoxpro-speaker-inspector.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><strong>話者</strong>とはキャラクターのことです。字幕の前に話者固有の色で表示する名前と、吹き替え用のボイスを設定します。<strong>Assets ▸ Create ▸ SubVox Pro ▸ Speaker</strong>から、またはウィンドウ内の話者ピッカーで作成します。</p>
+<ul>
+<li>ボイスライン全体の話者はリスト上部の<strong>Speaker</strong>フィールドで、個々の字幕の話者はその行で設定します。</li>
+<li>話者のInspectorでは、<strong>Text-to-speech voices</strong>でプロバイダーごとにボイスを選択し、すべての言語で使用するフォールバックのボイスと、必要に応じて言語ごとの上書き設定を指定します。</li>
+<li><strong>Subtitle Displayer</strong>（または<strong>Subtitle Document Displayer</strong>）では、<strong>Speaker Name Mode</strong>で名前を字幕の前に表示する（<em>Inline</em>）、字幕の上に表示する（<em>Above</em>）、表示しない（<em>Hidden</em>）のいずれかを選択します。話者ごとに独自のフォントも設定できます。<strong>Font
+(TextMeshPro)</strong>はSubtitle Displayer用、<strong>Font (UI Toolkit)</strong>はSubtitle Document Displayer用です。</li>
+<li><strong>Keep Background Between Subtitles</strong>を有効にすると、2つの字幕の間の空白区間では字幕パネルのみが表示されます。デフォルトで有効ですが、最初の字幕の前や最後の字幕の後の空白区間では、パネルも非表示になります。</li>
+</ul>
+<p><img alt="性別タブ、選択中の話者、話者作成へのショートカットがある話者ピッカー" src="Images/subvoxpro-speaker-picker.png"/></p>
+<p>話者ピッカーでは、キャラクターが性別ごとにグループ分けされています。鉛筆アイコンで既存の話者を編集し、<strong>New speaker</strong>で新しい話者を作成します。字幕ごとの上書き設定では、一番上の項目を選択すると、そのボイスラインのデフォルトの話者に戻ります。</p>
+<h3 id="voice-personalities">音声演技プリセット </h3>
+<p><strong>音声演技プリセット</strong>とは、再利用可能な演技指示のことです。<em>怒り</em>、<em>ミステリアス</em>、<em>ささやき</em>などがあります。話者の（<strong>New personality</strong>）から、または<strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Personality</strong>で作成し、演技指示を自分で記述するか、感情、話すテンポ、音量、話し方を組み合わせて設定します。アイコンをクリックすると、約40種類のシンボル（感情、ムード、声、キャラクター）から1つを選択でき、リスト内で一目で識別できるようになります。</p>
+<p>リスト内のチップから各字幕に音声演技プリセットを割り当てるか（<strong>Each subtitle</strong>モードの場合）、話者のデフォルト設定を使用します。各プロバイダーは、対応できる範囲で設定を適用します。指示をすべて反映するものもあれば、話すテンポのみを反映するものもあります。チップのツールチップには、選択したボイスで実際に反映される設定が表示されます。</p>
+<hr/>
+<h2 id="edit-the-audio">オーディオの編集 </h2>
+<p>タイムラインツールバーの右側にあるボタンで、オーディオ自体を編集できます。すべての編集は <strong>Ctrl+Z</strong> で元に戻せます。</p>
+<p><img alt="適用済みのエフェクトと利用可能なエフェクトを分けて表示するオーディオエフェクトピッカー" src="Images/subvoxpro-audio-effect-picker.png"/></p>
+<p><strong>Audio effects</strong> ボタンをクリックすると、エフェクトリストが開きます。適用済みのエフェクトが最初に表示されます。編集したいエフェクトを選択するか、
+×マークをクリックしてリセットし、削除します。</p>
+<ul>
+<li><strong>Crop</strong> — 開始点と終了点のハンドルをドラッグし、<strong>Apply crop</strong> をクリックします。ソースのオーディオファイルが上書きされるため、テイク全体が必要になる可能性がある場合は、そのコピーを保存しておいてください。</li>
+<li><strong>無音区間の挿入／セグメントの削除</strong>（<code>|↔|</code> ボタン） — マウスの左ボタンを押しながらドラッグすると無音区間を挿入し、右ボタンを押しながらドラッグすると区間を削除します。その位置より後の字幕、単語、イベントはオーディオに合わせて移動します。TTSの音声が2つの文をつなげて読み上げる場合に便利です。</li>
+<li><strong>Audio effects</strong> — 音量カーブ、フェード、ノーマライズ、コンプレッサー、リミッター、ノイズゲート、フィルター、イコライザー、電話・無線風エフェクト、ピッチ、イントネーション、パン、距離による音のこもり、ルームリバーブ。タイムライン上でエフェクトを適用する<em>範囲</em>を描画し、スライダーで<em>適用方法</em>を設定してから、<strong>Apply effects</strong> をクリックします。カーブの隅にある<strong>磁石アイコン</strong>は、ポイントを基準値、0、および隣接するポイントに揃えます（<strong>Alt</strong> キーを押しながらポイントを自由に配置できます）。SubVox Proは元のオーディオを保持するため、エフェクトは引き続き編集できます。
+<strong>Flatten</strong> を選択するとエフェクトが確定され、<strong>Discard</strong> を選択するとすべてのエフェクトが削除されます。</li>
+<li><strong>Intonation</strong> — 声の高さの変化が上部に表示されます。下のレーンで、ピッチをどの程度上げる（<strong>+</strong>）か下げる（<strong>−</strong>）かを描画します。<strong>0</strong> では元のままです。<strong>磁石アイコン</strong>は、その隣にある設定値の刻みに合わせて描画した線をスナップさせます（デフォルトは0.5 st。<strong>Alt</strong> キーを押しながら自由に描画できます）。<strong>波アイコン</strong>は、設定した時間幅で新しく描画する線を滑らかにします（0ではなぞったとおりに描画されます）。マウスの右ボタンを押しながらドラッグすると元の声に戻り、<strong>Esc</strong> キーで描画中の線をキャンセルできます。ボイスラインのほかの部分は変更されません。
+<strong>Pitch</strong> は区間全体のピッチを変更し、同じ声の高さの変化を表示します。どちらも声の自然さを保ちます。変更幅は数半音（st）程度が最適です。<strong>Engine</strong> のドロップダウンメニューでは、<strong>WORLD</strong>（自然、デフォルト）、<strong>PSOLA</strong>（軽量）、<strong>Classic</strong>（最速。声質も変化します）を選択できます。</li>
+</ul>
+<p><img alt="波形上の音量エフェクト編集（デシベルカーブと編集可能なポイント付き）" src="Images/subvoxpro-audio-effects.png"/></p>
+<p>上の音量カーブは、選択した区間の音量だけを下げます。波形でタイミングを確認しながら、各ポイントでゲインを制御します。<strong>0 dB</strong> では、元の音量は変更されません。</p>
+<p><img alt="検出した声の高さの変化と、別のピッチオフセット描画レーンを表示するIntonationエディタ" src="Images/subvoxpro-intonation.png"/></p>
+<p><strong>Intonation</strong> では、上部のカーブが検出した声の高さの変化を示しています。下のレーンは、半音単位での変更内容を示します。正の値はピッチを上げ、負の値は下げ、ゼロでは元のままです。2つが分かれているため、元の声の高さの変化と、加えている変更を確認できます。</p>
+<hr/>
+<h2 id="play-voice-lines-in-your-game">ゲーム内でボイスラインを再生する </h2>
+<h3 id="set-up-the-scene">シーンの設定 </h3>
+<ol>
+<li><p><strong>[SubVox Pro]</strong> プレハブ（<code>SubVoxPro/Prefabs</code>）を起動シーンに1つドラッグ＆ドロップします。ボイスラインの再生と、それに関するイベントの発行を担当します。（配置を忘れた場合は、初めてボイスラインが再生される際にデフォルトのプレーヤーが作成され、警告が表示されます。）</p>
+</li>
+<li><p><strong>Subtitle Displayer</strong> プレハブ（<code>SubVoxPro/Prefabs</code>）をシーンにドラッグ＆ドロップします。これは画面下部に表示される既製の字幕ボックスで、長い字幕ではサイズが拡大し、字幕の合間には非表示になります。スタイル（フォント、色、位置、サイズ）を自由に変更できます。または、独自のCanvasに <strong>Subtitle Displayer</strong> コンポーネントを追加し、<strong>Subtitle Text</strong>
+（および、字幕の合間に背景を非表示にするための <strong>Background</strong>）を割り当てます。</p>
+<p><strong>Canvasの代わりにUI Toolkitを使用していますか？</strong>その場合は、<strong>Subtitle Document Displayer</strong> プレハブをドラッグ＆ドロップします。
+UI Toolkitドキュメント内で、同じ字幕、話者名、スタイルが表示されます。<code>Subtitle Document.uss</code>
+（<code>SubVoxPro/Prefabs/UI/UI Toolkit</code>）でスタイルを変更できます。または、独自のUI Documentに <strong>Subtitle Document Displayer</strong> コンポーネントを追加し、字幕を表示するLabelの名前（および字幕の合間に非表示にする要素の名前）を指定します。</p>
+</li>
+</ol>
+<h3 id="play-a-line-from-code">コードからボイスラインを再生する </h3>
+<p>すべての操作は <code>SubVox</code> を通じて行います。一般的な用途（ボイスラインの終了待ち、イベントへの反応、言語選択メニュー、オプションメニュー、会話ログ、動画の字幕など）向けの、そのままコピーして使えるスクリプトは <code>SubVoxPro/Example/Snippets</code> にあります。コードエディタでは、入力中にすべてのクラス、メソッド、設定の説明が表示されます。完全なスクリプトリファレンスは、このガイドと同じサイトで公開されており、SubVox Proの各バージョンに対応するページが用意されています：
+<a href="https://exnihilus.github.io/subvoxpro-docs/">https://exnihilus.github.io/subvoxpro-docs/</a>（Hubの <strong>Documentation ▸ Online</strong> からもアクセスできます）。</p>
+<pre><code class="lang-csharp">using SubVoxPro;
+
+SubVox.Play(myVoiceLine);            // plays, with synced subtitles
+SubVox.PauseAll();                   // game paused
+SubVox.ResumeAll();
+SubVox.StopAll();                    // cutscene skipped
+SubVox.CurrentLanguage = "fr";       // French subtitles and dubs ("" = original)
+</code></pre>
+<p><code>Play</code> はボイスラインの再生を表すオブジェクトを返します。<code>State</code>、<code>Time</code>、<code>Progress</code> を確認したり、一時停止や停止を行ったり、
+<code>Completed</code> / <code>Interrupted</code> イベントを監視したり、コルーチンで再生の終了を待ったりできます：</p>
+<pre><code class="lang-csharp">yield return SubVox.Play(greeting);  // waits until the line is over
+yield return SubVox.Play(answer);
+</code></pre>
+<p><code>SubVox.IsPlaying(line)</code> は、そのボイスラインが現在再生中かどうかを示します。<code>SubVox.Stop(line)</code> はそのボイスラインだけを停止します。
+<code>SubVox.PlayAt(line, position)</code> は、拡声器から流れる声のように、ワールド内の指定した位置でボイスラインを1回再生します。別の場所（動画やメニューなど）で字幕を表示する場合は、<code>myVoiceLine.GetSubtitleAt(time, language)</code> で任意の時点の字幕を取得し、
+<code>TryGetWordAt</code> でその時点で読み上げられている単語を取得できます。</p>
+<p><strong>Voice Line Manager</strong> の <strong>Subtitle Reveal Mode</strong> で、字幕を1行ずつ一括表示（デフォルト）、単語ごとに表示、または <strong>Karaoke</strong>（字幕全体を表示し、読み上げ中の単語をハイライト表示）を選択できます。Timelineのカットシーンもこの設定に従います。誰かが話している間に音楽の音量を下げるには、Audio Mixerの2つのスナップショットを
+<strong>Ducked Snapshot</strong>（音楽の音量を下げた状態）と <strong>Normal Snapshot</strong> に割り当てます。</p>
+<h3 id="voices-in-3d-and-several-at-once">3D音声と複数の音声の同時再生 </h3>
+<p>話す各キャラクターに <strong>Voice Line Emitter</strong> を追加し、そのAudioSourceを3Dに設定します。音声がキャラクターの位置から聞こえるようになり、複数のキャラクターが同時に話せます。</p>
+<pre><code class="lang-csharp">npc.GetComponent&lt;VoiceLineEmitter&gt;().Play(barkLine, EVoiceLinePriority.Low);
+</code></pre>
+<p><strong>優先度</strong>により、重要なボイスラインの再生が保護されます。1つのエミッターでは、新しいボイスラインの優先度が再生中のボイスラインと同等以上の場合にのみ、新しいボイスラインに切り替わります。画面上では、優先度が最も高いボイスラインの字幕が表示されます。ボイスラインを順番待ちさせるには、
+<code>EVoiceLinePlayMode.Queue</code> で再生します。<code>EVoiceLinePlayMode.IfIdle</code> では、エミッターが何も再生していない場合にのみ再生します。
+<code>Skip()</code> は、「セリフをスキップ」ボタンのように再生中のボイスラインを即座に終了させ、<code>ClearQueue()</code> は順番待ち中のボイスラインをキューから削除します。背景の会話では、エミッターの <strong>Show Subtitles</strong> をオフにできます。<code>VoiceLineCompleted</code> /
+<code>VoiceLineInterrupted</code> イベントは、それぞれボイスラインの正常終了／中断を通知します。<code>Paused</code> / <code>Resumed</code> は一時停止／再開を通知します。<code>PlaybackSpeed</code> でボイスラインの再生速度を速めたり遅くしたりできます。</p>
+<p><strong>リップシンク。</strong>エミッターの <code>WordChanged</code> イベントは、新しい単語が話されるたびに（および単語と単語の間にも）発生し、
+<code>CurrentWord</code> は現在話されている単語を保持します。これらの情報を使って、キャラクターの口を開けたり、ジェスチャーをトリガーしたりできます。</p>
+<pre><code class="lang-csharp">emitter.WordChanged += word =&gt; mouth.SetBool("Talking", word.Text != null);
+</code></pre>
+<p><strong>吹き出し。</strong>キャラクターを選択し、<strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong> を選択します。そのキャラクターの頭上に吹き出しが表示され、そのキャラクターの発言のみが表示されます。これらの字幕を画面下部に表示しないようにするには、エミッターの <strong>Show Subtitles</strong> をオフにします。</p>
+<h3 id="without-code">コード不要 </h3>
+<ul>
+<li><strong>Voice Line Zone</strong> — プレイヤーがトリガー（2Dまたは3D）に入ると、1回だけ、またはクールダウン時間を挟んでボイスラインを再生します。キャラクターが話し終わるまで待機する（<strong>Play mode: Queue</strong>）、プレイヤーが離れると再生を停止する、次にプレイヤーが入ったときに再度再生するといった動作に対応します。</li>
+<li><strong>Voice Line Play On Start</strong> — オブジェクトの開始時にボイスラインを再生します。必要に応じて遅延時間を設定できます。</li>
+<li><strong>Voice Line Bank</strong>（<strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line Bank</strong>）— 警備員の短いセリフなど、複数のボイスラインから選択するためのアセットです。同じものが連続しないランダム順、シャッフル順、またはリスト順で選択できます。ゾーンまたはPlay On Startの
+<strong>Bank</strong>フィールドに設定します。</li>
+<li><strong>Voice Line Sequence</strong>（<strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line Sequence</strong>）— 会話を構成するボイスラインのリストです。自動的に、または<code>Advance()</code>を呼び出すと、順次再生されます。<code>Previous()</code>は1つ前のボイスラインに戻るため、「前のセリフ」ボタンに使用できます。<strong>Voice Line Sequence Player</strong>で再生し、そのInspectorでPlay
+mode中の進行状況を確認できます。<strong>Direction</strong>を<strong>Backward</strong>に設定すると、最後から最初へ逆順に再生されます。キャラクターが優先度の高い別のボイスラインを再生中の場合、会話は待機し、短い<strong>Resume Delay</strong>の後に再開します。</li>
+</ul>
+<p>それぞれに<strong>Emitter</strong>（空の場合はデフォルトのemitter）と<strong>Priority</strong>があり、ボタンや任意のUnityEventから呼び出せるパブリックな<code>Play()</code>が用意されています。</p>
+<h3 id="switching-language">言語の切り替え </h3>
+<p>言語を変更すると、画面上の字幕が即座に切り替わります。吹き替え音声は次のボイスラインから切り替わります。文の途中で再生中のボイスラインの言語を変更することはできないためです。</p>
+<ul>
+<li><strong>Unity Localization</strong> — プロジェクトでUnityのLocalizationパッケージを使用している場合、SubVox Proはそこで選択された言語を自動的に反映します。手動で言語を設定するには、Voice Line
+Managerの<strong>Language Source</strong>を<strong>Manual</strong>に設定します。</li>
+<li><strong>Speaker名</strong> — 話者の名前は言語ごとに変更できます。<strong>Localized Names</strong>に入力するか、
+Unity Localizationを使用する場合は、<strong>Localization Table</strong>と<strong>Localization Entry</strong>で参照する文字列を指定します。</li>
+<li><strong>関連言語</strong> — プレイヤーの言語が<code>pt-BR</code>で、<code>pt-BR</code>の翻訳がない場合は、<code>pt</code>の翻訳が再生・表示されます（逆も同様です）。</li>
+<li><strong>言語選択メニュー</strong> — <code>myVoiceLine.GetSubtitleLanguages()</code>と<code>GetAudioLanguages()</code>で、そのボイスラインで利用可能な言語の一覧を取得できます。</li>
+</ul>
+<h3 id="subtitle-options-for-players">プレイヤー向けの字幕オプション </h3>
+<p>以下の設定をオプションメニューに組み込むと、すべての字幕表示に即座に反映されます。</p>
+<pre><code class="lang-csharp">SubVox.SubtitlesEnabled = false;       // no subtitles (voices carry on)
+SubVox.SubtitleScale = 1.5f;           // bigger text
+SubVox.BackgroundOpacity = 1f;         // opaque box behind the text
+SubVox.FadeDuration = 0.2f;            // subtitles fade in and out
+SubVox.RevealMode = EVoiceLineSubtitleRevealMode.Karaoke;  // whole line, spoken word highlighted
+</code></pre>
+<p><code>SubVox.History</code>は最近表示された字幕（テキスト、話者）を保持し、会話ログ画面の作成に使用できます。</p>
+<h3 id="your-own-subtitle-display">独自の字幕表示 </h3>
+<p>字幕表示コンポーネントは、ほとんどの用途に対応できます。独自の方法で字幕を表示するには、
+<code>SubVox.SubtitleUpdated</code>を購読します。字幕が変更されるたびに、表示する字幕が通知されます（空のテキストは「表示を消去する」という意味です）。購読した直後に<code>SubVox.CurrentSubtitle</code>を読み取ると、すでに再生中のボイスラインの字幕も表示できます。組み込みの字幕表示コンポーネントは、有効化または再有効化された際にこれを自動的に行います。吹き出しの場合は、自身のemitterの現在の字幕を読み取ります。</p>
+<p><code>SubVox.DisplayedVoiceLine</code>で、共通の字幕表示用に選択されているボイスライン（Timelineクリップを含む）を取得できます。
+<code>SubVox.PublishSubtitle(...)</code>を使うと、例えば動画再生中に、字幕表示コンポーネントに独自のテキストを表示できます。独自の表示要求は、SubVoxのTimelineクリップがアクティブな間は無視されます。そのクリップが字幕表示を管理しているためです。</p>
+<p>字幕表示コンポーネントを微調整するだけの場合（テキストの変更やボックスのアニメーションなど）は、そのコンポーネントを継承するスクリプトを作成し、
+<code>ComposeText</code>または<code>SetVisible</code>をオーバーライドします。他のコンポーネントも同じ方法で拡張できます。</p>
+<h3 id="playing-the-audio-with-fmod-wwise-or-a-video">FMOD、Wwise、または動画を使用したオーディオの再生 </h3>
+<p>ボイスラインのオーディオ（およびその吹き替え音声）を通常どおりオーディオツールにインポートし、emitterが自ら再生する代わりに、そのオーディオの再生に追従するようにします。</p>
+<pre><code class="lang-csharp">class FmodClock : IVoiceLineAudioClock
+{
+    public FMOD.Studio.EventInstance Instance;
+
+    public float Time { get { Instance.getTimelinePosition(out int ms); return ms / 1000f; } }
+    public bool IsPlaying { get { Instance.getPlaybackState(out var state); return state != FMOD.Studio.PLAYBACK_STATE.STOPPED; } }
+}
+
+emitter.PlayExternal(myVoiceLine, clock);   // subtitles and events follow your audio
+// then start the audio of emitter.CurrentAudioLanguage ("" = original, otherwise that dub)
+</code></pre>
+<p>emitterの一時停止や停止は、字幕とイベントにのみ影響します。オーディオも同様に一時停止または停止してください。</p>
+<hr/>
+<h2 id="trigger-gameplay-from-a-voice-line">ボイスラインからゲームプレイをトリガーする </h2>
+<img alt="Waveform timeline in Events mode, with an event diamond on the event rail" src="Images/subvoxpro-timeline-events.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>「走れ！」というセリフでドアを開けたり、悲鳴でカメラを揺らしたりできます。<strong>イベント</strong>はボイスライン内の特定のタイミングで発火します。</p>
+<ol>
+<li>タイムラインを<strong>Events</strong>に切り替え、<strong>+ Event</strong>をクリックします（または波形上でマウスの中央ボタンをクリックします）。</li>
+<li><strong>シグナル</strong>を指定します。これは、<em>Camera Shake</em>など、イベントに名前を付ける小さな再利用可能なアセットです。</li>
+<li><strong>発火するタイミング</strong>を選択します。音声の開始時または終了時、特定のtime（時刻）、あるいは字幕やword（単語）に合わせて発火できます（単語に合わせた場合は、タイミングが変更されてもその単語に追従します）。ひし形をドラッグして位置を調整します。</li>
+</ol>
+<p>その後、以下の3つの方法のいずれかでイベントに応じた処理を実行します。</p>
+<ul>
+<li><p><strong>コード不要</strong> — オブジェクトに<strong>Voice Line Event Receiver</strong>を追加し、シグナルを選択してUnityEventを接続します。</p>
+</li>
+<li><p><strong>属性</strong> — MonoBehaviourの任意のメソッドに、生成されたシグナル定数を指定した属性を付けます（定数はシグナルのInspectorでコピーできます）。</p>
+<pre><code class="lang-csharp">[VoiceLineEvent(SubVoxEvents.CAMERA_SHAKE)]
+private void Shake()
+{
+    // ...
+}
+</code></pre>
+<p>シグナルの任意設定項目<strong>Category</strong>を、<code>/</code>で区切られた階層（例：<code>Camera/Effects</code>）に設定すると、
+<code>SubVoxEvents.Camera.Effects.CAMERA_SHAKE</code>が生成されます。定数は、シグナルが保存、名前変更、作成、または削除された際に再生成されます。キーやカテゴリの名前を変更すると、古い参照は意図的にコンパイルエラーになります。
+<code>[VoiceLineEvent("Camera Shake")]</code>のような文字列キーは引き続きサポートされます。</p>
+<p>定数はデータフォルダー（<code>Generated/SubVoxEvents.g.cs</code>）内に保存されるため、プラグインの更新によって上書きされることはありません。アセンブリ定義のないスクリプトは、これらの定数を直接参照できます。スクリプトにアセンブリ定義がある場合は、
+<strong>SubVoxPro.Events</strong>への参照を追加します。</p>
+<p><strong>[SubVox Pro]</strong>プレハブは、これらのメソッドを自動的に検出します。実行時にオブジェクトを作成する場合は、そのオブジェクトから
+<code>VoiceLineEventDispatcher.Register(this)</code>を呼び出します。非常に大規模なシーンでは、ディスパッチャーの
+<strong>Scan Scenes Automatically</strong>のチェックを外し、オブジェクトを手動で登録することもできます。</p>
+</li>
+<li><p><strong>C#</strong> — <code>SubVox.Subscribe(signal, MyMethod)</code>は、そのシグナルが発火するたびにメソッドを呼び出します（停止するには<code>SubVox.Unsubscribe</code>を使用します）。</p>
+</li>
+</ul>
+<p>イベントには<strong>Payload</strong>（イベントとともに渡される任意のアセット）を付加することもできます。そのアセットと同じtype（型）のパラメータを持つメソッドで受け取れます。また、<strong>再生1回につき1度</strong>に制限することもできます。イベントはPlay modeでのみ実行され、編集中やスクラブ中は実行されません。</p>
+<hr/>
+<h2 id="unity-timeline">Unity Timeline </h2>
+<ol>
+<li>Timelineで「<strong>Add ▸ Voice Line Track</strong>」を選択します。</li>
+<li>ボイスラインをそのトラックにドラッグします。字幕クリップが作成され、そのオーディオは別の <em>Voice Line Audio</em> トラックに配置されます。</li>
+<li>他のAudio Trackと同様に、そのオーディオトラックをAudioSourceにバインドします。</li>
+<li>シーンにSubtitle Displayerがあることを確認します（プレハブを使用するのが最も手早い方法です）。</li>
+</ol>
+<p>スクラブ中も、オーディオと字幕は同期します。「<strong>Voice Line Sequence</strong>」をドロップすると、その中のすべてのボイスラインが配置されます。ボイスラインのイベントは再生中に発生します。これらをTimelineのマーカーに変換するには、クリップを右クリックし、「<strong>SubVox Pro ▸ Bake Voice Events to Timeline</strong>」を選択します。</p>
+<p>カットシーンでは、ボイスラインに現在の言語の吹き替え音声がある場合、その音声が再生され、字幕も同期して表示されます。言語は
+Timelineの再生開始時に選択されます。クリップはマネージャーの「<strong>Subtitle Reveal Mode</strong>」に従いますが、そのクリップで「<strong>Override Reveal Mode</strong>」にチェックを入れると、この設定を上書きできます。</p>
+<p>アクティブなSubVoxクリップは、共通の字幕表示において優先されます。他のボイスラインは再生され続けますが、その字幕がクリップのテキストを置き換えることはありません。空白区間や、最初の字幕が表示される前も同様です。クリップ内の空白区間には、通常どおり「<strong>Keep Background Between Subtitles</strong>」の設定が適用されます。</p>
+<p>クリップが終了するかディレクターが停止すると、再生中のemitterのうち優先度が最も高いものの字幕に直ちに切り替わり、その時点の再生位置に対応する字幕が表示されます。オーディオが最初から再生し直されることはありません。再生中のemitterがない場合、パネルは非表示になります。複数のSubVox Timelineトラックやディレクターの再生が重なる場合、最も直近に再生区間に入ったクリップが優先されます。別のクリップが終了しても、優先されているクリップの字幕は消えません。ディレクターを一時停止すると、再生が再開されるかディレクターが停止されるまで、選択された字幕が保持されます。</p>
+<hr/>
+<h2 id="process-many-files-at-once">複数のファイルを一度に処理する </h2>
+<img alt="Batch Processing window" src="Images/subvoxpro-batch-window.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>「<strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong>」を使用すると、オーディオファイルまたは<code>.srt</code>ファイルのリストを、一度にボイスラインに変換できます。</p>
+<p>プロジェクト内にすでにあるオーディオファイルをキューに追加するには、複数のオーディオファイルを選択し、右クリックして「<strong>SubVox Pro ▸ Batch Processing</strong>」を選択します。バッチ処理は開始されず、ファイルが既存のキューに追加されます。重複するファイルは無視されます。この方法でファイルを追加する場合は、実行中のバッチ処理が終了するのを待ってください。</p>
+<ol>
+<li>ファイルをドラッグ＆ドロップするか、「<strong>Add files…</strong>」/「<strong>Add folder…</strong>」を使用します。</li>
+<li>必要なステップ（「<strong>Transcription</strong>」、「<strong>Translation</strong>」、「<strong>Dubbing</strong>」）を有効にし、すべてのファイルに共通の設定を一度行います。言語設定はファイルごとに上書きできます。</li>
+<li>「<strong>Estimated cost</strong>」を確認し、「<strong>Batch</strong>」をクリックします。すべての準備が整うまでボタンはグレーアウトされ、不足している項目が表示されます。</li>
+</ol>
+<p>各ファイルから個別のボイスラインが作成されます。バッチ処理では、次のステップに進む前に、すべてのファイルに対して1つのステップを実行します（例えば、すべての文字起こし、次にすべての翻訳、その次にすべての吹き替え）。これにより、オフラインエンジンでの処理が高速化されます。いつでもキャンセルでき、実行レポートをエクスポートすることもできます。「<strong>Batch</strong>」を再度クリックすると、各ファイルが中断した箇所から処理が再開されます。</p>
+<hr/>
+<h2 id="offline-engines-no-account-no-api-key">オフラインエンジン（アカウント不要、API key不要） </h2>
+<p><strong>Windows</strong>のUnityエディターでは、SubVox Proのすべての処理を、お使いのマシン上でオフラインかつ無料で実行できます。各エンジンは一度ダウンロードするだけで（プロバイダーの横のボタンには「<strong>Setup model</strong>」または「<strong>Install…</strong>」と表示されます）、すべてのプロジェクトで共有されます。「<strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>」（Hubのタイルからも開けます）では、すべてのエンジンが1つのウィンドウに一覧表示され、各エンジンのステータスと「<strong>Download</strong>」ボタン、ディスク容量を解放するための「<strong>Uninstall</strong>」ボタンを確認できます。グラフィックスカードがあると処理速度が大幅に向上しますが、なくても動作します。</p>
+<table>
+<thead>
+<tr>
+<th>エンジン</th>
+<th>機能</th>
+<th>ダウンロード容量</th>
+<th>対応言語</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Whisper</strong></td>
+<td>文字起こし</td>
+<td>1.6 GB（より大規模なモデルでは最大3.1 GB）</td>
+<td>多数の言語（自動検出に対応）</td>
+</tr>
+<tr>
+<td><strong>Parakeet</strong></td>
+<td>文字起こし（グラフィックスカードがなくても高速）</td>
+<td>670 MB</td>
+<td>ヨーロッパの25言語（自動検出）</td>
+</tr>
+<tr>
+<td><strong>Hy-MT2</strong></td>
+<td>翻訳</td>
+<td>1.1 GB、またはより高精度なモデルでは4.6 GB</td>
+<td>50の翻訳先言語のうち37言語（対象外：デンマーク語、スウェーデン語、フィンランド語、ノルウェー語、ギリシャ語、ハンガリー語、ルーマニア語、ブルガリア語、スロバキア語、スロベニア語、エストニア語、ラトビア語、リトアニア語）</td>
+</tr>
+<tr>
+<td><strong>Kokoro</strong></td>
+<td>吹き替え</td>
+<td>370 MB</td>
+<td>英語（米国および英国のボイス）</td>
+</tr>
+<tr>
+<td><strong>Chatterbox</strong></td>
+<td>吹き替え（各キャラクター固有の声、または20種類のプリセットボイス）</td>
+<td>3.3 GB</td>
+<td>21言語＋オプションの6 MBアドオンで日本語に対応</td>
+</tr>
+<tr>
+<td><strong>Qwen3 TTS 1.7B</strong></td>
+<td>吹き替え（クローンボイス、プリセットボイス、または説明文で指定したボイス）</td>
+<td>モデルごとに2.4 GB</td>
+<td>10言語</td>
+</tr>
+<tr>
+<td><strong>VoxCPM2</strong></td>
+<td>設定したパーソナリティに従うクローンボイスによる吹き替え</td>
+<td>3.6 GB</td>
+<td>30言語</td>
+</tr>
+<tr>
+<td><strong>Qwen3 Aligner</strong></td>
+<td>文字起こしと吹き替え音声の正確な単語タイミング</td>
+<td>1.0 GB</td>
+<td>11言語</td>
+</tr>
+</tbody>
+</table>
+<h3 id="whisper-offline-transcription">Whisper（オフライン文字起こし） </h3>
+<img alt="Whisper local model setup window" src="Images/subvoxpro-whisper-setup.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>「Transcription」タブで「<strong>Whisper</strong>」を選択し、「<strong>Setup model</strong>」をクリックします。推奨モデルは「<strong>Large v3 Turbo</strong>」です。高速で、フルサイズのモデルとほぼ同等の精度が得られます。グラフィックスカードがあれば、短いボイスラインの文字起こしは約
+1秒で完了します。</p>
+<h3 id="parakeet-offline-transcription-european-languages">Parakeet（オフライン文字起こし、ヨーロッパ言語） </h3>
+<img alt="Parakeet local model setup window" src="Images/subvoxpro-parakeet-setup.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>「Transcription」タブで「<strong>Parakeet</strong>」を選択し、「<strong>Setup model</strong>」をクリックします（670 MB）。NVIDIAのParakeet TDTは、句読点付きのテキストと単語のタイミング情報を生成し、話されている言語を自動的に認識するため、設定は不要です。グラフィックスカードがなくても、最近のプロセッサであれば高速に処理できます。短いボイスラインは1秒未満、2分間の音声でも数秒で文字起こしが完了します。対応言語：ブルガリア語、クロアチア語、チェコ語、デンマーク語、オランダ語、英語、エストニア語、フィンランド語、フランス語、ドイツ語、ギリシャ語、ハンガリー語、イタリア語、ラトビア語、リトアニア語、マルタ語、ポーランド語、ポルトガル語、ルーマニア語、ロシア語、スロバキア語、スロベニア語、スペイン語、スウェーデン語、ウクライナ語。その他の言語にはWhisperを使用してください。</p>
+<h3 id="hy-mt2-offline-translation">Hy-MT2（オフライン翻訳） </h3>
+<img alt="Hy-MT2 local translation setup window" src="Images/subvoxpro-hymt-setup.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>「Translation」タブで「<strong>Hy-MT2</strong>」を選択し、「<strong>Setup model</strong>」をクリックします。「<strong>1.8B</strong>」モデルはどのマシンでも高速に動作します。「<strong>7B</strong>」モデルはコンテキストの補足情報をより正確に反映し、8 GBのメモリを搭載したグラフィックスカードでの使用が最適です。どちらのモデルもコンテキストの補足情報と文体の丁寧さの設定に従います。</p>
+<h3 id="kokoro-offline-english-dubbing">Kokoro（オフライン英語吹き替え） </h3>
+<p>「Dubbing」タブで「<strong>Kokoro</strong>」を選択し、「<strong>Install Kokoro…</strong>」をクリックします。11種類の英語ボイスが付属しています。</p>
+<h3 id="chatterbox-offline-dubbing-in-21-languages">Chatterbox（21言語対応のオフライン吹き替え） </h3>
+<img alt="Chatterbox local dubbing setup window" src="Images/subvoxpro-chatterbox-setup.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>「Dubbing」タブで<strong>Chatterbox</strong>を選択し、<strong>Install Chatterbox…</strong>をクリックします。利用できるボイスは次のとおりです。</p>
+<ul>
+<li><strong>Original voice</strong>（デフォルト） — どの言語でも、各キャラクターは元の音声の声を維持します。</li>
+<li><strong>付属の20種類のボイス</strong>（10言語それぞれに女性ボイスと男性ボイスを1種類ずつ） — 合成音声で、商用利用も無料です。Qwen3やVoxCPM2の付属ボイスと同じです。</li>
+<li><strong>Chatterbox default voice</strong></li>
+<li><strong>自分のオーディオクリップ</strong> — データフォルダー内の<code>Voices</code>フォルダーに配置した任意のクリップ（1人の声だけが明瞭に録音された5～10秒の音声）。</li>
+</ul>
+<p>対応言語：アラビア語、中国語、デンマーク語、オランダ語、英語、フィンランド語、フランス語、ドイツ語、ギリシャ語、ヒンディー語、イタリア語、韓国語、マレー語、ノルウェー語、ポーランド語、ポルトガル語、ロシア語、スペイン語、スワヒリ語、スウェーデン語、トルコ語。日本語も、同じウィンドウからサポートをインストールすると利用できます。「Dubbing」パネルのプロバイダーの下にある<strong>Exaggeration</strong>で、話し方の表現力を調整できます。「Batch Processing」と「Settings」にも同じ項目があります。生成結果は毎回わずかに異なります。単語がうまく発音されない場合は、もう一度生成してください。生成の安定性は言語によって異なります。
+<a href="providers.html#chatterbox-how-reliable-each-language-is">各言語の生成の安定性</a>を参照してください。</p>
+<h3 id="qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B（オフライン多言語吹き替え） </h3>
+<p>「Dubbing」タブで<strong>Qwen3 TTS 1.7B</strong>を選択し、<strong>Install…</strong>をクリックします。対応言語は中国語、英語、日本語、韓国語、ドイツ語、フランス語、ロシア語、ポルトガル語、スペイン語、イタリア語です。3種類のモデルが用意されているので、必要なものをインストールしてください（各約2.4 GB）。</p>
+<table>
+<thead>
+<tr>
+<th>モデル</th>
+<th>ボイス</th>
+<th>音声演技プリセットと演技の修正指示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Base - Voice Cloning</strong></td>
+<td><strong>Original voice</strong>、20種類の付属ボイス（各言語につき女性ボイスと男性ボイス各1種類）、<code>Voices</code>フォルダー内のクリップ</td>
+<td>反映されません。参照音声の話し方を維持します</td>
+</tr>
+<tr>
+<td><strong>Custom Voice - 9 Preset Voices</strong></td>
+<td>Vivian、Serena、Uncle Fu、Dylan、Eric、Ryan、Aiden、Ono Anna、Sohee</td>
+<td>反映されます</td>
+</tr>
+<tr>
+<td><strong>Voice Design - Text Description</strong></td>
+<td>言葉で特徴を説明して作成するボイス</td>
+<td>反映されます</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Base</strong>は声をクローンします。付属ボイスは合成音声で、商用利用も無料です。自分の声をクローンするには、ボイス選択メニューで<strong>Record a reference…</strong>を選択し、静かな部屋で画面に表示されるテキストを8～12秒間読み上げます。</li>
+<li><strong>Custom Voice</strong>のボイスは対応するすべての言語を話せますが、それぞれのボイスの元の言語のアクセントがわずかに残ります。</li>
+<li><strong>Voice Design</strong>：各キャラクターの声の特徴（年齢、音色、アクセントなど）を、その話者アセットの
+<strong>Voice description</strong>欄に記述し、<strong>Use speakers' voices</strong>を選択します。ボイスライン全体で1つのボイスを使う場合は、代わりに「Dubbing」パネルに説明を入力します。同じ説明でも、テイクごとに声がわずかに異なる場合があります。同じ声を維持する必要がある場合は、Baseを使用してください。</li>
+</ul>
+<p>「Settings」で<strong>Use GPU</strong>を有効にすると、グラフィックスカードを利用して生成を高速化できます。</p>
+<h3 id="voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2（スタイル制御付きオフラインボイスクローニング） </h3>
+<p>「Dubbing」タブで<strong>VoxCPM2</strong>を選択し、<strong>Install…</strong>をクリックします（3.6 GB）。VoxCPM2は声をクローンし、音声演技プリセットや演技の修正指示にも従います。対応する30言語は、アラビア語、ビルマ語、中国語、デンマーク語、オランダ語、英語、フィンランド語、フランス語、ドイツ語、ギリシャ語、ヘブライ語、ヒンディー語、インドネシア語、イタリア語、日本語、クメール語、韓国語、ラオ語、マレー語、ノルウェー語、ポーランド語、ポルトガル語、ロシア語、スペイン語、スワヒリ語、スウェーデン語、フィリピノ語、タイ語、トルコ語、ベトナム語です。</p>
+<p>利用できるボイスはQwen3 Baseと同じです。<strong>Original voice</strong>、20種類の付属ボイス、<code>Voices</code>
+フォルダー内のクリップ、または<strong>Record a reference…</strong>で録音した参照音声を使えます。演技指示は<strong>英語または中国語</strong>で入力してください。例えば、<code>Speak softly, with a sad tone</code>や<code>Whisper quietly</code>です。セリフの言語にかかわらず、この2言語で指示すると最も効果的です。付属ボイスは、元の言語以外ではわずかなアクセントが残ります。吹き替え先の言語に正確に合ったアクセントにするには、その言語で録音された参照音声を使用してください。「Settings」で<strong>Use GPU</strong>を有効にすると、グラフィックスカードを利用して生成を高速化できます。</p>
+<p>実在しない声を作成するには、<strong>Designed voice</strong>を選択し、声の特徴を説明します。例えば、<code>A deep, calm male voice in his fifties</code>と入力します。ボイスは最初の生成時に作成され、以降のすべてのボイスラインで維持されるため、キャラクターの声は常に同じになります。声の調子は、引き続き音声演技プリセットで設定できます。キャラクターごとに異なるボイスを使う場合は、各話者に説明を入力し、ボイスを<strong>Designed voice</strong>に設定します。</p>
+<h3 id="qwen3-offline-word-timing">Qwen3（オフラインの単語タイミング） </h3>
+<p>「Transcription」または「Dubbing」タブで、<strong>Word timing</strong>を<strong>Qwen3 aligner (local)</strong>に設定し、<strong>Install…</strong>をクリックします。それ以降、文字起こし結果に対して
+<strong>Split</strong>を実行するたびに、また吹き替え音声を生成するたびに、自動的に単語のタイミングが音声に合わせて調整されるため、単語ごとの字幕が音声と正確に同期します。調整されるのは単語のタイミングだけで、テキストは変更されません。対応言語は中国語、広東語、英語、フランス語、ドイツ語、イタリア語、日本語、韓国語、ポルトガル語、ロシア語、スペイン語で、最大5分間の音声を処理できます。</p>
+<blockquote>
+<p>スクリプトが再コンパイルされるか、Playモードに入ると、ダウンロードが中断されます。同じウィンドウからもう一度開始すれば、中断した位置から再開されます。</p>
+</blockquote>
+<hr/>
+<h2 id="human-translation-with-google-sheets">Google Sheetsを使った人手による翻訳 </h2>
+<p>共有のGoogleスプレッドシートで翻訳者にセリフを渡し、翻訳結果を取り込めます。やり取りは双方向で行えます。</p>
+<h3 id="setup-once">設定（1回のみ） </h3>
+<ol>
+<li><strong>Google Cloud</strong> — <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>でプロジェクトを作成し、<strong>Google Sheets API</strong>を有効にします。
+<strong>OAuth consent screen</strong>で<strong>External</strong>を選択し、自分と翻訳者を<strong>Test users</strong>として追加します。次に、種類が<strong>Desktop app</strong>の<strong>OAuth client ID</strong>を作成し、<strong>Client ID</strong>と<strong>Client secret</strong>をコピーします。</li>
+<li><strong>シート</strong> — 空のGoogleスプレッドシートを作成し、URLからID（<code>/d/</code>と<code>/edit</code>の間）をコピーして、翻訳者に<strong>Editor</strong>権限で共有します。</li>
+<li><strong>Unity</strong> — <strong>Tools ▸ SubVox Pro ▸ Google Sheets Localization</strong>を開き、3つの値を貼り付けて
+<strong>Connect</strong>をクリックし、ブラウザでサインインします。</li>
+</ol>
+<h3 id="every-day">日常の作業 </h3>
+<p>翻訳者は各言語の列に翻訳を入力し、各行を<strong>reviewed</strong>（レビュー済み）または<strong>final</strong>（確定済み）に設定します。<strong>Sync with Sheet</strong>をクリックすると、
+SubVox ProがUnityとシートの内容を左右に並べてすべての相違点を表示し、書き込み前にどちらの内容を採用するかを選択できます。シートのキー列はロックされているため、翻訳者は翻訳内容だけを編集できます。ステータスは色分けされ（<strong>reviewed</strong>は琥珀色、<strong>final</strong>は緑色）、空の翻訳欄にも色が付くため、残りの作業が一目でわかります。各ボイスラインの先頭には濃い色のタイトル行があり、左側の余白にある<strong>+ / −</strong>ボタンで、そのボイスラインに属する行を展開または折りたためます。</p>
+<p>シートにのみ追加された行はインポートされません（字幕にはタイミング情報が必要なためです）が、確認なしに削除されることもありません。次の2種類の行はデフォルトで<strong>Drop</strong>に設定されるため、1回の同期で整理できます。<strong>Duplicate</strong>（シート内に同じ行が重複しているもの）と<strong>Removed</strong>（字幕の再分割後などに、
+Unity内に存在しなくなった行）です。シートに残す場合は、<strong>Keep</strong>をクリックします。</p>
+<p>「Spreadsheet ID」の横にあるボタンをクリックすると、ブラウザでシートが開きます。</p>
+<hr/>
+<h2 id="settings">設定 </h2>
+<img alt="SubVox Pro settings: API keys, preferences, data folder and model catalog" src="Images/subvoxpro-settings.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><strong>Tools ▸ SubVox Pro ▸ Settings</strong>：</p>
+<ul>
+<li><strong>API Keys</strong> — サービスごとに1つのキーを使用します。キーはこのコンピューター内に保存され、プロジェクトへの保存、コミット、配布物への同梱は一切行われません。行の末尾にある目のアイコンでキーの表示／非表示を切り替え、赤い×マークで削除できます。</li>
+<li><strong>Preferences</strong> — <strong>Show CPS</strong>（字幕の読み取り速度）、<strong>Custom inspectors</strong>、<strong>Auto blanks on new lines</strong>。</li>
+<li><strong>Data folder</strong> — 新しいボイスライン、話者、吹き替え音声の作成先です。</li>
+<li><strong>Cloud Model Catalog</strong> — クラウドAIモデルとその価格を表示し、オンラインで更新します。<strong>Manage models</strong>では、まだ一覧にないモデルを追加できます。ローカルモデルは<strong>Additional Models</strong>と各プロバイダーの操作機能を使って選択・インストールします。</li>
+<li><strong>Local models &amp; services</strong> — 各オフラインエンジンの状態（<strong>Ready</strong>または<strong>Not installed</strong>）、オプション（グラフィックスカードの使用、Chatterboxの表現力）、インストールや設定を行うボタンが表示されます。また、
+ElevenLabsのボイスクローンを整理・削除できます。</li>
+</ul>
+<hr/>
+<h2 id="keyboard-and-mouse">キーボードとマウス </h2>
+<p>SubVox Proウィンドウ内での操作（テキストフィールドへの入力中はショートカットが無効になります）：</p>
+<table>
+<thead>
+<tr>
+<th>ショートカット</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Space</strong></td>
+<td>再生ヘッドの位置から再生／一時停止</td>
+</tr>
+<tr>
+<td><strong>← / →</strong></td>
+<td>選択したマーカー（または単語、イベント）を50 ms単位で移動</td>
+</tr>
+<tr>
+<td><strong>Shift + ← / →</strong></td>
+<td>選択したマーカーを前／次の単語にスナップ</td>
+</tr>
+<tr>
+<td><strong>Ctrl + ← / →</strong></td>
+<td>前／次のマーカー（または単語、イベント）を選択</td>
+</tr>
+<tr>
+<td><strong>Delete</strong></td>
+<td>選択したマーカーまたはイベントを削除</td>
+</tr>
+<tr>
+<td><strong>Ctrl + Z</strong></td>
+<td>元に戻す</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>波形上のマウス操作</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>クリック</strong></td>
+<td>再生ヘッドを移動</td>
+</tr>
+<tr>
+<td><strong>ドラッグ</strong></td>
+<td>マーカー、単語、イベントを移動</td>
+</tr>
+<tr>
+<td><strong>再生ヘッドの上端または下端をドラッグ</strong></td>
+<td>オーディオエフェクトの編集中に再生ヘッドを移動</td>
+</tr>
+<tr>
+<td><strong>Shift + クリック</strong>または<strong>中央ボタンでクリック</strong></td>
+<td>マーカー（Eventsモードではイベント）を追加</td>
+</tr>
+<tr>
+<td><strong>右クリック</strong></td>
+<td>マーカーまたはイベントを削除</td>
+</tr>
+<tr>
+<td><strong>スクロール</strong> / <strong>Ctrl + スクロール</strong></td>
+<td>ズーム／表示範囲の水平移動</td>
+</tr>
+</tbody>
+</table>
+<p>波形の上にある<strong>Markers</strong>、<strong>Words</strong>、<strong>Events</strong>ボタンで編集対象を選択します。リスト内で行をダブルクリックすると、その字幕が再生されます。</p>
+<hr/>
+<h2 id="supported-languages">対応言語 </h2>
+<p><code>✓</code> 利用可能 · <code>◐</code> 選択するプロバイダーまたはボイスによる · <code>—</code> 利用不可</p>
+<table>
+<thead>
+<tr>
+<th>言語</th>
+<th style="text-align: center;">文字起こし</th>
+<th style="text-align: center;">翻訳</th>
+<th style="text-align: center;">吹き替え</th>
+<th style="text-align: center;">吹き替え音声の単語タイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>アラビア語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ベンガル語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ブルガリア語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ビルマ語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>広東語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>中国語（標準中国語）</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>中国語（繁体字）</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>クロアチア語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>チェコ語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>デンマーク語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>オランダ語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>英語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>エストニア語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>フィリピノ語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>フィンランド語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>フランス語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>ドイツ語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>ギリシャ語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>グジャラート語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ヘブライ語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ヒンディー語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ハンガリー語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>インドネシア語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>イタリア語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>日本語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>カザフ語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>韓国語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>ラトビア語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>リトアニア語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>マレー語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>マルタ語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>マラーティー語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>モンゴル語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ノルウェー語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ペルシア語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ポーランド語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ポルトガル語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>ルーマニア語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ロシア語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>スロバキア語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>スロベニア語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>スペイン語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>スワヒリ語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>スウェーデン語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>タミル語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>テルグ語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>タイ語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>トルコ語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ウクライナ語</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ウルドゥー語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>ベトナム語</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="your-data-and-online-services">データとオンラインサービス </h2>
+<p>SubVox Proは、オンラインサービスを利用する操作を開始した場合にのみ、そのサービスへデータを送信します。データはお使いのコンピューターから、ご自身のAPIキーを使って直接送信されます。送信されるのは、その操作に必要な情報のみです：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>プロバイダーが受け取る内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文字起こし</td>
+<td>ボイスラインの音声</td>
+</tr>
+<tr>
+<td>翻訳、<strong>Fix splits</strong></td>
+<td>字幕テキスト、言語名、入力したコンテキストメモ</td>
+</tr>
+<tr>
+<td>吹き替え、ボイスのプレビュー</td>
+<td>読み上げるテキスト、ボイスと音声演技プリセットの設定、ボイスクローニング時の参照音声</td>
+</tr>
+<tr>
+<td>Google Sheets</td>
+<td>字幕テキスト（ご自身のGoogleアカウント内のシートに送信）</td>
+</tr>
+</tbody>
+</table>
+<p>SubVox Proの販売元には何も送信されません。アカウントの作成は不要で、利用状況の追跡もありません。SubVox ProがダウンロードするのはGitHub上のモデル一覧と、<strong>Download</strong>をクリックした際のモデル本体のみです。
+<a href="#offline-engines-no-account-no-api-key">オフラインエンジン</a>では、すべてのデータがコンピューター内に留まります。</p>
+<p>プロバイダーによるデータの扱い（保存、学習への利用、無料プランでの商用利用）は、各社の利用規約によって異なります。概要は<a href="providers.html">Provider Setup</a>にまとめられています。共有できない台本や録音には、オフラインエンジンを使用してください。</p>
+<hr/>
+<h2 id="ai-generated-voices-in-your-game">ゲームでのAI生成音声の使用 </h2>
+<ul>
+<li><strong>プレイヤーに知らせてください。</strong> OpenAIは、プレイヤーが聴く音声がAI生成であることを伝えるよう求めています。また、
+Steamなどの一部のストアでは、公開時にAI生成コンテンツの申告が必要です。クレジットや設定メニューに一文を記載するのが一般的な方法です。</li>
+<li><strong>使用する権利のある声だけをクローニングしてください。</strong>声をクローニングする演者から、書面による同意を得てください。オフラインエンジンに付属する参照音声は、自由に使用できます。</li>
+<li><strong>使用するプランを確認してください。</strong>一部の無料プランでは商用利用が禁止されています。
+<a href="providers.html">Provider Setup</a>の無料プラン一覧表を参照してください。</li>
+<li><strong>翻訳のレビューを依頼してください。</strong>リリース前に、母語話者に
+<a href="#human-translation-with-google-sheets">Google Sheets</a>で確認してもらえます。</li>
+</ul>
+<hr/>
+<h2 id="where-your-files-go">ファイルの保存先 </h2>
+<p>作成したデータは<strong>データフォルダー</strong>に保存されます。デフォルトの保存先は<code>Assets/Data/SubVoxPro/</code>です（
+<a href="#settings">設定</a>で変更できます）。このフォルダーはSubVox Proフォルダーの外にあるため、アセットの更新時にも変更されません。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>保存場所</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ボイスライン</td>
+<td>データフォルダー内の<code>Voicelines/</code></td>
+</tr>
+<tr>
+<td>吹き替え音声とマイク録音</td>
+<td>ボイスラインの隣にある<code>Dubs/</code>と<code>Recordings/</code></td>
+</tr>
+<tr>
+<td>話者と音声演技プリセット</td>
+<td>データフォルダー内の<code>Speakers/</code></td>
+</tr>
+<tr>
+<td>イベントシグナル</td>
+<td>データフォルダー内の<code>Event Signals/</code></td>
+</tr>
+<tr>
+<td>ボイスクローニング用クリップ</td>
+<td>データフォルダー内の<code>Voices/</code></td>
+</tr>
+<tr>
+<td>APIキー</td>
+<td>このコンピューターのUnity環境設定 — プロジェクト内には保存されません</td>
+</tr>
+<tr>
+<td>オフラインエンジン</td>
+<td>ユーザーフォルダー（<code>AppData/Local/SubVoxPro</code>）内。すべてのプロジェクトで共有されます</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="updating-and-uninstalling">更新とアンインストール </h2>
+<p><strong>更新</strong></p>
+<ol>
+<li>プロジェクトをコミットするか、バックアップを取ります。</li>
+<li><strong>Window ▸ Package Manager ▸ My Assets</strong>から新しいバージョンをインポートします。データフォルダー、設定、APIキー、およびダウンロード済みのモデルは保持されます。SubVox Proフォルダーを移動した場合は、移動先に更新が適用されます。</li>
+<li>Unityを再起動して、新しいオフラインエンジンファイルが使用されるようにします。</li>
+</ol>
+<p><strong>アンインストール</strong></p>
+<ol>
+<li>シーンやプレハブからSubVox Proコンポーネントを削除します。</li>
+<li>このコンピューターからAPIキーを削除するには、<a href="#settings">Settings</a>の<strong>Clear API Keys</strong>をクリックします。Googleアカウントを連携している場合は、Google SheetsウィンドウおよびGoogle Cloud TTSのサインイン画面で<strong>Disconnect</strong>もクリックします。</li>
+<li>オフラインエンジンが使用しているディスク容量を解放するには、<strong>Additional Models</strong>で各エンジンの<strong>Uninstall</strong>をクリックします。オフラインエンジンはすべてのプロジェクトで共有されているため、他のプロジェクトで使用していない場合にのみアンインストールしてください。</li>
+<li>SubVox Proフォルダーと<code>Assets/Editor/SubVoxPro</code>（設定）を削除します。ボイスラインが不要になった場合は、データフォルダー（デフォルトでは<code>Assets/Data/SubVoxPro</code>）も削除します。データフォルダーを残す場合は、少なくとも<code>Generated</code>
+フォルダーを削除してください。このフォルダー内のコードをコンパイルするにはSubVox Proが必要です。</li>
+</ol>
+<p>一時ファイルは、Unityを終了する際にUnityによって削除されます。</p>
+<hr/>
+<h2 id="troubleshooting">トラブルシューティング </h2>
+<ul>
+<li><strong>オフラインエンジンの読み込みに失敗し、DLLが見つからない旨のエラーが表示される</strong> — Microsoftから最新の*Microsoft Visual C++
+Redistributable (x64)*をインストールし、Unityを再起動してください。</li>
+<li><strong>ダウンロードが停止した</strong> — スクリプトが再コンパイルされたか、Play modeが開始されたためです。同じセットアップウィンドウを再度開くと、ダウンロードが再開されます。</li>
+<li><strong>Geminiの吹き替え処理が遅くなったり停止したりする</strong> — Geminiの無料プランでは、1分あたりおよび1日あたりに送信できる音声リクエストはごく少数に限られます。SubVox Proは自動的に待機して再試行します。<strong>Per speaker</strong>または<strong>All together</strong>を選択するとリクエスト数が減り、
+Googleプロジェクトで課金を有効にすると制限が解除されます。</li>
+<li><strong>macOSでレコーダーがマイクを認識しない</strong> — 「システム設定 ▸ プライバシーとセキュリティ ▸ マイク」で、Unityによるマイクへのアクセスを許可してください。</li>
+<li><strong>ゲーム内で何も表示されない</strong> — シーンにSubtitle Displayerが配置され、テキストが割り当てられていること、およびそのボイスラインが再生されるエミッターの<strong>Show Subtitles</strong>がオンになっていることを確認してください。</li>
+</ul>
+<hr/>
+<h2 id="support">サポート </h2>
+<p>お問い合わせ、バグ報告、機能リクエスト：<strong>exnihilus.assets@gmail.com</strong>。お問い合わせの際は、使用しているUnityのバージョン、関連するプロバイダーまたはエンジン、およびConsoleにエラーが表示されている場合はその内容も記載してください。</p>
+<hr/>
+<p><sub>SubVox Pro © 2026 Louis Nillus (ExNihilus). 無断転載を禁じます。Unity Asset Store EULAに基づいてライセンスされています。</sub></p>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

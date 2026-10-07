@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>文字起こしプロバイダー | SubVox Pro ドキュメント </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="文字起こしプロバイダー | SubVox Pro ドキュメント " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=78ab4245ab" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="この記事の内容" name="loc:inThisArticle"/>
+<meta content="「{query}」の検索結果：{count} 件" name="loc:searchResultsCount"/>
+<meta content="「{query}」に一致する結果はありません" name="loc:searchNoResults"/>
+<meta content="タイトルで絞り込み" name="loc:tocFilter"/>
+<meta content="次へ" name="loc:nextArticle"/>
+<meta content="前へ" name="loc:prevArticle"/>
+<meta content="ライト" name="loc:themeLight"/>
+<meta content="ダーク" name="loc:themeDark"/>
+<meta content="自動" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=78ab4245ab" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="ja">
+  <link rel="alternate" hreflang="en" href="../../manual/providers-transcription.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers-transcription.html">
+<link rel="alternate" hreflang="de" href="../../de/manual/providers-transcription.html">
+<link rel="alternate" hreflang="ja" href="../../ja/manual/providers-transcription.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="ナビゲーションの切り替え" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="検索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="検索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目次</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="transcription-providers">文字起こしプロバイダー </h1>
+<details id="assemblyai" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="assemblyai-setup"><strong>AssemblyAI</strong></h2></summary>
+<p><strong>用途：</strong>単語単位のタイミング情報を伴う音声認識。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> <strong><a href="https://www.assemblyai.com/dashboard/signup">https://www.assemblyai.com/dashboard/signup</a></strong> にアクセスし、アカウントを作成します（メールまたはSSO）。クレジットカードは不要です。新規アカウントには、約 <strong>$50相当の無料クレジット</strong>（約330時間分）が付与されます。</p>
+<img alt="AssemblyAI sign-up page" src="Images/assemblyai-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> メールの認証後、左サイドバーの <strong>Manage ▸ API Keys</strong> を開きます。</p>
+<img alt="AssemblyAI API Keys entry in the sidebar" src="Images/assemblyai-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> AssemblyAIは、プロジェクト用の <strong>Default API Key</strong> を作成します。そのキーをコピーするか、SubVox Pro専用のキーが必要な場合は <strong>Create new API key</strong> をクリックします。</p>
+<img alt="AssemblyAI API Keys page" src="Images/assemblyai-api-keys-page.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> 新しいキーを作成する場合は、<code>SubVoxPro</code>やプロジェクト名など、識別しやすい名前を付けてから、<strong>Create</strong> をクリックします。</p>
+<img alt="AssemblyAI create API key dialog" src="Images/assemblyai-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> キーの行からAPIキーをコピーします。</p>
+<img alt="AssemblyAI API key row" src="Images/assemblyai-api-key-row.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> SubVox Pro（Settings ▸ <em>AssemblyAI</em>）に貼り付けます。</p>
+<blockquote>
+<p>無料アカウントでは、プロジェクト2つ／APIキー2つまでという制限がありますが、SubVox Proを使用するには十分な数です。ヘルプ記事：<a href="https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key">https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key</a></p>
+</blockquote>
+</details>
+<details id="gladia" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="gladia-setup"><strong>Gladia</strong></h2></summary>
+<p><strong>用途：</strong>音声認識。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> <strong><a href="https://app.gladia.io">https://app.gladia.io</a></strong> でサインアップします（メールまたはGoogle）。</p>
+<img alt="Gladia sign-up page" src="Images/gladia-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> ログイン後、左側のサイドバーにある <strong>API Keys</strong> を開きます。アカウントに紐付けられたすべてのキーが一覧表示されます。</p>
+<img alt="Gladia API Keys entry in the sidebar" src="Images/gladia-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> SubVox Pro専用のキーが必要な場合は、作成フォームを使用し、
+<code>SubVoxPro</code>やプロジェクト名など、識別しやすい名前を付けます。</p>
+<img alt="Gladia create API key form" src="Images/gladia-create-api-key.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>作成後、リストからキーをコピーします。Gladiaでは、後でキーの値が短縮表示される場合があるため、<u>トークンの値全体を確認できるうちに、すぐにコピーしてください</u>。</p>
+<img alt="Gladia API key row" src="Images/gladia-example-key.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> SubVox Pro（Settings ▸ <em>Gladia</em>）に貼り付けます。</p>
+<blockquote>
+<p>無料プラン：<strong>月間10時間の文字起こし</strong>（API呼び出しは1時間あたり最大20回、同時処理3件まで）。ヘルプ：<a href="https://support.gladia.io/article/how-to-get-the-api-key-from-my-account">https://support.gladia.io/article/how-to-get-the-api-key-from-my-account</a></p>
+</blockquote>
+</details>
+<details id="deepgram" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="deepgram-setup"><strong>Deepgram</strong></h2></summary>
+<p><strong>用途：</strong>音声認識。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> <strong><a href="https://console.deepgram.com/signup">https://console.deepgram.com/signup</a></strong> でアカウントを作成します。クレジットカードは不要で、<strong>$200相当の無料クレジット</strong>が付与されます（登録から1年後に失効します）。</p>
+<img alt="Deepgram Console sign-up page" src="Images/deepgram-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Consoleで、左側のサイドバーから <strong>API Keys</strong> を開きます。</p>
+<img alt="Deepgram API Keys entry in the sidebar" src="Images/deepgram-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> <strong>Create a New API Key</strong> をクリックします。</p>
+<img alt="Deepgram create API key button" src="Images/deepgram-create-api-key-button.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> キーに分かりやすい名前を付けます。<strong>Set expiration</strong> では、ワークフローに合った期間を選択します。SubVox Proでは、キーの有効期間について特に指定はありません。</p>
+<img alt="Deepgram create API key dialog" src="Images/deepgram-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> 生成されたシークレットをコピーし、安全な場所に保存してください。<u>Deepgramでは、このシークレットを再度表示することはできません</u>。</p>
+<img alt="Deepgram generated API key secret" src="Images/deepgram-new-api-key-secret.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> SubVox Pro（Settings ▸ <em>Deepgram</em>）に貼り付けます。</p>
+</details>
+<details id="speechmatics" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="speechmatics-setup"><strong>Speechmatics</strong></h2></summary>
+<p><strong>用途：</strong>音声認識。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> <strong>Speechmatics Portal</strong>（<strong><a href="https://portal.speechmatics.com">https://portal.speechmatics.com</a></strong>）にアクセスし、アカウントを作成します。無料プランでは、クレジットカードの登録不要で、1回限りの <strong>$100相当のクレジット</strong>が付与されます。</p>
+<img alt="Speechmatics Portal sign-up page" src="Images/speechmatics-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> プロジェクトのサイドバーで、<strong>Manage ▸ API Keys</strong> を開きます。</p>
+<img alt="Speechmatics API Keys entry in the sidebar" src="Images/speechmatics-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> <strong>Create new key</strong> をクリックします。</p>
+<img alt="Speechmatics create new key button" src="Images/speechmatics-create-key-empty.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> キーに分かりやすい名前を付け、<strong>Generate new key</strong> をクリックします。</p>
+<img alt="Speechmatics create API key form" src="Images/speechmatics-create-api-key-form.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> ダイアログを閉じる前に、キーをコピーしてください。<u>セキュリティ上の理由により、Speechmaticsではキーが再度表示されません</u>。</p>
+<img alt="Speechmatics save API key dialog" src="Images/speechmatics-save-api-key.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> SubVox Pro（Settings ▸ <em>Speechmatics</em>）に貼り付けます。</p>
+<blockquote>
+<p>ドキュメント：<a href="https://docs.speechmatics.com/get-started/authentication">https://docs.speechmatics.com/get-started/authentication</a></p>
+</blockquote>
+</details>
+<details id="elevenlabs" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="elevenlabs-setup"><strong>ElevenLabs</strong></h2></summary>
+<p><strong>用途：</strong>音声認識（ElevenLabs Scribe）および音声合成による吹き替え。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> <strong><a href="https://elevenlabs.io">https://elevenlabs.io</a></strong> でサインアップします（メールまたはSSO）。クレジットカードは不要です。無料プランには、毎月少量の利用枠（約10分）が含まれています。無料プランは<strong>非商用</strong>であり、ElevenLabsのクレジット表記が必要です。公開するゲームの吹き替えには、有料プランが必要です。</p>
+<img alt="ElevenLabs sign-up page" src="Images/elevenlabs-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> ログイン後、左側のサイドバーから <strong>Developers</strong> を開きます。ここには、ElevenLabsのAPIアクセス、ログ、Webhook、環境変数がまとめられています。</p>
+<img alt="ElevenLabs Developers entry in the sidebar" src="Images/elevenlabs-developers-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Developersページで、<strong>API Keys</strong> タブを選択し、<strong>Create Key</strong> をクリックします。</p>
+<img alt="ElevenLabs API Keys tab" src="Images/elevenlabs-api-keys-tab.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> キーに分かりやすい名前を付けます。<strong>Restrict Key</strong> を有効にする場合は、<strong>Speech to Text</strong> と <strong>Text to Speech</strong> の両方が <strong>Access</strong> に設定されていることを確認してください。SubVox Proは、文字起こしにScribeを使用し、吹き替え音声の生成にはText-to-Speech APIを使用します。</p>
+<img alt="ElevenLabs create API key dialog" src="Images/elevenlabs-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<img alt="ElevenLabs Speech to Text access permission" src="Images/elevenlabs-speech-to-text-access.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<img alt="ElevenLabs Text to Speech access permission" src="Images/elevenlabs-text-to-speech-access.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> ダイアログを閉じる前に、生成されたAPIキーをコピーしてください。<u>ElevenLabsでは、完全な値が表示されるのは1回のみです</u>。</p>
+<img alt="ElevenLabs generated API key" src="Images/elevenlabs-api-key-created.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> SubVox Pro（Settings ▸ <em>ElevenLabs</em>）に貼り付けます。ElevenLabsの文字起こしとTTSによる吹き替えでは、同じトークンを使用します。</p>
+<blockquote>
+<p>APIリファレンス：Text-to-Speechエンドポイントでは、<code>xi-api-key</code>ヘッダーを使用し、
+<code>POST /v1/text-to-speech/:voice_id</code>でテキストを音声に変換します：<a href="https://elevenlabs.io/docs/api-reference/text-to-speech/convert">https://elevenlabs.io/docs/api-reference/text-to-speech/convert</a></p>
+</blockquote>
+</details>
+<details id="rev-ai" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="rev-ai-setup"><strong>Rev AI</strong></h2></summary>
+<p><strong>用途：</strong>音声認識。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> <strong><a href="https://www.rev.ai/auth/signup">https://www.rev.ai/auth/signup</a></strong> でサインアップします。クレジットカードは不要で、<strong>5時間分の無料クレジット</strong>が付与されます。</p>
+<img alt="Rev AI sign-up page" src="Images/revai-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> <strong>Access Token</strong> ページ（<strong><a href="https://www.rev.ai/access_token">https://www.rev.ai/access_token</a></strong>）にアクセスします。左側のナビゲーションの <strong>Access Token</strong> からも開けます。</p>
+<img alt="Rev AI Access Token entry in the sidebar" src="Images/revai-access-token-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> まだトークンが存在しない場合は、Access Tokenページで <strong>Generate</strong> をクリックします。Rev AIでは、同時に有効にできるトークンは最大2つです。</p>
+<img alt="Rev AI Access Token page before generation" src="Images/revai-access-token-empty.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> 生成されたトークンはすぐにコピーしてください。<u>Rev AIでは、完全な値が表示されるのは1回のみです</u>。その後は、リストには短縮されたプレビューと作成日しか表示されなくなります。</p>
+<img alt="Rev AI generated access token" src="Images/revai-access-token-created.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> SubVox Pro（Settings ▸ <em>Rev AI</em>）に貼り付けます。</p>
+</details>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

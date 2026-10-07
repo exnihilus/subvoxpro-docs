@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>クラス VoiceLineData | SubVox Pro ドキュメント </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineData | SubVox Pro ドキュメント " name="title"/>
+<meta content="ソースオーディオと字幕、翻訳、生成された吹き替え音声、話者、イベントを含むボイスラインです。SubVox Proウィンドウで作成・編集します。コードからは読み取り専用です。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=78ab4245ab" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="この記事の内容" name="loc:inThisArticle"/>
+<meta content="「{query}」の検索結果：{count} 件" name="loc:searchResultsCount"/>
+<meta content="「{query}」に一致する結果はありません" name="loc:searchNoResults"/>
+<meta content="タイトルで絞り込み" name="loc:tocFilter"/>
+<meta content="次へ" name="loc:nextArticle"/>
+<meta content="前へ" name="loc:prevArticle"/>
+<meta content="ライト" name="loc:themeLight"/>
+<meta content="ダーク" name="loc:themeDark"/>
+<meta content="自動" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=78ab4245ab" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="ja">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.VoiceLineData.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.VoiceLineData.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.VoiceLineData.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.VoiceLineData.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="ナビゲーションの切り替え" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="検索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="検索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目次</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.VoiceLineData">
+<h1 class="text-break" data-uid="SubVoxPro.VoiceLineData" id="SubVoxPro_VoiceLineData">
+クラス VoiceLineData  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>名前空間</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>アセンブリ</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>ソースオーディオと字幕、翻訳、生成された吹き替え音声、話者、イベントを含むボイスラインです。SubVox Proウィンドウで作成・編集します。コードからは読み取り専用です。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class VoiceLineData : ScriptableObject</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>継承</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineData</span></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">コンストラクター
+</h2>
+<a data-uid="SubVoxPro.VoiceLineData.#ctor*" id="SubVoxPro_VoiceLineData__ctor_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.#ctor" id="SubVoxPro_VoiceLineData__ctor">
+  VoiceLineData()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineData()</code></pre>
+</div>
+<h2 class="section" id="properties">プロパティ
+</h2>
+<a data-uid="SubVoxPro.VoiceLineData.DefaultSpeaker*" id="SubVoxPro_VoiceLineData_DefaultSpeaker_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.DefaultSpeaker" id="SubVoxPro_VoiceLineData_DefaultSpeaker">
+  DefaultSpeaker
+  
+  </h3>
+<div class="markdown level1 summary"><p>グローバルな話者です。設定すると、このボイスラインのすべての字幕に適用され、字幕ごとの話者設定より優先されます。字幕ごとのオーバーライド設定は変更されずに保持されるため、この値をnullに戻すと再び適用されます。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SpeakerData DefaultSpeaker { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.EventCues*" id="SubVoxPro_VoiceLineData_EventCues_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.EventCues" id="SubVoxPro_VoiceLineData_EventCues">
+  EventCues
+  
+  </h3>
+<div class="markdown level1 summary"><p>このボイスラインに設定されたイベントです。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;VoiceLineEventCue&gt; EventCues { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.VoiceLineEventCue.html">VoiceLineEventCue</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.LocalizedAudioTracks*" id="SubVoxPro_VoiceLineData_LocalizedAudioTracks_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.LocalizedAudioTracks" id="SubVoxPro_VoiceLineData_LocalizedAudioTracks">
+  LocalizedAudioTracks
+  
+  </h3>
+<div class="markdown level1 summary"><p>各言語ごとに1つの吹き替え音声があります。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;LocalizedAudioTrack&gt; LocalizedAudioTracks { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.LocalizedAudioTrack.html">LocalizedAudioTrack</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.LocalizedTracks*" id="SubVoxPro_VoiceLineData_LocalizedTracks_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.LocalizedTracks" id="SubVoxPro_VoiceLineData_LocalizedTracks">
+  LocalizedTracks
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕の翻訳です。各言語に1つずつあります。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;LocalizedSubtitleTrack&gt; LocalizedTracks { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.LocalizedSubtitleTrack.html">LocalizedSubtitleTrack</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.NoAudioDuration*" id="SubVoxPro_VoiceLineData_NoAudioDuration_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.NoAudioDuration" id="SubVoxPro_VoiceLineData_NoAudioDuration">
+  NoAudioDuration
+  
+  </h3>
+<div class="markdown level1 summary"><p>オーディオがない場合のボイスラインの長さ（秒単位）です。この長さを超える字幕がある場合は、ボイスラインの長さも延長されます。そのため、字幕のみのボイスラインは、設定ウィンドウに表示されるタイムラインと同じ長さだけ再生されます。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float NoAudioDuration { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.SourceClip*" id="SubVoxPro_VoiceLineData_SourceClip_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.SourceClip" id="SubVoxPro_VoiceLineData_SourceClip">
+  SourceClip
+  
+  </h3>
+<div class="markdown level1 summary"><p>ソースオーディオです。オーディオのないボイスラインの場合はnullです。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public AudioClip SourceClip { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><span class="xref">AudioClip</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.SourceLanguageCode*" id="SubVoxPro_VoiceLineData_SourceLanguageCode_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.SourceLanguageCode" id="SubVoxPro_VoiceLineData_SourceLanguageCode">
+  SourceLanguageCode
+  
+  </h3>
+<div class="markdown level1 summary"><p>ソースオーディオと字幕の言語（例：「fr」）です。不明の場合は空文字列です。この言語を指定すると、常にソースが再生され、同じ言語のトラックは使用されません。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string SourceLanguageCode { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.Subtitles*" id="SubVoxPro_VoiceLineData_Subtitles_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.Subtitles" id="SubVoxPro_VoiceLineData_Subtitles">
+  Subtitles
+  
+  </h3>
+<div class="markdown level1 summary"><p>タイミング情報を含む、ソース言語のソース字幕です。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;SubtitleInfo&gt; Subtitles { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">メソッド
+</h2>
+<a data-uid="SubVoxPro.VoiceLineData.FindAudioTrack*" id="SubVoxPro_VoiceLineData_FindAudioTrack_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.FindAudioTrack(System.String)" id="SubVoxPro_VoiceLineData_FindAudioTrack_System_String_">
+  FindAudioTrack(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>言語コードがlanguage_codeと完全に一致する吹き替え音声です。該当するものがない場合はnullです。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public LocalizedAudioTrack FindAudioTrack(string language_code)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.LocalizedAudioTrack.html">LocalizedAudioTrack</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.FindTrack*" id="SubVoxPro_VoiceLineData_FindTrack_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.FindTrack(System.String)" id="SubVoxPro_VoiceLineData_FindTrack_System_String_">
+  FindTrack(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>コードが language_code と完全に一致する翻訳、または null です。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public LocalizedSubtitleTrack FindTrack(string language_code)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.LocalizedSubtitleTrack.html">LocalizedSubtitleTrack</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetAudioClipForLanguage*" id="SubVoxPro_VoiceLineData_GetAudioClipForLanguage_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetAudioClipForLanguage(System.String)" id="SubVoxPro_VoiceLineData_GetAudioClipForLanguage_System_String_">
+  GetAudioClipForLanguage(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>指定した言語のトラックに吹き替えクリップがある場合はそのクリップを返し、それ以外の場合はソースクリップを返します。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public AudioClip GetAudioClipForLanguage(string language_code)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><span class="xref">AudioClip</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetAudioLanguages*" id="SubVoxPro_VoiceLineData_GetAudioLanguages_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetAudioLanguages" id="SubVoxPro_VoiceLineData_GetAudioLanguages">
+  GetAudioLanguages()
+  
+  </h3>
+<div class="markdown level1 summary"><p>このボイスラインのオーディオを再生できる言語です。ソースオーディオがある場合はソース言語が先頭で、その後に各吹き替え言語が続きます。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; GetAudioLanguages()</code></pre>
+</div>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetDuration*" id="SubVoxPro_VoiceLineData_GetDuration_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetDuration(System.String)" id="SubVoxPro_VoiceLineData_GetDuration_System_String_">
+  GetDuration(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>指定した言語でのボイスラインの再生時間です。オーディオがある場合は再生するクリップの長さ、ない場合は<a class="xref" href="SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_NoAudioDuration">NoAudioDuration</a>（最後の字幕まで延長）になります。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float GetDuration(string language_code)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetEffectiveSpeaker*" id="SubVoxPro_VoiceLineData_GetEffectiveSpeaker_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetEffectiveSpeaker(System.String)" id="SubVoxPro_VoiceLineData_GetEffectiveSpeaker_System_String_">
+  GetEffectiveSpeaker(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕に実際に表示される話者です。グローバルな話者が設定されている場合は、すべての字幕でその話者が優先されます。それ以外の場合は、字幕ごとの話者のオーバーライド設定が適用されます。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SpeakerData GetEffectiveSpeaker(string id)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetSpeakerOverride*" id="SubVoxPro_VoiceLineData_GetSpeakerOverride_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetSpeakerOverride(System.String)" id="SubVoxPro_VoiceLineData_GetSpeakerOverride_System_String_">
+  GetSpeakerOverride(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕ごとの話者のオーバーライド設定です。その字幕がデフォルトの話者を使用する場合はnullです。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SpeakerData GetSpeakerOverride(string id)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetSubtitleAt*" id="SubVoxPro_VoiceLineData_GetSubtitleAt_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetSubtitleAt(System.Single,System.String)" id="SubVoxPro_VoiceLineData_GetSubtitleAt_System_Single_System_String_">
+  GetSubtitleAt(float, string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>ボイスラインを指定した言語で再生したときに、指定時刻（秒単位）で表示される字幕です。<a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a>が表示する字幕と同じで、吹き替えのタイミングとAuto blanksを反映し、全文とスタイルを含みます。最初の字幕より前、発話の合間、または字幕のテキストを消去するブランクマーカー（blank）の後は空の字幕になります。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SubtitleInfo GetSubtitleAt(float time, string language_code)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_VoiceLineData_GetSubtitleAt_System_Single_System_String__examples">Examples</h4>
+<pre><code class="lang-csharp">SubtitleInfo line = voiceLine.GetSubtitleAt(_video.time, SubVox.CurrentLanguage);
+_caption.text = line.SubtitleText;</code></pre>
+<a data-uid="SubVoxPro.VoiceLineData.GetSubtitleLanguages*" id="SubVoxPro_VoiceLineData_GetSubtitleLanguages_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetSubtitleLanguages" id="SubVoxPro_VoiceLineData_GetSubtitleLanguages">
+  GetSubtitleLanguages()
+  
+  </h3>
+<div class="markdown level1 summary"><p>このボイスラインで字幕を表示できる言語です。ソース言語（不明の場合は空の言語コード）が先頭で、その後に各翻訳言語が続きます。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; GetSubtitleLanguages()</code></pre>
+</div>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_VoiceLineData_GetSubtitleLanguages_examples">Examples</h4>
+<pre><code class="lang-csharp">foreach (string code in referenceLine.GetSubtitleLanguages())
+{
+    AddMenuEntry(string.IsNullOrEmpty(code) ? "Original" : code, () =&gt; SubVox.CurrentLanguage = code);
+}</code></pre>
+<a data-uid="SubVoxPro.VoiceLineData.GetSubtitles*" id="SubVoxPro_VoiceLineData_GetSubtitles_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetSubtitles(System.String,System.String)" id="SubVoxPro_VoiceLineData_GetSubtitles_System_String_System_String_">
+  GetSubtitles(string, string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>独立して選択したオーディオトラックのタイミングに合わせて、指定した1言語の字幕を返します。言語コードが空文字列の場合は、それぞれソースの字幕とオーディオを選択します。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;SubtitleInfo&gt; GetSubtitles(string subtitle_language_code, string audio_language_code)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>subtitle_language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+<dt><code>audio_language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetSubtitlesForLanguage*" id="SubVoxPro_VoiceLineData_GetSubtitlesForLanguage_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetSubtitlesForLanguage(System.String)" id="SubVoxPro_VoiceLineData_GetSubtitlesForLanguage_System_String_">
+  GetSubtitlesForLanguage(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>指定した言語の字幕を返します。対応する翻訳トラックをソースのタイミングに合わせた字幕を返し、言語が空文字列の場合や対応するトラックがない場合はソースの字幕を返します。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;SubtitleInfo&gt; GetSubtitlesForLanguage(string language_code)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.HasLanguage*" id="SubVoxPro_VoiceLineData_HasLanguage_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.HasLanguage(System.String)" id="SubVoxPro_VoiceLineData_HasLanguage_System_String_">
+  HasLanguage(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>ボイスラインがこの言語である場合に「True」となります。対象となるのは、そのソース言語、翻訳、または吹き替えであり、類似した地域別の言語バリエーションも含まれます（「pt-BR」は「pt」または「pt-PT」を検出します）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool HasLanguage(string language_code)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.IsSourceLanguage*" id="SubVoxPro_VoiceLineData_IsSourceLanguage_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.IsSourceLanguage(System.String)" id="SubVoxPro_VoiceLineData_IsSourceLanguage_System_String_">
+  IsSourceLanguage(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>指定した言語コードがソースオーディオと字幕の言語を表す場合はtrueになります（「en」は「en-US」と一致します）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsSourceLanguage(string language_code)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineData.TryGetWordAt*" id="SubVoxPro_VoiceLineData_TryGetWordAt_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.TryGetWordAt(System.Single,System.String,SubVoxPro.SubtitleWordInfo@)" id="SubVoxPro_VoiceLineData_TryGetWordAt_System_Single_System_String_SubVoxPro_SubtitleWordInfo__">
+  TryGetWordAt(float, string, out SubtitleWordInfo)
+  
+  </h3>
+<div class="markdown level1 summary"><p>ボイスラインを指定した言語で再生したときに、指定時刻（秒単位）で発話中の単語を取得します。単語と単語の間、またはボイスラインに単語のタイミング情報がない場合はfalseを返します。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool TryGetWordAt(float time, string language_code, out SubtitleWordInfo word)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+<dt><code>word</code> <a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

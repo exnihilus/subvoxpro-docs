@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>クラス SubtitleDocumentDisplayer | SubVox Pro ドキュメント </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class SubtitleDocumentDisplayer | SubVox Pro ドキュメント " name="title"/>
+<meta content="自身ののUI Toolkit に、で公開された字幕を話者名とともに、UI Toolkitのフォントで表示します。のUI Toolkit版で、話者名の表示モード、リッチテキストのスタイル、表示設定は同じです。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=78ab4245ab" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="この記事の内容" name="loc:inThisArticle"/>
+<meta content="「{query}」の検索結果：{count} 件" name="loc:searchResultsCount"/>
+<meta content="「{query}」に一致する結果はありません" name="loc:searchNoResults"/>
+<meta content="タイトルで絞り込み" name="loc:tocFilter"/>
+<meta content="次へ" name="loc:nextArticle"/>
+<meta content="前へ" name="loc:prevArticle"/>
+<meta content="ライト" name="loc:themeLight"/>
+<meta content="ダーク" name="loc:themeDark"/>
+<meta content="自動" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=78ab4245ab" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="ja">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.SubtitleDocumentDisplayer.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.SubtitleDocumentDisplayer.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.SubtitleDocumentDisplayer.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.SubtitleDocumentDisplayer.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="ナビゲーションの切り替え" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="検索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="検索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目次</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.SubtitleDocumentDisplayer">
+<h1 class="text-break" data-uid="SubVoxPro.SubtitleDocumentDisplayer" id="SubVoxPro_SubtitleDocumentDisplayer">
+クラス SubtitleDocumentDisplayer  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>名前空間</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>アセンブリ</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>自身の<a class="xref" href="https://docs.unity3d.com/ScriptReference/UIElements.UIDocument.html">UnityEngine.UIElements.UIDocument</a>のUI Toolkit <a class="xref" href="https://docs.unity3d.com/ScriptReference/UIElements.Label.html">UnityEngine.UIElements.Label</a>に、<a class="xref" href="SubVoxPro.SubVox.html">SubVox</a>で公開された字幕を話者名とともに、UI Toolkitのフォントで表示します。<a class="xref" href="SubVoxPro.SubtitleDisplayer.html">SubtitleDisplayer</a>のUI Toolkit版で、話者名の表示モード、リッチテキストのスタイル、表示設定は同じです。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class SubtitleDocumentDisplayer : MonoBehaviour</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>継承</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">SubtitleDocumentDisplayer</span></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">コンストラクター
+</h2>
+<a data-uid="SubVoxPro.SubtitleDocumentDisplayer.#ctor*" id="SubVoxPro_SubtitleDocumentDisplayer__ctor_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDocumentDisplayer.#ctor" id="SubVoxPro_SubtitleDocumentDisplayer__ctor">
+  SubtitleDocumentDisplayer()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SubtitleDocumentDisplayer()</code></pre>
+</div>
+<h2 class="section" id="fields">フィールド
+</h2>
+<h3 data-uid="SubVoxPro.SubtitleDocumentDisplayer.DEFAULT_PANEL_ELEMENT" id="SubVoxPro_SubtitleDocumentDisplayer_DEFAULT_PANEL_ELEMENT">
+  DEFAULT_PANEL_ELEMENT
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕と字幕の間で非表示になる要素のデフォルト名です。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public const string DEFAULT_PANEL_ELEMENT = "subtitle-panel"</code></pre>
+</div>
+<h4 class="section">フィールド値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.SubtitleDocumentDisplayer.DEFAULT_TEXT_ELEMENT" id="SubVoxPro_SubtitleDocumentDisplayer_DEFAULT_TEXT_ELEMENT">
+  DEFAULT_TEXT_ELEMENT
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕を表示するLabelのデフォルト名です。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public const string DEFAULT_TEXT_ELEMENT = "subtitle-text"</code></pre>
+</div>
+<h4 class="section">フィールド値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="properties">プロパティ
+</h2>
+<a data-uid="SubVoxPro.SubtitleDocumentDisplayer.KeepBackgroundBetweenSubtitles*" id="SubVoxPro_SubtitleDocumentDisplayer_KeepBackgroundBetweenSubtitles_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDocumentDisplayer.KeepBackgroundBetweenSubtitles" id="SubVoxPro_SubtitleDocumentDisplayer_KeepBackgroundBetweenSubtitles">
+  KeepBackgroundBetweenSubtitles
+  
+  </h3>
+<div class="markdown level1 summary"><p>2つの字幕の間に置かれたブランクマーカー（blank）が字幕のテキストを消している間も、パネルを表示したままにするかどうかを示します。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool KeepBackgroundBetweenSubtitles { get; set; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubtitleDocumentDisplayer.SpeakerNameMode*" id="SubVoxPro_SubtitleDocumentDisplayer_SpeakerNameMode_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDocumentDisplayer.SpeakerNameMode" id="SubVoxPro_SubtitleDocumentDisplayer_SpeakerNameMode">
+  SpeakerNameMode
+  
+  </h3>
+<div class="markdown level1 summary"><p>話者名の表示方法です。非表示、字幕の前、字幕の上のいずれかです。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public ESpeakerNameMode SpeakerNameMode { get; set; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.ESpeakerNameMode.html">ESpeakerNameMode</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">メソッド
+</h2>
+<a data-uid="SubVoxPro.SubtitleDocumentDisplayer.ClearSubtitle*" id="SubVoxPro_SubtitleDocumentDisplayer_ClearSubtitle_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDocumentDisplayer.ClearSubtitle" id="SubVoxPro_SubtitleDocumentDisplayer_ClearSubtitle">
+  ClearSubtitle()
+  
+  </h3>
+<div class="markdown level1 summary"><p>現在の字幕を画面から消します。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void ClearSubtitle()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleDocumentDisplayer.ComposeText*" id="SubVoxPro_SubtitleDocumentDisplayer_ComposeText_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDocumentDisplayer.ComposeText(SubVoxPro.SubtitleInfo)" id="SubVoxPro_SubtitleDocumentDisplayer_ComposeText_SubVoxPro_SubtitleInfo_">
+  ComposeText(SubtitleInfo)
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕として表示するテキストです。デフォルトでは、「Speaker Name Mode」に従って話者名を含めた字幕を表示します。接頭辞の追加や大文字・小文字の変更など、テキストを変更するには、このメソッドをオーバーライドしてください。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual string ComposeText(SubtitleInfo subtitle_info)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>subtitle_info</code> <a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubtitleDocumentDisplayer.OnDisable*" id="SubVoxPro_SubtitleDocumentDisplayer_OnDisable_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDocumentDisplayer.OnDisable" id="SubVoxPro_SubtitleDocumentDisplayer_OnDisable">
+  OnDisable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unityのメッセージです。オーバーライドする際は、基底クラスのメソッドを呼び出してください。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnDisable()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleDocumentDisplayer.OnEnable*" id="SubVoxPro_SubtitleDocumentDisplayer_OnEnable_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDocumentDisplayer.OnEnable" id="SubVoxPro_SubtitleDocumentDisplayer_OnEnable">
+  OnEnable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unityのメッセージです。オーバーライドする際は、基底クラスのメソッドを呼び出してください。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnEnable()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleDocumentDisplayer.SetVisible*" id="SubVoxPro_SubtitleDocumentDisplayer_SetVisible_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDocumentDisplayer.SetVisible(System.Boolean)" id="SubVoxPro_SubtitleDocumentDisplayer_SetVisible_System_Boolean_">
+  SetVisible(bool)
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕パネルの表示・非表示を切り替えます。字幕がある間は表示し、字幕と字幕の間では非表示にします。フェードの時間は<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_FadeDuration">FadeDuration</a>です。USSトランジションなどを使って独自の方法でパネルをアニメーションさせるには、このメソッドをオーバーライドしてください。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void SetVisible(bool visible)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>visible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubtitleDocumentDisplayer.Update*" id="SubVoxPro_SubtitleDocumentDisplayer_Update_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDocumentDisplayer.Update" id="SubVoxPro_SubtitleDocumentDisplayer_Update">
+  Update()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unityのメッセージです。オーバーライドする際は、基底クラスのメソッドを呼び出してください。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void Update()</code></pre>
+</div>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

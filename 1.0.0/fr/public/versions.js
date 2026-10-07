@@ -1,4 +1,4 @@
-import { documentationRoot, localize } from "./languages.js?v=cdf57e6fc8";
+import { documentationRoot, localize } from "./languages.js?v=78ab4245ab";
 
 const VERSION_META = "svx:version";
 const LATEST_FOLDER = "latest";
@@ -41,7 +41,7 @@ async function samePageIn(siteRoot, folder, pagePath) {
 function buildPicker(current, versions, latest, open) {
   const picker = document.createElement("div");
   picker.className = "dropdown svx-version";
-  const title = localize("Documentation version", "Version de la documentation", "Version der Dokumentation");
+  const title = localize("Documentation version", "Version de la documentation", "Version der Dokumentation", "ドキュメントのバージョン");
   picker.innerHTML = `<button class="btn border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="${title}">
       <i class="bi bi-clock-history"></i><span class="svx-version-name"></span></button>
     <ul class="dropdown-menu dropdown-menu-end"><li><h6 class="dropdown-header">${title}</h6></li></ul>`;
@@ -56,7 +56,7 @@ function buildPicker(current, versions, latest, open) {
     if (version === latest) {
       const tag = document.createElement("span");
       tag.className = "svx-version-latest";
-      tag.textContent = localize("latest", "dernière", "neueste");
+      tag.textContent = localize("latest", "dernière", "neueste", "最新");
       button.append(tag);
     }
 
@@ -75,14 +75,14 @@ function showOutdatedBanner(current, latest, open) {
   const banner = document.createElement("div");
   banner.className = "svx-outdated";
   banner.setAttribute("role", "note");
-  banner.innerHTML = `<i class="bi bi-info-circle"></i><span>${localize("You are reading the documentation of SubVox Pro", "Vous consultez la documentation de SubVox Pro", "Sie lesen die Dokumentation von SubVox Pro")} <strong></strong>. ${localize("The latest version is", "La dernière version est", "Die neueste Version ist")} <strong></strong>.</span>`;
+  banner.innerHTML = `<i class="bi bi-info-circle"></i><span>${localize("You are reading the documentation of SubVox Pro", "Vous consultez la documentation de SubVox Pro", "Sie lesen die Dokumentation von SubVox Pro", "表示中のドキュメント：SubVox Pro")} <strong></strong>. ${localize("The latest version is", "La dernière version est", "Die neueste Version ist", "最新バージョン：")} <strong></strong>.</span>`;
   const [shown, newest] = banner.querySelectorAll("strong");
   shown.textContent = current;
   newest.textContent = latest;
   const link = document.createElement("button");
   link.type = "button";
   link.className = "btn btn-sm";
-  link.textContent = localize(`View this page in ${latest}`, `Voir cette page en version ${latest}`, `Diese Seite in Version ${latest} anzeigen`);
+  link.textContent = localize(`View this page in ${latest}`, `Voir cette page en version ${latest}`, `Diese Seite in Version ${latest} anzeigen`, `このページをバージョン ${latest} で表示`);
   link.addEventListener("click", () => open(LATEST_FOLDER));
   banner.append(link);
   (document.querySelector("main .content > article") ?? document.querySelector("main"))?.prepend(banner);

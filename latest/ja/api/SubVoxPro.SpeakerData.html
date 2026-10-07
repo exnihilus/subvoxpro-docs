@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>クラス SpeakerData | SubVox Pro ドキュメント </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class SpeakerData | SubVox Pro ドキュメント " name="title"/>
+<meta content="字幕に関連付けられる、名前とスタイルを持つ話者です。話者ごとに独立したアセットとして保存され、複数のボイスラインで再利用できます。性別は、エディターの選択画面で話者をグループ分けするためにのみ使用されます。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=78ab4245ab" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="この記事の内容" name="loc:inThisArticle"/>
+<meta content="「{query}」の検索結果：{count} 件" name="loc:searchResultsCount"/>
+<meta content="「{query}」に一致する結果はありません" name="loc:searchNoResults"/>
+<meta content="タイトルで絞り込み" name="loc:tocFilter"/>
+<meta content="次へ" name="loc:nextArticle"/>
+<meta content="前へ" name="loc:prevArticle"/>
+<meta content="ライト" name="loc:themeLight"/>
+<meta content="ダーク" name="loc:themeDark"/>
+<meta content="自動" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=78ab4245ab" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="ja">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.SpeakerData.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.SpeakerData.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.SpeakerData.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.SpeakerData.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="ナビゲーションの切り替え" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="検索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="検索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目次</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.SpeakerData">
+<h1 class="text-break" data-uid="SubVoxPro.SpeakerData" id="SubVoxPro_SpeakerData">
+クラス SpeakerData  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>名前空間</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>アセンブリ</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>字幕に関連付けられる、名前とスタイルを持つ話者です。話者ごとに独立したアセットとして保存され、複数のボイスラインで再利用できます。性別は、エディターの選択画面で話者をグループ分けするためにのみ使用されます。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class SpeakerData : ScriptableObject</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>継承</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">SpeakerData</span></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">コンストラクター
+</h2>
+<a data-uid="SubVoxPro.SpeakerData.#ctor*" id="SubVoxPro_SpeakerData__ctor_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.#ctor" id="SubVoxPro_SpeakerData__ctor">
+  SpeakerData()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SpeakerData()</code></pre>
+</div>
+<h2 class="section" id="properties">プロパティ
+</h2>
+<a data-uid="SubVoxPro.SpeakerData.Bold*" id="SubVoxPro_SpeakerData_Bold_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.Bold" id="SubVoxPro_SpeakerData_Bold">
+  Bold
+  
+  </h3>
+<div class="markdown level1 summary"><p>話者の名前が太字で表示されるかどうか。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool Bold { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.DisplayName*" id="SubVoxPro_SpeakerData_DisplayName_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.DisplayName" id="SubVoxPro_SpeakerData_DisplayName">
+  DisplayName
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕に表示される名前：表示名、または空の場合はアセット名です。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string DisplayName { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.Font*" id="SubVoxPro_SpeakerData_Font_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.Font" id="SubVoxPro_SpeakerData_Font">
+  Font
+  
+  </h3>
+<div class="markdown level1 summary"><p>この話者の字幕に使用する任意のフォントです。<code>null</code>の場合は、字幕表示コンポーネントのフォントを維持します。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public TMP_FontAsset Font { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://docs.unity3d.com/Packages/com.unity.textmeshpro@3.0/api/TMPro.TMP_FontAsset.html">TMP_FontAsset</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.Gender*" id="SubVoxPro_SpeakerData_Gender_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.Gender" id="SubVoxPro_SpeakerData_Gender">
+  Gender
+  
+  </h3>
+<div class="markdown level1 summary"><p>話者の性別です。吹き替え時に、性別に合うボイスを選ぶために使用されます。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public ESpeakerGender Gender { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.ESpeakerGender.html">ESpeakerGender</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.Italic*" id="SubVoxPro_SpeakerData_Italic_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.Italic" id="SubVoxPro_SpeakerData_Italic">
+  Italic
+  
+  </h3>
+<div class="markdown level1 summary"><p>話者の名前がイタリック体で表示されるかどうか。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool Italic { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.LocalizationEntry*" id="SubVoxPro_SpeakerData_LocalizationEntry_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.LocalizationEntry" id="SubVoxPro_SpeakerData_LocalizationEntry">
+  LocalizationEntry
+  
+  </h3>
+<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizationTable">LocalizationTable</a>におけるこの話者の名前のキー。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string LocalizationEntry { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.LocalizationTable*" id="SubVoxPro_SpeakerData_LocalizationTable_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.LocalizationTable" id="SubVoxPro_SpeakerData_LocalizationTable">
+  LocalizationTable
+  
+  </h3>
+<div class="markdown level1 summary"><p>この話者の名前を格納する文字列テーブルのコレクションです。Unity Localizationパッケージがインストールされている場合に使用されます。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string LocalizationTable { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.LocalizedNames*" id="SubVoxPro_SpeakerData_LocalizedNames_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.LocalizedNames" id="SubVoxPro_SpeakerData_LocalizedNames">
+  LocalizedNames
+  
+  </h3>
+<div class="markdown level1 summary"><p>この話者の名前を他の言語で表したものです（<a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_GetDisplayName_System_String_">GetDisplayName(string)</a>を参照）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;SpeakerLocalizedName&gt; LocalizedNames { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.SpeakerLocalizedName.html">SpeakerLocalizedName</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.NameColor*" id="SubVoxPro_SpeakerData_NameColor_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.NameColor" id="SubVoxPro_SpeakerData_NameColor">
+  NameColor
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕における話者名の色。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public Color NameColor { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><span class="xref">Color</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SpeakerData.UIToolkitFont*" id="SubVoxPro_SpeakerData_UIToolkitFont_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.UIToolkitFont" id="SubVoxPro_SpeakerData_UIToolkitFont">
+  UIToolkitFont
+  
+  </h3>
+<div class="markdown level1 summary"><p>UI Toolkitの字幕表示コンポーネントで、この話者の字幕に使用する任意のフォントです。<code>null</code>の場合は、字幕表示コンポーネントのフォントを維持します。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public FontAsset UIToolkitFont { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><span class="xref">FontAsset</span></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">メソッド
+</h2>
+<a data-uid="SubVoxPro.SpeakerData.GetDisplayName*" id="SubVoxPro_SpeakerData_GetDisplayName_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.GetDisplayName(System.String)" id="SubVoxPro_SpeakerData_GetDisplayName_System_String_">
+  GetDisplayName(string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>指定した言語で表示する名前です。Unity Localizationのエントリが設定され、パッケージがインストールされている場合は、そのエントリを使用します。それ以外は、<a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_LocalizedNames">LocalizedNames</a>の完全一致するエントリ、同じ基本言語のエントリ、<a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_DisplayName">DisplayName</a>の順に使用します。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string GetDisplayName(string language_code)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_SpeakerData_GetDisplayName_System_String__examples">Examples</h4>
+<pre><code class="lang-csharp">string name = speaker.GetDisplayName(SubVox.CurrentLanguage);</code></pre>
+<a data-uid="SubVoxPro.SpeakerData.ToRichText*" id="SubVoxPro_SpeakerData_ToRichText_"></a>
+<h3 data-uid="SubVoxPro.SpeakerData.ToRichText(System.String,System.String)" id="SubVoxPro_SpeakerData_ToRichText_System_String_System_String_">
+  ToRichText(string, string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>名前と任意の接尾辞（「:」など）を、TextMeshPro用のリッチテキストの色・太字・斜体タグで囲みます。接尾辞も名前と同じ色で表示されます。言語を指定した場合、名前には<a class="xref" href="SubVoxPro.SpeakerData.html#SubVoxPro_SpeakerData_GetDisplayName_System_String_">GetDisplayName(string)</a>の戻り値を使用します。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string ToRichText(string suffix = "", string language_code = null)</code></pre>
+</div>
+<h4 class="section">パラメーター</h4>
+<dl class="parameters">
+<dt><code>suffix</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">戻り値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

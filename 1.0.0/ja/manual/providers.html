@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>プロバイダーの設定 | SubVox Pro ドキュメント </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="プロバイダーの設定 | SubVox Pro ドキュメント " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=78ab4245ab" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="この記事の内容" name="loc:inThisArticle"/>
+<meta content="「{query}」の検索結果：{count} 件" name="loc:searchResultsCount"/>
+<meta content="「{query}」に一致する結果はありません" name="loc:searchNoResults"/>
+<meta content="タイトルで絞り込み" name="loc:tocFilter"/>
+<meta content="次へ" name="loc:nextArticle"/>
+<meta content="前へ" name="loc:prevArticle"/>
+<meta content="ライト" name="loc:themeLight"/>
+<meta content="ダーク" name="loc:themeDark"/>
+<meta content="自動" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=78ab4245ab" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="ja">
+  <link rel="alternate" hreflang="en" href="../../manual/providers.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers.html">
+<link rel="alternate" hreflang="de" href="../../de/manual/providers.html">
+<link rel="alternate" hreflang="ja" href="../../ja/manual/providers.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="ナビゲーションの切り替え" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="検索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="検索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目次</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="subvox-pro--provider-setup-guide">SubVox Pro — プロバイダー設定ガイド </h1>
+<p>SubVox ProにはAPIキーは一切付属していません。以下の各プロバイダーへのアクセスには<strong>ご自身のキー</strong>を使用します。このキーを<strong>Tools ▸ SubVox Pro ▸ Settings</strong>（または
+<strong>SubVox Pro</strong>ウィンドウ内のプロバイダーパネル）に貼り付けます。キーは、お使いのマシンのUnityエディターの環境設定（<code>EditorPrefs</code>）にのみ保存され、プロジェクトにコミットされることも、ビルドに含まれることもありません。各サービスの法的条件については、
+<a href="notices.html">Third-Party Notices.md</a>を参照してください。</p>
+<blockquote>
+<p>⚠️ <strong>無料枠や料金は頻繁に変更されます。</strong>以下の数値は執筆時点では正確でした。ご利用の際は、必ず各プロバイダーの料金ページで最新の提供内容を確認してください。</p>
+</blockquote>
+<hr/>
+<h2 id="quick-links">クイックリンク </h2>
+<table>
+<thead>
+<tr>
+<th>カテゴリ</th>
+<th>プロバイダーのドキュメント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>文字起こし</strong></td>
+<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-translation.html#openai">OpenAI</a></td>
+</tr>
+<tr>
+<td><strong>翻訳</strong></td>
+<td><a href="providers-translation.html#deepl">DeepL</a> · <a href="providers-translation.html#google-cloud-translation">Google Cloud Translation</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-translation.html#anthropic-claude">Anthropic (Claude)</a> · <a href="providers-translation.html#google-gemini">Google (Gemini)</a> · <a href="providers-translation.html#deepseek">DeepSeek</a> · <a href="index.html#hy-mt2-offline-translation">Hy-MT2（ローカル）</a></td>
+</tr>
+<tr>
+<td><strong>吹き替え / 音声合成</strong></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro（ローカル）</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox（ローカル）</a> · <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B（ローカル）</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2（ローカル）</a></td>
+</tr>
+<tr>
+<td><strong>ローカルアラインメント</strong></td>
+<td><a href="index.html#qwen3-offline-word-timing">Qwen3 Forced Aligner</a></td>
+</tr>
+<tr>
+<td><strong>参考情報</strong></td>
+<td><a href="#best-practices">ベストプラクティス</a> · <a href="#which-provider-do-i-need">どのプロバイダーが必要？</a> · <a href="#free-tier-cheat-sheet">無料枠の早見表</a> · <a href="#where-to-paste-your-key-in-subvox-pro">キーの貼り付け先</a> · <a href="providers-api-key.html#after-pasting-a-key">キーを貼り付けた後</a></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="language-compatibility-at-a-glance">言語互換性の概要 </h2>
+<p>これは、SubVox Proで利用可能な言語の一覧です。<strong>動的カタログ</strong>とは、実行時に取得する正確なリストが、プロバイダーのアカウントと選択したモデル／ボイスによって決まることを意味します。ボイス選択欄に表示されるリストを基準にしてください。
+<code>en-US</code>や<code>pt-BR</code>などの地域別の言語バリエーションは、ここでは基本言語ごとにまとめています。</p>
+<table>
+<thead>
+<tr>
+<th>サービス</th>
+<th>プロバイダー／エンジン</th>
+<th>SubVox Proで利用可能な言語</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>STT</strong></td>
+<td>AssemblyAI</td>
+<td>多言語対応、自動言語検出。利用可能な言語は選択したモデルによって異なります。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Gladia</td>
+<td>多言語対応、自動言語検出。利用可能な言語は選択したモデルによって異なります。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Deepgram</td>
+<td>オランダ語、英語、フランス語、ドイツ語、ヒンディー語、イタリア語、日本語、ポルトガル語、ロシア語、スペイン語。さらに多言語モードも利用可能です。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Speechmatics</td>
+<td>アラビア語、中国語（標準中国語）、オランダ語、英語、フランス語、ドイツ語、ヒンディー語、イタリア語、日本語、韓国語、ポーランド語、ポルトガル語、ロシア語、スペイン語、トルコ語。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>ElevenLabs</td>
+<td>アラビア語、中国語、オランダ語、英語、フランス語、ドイツ語、ヒンディー語、イタリア語、日本語、韓国語、ポーランド語、ポルトガル語、ロシア語、スペイン語、トルコ語。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Rev AI</td>
+<td>アラビア語、中国語（標準中国語）、オランダ語、英語、フランス語、ドイツ語、ヒンディー語、イタリア語、日本語、韓国語、ポーランド語、ポルトガル語、ロシア語、スペイン語、トルコ語。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>OpenAI (<code>gpt-transcribe</code>)</td>
+<td>アラビア語、中国語、オランダ語、英語、フランス語、ドイツ語、ヒンディー語、イタリア語、日本語、韓国語、ポーランド語、ポルトガル語、ロシア語、スペイン語、トルコ語。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Whisper large-v2 / large-v3 / large-v3-turbo（ローカル）</td>
+<td>中国語、オランダ語、英語、フランス語、ドイツ語、イタリア語、日本語、韓国語、ポルトガル語、ロシア語、スペイン語。さらに自動検出も利用可能です。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Parakeet TDT 0.6B v3（ローカル）</td>
+<td>ブルガリア語、クロアチア語、チェコ語、デンマーク語、オランダ語、英語、エストニア語、フィンランド語、フランス語、ドイツ語、ギリシャ語、ハンガリー語、イタリア語、ラトビア語、リトアニア語、マルタ語、ポーランド語、ポルトガル語、ルーマニア語、ロシア語、スロバキア語、スロベニア語、スペイン語、スウェーデン語、ウクライナ語（自動検出）。</td>
+</tr>
+<tr>
+<td><strong>翻訳</strong></td>
+<td>DeepL</td>
+<td>アラビア語、ベンガル語、ビルマ語、広東語、中国語（簡体字／繁体字）、チェコ語、オランダ語、英語（米国／英国）、フィリピノ語、フランス語、ドイツ語、グジャラート語、ヘブライ語、ヒンディー語、インドネシア語、イタリア語、日本語、カザフ語、韓国語、マレー語、マラーティー語、モンゴル語、ペルシア語、ポーランド語、ポルトガル語（ブラジル／ポルトガル）、ロシア語、スペイン語、タミル語、テルグ語、タイ語、トルコ語、ウクライナ語、ウルドゥー語、ベトナム語、さらにブルガリア語、デンマーク語、エストニア語、フィンランド語、ギリシャ語、ハンガリー語、ラトビア語、リトアニア語、ノルウェー語、ルーマニア語、スロバキア語、スロベニア語、スウェーデン語（翻訳先は50言語）。</td>
+</tr>
+<tr>
+<td><strong>翻訳</strong></td>
+<td>Google Cloud Translation</td>
+<td>翻訳先はDeepLと同じ50言語です。</td>
+</tr>
+<tr>
+<td><strong>翻訳</strong></td>
+<td>OpenAI, Claude, Gemini, DeepSeek</td>
+<td>翻訳先はDeepLと同じ50言語です。品質は選択したモデルによって異なります。</td>
+</tr>
+<tr>
+<td><strong>翻訳</strong></td>
+<td>Hy-MT2 1.8B / 7B（ローカル）</td>
+<td>DeepLのリストの最初の37言語が翻訳先です。ブルガリア語、デンマーク語、エストニア語、フィンランド語、ギリシャ語、ハンガリー語、ラトビア語、リトアニア語、ノルウェー語、ルーマニア語、スロバキア語、スロベニア語、スウェーデン語は対象外です。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>ElevenLabs</td>
+<td>モデルによって異なります。<strong>Flash v2.5</strong>：アラビア語、ブルガリア語、中国語、クロアチア語、チェコ語、デンマーク語、オランダ語、英語、フィリピノ語、フィンランド語、フランス語、ドイツ語、ギリシャ語、ヒンディー語、ハンガリー語、インドネシア語、イタリア語、日本語、韓国語、マレー語、ノルウェー語、ポーランド語、ポルトガル語、ルーマニア語、ロシア語、スロバキア語、スペイン語、スウェーデン語、タミル語、トルコ語、ウクライナ語、ベトナム語。<strong>Multilingual v2</strong>：ハンガリー語、ノルウェー語、ベトナム語を除く上記言語に対応しています。<strong>Eleven v3</strong>：70言語以上に対応しており、ベンガル語、グジャラート語、ヘブライ語、カザフ語、マラーティー語、ペルシア語、スワヒリ語、テルグ語、タイ語、ウルドゥー語などが追加されています。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>InWorld</td>
+<td><strong>動的カタログ</strong> — アカウントに対して返されるボイス情報から、利用可能な言語を読み取ります。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Gemini（AI Studioキー）</td>
+<td>約75言語に対応し、言語はテキストから検出されます — アラビア語、中国語、オランダ語、英語、フランス語、ドイツ語、ヒンディー語、イタリア語、日本語、韓国語、ポーランド語、ポルトガル語、ロシア語、スペイン語、トルコ語、ウクライナ語、ベトナム語などが含まれます。すべてのボイスで、すべての言語の音声を生成できます。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>OpenAI (<code>gpt-realtime-2.1-mini</code>)</td>
+<td>約55言語に対応し、言語はテキストから検出されます — Whisper対応言語で、アラビア語、中国語、オランダ語、英語、フランス語、ドイツ語、ヒンディー語、イタリア語、日本語、韓国語、ポーランド語、ポルトガル語、ロシア語、スペイン語、トルコ語、ウクライナ語、ベトナム語などが含まれます。各ボイスは英語向けに調整されていますが、すべての言語の音声を生成できます。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Google Cloud TTS</td>
+<td><strong>動的カタログ</strong> — Googleのボイス情報から、利用可能な言語を読み取ります。互換性のあるGeminiのボイスも含まれます。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Azure AI Speech</td>
+<td><strong>動的カタログ</strong> — 利用可能な言語は、設定されたリージョンのAzureニューラルボイスの情報から取得されます。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Kokoro（ローカル）</td>
+<td>英語（米国および英国のボイス）。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Qwen3 TTS 1.7B Base / CustomVoice / VoiceDesign（ローカル）</td>
+<td>中国語、英語、日本語、韓国語、ドイツ語、フランス語、ロシア語、ポルトガル語、スペイン語、イタリア語。参照音声によるボイスのクローン作成、9種類の固定ボイス、または設計したボイスを利用できます。CustomVoiceおよびVoiceDesignでは、テキストで指示を指定できます。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>VoxCPM2（ローカル）</td>
+<td>アラビア語、ビルマ語、中国語、デンマーク語、オランダ語、英語、フィンランド語、フランス語、ドイツ語、ギリシャ語、ヘブライ語、ヒンディー語、インドネシア語、イタリア語、日本語、クメール語、韓国語、ラオ語、マレー語、ノルウェー語、ポーランド語、ポルトガル語、ロシア語、スペイン語、スワヒリ語、スウェーデン語、フィリピノ語、タイ語、トルコ語、ベトナム語。参照音声によるボイスのクローン作成に対応し、テキストで話し方を指示できます。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Chatterbox Multilingual（ローカル）</td>
+<td>アラビア語、中国語、デンマーク語、オランダ語、英語、フィンランド語、フランス語、ドイツ語、ギリシャ語、ヒンディー語、イタリア語、韓国語、マレー語、ノルウェー語、ポーランド語、ポルトガル語、ロシア語、スペイン語、スワヒリ語、スウェーデン語、トルコ語。日本語は、オプションの日本語サポートをインストールすると利用可能になります。</td>
+</tr>
+<tr>
+<td><strong>アラインメント</strong></td>
+<td>Qwen3 Aligner（ローカル）</td>
+<td>広東語、中国語、英語、フランス語、ドイツ語、イタリア語、日本語、韓国語、ポルトガル語、ロシア語、スペイン語。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>プロバイダーの言語／モデルカタログは、SubVox Proとは独立して更新される場合があります。プロバイダーが対応を追加した際は、エディターでモデルまたはボイスのカタログを更新してください。Qwen、Kokoro、Chatterbox、Qwen3 TTS、およびVoxCPM2については、上記の固定リストがバージョンを固定したローカルモデルと一致しています。</p>
+</blockquote>
+<h3 id="chatterbox-how-reliable-each-language-is">Chatterbox：各言語の信頼性 </h3>
+<ul>
+<li><strong>信頼性が非常に高い</strong>：ポルトガル語、イタリア語、スペイン語、ヒンディー語、英語、ドイツ語、マレー語、ロシア語、オランダ語。</li>
+<li><strong>信頼性が高い</strong>：フィンランド語、ギリシャ語、アラビア語、スウェーデン語、フランス語、日本語、中国語 — 最初の単語が誤って生成されることがあります。</li>
+<li><strong>結果にばらつきがある</strong>：デンマーク語、ポーランド語、ノルウェー語、韓国語、スワヒリ語、トルコ語 — 吹き替え音声を聴き、問題のあるセリフをそのセリフの<strong>REGEN</strong>チップで再生成してください。</li>
+</ul>
+<hr/>
+<h2 id="best-practices">ベストプラクティス </h2>
+<p>APIキーはオンラインサービスのパスワードです。テスト目的でしか使用しない場合でも、機密情報として扱ってください。</p>
+<ul>
+<li><strong>ツールやプロジェクトごとに1つのキーを作成してください。</strong>専用の<code>SubVoxPro</code>キーであれば、後で他のツールの動作を妨げることなく、簡単に失効させられます。</li>
+<li><strong>APIキーをソースファイル、シーン、プレハブ、サポートへのメッセージ、Discord、GitHubのイシューやコミットに貼り付けないでください。</strong> SubVox ProはキーをUnityの<code>EditorPrefs</code>に、お使いのマシン上でのみ保存するため、Unityプロジェクトの一部にはなりません。</li>
+<li><strong>プロバイダーから「キーは一度だけ表示される」と通知された場合は、直ちにキーをコピーしてください。</strong>バックアップが必要な場合は、パスワードマネージャーに保存してください。キーを紛失した場合は、失効させて新しいものを作成してください。</li>
+<li><strong>権限は必要最小限に設定してください。</strong>プロバイダーでキーの権限を制限できる場合は、
+SubVox Proに必要な機能のみを有効にしてください。文字起こしプロバイダーでは音声認識、翻訳プロバイダーでは翻訳、
+TTSは吹き替えにのみ使用します。</li>
+<li><strong>ワークフローに合わせた有効期限を設定してください。</strong>テストやデモでは、有効期限の短いキーの方が安全です。継続的な制作作業では、有効期限の長いキーの方が便利です。プロバイダーによっては、有効期限のないキーも利用できます。</li>
+<li><strong>プロバイダーが対応している場合は、予算、使用制限、または課金アラートを設定してください。</strong>意図しないループ処理や繰り返しのインポート、チームメンバーによる誤ったキーの使用で発生する予想外の費用を防ぐのに役立ちます。</li>
+<li><strong>キーが漏洩した可能性がある場合は、新しいキーに切り替えてください。</strong>スクリーンショット、コミット、チャットメッセージ、またはビルド成果物にキーが含まれていた場合は、プロバイダーのダッシュボードでそのキーを失効させ、新しいキーをSubVox Proに貼り付けてください。</li>
+<li><strong>1つの個人用キーをチーム全体で共有しないでください。</strong>各チームメンバーは、プロバイダーの課金やアクセス管理の方法に応じて、各自のプロバイダーアカウント、またはチームで管理するキーを使用してください。</li>
+<li><strong>SubVox Proから未使用のキーを削除してください。</strong>共有マシンでのテストが終了したら、
+<strong>Tools ▸ SubVox Pro ▸ Settings</strong>にある<strong>Clear API Keys</strong>ボタンを使用してください。</li>
+</ul>
+<hr/>
+<h2 id="which-provider-do-i-need">どのプロバイダーが必要ですか？ </h2>
+<table>
+<thead>
+<tr>
+<th>SubVox Proの機能</th>
+<th>利用可能なプロバイダー</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>文字起こし</strong>（音声 → タイミング情報付き字幕）</td>
+<td>AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、OpenAI — または <strong>Whisper（ローカル）</strong>および<strong>Parakeet（ローカル）</strong>（完全オフライン、キー不要、Windowsのみ — <a href="index.html#whisper-offline-transcription">Documentation.md</a>を参照）</td>
+</tr>
+<tr>
+<td><strong>翻訳</strong>（字幕 → 他の言語）</td>
+<td>DeepL、Google Cloud Translation、OpenAI、Anthropic（Claude）、Google（Gemini）、DeepSeek — または <strong>Hy-MT2（ローカル）</strong>（llama.cppエンジンを同梱、完全オフライン、キー不要、Windowsのみ — <a href="index.html#hy-mt2-offline-translation">Documentation.md</a>を参照）</td>
+</tr>
+<tr>
+<td><strong>吹き替え／音声合成</strong></td>
+<td>ElevenLabs、InWorld AI、Gemini（Gemini翻訳と同じAI Studioキー）、OpenAI（OpenAI翻訳と同じキー）、Google Cloud Text-to-Speech、Azure AI Speech — または <strong>Kokoro</strong>（ローカル、英語）および <strong>Chatterbox</strong>（ローカル、21言語＋オプションで日本語、ボイスクローニング）、または <strong>Qwen3 TTS 1.7B</strong>（ローカル、10言語、参照音声によるボイスクローニング、固定ボイスまたはボイスデザイン）、または <strong>VoxCPM2</strong>（ローカル、30言語、文章でスタイルを指定できるボイスクローニング）</td>
+</tr>
+<tr>
+<td><strong>強制アラインメント</strong>（テキストを維持したまま、吹き替え音声の単語ごとのタイミングを正確に取得）</td>
+<td><strong>Qwen3 Aligner</strong>（ローカル、完全オフライン、キー不要、Windowsのみ）</td>
+</tr>
+<tr>
+<td><strong>人手による翻訳データの双方向の受け渡し</strong></td>
+<td>Google Sheets（OAuth — <a href="index.html#human-translation-with-google-sheets">ユーザーガイド</a>を参照）</td>
+</tr>
+</tbody>
+</table>
+<p>エディターの<strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong>では、すべてのプロバイダーを並べて比較できます。SubVox Proでの対応機能、価格、無料プラン、およびそのプランでの商用利用の可否を確認できます。</p>
+<p>キーが必要なのは、実際に使用するプロバイダーだけです。費用もアカウントも不要で始めるには、オフラインの<strong>Whisper</strong>または<strong>Parakeet</strong>で文字起こしを行い、オフラインの<strong>Hy-MT2（ローカル）</strong>で翻訳します（無料利用枠のある
+<strong>Gemini</strong>や<strong>DeepL</strong>なども利用できます）。その後、オフラインの<strong>Kokoro</strong>、<strong>Chatterbox</strong>、<strong>Qwen3 TTS 1.7B</strong>、<strong>VoxCPM2</strong>の各エンジン、または<strong>Gemini</strong>の無料利用枠で吹き替えを行います。</p>
+<hr/>
+<h2 id="free-tier-cheat-sheet">無料利用枠の早見表 </h2>
+<p>SubVox Proは、無料アカウントでも有料アカウントでも同じように動作します。使用するキーもリクエストも同じです。無料プランで変わるのは、生成できる量と、一部のプロバイダーにおける生成結果の利用範囲だけです。</p>
+<table>
+<thead>
+<tr>
+<th>プロバイダー</th>
+<th>無料利用枠（要確認）</th>
+<th>クレジットカードは必要？</th>
+<th>無料プランで商用利用は可能？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AssemblyAI</td>
+<td>約$50の1回限りのクレジット（約330時間）</td>
+<td>不要</td>
+<td>可能。オプトアウトしない限り、データが同社のモデルの学習に使用される場合があります。</td>
+</tr>
+<tr>
+<td>Gladia</td>
+<td>月10時間</td>
+<td>不要</td>
+<td>可能。無料プランで送信された音声が、同社のモデルの学習に使用される場合があります。</td>
+</tr>
+<tr>
+<td>Deepgram</td>
+<td>$200の1回限りのクレジット</td>
+<td>不要</td>
+<td>可能。本番環境での使用も含みます。</td>
+</tr>
+<tr>
+<td>Speechmatics</td>
+<td>$100の1回限りのクレジット</td>
+<td>不要</td>
+<td>可能。文字起こしデータが同社のモデル改善に使用される場合があります。</td>
+</tr>
+<tr>
+<td>ElevenLabs</td>
+<td>音声・文字起こし利用で月約10分</td>
+<td>不要</td>
+<td><strong>不可</strong> — 非商用利用のみで、ElevenLabsへのクレジット表記が必須です。有料プランは月額約$5からです。</td>
+</tr>
+<tr>
+<td>Rev AI</td>
+<td>5時間の1回限りのクレジット</td>
+<td>不要</td>
+<td>記載なし — Rev AIの利用規約を確認してください。</td>
+</tr>
+<tr>
+<td>DeepL（Developerプラン）</td>
+<td>1回限りの1,000,000文字分のクレジット</td>
+<td>確認のためにカードが必要な場合がありますが、課金はされません</td>
+<td>可能。ただし、DeepLは無料APIで送信されたテキストを保持する場合があります。</td>
+</tr>
+<tr>
+<td>Google Cloud Translation</td>
+<td>月500,000文字＋$300の試用クレジット</td>
+<td>必要（請求先アカウント）</td>
+<td>可能。</td>
+</tr>
+<tr>
+<td>Google Cloud Text-to-Speech</td>
+<td>月1,000,000文字（Neural2/WaveNet）＋4,000,000文字（Standard）；Gemini/ChirpはVertex AI経由で課金</td>
+<td>必要（請求先アカウント）</td>
+<td>可能。</td>
+</tr>
+<tr>
+<td>Azure AI Speech</td>
+<td>F0無料利用枠：ニューラルTTSで月約500,000文字</td>
+<td>確認用のカードが必要ですが、F0では課金されません</td>
+<td><strong>不可</strong> — Microsoftは、有料（S0）リソースでのみ音声の商用利用権を付与しています。</td>
+</tr>
+<tr>
+<td>OpenAI（STT＋翻訳＋TTS）</td>
+<td>プリペイド（最低$5）；不定期に試用クレジットあり</td>
+<td>必要</td>
+<td>可能（無料プラン自体はありません）。TTSでは、音声がAI生成であることをプレイヤーに伝えるようOpenAIが義務付けています。</td>
+</tr>
+<tr>
+<td>Anthropic（Claude）</td>
+<td>一部の地域で約$5の試用クレジット</td>
+<td>必要（プリペイドクレジット）</td>
+<td>可能（無料プラン自体はありません）。</td>
+</tr>
+<tr>
+<td>Google Gemini（翻訳＋TTS）</td>
+<td>無料利用枠、レート制限あり、<strong>課金設定不要</strong></td>
+<td>不要</td>
+<td>可能。Googleは、無料利用枠のプロンプトを製品改善に使用する場合があります。</td>
+</tr>
+<tr>
+<td>InWorld</td>
+<td>1回限りの約70分のTTS</td>
+<td>開始時は不要</td>
+<td>可能 — 無料プランには商用ライセンスが含まれています。</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td>常設の無料利用枠なし；低価格の従量課金制</td>
+<td>必要（プリペイド残高へのチャージ）</td>
+<td>可能（プリペイドのみ）。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>商用利用</strong>とは、プロバイダーが生成した字幕、翻訳、吹き替え音声を、販売するゲームや製品に組み込んで提供することを指します。<strong>ElevenLabs</strong>や<strong>Azure</strong>の音声で吹き替えたゲームには、それぞれの有料プランが必要です。この列は2026年9月時点での各プロバイダーの利用規約をまとめたものであり、法的助言ではありません。常にプロバイダーの最新の利用規約が優先されます。オフラインエンジン（Whisper、Parakeet、Hy-MT2、Kokoro、Chatterbox、Qwen3、VoxCPM2）は、商用利用でも無料です（ParakeetではNVIDIAへのクレジット表記が推奨されます）— <a href="notices.html">Third-Party Notices.md</a>を参照してください。</p>
+</blockquote>
+<hr/>
+<h2 id="where-to-paste-your-key-in-subvox-pro">SubVox Proでのキーの貼り付け先 </h2>
+<p>以下のいずれかのプロバイダーからキーを取得したら、SubVox Proでは、次の2か所のどちらからでもキーを保存できます。キーは、このマシン上のUnity Editorの環境設定（<code>EditorPrefs</code>）にのみ保存され、プロジェクト内には保存されません。</p>
+<p><strong>Tools ▸ SubVox Pro ▸ Settings</strong>を開くと、すべてのプロバイダーを一覧表示するパネルが開きます。各キーを対応する行に貼り付けます（入力した値はフィールド上でマスク表示されます）。typeバッジの<strong>STT</strong>（文字起こし）、<strong>TR</strong>（翻訳）、
+<strong>TTS</strong>（吹き替え）を目安に、目的に対応するプロバイダーを探します。<strong>Clear API Keys</strong>を選択すると、このマシンからすべてのAPIキーが削除されます。</p>
+<img alt="SubVox Pro Settings window listing the API key field for every provider" src="Images/subvoxpro-settings-api-keys.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>また、<strong>SubVox Pro</strong>ウィンドウ内のプロバイダーパネルに、直接キーを貼り付けることもできます。キーを入力して
+<strong>Save</strong>をクリックすると、<strong>API Ready</strong>バッジが表示され、キーが受け入れられたことを確認できます（<strong>Clear</strong>を選択すると削除されます）。</p>
+<img alt="A provider panel inside the SubVox Pro window showing the API key field, Save/Clear buttons and the API Ready badge" src="Images/subvoxpro-provider-api-ready.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<hr/>
+<div data-svx-provider-articles='{"transcription-providers": "providers-transcription.md", "assemblyai": "providers-transcription.md", "gladia": "providers-transcription.md", "deepgram": "providers-transcription.md", "speechmatics": "providers-transcription.md", "elevenlabs": "providers-transcription.md", "rev-ai": "providers-transcription.md", "translation-providers": "providers-translation.md", "deepl": "providers-translation.md", "google-cloud-translation": "providers-translation.md", "openai": "providers-translation.md", "anthropic-claude": "providers-translation.md", "google-gemini": "providers-translation.md", "deepseek": "providers-translation.md", "dubbing--text-to-speech": "providers-dubbing.md", "inworld-ai": "providers-dubbing.md", "google-cloud-tts": "providers-dubbing.md", "azure": "providers-dubbing.md", "after-pasting-a-key": "providers-api-key.md"}' hidden=""></div>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

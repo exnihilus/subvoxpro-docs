@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>SubVox Pro API | SubVox Pro ドキュメント </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SubVox Pro API | SubVox Pro ドキュメント " name="title"/>
+<link href="images/logo.svg" rel="icon"/>
+<link href="public/docfx.min.css" rel="stylesheet"/>
+<link href="public/main.css?v=78ab4245ab" rel="stylesheet"/>
+<meta content="toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="" name="docfx:rel"/>
+<meta content="この記事の内容" name="loc:inThisArticle"/>
+<meta content="「{query}」の検索結果：{count} 件" name="loc:searchResultsCount"/>
+<meta content="「{query}」に一致する結果はありません" name="loc:searchNoResults"/>
+<meta content="タイトルで絞り込み" name="loc:tocFilter"/>
+<meta content="次へ" name="loc:nextArticle"/>
+<meta content="前へ" name="loc:prevArticle"/>
+<meta content="ライト" name="loc:themeLight"/>
+<meta content="ダーク" name="loc:themeDark"/>
+<meta content="自動" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./public/docfx.min.js?v=78ab4245ab" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="ja">
+  <link rel="alternate" hreflang="en" href="../index.html">
+<link rel="alternate" hreflang="fr" href="../fr/index.html">
+<link rel="alternate" hreflang="de" href="../de/index.html">
+<link rel="alternate" hreflang="ja" href="../ja/index.html">
+</head>
+<body class="tex2jax_ignore" data-layout="landing" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="ナビゲーションの切り替え" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="検索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="検索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="content">
+<div class="actionbar">
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<div class="svx-index">
+<section class="svx-hero">
+<div class="svx-intro">
+<h1>SubVox Pro <span class="svx-api-label">API</span></h1>
+</div>
+<div class="svx-demo">
+<div aria-label="コード例" class="svx-snippet">
+<span class="svx-code-line" data-svx-template="SubVox.RevealMode = EVoiceLineSubtitleRevealMode.{mode};">SubVox.RevealMode = EVoiceLineSubtitleRevealMode.Karaoke;</span>
+<span class="svx-code-line" data-svx-template="SubVox.Play(gateSealed);">SubVox.Play(gateSealed);</span>
+</div>
+<div class="svx-screen">
+<p aria-live="off" class="svx-subtitle"></p>
+</div>
+<div class="svx-player">
+<button aria-label="サンプルのボイスラインを再生" class="svx-play" type="button">
+<svg aria-hidden="true" class="svx-icon-play" viewbox="0 0 16 16"><path d="M4.5 2.6v10.8a.6.6 0 0 0 .9.5l8.6-5.4a.6.6 0 0 0 0-1L5.4 2.1a.6.6 0 0 0-.9.5z"></path></svg>
+<svg aria-hidden="true" class="svx-icon-stop" viewbox="0 0 16 16"><rect height="9" rx="1.5" width="9" x="3.5" y="3.5"></rect></svg>
+</button>
+<div aria-hidden="true" class="svx-progress"><span data-svx-progress=""></span></div>
+<div aria-label="字幕の表示モード" class="svx-modes" role="group">
+<button aria-pressed="false" data-svx-mode="FullSubtitle" type="button">字幕を一括表示</button>
+<button aria-pressed="false" data-svx-mode="TimedWords" type="button">単語ごと</button>
+<button aria-pressed="true" data-svx-mode="Karaoke" type="button">カラオケ</button>
+</div>
+</div>
+<audio data-svx-audio="" preload="auto" src="media/gate-sealed.wav"></audio>
+</div>
+<p class="svx-caption">音声はSubVox ProのオフラインChatterboxエンジンで生成されています。単語のタイミング情報は、SubVox ProのオフラインWhisperによる文字起こしから取得しています。</p>
+</section>
+<h2>はじめに</h2>
+<dl>
+<div>
+<dt><a href="api/SubVoxPro.SubVox.html">SubVox</a></dt>
+<dd>コードから操作するためのエントリーポイントです。ボイスラインの再生、再生中のすべてのボイスラインの一時停止や停止、言語と字幕オプションの設定、再生状況の監視ができます。</dd>
+</div>
+<div>
+<dt><a href="api/SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a></dt>
+<dd>優先度とキューを使用してボイスラインを1つずつ再生し、3D空間でキャラクターに話させます。</dd>
+</div>
+<div>
+<dt><a href="api/SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd>再生を呼び出すたびに返されるオブジェクトです。ボイスラインの再生状況を確認したり、再生を停止したり、コルーチンで再生終了を待ったりできます。</dd>
+</div>
+<div>
+<dt><a href="api/SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd>字幕、翻訳、吹き替え音声、話者、イベントを含むボイスラインアセットです。</dd>
+</div>
+</dl>
+<h2>タスクから探す</h2>
+<dl class="svx-tasks">
+<div>
+<dt>ボイスラインを再生し、終了まで待つ</dt>
+<dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_">SubVox.Play</a></dd>
+</div>
+<div>
+<dt>会話を中断せずにキャラクターに話させる</dt>
+<dd><a href="api/SubVoxPro.EVoiceLinePlayMode.html">EVoiceLinePlayMode.Queue</a></dd>
+</div>
+<div>
+<dt>単語が発話されたときにコードを実行する</dt>
+<dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_Subscribe_">SubVox.Subscribe</a></dd>
+</div>
+<div>
+<dt>字幕と吹き替え音声の言語を切り替える</dt>
+<dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">SubVox.CurrentLanguage</a></dd>
+</div>
+<div>
+<dt>プレイヤーに字幕オプションを提供する</dt>
+<dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_SubtitleScale">SubVox.SubtitleScale</a></dd>
+</div>
+<div>
+<dt>FMOD、Wwise、または動画に字幕を同期する</dt>
+<dd><a href="api/SubVoxPro.IVoiceLineAudioClock.html">IVoiceLineAudioClock</a></dd>
+</div>
+<div>
+<dt>キャラクターの上に吹き出しを表示する</dt>
+<dd><a href="api/SubVoxPro.SubtitleBubbleDisplayer.html">SubtitleBubbleDisplayer</a></dd>
+</div>
+<div>
+<dt>会話ログを作成する</dt>
+<dd><a href="api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_History">SubVox.History</a></dd>
+</div>
+</dl>
+<p class="svx-foot">パッケージには、ユーザーガイド（Documentation.pdf）と、これらの各タスク向けにそのままコピーして使えるスクリプト（Example/Snippets）が同梱されています。</p>
+</div>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

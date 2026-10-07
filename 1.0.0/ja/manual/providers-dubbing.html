@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<title>Dubbing / 音声合成 | SubVox Pro ドキュメント </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Dubbing / 音声合成 | SubVox Pro ドキュメント " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=78ab4245ab" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="この記事の内容" name="loc:inThisArticle"/>
+<meta content="「{query}」の検索結果：{count} 件" name="loc:searchResultsCount"/>
+<meta content="「{query}」に一致する結果はありません" name="loc:searchNoResults"/>
+<meta content="タイトルで絞り込み" name="loc:tocFilter"/>
+<meta content="次へ" name="loc:nextArticle"/>
+<meta content="前へ" name="loc:prevArticle"/>
+<meta content="ライト" name="loc:themeLight"/>
+<meta content="ダーク" name="loc:themeDark"/>
+<meta content="自動" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=78ab4245ab" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="ja">
+  <link rel="alternate" hreflang="en" href="../../manual/providers-dubbing.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers-dubbing.html">
+<link rel="alternate" hreflang="de" href="../../de/manual/providers-dubbing.html">
+<link rel="alternate" hreflang="ja" href="../../ja/manual/providers-dubbing.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="ナビゲーションの切り替え" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="検索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="検索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目次</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="dubbing--text-to-speech">Dubbing / 音声合成 </h1>
+<p>ElevenLabs TTSでは、前述のものと同じ<strong>ElevenLabs</strong>キーを使用します。キーに制限が設定されている場合は、<strong>Text to Speech: Access</strong>権限が必要です。<strong>ElevenLabsのボイスクローニング</strong>オプション（Instant Voice Cloning、有料のElevenLabsプラン）を使用するには、<strong>Voices</strong>権限の書き込みアクセスも必要です。これにより、SubVox Proがクローンの作成、検索、削除を行えます。<strong>Gemini</strong> TTSでは、翻訳と同じ<strong>Gemini</strong>キーを使用します（<a href="providers-translation.html#google-gemini">Google (Gemini)</a>を参照）。以下で説明するGoogle Cloud Text-to-SpeechのGeminiボイスとは異なり、
+OAuthも請求先アカウントも必要ありません。<strong>OpenAI</strong> TTSでは、翻訳と同じ<strong>OpenAI</strong>キーを使用します（
+<a href="providers-translation.html#openai">OpenAI</a>を参照）。InWorld専用の設定手順は以下のとおりです。</p>
+<details id="inworld-ai" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="inworld-ai-setup"><strong>InWorld AI</strong></h2></summary>
+<p><strong>用途：</strong>翻訳されたトラック用の吹き替え音声（TTS）の生成。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> <strong>Inworld Studio</strong>（<strong><a href="https://studio.inworld.ai">https://studio.inworld.ai</a></strong>）にアクセスし、アカウントを作成します。</p>
+<img alt="Inworld Portal log in / sign up page" src="Images/inworld-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> ワークスペースの左サイドバーから<strong>API Keys</strong>を開きます。</p>
+<img alt="Inworld API Keys entry in the sidebar" src="Images/inworld-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> <strong>Generate new key</strong>をクリックします。</p>
+<img alt="Inworld API Keys page" src="Images/inworld-api-keys-page.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> キーに識別しやすい表示名を付けます。リアルタイム専用のキーが特に必要な場合を除き、<strong>Standard</strong>を選択し、Inworld TTSのワークフローに必要な権限を維持します。</p>
+<img alt="Inworld generate API key dialog" src="Images/inworld-generate-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> <strong>Basic (Base64)</strong>のキー値をコピーします。</p>
+<img alt="Inworld Basic Base64 API key value" src="Images/inworld-api-key-basic-value.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>キーはAPI Keysの一覧にも表示されるため、必要に応じて後から再度コピーできます。</p>
+<img alt="Inworld API key row" src="Images/inworld-api-key-row.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> SubVox Pro（Settings ▸ <em>InWorld</em>）に貼り付けます。</p>
+<blockquote>
+<p>Freeプランには、1回限り（one-time）の約70分間のTTS利用枠と商用ライセンスが含まれます。
+<strong>TTS Playground</strong>で、先にボイスを試聴できます。入門ドキュメント：
+<a href="https://docs.inworld.ai/docs/tts-api/getting-started/">https://docs.inworld.ai/docs/tts-api/getting-started/</a></p>
+</blockquote>
+</details>
+<details id="google-cloud-tts" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="google-cloud-tts-setup"><strong>Google Cloud Text-to-Speech</strong></h2></summary>
+<p><strong>用途：</strong>翻訳されたトラック用の吹き替え音声（TTS）の生成。2つのボイスファミリーが1つの接続を共有します。Cloud Text-to-Speech APIを使用する<strong>Classic</strong>ボイス（Standard、WaveNet、Neural2、Chirp/Chirp3-HD）と、多言語に対応し、自由形式の<strong>スタイル指示</strong>を受け付ける<strong>Gemini</strong>ボイス（<em>Leda</em>、<em>Achird</em>、<em>Aoede</em>などの名前を持つ事前定義のボイス）です。
+Geminiボイスは、別の<strong>Vertex AI</strong> APIを使用します。</p>
+<p>他のプロバイダーとは異なり、Google Cloud TTSではAPIキーではなく<strong>OAuthサインイン</strong>を使用します。Gemini
+ボイスが利用するVertex AIでは、IAMによってアクセスが制御されているためです（<code>aiplatform.endpoints.predict</code>）。APIキーには
+IAM権限がありませんが、サインインしたGoogleアカウントには、プロジェクトの所有権または編集権限があればIAM権限があります。1回のサインインで両方のボイスファミリーを利用できます。</p>
+<ol>
+<li><strong><a href="https://console.cloud.google.com">https://console.cloud.google.com</a></strong>で<strong>Google Cloud Console</strong>を開き、プロジェクトを作成（または選択）します。新規アカウントには<strong>$300のトライアルクレジット（90日間）</strong>が付与されます。無料枠のみを使用する場合でも、請求先アカウントが必要です。</li>
+<li><strong>APIs &amp; Services ▸ Library</strong>で、<strong>Cloud Text-to-Speech API</strong>（Classicボイス）を有効にし、
+<strong>Gemini</strong>ボイスを使用する場合は、<strong>Vertex AI API</strong>（<code>aiplatform.googleapis.com</code>）も有効にします。従来の「AI Platform」（<code>ml.googleapis.com</code>）では<em>ありません</em>。Classicボイスのみが必要な場合は、Vertex AIを有効にする必要はありません。</li>
+<li><strong>APIs &amp; Services ▸ OAuth consent screen：</strong> <strong>User type / Audience</strong>を<strong>External</strong>に設定します（Internalでは、個人のGmailアカウントが<code>403: org_internal</code>エラーでブロックされます）。また、<strong>Test
+users</strong>に自分のGoogleアカウントを追加します。</li>
+<li><strong>APIs &amp; Services ▸ Credentials ▸ Create credentials ▸ OAuth client ID</strong>で、アプリケーションの種類に<strong>Desktop
+app</strong>を選択します。<strong>Client ID</strong>と<strong>Client secret</strong>をコピーします。（
+<code>http://127.0.0.1</code>を使用するループバックサインインには、<em>Desktop</em>クライアントが必要です。Google Sheetsとの連携でも同様です。）</li>
+<li>SubVox Proで<strong>Text-to-Speech</strong>タブを開き、<strong>Google Cloud</strong>を選択して、<strong>Client ID</strong>と
+<strong>Client secret</strong>を貼り付けます。続いて<strong>Connect…</strong>をクリックし、ブラウザでサインインします。<em>「app not verified」</em>
+という警告が表示されたら（Testingモードでは通常の表示です）、<strong>Continue</strong>を選択します。（課金とクォータの対象となるプロジェクトは
+Client IDから特定されるため、ほかに入力する項目はありません。）認証情報とリフレッシュトークンは、このコンピューターの
+Editorの環境設定に保存され、プロジェクトには保存されません。</li>
+</ol>
+<p>続いてボイスを選択します。Classicボイスは<code>Tier Leaf (locale)</code>の形式で表示されます（例：<em>Neural2 A (fr-FR)</em>）。Geminiボイスは
+<code>Name · Gemini</code>の形式で表示され、languageフィルターの設定は適用されません（対応しているすべての言語で発話できます）。
+Geminiボイスを選択すると、<strong>ボイスの演技指示</strong>ボタン（ボイス選択欄の横にある吹き出しアイコン）が有効になります。*「ひどく悲しんでいて、精神的に崩れそうな状態」*のような口調の指示を入力すると、各行に対するGeminiのスタイル指示として送信されます。</p>
+<blockquote>
+<p>Billingに関する注意：Classicボイスは、Cloud Text-to-Speechの月間無料クォータ（
+Neural2/WaveNetは約100万文字、Standardは400万文字）を消費します。<strong>GeminiおよびChirpのボイスはVertex AI経由で課金され</strong>、料金が異なります。予算アラートを設定してください。TTSの料金：<a href="https://cloud.google.com/text-to-speech/pricing">https://cloud.google.com/text-to-speech/pricing</a></p>
+</blockquote>
+</details>
+<details id="azure" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="azure-setup"><strong>Azure AI Speech</strong></h2></summary>
+<p><strong>用途：</strong>高品質な多言語ニューラルボイスによる、翻訳されたトラック用の吹き替え音声（TTS）の生成。<strong>サブスクリプションキー + リージョン</strong>を使用します（OAuthは不要です）。</p>
+<ol>
+<li><p><strong><a href="https://azure.microsoft.com/free">https://azure.microsoft.com/free</a></strong>で<strong>Microsoft Azure</strong>アカウントを作成します。Azureでは、本人確認のためにクレジットカード情報の入力が求められますが、Speechの<strong>無料枠（F0）</strong>は完全に無料のSKUです（課金する代わりに利用量に上限が設けられます）。そのため、F0ではカードへの請求は発生しません。</p>
+</li>
+<li><p><strong>Azure Portal</strong>（<a href="https://portal.azure.com">https://portal.azure.com</a>）で、<strong>Create a resource</strong>をクリックし、<strong>Speech</strong>を検索します。
+<strong>Microsoft</strong>が公開している<strong>Speech</strong>というタイルを選択します（<strong>Create</strong>ボタンが付いています。<em>Subscribe</em>と表示されるサードパーティのMarketplaceのオファーでは<em>ありません</em>）。<strong>Create</strong>をクリックし、サブスクリプションとリソースグループ、<strong>Region</strong>（覚えておいてください）、名前、<strong>Pricing tier F0 (free)</strong>を選択します。
+<strong>Review + create</strong>をクリックします。</p>
+<blockquote>
+<p>適切なリソースへの直接リンク：<a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices">https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices</a></p>
+</blockquote>
+</li>
+<li><p>デプロイが完了したら、リソースを開き、<strong>Keys and Endpoint</strong>に移動します。<strong>KEY 1</strong>をコピーし、
+<strong>Location/Region</strong>の値（例：<code>westeurope</code>）を控えます。</p>
+</li>
+<li><p>キーをSubVox Pro（Settings ▸ <em>Azure Speech</em>）に貼り付けます。続いて、<strong>Text-to-Speech</strong>タブで
+<strong>Azure</strong>を選択し、ドロップダウンから<strong>同じRegion</strong>を選択します。</p>
+</li>
+</ol>
+<blockquote>
+<p>キーとリージョンは、<strong>同じ</strong>Speechリソースのものである必要があります。一致しない場合、Azureは
+<code>401</code>エラーでリクエストを拒否します。リージョンは、ドロップダウンから選択する短い識別子（<code>westeurope</code>、<code>eastus</code>など）であり、表示名（「West Europe」）ではありません。</p>
+</blockquote>
+<blockquote>
+<p>無料枠（F0）：ニューラルTTSを月に約50万文字まで利用できますが、評価目的に限られます。Microsoftが生成音声の商用利用権を付与するのは、有料（S0）リソースの場合のみです。公開するゲームの吹き替えを作成する前に、リソースをS0に変更してください。料金：<a href="https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/">https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/</a></p>
+</blockquote>
+</details>
+<div data-svx-provider-articles='{"after-pasting-a-key": "providers-api-key.md"}' hidden=""></div>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>
