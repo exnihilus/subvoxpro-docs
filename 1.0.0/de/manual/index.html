@@ -164,8 +164,8 @@ einer Dialogsequenz, Sprachumschaltung und Wort-für-Wort-Anzeige – drücken S
 <p>Öffnen Sie es über <strong>Tools ▸ SubVox Pro ▸ Voice Line Editor</strong> oder über <strong>Set Up Voice Line</strong> im Inspector einer Voice Line. Von
 oben nach unten:</p>
 <ul>
-<li><strong>Voice Line Data</strong> – die Voice Line, die Sie gerade bearbeiten, mit Schaltflächen zum Erstellen einer neuen, zum Durchsuchen der anderen und
-zum Löschen. Der farbige Punkt ist ein <strong>Tag</strong>, das auf dem Symbol des Assets im Project-Fenster erscheint und Ihnen beim Sortieren Ihrer Voice Lines hilft.</li>
+<li><strong>Voice Line Data</strong> – die Voice Line, die Sie gerade bearbeiten, mit Schaltflächen zum Erstellen einer neuen, zum Durchsuchen der anderen,
+zum Aufteilen und zum Löschen. Der farbige Punkt ist ein <strong>Tag</strong>, das auf dem Symbol des Assets im Project-Fenster erscheint und Ihnen beim Sortieren Ihrer Voice Lines hilft.</li>
 <li><strong>Source</strong> – die Auswahlfelder <strong>AUDIO</strong> und <strong>SUBTITLES</strong>. Jede Voice Line verfügt über eine Ausgangssprache (die Flagge;
 klicken Sie darauf, um sie zu ändern) und eine Spur pro übersetzter oder vertonter Sprache. Die beiden Auswahlfelder sind unabhängig voneinander, sodass
 Sie beispielsweise französische Untertitel lesen können, während Sie den englischen Ton hören.</li>
@@ -212,6 +212,15 @@ legen Sie fest, wie lange eine Sprechpause mindestens dauern muss; die ausgeblen
 <p>Die Papierkorbschaltfläche löscht die Voice Line. Dabei werden die dazugehörigen Dateien aufgelistet: Die von SubVox Pro generierten Dateien (Sprachfassungen,
 Aufnahmen) sind ausgewählt, Ihre eigenen Dateien nicht, und eine Datei, die an anderer Stelle noch verwendet wird, ist gesperrt. Alles wird in den
 Papierkorb des Betriebssystems verschoben und kann daher wiederhergestellt werden.</p>
+<h3 id="splitting-a-voice-line">Eine Voice Line aufteilen </h3>
+<p>Wenn eine Voice Line mehrere Momente enthält, die Sie getrennt abspielen möchten, teilt die Schaltfläche zum Aufteilen
+(neben dem Papierkorb) sie in mehrere Voice Lines auf. Klicken Sie zwischen zwei Untertitel, um dort zu schneiden,
+fügen Sie so viele Schnitte wie nötig hinzu und benennen Sie die neuen Voice Lines. Ein Schnitt liegt immer zwischen
+zwei Untertiteln, in der Pause, die sie trennt.</p>
+<p>Jeder Teil behält alles, was zu seinen Untertiteln gehört: Audio, Übersetzungen, Sprachfassungen, Sprecher,
+Audioeffekte und Events. Der erste Teil bleibt in der aktuellen Voice Line, sodass Ihre Szenen und Timelines weiterhin
+auf sie verweisen; die anderen Teile werden daneben erstellt. Jeder Teil erhält eigene Audiodateien, und Ihre
+Originaldateien bleiben erhalten. Das Aufteilen kann nicht rückgängig gemacht werden.</p>
 <hr/>
 <h2 id="transcribe">Transkribieren </h2>
 <img alt="AI Tools, Transcription tab with local Whisper" src="Images/subvoxpro-ai-tools-transcription.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>

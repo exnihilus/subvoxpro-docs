@@ -178,8 +178,8 @@ lines, a dialogue sequence, language switching and word-by-word reveal — just 
 <p>Open it with <strong>Tools ▸ SubVox Pro ▸ Voice Line Editor</strong>, or <strong>Set Up Voice Line</strong> on a voice line's Inspector. From
 top to bottom:</p>
 <ul>
-<li><strong>Voice Line Data</strong> — the voice line you are editing, with buttons to create a new one, browse the others and
-delete it. The colored dot is a <strong>tag</strong> shown on the asset's icon in the Project window, to sort your lines.</li>
+<li><strong>Voice Line Data</strong> — the voice line you are editing, with buttons to create a new one, browse the others,
+split it and delete it. The colored dot is a <strong>tag</strong> shown on the asset's icon in the Project window, to sort your lines.</li>
 <li><strong>Source</strong> — the <strong>AUDIO</strong> and <strong>SUBTITLES</strong> selectors. Each voice line has one source language (the flag;
 click it to change it) and one track per translated or dubbed language. The two selectors are independent, so
 you can, for example, read the French subtitles while listening to the English audio.</li>
@@ -226,6 +226,14 @@ adjust how long a silence must be; the hidden parts are shaded on the waveform.<
 <p>The trash button deletes the voice line. It lists the files that go with it: the ones SubVox Pro generated (dubs,
 recordings) are selected, your own files are not, and a file still used elsewhere is locked. Everything goes to the
 system trash, so it can be recovered.</p>
+<h3 id="splitting-a-voice-line">Splitting a voice line</h3>
+<p>When one voice line holds several moments you want to play separately, the split button (beside the trash) cuts it
+into several voice lines. Click between two subtitles to cut there, add as many cuts as you need, and name the new
+voice lines. A cut always falls between two subtitles, in the pause that separates them.</p>
+<p>Each part keeps everything that belongs to its subtitles: audio, translations, dubs, speakers, audio effects and
+events. The first part stays in the current voice line, so your scenes and Timelines still point to it; the other
+parts are created next to it. Each part gets its own audio files, and your original files are kept. A split cannot
+be undone.</p>
 <hr>
 <h2 id="transcribe">Transcribe</h2>
 <img src="Images/subvoxpro-ai-tools-transcription.png" alt="AI Tools, Transcription tab with local Whisper" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">

@@ -167,8 +167,8 @@ La scène montre des voicelines, une séquence de dialogue, le changement de lan
 <p>Ouvrez-la avec <strong>Tools ▸ SubVox Pro ▸ Voice Line Editor</strong> ou <strong>Set Up Voice Line</strong> dans l’Inspector d’une voiceline.
 De haut en bas :</p>
 <ul>
-<li><strong>Voice Line Data</strong> : la voiceline en cours, avec les boutons pour en créer une, parcourir les autres ou la
-supprimer. Le point coloré est son <strong>tag</strong>, qui apparaît aussi sur son icône dans la fenêtre Project.</li>
+<li><strong>Voice Line Data</strong> : la voiceline en cours, avec les boutons pour en créer une, parcourir les autres, la
+découper ou la supprimer. Le point coloré est son <strong>tag</strong>, qui apparaît aussi sur son icône dans la fenêtre Project.</li>
 <li><strong>Source</strong> : les sélecteurs <strong>AUDIO</strong> et <strong>SUBTITLES</strong>. Chaque voiceline a une langue source, représentée par un
 drapeau, et une piste par langue traduite ou doublée. Les deux sélecteurs sont indépendants : vous pouvez
 afficher les sous-titres français sur l’audio anglais.</li>
@@ -216,6 +216,15 @@ avant la reprise. <strong>Only between two lines</strong> évite de masquer puis
 <p>Le bouton corbeille supprime la voiceline et affiche la liste des fichiers qui lui sont associés. Les fichiers générés par SubVox Pro, comme les
 doublages et les enregistrements, sont cochés ; vos fichiers d’origine ne le sont pas. Un fichier encore utilisé
 ailleurs est verrouillé. Les fichiers partent dans la corbeille du système : rien n’est perdu définitivement.</p>
+<h3 id="splitting-a-voice-line">Découper une voiceline </h3>
+<p>Quand une voiceline contient plusieurs moments à jouer séparément, le bouton de découpe (à côté de la corbeille) la
+sépare en plusieurs voicelines. Cliquez entre deux sous-titres pour couper à cet endroit, ajoutez autant de coupes
+que nécessaire, puis nommez les nouvelles voicelines. Une coupe tombe toujours entre deux sous-titres, dans la pause
+qui les sépare.</p>
+<p>Chaque partie garde tout ce qui appartient à ses sous-titres : audio, traductions, doublages, speakers, effets audio
+et events. La première partie reste dans la voiceline actuelle, donc vos scènes et vos Timelines pointent toujours
+vers elle ; les autres parties sont créées à côté. Chaque partie reçoit ses propres fichiers audio, et vos fichiers
+d’origine sont conservés. Une découpe ne peut pas être annulée.</p>
 <hr/>
 <h2 id="transcribe">Transcrire </h2>
 <p><img alt="Onglet Transcription avec Whisper local" src="Images/subvoxpro-ai-tools-transcription.png"/></p>

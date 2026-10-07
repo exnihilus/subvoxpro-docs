@@ -153,7 +153,7 @@ SubVox.Play(myVoiceLine);
 <img alt="SubVox Proのウィンドウ：ソーストラック、AI Tools、波形タイムライン、ライブプレビュー、字幕リスト" src="Images/subvoxpro-window-overview.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p><strong>Tools ▸ SubVox Pro ▸ Voice Line Editor</strong>、またはボイスラインのInspectorにある<strong>Set Up Voice Line</strong>から開けます。上から順に説明します。</p>
 <ul>
-<li><strong>Voice Line Data</strong> — 編集中のボイスラインです。新規作成、他のボイスラインの参照、削除用のボタンがあります。色付きのドットは、Projectウィンドウのアセットアイコンに表示される<strong>タグ</strong>で、ボイスラインの分類に使います。</li>
+<li><strong>Voice Line Data</strong> — 編集中のボイスラインです。新規作成、他のボイスラインの参照、分割、削除用のボタンがあります。色付きのドットは、Projectウィンドウのアセットアイコンに表示される<strong>タグ</strong>で、ボイスラインの分類に使います。</li>
 <li><strong>Source</strong> — <strong>AUDIO</strong>と<strong>SUBTITLES</strong>のセレクターです。各ボイスラインには1つのソース言語（旗アイコン。クリックすると変更できます）があり、翻訳または吹き替えされた言語ごとに1つのトラックがあります。2つのセレクターは独立しているため、例えば英語の音声を聞きながらフランス語の字幕を読むこともできます。</li>
 <li><strong>AI Tools</strong> — 文字起こし、翻訳、吹き替え（<a href="#transcribe">下記</a>）です。</li>
 <li><strong>Timeline</strong> — 字幕の<strong>マーカー</strong>が表示された波形です。各マーカーは字幕の開始位置を示します。テキストのないマーカーは画面の字幕を消去します（<strong>空白</strong>）。</li>
@@ -182,6 +182,9 @@ SubVox.Play(myVoiceLine);
 <p>「<strong>Silence</strong>」では、無音区間と判定するために、声よりどの程度音量が小さい必要があるかを設定します。「<strong>Min pause</strong>」では、ごく短い無音区間を無視します。「<strong>Hold out</strong>」では、声が止まった後もテキストを短時間表示し続け、「<strong>Lead in</strong>」では、発話が再開する前にテキストを再び表示します。「<strong>Only between two lines</strong>」では、文の途中で字幕が消えたり再表示されたりするのを防ぎます。</p>
 <h3 id="deleting-a-voice-line">ボイスラインの削除 </h3>
 <p>ごみ箱ボタンでボイスラインを削除します。関連するファイルが一覧表示されます。SubVox Proが生成したファイル（吹き替え音声、録音）は選択済みで、自分で用意したファイルは選択されていません。他で使用中のファイルはロックされています。削除した項目はすべてシステムのごみ箱に移動するため、復元できます。</p>
+<h3 id="splitting-a-voice-line">ボイスラインの分割 </h3>
+<p>1つのボイスラインに、別々に再生したい場面が複数含まれている場合は、分割ボタン（ごみ箱の隣）で複数のボイスラインに分けられます。2つの字幕の間をクリックしてそこで分割し、必要なだけ分割位置を追加して、新しいボイスラインに名前を付けます。分割位置は常に2つの字幕の間、その間の無音部分に置かれます。</p>
+<p>各パートには、その字幕に属するすべてが引き継がれます：音声、翻訳、吹き替え、話者、オーディオエフェクト、イベント。最初のパートは現在のボイスラインに残るため、シーンやTimelineからの参照はそのまま有効です。他のパートはその隣に作成されます。各パートには専用の音声ファイルが作られ、元のファイルは保持されます。分割は元に戻せません。</p>
 <hr/>
 <h2 id="transcribe">文字起こし </h2>
 <img alt="AI Tools, Transcription tab with local Whisper" src="Images/subvoxpro-ai-tools-transcription.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
