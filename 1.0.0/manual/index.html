@@ -569,15 +569,18 @@ Pausing the director keeps its selected subtitle until playback resumes or the d
 <strong>SubVox Pro ▸ Batch Processing</strong>. The files are added to the existing queue without starting the batch;
 duplicates are ignored. Wait for a running batch to finish before adding files this way.</p>
 <ol>
-<li>Drop the files, or use <strong>Add files…</strong> / <strong>Add folder…</strong>.</li>
+<li>Drop files or folders, or use <strong>Add files…</strong> / <strong>Add folder…</strong> (subfolders included). A line under the
+buttons tells you how many files were added.</li>
 <li>Turn on the steps you need — <strong>Transcription</strong>, <strong>Translation</strong>, <strong>Dubbing</strong> — and set them up once for all
 files. A file can override its languages.</li>
-<li>Check the <strong>Estimated cost</strong>, then click <strong>Batch</strong>. The button stays grayed out until everything is ready, and
+<li>Check the <strong>Estimated cost</strong>, then click <strong>Run batch</strong>. The button stays grayed out until everything is ready, and
 tells you what is missing.</li>
 </ol>
 <p>Each file becomes its own voice line. The batch does one step for all files before the next one (for example
 every transcription, then every translation, then every dub), which is faster with the offline engines. You can
-cancel at any time and export a report of the run; clicking <strong>Batch</strong> again picks up where each file stopped.</p>
+cancel at any time and export a report of the run; clicking <strong>Run batch</strong> again picks up where each file stopped.
+Once a file is done, <strong>Open</strong> shows its voice line in the editor, and <strong>Re-run</strong> queues its translation and
+dubbing again (for example after adding a language).</p>
 <hr>
 <h2 id="offline-engines-no-account-no-api-key">Offline engines (no account, no API key)</h2>
 <p>On the <strong>Windows</strong> editor, SubVox Pro can do everything offline, for free, on your own machine. Each engine is
