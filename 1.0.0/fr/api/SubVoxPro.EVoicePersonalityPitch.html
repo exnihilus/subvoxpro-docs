@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 
-<html lang="de">
+<html lang="fr">
 <head>
 <meta charset="utf-8"/>
-<title>Enumeration EVoicePersonalityAge | SubVox Pro-Dokumentation </title>
+<title>Énumération EVoicePersonalityPitch | Documentation SubVox Pro </title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Enum EVoicePersonalityAge | SubVox Pro-Dokumentation " name="title"/>
-<meta content="Scheinbares Alter der Stimme einer geführten Persönlichkeit." name="description"/>
+<meta content="Enum EVoicePersonalityPitch | Documentation SubVox Pro " name="title"/>
+<meta content="Hauteur de la voix d’une personnalité guidée, par rapport à la voix choisie." name="description"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
 <link href="../public/main.css?v=78ab4245ab" rel="stylesheet"/>
 <meta content="../toc.html" name="docfx:navrel"/>
 <meta content="toc.html" name="docfx:tocrel"/>
 <meta content="../" name="docfx:rel"/>
-<meta content="In diesem Artikel" name="loc:inThisArticle"/>
-<meta content="{count} Ergebnisse für „{query}“" name="loc:searchResultsCount"/>
-<meta content="Keine Ergebnisse für „{query}“" name="loc:searchNoResults"/>
-<meta content="Nach Titel filtern" name="loc:tocFilter"/>
-<meta content="Weiter" name="loc:nextArticle"/>
-<meta content="Zurück" name="loc:prevArticle"/>
-<meta content="Hell" name="loc:themeLight"/>
-<meta content="Dunkel" name="loc:themeDark"/>
-<meta content="Automatisch" name="loc:themeAuto"/>
+<meta content="Sur cette page" name="loc:inThisArticle"/>
+<meta content="{count} résultats pour « {query} »" name="loc:searchResultsCount"/>
+<meta content="Aucun résultat pour « {query} »" name="loc:searchNoResults"/>
+<meta content="Filtrer par titre" name="loc:tocFilter"/>
+<meta content="Suivant" name="loc:nextArticle"/>
+<meta content="Précédent" name="loc:prevArticle"/>
+<meta content="Clair" name="loc:themeLight"/>
+<meta content="Sombre" name="loc:themeDark"/>
+<meta content="Automatique" name="loc:themeAuto"/>
 <meta content="Change theme" name="loc:changeTheme"/>
 <meta content="Copy" name="loc:copy"/>
 <meta content="Download PDF" name="loc:downloadPdf"/>
@@ -31,11 +31,11 @@
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
       </script>
   <meta name="svx:version" content="1.0.0">
-  <meta name="svx:language" content="de">
-  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.EVoicePersonalityAge.html">
-<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.EVoicePersonalityAge.html">
-<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.EVoicePersonalityAge.html">
-<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.EVoicePersonalityAge.html">
+  <meta name="svx:language" content="fr">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.EVoicePersonalityPitch.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.EVoicePersonalityPitch.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.EVoicePersonalityPitch.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.EVoicePersonalityPitch.html">
 </head>
 <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
 <header class="bg-body border-bottom">
@@ -45,14 +45,14 @@
 <img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
             SubVox Pro
           </a>
-<button aria-controls="navpanel" aria-expanded="false" aria-label="Navigation umschalten" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<button aria-controls="navpanel" aria-expanded="false" aria-label="Afficher la navigation" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
 <i class="bi bi-three-dots"></i>
 </button>
 <div class="collapse navbar-collapse" id="navpanel">
 <div id="navbar">
 <form class="search" id="search" role="search">
 <i class="bi bi-search"></i>
-<input aria-label="Suchen" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Suchen" type="search"/>
+<input aria-label="Rechercher" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="Rechercher" type="search"/>
 </form>
 </div>
 </div>
@@ -63,7 +63,7 @@
 <div class="toc-offcanvas">
 <div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
 <div class="offcanvas-header">
-<h5 class="offcanvas-title" id="tocOffcanvasLabel">Inhaltsverzeichnis</h5>
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">Sommaire</h5>
 <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
 </div>
 <div class="offcanvas-body">
@@ -78,38 +78,32 @@
 </button>
 <nav id="breadcrumb"></nav>
 </div>
-<article data-uid="SubVoxPro.EVoicePersonalityAge">
-<h1 class="text-break" data-uid="SubVoxPro.EVoicePersonalityAge" id="SubVoxPro_EVoicePersonalityAge">
-Enumeration EVoicePersonalityAge  
+<article data-uid="SubVoxPro.EVoicePersonalityPitch">
+<h1 class="text-break" data-uid="SubVoxPro.EVoicePersonalityPitch" id="SubVoxPro_EVoicePersonalityPitch">
+Énumération EVoicePersonalityPitch  
   </h1>
 <div class="facts text-secondary">
-<dl><dt>Namespace</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>Espace de noms</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
 <dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
 </div>
-<div class="markdown summary"><p>Scheinbares Alter der Stimme einer geführten Persönlichkeit.</p>
+<div class="markdown summary"><p>Hauteur de la voix d’une personnalité guidée, par rapport à la voix choisie.</p>
 </div>
 <div class="markdown conceptual"></div>
 <div class="codewrapper">
-<pre><code class="lang-csharp hljs">public enum EVoicePersonalityAge</code></pre>
+<pre><code class="lang-csharp hljs">public enum EVoicePersonalityPitch</code></pre>
 </div>
-<h2 id="fields">Felder
+<h2 id="fields">Champs
 </h2>
 <dl class="parameters">
-<dt id="SubVoxPro_EVoicePersonalityAge_Natural"><code>Natural = 0</code></dt>
+<dt id="SubVoxPro_EVoicePersonalityPitch_Natural"><code>Natural = 0</code></dt>
 <dd></dd>
-<dt id="SubVoxPro_EVoicePersonalityAge_Child"><code>Child = 1</code></dt>
+<dt id="SubVoxPro_EVoicePersonalityPitch_VeryLow"><code>VeryLow = 1</code></dt>
 <dd></dd>
-<dt id="SubVoxPro_EVoicePersonalityAge_Teenager"><code>Teenager = 2</code></dt>
+<dt id="SubVoxPro_EVoicePersonalityPitch_Low"><code>Low = 2</code></dt>
 <dd></dd>
-<dt id="SubVoxPro_EVoicePersonalityAge_YoungAdult"><code>YoungAdult = 3</code></dt>
+<dt id="SubVoxPro_EVoicePersonalityPitch_High"><code>High = 3</code></dt>
 <dd></dd>
-<dt id="SubVoxPro_EVoicePersonalityAge_Adult"><code>Adult = 4</code></dt>
-<dd></dd>
-<dt id="SubVoxPro_EVoicePersonalityAge_MiddleAged"><code>MiddleAged = 5</code></dt>
-<dd></dd>
-<dt id="SubVoxPro_EVoicePersonalityAge_Elderly"><code>Elderly = 6</code></dt>
-<dd></dd>
-<dt id="SubVoxPro_EVoicePersonalityAge_VeryOld"><code>VeryOld = 7</code></dt>
+<dt id="SubVoxPro_EVoicePersonalityPitch_VeryHigh"><code>VeryHigh = 4</code></dt>
 <dd></dd>
 </dl>
 </article>

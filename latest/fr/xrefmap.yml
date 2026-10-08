@@ -277,60 +277,6 @@ references:
   commentId: F:SubVoxPro.EVoiceLineSubtitleRevealMode.TimedWords
   fullName: SubVoxPro.EVoiceLineSubtitleRevealMode.TimedWords
   nameWithType: EVoiceLineSubtitleRevealMode.TimedWords
-- uid: SubVoxPro.EVoicePersonalityAge
-  name: EVoicePersonalityAge
-  href: api/SubVoxPro.EVoicePersonalityAge.html
-  commentId: T:SubVoxPro.EVoicePersonalityAge
-  fullName: SubVoxPro.EVoicePersonalityAge
-  nameWithType: EVoicePersonalityAge
-- uid: SubVoxPro.EVoicePersonalityAge.Adult
-  name: Adult
-  href: api/SubVoxPro.EVoicePersonalityAge.html#SubVoxPro_EVoicePersonalityAge_Adult
-  commentId: F:SubVoxPro.EVoicePersonalityAge.Adult
-  fullName: SubVoxPro.EVoicePersonalityAge.Adult
-  nameWithType: EVoicePersonalityAge.Adult
-- uid: SubVoxPro.EVoicePersonalityAge.Child
-  name: Child
-  href: api/SubVoxPro.EVoicePersonalityAge.html#SubVoxPro_EVoicePersonalityAge_Child
-  commentId: F:SubVoxPro.EVoicePersonalityAge.Child
-  fullName: SubVoxPro.EVoicePersonalityAge.Child
-  nameWithType: EVoicePersonalityAge.Child
-- uid: SubVoxPro.EVoicePersonalityAge.Elderly
-  name: Elderly
-  href: api/SubVoxPro.EVoicePersonalityAge.html#SubVoxPro_EVoicePersonalityAge_Elderly
-  commentId: F:SubVoxPro.EVoicePersonalityAge.Elderly
-  fullName: SubVoxPro.EVoicePersonalityAge.Elderly
-  nameWithType: EVoicePersonalityAge.Elderly
-- uid: SubVoxPro.EVoicePersonalityAge.MiddleAged
-  name: MiddleAged
-  href: api/SubVoxPro.EVoicePersonalityAge.html#SubVoxPro_EVoicePersonalityAge_MiddleAged
-  commentId: F:SubVoxPro.EVoicePersonalityAge.MiddleAged
-  fullName: SubVoxPro.EVoicePersonalityAge.MiddleAged
-  nameWithType: EVoicePersonalityAge.MiddleAged
-- uid: SubVoxPro.EVoicePersonalityAge.Natural
-  name: Natural
-  href: api/SubVoxPro.EVoicePersonalityAge.html#SubVoxPro_EVoicePersonalityAge_Natural
-  commentId: F:SubVoxPro.EVoicePersonalityAge.Natural
-  fullName: SubVoxPro.EVoicePersonalityAge.Natural
-  nameWithType: EVoicePersonalityAge.Natural
-- uid: SubVoxPro.EVoicePersonalityAge.Teenager
-  name: Teenager
-  href: api/SubVoxPro.EVoicePersonalityAge.html#SubVoxPro_EVoicePersonalityAge_Teenager
-  commentId: F:SubVoxPro.EVoicePersonalityAge.Teenager
-  fullName: SubVoxPro.EVoicePersonalityAge.Teenager
-  nameWithType: EVoicePersonalityAge.Teenager
-- uid: SubVoxPro.EVoicePersonalityAge.VeryOld
-  name: VeryOld
-  href: api/SubVoxPro.EVoicePersonalityAge.html#SubVoxPro_EVoicePersonalityAge_VeryOld
-  commentId: F:SubVoxPro.EVoicePersonalityAge.VeryOld
-  fullName: SubVoxPro.EVoicePersonalityAge.VeryOld
-  nameWithType: EVoicePersonalityAge.VeryOld
-- uid: SubVoxPro.EVoicePersonalityAge.YoungAdult
-  name: YoungAdult
-  href: api/SubVoxPro.EVoicePersonalityAge.html#SubVoxPro_EVoicePersonalityAge_YoungAdult
-  commentId: F:SubVoxPro.EVoicePersonalityAge.YoungAdult
-  fullName: SubVoxPro.EVoicePersonalityAge.YoungAdult
-  nameWithType: EVoicePersonalityAge.YoungAdult
 - uid: SubVoxPro.EVoicePersonalityArticulation
   name: EVoicePersonalityArticulation
   href: api/SubVoxPro.EVoicePersonalityArticulation.html
@@ -343,12 +289,12 @@ references:
   commentId: F:SubVoxPro.EVoicePersonalityArticulation.Breathless
   fullName: SubVoxPro.EVoicePersonalityArticulation.Breathless
   nameWithType: EVoicePersonalityArticulation.Breathless
-- uid: SubVoxPro.EVoicePersonalityArticulation.Crisp
-  name: Crisp
-  href: api/SubVoxPro.EVoicePersonalityArticulation.html#SubVoxPro_EVoicePersonalityArticulation_Crisp
-  commentId: F:SubVoxPro.EVoicePersonalityArticulation.Crisp
-  fullName: SubVoxPro.EVoicePersonalityArticulation.Crisp
-  nameWithType: EVoicePersonalityArticulation.Crisp
+- uid: SubVoxPro.EVoicePersonalityArticulation.Clear
+  name: Clear
+  href: api/SubVoxPro.EVoicePersonalityArticulation.html#SubVoxPro_EVoicePersonalityArticulation_Clear
+  commentId: F:SubVoxPro.EVoicePersonalityArticulation.Clear
+  fullName: SubVoxPro.EVoicePersonalityArticulation.Clear
+  nameWithType: EVoicePersonalityArticulation.Clear
 - uid: SubVoxPro.EVoicePersonalityArticulation.Hesitant
   name: Hesitant
   href: api/SubVoxPro.EVoicePersonalityArticulation.html#SubVoxPro_EVoicePersonalityArticulation_Hesitant
@@ -361,18 +307,6 @@ references:
   commentId: F:SubVoxPro.EVoicePersonalityArticulation.Natural
   fullName: SubVoxPro.EVoicePersonalityArticulation.Natural
   nameWithType: EVoicePersonalityArticulation.Natural
-- uid: SubVoxPro.EVoicePersonalityArticulation.Precise
-  name: Precise
-  href: api/SubVoxPro.EVoicePersonalityArticulation.html#SubVoxPro_EVoicePersonalityArticulation_Precise
-  commentId: F:SubVoxPro.EVoicePersonalityArticulation.Precise
-  fullName: SubVoxPro.EVoicePersonalityArticulation.Precise
-  nameWithType: EVoicePersonalityArticulation.Precise
-- uid: SubVoxPro.EVoicePersonalityArticulation.Soft
-  name: Soft
-  href: api/SubVoxPro.EVoicePersonalityArticulation.html#SubVoxPro_EVoicePersonalityArticulation_Soft
-  commentId: F:SubVoxPro.EVoicePersonalityArticulation.Soft
-  fullName: SubVoxPro.EVoicePersonalityArticulation.Soft
-  nameWithType: EVoicePersonalityArticulation.Soft
 - uid: SubVoxPro.EVoicePersonalityDelivery
   name: EVoicePersonalityDelivery
   href: api/SubVoxPro.EVoicePersonalityDelivery.html
@@ -391,6 +325,12 @@ references:
   commentId: F:SubVoxPro.EVoicePersonalityDelivery.Cold
   fullName: SubVoxPro.EVoicePersonalityDelivery.Cold
   nameWithType: EVoicePersonalityDelivery.Cold
+- uid: SubVoxPro.EVoicePersonalityDelivery.Deadpan
+  name: Deadpan
+  href: api/SubVoxPro.EVoicePersonalityDelivery.html#SubVoxPro_EVoicePersonalityDelivery_Deadpan
+  commentId: F:SubVoxPro.EVoicePersonalityDelivery.Deadpan
+  fullName: SubVoxPro.EVoicePersonalityDelivery.Deadpan
+  nameWithType: EVoicePersonalityDelivery.Deadpan
 - uid: SubVoxPro.EVoicePersonalityDelivery.Dramatic
   name: Dramatic
   href: api/SubVoxPro.EVoicePersonalityDelivery.html#SubVoxPro_EVoicePersonalityDelivery_Dramatic
@@ -403,6 +343,24 @@ references:
   commentId: F:SubVoxPro.EVoicePersonalityDelivery.Intimate
   fullName: SubVoxPro.EVoicePersonalityDelivery.Intimate
   nameWithType: EVoicePersonalityDelivery.Intimate
+- uid: SubVoxPro.EVoicePersonalityDelivery.Mischievous
+  name: Mischievous
+  href: api/SubVoxPro.EVoicePersonalityDelivery.html#SubVoxPro_EVoicePersonalityDelivery_Mischievous
+  commentId: F:SubVoxPro.EVoicePersonalityDelivery.Mischievous
+  fullName: SubVoxPro.EVoicePersonalityDelivery.Mischievous
+  nameWithType: EVoicePersonalityDelivery.Mischievous
+- uid: SubVoxPro.EVoicePersonalityDelivery.Mysterious
+  name: Mysterious
+  href: api/SubVoxPro.EVoicePersonalityDelivery.html#SubVoxPro_EVoicePersonalityDelivery_Mysterious
+  commentId: F:SubVoxPro.EVoicePersonalityDelivery.Mysterious
+  fullName: SubVoxPro.EVoicePersonalityDelivery.Mysterious
+  nameWithType: EVoicePersonalityDelivery.Mysterious
+- uid: SubVoxPro.EVoicePersonalityDelivery.Narrator
+  name: Narrator
+  href: api/SubVoxPro.EVoicePersonalityDelivery.html#SubVoxPro_EVoicePersonalityDelivery_Narrator
+  commentId: F:SubVoxPro.EVoicePersonalityDelivery.Narrator
+  fullName: SubVoxPro.EVoicePersonalityDelivery.Narrator
+  nameWithType: EVoicePersonalityDelivery.Narrator
 - uid: SubVoxPro.EVoicePersonalityDelivery.Natural
   name: Natural
   href: api/SubVoxPro.EVoicePersonalityDelivery.html#SubVoxPro_EVoicePersonalityDelivery_Natural
@@ -415,6 +373,18 @@ references:
   commentId: F:SubVoxPro.EVoicePersonalityDelivery.Playful
   fullName: SubVoxPro.EVoicePersonalityDelivery.Playful
   nameWithType: EVoicePersonalityDelivery.Playful
+- uid: SubVoxPro.EVoicePersonalityDelivery.Reassuring
+  name: Reassuring
+  href: api/SubVoxPro.EVoicePersonalityDelivery.html#SubVoxPro_EVoicePersonalityDelivery_Reassuring
+  commentId: F:SubVoxPro.EVoicePersonalityDelivery.Reassuring
+  fullName: SubVoxPro.EVoicePersonalityDelivery.Reassuring
+  nameWithType: EVoicePersonalityDelivery.Reassuring
+- uid: SubVoxPro.EVoicePersonalityDelivery.Sarcastic
+  name: Sarcastic
+  href: api/SubVoxPro.EVoicePersonalityDelivery.html#SubVoxPro_EVoicePersonalityDelivery_Sarcastic
+  commentId: F:SubVoxPro.EVoicePersonalityDelivery.Sarcastic
+  fullName: SubVoxPro.EVoicePersonalityDelivery.Sarcastic
+  nameWithType: EVoicePersonalityDelivery.Sarcastic
 - uid: SubVoxPro.EVoicePersonalityDelivery.Tense
   name: Tense
   href: api/SubVoxPro.EVoicePersonalityDelivery.html#SubVoxPro_EVoicePersonalityDelivery_Tense
@@ -457,6 +427,24 @@ references:
   commentId: F:SubVoxPro.EVoicePersonalityEmotion.Confident
   fullName: SubVoxPro.EVoicePersonalityEmotion.Confident
   nameWithType: EVoicePersonalityEmotion.Confident
+- uid: SubVoxPro.EVoicePersonalityEmotion.Curious
+  name: Curious
+  href: api/SubVoxPro.EVoicePersonalityEmotion.html#SubVoxPro_EVoicePersonalityEmotion_Curious
+  commentId: F:SubVoxPro.EVoicePersonalityEmotion.Curious
+  fullName: SubVoxPro.EVoicePersonalityEmotion.Curious
+  nameWithType: EVoicePersonalityEmotion.Curious
+- uid: SubVoxPro.EVoicePersonalityEmotion.Determined
+  name: Determined
+  href: api/SubVoxPro.EVoicePersonalityEmotion.html#SubVoxPro_EVoicePersonalityEmotion_Determined
+  commentId: F:SubVoxPro.EVoicePersonalityEmotion.Determined
+  fullName: SubVoxPro.EVoicePersonalityEmotion.Determined
+  nameWithType: EVoicePersonalityEmotion.Determined
+- uid: SubVoxPro.EVoicePersonalityEmotion.Disgusted
+  name: Disgusted
+  href: api/SubVoxPro.EVoicePersonalityEmotion.html#SubVoxPro_EVoicePersonalityEmotion_Disgusted
+  commentId: F:SubVoxPro.EVoicePersonalityEmotion.Disgusted
+  fullName: SubVoxPro.EVoicePersonalityEmotion.Disgusted
+  nameWithType: EVoicePersonalityEmotion.Disgusted
 - uid: SubVoxPro.EVoicePersonalityEmotion.Excited
   name: Excited
   href: api/SubVoxPro.EVoicePersonalityEmotion.html#SubVoxPro_EVoicePersonalityEmotion_Excited
@@ -469,12 +457,6 @@ references:
   commentId: F:SubVoxPro.EVoicePersonalityEmotion.Joyful
   fullName: SubVoxPro.EVoicePersonalityEmotion.Joyful
   nameWithType: EVoicePersonalityEmotion.Joyful
-- uid: SubVoxPro.EVoicePersonalityEmotion.Mysterious
-  name: Mysterious
-  href: api/SubVoxPro.EVoicePersonalityEmotion.html#SubVoxPro_EVoicePersonalityEmotion_Mysterious
-  commentId: F:SubVoxPro.EVoicePersonalityEmotion.Mysterious
-  fullName: SubVoxPro.EVoicePersonalityEmotion.Mysterious
-  nameWithType: EVoicePersonalityEmotion.Mysterious
 - uid: SubVoxPro.EVoicePersonalityEmotion.Neutral
   name: Neutral
   href: api/SubVoxPro.EVoicePersonalityEmotion.html#SubVoxPro_EVoicePersonalityEmotion_Neutral
@@ -487,12 +469,12 @@ references:
   commentId: F:SubVoxPro.EVoicePersonalityEmotion.Sad
   fullName: SubVoxPro.EVoicePersonalityEmotion.Sad
   nameWithType: EVoicePersonalityEmotion.Sad
-- uid: SubVoxPro.EVoicePersonalityEmotion.Sarcastic
-  name: Sarcastic
-  href: api/SubVoxPro.EVoicePersonalityEmotion.html#SubVoxPro_EVoicePersonalityEmotion_Sarcastic
-  commentId: F:SubVoxPro.EVoicePersonalityEmotion.Sarcastic
-  fullName: SubVoxPro.EVoicePersonalityEmotion.Sarcastic
-  nameWithType: EVoicePersonalityEmotion.Sarcastic
+- uid: SubVoxPro.EVoicePersonalityEmotion.Surprised
+  name: Surprised
+  href: api/SubVoxPro.EVoicePersonalityEmotion.html#SubVoxPro_EVoicePersonalityEmotion_Surprised
+  commentId: F:SubVoxPro.EVoicePersonalityEmotion.Surprised
+  fullName: SubVoxPro.EVoicePersonalityEmotion.Surprised
+  nameWithType: EVoicePersonalityEmotion.Surprised
 - uid: SubVoxPro.EVoicePersonalityEmotion.Tender
   name: Tender
   href: api/SubVoxPro.EVoicePersonalityEmotion.html#SubVoxPro_EVoicePersonalityEmotion_Tender
@@ -553,6 +535,42 @@ references:
   commentId: F:SubVoxPro.EVoicePersonalityPace.VerySlow
   fullName: SubVoxPro.EVoicePersonalityPace.VerySlow
   nameWithType: EVoicePersonalityPace.VerySlow
+- uid: SubVoxPro.EVoicePersonalityPitch
+  name: EVoicePersonalityPitch
+  href: api/SubVoxPro.EVoicePersonalityPitch.html
+  commentId: T:SubVoxPro.EVoicePersonalityPitch
+  fullName: SubVoxPro.EVoicePersonalityPitch
+  nameWithType: EVoicePersonalityPitch
+- uid: SubVoxPro.EVoicePersonalityPitch.High
+  name: High
+  href: api/SubVoxPro.EVoicePersonalityPitch.html#SubVoxPro_EVoicePersonalityPitch_High
+  commentId: F:SubVoxPro.EVoicePersonalityPitch.High
+  fullName: SubVoxPro.EVoicePersonalityPitch.High
+  nameWithType: EVoicePersonalityPitch.High
+- uid: SubVoxPro.EVoicePersonalityPitch.Low
+  name: Low
+  href: api/SubVoxPro.EVoicePersonalityPitch.html#SubVoxPro_EVoicePersonalityPitch_Low
+  commentId: F:SubVoxPro.EVoicePersonalityPitch.Low
+  fullName: SubVoxPro.EVoicePersonalityPitch.Low
+  nameWithType: EVoicePersonalityPitch.Low
+- uid: SubVoxPro.EVoicePersonalityPitch.Natural
+  name: Natural
+  href: api/SubVoxPro.EVoicePersonalityPitch.html#SubVoxPro_EVoicePersonalityPitch_Natural
+  commentId: F:SubVoxPro.EVoicePersonalityPitch.Natural
+  fullName: SubVoxPro.EVoicePersonalityPitch.Natural
+  nameWithType: EVoicePersonalityPitch.Natural
+- uid: SubVoxPro.EVoicePersonalityPitch.VeryHigh
+  name: VeryHigh
+  href: api/SubVoxPro.EVoicePersonalityPitch.html#SubVoxPro_EVoicePersonalityPitch_VeryHigh
+  commentId: F:SubVoxPro.EVoicePersonalityPitch.VeryHigh
+  fullName: SubVoxPro.EVoicePersonalityPitch.VeryHigh
+  nameWithType: EVoicePersonalityPitch.VeryHigh
+- uid: SubVoxPro.EVoicePersonalityPitch.VeryLow
+  name: VeryLow
+  href: api/SubVoxPro.EVoicePersonalityPitch.html#SubVoxPro_EVoicePersonalityPitch_VeryLow
+  commentId: F:SubVoxPro.EVoicePersonalityPitch.VeryLow
+  fullName: SubVoxPro.EVoicePersonalityPitch.VeryLow
+  nameWithType: EVoicePersonalityPitch.VeryLow
 - uid: SubVoxPro.EVoicePersonalityVolume
   name: EVoicePersonalityVolume
   href: api/SubVoxPro.EVoicePersonalityVolume.html

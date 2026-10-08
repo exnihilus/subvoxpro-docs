@@ -330,11 +330,13 @@ Bei einer abweichenden Zuweisung für einen einzelnen Untertitel stellt der ober
 <h3 id="voice-personalities">Stimmprofile </h3>
 <p>Ein <strong>Stimmprofil</strong> ist eine wiederverwendbare Sprechanweisung — <em>wütend</em>, <em>geheimnisvoll</em>, <em>flüsternd</em> … Erstellen Sie eines über einen Speaker
 (<strong>New personality</strong>) oder über <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Personality</strong>. Anschließend formulieren Sie die Anweisung entweder
-selbst oder kombinieren Emotion, Sprechtempo, Lautstärke und Sprechweise. Klicken Sie auf sein Symbol, um eines von etwa vierzig Symbolen auszuwählen (Emotionen,
+selbst oder kombinieren eine Emotion und eine Sprechweise, deren Intensität sowie Sprechtempo, Lautstärke, Tonhöhe und
+Artikulation. Klicken Sie auf sein Symbol, um eines von etwa vierzig Symbolen auszuwählen (Emotionen,
 Stimmungen, Stimme und Charakter), damit Sie es in den Listen auf einen Blick erkennen.</p>
 <p>Weisen Sie jedem Untertitel über seinen Chip in der Liste ein Stimmprofil zu (im Modus <strong>Each subtitle</strong>) oder verwenden Sie das Standard-Stimmprofil des Speakers.
-Jeder Anbieter setzt um, was er unterstützt: Einige befolgen die vollständige Anweisung, andere nur das Sprechtempo. Der Tooltip des Chips zeigt
-Ihnen, was die ausgewählte Stimme davon verwendet.</p>
+Jeder Anbieter setzt um, was er kann, in der Form, die er versteht: geschriebene Anweisung, Audio-Tags oder Sprechstile; andere
+befolgen nur das Sprechtempo. Der Tooltip des Chips zeigt Ihnen, was die ausgewählte Stimme davon verwendet. Ein Stimmprofil legt fest,
+wie eine Zeile gesprochen wird, nicht wer spricht: Das Alter einer Stimme gehört zu ihrer Beschreibung (siehe unten).</p>
 <hr/>
 <h2 id="edit-the-audio">Audio bearbeiten </h2>
 <p>Die Schaltflächen rechts in der Symbolleiste der Zeitleiste bearbeiten das Audio selbst. Jede Bearbeitung lässt sich mit <strong>Ctrl+Z</strong> rückgängig machen.</p>
@@ -708,7 +710,8 @@ Deutsch, Französisch, Russisch, Portugiesisch, Spanisch und Italienisch und ist
 Stimme zu klonen, wählen Sie in der Stimmenauswahl <strong>Record a reference…</strong> und lesen Sie den angezeigten Text 8–12 Sekunden lang in einem ruhigen Raum vor.</li>
 <li>Die Stimmen von <strong>Custom Voice</strong> sprechen jede Sprache, behalten jedoch jeweils einen leichten Akzent ihrer eigenen Sprache bei.</li>
 <li><strong>Voice Design</strong>: Beschreiben Sie die Stimme jeder Figur (Alter, Klangfarbe, Akzent …) unter <strong>Voice description</strong> in ihrem
-Speaker-Asset und wählen Sie anschließend <strong>Use speakers' voices</strong>. Wenn Sie für die gesamte Voice Line eine einzige Stimme verwenden möchten, beschreiben Sie diese stattdessen im Bereich Dubbing.
+Speaker-Asset und wählen Sie anschließend <strong>Use speakers' voices</strong>. Das Menü <strong>Age</strong> unter der Beschreibung fügt das
+scheinbare Alter für Sie hinzu. Wenn Sie für die gesamte Voice Line eine einzige Stimme verwenden möchten, beschreiben Sie diese stattdessen im Bereich Dubbing.
 Dieselbe Beschreibung kann von einem Take zum nächsten leicht anders klingen; verwenden Sie Base, wenn die
 Stimme identisch bleiben muss.</li>
 </ul>
@@ -722,7 +725,7 @@ Portugiesisch, Russisch, Spanisch, Swahili, Schwedisch, Filipino, Thailändisch,
 oder <strong>Record a reference…</strong>. Geben Sie Anweisungen auf <strong>Englisch oder Chinesisch</strong> ein, zum Beispiel <code>Speak softly, with a sad tone</code> oder <code>Whisper quietly</code>: In diesen beiden Sprachen funktionieren sie am besten, unabhängig von der Sprache der Voice Line. Eine mitgelieferte
 Stimme behält außerhalb ihrer eigenen Sprache einen leichten Akzent bei; für einen perfekten Akzent verwenden Sie eine Referenzaufnahme in der
 Zielsprache der Sprachvertonung. Die Option <strong>Use GPU</strong> in den Settings beschleunigt die Generierung mithilfe einer Grafikkarte.</p>
-<p>Um eine Stimme zu erstellen, die es noch nicht gibt, wählen Sie <strong>Designed voice</strong> und beschreiben Sie sie, zum Beispiel <code>A deep, calm male voice in his fifties</code>. Die Stimme wird bei der ersten Generierung erstellt und anschließend für jede Voice Line beibehalten, sodass eine Figur stets
+<p>Um eine Stimme zu erstellen, die es noch nicht gibt, wählen Sie <strong>Designed voice</strong> und beschreiben Sie sie, zum Beispiel <code>A deep, calm male voice in his fifties</code>, oder wählen Sie unter der Beschreibung ein <strong>Age</strong>. Die Stimme wird bei der ersten Generierung erstellt und anschließend für jede Voice Line beibehalten, sodass eine Figur stets
 gleich klingt; Ihre Stimmprofile bestimmen weiterhin den Tonfall. Für eine andere Stimme pro Figur tragen Sie die Beschreibung
 bei jedem Speaker ein und stellen Sie dessen Stimme auf <strong>Designed voice</strong>.</p>
 <h3 id="qwen3-offline-word-timing">Qwen3 (Offline-Timing auf Wortebene) </h3>

@@ -344,11 +344,13 @@ For a per-line override, the top entry returns to the voice line's default speak
 <h3 id="voice-personalities">Voice personalities</h3>
 <p>A <strong>personality</strong> is a reusable acting direction — <em>Angry</em>, <em>Mysterious</em>, <em>Whispering</em>… Create one from a speaker
 (<strong>New personality</strong>) or with <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Personality</strong>, then either write the direction
-yourself or combine emotion, speed, volume and delivery. Click its icon to pick one of about forty symbols (emotions,
-moods, voice and character), so you recognize it at a glance in the lists.</p>
+yourself or combine an emotion and a delivery, how strong they are, then the speed, volume, pitch and articulation.
+Click its icon to pick one of about forty symbols (emotions, moods, voice and character), so you recognize it at a
+glance in the lists.</p>
 <p>Give each line a personality from its chip in the list (in <strong>Each subtitle</strong> mode), or use the speaker's default.
-Every provider applies what it can: some follow the full direction, others only the pace. The chip's tooltip tells
-you what the selected voice will use.</p>
+Every provider applies what it can, in the form it understands: a written direction, audio tags or speaking
+styles; others only follow the pace. The chip's tooltip tells you what the selected voice will use. A personality sets
+how a line is performed, not who speaks: the age of a voice belongs to its description (see below).</p>
 <hr>
 <h2 id="edit-the-audio">Edit the audio</h2>
 <p>The buttons at the right of the timeline toolbar edit the audio itself. Every edit can be undone with <strong>Ctrl+Z</strong>.</p>
@@ -602,7 +604,7 @@ dubbing again (for example after adding a language).</p>
 <p>On the <strong>Windows</strong> editor, SubVox Pro can do everything offline, for free, on your own machine. Each engine is
 downloaded once (the button next to its provider says <strong>Setup model</strong> or <strong>Install…</strong>) and shared by all your
 projects. <strong>Tools ▸ SubVox Pro ▸ Additional Models</strong> (also a tile of the Hub) lists them all in one window, with
-their status, a <strong>Download</strong> button for each, and <strong>Uninstall</strong> to free the disk space again. A graphics card makes them much faster, but they also run without one.</p>
+their status, a <strong>Download</strong> button for each, and <strong>Uninstall</strong> to free the disk space again. Each engine shows the <strong>minimum and recommended computer</strong> it needs. A graphics card makes them much faster, but they also run without one.</p>
 <table>
 <thead>
 <tr>
@@ -731,7 +733,8 @@ German, French, Russian, Portuguese, Spanish and Italian, and comes in three mod
 voice, choose <strong>Record a reference…</strong> in the voice picker and read the text shown for 8–12 seconds in a quiet room.</li>
 <li><strong>Custom Voice</strong> voices speak every language, but each keeps a slight accent of its own language.</li>
 <li><strong>Voice Design</strong>: describe each character's voice (age, timbre, accent…) under <strong>Voice description</strong> in its
-speaker asset, then pick <strong>Use speakers' voices</strong>. For one voice for the whole line, describe it in the Dubbing
+speaker asset, then pick <strong>Use speakers' voices</strong>. The <strong>Age</strong> menu under the description adds the apparent age
+for you. For one voice for the whole line, describe it in the Dubbing
 panel instead. The same description can sound slightly different from one take to the next; use Base when the
 voice must stay identical.</li>
 </ul>
@@ -745,7 +748,7 @@ Portuguese, Russian, Spanish, Swahili, Swedish, Filipino, Thai, Turkish and Viet
 folder, or <strong>Record a reference…</strong>. Write directions in <strong>English or Chinese</strong>, for example <code>Speak softly, with a sad tone</code> or <code>Whisper quietly</code>: they work best in these two languages, whatever the language of the line. A ready-made
 voice keeps a slight accent outside its own language; for a perfect accent, use a reference recorded in the dubbed
 language. <strong>Use GPU</strong> in the Settings speeds up generation with a graphics card.</p>
-<p>To create a voice that does not exist, pick <strong>Designed voice</strong> and describe it, for example <code>A deep, calm male voice in his fifties</code>. The voice is created the first time you generate, then kept for every line, so a character always
+<p>To create a voice that does not exist, pick <strong>Designed voice</strong> and describe it, for example <code>A deep, calm male voice in his fifties</code>, or choose an <strong>Age</strong> under the description. The voice is created the first time you generate, then kept for every line, so a character always
 sounds the same; your personalities still set the tone. For a different voice per character, write the description
 on each speaker and set their voice to <strong>Designed voice</strong>.</p>
 <h3 id="qwen3-offline-word-timing">Qwen3 (offline word timing)</h3>
