@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>提供商设置 | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="提供商设置 | SubVox Pro 文档 " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../manual/providers.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers.html">
+<link rel="alternate" hreflang="de" href="../../de/manual/providers.html">
+<link rel="alternate" hreflang="ja" href="../../ja/manual/providers.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/manual/providers.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="subvox-pro--provider-setup-guide">SubVox Pro — 提供商设置指南 </h1>
+<p>SubVox Pro 不附带任何 API 密钥。使用以下任一提供商的服务时，都需要使用<strong>你自己的密钥</strong>，并将其粘贴到 <strong>Tools ▸ SubVox Pro ▸ Settings</strong>（或
+<strong>SubVox Pro</strong> 窗口内的提供商面板）中。密钥仅存储在本机的 Unity 编辑器首选项（<code>EditorPrefs</code>）中，不会提交到项目中，也不会随构建版本分发。有关各服务的法律条款，请参阅
+<a href="notices.html">Third-Party Notices.md</a>。</p>
+<blockquote>
+<p>⚠️ <strong>免费套餐和定价经常变更。</strong>以下数据在撰写本文时是准确的；在依赖这些信息之前，务必在提供商官网的定价页面确认当前的套餐和价格。</p>
+</blockquote>
+<hr/>
+<h2 id="quick-links">快速链接 </h2>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>提供商文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>转写</strong></td>
+<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-translation.html#openai">OpenAI</a></td>
+</tr>
+<tr>
+<td><strong>翻译</strong></td>
+<td><a href="providers-translation.html#deepl">DeepL</a> · <a href="providers-translation.html#google-cloud-translation">Google Cloud Translation</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-translation.html#anthropic-claude">Anthropic (Claude)</a> · <a href="providers-translation.html#google-gemini">Google (Gemini)</a> · <a href="providers-translation.html#deepseek">DeepSeek</a> · <a href="index.html#hy-mt2-offline-translation">Hy-MT2 本地版</a></td>
+</tr>
+<tr>
+<td><strong>配音 / 语音合成</strong></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro 本地版</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox 本地版</a> · <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B 本地版</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 本地版</a></td>
+</tr>
+<tr>
+<td><strong>本地对齐</strong></td>
+<td><a href="index.html#qwen3-offline-word-timing">Qwen3 Forced Aligner</a></td>
+</tr>
+<tr>
+<td><strong>参考</strong></td>
+<td><a href="#best-practices">最佳实践</a> · <a href="#which-provider-do-i-need">我需要哪家提供商？</a> · <a href="#free-tier-cheat-sheet">免费套餐速查表</a> · <a href="#where-to-paste-your-key-in-subvox-pro">密钥粘贴位置</a> · <a href="providers-api-key.html#after-pasting-a-key">粘贴密钥后</a></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="language-compatibility-at-a-glance">语言兼容性一览 </h2>
+<p>这是 SubVox Pro 提供的语言支持范围。<strong>动态目录</strong>表示，运行时会根据提供商账户和所选模型/音色获取确切列表；以音色选择器中的列表为准。
+<code>en-US</code> 和 <code>pt-BR</code> 等地区语言变体在此归入其基础语言。</p>
+<table>
+<thead>
+<tr>
+<th>服务</th>
+<th>提供商 / 引擎</th>
+<th>SubVox Pro 中可用的语言</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>STT</strong></td>
+<td>AssemblyAI</td>
+<td>多语言，自动语言检测；可用性取决于所选模型。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Gladia</td>
+<td>多语言，自动语言检测；可用性取决于所选模型。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Deepgram</td>
+<td>荷兰语、英语、法语、德语、印地语、意大利语、日语、葡萄牙语、俄语、西班牙语；另支持多语言模式。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Speechmatics</td>
+<td>阿拉伯语、中文（普通话）、荷兰语、英语、法语、德语、印地语、意大利语、日语、韩语、波兰语、葡萄牙语、俄语、西班牙语、土耳其语。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>ElevenLabs</td>
+<td>阿拉伯语、中文、荷兰语、英语、法语、德语、印地语、意大利语、日语、韩语、波兰语、葡萄牙语、俄语、西班牙语、土耳其语。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Rev AI</td>
+<td>阿拉伯语、中文（普通话）、荷兰语、英语、法语、德语、印地语、意大利语、日语、韩语、波兰语、葡萄牙语、俄语、西班牙语、土耳其语。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>OpenAI (<code>gpt-transcribe</code>)</td>
+<td>阿拉伯语、中文、荷兰语、英语、法语、德语、印地语、意大利语、日语、韩语、波兰语、葡萄牙语、俄语、西班牙语、土耳其语。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Whisper large-v2 / large-v3 / large-v3-turbo（本地）</td>
+<td>中文、荷兰语、英语、法语、德语、意大利语、日语、韩语、葡萄牙语、俄语、西班牙语；另支持自动检测。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Parakeet TDT 0.6B v3（本地）</td>
+<td>保加利亚语、克罗地亚语、捷克语、丹麦语、荷兰语、英语、爱沙尼亚语、芬兰语、法语、德语、希腊语、匈牙利语、意大利语、拉脱维亚语、立陶宛语、马耳他语、波兰语、葡萄牙语、罗马尼亚语、俄语、斯洛伐克语、斯洛文尼亚语、西班牙语、瑞典语和乌克兰语；自动检测语言。</td>
+</tr>
+<tr>
+<td><strong>翻译</strong></td>
+<td>DeepL</td>
+<td>阿拉伯语、孟加拉语、缅甸语、粤语、中文（简体/繁体）、捷克语、荷兰语、英语（美国/英国）、菲律宾语、法语、德语、古吉拉特语、希伯来语、印地语、印度尼西亚语、意大利语、日语、哈萨克语、韩语、马来语、马拉地语、蒙古语、波斯语、波兰语、葡萄牙语（巴西/葡萄牙）、俄语、西班牙语、泰米尔语、泰卢固语、泰语、土耳其语、乌克兰语、乌尔都语、越南语，以及保加利亚语、丹麦语、爱沙尼亚语、芬兰语、希腊语、匈牙利语、拉脱维亚语、立陶宛语、挪威语、罗马尼亚语、斯洛伐克语、斯洛文尼亚语和瑞典语（共50种目标语言）。</td>
+</tr>
+<tr>
+<td><strong>翻译</strong></td>
+<td>Google Cloud Translation</td>
+<td>与 DeepL 相同的50种目标语言。</td>
+</tr>
+<tr>
+<td><strong>翻译</strong></td>
+<td>OpenAI、Claude、Gemini、DeepSeek</td>
+<td>与 DeepL 相同的50种目标语言；质量取决于所选模型。</td>
+</tr>
+<tr>
+<td><strong>翻译</strong></td>
+<td>Hy-MT2 1.8B / 7B（本地）</td>
+<td>DeepL 列表中的前37种目标语言：不包括保加利亚语、丹麦语、爱沙尼亚语、芬兰语、希腊语、匈牙利语、拉脱维亚语、立陶宛语、挪威语、罗马尼亚语、斯洛伐克语、斯洛文尼亚语和瑞典语。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>ElevenLabs</td>
+<td>取决于模型。<strong>Flash v2.5</strong>：阿拉伯语、保加利亚语、中文、克罗地亚语、捷克语、丹麦语、荷兰语、英语、菲律宾语、芬兰语、法语、德语、希腊语、印地语、匈牙利语、印度尼西亚语、意大利语、日语、韩语、马来语、挪威语、波兰语、葡萄牙语、罗马尼亚语、俄语、斯洛伐克语、西班牙语、瑞典语、泰米尔语、土耳其语、乌克兰语、越南语。<strong>Multilingual v2</strong>：与上述相同，但不包含匈牙利语、挪威语和越南语。<strong>Eleven v3</strong>：70多种语言，新增孟加拉语、古吉拉特语、希伯来语、哈萨克语、马拉地语、波斯语、斯瓦希里语、泰卢固语、泰语和乌尔都语等。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>InWorld</td>
+<td><strong>动态目录</strong>——语言信息从您的账户返回的音色列表中读取。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Gemini（AI Studio 密钥）</td>
+<td>约75种语言，根据文本自动检测——包括阿拉伯语、中文、荷兰语、英语、法语、德语、印地语、意大利语、日语、韩语、波兰语、葡萄牙语、俄语、西班牙语、土耳其语、乌克兰语和越南语。每种音色均可朗读所有语言。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>OpenAI（<code>gpt-realtime-2.1-mini</code>）</td>
+<td>约55种语言，根据文本自动检测——即 Whisper 支持的语言，包括阿拉伯语、中文、荷兰语、英语、法语、德语、印地语、意大利语、日语、韩语、波兰语、葡萄牙语、俄语、西班牙语、土耳其语、乌克兰语和越南语。音色虽针对英语进行过优化，但可朗读所有语言。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Google Cloud TTS</td>
+<td><strong>动态目录</strong>——语言信息从 Google 音色列表中读取，包括兼容的 Gemini 音色。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Azure AI Speech</td>
+<td><strong>动态目录</strong>——语言信息从所配置区域的 Azure 神经网络音色列表中读取。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Kokoro（本地）</td>
+<td>英语（美国和英国音色）。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Qwen3 TTS 1.7B Base / CustomVoice / VoiceDesign（本地）</td>
+<td>中文、英语、日语、韩语、德语、法语、俄语、葡萄牙语、西班牙语和意大利语；支持参考声音克隆、九种固定音色或自定义设计音色；CustomVoice 和 VoiceDesign 支持文字指导。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>VoxCPM2（本地）</td>
+<td>阿拉伯语、缅甸语、中文、丹麦语、荷兰语、英语、芬兰语、法语、德语、希腊语、希伯来语、印地语、印度尼西亚语、意大利语、日语、高棉语、韩语、老挝语、马来语、挪威语、波兰语、葡萄牙语、俄语、西班牙语、斯瓦希里语、瑞典语、菲律宾语、泰语、土耳其语和越南语；支持使用参考声音进行克隆，并可使用文字指导语气与表达方式。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Chatterbox Multilingual（本地）</td>
+<td>阿拉伯语、中文、丹麦语、荷兰语、英语、芬兰语、法语、德语、希腊语、印地语、意大利语、韩语、马来语、挪威语、波兰语、葡萄牙语、俄语、西班牙语、斯瓦希里语、瑞典语、土耳其语；安装可选的日语支持后可使用日语。</td>
+</tr>
+<tr>
+<td><strong>对齐</strong></td>
+<td>Qwen3 Aligner（本地）</td>
+<td>粤语、中文、英语、法语、德语、意大利语、日语、韩语、葡萄牙语、俄语、西班牙语。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>提供商的语言和模型目录可以独立于 SubVox Pro 更新。当提供商新增支持时，请在编辑器中刷新模型或音色目录；对于 Qwen、Kokoro、Chatterbox、Qwen3 TTS 和 VoxCPM2，上述固定列表与版本固定的本地模型相对应。</p>
+</blockquote>
+<h3 id="chatterbox-how-reliable-each-language-is">Chatterbox：各语言的可靠性 </h3>
+<ul>
+<li><strong>可靠性很高</strong>：葡萄牙语、意大利语、西班牙语、印地语、英语、德语、马来语、俄语和荷兰语。</li>
+<li><strong>可靠</strong>：芬兰语、希腊语、阿拉伯语、瑞典语、法语、日语和中文——偶尔可能会把第一个词读错。</li>
+<li><strong>效果有波动</strong>：丹麦语、波兰语、挪威语、韩语、斯瓦希里语和土耳其语——试听生成的配音，并使用相应的
+<strong>REGEN</strong> 标签按钮重新生成效果不佳的台词配音。</li>
+</ul>
+<hr/>
+<h2 id="best-practices">最佳实践 </h2>
+<p>API 密钥是在线服务的密码。即使只是在测试，也要将其视为机密信息。</p>
+<ul>
+<li><strong>为每个工具或项目创建一个密钥。</strong>专用的 <code>SubVoxPro</code> 密钥日后更容易撤销，且不会影响其他工具的正常运行。</li>
+<li><strong>切勿将 API 密钥粘贴到源文件、场景、预制体、技术支持消息、Discord、GitHub 问题或提交记录中。</strong> SubVox Pro 将密钥存储在 Unity 的 <code>EditorPrefs</code> 中，仅保存在本机上，因此不会成为 Unity 项目的一部分。</li>
+<li><strong>当提供商提示密钥仅显示一次时，请立即复制下来。</strong>如果需要备份，请将其存储在密码管理器中。若密钥丢失，请撤销并创建新密钥。</li>
+<li><strong>仅使用可用的最低权限。</strong>如果提供商允许限制密钥权限，仅启用
+SubVox Pro 所需的功能：转写提供商的语音转文字功能、翻译提供商的翻译功能，以及仅在配音时使用的 TTS 功能。</li>
+<li><strong>选择与工作流程相匹配的有效期。</strong>有效期较短的密钥用于测试和演示更安全；有效期较长的密钥则更方便持续的生产工作。部分提供商还支持永不过期的密钥。</li>
+<li><strong>如果提供商支持，请设置预算、使用限额或计费提醒。</strong>这有助于避免因意外循环、重复导入或团队成员误用密钥而造成的损失。</li>
+<li><strong>若密钥可能已泄露，请及时轮换密钥。</strong>若密钥出现在截图、代码提交、聊天消息或构建产物中，请在提供商控制面板中撤销密钥，并将新密钥粘贴到 SubVox Pro 中。</li>
+<li><strong>切勿让整个团队共用一个个人密钥。</strong>每位团队成员应使用自己的提供商账户或团队管理的密钥，具体取决于提供商对计费和访问权限的管理方式。</li>
+<li><strong>从 SubVox Pro 中清除未使用的密钥。</strong>在共享设备上完成测试后，使用
+<strong>Tools ▸ SubVox Pro ▸ Settings</strong> 中的 <strong>Clear API Keys</strong> 按钮。</li>
+</ul>
+<hr/>
+<h2 id="which-provider-do-i-need">我需要哪家提供商？ </h2>
+<table>
+<thead>
+<tr>
+<th>SubVox Pro 中的功能</th>
+<th>可用的提供商</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>转写</strong>（音频 → 带时间信息的字幕）</td>
+<td>AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、OpenAI——或 <strong>Whisper（本地）</strong>和 <strong>Parakeet（本地）</strong>（完全离线，无需密钥，仅限 Windows——参见 <a href="index.html#whisper-offline-transcription">Documentation.md</a>）</td>
+</tr>
+<tr>
+<td><strong>翻译</strong>（字幕 → 其他语言）</td>
+<td>DeepL、Google Cloud Translation、OpenAI、Anthropic（Claude）、Google（Gemini）、DeepSeek——或 <strong>Hy-MT2（本地）</strong>（内置 llama.cpp 引擎，完全离线，无需密钥，仅限 Windows——参见 <a href="index.html#hy-mt2-offline-translation">Documentation.md</a>）</td>
+</tr>
+<tr>
+<td><strong>配音 / 文本转语音</strong></td>
+<td>ElevenLabs、InWorld AI、Gemini（与 Gemini 翻译使用同一 AI Studio 密钥）、OpenAI（与 OpenAI 翻译使用同一密钥）、Google Cloud Text-to-Speech、Azure AI Speech——或 <strong>Kokoro</strong>（本地，英语）和 <strong>Chatterbox</strong>（本地，21 种语言 + 可选日语，声音克隆），或 <strong>Qwen3 TTS 1.7B</strong>（本地，10 种语言，基于参考音频克隆声音、固定音色或通过描述设计音色），或 <strong>VoxCPM2</strong>（本地，30 种语言，声音克隆并可通过文字控制配音风格）</td>
+</tr>
+<tr>
+<td><strong>强制对齐</strong>（精确的配音词级时间信息，保留原文）</td>
+<td><strong>Qwen3 Aligner</strong>（本地，完全离线，无需密钥，仅限 Windows）</td>
+</tr>
+<tr>
+<td><strong>人工翻译往返流程</strong></td>
+<td>Google Sheets（OAuth——参见<a href="index.html#human-translation-with-google-sheets">用户指南</a>）</td>
+</tr>
+</tbody>
+</table>
+<p>在编辑器中，<strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> 可并排显示所有提供商的信息：其在
+SubVox Pro 中支持的功能、价格、免费套餐以及该套餐是否允许商业使用。</p>
+<p>只需为实际使用的提供商获取密钥。若想免费且无需注册账户即可开始使用，可以使用离线的 <strong>Whisper</strong> 或 <strong>Parakeet</strong> 进行转写，使用离线的 <strong>Hy-MT2（本地）</strong>翻译引擎（或
+<strong>Gemini</strong>、<strong>DeepL</strong> 等提供商的免费套餐）进行翻译，然后使用离线的 <strong>Kokoro</strong>、<strong>Chatterbox</strong>、<strong>Qwen3 TTS 1.7B</strong> 或 <strong>VoxCPM2</strong> 引擎，或 <strong>Gemini</strong> 的免费套餐进行配音。</p>
+<hr/>
+<h2 id="free-tier-cheat-sheet">免费套餐速查表 </h2>
+<p>无论使用免费还是付费账户，SubVox Pro 的操作方式都相同：使用相同的密钥，发送相同的请求。免费套餐仅会影响生成配额——对于某些提供商而言，还会限制生成结果的使用方式。</p>
+<table>
+<thead>
+<tr>
+<th>提供商</th>
+<th>免费配额（请核实！）</th>
+<th>是否需要信用卡？</th>
+<th>免费套餐是否允许商业使用？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AssemblyAI</td>
+<td>约 $50 一次性额度（约 330 小时）</td>
+<td>否</td>
+<td>是。除非选择退出，否则数据可能会被用于训练其模型。</td>
+</tr>
+<tr>
+<td>Gladia</td>
+<td>每月 10 小时</td>
+<td>否</td>
+<td>是。通过免费套餐发送的音频可能会被用于训练其模型。</td>
+</tr>
+<tr>
+<td>Deepgram</td>
+<td>$200 一次性额度</td>
+<td>否</td>
+<td>是，包括生产环境使用。</td>
+</tr>
+<tr>
+<td>Speechmatics</td>
+<td>$100 一次性额度</td>
+<td>否</td>
+<td>是。转写文本可能会被用于改进其模型。</td>
+</tr>
+<tr>
+<td>ElevenLabs</td>
+<td>每月约 10 分钟的语音/转写使用时长</td>
+<td>否</td>
+<td><strong>否</strong>——仅限非商业使用，且必须注明 ElevenLabs 为来源。付费套餐起价约为 $5/月。</td>
+</tr>
+<tr>
+<td>Rev AI</td>
+<td>5 小时一次性额度</td>
+<td>否</td>
+<td>未说明——请查阅 Rev AI 的条款。</td>
+</tr>
+<tr>
+<td>DeepL（Developer 套餐）</td>
+<td>一次性 1,000,000 个字符的额度</td>
+<td>可能需要提供信用卡进行验证，但不会扣费</td>
+<td>是，但 DeepL 可能会保留通过免费 API 发送的文本。</td>
+</tr>
+<tr>
+<td>Google Cloud Translation</td>
+<td>每月 500,000 个字符 + $300 试用额度</td>
+<td>是（结算账号）</td>
+<td>是。</td>
+</tr>
+<tr>
+<td>Google Cloud Text-to-Speech</td>
+<td>每月 100 万个字符（Neural2/WaveNet）+ 400 万个字符（Standard）；Gemini/Chirp 通过 Vertex AI 计费</td>
+<td>是（结算账号）</td>
+<td>是。</td>
+</tr>
+<tr>
+<td>Azure AI Speech</td>
+<td>F0 免费套餐：神经网络 TTS 每月约 50 万个字符</td>
+<td>需要信用卡进行验证，F0 不扣费</td>
+<td><strong>否</strong>——Microsoft 仅授予通过付费（S0）资源生成的音频商业使用权。</td>
+</tr>
+<tr>
+<td>OpenAI（STT + 翻译 + TTS）</td>
+<td>预付费（最低 $5）；偶尔提供试用额度</td>
+<td>是</td>
+<td>是（没有严格意义上的免费套餐）。对于 TTS，OpenAI 要求向玩家说明声音是 AI 生成的。</td>
+</tr>
+<tr>
+<td>Anthropic（Claude）</td>
+<td>部分地区提供约 $5 的试用额度</td>
+<td>是（预付额度）</td>
+<td>是（没有严格意义上的免费套餐）。</td>
+</tr>
+<tr>
+<td>Google Gemini（翻译 + TTS）</td>
+<td>免费套餐，有请求频率限制，<strong>无需启用计费</strong></td>
+<td>否</td>
+<td>是。Google 可能会使用免费套餐中的提示词来改进其产品。</td>
+</tr>
+<tr>
+<td>InWorld</td>
+<td>一次性约 70 分钟的 TTS</td>
+<td>开始使用时不需要</td>
+<td>是——免费套餐包含商业许可。</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td>无常设免费套餐；按量付费价格低廉</td>
+<td>是（预付充值）</td>
+<td>是（仅限预付）。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>商业使用</strong>指将提供商生成的内容——字幕、翻译或配音音频——
+随你销售的游戏或产品一起发布。使用 <strong>ElevenLabs</strong> 或 <strong>Azure</strong> 语音进行配音的游戏需要使用其付费套餐。本栏总结了各提供商截至 2026 年 9 月的条款；此内容不构成法律建议，且始终以提供商当前的条款为准。离线引擎（Whisper、Parakeet、Hy-MT2、Kokoro、Chatterbox、Qwen3、VoxCPM2）可免费用于商业用途（使用 Parakeet 时，建议注明 NVIDIA 为来源）——参见 <a href="notices.html">Third-Party Notices.md</a>。</p>
+</blockquote>
+<hr/>
+<h2 id="where-to-paste-your-key-in-subvox-pro">在 SubVox Pro 中粘贴密钥的位置 </h2>
+<p>从以下任一提供商处获取密钥后，SubVox Pro 提供两个等效的密钥保存位置。密钥仅存储在当前机器的 Unity Editor 偏好设置（<code>EditorPrefs</code>）中，绝不会保存在项目内。</p>
+<p>打开 <strong>Tools ▸ SubVox Pro ▸ Settings</strong>，即可看到列出所有提供商的统一面板。将每个密钥粘贴到对应的行中（输入框会隐藏密钥内容），并根据类型徽标——<strong>STT</strong>（转写）、<strong>TR</strong>（翻译）、
+<strong>TTS</strong>（配音）——找到对应的提供商。<strong>Clear API Keys</strong> 会清除当前机器上的所有密钥。</p>
+<img alt="SubVox Pro Settings window listing the API key field for every provider" src="Images/subvoxpro-settings-api-keys.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>也可以直接在 <strong>SubVox Pro</strong> 窗口内的提供商面板中粘贴密钥。输入密钥，点击 <strong>Save</strong>，出现 <strong>API Ready</strong> 徽标即表示密钥已被接受（点击 <strong>Clear</strong> 可移除密钥）。</p>
+<img alt="A provider panel inside the SubVox Pro window showing the API key field, Save/Clear buttons and the API Ready badge" src="Images/subvoxpro-provider-api-ready.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<hr/>
+<div data-svx-provider-articles='{"transcription-providers": "providers-transcription.md", "assemblyai": "providers-transcription.md", "gladia": "providers-transcription.md", "deepgram": "providers-transcription.md", "speechmatics": "providers-transcription.md", "elevenlabs": "providers-transcription.md", "rev-ai": "providers-transcription.md", "translation-providers": "providers-translation.md", "deepl": "providers-translation.md", "google-cloud-translation": "providers-translation.md", "openai": "providers-translation.md", "anthropic-claude": "providers-translation.md", "google-gemini": "providers-translation.md", "deepseek": "providers-translation.md", "dubbing--text-to-speech": "providers-dubbing.md", "inworld-ai": "providers-dubbing.md", "google-cloud-tts": "providers-dubbing.md", "azure": "providers-dubbing.md", "after-pasting-a-key": "providers-api-key.md"}' hidden=""></div>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

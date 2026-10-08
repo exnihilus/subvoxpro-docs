@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>类 VoiceLinePlayback | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLinePlayback | SubVox Pro 文档 " name="title"/>
+<meta content="一次台词资源播放请求，由  和  返回：通过  跟踪其状态、停止播放，或使用 yield return 在协程中等待其完成。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.VoiceLinePlayback.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.VoiceLinePlayback.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.VoiceLinePlayback.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.VoiceLinePlayback.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/api/SubVoxPro.VoiceLinePlayback.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.VoiceLinePlayback">
+<h1 class="text-break" data-uid="SubVoxPro.VoiceLinePlayback" id="SubVoxPro_VoiceLinePlayback">
+类 VoiceLinePlayback  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>命名空间</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>程序集</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>一次台词资源播放请求，由 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> 和 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> 返回：通过 <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_State">State</a> 跟踪其状态、停止播放，或使用 <code>yield return</code> 在协程中等待其完成。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public sealed class VoiceLinePlayback : CustomYieldInstruction</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>继承</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLinePlayback</span></div>
+</dd>
+</dl>
+<h2 id="SubVoxPro_VoiceLinePlayback_examples">Examples</h2>
+<pre><code class="lang-csharp">private IEnumerator Dialogue()
+{
+    yield return SubVox.Play(question);
+    yield return new WaitForSeconds(0.5f);
+
+    VoiceLinePlayback answer = SubVox.Play(reply);
+    answer.Finished += done =&gt; Debug.Log($"Answer ended: {done.State}");
+    yield return answer;
+}</code></pre>
+<h2 class="section" id="properties">属性
+</h2>
+<a data-uid="SubVoxPro.VoiceLinePlayback.Duration*" id="SubVoxPro_VoiceLinePlayback_Duration_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.Duration" id="SubVoxPro_VoiceLinePlayback_Duration">
+  Duration
+  
+  </h3>
+<div class="markdown level1 summary"><p>台词的时长，以秒为单位，在开始播放后确定（排队中或被拒绝时为 0）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float Duration { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLinePlayback.Emitter*" id="SubVoxPro_VoiceLinePlayback_Emitter_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.Emitter" id="SubVoxPro_VoiceLinePlayback_Emitter">
+  Emitter
+  
+  </h3>
+<div class="markdown level1 summary"><p>播放该台词的台词播放源，若无台词播放源可处理该台词，则返回 null。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineEmitter Emitter { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLinePlayback.IsCurrent*" id="SubVoxPro_VoiceLinePlayback_IsCurrent_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.IsCurrent" id="SubVoxPro_VoiceLinePlayback_IsCurrent">
+  IsCurrent
+  
+  </h3>
+<div class="markdown level1 summary"><p>该台词在所属台词播放源上播放期间，此值为 true（包括暂停时）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsCurrent { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLinePlayback.IsDone*" id="SubVoxPro_VoiceLinePlayback_IsDone_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.IsDone" id="SubVoxPro_VoiceLinePlayback_IsDone">
+  IsDone
+  
+  </h3>
+<div class="markdown level1 summary"><p>当台词已完成、被中断或被拒绝时，该值为 true。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsDone { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLinePlayback.IsPaused*" id="SubVoxPro_VoiceLinePlayback_IsPaused_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.IsPaused" id="SubVoxPro_VoiceLinePlayback_IsPaused">
+  IsPaused
+  
+  </h3>
+<div class="markdown level1 summary"><p>该台词被 <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Pause">Pause()</a>、所属台词播放源或 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_PauseAll">PauseAll()</a> 暂停时，此值为 true。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsPaused { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLinePlayback.Priority*" id="SubVoxPro_VoiceLinePlayback_Priority_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.Priority" id="SubVoxPro_VoiceLinePlayback_Priority">
+  Priority
+  
+  </h3>
+<div class="markdown level1 summary"><p>该台词播放时的优先级。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLinePriority Priority { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLinePlayback.Progress*" id="SubVoxPro_VoiceLinePlayback_Progress_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.Progress" id="SubVoxPro_VoiceLinePlayback_Progress">
+  Progress
+  
+  </h3>
+<div class="markdown level1 summary"><p>台词的播放进度，范围为 0 到 1。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float Progress { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLinePlayback.State*" id="SubVoxPro_VoiceLinePlayback_State_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.State" id="SubVoxPro_VoiceLinePlayback_State">
+  State
+  
+  </h3>
+<div class="markdown level1 summary"><p>该台词处于以下状态之一：已排队、正在播放、已完成、被中断或被拒绝。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLinePlaybackState State { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLinePlaybackState.html">EVoiceLinePlaybackState</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLinePlayback.Time*" id="SubVoxPro_VoiceLinePlayback_Time_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.Time" id="SubVoxPro_VoiceLinePlayback_Time">
+  Time
+  
+  </h3>
+<div class="markdown level1 summary"><p>该台词已播放时长（单位：秒）：开始前为 0，播放完成后为 <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Duration">Duration</a>。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float Time { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLinePlayback.VoiceLine*" id="SubVoxPro_VoiceLinePlayback_VoiceLine_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.VoiceLine" id="SubVoxPro_VoiceLinePlayback_VoiceLine">
+  VoiceLine
+  
+  </h3>
+<div class="markdown level1 summary"><p>播放的台词资源。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineData VoiceLine { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLinePlayback.WasRefused*" id="SubVoxPro_VoiceLinePlayback_WasRefused_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.WasRefused" id="SubVoxPro_VoiceLinePlayback_WasRefused">
+  WasRefused
+  
+  </h3>
+<div class="markdown level1 summary"><p>台词播放源拒绝该台词时，此值为 true（有更重要的台词正在播放，或播放模式要求拒绝）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool WasRefused { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLinePlayback.keepWaiting*" id="SubVoxPro_VoiceLinePlayback_keepWaiting_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.keepWaiting" id="SubVoxPro_VoiceLinePlayback_keepWaiting">
+  keepWaiting
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public override bool keepWaiting { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">方法
+</h2>
+<a data-uid="SubVoxPro.VoiceLinePlayback.Pause*" id="SubVoxPro_VoiceLinePlayback_Pause_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.Pause" id="SubVoxPro_VoiceLinePlayback_Pause">
+  Pause()
+  
+  </h3>
+<div class="markdown level1 summary"><p>在播放此台词时暂停（参见 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause">Pause()</a>）。当该台词处于队列中时，此操作无效。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Pause()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLinePlayback.Resume*" id="SubVoxPro_VoiceLinePlayback_Resume_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.Resume" id="SubVoxPro_VoiceLinePlayback_Resume">
+  Resume()
+  
+  </h3>
+<div class="markdown level1 summary"><p>恢复播放由 <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_Pause">Pause()</a> 暂停的台词。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Resume()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLinePlayback.Stop*" id="SubVoxPro_VoiceLinePlayback_Stop_"></a>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.Stop" id="SubVoxPro_VoiceLinePlayback_Stop">
+  Stop()
+  
+  </h3>
+<div class="markdown level1 summary"><p>停止该台词，或将其从所属台词播放源的队列中移除。队列中的其余台词继续播放。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Stop()</code></pre>
+</div>
+<h2 class="section" id="events">事件
+</h2>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.Completed" id="SubVoxPro_VoiceLinePlayback_Completed">
+  Completed
+  
+  </h3>
+<div class="markdown level1 summary"><p>当台词播放完毕或被跳过时触发。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; Completed</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.Finished" id="SubVoxPro_VoiceLinePlayback_Finished">
+  Finished
+  
+  </h3>
+<div class="markdown level1 summary"><p>台词播放完成、被中断或被拒绝时触发，仅触发一次。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; Finished</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLinePlayback.Interrupted" id="SubVoxPro_VoiceLinePlayback_Interrupted">
+  Interrupted
+  
+  </h3>
+<div class="markdown level1 summary"><p>当某台词在结束前被停止或被另一台词替换时触发。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; Interrupted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

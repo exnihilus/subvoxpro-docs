@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>翻译提供商 | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="翻译提供商 | SubVox Pro 文档 " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../manual/providers-translation.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers-translation.html">
+<link rel="alternate" hreflang="de" href="../../de/manual/providers-translation.html">
+<link rel="alternate" hreflang="ja" href="../../ja/manual/providers-translation.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/manual/providers-translation.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="translation-providers">翻译提供商 </h1>
+<details id="deepl" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="deepl-setup"><strong>DeepL</strong></h2></summary>
+<p><strong>用途：</strong>高质量机器翻译（支持正式程度调整）。</p>
+<ol>
+<li>访问 <strong><a href="https://www.deepl.com/pro-api">https://www.deepl.com/pro-api</a></strong>，注册 API 服务。在 <strong>Developer</strong> 套餐卡片中，选择
+<strong>Sign up for free</strong>。DeepL 会要求你验证邮箱，随后完成支付卡验证。支付卡验证用于核实账户，但 Developer 套餐不收费。免费的 Developer 套餐包含 <strong>1,000,000 个字符的一次性额度</strong>。
+<img alt="DeepL API pricing — free Developer plan" src="Images/deepl-pricing.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>打开 <strong><a href="https://www.deepl.com/your-account/keys">https://www.deepl.com/your-account/keys</a></strong>（Account ▸ <strong>API Keys</strong>），并复制你的
+<strong>Authentication Key</strong>。
+<img alt="DeepL API Keys page showing the authentication key" src="Images/deepl-api-keys.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>将其粘贴到 SubVox Pro 中（Settings ▸ <em>DeepL</em>）。SubVox Pro 会自动处理 Free 和 Pro 端点的选择。</li>
+</ol>
+<blockquote>
+<p>帮助：<a href="https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API">https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API</a></p>
+</blockquote>
+</details>
+<details id="google-cloud-translation" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="google-cloud-translation-setup"><strong>Google Cloud Translation</strong></h2></summary>
+<p><strong>用途：</strong>机器翻译。</p>
+<ol>
+<li>访问 <strong><a href="https://console.cloud.google.com">https://console.cloud.google.com</a></strong>，打开 <strong>Google Cloud Console</strong>，并创建（或选择）一个项目。新注册的 Google Cloud 账户可获得 <strong>$300 试用额度（90 天）</strong>，且 Cloud Translation
+包含<strong>每月 500,000 个免费字符</strong>。即使使用免费套餐，也需要结算账号。</li>
+<li>在 <strong>APIs &amp; Services ▸ Library</strong> 中，搜索 <strong>Cloud Translation API</strong> 并点击 <strong>Enable</strong>。</li>
+<li>在 <strong>APIs &amp; Services ▸ Credentials</strong> 中，点击 <strong>Create credentials ▸ API key</strong>。复制该密钥（也可以将其限制为仅用于 Cloud Translation API）。</li>
+<li>将其粘贴到 SubVox Pro 中（Settings ▸ <em>Google Translate</em>）。</li>
+</ol>
+<blockquote>
+<p>提示：设置配额/预算提醒，以免试用额度用尽后产生意外费用。</p>
+</blockquote>
+</details>
+<details id="openai" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="openai-setup"><strong>OpenAI</strong></h2></summary>
+<p><strong>用途：</strong>语音转文字、LLM 翻译（以及跨语言的词级样式传递）和语音合成配音。一个密钥即可支持这三项功能。</p>
+<ol>
+<li>在 <strong><a href="https://platform.openai.com">https://platform.openai.com</a></strong> 创建账户，或使用现有 OpenAI 账户登录。
+<img alt="OpenAI API Platform sign-in page" src="Images/openai-platform-sign-in.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>在项目侧边栏中，打开 <strong>API Keys</strong>。
+<img alt="OpenAI project sidebar with API Keys selected" src="Images/openai-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>点击 <strong>Create new secret key</strong>。
+<img alt="OpenAI API Keys page with Create new secret key button" src="Images/openai-api-keys-page.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>如有需要，为密钥命名，确保选中正确的项目，选择所需的权限，然后点击 <strong>Create secret key</strong>。
+<img alt="OpenAI create new secret key dialog" src="Images/openai-create-secret-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>立即复制该密钥。<u>OpenAI 仅会显示一次完整的密钥；关闭此对话框后，将无法再次查看完整密钥。</u>
+<img alt="OpenAI generated secret key dialog" src="Images/openai-secret-key-created.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>通过 <strong><a href="https://platform.openai.com/settings/organization/billing/overview">https://platform.openai.com/settings/organization/billing/overview</a></strong> 充值预付额度。也可以打开账户菜单，进入 <strong>Organization settings</strong> 或 <strong>Profile settings</strong>，然后在设置侧边栏中选择 <strong>Billing</strong>。<div style="display: flex; gap: 12px; align-items: flex-start; margin: 10px 0 18px;">
+<img alt="OpenAI account menu with Organization settings and Profile settings entries" src="Images/openai-account-menu.png" style="display: block; width: 220px; max-width: 48%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10);"/>
+<img alt="OpenAI organization sidebar with Billing selected" src="Images/openai-billing-sidebar.png" style="display: block; width: 220px; max-width: 48%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10);"/>
+</div>
+</li>
+<li>在 <strong>Billing</strong> 概览页面，点击 <strong>Add to credit balance</strong>。API 调用费用将从该余额中扣除。
+<img alt="OpenAI Billing overview with credit balance and Add to credit balance button" src="Images/openai-billing-overview.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>输入要充值的金额，选择或添加支付方式，然后点击 <strong>Continue</strong>。平台显示的最低充值金额通常为 <strong>$5</strong>。
+<img alt="OpenAI Add to credit balance dialog" src="Images/openai-add-credit-balance.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>将密钥粘贴到 SubVox Pro 中（Settings ▸ <em>OpenAI</em>）。在翻译面板中选择模型。进行配音时，在 <strong>Text-to-Speech</strong> 选项卡中选择 <strong>OpenAI</strong> 作为提供商，然后选择模型：
+<strong>gpt-realtime-2.1-mini</strong>（10 种音色，遵循 voice direction），通过 Realtime API 调用。现有模型选择将自动迁移。已停用的音色 <strong>fable</strong>、<strong>nova</strong> 和 <strong>onyx</strong>
+需要重新选择音色。Realtime 会根据逐字照读指令朗读台词；请核对生成的对白。
+Realtime 音频输出费用约为 <strong>$0.024/分钟</strong>，另加文本词元费用（每百万词元：输入 $0.60 / 输出 $2.40）。
+Batch 估算包含音频和文本，按每秒 14 个字符、每词元 4 个字符计算；voice direction 和语速可能会影响计费金额。进行转写时，在 <strong>Speech-to-Text</strong> 选项卡中选择 <strong>OpenAI</strong>，然后选择模型。</li>
+</ol>
+<blockquote>
+<p><strong>Transcription 模型——选择前请阅读此内容。</strong></p>
+<ul>
+<li>**<code>gpt-transcribe</code><strong>：当前用于已录制音频的模型。API 返回的文本不包含词级时间戳；
+SubVox Pro 会根据音频片段估算时间信息。如果时间定位很重要，请使用本地对齐或提供词级时间戳的提供商。</strong></li>
+<li><code>whisper-1</code><strong>、</strong><code>gpt-4o-transcribe</code><strong> 和 </strong><code>gpt-4o-mini-transcribe</code>** 的已保存选项将迁移至
+<code>gpt-transcribe</code>；这将移除此前由 <code>whisper-1</code> 提供的词级时间戳。</li>
+<li>其他提供商（AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、本地 Whisper 和 Parakeet）会直接返回带标点的词级时间信息：如果时间定位很重要，请优先选用这些提供商。</li>
+</ul>
+<p>转写端点的上传上限为 <strong>25 MB</strong>。请参阅 <a href="https://developers.openai.com/api/docs/deprecations">OpenAI 弃用说明</a>。</p>
+</blockquote>
+<blockquote>
+<p>OpenAI 的使用政策要求你告知玩家，他们听到的声音是由 AI 生成的，并非真人发声——例如在游戏的制作人员名单或商店页面中注明。TTS 定价：<a href="https://openai.com/api/pricing">https://openai.com/api/pricing</a></p>
+</blockquote>
+</details>
+<details id="anthropic-claude" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="anthropic-claude-setup"><strong>Anthropic (Claude)</strong></h2></summary>
+<p><strong>用途：</strong> LLM 翻译（以及词级样式传递）。</p>
+<ol>
+<li>在 <strong><a href="https://console.anthropic.com">https://console.anthropic.com</a></strong> 创建账户，或使用现有 Anthropic 账户登录。
+<img alt="Anthropic Console sign-in page" src="Images/anthropic-console-sign-in.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>在使用 API 之前购买使用额度。Anthropic 采用预付费模式；若无额度，API 请求将失败。控制台提供较低的起充金额，通常为 <strong>5 USD</strong>。
+<img alt="Anthropic Console buy usage credits page" src="Images/anthropic-buy-credits.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>在 Claude 控制台侧边栏中，打开 <strong>API keys</strong>。
+<img alt="Claude Console sidebar with API keys selected" src="Images/anthropic-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>点击 <strong>Create key</strong>。
+<img alt="Claude Console API keys page with create key button" src="Images/anthropic-api-keys-page.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>选择工作区，如有需要，为密钥命名，然后点击 <strong>Add</strong>。
+<img alt="Claude Console create an API key dialog" src="Images/anthropic-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>立即复制生成的密钥。<u>Anthropic 提示，离开此界面后将无法再查看完整的密钥。</u>
+<img alt="Claude Console generated API key screen" src="Images/anthropic-api-key-created.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>将其粘贴到 SubVox Pro 中（Settings ▸ <em>Claude</em>）。</li>
+</ol>
+</details>
+<details id="google-gemini" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="google-gemini-setup"><strong>Google (Gemini)</strong></h2></summary>
+<p><strong>用途：</strong> LLM 翻译和语音合成配音（Gemini 音色）——最简单的免费选项（无需启用计费）。一个密钥即可支持这两项功能。</p>
+<ol>
+<li>访问 <strong><a href="https://aistudio.google.com">https://aistudio.google.com</a></strong>，打开 <strong>Google AI Studio</strong>，并使用 Google 账户登录。
+<img alt="Google AI Studio home page" src="Images/gemini-ai-studio-home.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>直接访问 <strong><a href="https://aistudio.google.com/app/apikey">https://aistudio.google.com/app/apikey</a></strong>，打开 <strong>API keys</strong>，然后点击
+<strong>Create an API key</strong>。
+<img alt="Google AI Studio API keys page with Create an API key button" src="Images/gemini-api-keys-page.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>如有需要，为密钥命名，选择或创建一个项目，然后创建密钥。
+<img alt="Google AI Studio create API key dialog" src="Images/gemini-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>从详细信息面板中复制 API 密钥。
+<img alt="Google AI Studio API key details panel" src="Images/gemini-api-key-details.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>该密钥随后会显示在 API 密钥列表中，你可以在列表中复制密钥、查看使用情况，或稍后配置计费。
+<img alt="Google AI Studio API key row" src="Images/gemini-api-key-row.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/></li>
+<li>将其粘贴到 SubVox Pro 中（Settings ▸ <em>Gemini</em>）。进行配音时，在
+<strong>Text-to-Speech</strong> 选项卡中选择 <strong>Gemini</strong> 作为提供商：它提供 30 种多语言音色（<em>Kore</em>、<em>Puck</em>、<em>Leda</em>……）以及 voice direction
+按钮。可选模型有三种：<strong>gemini-3.1-flash-tts-preview</strong>（默认，最自然）、
+<strong>gemini-2.5-flash-preview-tts</strong>（计费时价格减半）和 <strong>gemini-2.5-pro-preview-tts</strong>（无免费套餐——需要启用计费）。</li>
+</ol>
+<blockquote>
+<p>免费套餐<strong>无需启用计费</strong>，但受请求速率限制；各模型的限制在 AI Studio
+（<strong>Rate limit</strong> 页面）中显示。语音合成的限制最为严格——每分钟和每天仅限少量请求。当 Google 指定等待时间时，SubVox Pro 会等待并重试；一旦每日配额用尽，便会显示明确提示并停止操作。在密钥对应的项目中启用计费即可放宽这些限制；
+SubVox Pro 中无需进行其他更改。在免费套餐下，Google 可能会使用你的提示词来改进其产品。</p>
+</blockquote>
+</details>
+<details id="deepseek" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="deepseek-setup"><strong>DeepSeek</strong></h2></summary>
+<p><strong>用途：</strong>低成本 LLM 翻译（兼容 OpenAI 的 API）。</p>
+<ol>
+<li>在 <strong><a href="https://platform.deepseek.com">https://platform.deepseek.com</a></strong> 创建账户，或使用现有 DeepSeek 账户登录。</li>
+<li>DeepSeek 采用预付费模式：在平台中打开 <strong>Top up</strong>，并在使用 API 前充值。若无余额，API 请求将失败。</li>
+<li>打开 <strong>API keys</strong>（<strong><a href="https://platform.deepseek.com/api_keys">https://platform.deepseek.com/api_keys</a></strong>）并点击 <strong>Create new API key</strong>。为其设置一个易于识别的名称，例如 <code>SubVoxPro</code>，然后立即复制该密钥——完整密钥仅显示一次。</li>
+<li>将其粘贴到 SubVox Pro 中（Settings ▸ <em>DeepSeek</em>）。在翻译面板中选择模型。</li>
+</ol>
+<blockquote>
+<p>定价：<a href="https://api-docs.deepseek.com/quick_start/pricing">https://api-docs.deepseek.com/quick_start/pricing</a></p>
+</blockquote>
+</details>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>类 VoiceLineEmitter | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineEmitter | SubVox Pro 文档 " name="title"/>
+<meta content="通过自身的  播放台词资源，每次播放一个，同时触发事件并显示同步字幕。为每个说话的角色添加一个此组件，并将其 AudioSource 设为 3D，即可从角色所在位置听到声音。多个台词播放源可以同时播放， 会显示正在播放的台词中最重要的台词的字幕。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.VoiceLineEmitter.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.VoiceLineEmitter.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.VoiceLineEmitter.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.VoiceLineEmitter.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/api/SubVoxPro.VoiceLineEmitter.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.VoiceLineEmitter">
+<h1 class="text-break" data-uid="SubVoxPro.VoiceLineEmitter" id="SubVoxPro_VoiceLineEmitter">
+类 VoiceLineEmitter  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>命名空间</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>程序集</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>通过自身的 <a class="xref" href="https://docs.unity3d.com/ScriptReference/AudioSource.html">AudioSource</a> 播放台词资源，每次播放一个，同时触发事件并显示同步字幕。为每个说话的角色添加一个此组件，并将其 AudioSource 设为 3D，即可从角色所在位置听到声音。多个台词播放源可以同时播放，<a class="xref" href="SubVoxPro.VoiceLineManager.html">VoiceLineManager</a> 会显示正在播放的台词中最重要的台词的字幕。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class VoiceLineEmitter : MonoBehaviour</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>继承</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineEmitter</span></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">构造函数
+</h2>
+<a data-uid="SubVoxPro.VoiceLineEmitter.#ctor*" id="SubVoxPro_VoiceLineEmitter__ctor_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.#ctor" id="SubVoxPro_VoiceLineEmitter__ctor">
+  VoiceLineEmitter()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineEmitter()</code></pre>
+</div>
+<h2 class="section" id="properties">属性
+</h2>
+<a data-uid="SubVoxPro.VoiceLineEmitter.AudioSource*" id="SubVoxPro_VoiceLineEmitter_AudioSource_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.AudioSource" id="SubVoxPro_VoiceLineEmitter_AudioSource">
+  AudioSource
+  
+  </h3>
+<div class="markdown level1 summary"><p>用于播放台词的 AudioSource（将其设置为 3D 模式，即可听到角色发出的声音）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public AudioSource AudioSource { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://docs.unity3d.com/ScriptReference/AudioSource.html">AudioSource</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.CurrentAudioLanguage*" id="SubVoxPro_VoiceLineEmitter_CurrentAudioLanguage_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.CurrentAudioLanguage" id="SubVoxPro_VoiceLineEmitter_CurrentAudioLanguage">
+  CurrentAudioLanguage
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前台词资源播放的音频语言：若存在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> 对应的配音，则为该配音的语言；使用源音频时为空字符串。使用 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> 时，此属性指示需要自行启动的音频语言。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string CurrentAudioLanguage { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.CurrentPlayback*" id="SubVoxPro_VoiceLineEmitter_CurrentPlayback_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.CurrentPlayback" id="SubVoxPro_VoiceLineEmitter_CurrentPlayback">
+  CurrentPlayback
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前台词资源的播放实例，或 null。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLinePlayback CurrentPlayback { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.CurrentPriority*" id="SubVoxPro_VoiceLineEmitter_CurrentPriority_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.CurrentPriority" id="SubVoxPro_VoiceLineEmitter_CurrentPriority">
+  CurrentPriority
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前台词资源播放时的优先级。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLinePriority CurrentPriority { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.CurrentVoiceLine*" id="SubVoxPro_VoiceLineEmitter_CurrentVoiceLine_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.CurrentVoiceLine" id="SubVoxPro_VoiceLineEmitter_CurrentVoiceLine">
+  CurrentVoiceLine
+  
+  </h3>
+<div class="markdown level1 summary"><p>正在播放的台词资源，或 null。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineData CurrentVoiceLine { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.CurrentWord*" id="SubVoxPro_VoiceLineEmitter_CurrentWord_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.CurrentWord" id="SubVoxPro_VoiceLineEmitter_CurrentWord">
+  CurrentWord
+  
+  </h3>
+<div class="markdown level1 summary"><p>正在说的词；词与词之间为空词（<a class="xref" href="SubVoxPro.SubtitleWordInfo.html#SubVoxPro_SubtitleWordInfo_Text">Text</a> 为 null）。参见 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_WordChanged">WordChanged</a>。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SubtitleWordInfo CurrentWord { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Duration*" id="SubVoxPro_VoiceLineEmitter_Duration_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Duration" id="SubVoxPro_VoiceLineEmitter_Duration">
+  Duration
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前台词资源的时长，单位为秒。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float Duration { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.IsPaused*" id="SubVoxPro_VoiceLineEmitter_IsPaused_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.IsPaused" id="SubVoxPro_VoiceLineEmitter_IsPaused">
+  IsPaused
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前台词被 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause">Pause()</a> 或 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_PauseAll">PauseAll()</a> 暂停时为 true。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsPaused { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.IsPlaying*" id="SubVoxPro_VoiceLineEmitter_IsPlaying_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.IsPlaying" id="SubVoxPro_VoiceLineEmitter_IsPlaying">
+  IsPlaying
+  
+  </h3>
+<div class="markdown level1 summary"><p>当台词资源正在播放或暂停时，该值为真。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsPlaying { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.PlaybackProgress*" id="SubVoxPro_VoiceLineEmitter_PlaybackProgress_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.PlaybackProgress" id="SubVoxPro_VoiceLineEmitter_PlaybackProgress">
+  PlaybackProgress
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前台词资源的播放进度，范围为 0 到 1。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float PlaybackProgress { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.PlaybackSpeed*" id="SubVoxPro_VoiceLineEmitter_PlaybackSpeed_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.PlaybackSpeed" id="SubVoxPro_VoiceLineEmitter_PlaybackSpeed">
+  PlaybackSpeed
+  
+  </h3>
+<div class="markdown level1 summary"><p>此台词播放源的播放速度（0.1 至 3，1 表示正常速度）。同时改变音高，其效果与台词播放源所设置的 <span class="xref">UnityEngine.AudioSource.pitch</span> 相同。对使用 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> 播放的台词资源无效。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float PlaybackSpeed { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.PlaybackTime*" id="SubVoxPro_VoiceLineEmitter_PlaybackTime_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.PlaybackTime" id="SubVoxPro_VoiceLineEmitter_PlaybackTime">
+  PlaybackTime
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前台词资源已播放的时间，单位为秒。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float PlaybackTime { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.QueuedPlaybacks*" id="SubVoxPro_VoiceLineEmitter_QueuedPlaybacks_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.QueuedPlaybacks" id="SubVoxPro_VoiceLineEmitter_QueuedPlaybacks">
+  QueuedPlaybacks
+  
+  </h3>
+<div class="markdown level1 summary"><p>等待在当前台词资源之后播放的台词资源（参见 <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Queue">Queue</a>），按播放顺序排列。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public IReadOnlyList&lt;VoiceLinePlayback&gt; QueuedPlaybacks { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.ShowSubtitles*" id="SubVoxPro_VoiceLineEmitter_ShowSubtitles_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.ShowSubtitles" id="SubVoxPro_VoiceLineEmitter_ShowSubtitles">
+  ShowSubtitles
+  
+  </h3>
+<div class="markdown level1 summary"><p>此台词播放源的台词是否可以参与屏幕字幕显示。用于环境闲聊时关闭此选项。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool ShowSubtitles { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">方法
+</h2>
+<a data-uid="SubVoxPro.VoiceLineEmitter.ClearQueue*" id="SubVoxPro_VoiceLineEmitter_ClearQueue_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.ClearQueue" id="SubVoxPro_VoiceLineEmitter_ClearQueue">
+  ClearQueue()
+  
+  </h3>
+<div class="markdown level1 summary"><p>移除等待在当前台词资源之后播放的台词资源，当前台词资源继续播放。每个被移除的台词资源均按中断处理。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void ClearQueue()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnDisable*" id="SubVoxPro_VoiceLineEmitter_OnDisable_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnDisable" id="SubVoxPro_VoiceLineEmitter_OnDisable">
+  OnDisable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写此方法时需调用基类方法。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnDisable()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnPaused*" id="SubVoxPro_VoiceLineEmitter_OnPaused_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnPaused(SubVoxPro.VoiceLinePlayback)" id="SubVoxPro_VoiceLineEmitter_OnPaused_SubVoxPro_VoiceLinePlayback_">
+  OnPaused(VoiceLinePlayback)
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前台词暂停时调用，紧接着触发 <code>&lt;xref href="SubVoxPro.VoiceLineEmitter.Paused" data-throw-if-not-resolved="false"&gt;&lt;/xref&gt;</code>。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnPaused(VoiceLinePlayback playback)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>playback</code> <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnResumed*" id="SubVoxPro_VoiceLineEmitter_OnResumed_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnResumed(SubVoxPro.VoiceLinePlayback)" id="SubVoxPro_VoiceLineEmitter_OnResumed_SubVoxPro_VoiceLinePlayback_">
+  OnResumed(VoiceLinePlayback)
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前台词恢复播放时调用，紧接着触发 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Resumed">Resumed</a>。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnResumed(VoiceLinePlayback playback)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>playback</code> <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnVoiceLineCompleted*" id="SubVoxPro_VoiceLineEmitter_OnVoiceLineCompleted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnVoiceLineCompleted(SubVoxPro.VoiceLinePlayback)" id="SubVoxPro_VoiceLineEmitter_OnVoiceLineCompleted_SubVoxPro_VoiceLinePlayback_">
+  OnVoiceLineCompleted(VoiceLinePlayback)
+  
+  </h3>
+<div class="markdown level1 summary"><p>台词资源播放到结尾时调用，紧接着触发 <code>&lt;xref href="SubVoxPro.VoiceLineEmitter.VoiceLineCompleted" data-throw-if-not-resolved="false"&gt;&lt;/xref&gt;</code>。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnVoiceLineCompleted(VoiceLinePlayback playback)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>playback</code> <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnVoiceLineInterrupted*" id="SubVoxPro_VoiceLineEmitter_OnVoiceLineInterrupted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnVoiceLineInterrupted(SubVoxPro.VoiceLinePlayback)" id="SubVoxPro_VoiceLineEmitter_OnVoiceLineInterrupted_SubVoxPro_VoiceLinePlayback_">
+  OnVoiceLineInterrupted(VoiceLinePlayback)
+  
+  </h3>
+<div class="markdown level1 summary"><p>台词资源在结束前被停止或替换时调用，紧接着触发 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineInterrupted">VoiceLineInterrupted</a>。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnVoiceLineInterrupted(VoiceLinePlayback playback)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>playback</code> <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnVoiceLineStarted*" id="SubVoxPro_VoiceLineEmitter_OnVoiceLineStarted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnVoiceLineStarted(SubVoxPro.VoiceLinePlayback)" id="SubVoxPro_VoiceLineEmitter_OnVoiceLineStarted_SubVoxPro_VoiceLinePlayback_">
+  OnVoiceLineStarted(VoiceLinePlayback)
+  
+  </h3>
+<div class="markdown level1 summary"><p>此台词播放源开始播放台词资源时调用，紧接着触发 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineStarted">VoiceLineStarted</a>。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnVoiceLineStarted(VoiceLinePlayback playback)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>playback</code> <a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.OnWordChanged*" id="SubVoxPro_VoiceLineEmitter_OnWordChanged_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.OnWordChanged(SubVoxPro.SubtitleWordInfo)" id="SubVoxPro_VoiceLineEmitter_OnWordChanged_SubVoxPro_SubtitleWordInfo_">
+  OnWordChanged(SubtitleWordInfo)
+  
+  </h3>
+<div class="markdown level1 summary"><p>正在说的词发生变化时调用，紧接着触发 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_WordChanged">WordChanged</a>。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnWordChanged(SubtitleWordInfo word)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>word</code> <a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Pause*" id="SubVoxPro_VoiceLineEmitter_Pause_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Pause" id="SubVoxPro_VoiceLineEmitter_Pause">
+  Pause()
+  
+  </h3>
+<div class="markdown level1 summary"><p>暂停当前台词资源。字幕保留在屏幕上，调用 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Resume">Resume()</a> 前不会触发任何事件。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Pause()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Play*" id="SubVoxPro_VoiceLineEmitter_Play_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Play(SubVoxPro.VoiceLineBankData,SubVoxPro.EVoiceLinePriority,SubVoxPro.EVoiceLinePlayMode)" id="SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineBankData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">
+  Play(VoiceLineBankData, EVoiceLinePriority, EVoiceLinePlayMode)
+  
+  </h3>
+<div class="markdown level1 summary"><p>播放台词库中的下一个台词资源（参见 <a class="xref" href="SubVoxPro.VoiceLineBankData.html#SubVoxPro_VoiceLineBankData_Order">Order</a>），规则与 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> 相同。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLinePlayback Play(VoiceLineBankData bank, EVoiceLinePriority priority = EVoiceLinePriority.Normal, EVoiceLinePlayMode mode = EVoiceLinePlayMode.Replace)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>bank</code> <a class="xref" href="SubVoxPro.VoiceLineBankData.html">VoiceLineBankData</a></dt>
+<dd></dd>
+<dt><code>priority</code> <a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd></dd>
+<dt><code>mode</code> <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html">EVoiceLinePlayMode</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">返回值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Play*" id="SubVoxPro_VoiceLineEmitter_Play_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Play(SubVoxPro.VoiceLineData,SubVoxPro.EVoiceLinePriority,SubVoxPro.EVoiceLinePlayMode)" id="SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">
+  Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)
+  
+  </h3>
+<div class="markdown level1 summary"><p>播放一个台词资源（若存在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> 对应的配音，则播放该配音）。此台词播放源已有台词正在播放时，由模式决定处理方式：<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Replace">Replace</a> 在新台词的优先级不低于当前台词时替换当前台词（优先级较低时拒绝播放）；<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Queue">Queue</a> 将新台词排在已等待的台词之后播放；<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_IfIdle">IfIdle</a> 拒绝播放。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLinePlayback Play(VoiceLineData voice_line, EVoiceLinePriority priority = EVoiceLinePriority.Normal, EVoiceLinePlayMode mode = EVoiceLinePlayMode.Replace)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+<dt><code>priority</code> <a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd></dd>
+<dt><code>mode</code> <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html">EVoiceLinePlayMode</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">返回值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode__examples">Examples</h4>
+<pre><code class="lang-csharp">VoiceLineEmitter guard = _guard.GetComponent&lt;VoiceLineEmitter&gt;();
+guard.Play(alertLine, EVoiceLinePriority.High);
+guard.Play(idleBark, EVoiceLinePriority.Low, EVoiceLinePlayMode.Queue);</code></pre>
+<a data-uid="SubVoxPro.VoiceLineEmitter.PlayExternal*" id="SubVoxPro_VoiceLineEmitter_PlayExternal_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.PlayExternal(SubVoxPro.VoiceLineData,SubVoxPro.IVoiceLineAudioClock,SubVoxPro.EVoiceLinePriority,SubVoxPro.EVoiceLinePlayMode)" id="SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">
+  PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)
+  
+  </h3>
+<div class="markdown level1 summary"><p>播放由你自行播放音频的台词资源（通过 FMOD、Wwise、视频等）：字幕和事件跟随 audio_clock，而非此台词播放源的 AudioSource；时钟停止播放时，台词播放完成。台词播放开始后，启动 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_CurrentAudioLanguage">CurrentAudioLanguage</a> 对应的音频。规则与 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> 相同；<a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause">Pause()</a>、<a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Seek_System_Single_">Seek(float)</a> 和 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Stop">Stop()</a> 仅影响字幕和事件，因此也需要控制外部音频。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLinePlayback PlayExternal(VoiceLineData voice_line, IVoiceLineAudioClock audio_clock, EVoiceLinePriority priority = EVoiceLinePriority.Normal, EVoiceLinePlayMode mode = EVoiceLinePlayMode.Replace)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+<dt><code>audio_clock</code> <a class="xref" href="SubVoxPro.IVoiceLineAudioClock.html">IVoiceLineAudioClock</a></dt>
+<dd></dd>
+<dt><code>priority</code> <a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd></dd>
+<dt><code>mode</code> <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html">EVoiceLinePlayMode</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">返回值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Resume*" id="SubVoxPro_VoiceLineEmitter_Resume_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Resume" id="SubVoxPro_VoiceLineEmitter_Resume">
+  Resume()
+  
+  </h3>
+<div class="markdown level1 summary"><p>从停止的位置恢复播放由 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause">Pause()</a> 暂停的台词资源。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Resume()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Seek*" id="SubVoxPro_VoiceLineEmitter_Seek_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Seek(System.Single)" id="SubVoxPro_VoiceLineEmitter_Seek_System_Single_">
+  Seek(float)
+  
+  </h3>
+<div class="markdown level1 summary"><p>将当前台词资源的播放位置移至指定时间点，单位为秒。两个时间点之间的事件不会触发。对使用 <code>&lt;xref href="SubVoxPro.VoiceLineEmitter.PlayExternal(SubVoxPro.VoiceLineData%2cSubVoxPro.IVoiceLineAudioClock%2cSubVoxPro.EVoiceLinePriority%2cSubVoxPro.EVoiceLinePlayMode)" data-throw-if-not-resolved="false"&gt;&lt;/xref&gt;</code> 播放的台词资源无效：需要调整外部音频的播放位置，台词资源会随之同步。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Seek(float time)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Skip*" id="SubVoxPro_VoiceLineEmitter_Skip_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Skip" id="SubVoxPro_VoiceLineEmitter_Skip">
+  Skip()
+  
+  </h3>
+<div class="markdown level1 summary"><p>立即结束当前台词资源，按正常播放到结尾处理：触发剩余事件及 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineCompleted">VoiceLineCompleted</a>，并开始播放队列中的下一个台词资源。用于“跳过对话”按钮。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Skip()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Stop*" id="SubVoxPro_VoiceLineEmitter_Stop_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Stop" id="SubVoxPro_VoiceLineEmitter_Stop">
+  Stop()
+  
+  </h3>
+<div class="markdown level1 summary"><p>停止当前台词资源并清空队列。剩余事件（包括 <strong>Voice End</strong>）不会触发；触发 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineInterrupted">VoiceLineInterrupted</a>，而非 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_VoiceLineCompleted">VoiceLineCompleted</a>。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Stop()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Update*" id="SubVoxPro_VoiceLineEmitter_Update_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Update" id="SubVoxPro_VoiceLineEmitter_Update">
+  Update()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写此方法时需调用基类方法。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void Update()</code></pre>
+</div>
+<h2 class="section" id="events">事件
+</h2>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Paused" id="SubVoxPro_VoiceLineEmitter_Paused">
+  Paused
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前台词被 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Pause">Pause()</a> 或 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_PauseAll">PauseAll()</a> 暂停时触发。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; Paused</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Resumed" id="SubVoxPro_VoiceLineEmitter_Resumed">
+  Resumed
+  
+  </h3>
+<div class="markdown level1 summary"><p>当当前台词在暂停后继续播放时触发。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; Resumed</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.SubtitleChanged" id="SubVoxPro_VoiceLineEmitter_SubtitleChanged">
+  SubtitleChanged
+  
+  </h3>
+<div class="markdown level1 summary"><p>此台词播放源的字幕发生变化时触发，并携带该字幕（清除时携带空字幕），不受 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_ShowSubtitles">ShowSubtitles</a> 设置影响。<a class="xref" href="SubVoxPro.SubtitleBubbleDisplayer.html">SubtitleBubbleDisplayer</a> 使用此事件显示角色自身的台词。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;SubtitleInfo&gt; SubtitleChanged</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.VoiceLineCompleted" id="SubVoxPro_VoiceLineEmitter_VoiceLineCompleted">
+  VoiceLineCompleted
+  
+  </h3>
+<div class="markdown level1 summary"><p>当台词资源播放完毕时触发。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; VoiceLineCompleted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.VoiceLineInterrupted" id="SubVoxPro_VoiceLineEmitter_VoiceLineInterrupted">
+  VoiceLineInterrupted
+  
+  </h3>
+<div class="markdown level1 summary"><p>当台词资源在结束前被停止或被另一条台词资源替换时触发。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; VoiceLineInterrupted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.VoiceLineStarted" id="SubVoxPro_VoiceLineEmitter_VoiceLineStarted">
+  VoiceLineStarted
+  
+  </h3>
+<div class="markdown level1 summary"><p>此台词播放源开始播放台词资源时触发。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;VoiceLinePlayback&gt; VoiceLineStarted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.WordChanged" id="SubVoxPro_VoiceLineEmitter_WordChanged">
+  WordChanged
+  
+  </h3>
+<div class="markdown level1 summary"><p>正在说的词发生变化时触发，携带当前正在说的词；词与词之间及台词结束时携带空词（<a class="xref" href="SubVoxPro.SubtitleWordInfo.html#SubVoxPro_SubtitleWordInfo_Text">Text</a> 为 null）。需要词级时间信息。适用于口型同步和肢体动作。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;SubtitleWordInfo&gt; WordChanged</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_VoiceLineEmitter_WordChanged_examples">Examples</h4>
+<pre><code class="lang-csharp">_emitter.WordChanged += word =&gt; _mouth.SetBool("Talking", word.Text != null);</code></pre>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>类 SubVox | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class SubVox | SubVox Pro 文档 " name="title"/>
+<meta content="SubVox Pro 的 API 入口：播放台词资源，设置语言和字幕显示方式，并触发全局事件（字幕、台词资源、台词资源事件）。所有播放源均遵循这些设置：包括  组件和 Timeline 集成。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.SubVox.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.SubVox.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.SubVox.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.SubVox.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/api/SubVoxPro.SubVox.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.SubVox">
+<h1 class="text-break" data-uid="SubVoxPro.SubVox" id="SubVoxPro_SubVox">
+类 SubVox  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>命名空间</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>程序集</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>SubVox Pro 的 API 入口：播放台词资源，设置语言和字幕显示方式，并触发全局事件（字幕、台词资源、台词资源事件）。所有播放源均遵循这些设置：包括 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> 组件和 Timeline 集成。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static class SubVox</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>继承</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">SubVox</span></div>
+</dd>
+</dl>
+<dl class="typelist inheritedMembers">
+<dt>继承的成员</dt>
+<dd>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+</div>
+</dd></dl>
+<h2 id="SubVoxPro_SubVox_examples">Examples</h2>
+<pre><code class="lang-csharp">SubVox.CurrentLanguage = "fr";
+VoiceLinePlayback playback = SubVox.Play(greeting);
+
+SubVox.PauseAll();
+SubVox.ResumeAll();
+
+SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} starts");</code></pre>
+<h2 class="section" id="properties">属性
+</h2>
+<a data-uid="SubVoxPro.SubVox.BackgroundOpacity*" id="SubVoxPro_SubVox_BackgroundOpacity_"></a>
+<h3 data-uid="SubVoxPro.SubVox.BackgroundOpacity" id="SubVoxPro_SubVox_BackgroundOpacity">
+  BackgroundOpacity
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕背景框的不透明度，从 0（完全透明）到 1（不透明）；为 null 时，使用各字幕显示组件自身设置的不透明度。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static float? BackgroundOpacity { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.CurrentLanguage*" id="SubVoxPro_SubVox_CurrentLanguage_"></a>
+<h3 data-uid="SubVoxPro.SubVox.CurrentLanguage" id="SubVoxPro_SubVox_CurrentLanguage">
+  CurrentLanguage
+  
+  </h3>
+<div class="markdown level1 summary"><p>要显示的翻译语言代码和要播放的配音语言代码（例如“fr”），源语言留空。屏幕上已有的字幕会立即切换；配音则从下一句语音台词开始播放。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static string CurrentLanguage { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.CurrentSubtitle*" id="SubVoxPro_SubVox_CurrentSubtitle_"></a>
+<h3 data-uid="SubVoxPro.SubVox.CurrentSubtitle" id="SubVoxPro_SubVox_CurrentSubtitle">
+  CurrentSubtitle
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前选中的字幕，也可能是清空字幕标记；在字幕显示组件启用或重新启用时读取。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static SubtitleInfo CurrentSubtitle { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.DefaultEmitter*" id="SubVoxPro_SubVox_DefaultEmitter_"></a>
+<h3 data-uid="SubVoxPro.SubVox.DefaultEmitter" id="SubVoxPro_SubVox_DefaultEmitter">
+  DefaultEmitter
+  
+  </h3>
+<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.VoiceLineManager.html">VoiceLineManager</a> 的 2D 台词播放源，供 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> 使用；在 <strong>Play mode</strong> 之外为 null。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static VoiceLineEmitter DefaultEmitter { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.DisplayedVoiceLine*" id="SubVoxPro_SubVox_DisplayedVoiceLine_"></a>
+<h3 data-uid="SubVoxPro.SubVox.DisplayedVoiceLine" id="SubVoxPro_SubVox_DisplayedVoiceLine">
+  DisplayedVoiceLine
+  
+  </h3>
+<div class="markdown level1 summary"><p>从 Timeline 或台词播放源中选定用于显示的台词资源；没有台词资源或显示自定义文本时为 null。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static VoiceLineData DisplayedVoiceLine { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.FadeDuration*" id="SubVoxPro_SubVox_FadeDuration_"></a>
+<h3 data-uid="SubVoxPro.SubVox.FadeDuration" id="SubVoxPro_SubVox_FadeDuration">
+  FadeDuration
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕淡入淡出的时长，单位为秒（0 表示瞬间完成）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static float FadeDuration { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.History*" id="SubVoxPro_SubVox_History_"></a>
+<h3 data-uid="SubVoxPro.SubVox.History" id="SubVoxPro_SubVox_History">
+  History
+  
+  </h3>
+<div class="markdown level1 summary"><p>最近显示过的字幕，按从最早到最新的顺序排列，用于对话日志。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static IReadOnlyList&lt;SubtitleHistoryEntry&gt; History { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.SubtitleHistoryEntry.html">SubtitleHistoryEntry</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_SubVox_History_examples">Examples</h4>
+<pre><code class="lang-csharp">foreach (SubtitleHistoryEntry entry in SubVox.History)
+{
+    string speaker = entry.Speaker != null ? entry.Speaker.DisplayName + ": " : string.Empty;
+    _log.text += speaker + entry.Text + "\n";
+}</code></pre>
+<a data-uid="SubVoxPro.SubVox.HistoryCapacity*" id="SubVoxPro_SubVox_HistoryCapacity_"></a>
+<h3 data-uid="SubVoxPro.SubVox.HistoryCapacity" id="SubVoxPro_SubVox_HistoryCapacity">
+  HistoryCapacity
+  
+  </h3>
+<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_History">History</a> 保留的字幕条数。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static int HistoryCapacity { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.IsAnyPlaying*" id="SubVoxPro_SubVox_IsAnyPlaying_"></a>
+<h3 data-uid="SubVoxPro.SubVox.IsAnyPlaying" id="SubVoxPro_SubVox_IsAnyPlaying">
+  IsAnyPlaying
+  
+  </h3>
+<div class="markdown level1 summary"><p>当任何台词播放源上正在播放（或暂停）台词时，该属性为 true。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static bool IsAnyPlaying { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.IsPaused*" id="SubVoxPro_SubVox_IsPaused_"></a>
+<h3 data-uid="SubVoxPro.SubVox.IsPaused" id="SubVoxPro_SubVox_IsPaused">
+  IsPaused
+  
+  </h3>
+<div class="markdown level1 summary"><p>从调用 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_PauseAll">PauseAll()</a> 到调用 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_ResumeAll">ResumeAll()</a> 期间为 true。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static bool IsPaused { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.KaraokeColor*" id="SubVoxPro_SubVox_KaraokeColor_"></a>
+<h3 data-uid="SubVoxPro.SubVox.KaraokeColor" id="SubVoxPro_SubVox_KaraokeColor">
+  KaraokeColor
+  
+  </h3>
+<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.EVoiceLineSubtitleRevealMode.html#SubVoxPro_EVoiceLineSubtitleRevealMode_Karaoke">Karaoke</a> 显示方式下当前正在说出的词的颜色。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static Color KaraokeColor { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><span class="xref">Color</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.LanguageSource*" id="SubVoxPro_SubVox_LanguageSource_"></a>
+<h3 data-uid="SubVoxPro.SubVox.LanguageSource" id="SubVoxPro_SubVox_LanguageSource">
+  LanguageSource
+  
+  </h3>
+<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> 的来源：Unity Localization 包中选定的语言环境（已安装该包时），或仅来自自己的代码。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static EVoiceLineLanguageSource LanguageSource { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineLanguageSource.html">EVoiceLineLanguageSource</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.RevealMode*" id="SubVoxPro_SubVox_RevealMode_"></a>
+<h3 data-uid="SubVoxPro.SubVox.RevealMode" id="SubVoxPro_SubVox_RevealMode">
+  RevealMode
+  
+  </h3>
+<div class="markdown level1 summary"><p>各处字幕的显示方式（适用于台词播放源及未覆盖此设置的 Timeline 剪辑）：一次显示完整字幕，或随音频播放逐词显示。可在运行时更改，例如通过辅助功能菜单。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static EVoiceLineSubtitleRevealMode RevealMode { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineSubtitleRevealMode.html">EVoiceLineSubtitleRevealMode</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.SubtitleScale*" id="SubVoxPro_SubVox_SubtitleScale_"></a>
+<h3 data-uid="SubVoxPro.SubVox.SubtitleScale" id="SubVoxPro_SubVox_SubtitleScale">
+  SubtitleScale
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕文本大小相对于各字幕显示组件所设大小的缩放比例（0.5 至 3）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static float SubtitleScale { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.SubtitlesEnabled*" id="SubVoxPro_SubVox_SubtitlesEnabled_"></a>
+<h3 data-uid="SubVoxPro.SubVox.SubtitlesEnabled" id="SubVoxPro_SubVox_SubtitlesEnabled">
+  SubtitlesEnabled
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕显示组件是否显示内容（一项辅助功能选项）。关闭时，声音继续播放，事件继续触发，字幕显示组件保持空白。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static bool SubtitlesEnabled { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_SubVox_SubtitlesEnabled_examples">Examples</h4>
+<pre><code class="lang-csharp">public void OnSubtitlesToggle(bool enabled) =&gt; SubVox.SubtitlesEnabled = enabled;
+public void OnTextSizeSlider(float scale) =&gt; SubVox.SubtitleScale = scale;
+public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = opacity;</code></pre>
+<h2 class="section" id="methods">方法
+</h2>
+<a data-uid="SubVoxPro.SubVox.ClearHistory*" id="SubVoxPro_SubVox_ClearHistory_"></a>
+<h3 data-uid="SubVoxPro.SubVox.ClearHistory" id="SubVoxPro_SubVox_ClearHistory">
+  ClearHistory()
+  
+  </h3>
+<div class="markdown level1 summary"><p>清空 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_History">History</a>，例如在开始新游戏时。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static void ClearHistory()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubVox.IsPlaying*" id="SubVoxPro_SubVox_IsPlaying_"></a>
+<h3 data-uid="SubVoxPro.SubVox.IsPlaying(SubVoxPro.VoiceLineData)" id="SubVoxPro_SubVox_IsPlaying_SubVoxPro_VoiceLineData_">
+  IsPlaying(VoiceLineData)
+  
+  </h3>
+<div class="markdown level1 summary"><p>该台词资源在台词播放源上播放（或暂停）时为 true。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static bool IsPlaying(VoiceLineData voice_line)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">返回值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.PauseAll*" id="SubVoxPro_SubVox_PauseAll_"></a>
+<h3 data-uid="SubVoxPro.SubVox.PauseAll" id="SubVoxPro_SubVox_PauseAll">
+  PauseAll()
+  
+  </h3>
+<div class="markdown level1 summary"><p>暂停所有正在播放的台词资源，例如在游戏暂停时。在各自台词播放源上单独暂停的台词资源，调用 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_ResumeAll">ResumeAll()</a> 后仍保持暂停状态。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static void PauseAll()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubVox.Play*" id="SubVoxPro_SubVox_Play_"></a>
+<h3 data-uid="SubVoxPro.SubVox.Play(SubVoxPro.VoiceLineBankData,SubVoxPro.EVoiceLinePriority,SubVoxPro.EVoiceLinePlayMode)" id="SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineBankData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">
+  Play(VoiceLineBankData, EVoiceLinePriority, EVoiceLinePlayMode)
+  
+  </h3>
+<div class="markdown level1 summary"><p>在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a> 上播放台词资源库中的下一条台词资源（参阅 <a class="xref" href="SubVoxPro.VoiceLineBankData.html#SubVoxPro_VoiceLineBankData_Order">Order</a>）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static VoiceLinePlayback Play(VoiceLineBankData bank, EVoiceLinePriority priority = EVoiceLinePriority.Normal, EVoiceLinePlayMode mode = EVoiceLinePlayMode.Replace)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>bank</code> <a class="xref" href="SubVoxPro.VoiceLineBankData.html">VoiceLineBankData</a></dt>
+<dd></dd>
+<dt><code>priority</code> <a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd></dd>
+<dt><code>mode</code> <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html">EVoiceLinePlayMode</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">返回值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.Play*" id="SubVoxPro_SubVox_Play_"></a>
+<h3 data-uid="SubVoxPro.SubVox.Play(SubVoxPro.VoiceLineData,SubVoxPro.EVoiceLinePriority,SubVoxPro.EVoiceLinePlayMode)" id="SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">
+  Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)
+  
+  </h3>
+<div class="markdown level1 summary"><p>在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a> 上播放台词资源（如有 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> 对应的配音，则播放该配音）。有关优先级和播放模式的规则，参阅 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static VoiceLinePlayback Play(VoiceLineData voice_line, EVoiceLinePriority priority = EVoiceLinePriority.Normal, EVoiceLinePlayMode mode = EVoiceLinePlayMode.Replace)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+<dt><code>priority</code> <a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd></dd>
+<dt><code>mode</code> <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html">EVoiceLinePlayMode</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">返回值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.PlayAt*" id="SubVoxPro_SubVox_PlayAt_"></a>
+<h3 data-uid="SubVoxPro.SubVox.PlayAt(SubVoxPro.VoiceLineData,UnityEngine.Vector3,SubVoxPro.EVoiceLinePriority)" id="SubVoxPro_SubVox_PlayAt_SubVoxPro_VoiceLineData_UnityEngine_Vector3_SubVoxPro_EVoiceLinePriority_">
+  PlayAt(VoiceLineData, Vector3, EVoiceLinePriority)
+  
+  </h3>
+<div class="markdown level1 summary"><p>通过临时 3D 台词播放源，在世界中的某个位置播放一次台词资源（类似于 <span class="xref">UnityEngine.AudioSource.PlayClipAtPoint(UnityEngine.AudioClip,UnityEngine.Vector3)</span>）。其字幕根据优先级与其他台词播放源的字幕竞争显示。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static VoiceLinePlayback PlayAt(VoiceLineData voice_line, Vector3 position, EVoiceLinePriority priority = EVoiceLinePriority.Normal)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+<dt><code>position</code> <span class="xref">Vector3</span></dt>
+<dd></dd>
+<dt><code>priority</code> <a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">返回值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_SubVox_PlayAt_SubVoxPro_VoiceLineData_UnityEngine_Vector3_SubVoxPro_EVoiceLinePriority__examples">Examples</h4>
+<pre><code class="lang-csharp">SubVox.PlayAt(explosionShout, transform.position, EVoiceLinePriority.High);</code></pre>
+<a data-uid="SubVoxPro.SubVox.PublishSubtitle*" id="SubVoxPro_SubVox_PublishSubtitle_"></a>
+<h3 data-uid="SubVoxPro.SubVox.PublishSubtitle(SubVoxPro.SubtitleInfo)" id="SubVoxPro_SubVox_PublishSubtitle_SubVoxPro_SubtitleInfo_">
+  PublishSubtitle(SubtitleInfo)
+  
+  </h3>
+<div class="markdown level1 summary"><p>在每个字幕显示组件上显示一条字幕，如同由台词资源发布一样，例如显示视频过场动画的文本。字幕会保留到下一条字幕发布；发布一个空的 <a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a> 可清除字幕。处于活动状态的 Timeline 台词资源保持显示优先级，因此在其剪辑处于活动状态时，自定义发布会被忽略。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static void PublishSubtitle(SubtitleInfo subtitle)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>subtitle</code> <a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_SubVox_PublishSubtitle_SubVoxPro_SubtitleInfo__examples">Examples</h4>
+<pre><code class="lang-csharp">SubVox.PublishSubtitle(new SubtitleInfo("intro", 0f, "Somewhere in the north, ten years ago."));
+SubVox.PublishSubtitle(new SubtitleInfo("intro", 0f, string.Empty));</code></pre>
+<a data-uid="SubVoxPro.SubVox.ResumeAll*" id="SubVoxPro_SubVox_ResumeAll_"></a>
+<h3 data-uid="SubVoxPro.SubVox.ResumeAll" id="SubVoxPro_SubVox_ResumeAll">
+  ResumeAll()
+  
+  </h3>
+<div class="markdown level1 summary"><p>恢复播放由 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_PauseAll">PauseAll()</a> 暂停的台词资源。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static void ResumeAll()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubVox.Stop*" id="SubVoxPro_SubVox_Stop_"></a>
+<h3 data-uid="SubVoxPro.SubVox.Stop(SubVoxPro.VoiceLineData)" id="SubVoxPro_SubVox_Stop_SubVoxPro_VoiceLineData_">
+  Stop(VoiceLineData)
+  
+  </h3>
+<div class="markdown level1 summary"><p>在所有正在播放该台词资源的台词播放源上停止该资源的播放，并将其从所有队列中移除。其他台词资源继续播放。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static void Stop(VoiceLineData voice_line)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.StopAll*" id="SubVoxPro_SubVox_StopAll_"></a>
+<h3 data-uid="SubVoxPro.SubVox.StopAll" id="SubVoxPro_SubVox_StopAll">
+  StopAll()
+  
+  </h3>
+<div class="markdown level1 summary"><p>停止所有台词资源的播放并清空所有队列，例如在跳过过场动画时。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static void StopAll()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubVox.Subscribe*" id="SubVoxPro_SubVox_Subscribe_"></a>
+<h3 data-uid="SubVoxPro.SubVox.Subscribe(SubVoxPro.VoiceLineEventSignalData,System.Action{SubVoxPro.VoiceLineEventContext})" id="SubVoxPro_SubVox_Subscribe_SubVoxPro_VoiceLineEventSignalData_System_Action_SubVoxPro_VoiceLineEventContext__">
+  Subscribe(VoiceLineEventSignalData, Action&lt;VoiceLineEventContext&gt;)
+  
+  </h3>
+<div class="markdown level1 summary"><p>每当带有此信号的台词资源事件触发时，都会调用该处理程序。使用 <code>&lt;xref href="SubVoxPro.SubVox.Unsubscribe(SubVoxPro.VoiceLineEventSignalData%2cSystem.Action%7bSubVoxPro.VoiceLineEventContext%7d)" data-throw-if-not-resolved="false"&gt;&lt;/xref&gt;</code> 取消订阅，通常在 <code>OnDisable</code> 中执行。该信号资源本身绝不会被修改。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static void Subscribe(VoiceLineEventSignalData signal, Action&lt;VoiceLineEventContext&gt; handler)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>signal</code> <a class="xref" href="SubVoxPro.VoiceLineEventSignalData.html">VoiceLineEventSignalData</a></dt>
+<dd></dd>
+<dt><code>handler</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_SubVox_Subscribe_SubVoxPro_VoiceLineEventSignalData_System_Action_SubVoxPro_VoiceLineEventContext___examples">Examples</h4>
+<pre><code class="lang-csharp">[SerializeField] private VoiceLineEventSignalData _cameraShake = null;
+
+private void OnEnable() =&gt; SubVox.Subscribe(_cameraShake, Shake);
+private void OnDisable() =&gt; SubVox.Unsubscribe(_cameraShake, Shake);
+
+private void Shake(VoiceLineEventContext context)
+{
+    _camera.Shake(0.3f);
+}</code></pre>
+<a data-uid="SubVoxPro.SubVox.Unsubscribe*" id="SubVoxPro_SubVox_Unsubscribe_"></a>
+<h3 data-uid="SubVoxPro.SubVox.Unsubscribe(SubVoxPro.VoiceLineEventSignalData,System.Action{SubVoxPro.VoiceLineEventContext})" id="SubVoxPro_SubVox_Unsubscribe_SubVoxPro_VoiceLineEventSignalData_System_Action_SubVoxPro_VoiceLineEventContext__">
+  Unsubscribe(VoiceLineEventSignalData, Action&lt;VoiceLineEventContext&gt;)
+  
+  </h3>
+<div class="markdown level1 summary"><p>停止调用通过 <code>&lt;xref href="SubVoxPro.SubVox.Subscribe(SubVoxPro.VoiceLineEventSignalData%2cSystem.Action%7bSubVoxPro.VoiceLineEventContext%7d)" data-throw-if-not-resolved="false"&gt;&lt;/xref&gt;</code> 添加的处理程序。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static void Unsubscribe(VoiceLineEventSignalData signal, Action&lt;VoiceLineEventContext&gt; handler)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>signal</code> <a class="xref" href="SubVoxPro.VoiceLineEventSignalData.html">VoiceLineEventSignalData</a></dt>
+<dd></dd>
+<dt><code>handler</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="events">事件
+</h2>
+<h3 data-uid="SubVoxPro.SubVox.DisplaySettingsChanged" id="SubVoxPro_SubVox_DisplaySettingsChanged">
+  DisplaySettingsChanged
+  
+  </h3>
+<div class="markdown level1 summary"><p>当显示设置发生变化时触发（<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_SubtitlesEnabled">SubtitlesEnabled</a>、<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_SubtitleScale">SubtitleScale</a>、<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_BackgroundOpacity">BackgroundOpacity</a>、<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_FadeDuration">FadeDuration</a>）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static event Action DisplaySettingsChanged</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.SubVox.EventRaised" id="SubVoxPro_SubVox_EventRaised">
+  EventRaised
+  
+  </h3>
+<div class="markdown level1 summary"><p>在 <strong>Play mode</strong> 下，任意台词资源事件（放置在台词资源上的信号）触发时引发。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static event Action&lt;VoiceLineEventContext&gt; EventRaised</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.SubVox.HistoryAdded" id="SubVoxPro_SubVox_HistoryAdded">
+  HistoryAdded
+  
+  </h3>
+<div class="markdown level1 summary"><p>每向 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_History">History</a> 添加一条字幕时触发，并携带该字幕。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static event Action&lt;SubtitleHistoryEntry&gt; HistoryAdded</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.SubtitleHistoryEntry.html">SubtitleHistoryEntry</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.SubVox.LanguageChanged" id="SubVoxPro_SubVox_LanguageChanged">
+  LanguageChanged
+  
+  </h3>
+<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> 发生变化时触发，并携带新的语言代码。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static event Action&lt;string&gt; LanguageChanged</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.SubVox.SubtitleUpdated" id="SubVoxPro_SubVox_SubtitleUpdated">
+  SubtitleUpdated
+  
+  </h3>
+<div class="markdown level1 summary"><p>选中的字幕发生变化时触发，并携带该字幕。字幕显示组件开始监听时，应读取 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentSubtitle">CurrentSubtitle</a>，以显示已在播放中的字幕。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static event Action&lt;SubtitleInfo&gt; SubtitleUpdated</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.SubVox.VoiceLineCompleted" id="SubVoxPro_SubVox_VoiceLineCompleted">
+  VoiceLineCompleted
+  
+  </h3>
+<div class="markdown level1 summary"><p>台词资源在台词播放源上播放到结尾，或 Timeline 离开其剪辑时触发。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static event Action&lt;VoiceLinePlayback&gt; VoiceLineCompleted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.SubVox.VoiceLineInterrupted" id="SubVoxPro_SubVox_VoiceLineInterrupted">
+  VoiceLineInterrupted
+  
+  </h3>
+<div class="markdown level1 summary"><p>台词资源在台词播放源上尚未播放完毕就被停止，或被另一条台词资源替换时触发。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static event Action&lt;VoiceLinePlayback&gt; VoiceLineInterrupted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.SubVox.VoiceLineStarted" id="SubVoxPro_SubVox_VoiceLineStarted">
+  VoiceLineStarted
+  
+  </h3>
+<div class="markdown level1 summary"><p>台词资源在任意台词播放源或 Timeline 中开始播放时触发。播放信息指明正在播放的台词资源及其台词播放源（在 Timeline 中为 null）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static event Action&lt;VoiceLinePlayback&gt; VoiceLineStarted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a>&gt;</dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

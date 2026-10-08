@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>Dubbing / Text-to-Speech | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Dubbing / Text-to-Speech | SubVox Pro 文档 " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../manual/providers-dubbing.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers-dubbing.html">
+<link rel="alternate" hreflang="de" href="../../de/manual/providers-dubbing.html">
+<link rel="alternate" hreflang="ja" href="../../ja/manual/providers-dubbing.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/manual/providers-dubbing.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="dubbing--text-to-speech">Dubbing / Text-to-Speech </h1>
+<p>ElevenLabs TTS 使用上文所述的同一个 <strong>ElevenLabs</strong> 密钥。如果密钥的权限受限，则必须包含 <strong>Text to Speech: Access</strong> 权限。若要使用 <strong>ElevenLabs 声音克隆</strong>选项（Instant Voice Cloning，需要付费 ElevenLabs 套餐），该密钥还需具备 <strong>Voices</strong> 的写入权限，以便 SubVox Pro 创建、查找和删除其克隆声音。<strong>Gemini</strong> TTS 使用与翻译相同的 <strong>Gemini</strong> 密钥（参见 <a href="providers-translation.html#google-gemini">Google (Gemini)</a>）：无需 OAuth，也无需结算账号，这与下文 Google Cloud Text-to-Speech 的 Gemini 音色不同。<strong>OpenAI</strong> TTS 使用与翻译相同的 <strong>OpenAI</strong> 密钥（参见
+<a href="providers-translation.html#openai">OpenAI</a>）。InWorld 的专用配置步骤如下。</p>
+<details id="inworld-ai" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="inworld-ai-setup"><strong>InWorld AI</strong></h2></summary>
+<p><strong>用途：</strong>为翻译后的音轨生成配音音频（TTS）。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> 访问 <strong>Inworld Studio</strong>（<strong><a href="https://studio.inworld.ai">https://studio.inworld.ai</a></strong>）并创建账号。</p>
+<img alt="Inworld Portal log in / sign up page" src="Images/inworld-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> 在工作区中，从左侧边栏打开 <strong>API Keys</strong>。</p>
+<img alt="Inworld API Keys entry in the sidebar" src="Images/inworld-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> 点击 <strong>Generate new key</strong>。</p>
+<img alt="Inworld API Keys page" src="Images/inworld-api-keys-page.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> 为密钥设置一个易于识别的显示名称。除非特别需要仅用于实时服务的密钥，否则请选择 <strong>Standard</strong>，并保留 Inworld TTS 工作流所需的权限。</p>
+<img alt="Inworld generate API key dialog" src="Images/inworld-generate-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> 复制 <strong>Basic (Base64)</strong> 密钥值。</p>
+<img alt="Inworld Basic Base64 API key value" src="Images/inworld-api-key-basic-value.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>该密钥也会显示在 API Keys 列表中，如有需要，稍后可在此处再次复制。</p>
+<img alt="Inworld API key row" src="Images/inworld-api-key-row.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> 将其粘贴到 SubVox Pro 中（Settings ▸ <em>InWorld</em>）。</p>
+<blockquote>
+<p>免费套餐提供约 70 分钟的一次性 TTS 配额，并包含商业许可证。可以先在 <strong>TTS Playground</strong> 中试听音色。入门文档：
+<a href="https://docs.inworld.ai/docs/tts-api/getting-started/">https://docs.inworld.ai/docs/tts-api/getting-started/</a></p>
+</blockquote>
+</details>
+<details id="google-cloud-tts" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="google-cloud-tts-setup"><strong>Google Cloud Text-to-Speech</strong></h2></summary>
+<p><strong>用途：</strong>为翻译后的音轨生成配音音频（TTS）。两个音色系列共享一个连接：通过 Cloud Text-to-Speech API 使用的<strong>常规</strong>音色（Standard、WaveNet、Neural2、Chirp/Chirp3-HD），以及 <strong>Gemini</strong> 音色（预置名称如 <em>Leda</em>、<em>Achird</em>、<em>Aoede</em>）。后者支持多语言，并接受自由格式的<strong>风格提示词</strong>，通过独立的 <strong>Vertex AI</strong> API 运行。</p>
+<p>与其他提供商不同，Google Cloud TTS 使用 <strong>OAuth 登录</strong>，而非 API 密钥。原因在于：Gemini
+音色通过 Vertex AI 运行，而该服务受 IAM 权限控制（<code>aiplatform.endpoints.predict</code>）；API 密钥不包含
+IAM 权限，但登录的 Google 账号具有这些权限（前提是该账号是项目所有者或具有编辑权限）。一次登录即可使用这两个音色系列。</p>
+<ol>
+<li>访问 <strong><a href="https://console.cloud.google.com">https://console.cloud.google.com</a></strong>，打开 <strong>Google Cloud Console</strong>，并创建（或选择）一个项目。新账号可获得 <strong>300 美元试用额度（90 天）</strong>；即使使用免费层级，也需要结算账号。</li>
+<li>在 <strong>APIs &amp; Services ▸ Library</strong> 中，启用 <strong>Cloud Text-to-Speech API</strong>（常规音色）；若需使用
+<strong>Gemini</strong> 音色，还需启用 <strong>Vertex AI API</strong>（<code>aiplatform.googleapis.com</code>，<em>不是</em>旧版“AI Platform”
+<code>ml.googleapis.com</code>）。如果只需常规音色，可跳过 Vertex AI。</li>
+<li><strong>APIs &amp; Services ▸ OAuth consent screen：</strong>将 <strong>User type / Audience</strong> 设置为 <strong>External</strong>（Internal
+会阻止个人 Gmail 账号登录，并返回 <code>403: org_internal</code>），然后在 <strong>Test users</strong>
+下添加自己的 Google 账号。</li>
+<li><strong>APIs &amp; Services ▸ Credentials ▸ Create credentials ▸ OAuth client ID</strong>，应用类型选择 <strong>Desktop
+app</strong>。复制 <strong>Client ID</strong> 和 <strong>Client secret</strong>。（通过
+<code>http://127.0.0.1</code> 进行回环登录需要 <em>Desktop</em> 客户端，与 Google Sheets 集成相同。）</li>
+<li>在 SubVox Pro 中，打开 <strong>Text-to-Speech</strong> 选项卡，选择 <strong>Google Cloud</strong>，粘贴 <strong>Client ID</strong> 和
+<strong>Client secret</strong>，然后点击 <strong>Connect…</strong> 并在浏览器中登录。遇到 <em>“app not verified”</em>
+警告（Testing 模式下的正常现象）时，选择 <strong>Continue</strong>。（计费和配额所用的项目根据客户端 ID 确定，因此无需输入其他内容。）凭据和刷新令牌保存在本机（编辑器首选项中），绝不会保存在项目中。</li>
+</ol>
+<p>然后选择一种音色。常规音色显示为 <code>Tier Leaf (locale)</code>（例如 <em>Neural2 A (fr-FR)</em>）；Gemini 音色显示为 <code>Name · Gemini</code>，且不受语言筛选器限制（它们可以使用所有受支持的语言）。选中
+Gemini 音色后，<strong>voice direction</strong> 按钮（音色选择器旁边的对话气泡图标）将变为可用状态。输入类似 <em>“非常悲伤，几乎精神崩溃”</em> 的语气描述后，每条台词都会使用这段描述作为 Gemini 风格提示词。</p>
+<blockquote>
+<p>计费说明：常规音色使用 Cloud Text-to-Speech 每月免费配额（Neural2/WaveNet 约
+100 万字符，Standard 为 400 万字符）；<strong>Gemini 和 Chirp 音色通过 Vertex AI 计费</strong>，费率不同。请设置预算提醒。TTS 定价：<a href="https://cloud.google.com/text-to-speech/pricing">https://cloud.google.com/text-to-speech/pricing</a></p>
+</blockquote>
+</details>
+<details id="azure" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="azure-setup"><strong>Azure AI Speech</strong></h2></summary>
+<p><strong>用途：</strong>为翻译后的音轨生成配音音频（TTS），采用高质量的多语言神经网络音色。使用<strong>订阅密钥 + 区域</strong>（无需 OAuth）。</p>
+<ol>
+<li><p>在 <strong><a href="https://azure.microsoft.com/free">https://azure.microsoft.com/free</a></strong> 创建 <strong>Microsoft Azure</strong> 账号。Azure 会要求提供信用卡以验证身份，但 Speech <strong>免费层级（F0）</strong>是真正免费的 SKU（通过限制使用量而非计费来控制用量），因此使用 F0 不会从信用卡扣款。</p>
+</li>
+<li><p>在 <strong>Azure Portal</strong>（<a href="https://portal.azure.com">https://portal.azure.com</a>）中，点击 <strong>Create a resource</strong>，搜索 <strong>Speech</strong>，并选择由 <strong>Microsoft</strong> 发布、标题为 <strong>Speech</strong> 的卡片（带有 <strong>Create</strong> 按钮，<em>不要</em>选择标有 <em>Subscribe</em> 的第三方 Marketplace 产品）。点击 <strong>Create</strong>，然后选择订阅和资源组、<strong>Region</strong>（记住该区域）、名称以及 <strong>Pricing tier F0 (free)</strong>。点击
+<strong>Review + create</strong>。</p>
+<blockquote>
+<p>正确资源的直达链接：<a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices">https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices</a></p>
+</blockquote>
+</li>
+<li><p>部署完成后，打开该资源并转到 <strong>Keys and Endpoint</strong>。复制 <strong>KEY 1</strong> 并记下 <strong>Location/Region</strong>（例如 <code>westeurope</code>）。</p>
+</li>
+<li><p>将密钥粘贴到 SubVox Pro 中（Settings ▸ <em>Azure Speech</em>）。然后在 <strong>Text-to-Speech</strong> 选项卡中，选择
+<strong>Azure</strong>，并从下拉菜单中选择<strong>相同的 Region</strong>。</p>
+</li>
+</ol>
+<blockquote>
+<p>密钥和区域必须对应<strong>同一个</strong> Speech 资源，否则 Azure 将拒绝请求并返回
+<code>401</code>。区域是从下拉菜单中选择的简短标识符（<code>westeurope</code>、<code>eastus</code> 等），而非显示名称（“West Europe”）。</p>
+</blockquote>
+<blockquote>
+<p>免费层级（F0）：每月约 50 万字符的神经网络 TTS 配额，仅供评估使用。Microsoft 仅对付费（S0）资源生成的音频授予商业使用权。在为准备发布的游戏生成配音之前，请先将资源切换为 S0。定价：<a href="https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/">https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/</a></p>
+</blockquote>
+</details>
+<div data-svx-provider-articles='{"after-pasting-a-key": "providers-api-key.md"}' hidden=""></div>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

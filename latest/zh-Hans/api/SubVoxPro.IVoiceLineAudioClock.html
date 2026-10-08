@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>Interface IVoiceLineAudioClock | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Interface IVoiceLineAudioClock | SubVox Pro 文档 " name="title"/>
+<meta content="在 Unity 的 AudioSource 之外播放的音频（FMOD、Wwise、视频等），由  跟踪，使字幕和事件与该音频保持同步。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.IVoiceLineAudioClock.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.IVoiceLineAudioClock.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.IVoiceLineAudioClock.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.IVoiceLineAudioClock.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/api/SubVoxPro.IVoiceLineAudioClock.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.IVoiceLineAudioClock">
+<h1 class="text-break" data-uid="SubVoxPro.IVoiceLineAudioClock" id="SubVoxPro_IVoiceLineAudioClock">
+Interface IVoiceLineAudioClock  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>命名空间</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>程序集</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>在 Unity 的 AudioSource 之外播放的音频（FMOD、Wwise、视频等），由 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> 跟踪，使字幕和事件与该音频保持同步。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public interface IVoiceLineAudioClock</code></pre>
+</div>
+<h2 id="SubVoxPro_IVoiceLineAudioClock_examples">Examples</h2>
+<pre><code class="lang-csharp">public sealed class FmodVoiceClock : IVoiceLineAudioClock
+{
+    public FMOD.Studio.EventInstance Instance;
+
+    public float Time
+    {
+        get { Instance.getTimelinePosition(out int milliseconds); return milliseconds / 1000f; }
+    }
+
+    public bool IsPlaying
+    {
+        get { Instance.getPlaybackState(out FMOD.Studio.PLAYBACK_STATE state); return state != FMOD.Studio.PLAYBACK_STATE.STOPPED; }
+    }
+}
+
+emitter.PlayExternal(voiceLine, new FmodVoiceClock { Instance = instance });
+instance.start();</code></pre>
+<h2 class="section" id="properties">属性
+</h2>
+<a data-uid="SubVoxPro.IVoiceLineAudioClock.IsPlaying*" id="SubVoxPro_IVoiceLineAudioClock_IsPlaying_"></a>
+<h3 data-uid="SubVoxPro.IVoiceLineAudioClock.IsPlaying" id="SubVoxPro_IVoiceLineAudioClock_IsPlaying">
+  IsPlaying
+  
+  </h3>
+<div class="markdown level1 summary"><p>从音频启动起（包括仍在加载时）直到播放结束前，值始终为 true。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">bool IsPlaying { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.IVoiceLineAudioClock.Time*" id="SubVoxPro_IVoiceLineAudioClock_Time_"></a>
+<h3 data-uid="SubVoxPro.IVoiceLineAudioClock.Time" id="SubVoxPro_IVoiceLineAudioClock_Time">
+  Time
+  
+  </h3>
+<div class="markdown level1 summary"><p>音频的播放位置，单位为秒。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">float Time { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

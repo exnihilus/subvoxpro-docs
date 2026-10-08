@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>类 VoiceLineZone | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineZone | SubVox Pro 文档 " name="title"/>
+<meta content="当碰撞体进入此触发区域时，播放一条台词资源（或台词库中的下一条台词资源）。支持 2D 或 3D 碰撞体：只会触发与此对象上的碰撞体类型匹配的回调，因此一个组件即可支持这两种类型。可按图层和可选的标签进行筛选，设置仅播放一次或按冷却时间限制播放，选择台词播放源忙碌时的处理方式，还可在玩家离开时停止播放台词或让触发区域重新待命。 是公共方法，其他系统（如交互系统、UI 按钮）均可通过 UnityEvent 复用它。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.VoiceLineZone.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.VoiceLineZone.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.VoiceLineZone.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.VoiceLineZone.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/api/SubVoxPro.VoiceLineZone.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.VoiceLineZone">
+<h1 class="text-break" data-uid="SubVoxPro.VoiceLineZone" id="SubVoxPro_VoiceLineZone">
+类 VoiceLineZone  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>命名空间</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>程序集</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>当碰撞体进入此触发区域时，播放一条台词资源（或台词库中的下一条台词资源）。支持 2D 或 3D 碰撞体：只会触发与此对象上的碰撞体类型匹配的回调，因此一个组件即可支持这两种类型。可按图层和可选的标签进行筛选，设置仅播放一次或按冷却时间限制播放，选择台词播放源忙碌时的处理方式，还可在玩家离开时停止播放台词或让触发区域重新待命。<a class="xref" href="SubVoxPro.VoiceLineZone.html#SubVoxPro_VoiceLineZone_Play">Play()</a> 是公共方法，其他系统（如交互系统、UI 按钮）均可通过 UnityEvent 复用它。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class VoiceLineZone : MonoBehaviour</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>继承</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineZone</span></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">构造函数
+</h2>
+<a data-uid="SubVoxPro.VoiceLineZone.#ctor*" id="SubVoxPro_VoiceLineZone__ctor_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineZone.#ctor" id="SubVoxPro_VoiceLineZone__ctor">
+  VoiceLineZone()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineZone()</code></pre>
+</div>
+<h2 class="section" id="methods">方法
+</h2>
+<a data-uid="SubVoxPro.VoiceLineZone.OnTriggerEnter*" id="SubVoxPro_VoiceLineZone_OnTriggerEnter_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineZone.OnTriggerEnter(UnityEngine.Collider)" id="SubVoxPro_VoiceLineZone_OnTriggerEnter_UnityEngine_Collider_">
+  OnTriggerEnter(Collider)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写此方法时需调用基类实现。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnTriggerEnter(Collider other)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>other</code> <span class="xref">Collider</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineZone.OnTriggerEnter2D*" id="SubVoxPro_VoiceLineZone_OnTriggerEnter2D_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineZone.OnTriggerEnter2D(UnityEngine.Collider2D)" id="SubVoxPro_VoiceLineZone_OnTriggerEnter2D_UnityEngine_Collider2D_">
+  OnTriggerEnter2D(Collider2D)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写此方法时需调用基类实现。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnTriggerEnter2D(Collider2D other)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>other</code> <span class="xref">Collider2D</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineZone.OnTriggerExit*" id="SubVoxPro_VoiceLineZone_OnTriggerExit_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineZone.OnTriggerExit(UnityEngine.Collider)" id="SubVoxPro_VoiceLineZone_OnTriggerExit_UnityEngine_Collider_">
+  OnTriggerExit(Collider)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写此方法时需调用基类实现。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnTriggerExit(Collider other)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>other</code> <span class="xref">Collider</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineZone.OnTriggerExit2D*" id="SubVoxPro_VoiceLineZone_OnTriggerExit2D_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineZone.OnTriggerExit2D(UnityEngine.Collider2D)" id="SubVoxPro_VoiceLineZone_OnTriggerExit2D_UnityEngine_Collider2D_">
+  OnTriggerExit2D(Collider2D)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写此方法时需调用基类实现。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnTriggerExit2D(Collider2D other)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>other</code> <span class="xref">Collider2D</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineZone.PassesFilter*" id="SubVoxPro_VoiceLineZone_PassesFilter_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineZone.PassesFilter(UnityEngine.GameObject)" id="SubVoxPro_VoiceLineZone_PassesFilter_UnityEngine_GameObject_">
+  PassesFilter(GameObject)
+  
+  </h3>
+<div class="markdown level1 summary"><p>进入触发区域的对象是否可以触发台词播放。默认根据该对象的图层和标签判断。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual bool PassesFilter(GameObject other)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>other</code> <span class="xref">GameObject</span></dt>
+<dd></dd>
+</dl>
+<h4 class="section">返回值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineZone.Play*" id="SubVoxPro_VoiceLineZone_Play_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineZone.Play" id="SubVoxPro_VoiceLineZone_Play">
+  Play()
+  
+  </h3>
+<div class="markdown level1 summary"><p>在其台词播放源上播放已分配的台词资源（或台词库中的下一条台词资源）；未设置台词播放源时，使用管理器的台词播放源。播放时遵循仅播放一次、冷却时间、播放模式和优先级设置。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Play()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineZone.ResetZone*" id="SubVoxPro_VoiceLineZone_ResetZone_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineZone.ResetZone" id="SubVoxPro_VoiceLineZone_ResetZone">
+  ResetZone()
+  
+  </h3>
+<div class="markdown level1 summary"><p>让触发区域可以再次播放：清除 <strong>Play Once</strong> 状态和冷却时间，例如在重新加载检查点后。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void ResetZone()</code></pre>
+</div>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

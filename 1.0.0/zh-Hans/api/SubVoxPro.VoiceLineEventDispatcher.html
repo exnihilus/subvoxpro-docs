@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>类 VoiceLineEventDispatcher | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineEventDispatcher | SubVox Pro 文档 " name="title"/>
+<meta content="当相应信号触发时，调用已加载场景中带有  的方法。在启动场景中添加此组件（[SubVox Pro] 预制体已包含此组件）。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.VoiceLineEventDispatcher.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.VoiceLineEventDispatcher.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.VoiceLineEventDispatcher.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.VoiceLineEventDispatcher.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/api/SubVoxPro.VoiceLineEventDispatcher.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.VoiceLineEventDispatcher">
+<h1 class="text-break" data-uid="SubVoxPro.VoiceLineEventDispatcher" id="SubVoxPro_VoiceLineEventDispatcher">
+类 VoiceLineEventDispatcher  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>命名空间</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>程序集</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>当相应信号触发时，调用已加载场景中带有 <a class="xref" href="SubVoxPro.VoiceLineEventAttribute.html">VoiceLineEventAttribute</a> 的方法。在启动场景中添加此组件（[SubVox Pro] 预制体已包含此组件）。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public sealed class VoiceLineEventDispatcher : MonoBehaviour</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>继承</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineEventDispatcher</span></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">构造函数
+</h2>
+<a data-uid="SubVoxPro.VoiceLineEventDispatcher.#ctor*" id="SubVoxPro_VoiceLineEventDispatcher__ctor_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventDispatcher.#ctor" id="SubVoxPro_VoiceLineEventDispatcher__ctor">
+  VoiceLineEventDispatcher()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineEventDispatcher()</code></pre>
+</div>
+<h2 class="section" id="properties">属性
+</h2>
+<a data-uid="SubVoxPro.VoiceLineEventDispatcher.ScanScenesAutomatically*" id="SubVoxPro_VoiceLineEventDispatcher_ScanScenesAutomatically_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventDispatcher.ScanScenesAutomatically" id="SubVoxPro_VoiceLineEventDispatcher_ScanScenesAutomatically">
+  ScanScenesAutomatically
+  
+  </h3>
+<div class="markdown level1 summary"><p>当值为 true（默认）时，调度器在启用时扫描已加载的场景，随后在每个场景加载时扫描该场景。当值为 false 时，仅调用传递给 <a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html#SubVoxPro_VoiceLineEventDispatcher_Register_UnityEngine_MonoBehaviour_">Register(MonoBehaviour)</a> 或由 <a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html#SubVoxPro_VoiceLineEventDispatcher_Refresh">Refresh()</a> 找到的组件中的方法。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool ScanScenesAutomatically { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">方法
+</h2>
+<a data-uid="SubVoxPro.VoiceLineEventDispatcher.Refresh*" id="SubVoxPro_VoiceLineEventDispatcher_Refresh_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventDispatcher.Refresh" id="SubVoxPro_VoiceLineEventDispatcher_Refresh">
+  Refresh()
+  
+  </h3>
+<div class="markdown level1 summary"><p>在运行时对象被创建或销毁后，重建缓存的代码监听器。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Refresh()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineEventDispatcher.Register*" id="SubVoxPro_VoiceLineEventDispatcher_Register_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventDispatcher.Register(UnityEngine.MonoBehaviour)" id="SubVoxPro_VoiceLineEventDispatcher_Register_UnityEngine_MonoBehaviour_">
+  Register(MonoBehaviour)
+  
+  </h3>
+<div class="markdown level1 summary"><p>注册运行时创建的组件中带有 <a class="xref" href="SubVoxPro.VoiceLineEventAttribute.html">VoiceLineEventAttribute</a> 的方法，无需再次扫描整个场景。组件销毁时，调用 <a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html#SubVoxPro_VoiceLineEventDispatcher_Unregister_UnityEngine_MonoBehaviour_">Unregister(MonoBehaviour)</a>。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static void Register(MonoBehaviour behaviour)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>behaviour</code> <span class="xref">MonoBehaviour</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEventDispatcher.Unregister*" id="SubVoxPro_VoiceLineEventDispatcher_Unregister_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventDispatcher.Unregister(UnityEngine.MonoBehaviour)" id="SubVoxPro_VoiceLineEventDispatcher_Unregister_UnityEngine_MonoBehaviour_">
+  Unregister(MonoBehaviour)
+  
+  </h3>
+<div class="markdown level1 summary"><p>移除通过 <a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html#SubVoxPro_VoiceLineEventDispatcher_Register_UnityEngine_MonoBehaviour_">Register(MonoBehaviour)</a> 添加或通过 <a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html#SubVoxPro_VoiceLineEventDispatcher_Refresh">Refresh()</a> 找到的组件的方法注册。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static void Unregister(MonoBehaviour behaviour)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>behaviour</code> <span class="xref">MonoBehaviour</span></dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

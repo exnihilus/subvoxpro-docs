@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>Namespace SubVoxPro | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Namespace SubVoxPro | SubVox Pro 文档 " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/api/SubVoxPro.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro">
+<h1 class="text-break" data-uid="SubVoxPro" id="SubVoxPro">Namespace SubVoxPro</h1>
+<div class="markdown level0 summary"></div>
+<div class="markdown level0 conceptual"></div>
+<div class="markdown level0 remarks"></div>
+<h3 id="classes">
+Classes
+</h3>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.LanguageCodeAttribute.html">LanguageCodeAttribute</a></dt>
+<dd><p>将字符串字段标记为语言代码，使 <strong>Inspector</strong> 显示语言下拉列表，列出项目的 <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a> 台词资源中实际存在的语言及源语言，替代需要手动输入代码的自由文本字段。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.LocalizedAudioTrack.html">LocalizedAudioTrack</a></dt>
+<dd><p>台词资源在一种语言中的配音，具有独立的时间信息。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.LocalizedSubtitleTrack.html">LocalizedSubtitleTrack</a></dt>
+<dd><p>台词资源的字幕在一种语言中的翻译。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.LocalizedVoiceLineEventBinding.html">LocalizedVoiceLineEventBinding</a></dt>
+<dd><p>特定于一份配音的事件位置。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a></dt>
+<dd><p>具有名称和样式的说话者，可指定为字幕的说话者。每个说话者都是独立的资源，可在多个台词资源中复用；性别仅用于在编辑器的选择器中对说话者分组。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SpeakerLocalizedName.html">SpeakerLocalizedName</a></dt>
+<dd><p>角色在某种语言中显示的名称。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SpeakerSelectorAttribute.html">SpeakerSelectorAttribute</a></dt>
+<dd><p>标记 <a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a> 字段，使 <strong>Inspector</strong> 显示与台词资源窗口相同的说话者选择弹出窗口（说话者按性别分组，包含 <strong>none</strong> 选项和 <strong>new speaker</strong> 快捷入口），替代默认的对象引用字段。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubVox.html">SubVox</a></dt>
+<dd><p>SubVox Pro 的 API 入口：播放台词资源，设置语言和字幕显示方式，并触发全局事件（字幕、台词资源、台词资源事件）。所有播放源均遵循这些设置：包括 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> 组件和 Timeline 集成。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubVoxEvents.html">SubVoxEvents</a></dt>
+<dd><p>为本项目生成的台词资源事件键。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleBubbleDisplayer.html">SubtitleBubbleDisplayer</a></dt>
+<dd><p>单个角色的对话气泡：仅显示其 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> 播放的台词，例如显示在 NPC 头顶上方，同时屏幕底部的字幕显示组件继续显示对话。设置与 <a class="xref" href="SubVoxPro.SubtitleDisplayer.html">SubtitleDisplayer</a> 相同。关闭台词播放源的 <strong>Show Subtitles</strong>，即可仅在气泡中显示其台词。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleDisplayer.html">SubtitleDisplayer</a></dt>
+<dd><p>在 TextMeshPro 文本（UI 或 3D）中显示 <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a> 发布的字幕，使用说话者的名称和字体，并遵循 <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a> 的显示设置（开启/关闭、大小、背景不透明度、淡入淡出）。无论播放来自台词播放源还是 Timeline，行为都相同。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleDocumentDisplayer.html">SubtitleDocumentDisplayer</a></dt>
+<dd><p>在其 <a class="xref" href="https://docs.unity3d.com/ScriptReference/UIElements.UIDocument.html">UnityEngine.UIElements.UIDocument</a> 的 UI Toolkit <a class="xref" href="https://docs.unity3d.com/ScriptReference/UIElements.Label.html">UnityEngine.UIElements.Label</a> 中显示发布于 <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a> 的字幕，包含说话者姓名，并使用 UI Toolkit 字体。它是 <a class="xref" href="SubVoxPro.SubtitleDisplayer.html">SubtitleDisplayer</a> 对应的 UI Toolkit 组件：说话者姓名显示模式、富文本样式及显示设置均与之相同。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineBankData.html">VoiceLineBankData</a></dt>
+<dd><p>一组可互换的台词资源，例如守卫的游戏短台词：每次播放按 <a class="xref" href="SubVoxPro.VoiceLineBankData.html#SubVoxPro_VoiceLineBankData_Order">Order</a> 选择其中一个。此资源仅保存台词资源；下一次选择哪个由 SubVox Pro 在运行时跟踪。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd><p>台词资源：包含源音频和字幕、翻译、配音、说话者及事件。在 SubVox Pro 窗口中创建和编辑；在代码中只读。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineDataEvent.html">VoiceLineDataEvent</a></dt>
+<dd><p>携带台词资源的 UnityEvent 类型，公开此类型以便在 <strong>Inspector</strong> 中显示。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a></dt>
+<dd><p>通过自身的 <a class="xref" href="https://docs.unity3d.com/ScriptReference/AudioSource.html">AudioSource</a> 播放台词资源，每次播放一个，同时触发事件并显示同步字幕。为每个说话的角色添加一个此组件，并将其 AudioSource 设为 3D，即可从角色所在位置听到声音。多个台词播放源可以同时播放，<a class="xref" href="SubVoxPro.VoiceLineManager.html">VoiceLineManager</a> 会显示正在播放的台词中最重要的台词的字幕。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventAttribute.html">VoiceLineEventAttribute</a></dt>
+<dd><p>台词资源中信号键与此键匹配的事件触发时，调用标记的方法。该方法所属的组件需由 <a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html">VoiceLineEventDispatcher</a> 缓存，或与 <a class="xref" href="SubVoxPro.VoiceLineEventListener.html">VoiceLineEventListener</a> 位于同一 GameObject 上。方法返回 void，不接受参数，或接受一个 <a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a> 参数，或接受一个与事件附带数据类型相同的参数。键匹配时忽略大小写、空格和标点：“Camera Shake”可匹配“camera-shake”。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventBinding.html">VoiceLineEventBinding</a></dt>
+<dd><p>事件在台词资源中的位置：一个锚点加上一个偏移量。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a></dt>
+<dd><p>触发的事件的全部信息：台词资源、信号、事件附带数据，以及触发时间和位置。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventCue.html">VoiceLineEventCue</a></dt>
+<dd><p>添加到台词资源上的事件：一个信号、触发位置以及可选的事件附带数据。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventDispatcher.html">VoiceLineEventDispatcher</a></dt>
+<dd><p>当相应信号触发时，调用已加载场景中带有 <a class="xref" href="SubVoxPro.VoiceLineEventAttribute.html">VoiceLineEventAttribute</a> 的方法。在启动场景中添加此组件（[SubVox Pro] 预制体已包含此组件）。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventListener.html">VoiceLineEventListener</a></dt>
+<dd><p>当具有匹配信号键的台词资源事件触发时，调用此游戏对象上各组件中带有 <a class="xref" href="SubVoxPro.VoiceLineEventAttribute.html">VoiceLineEventAttribute</a> 的方法。跳过已禁用的组件。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventReaction.html">VoiceLineEventReaction</a></dt>
+<dd><p><a class="xref" href="SubVoxPro.VoiceLineEventReceiver.html">VoiceLineEventReceiver</a> 的一个响应：一个信号、一条可选的台词资源，以及应调用的方法。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventReceiver.html">VoiceLineEventReceiver</a></dt>
+<dd><p>当台词资源事件触发时，调用在 <strong>Inspector</strong> 中设置的 UnityEvent：每个信号对应一个响应，可选择将响应限制于一个台词资源。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventSignalData.html">VoiceLineEventSignalData</a></dt>
+<dd><p>一种可复用的事件类型（例如“Camera Shake”），可放置在台词资源上；代码通过 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Subscribe_SubVoxPro_VoiceLineEventSignalData_System_Action_SubVoxPro_VoiceLineEventContext__">Subscribe(VoiceLineEventSignalData, Action&lt;VoiceLineEventContext&gt;)</a>、接收器或带有 <a class="xref" href="SubVoxPro.VoiceLineEventAttribute.html">VoiceLineEventAttribute</a> 的方法响应此类事件。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventUnityEvent.html">VoiceLineEventUnityEvent</a></dt>
+<dd><p>携带 <a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a> 的 UnityEvent，在 <strong>Inspector</strong> 中显示。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineManager.html">VoiceLineManager</a></dt>
+<dd><p>为 <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a> 提供支持的场景组件：保存 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> 使用的 2D <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a>（用于旁白、对话），统一暂停或停止所有台词播放源，在语音播放期间执行音乐音量闪避（ducking），即暂时降低音乐音量，并发布当前播放中最重要的台词的字幕。先按优先级选择；优先级相同时，选择最近开始播放的台词。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayOnStart.html">VoiceLinePlayOnStart</a></dt>
+<dd><p>当此对象启动（或重新启用）时，经过可选的延迟后自动播放一条台词资源。通常用于关卡开场旁白或开场白。<a class="xref" href="SubVoxPro.VoiceLinePlayOnStart.html#SubVoxPro_VoiceLinePlayOnStart_Play">Play()</a> 保持为 public 以便手动复用。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
+<dd><p>一次台词资源播放请求，由 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> 和 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> 返回：通过 <a class="xref" href="SubVoxPro.VoiceLinePlayback.html#SubVoxPro_VoiceLinePlayback_State">State</a> 跟踪其状态、停止播放，或使用 <code>yield return</code> 在协程中等待其完成。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a></dt>
+<dd><p>可复用的有序台词资源列表，用于依次播放。此资源仅保存定义（包含哪些台词资源，以及每一步如何进入下一步）；场景中的 <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html">VoiceLineSequencePlayer</a> 在运行时驱动序列，使多个播放器可以安全地复用同一序列。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html">VoiceLineSequencePlayer</a></dt>
+<dd><p>运行时逐行播放<a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a>文件。 每个步骤可在当前行播放完毕后（可选延迟）自动前进，或通过<a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Advance">Advance()</a>手动前进——该事件可与任何UnityEvent、交互或UI按钮绑定——而<a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Previous">Previous()</a>则可返回上一行。步骤按<a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a>的顺序播放。若台词播放源正忙而拒绝了某个步骤，该步骤将等待其空闲。提供UnityEvents以便场景逻辑无需代码即可响应，同时也提供相同的C#事件供代码使用。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineSequenceStep.html">VoiceLineSequenceStep</a></dt>
+<dd><p>序列中的一个步骤：一个台词资源，以及播放后进入下一步的方式。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineZone.html">VoiceLineZone</a></dt>
+<dd><p>当碰撞体进入此触发区域时，播放一条台词资源（或台词库中的下一条台词资源）。支持 2D 或 3D 碰撞体：只会触发与此对象上的碰撞体类型匹配的回调，因此一个组件即可支持这两种类型。可按图层和可选的标签进行筛选，设置仅播放一次或按冷却时间限制播放，选择台词播放源忙碌时的处理方式，还可在玩家离开时停止播放台词或让触发区域重新待命。<a class="xref" href="SubVoxPro.VoiceLineZone.html#SubVoxPro_VoiceLineZone_Play">Play()</a> 是公共方法，其他系统（如交互系统、UI 按钮）均可通过 UnityEvent 复用它。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoicePersonalityData.html">VoicePersonalityData</a></dt>
+<dd><p>可复用的配音风格预设（包含名称和自由填写的配音指导）。它作为配音风格指令传递给支持此类指令的语音合成提供商（Google Gemini-TTS、InWorld），使同一角色在多个台词资源中都能以“平静”“愤怒”“耳语”等风格配音。说话者资源列出适用的配音风格预设，每条字幕可从中选择一个。</p>
+</dd>
+</dl>
+<h3 id="structs">
+Structs
+</h3>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.LocalizedSubtitleLine.html">LocalizedSubtitleLine</a></dt>
+<dd><p>一条已翻译的字幕。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleHistoryEntry.html">SubtitleHistoryEntry</a></dt>
+<dd><p>一条已显示的字幕，保存在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_History">History</a> 中，用于对话日志。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a></dt>
+<dd><p>一条字幕：包含开始时间、文本、词级时间信息、词级样式及说话者。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a></dt>
+<dd><p>字幕中一个词的时间信息。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.SubtitleWordStyle.html">SubtitleWordStyle</a></dt>
+<dd><p>应用于字幕中单个词的视觉样式，通过词索引（按空白字符拆分字幕后的位置）标识该词。该样式随资源一起序列化，并在运行时以 TextMeshPro 富文本形式渲染。</p>
+</dd>
+</dl>
+<h3 id="interfaces">
+Interfaces
+</h3>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.IVoiceLineAudioClock.html">IVoiceLineAudioClock</a></dt>
+<dd><p>在 Unity 的 AudioSource 之外播放的音频（FMOD、Wwise、视频等），由 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> 跟踪，使字幕和事件与该音频保持同步。</p>
+</dd>
+</dl>
+<h3 id="enums">
+Enums
+</h3>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.ESpeakerGender.html">ESpeakerGender</a></dt>
+<dd><p>说话者的性别，用于在配音时选择匹配的音色。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.ESpeakerNameMode.html">ESpeakerNameMode</a></dt>
+<dd><p>字幕显示组件显示说话者名称的方式。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineBankOrder.html">EVoiceLineBankOrder</a></dt>
+<dd><p><a class="xref" href="SubVoxPro.VoiceLineBankData.html">VoiceLineBankData</a> 选择下一条台词的方式。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineEventAnchor.html">EVoiceLineEventAnchor</a></dt>
+<dd><p>事件触发时间的定位依据。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineLanguageSource.html">EVoiceLineLanguageSource</a></dt>
+<dd><p><a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> 的来源。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html">EVoiceLinePlayMode</a></dt>
+<dd><p>当在某个台词播放源上播放一条台词时，如果该台词播放源正在播放另一条台词，会发生什么情况。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLinePlaybackState.html">EVoiceLinePlaybackState</a></dt>
+<dd><p><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a> 的播放状态。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLinePriority.html">EVoiceLinePriority</a></dt>
+<dd><p>台词的重要性：只有当新台词的重要性至少与当前播放的台词相当时，才会替换当前播放的台词。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineSequenceAdvance.html">EVoiceLineSequenceAdvance</a></dt>
+<dd><p>序列在执行完一个步骤后如何继续。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineSequenceDirection.html">EVoiceLineSequenceDirection</a></dt>
+<dd><p><a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html">VoiceLineSequencePlayer</a> 执行其序列中各步骤的顺序。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineSubtitleRevealMode.html">EVoiceLineSubtitleRevealMode</a></dt>
+<dd><p>台词播放时字幕的显示方式。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityArticulation.html">EVoicePersonalityArticulation</a></dt>
+<dd><p>基于引导选项的配音风格预设的吐字方式。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityDelivery.html">EVoicePersonalityDelivery</a></dt>
+<dd><p>基于引导选项的配音风格预设的说话方式，即演绎时的语气和态度。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityEmotion.html">EVoicePersonalityEmotion</a></dt>
+<dd><p>基于引导选项的配音风格预设的情绪，其强弱由预设的强度决定。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityInstructionMode.html">EVoicePersonalityInstructionMode</a></dt>
+<dd><p>配音风格预设中语气与表达方式的编写方式：使用自由文本或引导选项。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityPace.html">EVoicePersonalityPace</a></dt>
+<dd><p>基于引导选项的配音风格预设的语速与节奏。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityPitch.html">EVoicePersonalityPitch</a></dt>
+<dd><p>基于引导选项的配音风格预设的音高，相对于所选音色。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoicePersonalityVolume.html">EVoicePersonalityVolume</a></dt>
+<dd><p>基于引导选项的配音风格预设的响度。</p>
+</dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

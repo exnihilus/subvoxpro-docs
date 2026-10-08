@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>类 VoiceLineEventContext | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineEventContext | SubVox Pro 文档 " name="title"/>
+<meta content="触发的事件的全部信息：台词资源、信号、事件附带数据，以及触发时间和位置。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.VoiceLineEventContext.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.VoiceLineEventContext.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.VoiceLineEventContext.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.VoiceLineEventContext.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/api/SubVoxPro.VoiceLineEventContext.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.VoiceLineEventContext">
+<h1 class="text-break" data-uid="SubVoxPro.VoiceLineEventContext" id="SubVoxPro_VoiceLineEventContext">
+类 VoiceLineEventContext  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>命名空间</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>程序集</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>触发的事件的全部信息：台词资源、信号、事件附带数据，以及触发时间和位置。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public sealed class VoiceLineEventContext</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>继承</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineEventContext</span></div>
+</dd>
+</dl>
+<dl class="typelist inheritedMembers">
+<dt>继承的成员</dt>
+<dd>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+</div>
+<div>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+</div>
+</dd></dl>
+<h2 class="section" id="properties">属性
+</h2>
+<a data-uid="SubVoxPro.VoiceLineEventContext.AnchorResolved*" id="SubVoxPro_VoiceLineEventContext_AnchorResolved_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventContext.AnchorResolved" id="SubVoxPro_VoiceLineEventContext_AnchorResolved">
+  AnchorResolved
+  
+  </h3>
+<div class="markdown level1 summary"><p>未找到锚定的字幕或词，且事件改用其时间点触发时，此值为 false。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool AnchorResolved { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEventContext.Cue*" id="SubVoxPro_VoiceLineEventContext_Cue_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventContext.Cue" id="SubVoxPro_VoiceLineEventContext_Cue">
+  Cue
+  
+  </h3>
+<div class="markdown level1 summary"><p>放置在台词资源上的事件；对于 Timeline 标记，此值为 null。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineEventCue Cue { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventCue.html">VoiceLineEventCue</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEventContext.CueId*" id="SubVoxPro_VoiceLineEventContext_CueId_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventContext.CueId" id="SubVoxPro_VoiceLineEventContext_CueId">
+  CueId
+  
+  </h3>
+<div class="markdown level1 summary"><p>事件标识符。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string CueId { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEventContext.LanguageCode*" id="SubVoxPro_VoiceLineEventContext_LanguageCode_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventContext.LanguageCode" id="SubVoxPro_VoiceLineEventContext_LanguageCode">
+  LanguageCode
+  
+  </h3>
+<div class="markdown level1 summary"><p>正在播放的音频的语言（播放源音频时为空）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string LanguageCode { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEventContext.Payload*" id="SubVoxPro_VoiceLineEventContext_Payload_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventContext.Payload" id="SubVoxPro_VoiceLineEventContext_Payload">
+  Payload
+  
+  </h3>
+<div class="markdown level1 summary"><p>随事件传递的资源，或为 null；参见 <a class="xref" href="SubVoxPro.VoiceLineEventContext.html#SubVoxPro_VoiceLineEventContext_TryGetPayload__1___0__">TryGetPayload&lt;T&gt;(out T)</a>。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public Object Payload { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><span class="xref">Object</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEventContext.PlaybackSource*" id="SubVoxPro_VoiceLineEventContext_PlaybackSource_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventContext.PlaybackSource" id="SubVoxPro_VoiceLineEventContext_PlaybackSource">
+  PlaybackSource
+  
+  </h3>
+<div class="markdown level1 summary"><p>播放该台词的对象：<a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> 或 PlayableDirector。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public Object PlaybackSource { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><span class="xref">Object</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEventContext.Signal*" id="SubVoxPro_VoiceLineEventContext_Signal_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventContext.Signal" id="SubVoxPro_VoiceLineEventContext_Signal">
+  Signal
+  
+  </h3>
+<div class="markdown level1 summary"><p>已触发的信号。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineEventSignalData Signal { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEventSignalData.html">VoiceLineEventSignalData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEventContext.SubtitleId*" id="SubVoxPro_VoiceLineEventContext_SubtitleId_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventContext.SubtitleId" id="SubVoxPro_VoiceLineEventContext_SubtitleId">
+  SubtitleId
+  
+  </h3>
+<div class="markdown level1 summary"><p>事件锚定的字幕，或为空。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string SubtitleId { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEventContext.Time*" id="SubVoxPro_VoiceLineEventContext_Time_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventContext.Time" id="SubVoxPro_VoiceLineEventContext_Time">
+  Time
+  
+  </h3>
+<div class="markdown level1 summary"><p>事件触发的时间，以台词开始后的秒数表示。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float Time { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEventContext.VoiceLine*" id="SubVoxPro_VoiceLineEventContext_VoiceLine_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventContext.VoiceLine" id="SubVoxPro_VoiceLineEventContext_VoiceLine">
+  VoiceLine
+  
+  </h3>
+<div class="markdown level1 summary"><p>正在播放的台词资源。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineData VoiceLine { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEventContext.WordId*" id="SubVoxPro_VoiceLineEventContext_WordId_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventContext.WordId" id="SubVoxPro_VoiceLineEventContext_WordId">
+  WordId
+  
+  </h3>
+<div class="markdown level1 summary"><p>事件锚定的单词，或为空。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public string WordId { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineEventContext.WordIndex*" id="SubVoxPro_VoiceLineEventContext_WordIndex_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventContext.WordIndex" id="SubVoxPro_VoiceLineEventContext_WordIndex">
+  WordIndex
+  
+  </h3>
+<div class="markdown level1 summary"><p>该词在其所属字幕中的位置，或为 -1。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public int WordIndex { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">方法
+</h2>
+<a data-uid="SubVoxPro.VoiceLineEventContext.TryGetPayload*" id="SubVoxPro_VoiceLineEventContext_TryGetPayload_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEventContext.TryGetPayload``1(``0@)" id="SubVoxPro_VoiceLineEventContext_TryGetPayload__1___0__">
+  TryGetPayload&lt;T&gt;(out T)
+  
+  </h3>
+<div class="markdown level1 summary"><p>当事件附带数据的类型为 T（资源、预制体、音频片段等）时，获取该数据。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool TryGetPayload&lt;T&gt;(out T payload) where T : Object</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>payload</code> <span class="xref">T</span></dt>
+<dd></dd>
+</dl>
+<h4 class="section">返回值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Type Parameters</h4>
+<dl class="parameters">
+<dt><code>T</code></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_VoiceLineEventContext_TryGetPayload__1___0___examples">Examples</h4>
+<pre><code class="lang-csharp">private void HandleEvent(VoiceLineEventContext context)
+{
+    if (context.TryGetPayload(out ParticleSystem effect))
+    {
+        Instantiate(effect, transform.position, Quaternion.identity);
+    }
+}</code></pre>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

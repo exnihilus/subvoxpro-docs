@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>指南 | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="指南 | SubVox Pro 文档 " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../manual/index.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/index.html">
+<link rel="alternate" hreflang="de" href="../../de/manual/index.html">
+<link rel="alternate" hreflang="ja" href="../../ja/manual/index.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/manual/index.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="subvox-pro">SubVox Pro </h1>
+<p>SubVox Pro 可直接在 Unity 中将语音台词转换为同步字幕和配音：</p>
+<ul>
+<li>将音频剪辑<strong>转写</strong>为带时间信息的字幕——可通过云服务或完全离线完成。</li>
+<li>在波形上<strong>编辑</strong>时间信息、设置词语样式、检查字幕阅读速度。</li>
+<li><strong>翻译</strong>成 50 种语言，并通过语音合成进行<strong>配音</strong>，也可选择使用每个角色自己的声音。</li>
+<li>只需几个组件即可在游戏中<strong>播放</strong>所有内容，通过台词触发<strong>游戏事件</strong>，并将台词拖放到
+<strong>Unity Timeline</strong> 上。</li>
+</ul>
+<h2 id="contents">目录 </h2>
+<ul>
+<li><a href="#before-you-start">开始之前</a></li>
+<li><a href="#quick-start">快速入门</a></li>
+<li><a href="#the-subvox-pro-window">SubVox Pro 窗口</a></li>
+<li><a href="#transcribe">转写</a></li>
+<li><a href="#translate">翻译</a></li>
+<li><a href="#dub-with-text-to-speech">使用语音合成进行配音</a></li>
+<li><a href="#speakers-and-voice-personalities">说话者与配音风格预设</a></li>
+<li><a href="#edit-the-audio">编辑音频</a></li>
+<li><a href="#play-voice-lines-in-your-game">在游戏中播放语音台词</a></li>
+<li><a href="#trigger-gameplay-from-a-voice-line">通过语音台词触发游戏事件</a></li>
+<li><a href="#unity-timeline">Unity Timeline</a></li>
+<li><a href="#process-many-files-at-once">批量处理文件</a></li>
+<li><a href="#offline-engines-no-account-no-api-key">离线引擎（无需账户，无需 API key）</a></li>
+<li><a href="#human-translation-with-google-sheets">通过 Google Sheets 进行人工翻译</a></li>
+<li><a href="#settings">设置</a></li>
+<li><a href="#keyboard-and-mouse">键盘和鼠标</a></li>
+<li><a href="#supported-languages">支持的语言</a></li>
+<li><a href="#your-data-and-online-services">你的数据和在线服务</a></li>
+<li><a href="#ai-generated-voices-in-your-game">在游戏中使用 AI 生成的声音</a></li>
+<li><a href="#where-your-files-go">文件存储位置</a></li>
+<li><a href="#updating-and-uninstalling">更新与卸载</a></li>
+<li><a href="#troubleshooting">故障排除</a></li>
+<li><a href="#support">支持</a></li>
+</ul>
+<p>如何为每项服务获取账户和 API key，请参阅
+<a href="providers.html">提供商设置</a>中的分步说明。</p>
+<hr/>
+<h2 id="before-you-start">开始之前 </h2>
+<ul>
+<li><strong>Unity 2022.3 LTS 或更高版本</strong>（包括 Unity 6），支持任何渲染管线（Built-in、URP、HDRP）。</li>
+<li><strong>TextMesh Pro</strong>——如果项目尚未导入 <em>TMP Essentials</em>，请先导入一次。在 Unity 2022.3 中，先通过 Package Manager 安装
+<strong>TextMeshPro</strong> 包（Unity 6 已自带该包）。</li>
+<li><strong>Unity Timeline</strong> 为可选：安装该包后，Timeline 功能会立即显示。</li>
+<li><strong>在游戏中</strong>，SubVox Pro 可在 Unity 支持的所有平台上运行。</li>
+<li><strong>在编辑器中</strong>，SubVox Pro 已在 <strong>Windows</strong> 上经过测试。使用你自己的 API keys 的云服务应该也能在 macOS 和 Linux 编辑器中运行，但尚未在这些平台上测试。<strong>离线引擎</strong>（无需任何账户即可进行转写、翻译和配音）需要使用 <strong>Windows</strong> 编辑器。</li>
+</ul>
+<hr/>
+<h2 id="quick-start">快速入门 </h2>
+<p>只需几分钟，即可将一个音频剪辑转换为屏幕上的同步字幕。</p>
+<p>SubVox Pro 的所有功能也都可通过 <strong>Tools ▸ SubVox Pro ▸ Hub</strong> 一键访问：这个由功能卡片组成的窗口可打开台词资源编辑器、批量处理、Google Sheets、提供商比较、附加的离线模型、示例场景、文档、提供商设置指南和设置。主界面有<strong>九张功能卡片</strong>。点击 <strong>Documentation</strong> 会打开第二个界面，其中仅包含 <strong>Online</strong>（指南、提供商指南及脚本参考，带英语/法语语言选择器）和 <strong>Local</strong>（英文 PDF，可离线使用）。点击 <strong>Back</strong> 可返回主界面；点击 <strong>Provider Setup</strong> 会直接打开同一份 PDF 的提供商设置部分。</p>
+<p><img alt="SubVox Pro Hub 及其九张工具卡片" src="Images/subvoxpro-hub.png"/></p>
+<p><img alt="Hub 中的文档界面：Online、Local 和 Back" src="Images/subvoxpro-hub-documentation.png"/></p>
+<p><strong>1. 选择转写方式。</strong>可以在
+<strong>Tools ▸ SubVox Pro ▸ Settings</strong> 中粘贴语音识别服务的 API key（<a href="providers.html">如何获取</a>），或者在 Windows 上使用 <strong>Whisper</strong> 或
+<strong>Parakeet</strong>，这两款工具均可免费离线运行（首次使用时会提示下载模型）。</p>
+<p><strong>2. 创建台词资源。</strong>选择 <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line</strong>，选中该资源，然后在 Inspector 中点击 <strong>Set Up Voice Line</strong>。
+SubVox Pro 窗口将打开并显示新的台词资源：检查其 <strong>Language</strong>（首次使用时为英语，之后为上次选择的语言），选择 <strong>Add an audio track</strong> 并选取音频剪辑，或录制一段音频。</p>
+<p>或者，在 Project 窗口中右键单击音频文件，然后选择 <strong>SubVox Pro ▸ Set Up Voice Line</strong>。选择新台词资源的保存位置；编辑器随即打开，并已关联该音频。</p>
+<img alt="新台词资源的起始界面：语言、添加音轨、添加字幕轨道" src="Images/subvoxpro-new-voice-line.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><strong>3. 转写。</strong>在 <strong>AI Tools ▸ Transcription</strong> 中，选择提供商和音频中使用的语言，点击 <strong>Analyze</strong>，然后点击 <strong>Split</strong>。字幕将显示在波形上。</p>
+<p><strong>4. 调整。</strong>拖动波形上的标记，修正下方列表中的文本，按 <strong>Space</strong> 收听。</p>
+<p><strong>5. 在游戏中显示字幕。</strong>将 <strong>[SubVox Pro]</strong> 和 <strong>Subtitle Displayer</strong> 预制体（<code>SubVoxPro/Prefabs</code>）拖放到场景中，然后播放该台词：</p>
+<pre><code class="lang-csharp">using SubVoxPro;
+
+SubVox.Play(myVoiceLine);
+</code></pre>
+<p>想先看看运行效果吗？在 <strong>Hub</strong> 中打开 <strong>Examples</strong>（或通过 <strong>Tools ▸ SubVox Pro ▸ Example Scenes</strong>）：三个现成的场景——3D 寺庙、2D 霓虹车站和黑色电影风格的视觉小说——包含四种语言的语音台词、对话气泡、对话序列、语音事件和字幕选项。只需点击 <strong>Play</strong>。</p>
+<hr/>
+<h2 id="the-subvox-pro-window">SubVox Pro 窗口 </h2>
+<img alt="SubVox Pro 窗口：源轨道、AI Tools、波形时间轴、实时预览和字幕列表" src="Images/subvoxpro-window-overview.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>通过 <strong>Tools ▸ SubVox Pro ▸ Voice Line Editor</strong> 打开窗口，或在台词资源的 Inspector 中点击 <strong>Set Up Voice Line</strong>。从上到下依次为：</p>
+<ul>
+<li><strong>Voice Line Data</strong>——正在编辑的台词资源，包含创建新资源、浏览其他资源、拆分及删除的按钮。彩色圆点是显示在 Project 窗口中资源图标上的<strong>标签</strong>，用于整理台词资源。</li>
+<li><strong>Source</strong>——<strong>AUDIO</strong> 和 <strong>SUBTITLES</strong> 选择器。每个台词资源有一种源语言（旗帜图标；点击可更改），每种翻译或配音语言各有一条轨道。这两个选择器相互独立，因此可以一边收听英语音频，一边阅读法语字幕。</li>
+<li><strong>AI Tools</strong>——转写、翻译和配音（<a href="#transcribe">见下文</a>）。</li>
+<li><strong>Timeline</strong>——带有字幕<strong>标记</strong>的波形图。每个标记代表一条字幕的起始位置；没有文本的标记会清除屏幕上的字幕（称为<strong>空白标记</strong>）。</li>
+<li><strong>实时预览</strong>——播放头所在位置的字幕，显示效果与游戏中一致。在上方选择颜色或样式，然后在词语上拖动以应用颜色或样式（按住鼠标右键拖动可擦除）。</li>
+<li><strong>Subtitles</strong>——每行对应一条字幕：包含名称、时长、说话者和文本，并配有播放按钮。</li>
+</ul>
+<h3 id="tags-and-languages">标签和语言 </h3>
+<p>点击 <strong>Voice Line Data</strong> 旁边的标签，可选择颜色和形状。点击 <strong>Clear tag</strong> 可移除标签。形状有助于区分台词资源，无需仅依赖颜色。点击 <strong>A-Z</strong> 或 <strong>0-9</strong>，可使用字母或数字作为形状。</p>
+<p><img alt="颜色和形状标签弹出窗口，A-Z 选择器已打开，并选中了蓝色字母 A" src="Images/subvoxpro-tag-popup.png"/></p>
+<p>点击源语言旗帜图标以选择音频中使用的语言。旗帜用于标识语言，而非说话者的国籍；选择器会显示语言名称和代码，因此不必靠辨认旗帜来选择语言。</p>
+<p><img alt="源语言选择器显示语言名称、代码和旗帜" src="Images/subvoxpro-language-picker.png"/></p>
+<h3 id="starting-without-audio">无音频起步 </h3>
+<img alt="Add a subtitles track: import an .srt file, import a .txt file or add lines manually" src="Images/subvoxpro-new-voice-line-subtitles.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>台词资源可以从文本开始，而不使用音频：选择 <strong>Add a subtitles track</strong>，然后导入一个 <strong>.srt</strong> 文件（带时间信息的字幕）、一个 <strong>.txt</strong> 文件（每行一条字幕，按适宜的阅读速度自动设置时间），或手动输入字幕文本。设置台词资源的 <strong>Length</strong>；在添加音频或根据文本生成配音之前，该台词资源在游戏中会按此时长播放。</p>
+<h3 id="recording-audio">录制音频 </h3>
+<img alt="Add an audio track: pick an audio clip or record with a microphone" src="Images/subvoxpro-new-voice-line-audio.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><strong>Record with a microphone</strong>（位于 <strong>Add an audio track</strong> 或 AUDIO 选择器旁的 <strong>+</strong> 菜单中）会打开一个小型录音窗口：选择麦克风，观察音量电平，开始录音，回放试听，然后点击 <strong>Use recording</strong>。录制的音频会保存为
+WAV 文件，存放在台词资源所在的文件夹中。在 macOS 上，请在系统设置中允许 Unity 使用麦克风。</p>
+<h3 id="checking-your-subtitles">检查字幕 </h3>
+<ul>
+<li><strong>Show CPS</strong>（位于 <a href="#settings">Settings</a>）会显示每条字幕的阅读速度，并标记阅读速度过快的字幕。</li>
+<li><strong>Check Subtitles</strong>（与 <strong>Show CPS</strong> 一起显示）会逐项引导你处理所有问题，包括名称为空或重复、字幕超出音频剪辑范围、字幕时间重叠和字幕阅读速度过快，并提供一键修复功能。所有操作均可撤销。</li>
+<li><strong>Auto blanks</strong> 会在无人说话时隐藏字幕，且不添加标记。在弹出窗口中开启该功能，并调整触发隐藏所需的静音段时长；隐藏的部分会在波形上以阴影显示。</li>
+<li><strong>Export SRT</strong> 将字幕保存为 <code>.srt</code> 文件。</li>
+</ul>
+<p><img alt="Auto blanks 弹出窗口，包含静音阈值、最短停顿、延后隐藏和提前显示设置" src="Images/subvoxpro-auto-blanks.png"/></p>
+<p><strong>Silence</strong> 设置停顿处的音量需要比说话时低多少；<strong>Min pause</strong> 忽略非常短的停顿。
+<strong>Hold out</strong> 在语音停止后短暂保留字幕，而 <strong>Lead in</strong> 则在语音恢复前提前显示字幕。
+<strong>Only between two lines</strong> 可防止字幕在句子中间消失并重新出现。</p>
+<h3 id="deleting-a-voice-line">删除台词资源 </h3>
+<p>垃圾桶按钮可删除台词资源。它会列出与该台词资源相关的文件：SubVox Pro 生成的文件（配音、录音）会被选中，你自己的文件则不会被选中，而在其他地方仍被使用的文件会被锁定。所有删除的文件都会被移至系统回收站，因此可以恢复。</p>
+<h3 id="splitting-a-voice-line">拆分台词资源 </h3>
+<p>当一个台词资源包含多个需要单独播放的片段时，拆分按钮（位于垃圾桶旁边）会将其拆分为多个台词资源。点击两条字幕之间的位置以添加拆分点，根据需要添加任意数量的拆分点，并为新的台词资源命名。拆分点始终位于两条字幕之间，即它们之间的停顿处。</p>
+<p>每个部分都会保留属于其字幕的所有内容：音频、翻译、配音、说话者、音频效果和事件。第一个部分仍保留在当前台词资源中，因此场景和 Timeline 仍引用该资源；其余部分会创建在该台词资源旁边。每个部分都有自己的音频文件，且原始文件会被保留。拆分操作无法撤销。</p>
+<hr/>
+<h2 id="transcribe">转写 </h2>
+<img alt="AI Tools, Transcription tab with local Whisper" src="Images/subvoxpro-ai-tools-transcription.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<ol>
+<li>选择一个 <strong>Provider</strong>；如果该提供商提供多个模型，再选择一个 <strong>Model</strong>。右侧的状态徽标会显示其是否已就绪（已设置密钥或已下载模型）。</li>
+<li>设置 <strong>Audio Language</strong>（部分提供商会自动检测）。</li>
+<li>点击 <strong>Analyze</strong>：音频将转换为带时间信息的词。</li>
+<li>点击 <strong>Split</strong>：词将被组织为字幕。<strong>Split settings</strong> 用于设定单条字幕的最长时长、字幕比第一个词的发声时间提前多久显示，以及字幕是否应在标点符号处结束。</li>
+</ol>
+<p><strong>Word timing</strong> 用于选择每个词的时间信息来源：<strong>From the provider</strong>（默认）保留转写返回的时间信息；<strong>Qwen3 aligner (local)</strong> 会在 <strong>Split</strong> 后立即重新确定每个词在音频中的时间位置，且不更改文本——这是逐词显示字幕最精确的选项（<a href="#qwen3-offline-word-timing">安装一次即可</a>）。对于 Qwen3 不支持的语言，将保留提供商的时间信息。</p>
+<p>提供商：AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、OpenAI，或离线的 <strong>Whisper</strong> 和 <strong>Parakeet</strong>。不确定该选哪个？<strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> 可将它们并列展示，方便比较价格、免费套餐、商业使用和支持的语言。</p>
+<img alt="Provider Comparison window, Transcription tab" src="Images/subvoxpro-provider-comparison.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<blockquote>
+<p><strong>提示：</strong> OpenAI 的 <strong>gpt-transcribe</strong> 返回的文本不包含词级时间戳；时间信息是在整个音频剪辑范围内估算的。对时间定位有要求时，请使用本地对齐功能或提供词级时间戳的提供商。</p>
+</blockquote>
+<p>转写使用 AUDIO 选择器中选定的音频，因此也可以转写配音。</p>
+<hr/>
+<h2 id="translate">翻译 </h2>
+<img alt="AI Tools, Translation tab" src="Images/subvoxpro-ai-tools-translation.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<ol>
+<li>选择一个 <strong>Provider</strong>：DeepL、Google Translate、OpenAI、Claude、Gemini、DeepSeek 或离线的 <strong>Hy-MT2</strong>。</li>
+<li>勾选一种或多种 <strong>Target</strong> 语言，或选择一个 <strong>preset</strong>，以一次性生成多个语言版本。</li>
+<li>如果该语言区分正式或非正式的“你”，设置 <strong>Formality</strong>。</li>
+<li>点击 <strong>Translate</strong>。每种语言都会生成独立的字幕轨；可通过 SUBTITLES 选择器在它们之间切换。</li>
+</ol>
+<p><img alt="包含多语言预设及其可编辑语言列表的翻译目标弹出窗口" src="Images/subvoxpro-translation-targets.png"/></p>
+<p>在 <strong>Target</strong> 弹出窗口中，在左侧勾选任意数量的语言，然后在右侧点击 <strong>Save as preset</strong>，以便重复使用。选择一个预设可一次性翻译为该预设包含的所有语言；右侧栏可编辑其名称和语言列表。</p>
+<p><strong>辅助翻译。</strong>提供上下文有助于改善含义不明确的台词的翻译效果：为整个台词资源填写<strong>整体上下文</strong>（通过对话气泡按钮）；如有需要，还可为单条字幕添加备注（通过列表中该字幕的对话气泡按钮）。</p>
+<p><strong>保持翻译同步。</strong>在翻译后修改源字幕时，对应译文会显示 <strong>OUT</strong>
+状态徽标：点击 <strong>Synchronize</strong> 仅重新翻译已更改的字幕，也可以在检查该字幕后点击此徽标。移动标记后，句子的切分位置发生变化时，译文字幕会显示 <strong>CUT</strong> 状态徽标：
+<strong>Fix splits</strong> 会请求 AI 提供商在译文中与原文含义相对应的位置重新切分，且不改变译文中的词。配音会自动随之调整。</p>
+<hr/>
+<h2 id="dub-with-text-to-speech">使用语音合成进行配音 </h2>
+<img alt="AI Tools, Dubbing tab with local Chatterbox" src="Images/subvoxpro-ai-tools-dubbing.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<ol>
+<li>在 SUBTITLES 选择器中选择配音语言。</li>
+<li>在 <strong>AI Tools ▸ Dubbing</strong> 中，选择一个 <strong>Provider</strong> 和一个 <strong>Voice</strong>。音色旁边的 ▶ 按钮可播放示例音频。
+<strong>Use speakers' voices</strong> 让每条字幕使用其<a href="#speakers-and-voice-personalities">说话者</a>的音色。</li>
+<li>选择 <strong>Generation</strong> 模式：
+<ul>
+<li><strong>Each subtitle</strong> — 每条字幕单独生成一段音频：最便于逐条修改；</li>
+<li><strong>Per speaker</strong> — 同一角色的每组字幕一起生成一段音频：语流更自然；</li>
+<li><strong>All together</strong> — 一次生成一段连续音频：最自然，但所有内容会一起重新生成；</li>
+<li><strong>Groups</strong> — 自行选择哪些词在同一段音频中生成（见下文）。</li>
+</ul>
+</li>
+<li>点击 <strong>Generate audio</strong>。配音将生成一条新的音轨，当该语言处于活动状态时，该音轨将取代原始音轨播放。</li>
+</ol>
+<p><strong>Groups 模式。</strong>选择 <strong>Groups</strong> 会启用波形上方的 <strong>Groups</strong> 工具。每个组的内容会生成一段音频，采用该组第一个词的音色和配音风格预设，字幕文本也会显示为该组的颜色。起初，所有内容都包含在一个组中。在组内拖动可将其拆分为三个组，新组位于中间：组的起点或终点可以位于一条字幕的中间，每个新组都有自己的颜色。拖动两个组之间的边界可移动边界：将边界推过整个组会删除该组，在松开前拖回则会恢复该组。右键点击一个组可将其删除，相邻的组会取代它。垃圾桶按钮可将所有内容重新合并为一个组。分组设置按字幕语言分别保存。</p>
+<p>提供商：InWorld、ElevenLabs、Gemini、OpenAI、Google Cloud、Azure，以及离线版 <strong>Kokoro</strong>（英语）和
+<strong>Chatterbox</strong>（21 种语言，保留每个角色的声音），此外还有 <strong>Qwen3 TTS 1.7B</strong>（10 种语言，支持参考音频克隆、固定音色和音色设计）以及 <strong>VoxCPM2</strong>（30 种语言，支持通过文字控制风格的参考音频克隆，以及音色设计）。</p>
+<ul>
+<li><strong>Word timing</strong> — <strong>Qwen3 aligner (local)</strong> 使词在被说出的准确时刻显示（<a href="#qwen3-offline-word-timing">只需安装一次</a>）；<strong>Estimated</strong> 将每条字幕中各词的显示时间均匀分配到该字幕的时长内；如果不采用逐词显示，<strong>None</strong> 仅保留字幕的时间信息。安装对齐器后，默认使用 <strong>Qwen3 aligner</strong>；安装前则默认使用 <strong>None</strong>。</li>
+<li><strong>Voice direction</strong> — 对于支持配音指导的提供商，音色旁边的对话气泡按钮可用于指定演绎的语气（例如
+<em>平静、低语</em>）。</li>
+<li><strong>REGEN</strong> — 当某条字幕的配音不再匹配（文本、音色或配音风格预设发生变化）时，该条目上会出现橙色的 <strong>REGEN</strong> 状态徽标。将鼠标悬停在徽标上可查看原因，点击它即可仅重新生成所需部分。</li>
+<li><strong>声音克隆</strong> — 使用 ElevenLabs（付费套餐）、Chatterbox、Qwen Base 或 VoxCPM2 时，选择 <strong>Original voice</strong> 可使用从源音频克隆的声音，让每个角色用自己的声音配音。还可以从<a href="#where-your-files-go">数据文件夹</a>中 <code>Voices</code>
+文件夹内的音频片段克隆声音。仅克隆有权使用的声音。</li>
+</ul>
+<blockquote>
+<p>OpenAI 及其他部分服务要求告知玩家这些声音是由 AI 生成的，参阅
+<a href="providers.html">Provider Setup</a>。</p>
+</blockquote>
+<hr/>
+<h2 id="speakers-and-voice-personalities">说话者与配音风格预设 </h2>
+<h3 id="speakers">说话者 </h3>
+<img alt="Speaker inspector with name style and voice personalities" src="Images/subvoxpro-speaker-inspector.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><strong>说话者</strong>代表一个角色：其名称会以专属颜色显示在字幕前，并保存用于配音的音色。通过 <strong>Assets ▸ Create ▸ SubVox Pro ▸ Speaker</strong> 或窗口中的说话者选择器创建说话者资源。</p>
+<ul>
+<li>在列表上方的 <strong>Speaker</strong> 字段中设置整个台词资源的说话者，或在单条字幕所在的行中设置该字幕的说话者。</li>
+<li>在说话者的 Inspector 中，通过 <strong>Text-to-speech voices</strong> 按提供商设置音色，设置适用于所有语言的备用音色，并可按语言单独覆盖。</li>
+<li>在 <strong>Subtitle Displayer</strong>（或 <strong>Subtitle Document Displayer</strong>）中，<strong>Speaker Name Mode</strong> 可将名称显示在字幕前（<em>Inline</em>）、字幕上方（<em>Above</em>），或隐藏名称（<em>Hidden</em>）。说话者还可以有自己的字体：Subtitle Displayer 使用 <strong>Font
+(TextMeshPro)</strong>，Subtitle Document Displayer 使用 <strong>Font (UI Toolkit)</strong>。</li>
+<li><strong>Keep Background Between Subtitles</strong> 在两条字幕之间的空白时段仅保留字幕面板。该功能默认开启；第一条字幕之前或最后一条字幕之后的空白时段仍会隐藏面板。</li>
+</ul>
+<p><img alt="带有性别选项卡、已选说话者和创建说话者快捷入口的说话者选择器" src="Images/subvoxpro-speaker-picker.png"/></p>
+<p>说话者选择器按性别对角色进行分组。点击铅笔图标可编辑现有说话者；<strong>New speaker</strong> 可创建新的说话者资源。设置单条字幕的说话者覆盖项时，选择顶部选项可恢复为该台词资源的默认说话者。</p>
+<h3 id="voice-personalities">配音风格预设 </h3>
+<p><strong>配音风格预设</strong>是一组可复用的表演指导，例如 <em>愤怒</em>、<em>神秘</em>、<em>低语</em>……可以在说话者资源中通过 <strong>New personality</strong> 创建，也可以通过 <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Personality</strong> 创建。随后可自行编写配音指导，或组合情绪和说话方式，设置各自的强度，再设置语速、音量、音高和咬字方式。点击其图标可从约 40 种符号（情绪、心境、声音和角色）中选择一种，以便在列表中一眼识别。</p>
+<p>通过列表中每条字幕的标签为其指定配音风格预设（在 <strong>Each subtitle</strong> 模式下），或使用说话者的默认预设。各提供商会以自己支持的形式应用能够处理的设置，例如文字形式的配音指导、音频标签或说话风格；有些提供商仅遵循语速与节奏设置。标签的工具提示会说明所选音色将采用哪些设置。配音风格预设决定台词的演绎方式，而非由谁说话：声音的年龄特征应在声音描述中指定（见下文）。</p>
+<hr/>
+<h2 id="edit-the-audio">编辑音频 </h2>
+<p>时间轴工具栏右侧的按钮用于编辑音频本身。每次编辑操作均可通过 <strong>Ctrl+Z</strong> 撤销。</p>
+<p><img alt="音频效果选择器：区分已应用效果与可用效果" src="Images/subvoxpro-audio-effect-picker.png"/></p>
+<p>点击 <strong>Audio effects</strong> 按钮可打开效果列表。已应用的效果会优先显示；选择其中一项进行编辑，或点击其叉号图标重置并移除该效果。</p>
+<ul>
+<li><strong>Crop</strong> — 拖动起始和结束手柄，然后点击 <strong>Apply crop</strong>。此操作会重写源音频文件，因此，如果之后可能还需要完整的录音，请保留一份副本。</li>
+<li><strong>Insert a pause / remove a segment</strong>（<code>|↔|</code> 按钮）— 按住鼠标左键拖动以插入静音段，按住鼠标右键拖动以删除部分内容。其后的字幕、词和事件会随音频移动。当 TTS 语音把两句话连在一起读时，此功能非常实用。</li>
+<li><strong>Audio effects</strong> — 音量曲线、淡入淡出、音量归一化、压缩器、限幅器、噪声门、滤波器、均衡器、电话/无线电效果、音高、语调、声像、距离衰减闷化、房间混响。在时间轴上绘制效果的<em>作用位置</em>，通过滑块设置<em>作用方式</em>，然后点击 <strong>Apply effects</strong>。曲线角落的<strong>磁铁图标</strong>可使控制点与基准值、0 及相邻控制点对齐（按住 <strong>Alt</strong> 键可自由放置控制点）。SubVox Pro 会保留原始音频，因此效果仍可编辑；
+<strong>Flatten</strong> 会使效果永久生效，<strong>Discard</strong> 则会清除所有效果。</li>
+<li><strong>Intonation</strong> — 顶部显示语音的音高变化；在下方轨道中绘制要升高（<strong>+</strong>）或降低（<strong>−</strong>）的幅度，其中 <strong>0</strong> 表示保持不变。<strong>磁铁图标</strong>会按旁边设置的步长吸附绘制轨迹（默认为 0.5 st；按住 <strong>Alt</strong> 键可自由绘制），而<strong>波浪图标</strong>会在设定的时长内平滑处理新绘制的轨迹（0 表示精确保留绘制的轨迹）。按住鼠标右键拖动可恢复原始语音，<strong>Esc</strong> 键可取消当前绘制的轨迹。台词的其余部分保持不变。
+<strong>Pitch</strong> 会整体调整一段音频的音高，并显示相同的语音音高变化。这两种方式都能保持声音自然；调整几个半音（st）效果最佳。<strong>Engine</strong> 下拉菜单提供 <strong>WORLD</strong>（自然，默认）、<strong>PSOLA</strong>（更轻量）或 <strong>Classic</strong>（最快；同时也会改变声音的特性）。</li>
+</ul>
+<p><img alt="在波形上编辑音量效果，带有分贝曲线和可编辑控制点" src="Images/subvoxpro-audio-effects.png"/></p>
+<p>上方的音量曲线仅降低所选片段的音量。波形让时间位置清晰可见，控制点用于调整增益；<strong>0 dB</strong> 保持原始音量不变。</p>
+<p><img alt="语调编辑器，显示检测到的语音音高变化和一条独立的音高偏移绘制轨道" src="Images/subvoxpro-intonation.png"/></p>
+<p>在 <strong>Intonation</strong> 中，上方的曲线显示检测到的语音音高变化。下方轨道显示所做的修改，单位为半音：正值提高音高，负值降低音高，零则保持原始音高。两者分开显示，以便清楚看到声音原有的音高变化与所做的修改。</p>
+<hr/>
+<h2 id="play-voice-lines-in-your-game">在游戏中播放台词 </h2>
+<h3 id="set-up-the-scene">设置场景 </h3>
+<ol>
+<li><p>将 <strong>[SubVox Pro]</strong> 预制体（<code>SubVoxPro/Prefabs</code>）拖入启动场景，只需添加一次。它会播放台词并分发相关事件。（若忘记添加，首次播放台词时系统会自动创建一个默认播放器，并显示警告。）</p>
+</li>
+<li><p>将 <strong>Subtitle Displayer</strong> 预制体（<code>SubVoxPro/Prefabs</code>）拖入场景：这是一个位于屏幕底部的现成字幕框，会随较长的台词扩展，并在台词间隙隐藏。可以自由调整其样式（字体、颜色、位置、大小），或者将 <strong>Subtitle Displayer</strong> 组件添加到自己的 Canvas 中，并为其分配 <strong>Subtitle Text</strong>
+（以及 <strong>Background</strong>，以便在台词间隙隐藏背景）。</p>
+<p><strong>使用 UI Toolkit 代替 Canvas？</strong>改用 <strong>Subtitle Document Displayer</strong> 预制体。它会在 UI Toolkit 文档中显示相同的字幕、说话者名称和样式。可以在 <code>Subtitle Document.uss</code>
+（<code>SubVoxPro/Prefabs/UI/UI Toolkit</code>）中调整其样式，或者将 <strong>Subtitle Document Displayer</strong> 组件添加到自己的 UI Document 中，并为其指定要填充的 Label 名称（以及要在台词间隙隐藏的元素名称）。</p>
+</li>
+</ol>
+<h3 id="play-a-line-from-code">通过代码播放台词 </h3>
+<p>所有操作均通过 <code>SubVox</code> 进行。针对常见情况（等待台词播放结束、响应事件、语言菜单、选项菜单、对话日志、视频字幕等）的现成脚本位于 <code>SubVoxPro/Example/Snippets</code>，可直接复制使用。代码编辑器会在输入时显示每个类、方法和设置的说明。完整的脚本参考文档与本指南一同发布在网上，每个 SubVox Pro 版本各有一页：
+<a href="https://exnihilus.github.io/subvoxpro-docs/">https://exnihilus.github.io/subvoxpro-docs/</a>（也可通过 Hub 中的 <strong>Documentation ▸ Online</strong> 访问）。</p>
+<pre><code class="lang-csharp">using SubVoxPro;
+
+SubVox.Play(myVoiceLine);            // plays, with synced subtitles
+SubVox.PauseAll();                   // game paused
+SubVox.ResumeAll();
+SubVox.StopAll();                    // cutscene skipped
+SubVox.CurrentLanguage = "fr";       // French subtitles and dubs ("" = original)
+</code></pre>
+<p><code>Play</code> 返回该台词的播放对象：可以检查其 <code>State</code>、<code>Time</code> 和 <code>Progress</code>，暂停或停止播放，监听其
+<code>Completed</code> / <code>Interrupted</code> 事件，或在协程中等待播放结束：</p>
+<pre><code class="lang-csharp">yield return SubVox.Play(greeting);  // waits until the line is over
+yield return SubVox.Play(answer);
+</code></pre>
+<p><code>SubVox.IsPlaying(line)</code> 用于判断某条台词是否正在播放，<code>SubVox.Stop(line)</code> 仅停止该台词，而
+<code>SubVox.PlayAt(line, position)</code> 会在世界空间的指定位置播放一次该台词，声音就像从该位置的扬声器中发出。若要在其他地方（如视频、菜单）显示台词，<code>myVoiceLine.GetSubtitleAt(time, language)</code> 可获取任意时刻的字幕，而 <code>TryGetWordAt</code> 可获取该时刻正在说的词。</p>
+<p>在 <strong>Voice Line Manager</strong> 中，<strong>Subtitle Reveal Mode</strong> 支持一次显示一整行字幕（默认）、逐词显示，或以 <strong>Karaoke</strong> 模式显示（显示整行字幕，并高亮当前正在说的词）；Timeline 过场动画也遵循此设置。若要在角色说话时降低音乐音量，为其指定两个 Audio Mixer
+快照：<strong>Ducked Snapshot</strong>（音乐音量降低）和 <strong>Normal Snapshot</strong>。</p>
+<h3 id="voices-in-3d-and-several-at-once">3D 语音及多角色同时对话 </h3>
+<p>为每个会说话的角色添加一个 <strong>Voice Line Emitter</strong>，并将其 AudioSource 设置为 3D：语音将从角色自身发出，且多个角色可以同时说话。</p>
+<pre><code class="lang-csharp">npc.GetComponent&lt;VoiceLineEmitter&gt;().Play(barkLine, EVoiceLinePriority.Low);
+</code></pre>
+<p><strong>优先级</strong>可保护重要台词：在同一个台词播放源上，新台词只有在优先级至少与当前台词相当时，才会替换当前台词；在屏幕上，优先级最高的台词字幕优先显示。若要让台词排队等待播放，使用 <code>EVoiceLinePlayMode.Queue</code>；<code>EVoiceLinePlayMode.IfIdle</code> 仅在台词播放源空闲时才播放该台词。
+<code>Skip()</code> 会立即结束当前台词，如同“跳过对话”按钮，而 <code>ClearQueue()</code> 会清除队列中等待播放的台词。对于背景交谈，可以关闭台词播放源的 <strong>Show Subtitles</strong> 选项，其 <code>VoiceLineCompleted</code> /
+<code>VoiceLineInterrupted</code> 事件分别通知台词正常结束或被中断；<code>Paused</code> / <code>Resumed</code> 事件分别在暂停和恢复播放时触发。<code>PlaybackSpeed</code> 可加快或减慢台词的播放速度。</p>
+<p><strong>口型同步。</strong>每当台词播放源播放到新词时（以及词与词之间），其 <code>WordChanged</code> 事件都会触发，而
+<code>CurrentWord</code> 保存当前正在说的词：这足以让角色张嘴或触发动作。</p>
+<pre><code class="lang-csharp">emitter.WordChanged += word =&gt; mouth.SetBool("Talking", word.Text != null);
+</code></pre>
+<p><strong>对话气泡。</strong>选择一个角色，然后使用 <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>：该角色的头顶会出现一个气泡，仅显示该角色所说的台词。关闭其台词播放源的 <strong>Show Subtitles</strong> 选项，以避免这些字幕出现在屏幕底部。</p>
+<h3 id="without-code">无需代码 </h3>
+<ul>
+<li><strong>Voice Line Zone</strong> — 当玩家进入触发区域（2D 或 3D）时播放一句台词，可仅播放一次，也可设置冷却时间。它可以等待角色说完（<strong>Play mode: Queue</strong>），在玩家离开时停止播放，并在玩家下次进入时再次播放。</li>
+<li><strong>Voice Line Play On Start</strong> — 对象启动时播放一句台词，也可设置延迟后再播放。</li>
+<li><strong>Voice Line Bank</strong>（<strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line Bank</strong>）— 提供多条可选台词，例如守卫的简短喊话：随机播放且不连续重复同一句、打乱顺序播放或按顺序播放。将其放入
+Zone 或 Play On Start 的 <strong>Bank</strong> 字段中。</li>
+<li><strong>Voice Line Sequence</strong>（<strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line Sequence</strong>）— 一段对话：由多句依次播放的台词组成，可自动推进，也可通过调用 <code>Advance()</code> 推进；<code>Previous()</code> 可回退到上一句，用于实现“上一句”按钮。使用 <strong>Voice Line Sequence Player</strong> 播放，其 Inspector 会在 Play
+模式下显示进度。将其 <strong>Direction</strong> 设置为 <strong>Backward</strong>，即可从最后一句播放到第一句。如果角色正在播放更高优先级的台词，对话会等待，随后经过短暂的 <strong>Resume Delay</strong> 再继续。</li>
+</ul>
+<p>这些组件各有一个 <strong>Emitter</strong>（留空时使用默认 emitter）和一个 <strong>Priority</strong>，以及一个公共方法 <code>Play()</code>，可通过按钮或任何 UnityEvent 调用。</p>
+<h3 id="switching-language">切换语言 </h3>
+<p>更改语言会立即切换屏幕上的字幕。配音从下一句台词开始切换，因为一句台词不能在说到一半时切换语言。</p>
+<ul>
+<li><strong>Unity Localization</strong> — 如果项目使用了 Unity 的 Localization 包，SubVox Pro 会自动使用其中选择的语言。若要自行设置语言，请在 Voice Line Manager
+上将 <strong>Language Source</strong> 设置为 <strong>Manual</strong>。</li>
+<li><strong>Speaker 名称</strong> — 同一说话者在不同语言中可以显示不同的名称：填写其 <strong>Localized Names</strong>，或者，在使用 Unity Localization 时，将其 <strong>Localization Table</strong> 和 <strong>Localization Entry</strong> 指向一个字符串。</li>
+<li><strong>相近语言</strong> — 当玩家使用 <code>pt-BR</code>，但没有 <code>pt-BR</code> 翻译时，会听到并看到 <code>pt</code> 的翻译（反之亦然）。</li>
+<li><strong>语言菜单</strong> — <code>myVoiceLine.GetSubtitleLanguages()</code> 和 <code>GetAudioLanguages()</code> 列出一条台词提供的字幕语言和音频语言。</li>
+</ul>
+<h3 id="subtitle-options-for-players">玩家的字幕选项 </h3>
+<p>将这些设置接入选项菜单；所有字幕显示组件都会立即应用这些设置：</p>
+<pre><code class="lang-csharp">SubVox.SubtitlesEnabled = false;       // no subtitles (voices carry on)
+SubVox.SubtitleScale = 1.5f;           // bigger text
+SubVox.BackgroundOpacity = 1f;         // opaque box behind the text
+SubVox.FadeDuration = 0.2f;            // subtitles fade in and out
+SubVox.RevealMode = EVoiceLineSubtitleRevealMode.Karaoke;  // whole line, spoken word highlighted
+</code></pre>
+<p><code>SubVox.History</code> 会保留最近显示的台词（文本、说话者），可用于构建对话记录界面。</p>
+<h3 id="your-own-subtitle-display">自定义字幕显示 </h3>
+<p>字幕显示组件能满足大多数需求。若要以自己的方式绘制字幕，请监听
+<code>SubVox.SubtitleUpdated</code>，它会在字幕发生变化时提供待显示的字幕（文本为空表示
+“清空屏幕”）。订阅后立即读取 <code>SubVox.CurrentSubtitle</code>，以便自定义显示组件也能显示已经在播放的台词。内置字幕显示组件在启用或重新启用时会自动执行此操作；对话气泡则会读取其所属 emitter 的当前字幕。</p>
+<p><code>SubVox.DisplayedVoiceLine</code> 提供选定用于全局显示的台词，也包括 Timeline 剪辑中的台词。
+<code>SubVox.PublishSubtitle(...)</code> 可在字幕显示组件上显示自定义文本，例如在视频播放期间。当 SubVox Timeline
+剪辑处于活动状态时，自定义发布的内容会被忽略，因为此时由该剪辑控制字幕显示。</p>
+<p>若只需调整某个字幕显示组件（更改文本、为文本框添加动画），请创建一个继承自该组件的脚本，并重写
+<code>ComposeText</code> 或 <code>SetVisible</code>。其他组件也可通过相同方式扩展。</p>
+<h3 id="playing-the-audio-with-fmod-wwise-or-a-video">使用 FMOD、Wwise 或视频播放音频 </h3>
+<p>按常规方式将台词的音频（及其各语言配音）导入音频工具，然后让 emitter 跟随你的音频，而非自行播放：</p>
+<pre><code class="lang-csharp">class FmodClock : IVoiceLineAudioClock
+{
+    public FMOD.Studio.EventInstance Instance;
+
+    public float Time { get { Instance.getTimelinePosition(out int ms); return ms / 1000f; } }
+    public bool IsPlaying { get { Instance.getPlaybackState(out var state); return state != FMOD.Studio.PLAYBACK_STATE.STOPPED; } }
+}
+
+emitter.PlayExternal(myVoiceLine, clock);   // subtitles and events follow your audio
+// then start the audio of emitter.CurrentAudioLanguage ("" = original, otherwise that dub)
+</code></pre>
+<p>暂停或停止 emitter 只会影响字幕和事件：请同时暂停或停止你的音频。</p>
+<hr/>
+<h2 id="trigger-gameplay-from-a-voice-line">通过台词触发游戏行为 </h2>
+<img alt="Waveform timeline in Events mode, with an event diamond on the event rail" src="Images/subvoxpro-timeline-events.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>在说到“快跑！”时打开一扇门，在尖叫时让摄像机震动：<strong>事件</strong>会在一句台词的某个时刻触发。</p>
+<ol>
+<li>将时间轴切换至 <strong>Events</strong>，然后点击 <strong>+ Event</strong>（或在波形上单击鼠标中键）。</li>
+<li>为其指定一个<strong>信号</strong> — 这是一个可重复使用的小型资源，用于命名事件，例如 <em>Camera Shake</em>。</li>
+<li>选择<strong>触发时机</strong>：在语音开始或结束时、在指定的时间点，或在某条字幕或某个词处触发（如果该词的时间发生变化，事件也会跟随调整）。拖动菱形图标可移动事件。</li>
+</ol>
+<p>然后通过以下三种方式之一响应事件：</p>
+<ul>
+<li><p><strong>无需代码</strong> — 将 <strong>Voice Line Event Receiver</strong> 添加到对象上，选择信号并连接一个 UnityEvent。</p>
+</li>
+<li><p><strong>特性</strong> — 使用生成的信号常量标记 MonoBehaviour 的任意方法（可在信号的 Inspector
+中复制该常量）：</p>
+<pre><code class="lang-csharp">[VoiceLineEvent(SubVoxEvents.CAMERA_SHAKE)]
+private void Shake()
+{
+    // ...
+}
+</code></pre>
+<p>将信号的可选 <strong>Category</strong> 设置为以 <code>/</code> 分隔的层次结构，例如 <code>Camera/Effects</code>，即可生成
+<code>SubVoxEvents.Camera.Effects.CAMERA_SHAKE</code>。保存、重命名、创建或删除信号时，常量会重新生成。重命名键或类别后，旧引用会产生编译错误，这是有意设计的；字符串键，例如
+<code>[VoiceLineEvent("Camera Shake")]</code>，仍受支持。</p>
+<p>这些常量位于你的数据文件夹中（<code>Generated/SubVoxEvents.g.cs</code>），因此插件更新绝不会覆盖它们。没有程序集定义的脚本可直接访问这些常量；如果脚本使用了程序集定义，请添加对
+<strong>SubVoxPro.Events</strong> 的引用。</p>
+<p><strong>[SubVox Pro]</strong> 预制体会自动查找这些方法。如果在运行时创建对象，请从这些对象中调用
+<code>VoiceLineEventDispatcher.Register(this)</code>。在非常大的场景中，可以取消勾选调度器上的 <strong>Scan Scenes Automatically</strong>，并自行注册对象。</p>
+</li>
+<li><p><strong>C#</strong> — <code>SubVox.Subscribe(signal, MyMethod)</code> 会在每次信号触发时调用你的方法（使用 <code>SubVox.Unsubscribe</code> 取消订阅）。</p>
+</li>
+</ul>
+<p>事件还可以携带 <strong>Payload</strong> — 随事件传递的任意资源；如果方法的参数采用该资源的 type（类型），就会收到该资源 — 还可限制为<strong>每次播放仅触发一次</strong>。事件只在 Play 模式下运行，在编辑或拖动播放头时不会触发。</p>
+<hr/>
+<h2 id="unity-timeline">Unity Timeline </h2>
+<ol>
+<li>在 Timeline 中，选择 <strong>Add ▸ Voice Line Track</strong>。</li>
+<li>将一个台词资源拖放到该轨道上。系统会生成一个字幕片段，其音频位于单独的 <em>Voice Line Audio</em> 轨道上。</li>
+<li>将该音频轨道绑定到 AudioSource，就像处理任何 Audio Track 一样。</li>
+<li>确保场景中包含一个 Subtitle Displayer（使用预制体最为快捷）。</li>
+</ol>
+<p>音频和字幕始终保持同步，包括拖动播放头时。拖放一个 <strong>Voice Line Sequence</strong> 会排布其包含的所有台词。台词资源中的事件会在播放过程中触发；若要将这些事件转换为 Timeline 标记，右键单击片段并选择 <strong>SubVox Pro ▸ Bake Voice Events to Timeline</strong>。</p>
+<p>当台词有当前语言的配音时，过场动画会播放该配音，并保持字幕同步。语言在 Timeline 开始播放时确定。片段会遵循管理器的 <strong>Subtitle Reveal Mode</strong>，除非在该片段上勾选
+<strong>Override Reveal Mode</strong>。</p>
+<p>处于活动状态的 SubVox 片段优先占用全局字幕显示。其他台词资源会继续播放，但其字幕无法替换该片段的文本，包括在字幕空白期间或该片段的第一条字幕出现之前。片段内的字幕空白会照常遵循 <strong>Keep Background Between Subtitles</strong> 设置。</p>
+<p>当片段结束或控制器停止时，字幕显示会立即切换到仍在播放且优先级最高的台词播放源，并显示其当前播放位置对应的字幕；其音频不会重新开始播放。如果没有台词播放源正在播放，面板将隐藏。当多个 SubVox Timeline 轨道或控制器的播放在时间上重叠时，最近进入的片段具有优先权；其他片段结束时，不会清除该优先片段的字幕。暂停控制器后，会保留其选定的字幕，直到播放恢复或控制器停止。</p>
+<hr/>
+<h2 id="process-many-files-at-once">批量处理多个文件 </h2>
+<img alt="Batch Processing window" src="Images/subvoxpro-batch-window.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> 可一次性将一组音频文件或 <code>.srt</code> 文件转换为台词资源。</p>
+<p>若要将项目中已有的音频加入队列，请选中多个音频文件，右键单击并选择
+<strong>SubVox Pro ▸ Batch Processing</strong>。文件会添加到现有队列中，但不会启动批量处理；重复文件将被忽略。请等待正在运行的批量处理完成后，再通过此方式添加文件。</p>
+<ol>
+<li>拖放文件或文件夹，或使用 <strong>Add files…</strong> / <strong>Add folder…</strong>（包含子文件夹）。按钮下方的提示行会显示已添加的文件数量。</li>
+<li>启用所需的步骤：<strong>Transcription</strong>、<strong>Translation</strong>、<strong>Dubbing</strong>，并为所有文件统一设置。转写和翻译各有一个 <strong>Model</strong> 选项，与主窗口共享。单个文件可覆盖其语言设置。要清除为某种语言选择的音色，请右键单击该音色。批量处理为配音提供 <strong>One per line</strong> 和 <strong>All together</strong> 两种选项；<strong>Groups</strong> 则在编辑器中为每个台词资源单独划分。若语言较多，音色列表可滚动查看。</li>
+<li>检查 <strong>Estimated cost</strong>（总费用显示在折叠的标题栏中；点击可查看详情），然后点击 <strong>Run batch</strong>。该按钮在一切准备就绪前始终呈灰色，并会提示缺少哪些设置。如果无法读取音频文件的时长，费用估算会说明这一点，并且不会将该文件计入。</li>
+</ol>
+<p>每个文件都会生成一个独立的台词资源。批量处理会先对所有文件执行一个步骤，再进行下一个步骤（例如先完成所有转写，再完成所有翻译，最后完成所有配音），使用离线引擎时，这样处理更快。你可以随时取消操作并导出本次运行的报告；再次点击 <strong>Run batch</strong> 时，系统会从每个文件上次停止的位置继续处理，即使重启 Unity 后也是如此，且不会再次复制音频。当某一步骤被跳过（例如配音提供商不支持某种语言）时，文件下方会显示一条 ⚠ 提示行说明原因，且该文件状态显示为
+<strong>Done with warnings</strong>。文件处理完成后，点击 <strong>Open</strong> 可在编辑器中查看其台词资源，点击 <strong>Re-run</strong> 则会将其翻译和配音任务重新加入队列（例如在添加新语言后）。</p>
+<hr/>
+<h2 id="offline-engines-no-account-no-api-key">离线引擎（无需账户，无需 API 密钥） </h2>
+<p>在 <strong>Windows</strong> 上的 Unity 编辑器中，SubVox Pro 可在本机免费离线完成所有操作。每个引擎只需下载一次（其提供商选项旁边的按钮显示为 <strong>Setup model</strong> 或 <strong>Install…</strong>），并可供所有项目共享。<strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>（也是 Hub 中的一个功能卡片）会在一个窗口中列出所有引擎，显示其状态，并为每个引擎提供 <strong>Download</strong> 按钮和用于释放磁盘空间的 <strong>Uninstall</strong> 按钮。每个引擎都会显示所需的<strong>最低配置和推荐配置</strong>。配备显卡可显著提升运行速度，但即使没有显卡也能运行。</p>
+<table>
+<thead>
+<tr>
+<th>引擎</th>
+<th>功能</th>
+<th>下载大小</th>
+<th>支持语言</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Whisper</strong></td>
+<td>转写</td>
+<td>1.6 GB（较大模型最高可达 3.1 GB）</td>
+<td>多种语言，支持自动检测</td>
+</tr>
+<tr>
+<td><strong>Parakeet</strong></td>
+<td>转写，即使没有显卡也能快速运行</td>
+<td>670 MB</td>
+<td>25 种欧洲语言，支持自动检测</td>
+</tr>
+<tr>
+<td><strong>Hy-MT2</strong></td>
+<td>翻译</td>
+<td>1.1 GB，或 4.6 GB（准确度更高的模型）</td>
+<td>50 种目标语言中的 37 种（不包括丹麦语、瑞典语、芬兰语、挪威语、希腊语、匈牙利语、罗马尼亚语、保加利亚语、斯洛伐克语、斯洛文尼亚语、爱沙尼亚语、拉脱维亚语、立陶宛语）</td>
+</tr>
+<tr>
+<td><strong>Kokoro</strong></td>
+<td>配音</td>
+<td>370 MB</td>
+<td>英语（美式和英式音色）</td>
+</tr>
+<tr>
+<td><strong>Chatterbox</strong></td>
+<td>配音，可使用各角色自己的声音或 20 种现成音色</td>
+<td>3.3 GB</td>
+<td>21 种语言，另可通过 6 MB 的可选扩展包支持日语</td>
+</tr>
+<tr>
+<td><strong>Qwen3 TTS 1.7B</strong></td>
+<td>配音：克隆音色、预设音色或通过描述指定的音色</td>
+<td>每个模型 2.4 GB</td>
+<td>10 种语言</td>
+</tr>
+<tr>
+<td><strong>VoxCPM2</strong></td>
+<td>使用克隆音色配音，并遵循你设定的角色个性</td>
+<td>3.6 GB</td>
+<td>30 种语言</td>
+</tr>
+<tr>
+<td><strong>Qwen3 Aligner</strong></td>
+<td>为转写结果和配音提供精确的词级时间信息</td>
+<td>1.0 GB</td>
+<td>11 种语言</td>
+</tr>
+</tbody>
+</table>
+<h3 id="whisper-offline-transcription">Whisper（离线转写） </h3>
+<img alt="Whisper local model setup window" src="Images/subvoxpro-whisper-setup.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>在 Transcription 选项卡中选择 <strong>Whisper</strong>，然后点击 <strong>Setup model</strong>。推荐使用 <strong>Large v3 Turbo</strong> 模型：速度快，且准确度几乎与完整规模的模型相当。若配备显卡，一段简短的台词可在约
+1 秒内完成转写。</p>
+<h3 id="parakeet-offline-transcription-european-languages">Parakeet（离线转写，欧洲语言） </h3>
+<img alt="Parakeet local model setup window" src="Images/subvoxpro-parakeet-setup.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>在 Transcription 选项卡中选择 <strong>Parakeet</strong>，然后点击 <strong>Setup model</strong>（670 MB）。NVIDIA 的 Parakeet TDT 会生成带标点符号的文本并附带词级时间信息，且能自动识别所说的语言，因此无需设置。它在任何较新的处理器上运行都很快，即使没有显卡：一段简短的台词仅需不到 1 秒，2 分钟的音频也只需几秒钟。支持语言：保加利亚语、克罗地亚语、捷克语、丹麦语、荷兰语、英语、爱沙尼亚语、芬兰语、法语、德语、希腊语、匈牙利语、意大利语、拉脱维亚语、立陶宛语、马耳他语、波兰语、葡萄牙语、罗马尼亚语、俄语、斯洛伐克语、斯洛文尼亚语、西班牙语、瑞典语和乌克兰语。其他语言请使用 Whisper。</p>
+<h3 id="hy-mt2-offline-translation">Hy-MT2（离线翻译） </h3>
+<img alt="Hy-MT2 local translation setup window" src="Images/subvoxpro-hymt-setup.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>在 Translation 选项卡中选择 <strong>Hy-MT2</strong>，然后点击 <strong>Setup model</strong>。<strong>1.8B</strong> 模型在任何机器上运行都很快；
+<strong>7B</strong> 模型能更好地遵循上下文说明，最适合搭配显存为 8 GB 的显卡使用。两种模型都会遵循上下文说明和正式程度设置。</p>
+<h3 id="kokoro-offline-english-dubbing">Kokoro（离线英语配音） </h3>
+<p>在 Dubbing 选项卡中选择 <strong>Kokoro</strong>，然后点击 <strong>Install Kokoro…</strong>。它附带 11 种英语音色。</p>
+<h3 id="chatterbox-offline-dubbing-in-21-languages">Chatterbox（21 种语言的离线配音） </h3>
+<img alt="Chatterbox 本地配音设置窗口" src="Images/subvoxpro-chatterbox-setup.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>在 Dubbing 选项卡中选择 <strong>Chatterbox</strong>，然后点击 <strong>Install Chatterbox…</strong>。其音色选项包括：</p>
+<ul>
+<li><strong>Original voice</strong>（默认）——无论使用哪种语言，每个角色都保留原音频中的声音；</li>
+<li><strong>20 种随附音色</strong>（10 种语言各含一种女声音色和一种男声音色），均为合成音色，可免费用于商业用途——与 Qwen3 和 VoxCPM2 所用的音色相同；</li>
+<li><strong>Chatterbox default voice</strong>；</li>
+<li><strong>自己的音频片段</strong>——放在数据文件夹的 <code>Voices</code> 文件夹中的任意音频片段（5–10 秒，仅含一个清晰的人声）。</li>
+</ul>
+<p>支持语言：阿拉伯语、中文、丹麦语、荷兰语、英语、芬兰语、法语、德语、希腊语、印地语、意大利语、韩语、马来语、挪威语、波兰语、葡萄牙语、俄语、西班牙语、斯瓦希里语、瑞典语、土耳其语，以及日语（日语支持需在同一窗口中安装）。Dubbing 面板中配音引擎下方的 <strong>Exaggeration</strong>（Batch Processing 和 Settings 中也有此选项）用于调节配音的表现力。每次生成的结果都略有不同：如果某个词读错了，重新生成即可。某些语言的生成结果比其他语言更可靠：参见<a href="providers.html#chatterbox-how-reliable-each-language-is">每种语言的可靠性</a>。</p>
+<h3 id="qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B（离线多语言配音） </h3>
+<p>在 Dubbing 选项卡中选择 <strong>Qwen3 TTS 1.7B</strong>，然后点击 <strong>Install…</strong>。它支持中文、英语、日语、韩语、德语、法语、俄语、葡萄牙语、西班牙语和意大利语，并提供三种模型；安装需要的模型即可（每个约 2.4 GB）：</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>音色</th>
+<th>配音风格预设与配音调整指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Base - Voice Cloning</strong></td>
+<td><strong>Original voice</strong>、20 种随附音色（每种语言各一种女声音色和一种男声音色）、放在 <code>Voices</code> 文件夹中的自己的音频片段</td>
+<td>不遵循：声音保留参考音频中的语气与表达方式</td>
+</tr>
+<tr>
+<td><strong>Custom Voice - 9 Preset Voices</strong></td>
+<td>Vivian、Serena、Uncle Fu、Dylan、Eric、Ryan、Aiden、Ono Anna 和 Sohee</td>
+<td>遵循</td>
+</tr>
+<tr>
+<td><strong>Voice Design - Text Description</strong></td>
+<td>用文字描述的音色</td>
+<td>遵循</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Base</strong> 可克隆声音。随附音色均为合成音色，可免费用于商业用途。若要克隆自己的声音，在音色选择器中选择 <strong>Record a reference…</strong>，并在安静的房间内朗读显示的文本，录制 8–12 秒。</li>
+<li><strong>Custom Voice</strong> 的音色可用于所有支持的语言，但每种音色都会保留其原本语言的轻微口音。</li>
+<li><strong>Voice Design</strong>：在每个角色的说话者资源的 <strong>Voice description</strong> 栏中描述其声音特征（年龄、音色、口音……），然后选择 <strong>Use speakers' voices</strong>。描述栏下方的 <strong>Age</strong> 菜单会自动添加声音的听感年龄。若整条台词仅需一种声音，改在 Dubbing
+面板中进行描述。同一段描述每次生成的声音听起来可能略有差异；当声音必须保持完全一致时，使用 Base。</li>
+</ul>
+<p>在 Settings 中启用 <strong>Use GPU</strong> 可通过显卡加速生成。</p>
+<h3 id="voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2（带风格控制的离线声音克隆） </h3>
+<p>在 Dubbing 选项卡中选择 <strong>VoxCPM2</strong>，然后点击 <strong>Install…</strong>（3.6 GB）。VoxCPM2 不仅能克隆声音，还能遵循配音风格预设和配音调整指令，支持 30 种语言：阿拉伯语、缅甸语、中文、丹麦语、荷兰语、英语、芬兰语、法语、德语、希腊语、希伯来语、印地语、印度尼西亚语、意大利语、日语、高棉语、韩语、老挝语、马来语、挪威语、波兰语、葡萄牙语、俄语、西班牙语、斯瓦希里语、瑞典语、菲律宾语、泰语、土耳其语和越南语。</p>
+<p>其音色选项与 Qwen3 Base 相同：<strong>Original voice</strong>、20 种随附音色、放在 <code>Voices</code>
+文件夹中的自己的音频片段，或 <strong>Record a reference…</strong>。用<strong>英语或中文</strong>输入指令，例如 <code>Speak softly, with a sad tone</code> 或 <code>Whisper quietly</code>：无论台词使用哪种语言，用这两种语言编写指令效果最佳。随附音色用于其他语言时会保留轻微口音；如需地道的口音，使用以配音目标语言录制的参考音频。在 Settings 中启用 <strong>Use GPU</strong> 可通过显卡加速生成。</p>
+<p>若要创建不存在的声音，选择 <strong>Designed voice</strong> 并进行描述，例如 <code>A deep, calm male voice in his fifties</code>，或在描述下方选择 <strong>Age</strong>。该声音会在首次生成时创建，随后保留用于每条台词，因此角色的声音始终一致；配音风格预设仍会决定其语气。若希望每个角色使用不同的声音，在每个说话者资源中填写音色描述，并将其音色设置为 <strong>Designed voice</strong>。</p>
+<h3 id="qwen3-offline-word-timing">Qwen3（离线逐词时间定位） </h3>
+<p>在 Transcription 或 Dubbing 选项卡中，将 <strong>Word timing</strong> 设置为 <strong>Qwen3 aligner (local)</strong>，然后点击 <strong>Install…</strong>。此后，每次对转写结果执行 <strong>Split</strong>，以及每次生成配音时，都会自动逐词对齐，使逐词显示的字幕与声音完全吻合。该功能只确定词的时间位置，绝不会更改文本。支持语言：中文、粤语、英语、法语、德语、意大利语、日语、韩语、葡萄牙语、俄语和西班牙语，音频时长上限为 5 分钟。</p>
+<blockquote>
+<p>如果脚本重新编译或进入 Play 模式，下载会停止：只需在同一窗口中重新开始下载，即可从中断处继续。</p>
+</blockquote>
+<hr/>
+<h2 id="human-translation-with-google-sheets">使用 Google Sheets 进行人工翻译 </h2>
+<p>通过共享的 Google Sheets 表格将台词交给译员，再取回他们的译文，支持双向同步。</p>
+<h3 id="setup-once">设置（仅需一次） </h3>
+<ol>
+<li><strong>Google Cloud</strong> —— 访问 <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>，创建一个项目并启用 <strong>Google Sheets API</strong>。在 <strong>OAuth consent screen</strong> 下，选择 <strong>External</strong>，并将自己和译员添加为 <strong>Test users</strong>。然后创建类型为 <strong>Desktop app</strong> 的 <strong>OAuth client ID</strong>，并复制其 <strong>Client ID</strong> 和 <strong>Client secret</strong>。</li>
+<li><strong>表格</strong> —— 创建一个空白的 Google Sheets 表格，从 URL 中复制其 ID（位于 <code>/d/</code> 和 <code>/edit</code> 之间），并以
+<strong>Editor</strong> 权限与译员共享。</li>
+<li><strong>Unity</strong> —— 打开 <strong>Tools ▸ SubVox Pro ▸ Google Sheets Localization</strong>，粘贴这三个值并点击
+<strong>Connect</strong>，然后在浏览器中登录。</li>
+</ol>
+<h3 id="every-day">日常使用 </h3>
+<p>译员填写各语言列，并将每行标记为 <strong>reviewed</strong> 或 <strong>final</strong>。点击 <strong>Sync with Sheet</strong>：
+SubVox Pro 会显示所有差异，一侧是 Unity，另一侧是表格，你可以在写入任何内容之前选择保留哪一方的内容。表格的关键列已被锁定，因此译员只能编辑翻译内容。状态会以颜色标示（<strong>reviewed</strong> 为琥珀色，<strong>final</strong> 为绿色），空白译文也会着色，因此剩余工作一目了然。每个语音台词条目均以深色标题行开头；可通过左侧边缘的 <strong>+ / −</strong> 按钮折叠或展开其下各行。</p>
+<p>仅在表格中新增的行绝不会被导入（字幕需要时间信息），但删除这些行前，系统也会先征求确认。有两种类型的行默认设置为 <strong>Drop</strong>，因此一次同步即可清理它们：<strong>Duplicate</strong>（同一行在表格中出现两次）和 <strong>Removed</strong>（该行在 Unity 中已不存在，例如在重新划分字幕后）。点击 <strong>Keep</strong> 可将相应的行保留在表格中。</p>
+<p>Spreadsheet ID 旁边的按钮可在浏览器中打开该表格。</p>
+<hr/>
+<h2 id="settings">设置 </h2>
+<img alt="SubVox Pro settings: API keys, preferences, data folder and model catalog" src="Images/subvoxpro-settings.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><strong>Tools ▸ SubVox Pro ▸ Settings</strong>：</p>
+<ul>
+<li><strong>API Keys</strong> — 每个服务使用一个密钥。密钥仅保存在本机上：绝不会保存在项目中、提交到版本控制系统或随项目分发。行末的眼睛图标用于显示或隐藏密钥，红色叉号用于删除密钥。</li>
+<li><strong>Preferences</strong> — <strong>Show CPS</strong>（阅读速度）、<strong>Custom inspectors</strong> 和 <strong>Auto blanks on new lines</strong>。</li>
+<li><strong>Data folder</strong> — 新建台词资源、说话者资源和配音的存储位置。</li>
+<li><strong>Cloud Model Catalog</strong> — 云端 AI 模型及其价格，在线更新。通过 <strong>Manage models</strong> 可添加尚未列出的模型。本地模型通过 <strong>Additional Models</strong> 和相应提供商的控件来选择和安装。</li>
+<li><strong>Local models &amp; services</strong> — 各离线引擎及其状态（<strong>Ready</strong> 或 <strong>Not installed</strong>）、相关选项（显卡使用设置、Chatterbox 表现力）以及用于安装或设置的按钮；此外还可清理
+ElevenLabs 克隆声音。</li>
+</ul>
+<hr/>
+<h2 id="keyboard-and-mouse">键盘和鼠标 </h2>
+<p>在 SubVox Pro 窗口中（在文本字段中输入时，快捷键将被忽略）：</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Space</strong></td>
+<td>从播放头位置播放 / 暂停</td>
+</tr>
+<tr>
+<td><strong>← / →</strong></td>
+<td>将选中的标记（或词、事件）微调 50 ms</td>
+</tr>
+<tr>
+<td><strong>Shift + ← / →</strong></td>
+<td>将选中的标记吸附到上一个 / 下一个词</td>
+</tr>
+<tr>
+<td><strong>Ctrl + ← / →</strong></td>
+<td>选中上一个 / 下一个标记（或词、事件）</td>
+</tr>
+<tr>
+<td><strong>Delete</strong></td>
+<td>删除选中的标记或事件</td>
+</tr>
+<tr>
+<td><strong>Ctrl + Z</strong></td>
+<td>撤销</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>在波形上的鼠标操作</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>单击</strong></td>
+<td>移动播放头</td>
+</tr>
+<tr>
+<td><strong>拖动</strong></td>
+<td>移动标记、词或事件</td>
+</tr>
+<tr>
+<td><strong>拖动播放头的头部或底部</strong></td>
+<td>在编辑音频效果时移动播放头</td>
+</tr>
+<tr>
+<td><strong>Shift + 单击</strong>或<strong>单击鼠标中键</strong></td>
+<td>添加标记（在 Events 模式下则添加事件）</td>
+</tr>
+<tr>
+<td><strong>右键单击</strong></td>
+<td>删除标记或事件</td>
+</tr>
+<tr>
+<td><strong>滚动</strong> / <strong>Ctrl + 滚动</strong></td>
+<td>缩放 / 平移</td>
+</tr>
+</tbody>
+</table>
+<p>波形上方的 <strong>Markers</strong>、<strong>Words</strong> 和 <strong>Events</strong> 按钮用于选择编辑对象。在列表中，双击一行即可播放该字幕。</p>
+<hr/>
+<h2 id="supported-languages">支持的语言 </h2>
+<p><code>✓</code> 可用 · <code>◐</code> 取决于所选提供商或音色 · <code>—</code> 不可用</p>
+<table>
+<thead>
+<tr>
+<th>语言</th>
+<th style="text-align: center;">转写</th>
+<th style="text-align: center;">翻译</th>
+<th style="text-align: center;">配音</th>
+<th style="text-align: center;">配音的逐词时间信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>阿拉伯语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>孟加拉语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>保加利亚语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>缅甸语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>粤语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>中文（普通话）</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>繁体中文</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>克罗地亚语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>捷克语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>丹麦语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>荷兰语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>英语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>爱沙尼亚语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>菲律宾语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>芬兰语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>法语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>德语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>希腊语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>古吉拉特语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>希伯来语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>印地语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>匈牙利语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>印度尼西亚语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>意大利语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>日语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>哈萨克语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>韩语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>拉脱维亚语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>立陶宛语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>马来语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>马耳他语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>马拉地语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>蒙古语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>挪威语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>波斯语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>波兰语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>葡萄牙语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>罗马尼亚语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>俄语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>斯洛伐克语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>斯洛文尼亚语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>西班牙语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>斯瓦希里语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>瑞典语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>泰米尔语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>泰卢固语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>泰语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>土耳其语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>乌克兰语</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>乌尔都语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td>越南语</td>
+<td style="text-align: center;">◐</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">✓</td>
+<td style="text-align: center;">—</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="your-data-and-online-services">你的数据与在线服务 </h2>
+<p>SubVox Pro 仅在你启动使用在线服务的操作时，才会向该服务发送数据。数据直接从你的计算机发送，使用你自己的 API 密钥，且仅包含该操作所需的内容：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>提供商接收的内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>转写</td>
+<td>台词的音频</td>
+</tr>
+<tr>
+<td>翻译、<strong>Fix splits</strong></td>
+<td>字幕文本、语言名称以及你撰写的上下文说明</td>
+</tr>
+<tr>
+<td>配音、音色预览</td>
+<td>待朗读的文本、音色和配音风格设置，以及克隆声音时使用的参考音频</td>
+</tr>
+<tr>
+<td>Google Sheets</td>
+<td>字幕文本，发送至你自己的 Google 账户中的表格</td>
+</tr>
+</tbody>
+</table>
+<p>SubVox Pro 不会向其发布方发送任何数据：无需账户，也不追踪使用情况。SubVox Pro 仅从 GitHub 下载模型列表，并在你点击 <strong>Download</strong> 时下载模型本身。
+<a href="#offline-engines-no-account-no-api-key">离线引擎</a>将所有内容保存在你的计算机上。</p>
+<p>提供商如何处理你的数据（存储、用于训练、免费套餐中的商业使用）取决于其自身的条款，<a href="providers.html">Provider Setup</a> 中对这些条款作了总结。对于不得分享的剧本或录音，请使用离线引擎。</p>
+<hr/>
+<h2 id="ai-generated-voices-in-your-game">游戏中 AI 生成的声音 </h2>
+<ul>
+<li><strong>告知玩家。</strong> OpenAI 要求告知玩家他们听到的声音是由 AI 生成的，而且某些商店（例如 Steam）在你发布时会要求你声明 AI 生成的内容。在游戏制作人员名单或设置菜单中添加一行说明是常见的做法。</li>
+<li><strong>仅克隆你有权使用的声音。</strong>取得声音被克隆的演员的书面同意。离线引擎自带的参考声音可免费使用。</li>
+<li><strong>检查所用套餐。</strong>某些免费套餐禁止商业使用：参阅
+<a href="providers.html">Provider Setup</a> 中的免费套餐对照表。</li>
+<li><strong>请人审核翻译内容。</strong>发布前，可请母语使用者通过
+<a href="#human-translation-with-google-sheets">Google Sheets</a> 进行核对。</li>
+</ul>
+<hr/>
+<h2 id="where-your-files-go">文件存储位置 </h2>
+<p>你的工作成果保存在<strong>数据文件夹</strong>中，默认路径为 <code>Assets/Data/SubVoxPro/</code>（可在
+<a href="#settings">设置</a>中更改）。该文件夹位于 SubVox Pro 文件夹之外，因此更新插件时不会影响它。</p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>台词资源</td>
+<td>数据文件夹中的 <code>Voicelines/</code></td>
+</tr>
+<tr>
+<td>配音和麦克风录音</td>
+<td>台词资源旁的 <code>Dubs/</code> 和 <code>Recordings/</code></td>
+</tr>
+<tr>
+<td>说话者资源和配音风格预设</td>
+<td>数据文件夹中的 <code>Speakers/</code></td>
+</tr>
+<tr>
+<td>事件信号</td>
+<td>数据文件夹中的 <code>Event Signals/</code></td>
+</tr>
+<tr>
+<td>用于克隆声音的音频片段</td>
+<td>数据文件夹中的 <code>Voices/</code></td>
+</tr>
+<tr>
+<td>API 密钥</td>
+<td>本机的 Unity 首选项中，绝不会保存在项目中</td>
+</tr>
+<tr>
+<td>离线引擎</td>
+<td>你的用户文件夹（<code>AppData/Local/SubVoxPro</code>），所有项目共用</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="updating-and-uninstalling">更新与卸载 </h2>
+<p><strong>更新</strong></p>
+<ol>
+<li>提交或备份项目。</li>
+<li>通过 <strong>Window ▸ Package Manager ▸ My Assets</strong> 导入新版本。数据文件夹、设置、API 密钥和已下载的模型会保留。如果移动过 SubVox Pro 文件夹，更新会应用到移动后的文件夹。</li>
+<li>重启 Unity，以便使用新的离线引擎文件。</li>
+</ol>
+<p><strong>卸载</strong></p>
+<ol>
+<li>从场景和预制体中移除 SubVox Pro 组件。</li>
+<li>要从本机删除 API 密钥，请在 <a href="#settings">Settings</a> 中点击 <strong>Clear API Keys</strong>。如果已连接
+Google 账户，还需在 Google Sheets 窗口和 Google Cloud TTS 登录界面中分别点击 <strong>Disconnect</strong>。</li>
+<li>要释放离线引擎占用的磁盘空间，请在 <strong>Additional Models</strong> 中针对每个引擎点击 <strong>Uninstall</strong>。这些引擎由所有项目共享，因此仅在没有其他项目使用它们时执行此操作。</li>
+<li>删除 SubVox Pro 文件夹、<code>Assets/Editor/SubVoxPro</code>（设置），并在不再需要台词资源时删除数据文件夹（默认位于 <code>Assets/Data/SubVoxPro</code>）。如果保留数据文件夹，至少删除其中的 <code>Generated</code>
+文件夹，因为该文件夹中的代码需要 SubVox Pro 才能编译。</li>
+</ol>
+<p>关闭 Unity 时会自动删除临时文件。</p>
+<hr/>
+<h2 id="troubleshooting">故障排除 </h2>
+<ul>
+<li><strong>离线引擎加载失败，提示缺少 DLL 文件</strong> —— 从 Microsoft 官网安装最新的 <em>Microsoft Visual C++
+Redistributable (x64)</em>，然后重启 Unity。</li>
+<li><strong>下载中断</strong> —— 脚本重新编译或进入 Play mode 都会中断下载。重新打开同一设置窗口：下载将自动恢复。</li>
+<li><strong>Gemini 配音变慢或停止</strong> —— Gemini 免费方案每分钟和每天仅允许少量语音请求。
+SubVox Pro 会自动等待并重试；选择 <strong>Per speaker</strong> 或 <strong>All together</strong> 可减少请求数量，在 Google 项目中启用计费可解除此限制。</li>
+<li><strong>在 macOS 上录音器无法检测到麦克风</strong> —— 在系统设置 ▸ 隐私与安全性 ▸ 麦克风中允许 Unity 访问麦克风。</li>
+<li><strong>游戏中屏幕上没有显示内容</strong> —— 检查场景中是否有 Subtitle Displayer 并已为其指定文本，以及播放该台词的台词播放源是否已开启 <strong>Show Subtitles</strong>。</li>
+</ul>
+<hr/>
+<h2 id="support">支持 </h2>
+<p>问题、错误报告和功能请求：<strong>exnihilus.assets@gmail.com</strong>。请提供 Unity 版本、涉及的提供商或引擎，以及 Console 中的错误信息（如有）。</p>
+<hr/>
+<p><sub>SubVox Pro © 2026 Louis Nillus（ExNihilus）。保留所有权利。依据 Unity Asset Store EULA 授权。</sub></p>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,6 +1,6 @@
-const LANGUAGES = [["en", "English", ""], ["fr", "Français", "fr/"], ["de", "Deutsch", "de/"], ["ja", "日本語", "ja/"]];
+const LANGUAGES = [["en", "English", ""], ["fr", "Français", "fr/"], ["de", "Deutsch", "de/"], ["ja", "日本語", "ja/"], ["zh-Hans", "简体中文", "zh-Hans/"]];
 const current = () => LANGUAGES.find(([language]) => language === document.documentElement.lang) ?? LANGUAGES[0];
-export const localize = (english, french, german, japanese) => ({ fr: french, de: german, ja: japanese })[current()[0]] ?? english;
+export const localize = (english, french, german, japanese, chinese) => ({ fr: french, de: german, ja: japanese, "zh-Hans": chinese })[current()[0]] ?? english;
 
 export function documentationRoot() {
   const relative = document.querySelector('meta[name="docfx:rel"]')?.content ?? "";
@@ -10,10 +10,10 @@ export function documentationRoot() {
 
 export function startLanguagePicker() {
   const root = documentationRoot();
-  const page = location.pathname.slice(root.pathname.length).replace(/^(fr|de|ja)\//, "");
+  const page = location.pathname.slice(root.pathname.length).replace(/^(fr|de|ja|zh-Hans)\//, "");
   const picker = document.createElement("div");
   picker.className = "dropdown svx-language";
-  picker.innerHTML = `<button class="btn border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="${localize("Documentation language", "Langue de la documentation", "Sprache der Dokumentation", "ドキュメントの言語")}">
+  picker.innerHTML = `<button class="btn border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="${localize("Documentation language", "Langue de la documentation", "Sprache der Dokumentation", "ドキュメントの言語", "文档语言")}">
       <i class="bi bi-translate" aria-hidden="true"></i><span>${current()[1]}</span></button>
     <ul class="dropdown-menu dropdown-menu-end"></ul>`;
   for (const [language, label, folder] of LANGUAGES) {

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>类 VoiceLineSequencePlayer | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineSequencePlayer | SubVox Pro 文档 " name="title"/>
+<meta content="运行时逐行播放文件。 每个步骤可在当前行播放完毕后（可选延迟）自动前进，或通过手动前进——该事件可与任何UnityEvent、交互或UI按钮绑定——而则可返回上一行。步骤按的顺序播放。若台词播放源正忙而拒绝了某个步骤，该步骤将等待其空闲。提供UnityEvents以便场景逻辑无需代码即可响应，同时也提供相同的C#事件供代码使用。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.VoiceLineSequencePlayer.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.VoiceLineSequencePlayer.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.VoiceLineSequencePlayer.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.VoiceLineSequencePlayer.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/api/SubVoxPro.VoiceLineSequencePlayer.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.VoiceLineSequencePlayer">
+<h1 class="text-break" data-uid="SubVoxPro.VoiceLineSequencePlayer" id="SubVoxPro_VoiceLineSequencePlayer">
+类 VoiceLineSequencePlayer  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>命名空间</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>程序集</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>运行时逐行播放<a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a>文件。 每个步骤可在当前行播放完毕后（可选延迟）自动前进，或通过<a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Advance">Advance()</a>手动前进——该事件可与任何UnityEvent、交互或UI按钮绑定——而<a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Previous">Previous()</a>则可返回上一行。步骤按<a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a>的顺序播放。若台词播放源正忙而拒绝了某个步骤，该步骤将等待其空闲。提供UnityEvents以便场景逻辑无需代码即可响应，同时也提供相同的C#事件供代码使用。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class VoiceLineSequencePlayer : MonoBehaviour</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>继承</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineSequencePlayer</span></div>
+</dd>
+</dl>
+<h2 id="SubVoxPro_VoiceLineSequencePlayer_examples">Examples</h2>
+<pre><code class="lang-csharp">_player.StepStarted += (index, line) =&gt; _portrait.Show(index);
+_player.SequenceCompleted += () =&gt; _dialogueBox.Close();
+_player.Play();</code></pre>
+<h2 class="section" id="constructors">构造函数
+</h2>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.#ctor*" id="SubVoxPro_VoiceLineSequencePlayer__ctor_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.#ctor" id="SubVoxPro_VoiceLineSequencePlayer__ctor">
+  VoiceLineSequencePlayer()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineSequencePlayer()</code></pre>
+</div>
+<h2 class="section" id="properties">属性
+</h2>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.CurrentStepIndex*" id="SubVoxPro_VoiceLineSequencePlayer_CurrentStepIndex_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.CurrentStepIndex" id="SubVoxPro_VoiceLineSequencePlayer_CurrentStepIndex">
+  CurrentStepIndex
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前播放步骤的索引，若播放器处于空闲状态则为 -1。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public int CurrentStepIndex { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Direction*" id="SubVoxPro_VoiceLineSequencePlayer_Direction_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Direction" id="SubVoxPro_VoiceLineSequencePlayer_Direction">
+  Direction
+  
+  </h3>
+<div class="markdown level1 summary"><p>步骤的执行顺序。<a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Play">Play()</a> 从该顺序的第一步开始执行；在序列播放过程中进行的更改将从下一步开始生效。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLineSequenceDirection Direction { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineSequenceDirection.html">EVoiceLineSequenceDirection</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.IsPlaying*" id="SubVoxPro_VoiceLineSequencePlayer_IsPlaying_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.IsPlaying" id="SubVoxPro_VoiceLineSequencePlayer_IsPlaying">
+  IsPlaying
+  
+  </h3>
+<div class="markdown level1 summary"><p>从调用 Play 起，直到序列完成、停止或中断，此值均为 true。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsPlaying { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.IsWaitingForDelay*" id="SubVoxPro_VoiceLineSequencePlayer_IsWaitingForDelay_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.IsWaitingForDelay" id="SubVoxPro_VoiceLineSequencePlayer_IsWaitingForDelay">
+  IsWaitingForDelay
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前台词已结束且序列正在等待进入下一步的延迟结束时，此值为 true。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsWaitingForDelay { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.IsWaitingForEmitter*" id="SubVoxPro_VoiceLineSequencePlayer_IsWaitingForEmitter_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.IsWaitingForEmitter" id="SubVoxPro_VoiceLineSequencePlayer_IsWaitingForEmitter">
+  IsWaitingForEmitter
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前步骤正在等待其台词播放源空闲时，此值为 true。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsWaitingForEmitter { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.IsWaitingForManualAdvance*" id="SubVoxPro_VoiceLineSequencePlayer_IsWaitingForManualAdvance_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.IsWaitingForManualAdvance" id="SubVoxPro_VoiceLineSequencePlayer_IsWaitingForManualAdvance">
+  IsWaitingForManualAdvance
+  
+  </h3>
+<div class="markdown level1 summary"><p>当前台词已结束且序列正在等待 <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Advance">Advance()</a> 时，此值为 true。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool IsWaitingForManualAdvance { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Sequence*" id="SubVoxPro_VoiceLineSequencePlayer_Sequence_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Sequence" id="SubVoxPro_VoiceLineSequencePlayer_Sequence">
+  Sequence
+  
+  </h3>
+<div class="markdown level1 summary"><p>该播放器运行的序列。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineSequenceData Sequence { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">方法
+</h2>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Advance*" id="SubVoxPro_VoiceLineSequencePlayer_Advance_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Advance" id="SubVoxPro_VoiceLineSequencePlayer_Advance">
+  Advance()
+  
+  </h3>
+<div class="markdown level1 summary"><p>手动跳转至下一步。也可跳过正在播放的台词，或跳过处于延迟状态或等待台词播放源的台词。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Advance()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.OnDisable*" id="SubVoxPro_VoiceLineSequencePlayer_OnDisable_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.OnDisable" id="SubVoxPro_VoiceLineSequencePlayer_OnDisable">
+  OnDisable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写此方法时，调用基类方法。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnDisable()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.OnSequenceCompleted*" id="SubVoxPro_VoiceLineSequencePlayer_OnSequenceCompleted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.OnSequenceCompleted" id="SubVoxPro_VoiceLineSequencePlayer_OnSequenceCompleted">
+  OnSequenceCompleted()
+  
+  </h3>
+<div class="markdown level1 summary"><p>在最后一步结束时、<strong>Sequence Completed</strong> 触发之前调用。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnSequenceCompleted()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.OnSequenceInterrupted*" id="SubVoxPro_VoiceLineSequencePlayer_OnSequenceInterrupted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.OnSequenceInterrupted" id="SubVoxPro_VoiceLineSequencePlayer_OnSequenceInterrupted">
+  OnSequenceInterrupted()
+  
+  </h3>
+<div class="markdown level1 summary"><p>在序列因其台词被停止或替换而停止时、<strong>Sequence Interrupted</strong> 触发之前调用。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnSequenceInterrupted()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.OnStepCompleted*" id="SubVoxPro_VoiceLineSequencePlayer_OnStepCompleted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.OnStepCompleted(System.Int32,SubVoxPro.VoiceLineData)" id="SubVoxPro_VoiceLineSequencePlayer_OnStepCompleted_System_Int32_SubVoxPro_VoiceLineData_">
+  OnStepCompleted(int, VoiceLineData)
+  
+  </h3>
+<div class="markdown level1 summary"><p>在步骤的台词播放完毕时、<strong>Step Completed</strong> 触发之前调用。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnStepCompleted(int step_index, VoiceLineData voice_line)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>step_index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+<dd></dd>
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.OnStepStarted*" id="SubVoxPro_VoiceLineSequencePlayer_OnStepStarted_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.OnStepStarted(System.Int32,SubVoxPro.VoiceLineData)" id="SubVoxPro_VoiceLineSequencePlayer_OnStepStarted_System_Int32_SubVoxPro_VoiceLineData_">
+  OnStepStarted(int, VoiceLineData)
+  
+  </h3>
+<div class="markdown level1 summary"><p>在步骤开始时、<strong>Step Started</strong> 触发之前调用。在子类中重写此方法以进行响应。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnStepStarted(int step_index, VoiceLineData voice_line)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>step_index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+<dd></dd>
+<dt><code>voice_line</code> <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Play*" id="SubVoxPro_VoiceLineSequencePlayer_Play_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Play" id="SubVoxPro_VoiceLineSequencePlayer_Play">
+  Play()
+  
+  </h3>
+<div class="markdown level1 summary"><p>从第一步开始（或重新开始）播放指定的序列（当 <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a> 为 Backward 时，从最后一步开始）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Play()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Play*" id="SubVoxPro_VoiceLineSequencePlayer_Play_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Play(SubVoxPro.VoiceLineSequenceData)" id="SubVoxPro_VoiceLineSequencePlayer_Play_SubVoxPro_VoiceLineSequenceData_">
+  Play(VoiceLineSequenceData)
+  
+  </h3>
+<div class="markdown level1 summary"><p>从第一步开始（或重新开始）播放给定的序列（当 <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a> 为 Backward 时，从最后一步开始）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Play(VoiceLineSequenceData sequence)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>sequence</code> <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.PlayFrom*" id="SubVoxPro_VoiceLineSequencePlayer_PlayFrom_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.PlayFrom(System.Int32)" id="SubVoxPro_VoiceLineSequencePlayer_PlayFrom_System_Int32_">
+  PlayFrom(int)
+  
+  </h3>
+<div class="markdown level1 summary"><p>从给定步骤开始（或重新开始）播放指定的序列，例如用于恢复已保存的对话。后续步骤按 <a class="xref" href="SubVoxPro.VoiceLineSequencePlayer.html#SubVoxPro_VoiceLineSequencePlayer_Direction">Direction</a> 指定的顺序播放。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void PlayFrom(int step_index)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>step_index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Previous*" id="SubVoxPro_VoiceLineSequencePlayer_Previous_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Previous" id="SubVoxPro_VoiceLineSequencePlayer_Previous">
+  Previous()
+  
+  </h3>
+<div class="markdown level1 summary"><p>返回当前台词之前播放的台词并重新播放，例如通过“上一条台词”按钮调用。在序列的第一条台词处调用时，重新播放该台词。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Previous()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Start*" id="SubVoxPro_VoiceLineSequencePlayer_Start_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Start" id="SubVoxPro_VoiceLineSequencePlayer_Start">
+  Start()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写此方法时，调用基类方法。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void Start()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Stop*" id="SubVoxPro_VoiceLineSequencePlayer_Stop_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Stop" id="SubVoxPro_VoiceLineSequencePlayer_Stop">
+  Stop()
+  
+  </h3>
+<div class="markdown level1 summary"><p>停止当前序列及其正在播放的台词。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Stop()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineSequencePlayer.Stop*" id="SubVoxPro_VoiceLineSequencePlayer_Stop_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.Stop(System.Boolean)" id="SubVoxPro_VoiceLineSequencePlayer_Stop_System_Boolean_">
+  Stop(bool)
+  
+  </h3>
+<div class="markdown level1 summary"><p>停止序列。stop_line 为 false 时，正在播放的台词会继续播放完毕。当台词在所属台词播放源上被停止或被更重要的台词替换时，序列也会自行停止，并触发 <strong>Sequence Interrupted</strong>。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void Stop(bool stop_line)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>stop_line</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="events">事件
+</h2>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.SequenceCompleted" id="SubVoxPro_VoiceLineSequencePlayer_SequenceCompleted">
+  SequenceCompleted
+  
+  </h3>
+<div class="markdown level1 summary"><p>在最后一步完成后触发。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action SequenceCompleted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.SequenceInterrupted" id="SubVoxPro_VoiceLineSequencePlayer_SequenceInterrupted">
+  SequenceInterrupted
+  
+  </h3>
+<div class="markdown level1 summary"><p>在序列因其台词在台词播放源上被停止或替换而自行停止时触发。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action SequenceInterrupted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.StepCompleted" id="SubVoxPro_VoiceLineSequencePlayer_StepCompleted">
+  StepCompleted
+  
+  </h3>
+<div class="markdown level1 summary"><p>在步骤的台词播放完毕时触发，并传递步骤索引及其台词资源。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;int, VoiceLineData&gt; StepCompleted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a>&gt;</dt>
+<dd></dd>
+</dl>
+<h3 data-uid="SubVoxPro.VoiceLineSequencePlayer.StepStarted" id="SubVoxPro_VoiceLineSequencePlayer_StepStarted">
+  StepStarted
+  
+  </h3>
+<div class="markdown level1 summary"><p>在步骤开始时触发，并传递步骤索引及其台词资源。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public event Action&lt;int, VoiceLineData&gt; StepStarted</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a>&gt;</dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

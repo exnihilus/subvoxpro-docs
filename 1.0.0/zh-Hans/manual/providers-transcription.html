@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>转写提供商 | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="转写提供商 | SubVox Pro 文档 " name="title"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../manual/providers-transcription.html">
+<link rel="alternate" hreflang="fr" href="../../fr/manual/providers-transcription.html">
+<link rel="alternate" hreflang="de" href="../../de/manual/providers-transcription.html">
+<link rel="alternate" hreflang="ja" href="../../ja/manual/providers-transcription.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/manual/providers-transcription.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="">
+<h1 id="transcription-providers">转写提供商 </h1>
+<details id="assemblyai" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="assemblyai-setup"><strong>AssemblyAI</strong></h2></summary>
+<p><strong>用途：</strong>带词级时间信息的语音识别。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> 访问 <strong><a href="https://www.assemblyai.com/dashboard/signup">https://www.assemblyai.com/dashboard/signup</a></strong> 并创建账户（电子邮件或 SSO）。无需信用卡；新账户可获得约 <strong>$50 的免费额度</strong>（约 330 小时）。</p>
+<img alt="AssemblyAI sign-up page" src="Images/assemblyai-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> 验证邮箱后，在左侧边栏中打开 <strong>Manage ▸ API Keys</strong>。</p>
+<img alt="AssemblyAI API Keys entry in the sidebar" src="Images/assemblyai-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> AssemblyAI 会为该项目生成一个 <strong>Default API Key</strong>。可以复制该密钥；如果需要专用于 SubVox Pro 的密钥，可以点击 <strong>Create new API key</strong>。</p>
+<img alt="AssemblyAI API Keys page" src="Images/assemblyai-api-keys-page.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> 如果创建新密钥，为其设置一个易于识别的名称，例如 <code>SubVoxPro</code> 或项目名称，然后点击 <strong>Create</strong>。</p>
+<img alt="AssemblyAI create API key dialog" src="Images/assemblyai-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> 从密钥所在的表格行中复制 API 密钥。</p>
+<img alt="AssemblyAI API key row" src="Images/assemblyai-api-key-row.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> 将其粘贴到 SubVox Pro 中（Settings ▸ <em>AssemblyAI</em>）。</p>
+<blockquote>
+<p>免费账户上限为 2 个项目 / 2 个 API 密钥，这对 SubVox Pro 来说已经绰绰有余。帮助文章：<a href="https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key">https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key</a></p>
+</blockquote>
+</details>
+<details id="gladia" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="gladia-setup"><strong>Gladia</strong></h2></summary>
+<p><strong>用途：</strong>语音识别。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> 在 <strong><a href="https://app.gladia.io">https://app.gladia.io</a></strong> 注册（邮箱或 Google 账号）。</p>
+<img alt="Gladia sign-up page" src="Images/gladia-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> 登录后，在左侧边栏中打开 <strong>API Keys</strong>。Gladia 会在此处列出与账户关联的所有密钥。</p>
+<img alt="Gladia API Keys entry in the sidebar" src="Images/gladia-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> 如果想为 SubVox Pro 创建专用密钥，填写创建表单，并设置一个易于识别的名称，例如 <code>SubVoxPro</code> 或项目名称。</p>
+<img alt="Gladia create API key form" src="Images/gladia-create-api-key.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>创建完成后，从列表中复制该密钥。Gladia 之后可能只显示密钥的部分内容，因此<u>趁还能获取完整令牌时立即复制</u>。</p>
+<img alt="Gladia API key row" src="Images/gladia-example-key.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> 将其粘贴到 SubVox Pro 中（Settings ▸ <em>Gladia</em>）。</p>
+<blockquote>
+<p>免费套餐：<strong>每月 10 小时转写</strong>（每小时最多 20 次 API 调用，最多 3 个并发任务）。帮助：<a href="https://support.gladia.io/article/how-to-get-the-api-key-from-my-account">https://support.gladia.io/article/how-to-get-the-api-key-from-my-account</a></p>
+</blockquote>
+</details>
+<details id="deepgram" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="deepgram-setup"><strong>Deepgram</strong></h2></summary>
+<p><strong>用途：</strong>语音识别。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> 在 <strong><a href="https://console.deepgram.com/signup">https://console.deepgram.com/signup</a></strong> 注册账户。无需信用卡，即可获得 <strong>$200 免费额度</strong>（注册后 1 年内有效）。</p>
+<img alt="Deepgram Console sign-up page" src="Images/deepgram-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> 在控制台中，从左侧边栏打开 <strong>API Keys</strong>。</p>
+<img alt="Deepgram API Keys entry in the sidebar" src="Images/deepgram-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> 点击 <strong>Create a New API Key</strong>。</p>
+<img alt="Deepgram create API key button" src="Images/deepgram-create-api-key-button.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> 为密钥设置一个易于识别的名称。在 <strong>Set expiration</strong> 中，选择适合工作流程的时长；SubVox Pro 并不要求密钥具有特定的有效期。</p>
+<img alt="Deepgram create API key dialog" src="Images/deepgram-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> 复制生成的密钥并将其保存在安全的地方。<u>Deepgram 无法再次显示此密钥</u>。</p>
+<img alt="Deepgram generated API key secret" src="Images/deepgram-new-api-key-secret.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> 将其粘贴到 SubVox Pro 中（Settings ▸ <em>Deepgram</em>）。</p>
+</details>
+<details id="speechmatics" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="speechmatics-setup"><strong>Speechmatics</strong></h2></summary>
+<p><strong>用途：</strong>语音识别。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> 访问 <strong>Speechmatics Portal</strong>（<strong><a href="https://portal.speechmatics.com">https://portal.speechmatics.com</a></strong>），并创建一个账户。免费套餐提供一次性 <strong>$100 免费额度</strong>，无需绑定信用卡。</p>
+<img alt="Speechmatics Portal sign-up page" src="Images/speechmatics-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> 在项目侧边栏中，打开 <strong>Manage ▸ API Keys</strong>。</p>
+<img alt="Speechmatics API Keys entry in the sidebar" src="Images/speechmatics-api-keys-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> 点击 <strong>Create new key</strong>。</p>
+<img alt="Speechmatics create new key button" src="Images/speechmatics-create-key-empty.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> 为密钥设置一个易于识别的名称，然后点击 <strong>Generate new key</strong>。</p>
+<img alt="Speechmatics create API key form" src="Images/speechmatics-create-api-key-form.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> 在关闭对话框前复制该密钥。<u>出于安全考虑，Speechmatics 不会再次显示该密钥</u>。</p>
+<img alt="Speechmatics save API key dialog" src="Images/speechmatics-save-api-key.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> 将其粘贴到 SubVox Pro 中（Settings ▸ <em>Speechmatics</em>）。</p>
+<blockquote>
+<p>文档：<a href="https://docs.speechmatics.com/get-started/authentication">https://docs.speechmatics.com/get-started/authentication</a></p>
+</blockquote>
+</details>
+<details id="elevenlabs" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="elevenlabs-setup"><strong>ElevenLabs</strong></h2></summary>
+<p><strong>用途：</strong>语音识别（ElevenLabs Scribe）和语音合成配音。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> 在 <strong><a href="https://elevenlabs.io">https://elevenlabs.io</a></strong> 注册（电子邮件或 SSO）。无需信用卡；免费套餐包含少量月度配额（约 10 分钟）。免费套餐仅限<strong>非商业用途</strong>，且需注明使用了 ElevenLabs：为发布的游戏进行配音需要付费套餐。</p>
+<img alt="ElevenLabs sign-up page" src="Images/elevenlabs-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> 登录后，从左侧边栏打开 <strong>Developers</strong>。ElevenLabs 将 API 访问、日志、Webhook 和环境变量集中在此处。</p>
+<img alt="ElevenLabs Developers entry in the sidebar" src="Images/elevenlabs-developers-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> 在 Developers 页面中，选择 <strong>API Keys</strong> 选项卡，然后点击 <strong>Create Key</strong>。</p>
+<img alt="ElevenLabs API Keys tab" src="Images/elevenlabs-api-keys-tab.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> 为密钥设置一个易于识别的名称。如果启用了 <strong>Restrict Key</strong>，确保 <strong>Speech to Text</strong> 和 <strong>Text to Speech</strong> 均设置为 <strong>Access</strong>。SubVox Pro 使用 Scribe 进行转写，并在生成配音音频时使用 Text-to-Speech API。</p>
+<img alt="ElevenLabs create API key dialog" src="Images/elevenlabs-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<img alt="ElevenLabs Speech to Text access permission" src="Images/elevenlabs-speech-to-text-access.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<img alt="ElevenLabs Text to Speech access permission" src="Images/elevenlabs-text-to-speech-access.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> 在关闭对话框前复制生成的 API 密钥。<u>ElevenLabs 仅会显示一次完整值</u>。</p>
+<img alt="ElevenLabs generated API key" src="Images/elevenlabs-api-key-created.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> 将其粘贴到 SubVox Pro 中（Settings ▸ <em>ElevenLabs</em>）。ElevenLabs 转写和 ElevenLabs TTS 配音均使用同一令牌。</p>
+<blockquote>
+<p>API 参考：Text-to-Speech 端点使用 <code>xi-api-key</code> HTTP 请求头，并通过
+<code>POST /v1/text-to-speech/:voice_id</code> 将文本转换为语音：<a href="https://elevenlabs.io/docs/api-reference/text-to-speech/convert">https://elevenlabs.io/docs/api-reference/text-to-speech/convert</a></p>
+</blockquote>
+</details>
+<details id="rev-ai" open="">
+<summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="rev-ai-setup"><strong>Rev AI</strong></h2></summary>
+<p><strong>用途：</strong>语音识别。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> 在 <strong><a href="https://www.rev.ai/auth/signup">https://www.rev.ai/auth/signup</a></strong> 注册。无需信用卡；可获得 <strong>5 小时免费额度</strong>。</p>
+<img alt="Rev AI sign-up page" src="Images/revai-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> 访问 <strong>Access Token</strong> 页面（<strong><a href="https://www.rev.ai/access_token">https://www.rev.ai/access_token</a></strong>）。也可以通过左侧导航栏中的 <strong>Access Token</strong> 进入该页面。</p>
+<img alt="Rev AI Access Token entry in the sidebar" src="Images/revai-access-token-sidebar.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> 如果尚无令牌，在 Access Token 页面上点击 <strong>Generate</strong>。Rev AI 允许同时拥有最多两个有效令牌。</p>
+<img alt="Rev AI Access Token page before generation" src="Images/revai-access-token-empty.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> 立即复制生成的令牌。<u>Rev AI 仅显示一次完整值</u>；此后，列表中将仅保留简短的预览和创建日期。</p>
+<img alt="Rev AI generated access token" src="Images/revai-access-token-created.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> 将其粘贴到 SubVox Pro 中（Settings ▸ <em>Rev AI</em>）。</p>
+</details>
+</article>
+<div class="next-article d-print-none border-top" id="nextArticle"></div>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

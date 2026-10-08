@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>类 SubtitleDisplayer | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class SubtitleDisplayer | SubVox Pro 文档 " name="title"/>
+<meta content="在 TextMeshPro 文本（UI 或 3D）中显示  发布的字幕，使用说话者的名称和字体，并遵循  的显示设置（开启/关闭、大小、背景不透明度、淡入淡出）。无论播放来自台词播放源还是 Timeline，行为都相同。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.SubtitleDisplayer.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.SubtitleDisplayer.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.SubtitleDisplayer.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.SubtitleDisplayer.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/api/SubVoxPro.SubtitleDisplayer.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.SubtitleDisplayer">
+<h1 class="text-break" data-uid="SubVoxPro.SubtitleDisplayer" id="SubVoxPro_SubtitleDisplayer">
+类 SubtitleDisplayer  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>命名空间</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>程序集</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>在 TextMeshPro 文本（UI 或 3D）中显示 <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a> 发布的字幕，使用说话者的名称和字体，并遵循 <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a> 的显示设置（开启/关闭、大小、背景不透明度、淡入淡出）。无论播放来自台词播放源还是 Timeline，行为都相同。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class SubtitleDisplayer : MonoBehaviour</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>继承</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">SubtitleDisplayer</span></div>
+</dd>
+</dl>
+<dl class="typelist derived">
+<dt>Derived</dt>
+<dd>
+<div><a class="xref" href="SubVoxPro.SubtitleBubbleDisplayer.html">SubtitleBubbleDisplayer</a></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">构造函数
+</h2>
+<a data-uid="SubVoxPro.SubtitleDisplayer.#ctor*" id="SubVoxPro_SubtitleDisplayer__ctor_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.#ctor" id="SubVoxPro_SubtitleDisplayer__ctor">
+  SubtitleDisplayer()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public SubtitleDisplayer()</code></pre>
+</div>
+<h2 class="section" id="properties">属性
+</h2>
+<a data-uid="SubVoxPro.SubtitleDisplayer.KeepBackgroundBetweenSubtitles*" id="SubVoxPro_SubtitleDisplayer_KeepBackgroundBetweenSubtitles_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.KeepBackgroundBetweenSubtitles" id="SubVoxPro_SubtitleDisplayer_KeepBackgroundBetweenSubtitles">
+  KeepBackgroundBetweenSubtitles
+  
+  </h3>
+<div class="markdown level1 summary"><p>在两条字幕之间的清空字幕标记生效期间，背景是否保持可见。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool KeepBackgroundBetweenSubtitles { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubtitleDisplayer.SpeakerNameMode*" id="SubVoxPro_SubtitleDisplayer_SpeakerNameMode_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.SpeakerNameMode" id="SubVoxPro_SubtitleDisplayer_SpeakerNameMode">
+  SpeakerNameMode
+  
+  </h3>
+<div class="markdown level1 summary"><p>说话者姓名显示方式：隐藏、置于台词前或置于台词上方。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public ESpeakerNameMode SpeakerNameMode { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.ESpeakerNameMode.html">ESpeakerNameMode</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">方法
+</h2>
+<a data-uid="SubVoxPro.SubtitleDisplayer.ClearSubtitle*" id="SubVoxPro_SubtitleDisplayer_ClearSubtitle_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.ClearSubtitle" id="SubVoxPro_SubtitleDisplayer_ClearSubtitle">
+  ClearSubtitle()
+  
+  </h3>
+<div class="markdown level1 summary"><p>将当前字幕从屏幕上移除。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public void ClearSubtitle()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleDisplayer.ComposeText*" id="SubVoxPro_SubtitleDisplayer_ComposeText_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.ComposeText(SubVoxPro.SubtitleInfo)" id="SubVoxPro_SubtitleDisplayer_ComposeText_SubVoxPro_SubtitleInfo_">
+  ComposeText(SubtitleInfo)
+  
+  </h3>
+<div class="markdown level1 summary"><p>字幕要显示的文本。默认根据 <strong>Speaker Name Mode</strong> 组合字幕文本与说话者姓名。重写此方法可修改文本，例如添加前缀或更改大小写。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual string ComposeText(SubtitleInfo subtitle_info)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>subtitle_info</code> <a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">返回值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_SubtitleDisplayer_ComposeText_SubVoxPro_SubtitleInfo__examples">Examples</h4>
+<pre><code class="lang-csharp">public sealed class UppercaseSubtitleDisplayer : SubtitleDisplayer
+{
+    protected override string ComposeText(SubtitleInfo subtitle_info)
+    {
+        return base.ComposeText(subtitle_info).ToUpperInvariant();
+    }
+}</code></pre>
+<a data-uid="SubVoxPro.SubtitleDisplayer.OnDisable*" id="SubVoxPro_SubtitleDisplayer_OnDisable_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.OnDisable" id="SubVoxPro_SubtitleDisplayer_OnDisable">
+  OnDisable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写时需调用基类方法。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnDisable()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleDisplayer.OnEnable*" id="SubVoxPro_SubtitleDisplayer_OnEnable_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.OnEnable" id="SubVoxPro_SubtitleDisplayer_OnEnable">
+  OnEnable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写时需调用基类方法。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnEnable()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleDisplayer.SetVisible*" id="SubVoxPro_SubtitleDisplayer_SetVisible_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.SetVisible(System.Boolean)" id="SubVoxPro_SubtitleDisplayer_SetVisible_System_Boolean_">
+  SetVisible(bool)
+  
+  </h3>
+<div class="markdown level1 summary"><p>显示或隐藏字幕框：有字幕时显示，字幕之间隐藏，淡入淡出时长为 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_FadeDuration">FadeDuration</a>。重写此方法可自定义字幕框的动画。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void SetVisible(bool visible)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>visible</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubtitleDisplayer.ShowSubtitle*" id="SubVoxPro_SubtitleDisplayer_ShowSubtitle_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.ShowSubtitle(SubVoxPro.SubtitleInfo)" id="SubVoxPro_SubtitleDisplayer_ShowSubtitle_SubVoxPro_SubtitleInfo_">
+  ShowSubtitle(SubtitleInfo)
+  
+  </h3>
+<div class="markdown level1 summary"><p>显示一条字幕；空字幕会清除显示内容。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected void ShowSubtitle(SubtitleInfo subtitle_info)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>subtitle_info</code> <a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubtitleDisplayer.SubscribeToSubtitles*" id="SubVoxPro_SubtitleDisplayer_SubscribeToSubtitles_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.SubscribeToSubtitles" id="SubVoxPro_SubtitleDisplayer_SubscribeToSubtitles">
+  SubscribeToSubtitles()
+  
+  </h3>
+<div class="markdown level1 summary"><p>开始监听待显示的字幕。默认监听 <a class="xref" href="SubVoxPro.SubVox.html">SubVox</a> 上发布的每条字幕。重写此方法及 <a class="xref" href="SubVoxPro.SubtitleDisplayer.html#SubVoxPro_SubtitleDisplayer_UnsubscribeFromSubtitles">UnsubscribeFromSubtitles()</a>，可通过 <a class="xref" href="SubVoxPro.SubtitleDisplayer.html#SubVoxPro_SubtitleDisplayer_ShowSubtitle_SubVoxPro_SubtitleInfo_">ShowSubtitle(SubtitleInfo)</a> 显示其他来源的字幕。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void SubscribeToSubtitles()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleDisplayer.UnsubscribeFromSubtitles*" id="SubVoxPro_SubtitleDisplayer_UnsubscribeFromSubtitles_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.UnsubscribeFromSubtitles" id="SubVoxPro_SubtitleDisplayer_UnsubscribeFromSubtitles">
+  UnsubscribeFromSubtitles()
+  
+  </h3>
+<div class="markdown level1 summary"><p>停止监听由 <a class="xref" href="SubVoxPro.SubtitleDisplayer.html#SubVoxPro_SubtitleDisplayer_SubscribeToSubtitles">SubscribeToSubtitles()</a> 开始监听的来源。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void UnsubscribeFromSubtitles()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleDisplayer.Update*" id="SubVoxPro_SubtitleDisplayer_Update_"></a>
+<h3 data-uid="SubVoxPro.SubtitleDisplayer.Update" id="SubVoxPro_SubtitleDisplayer_Update">
+  Update()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写时需调用基类方法。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void Update()</code></pre>
+</div>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

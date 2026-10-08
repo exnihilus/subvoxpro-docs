@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>类 VoiceLineClip | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineClip | SubVox Pro 文档 " name="title"/>
+<meta content="基于  资源的 Timeline 剪辑。将 VoiceLineData 拖放到  上会自动创建此类剪辑，其默认时长为该台词资源中最长音频的时长（源音频或配音）。若拖放的是 ，则由临时的  字段接收，再由剪辑编辑器为每个步骤创建一个剪辑（随后将该字段清空为 null）。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=65a73091a9" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=65a73091a9" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.Timeline.VoiceLineClip.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.Timeline.VoiceLineClip.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.Timeline.VoiceLineClip.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.Timeline.VoiceLineClip.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/api/SubVoxPro.Timeline.VoiceLineClip.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.Timeline.VoiceLineClip">
+<h1 class="text-break" data-uid="SubVoxPro.Timeline.VoiceLineClip" id="SubVoxPro_Timeline_VoiceLineClip">
+类 VoiceLineClip  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>命名空间</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a>.<a class="xref" href="SubVoxPro.Timeline.html">Timeline</a></dd></dl>
+<dl><dt>程序集</dt><dd>SubVoxPro.Timeline.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>基于 <a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html#SubVoxPro_Timeline_VoiceLineClip_VoiceLineData">VoiceLineData</a> 资源的 Timeline 剪辑。将 VoiceLineData 拖放到 <a class="xref" href="SubVoxPro.Timeline.VoiceLineTrack.html">VoiceLineTrack</a> 上会自动创建此类剪辑，其默认时长为该台词资源中最长音频的时长（源音频或配音）。若拖放的是 <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a>，则由临时的 <a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a> 字段接收，再由剪辑编辑器为每个步骤创建一个剪辑（随后将该字段清空为 null）。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public sealed class VoiceLineClip : PlayableAsset, ITimelineClipAsset</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>继承</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineClip</span></div>
+</dd>
+</dl>
+<dl class="typelist implements">
+<dt>实现</dt>
+<dd>
+<div><a class="xref" href="https://docs.unity3d.com/Packages/com.unity.timeline@1.8/api/UnityEngine.Timeline.ITimelineClipAsset.html">ITimelineClipAsset</a></div>
+</dd>
+</dl>
+<h2 class="section" id="constructors">构造函数
+</h2>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.#ctor*" id="SubVoxPro_Timeline_VoiceLineClip__ctor_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.#ctor" id="SubVoxPro_Timeline_VoiceLineClip__ctor">
+  VoiceLineClip()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineClip()</code></pre>
+</div>
+<h2 class="section" id="properties">属性
+</h2>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.EventMode*" id="SubVoxPro_Timeline_VoiceLineClip_EventMode_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.EventMode" id="SubVoxPro_Timeline_VoiceLineClip_EventMode">
+  EventMode
+  
+  </h3>
+<div class="markdown level1 summary"><p>台词资源的事件在 Timeline 中的触发方式。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLineTimelineEventMode EventMode { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.Timeline.EVoiceLineTimelineEventMode.html">EVoiceLineTimelineEventMode</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.OverrideRevealMode*" id="SubVoxPro_Timeline_VoiceLineClip_OverrideRevealMode_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.OverrideRevealMode" id="SubVoxPro_Timeline_VoiceLineClip_OverrideRevealMode">
+  OverrideRevealMode
+  
+  </h3>
+<div class="markdown level1 summary"><p>当该片段使用 <a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html#SubVoxPro_Timeline_VoiceLineClip_RevealMode">RevealMode</a> 而不是 <a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html#SubVoxPro_Timeline_VoiceLineClip_RevealMode">RevealMode</a> 时，此项为真。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool OverrideRevealMode { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.RevealMode*" id="SubVoxPro_Timeline_VoiceLineClip_RevealMode_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.RevealMode" id="SubVoxPro_Timeline_VoiceLineClip_RevealMode">
+  RevealMode
+  
+  </h3>
+<div class="markdown level1 summary"><p>启用 <a class="xref" href="SubVoxPro.Timeline.VoiceLineClip.html#SubVoxPro_Timeline_VoiceLineClip_OverrideRevealMode">OverrideRevealMode</a> 时使用的字幕显示方式。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLineSubtitleRevealMode RevealMode { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineSubtitleRevealMode.html">EVoiceLineSubtitleRevealMode</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.VoiceLineData*" id="SubVoxPro_Timeline_VoiceLineClip_VoiceLineData_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.VoiceLineData" id="SubVoxPro_Timeline_VoiceLineClip_VoiceLineData">
+  VoiceLineData
+  
+  </h3>
+<div class="markdown level1 summary"><p>此剪辑的台词资源。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineData VoiceLineData { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineData.html">VoiceLineData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.VoiceLineSequenceData*" id="SubVoxPro_Timeline_VoiceLineClip_VoiceLineSequenceData_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.VoiceLineSequenceData" id="SubVoxPro_Timeline_VoiceLineClip_VoiceLineSequenceData">
+  VoiceLineSequenceData
+  
+  </h3>
+<div class="markdown level1 summary"><p>拖放到轨道上的序列，由编辑器按每个步骤一个剪辑的方式排列。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineSequenceData VoiceLineSequenceData { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineSequenceData.html">VoiceLineSequenceData</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.clipCaps*" id="SubVoxPro_Timeline_VoiceLineClip_clipCaps_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.clipCaps" id="SubVoxPro_Timeline_VoiceLineClip_clipCaps">
+  clipCaps
+  
+  </h3>
+<div class="markdown level1 summary"><p>Timeline 剪辑功能：无（不支持混合、循环或速度调整）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public ClipCaps clipCaps { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://docs.unity3d.com/Packages/com.unity.timeline@1.8/api/UnityEngine.Timeline.ClipCaps.html">ClipCaps</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.duration*" id="SubVoxPro_Timeline_VoiceLineClip_duration_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.duration" id="SubVoxPro_Timeline_VoiceLineClip_duration">
+  duration
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public override double duration { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">方法
+</h2>
+<a data-uid="SubVoxPro.Timeline.VoiceLineClip.CreatePlayable*" id="SubVoxPro_Timeline_VoiceLineClip_CreatePlayable_"></a>
+<h3 data-uid="SubVoxPro.Timeline.VoiceLineClip.CreatePlayable(UnityEngine.Playables.PlayableGraph,UnityEngine.GameObject)" id="SubVoxPro_Timeline_VoiceLineClip_CreatePlayable_UnityEngine_Playables_PlayableGraph_UnityEngine_GameObject_">
+  CreatePlayable(PlayableGraph, GameObject)
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>graph</code> <span class="xref">PlayableGraph</span></dt>
+<dd></dd>
+<dt><code>owner</code> <span class="xref">GameObject</span></dt>
+<dd></dd>
+</dl>
+<h4 class="section">返回值</h4>
+<dl class="parameters">
+<dt><span class="xref">Playable</span></dt>
+<dd></dd>
+</dl>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>
