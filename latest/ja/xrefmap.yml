@@ -1486,6 +1486,30 @@ references:
   commentId: F:SubVoxPro.SubVoxEvents.CAMERA_SHAKE
   fullName: SubVoxPro.SubVoxEvents.CAMERA_SHAKE
   nameWithType: SubVoxEvents.CAMERA_SHAKE
+- uid: SubVoxPro.SubVoxEvents.CORE_ALERT
+  name: CORE_ALERT
+  href: api/SubVoxPro.SubVoxEvents.html#SubVoxPro_SubVoxEvents_CORE_ALERT
+  commentId: F:SubVoxPro.SubVoxEvents.CORE_ALERT
+  fullName: SubVoxPro.SubVoxEvents.CORE_ALERT
+  nameWithType: SubVoxEvents.CORE_ALERT
+- uid: SubVoxPro.SubVoxEvents.LIGHT_BRAZIERS
+  name: LIGHT_BRAZIERS
+  href: api/SubVoxPro.SubVoxEvents.html#SubVoxPro_SubVoxEvents_LIGHT_BRAZIERS
+  commentId: F:SubVoxPro.SubVoxEvents.LIGHT_BRAZIERS
+  fullName: SubVoxPro.SubVoxEvents.LIGHT_BRAZIERS
+  nameWithType: SubVoxEvents.LIGHT_BRAZIERS
+- uid: SubVoxPro.SubVoxEvents.OPEN_DOOR
+  name: OPEN_DOOR
+  href: api/SubVoxPro.SubVoxEvents.html#SubVoxPro_SubVoxEvents_OPEN_DOOR
+  commentId: F:SubVoxPro.SubVoxEvents.OPEN_DOOR
+  fullName: SubVoxPro.SubVoxEvents.OPEN_DOOR
+  nameWithType: SubVoxEvents.OPEN_DOOR
+- uid: SubVoxPro.SubVoxEvents.THUNDER
+  name: THUNDER
+  href: api/SubVoxPro.SubVoxEvents.html#SubVoxPro_SubVoxEvents_THUNDER
+  commentId: F:SubVoxPro.SubVoxEvents.THUNDER
+  fullName: SubVoxPro.SubVoxEvents.THUNDER
+  nameWithType: SubVoxEvents.THUNDER
 - uid: SubVoxPro.SubtitleBubbleDisplayer
   name: SubtitleBubbleDisplayer
   href: api/SubVoxPro.SubtitleBubbleDisplayer.html
