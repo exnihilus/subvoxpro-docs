@@ -102,7 +102,7 @@
 <li><a href="#trigger-gameplay-from-a-voice-line">ボイスラインからゲームプレイをトリガーする</a></li>
 <li><a href="#unity-timeline">Unity Timeline</a></li>
 <li><a href="#process-many-files-at-once">複数のファイルを一度に処理する</a></li>
-<li><a href="#work-with-your-ai-assistant-unity-6">AIアシスタントと連携する（Unity 6）</a></li>
+<li><a href="#work-with-your-ai-assistant">AIアシスタントと連携する</a></li>
 <li><a href="#offline-engines-no-account-no-api-key">オフラインエンジン（アカウント不要、APIキー不要）</a></li>
 <li><a href="#human-translation-with-google-sheets">Google Sheetsを使った人手による翻訳</a></li>
 <li><a href="#settings">設定</a></li>
@@ -441,14 +441,16 @@ Timelineの再生開始時に選択されます。クリップはマネージャ
 </ol>
 <p>各ファイルから個別のボイスラインが作成されます。バッチ処理では、次のステップに進む前に、すべてのファイルに対して1つのステップを実行します（例えば、すべての文字起こし、次にすべての翻訳、その次にすべての吹き替え）。これにより、オフラインエンジンでの処理が高速化されます。いつでもキャンセルでき、実行レポートをエクスポートすることもできます。「<strong>Batch</strong>」を再度クリックすると、各ファイルが中断した箇所から処理が再開されます。</p>
 <hr/>
-<h2 id="work-with-your-ai-assistant-unity-6">AIアシスタントと連携する（Unity 6） </h2>
-<p><strong>Unity 6以降</strong>では、MCPに対応したAIアシスタント（Claude、Cursor、VS Code Copilot、Windsurfなど）がSubVox Proを代わりに操作できます。ボイスラインの一覧表示、字幕の読み取り、文字起こし、翻訳、吹き替え、行のテキスト修正、話者の設定などです。たとえば <em>「イントロのボイスラインを文字起こしして、フランス語とスペイン語に翻訳して」</em> と頼むだけです。</p>
-<p><strong>セットアップ（初回のみ）：</strong></p>
+<h2 id="work-with-your-ai-assistant">AIアシスタントと連携する </h2>
+<p>MCPに対応したAIアシスタント（Claude Code、Claude Desktop、Cursor、VS Code Copilot、Windsurfなど）がSubVox Proを代わりに操作できます。ボイスラインの一覧表示、字幕の読み取り、文字起こし、翻訳、吹き替え、行のテキスト修正、話者の設定などです。たとえば <em>「イントロのボイスラインを文字起こしして、フランス語とスペイン語に翻訳して」</em> と頼むだけです。</p>
+<p><strong>セットアップ（プロジェクトごとに1回）：</strong></p>
 <ol>
-<li><strong>Window ▸ Package Manager</strong> で <strong>+ ▸ Add package by name</strong> をクリックし、<code>com.unity.pipeline</code>（Unityの実験的パッケージ）を入力します。SubVox Proは自動的に検出します。ほかにインストールするものはありません。</li>
-<li>パッケージの手順に従ってコマンドラインツール <code>unity</code> をインストールし、<code>unity mcp configure &lt;client&gt;</code>（例：<code>unity mcp configure claude</code>）でアシスタントを接続します。<code>unity mcp configure --list</code> で対応アシスタントを確認できます。</li>
+<li><strong>Tools ▸ SubVox Pro ▸ AI Assistant</strong>（Hubのタイルからも開けます）を開き、<strong>Start</strong> をクリックします。以後、プロジェクトを開くたびにサーバーは自動で起動します。</li>
+<li><strong>Your assistant</strong> で使っているアシスタントを選び、<strong>Add to …</strong> をクリックします。SubVox Proがアシスタントの設定ファイルに自動で追加されます。一覧にないアシスタントの場合は、表示されたアドレスをコピーし、その設定でMCPサーバーとして追加してください。</li>
+<li>アシスタントを再起動します（またはMCPサーバーを再読み込みします）。Claude Desktopでは <a href="https://nodejs.org">Node.js</a> のインストールも必要です。</li>
 <li>Unityエディターでプロジェクトを開いたままにしてください。アシスタントはエディター経由で動作します。</li>
 </ol>
+<p>ほかのプログラムがすでにそのポートを使っている場合は、ウィンドウで別の番号を選び、もう一度 <strong>Add to …</strong> をクリックして新しいアドレスをアシスタントに伝えてください。</p>
 <p>SubVox Proのツールはすべて <code>subvox_</code> で始まります：</p>
 <table>
 <thead>

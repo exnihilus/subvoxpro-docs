@@ -102,7 +102,7 @@
 <li><a href="#trigger-gameplay-from-a-voice-line">通过语音台词触发游戏事件</a></li>
 <li><a href="#unity-timeline">Unity Timeline</a></li>
 <li><a href="#process-many-files-at-once">批量处理文件</a></li>
-<li><a href="#work-with-your-ai-assistant-unity-6">与 AI 助手协作（Unity 6）</a></li>
+<li><a href="#work-with-your-ai-assistant">与 AI 助手协作</a></li>
 <li><a href="#offline-engines-no-account-no-api-key">离线引擎（无需账户，无需 API key）</a></li>
 <li><a href="#human-translation-with-google-sheets">通过 Google Sheets 进行人工翻译</a></li>
 <li><a href="#settings">设置</a></li>
@@ -441,14 +441,16 @@ private void Shake()
 <p>每个文件都会生成一个独立的台词资源。批量处理会先对所有文件执行一个步骤，再进行下一个步骤（例如先完成所有转写，再完成所有翻译，最后完成所有配音），使用离线引擎时，这样处理更快。你可以随时取消操作并导出本次运行的报告；再次点击 <strong>Run batch</strong> 时，系统会从每个文件上次停止的位置继续处理，即使重启 Unity 后也是如此，且不会再次复制音频。当某一步骤被跳过（例如配音提供商不支持某种语言）时，文件下方会显示一条 ⚠ 提示行说明原因，且该文件状态显示为
 <strong>Done with warnings</strong>。文件处理完成后，点击 <strong>Open</strong> 可在编辑器中查看其台词资源，点击 <strong>Re-run</strong> 则会将其翻译和配音任务重新加入队列（例如在添加新语言后）。</p>
 <hr/>
-<h2 id="work-with-your-ai-assistant-unity-6">与 AI 助手协作（Unity 6） </h2>
-<p>在 <strong>Unity 6 或更高版本</strong>中，支持 MCP 的 AI 助手（Claude、Cursor、VS Code Copilot、Windsurf 等）可以替你使用 SubVox Pro：列出台词资源、读取字幕、转写、翻译、配音、修改某一行的文本或设置其角色。直接告诉它即可，例如 <em>“转写开场的台词资源，并翻译成法语和西班牙语”</em>。</p>
-<p><strong>设置（仅需一次）：</strong></p>
+<h2 id="work-with-your-ai-assistant">与 AI 助手协作 </h2>
+<p>支持 MCP 的 AI 助手（Claude Code、Claude Desktop、Cursor、VS Code Copilot、Windsurf 等）可以替你使用 SubVox Pro：列出台词资源、读取字幕、转写、翻译、配音、修改某一行的文本或设置其角色。直接告诉它即可，例如 <em>“转写开场的台词资源，并翻译成法语和西班牙语”</em>。</p>
+<p><strong>设置（每个项目一次）：</strong></p>
 <ol>
-<li>在 <strong>Window ▸ Package Manager</strong> 中点击 <strong>+ ▸ Add package by name</strong>，输入 <code>com.unity.pipeline</code>（Unity 的实验性包）。SubVox Pro 会自动识别，无需安装其他内容。</li>
-<li>按照该包的说明安装命令行工具 <code>unity</code>，然后用 <code>unity mcp configure &lt;client&gt;</code>（例如 <code>unity mcp configure claude</code>）连接你的助手。<code>unity mcp configure --list</code> 会列出支持的助手。</li>
+<li>打开 <strong>Tools ▸ SubVox Pro ▸ AI Assistant</strong>（Hub 中也有对应磁贴），点击 <strong>Start</strong>。之后每次打开项目，服务器都会自动启动。</li>
+<li>在 <strong>Your assistant</strong> 下从列表中选择你的助手，点击 <strong>Add to …</strong>：SubVox Pro 会把自己添加到该助手的设置文件中。如果你的助手不在列表中，复制显示的地址，并在其设置中将它添加为 MCP 服务器。</li>
+<li>重启你的助手（或重新加载其 MCP 服务器）。Claude Desktop 还需要安装 <a href="https://nodejs.org">Node.js</a>。</li>
 <li>保持 Unity 编辑器打开你的项目：助手通过编辑器工作。</li>
 </ol>
+<p>如果端口已被其他程序占用，在窗口中换一个端口号，然后再次点击 <strong>Add to …</strong>，让助手获得新地址。</p>
 <p>SubVox Pro 的工具都以 <code>subvox_</code> 开头：</p>
 <table>
 <thead>

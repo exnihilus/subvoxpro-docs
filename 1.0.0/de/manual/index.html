@@ -102,7 +102,7 @@
 <li><a href="#trigger-gameplay-from-a-voice-line">Gameplay über eine Voice Line auslösen</a></li>
 <li><a href="#unity-timeline">Unity Timeline</a></li>
 <li><a href="#process-many-files-at-once">Viele Dateien gleichzeitig verarbeiten</a></li>
-<li><a href="#work-with-your-ai-assistant-unity-6">Mit Ihrem KI-Assistenten arbeiten (Unity 6)</a></li>
+<li><a href="#work-with-your-ai-assistant">Mit Ihrem KI-Assistenten arbeiten</a></li>
 <li><a href="#offline-engines-no-account-no-api-key">Offline-Engines (kein Account, kein API-Schlüssel)</a></li>
 <li><a href="#human-translation-with-google-sheets">Übersetzung durch Menschen mit Google Sheets</a></li>
 <li><a href="#settings">Einstellungen</a></li>
@@ -585,20 +585,24 @@ zeigt Ihnen an, was noch fehlt.</li>
 zunächst alle Transkriptionen, dann alle Übersetzungen, dann alle Vertonungen), was mit den Offline-Engines schneller ist. Sie können
 den Vorgang jederzeit abbrechen und einen Bericht über den Durchlauf exportieren; wenn Sie erneut auf <strong>Batch</strong> klicken, wird für jede Datei an der Stelle fortgefahren, an der ihre Verarbeitung unterbrochen wurde.</p>
 <hr/>
-<h2 id="work-with-your-ai-assistant-unity-6">Mit Ihrem KI-Assistenten arbeiten (Unity 6) </h2>
-<p>Ab <strong>Unity 6</strong> kann ein KI-Assistent mit MCP-Unterstützung (Claude, Cursor, VS Code Copilot, Windsurf …) SubVox Pro
-für Sie bedienen: Ihre Voice Lines auflisten, ihre Untertitel lesen, transkribieren, übersetzen, vertonen, den Text
-einer Zeile korrigieren oder ihren Speaker festlegen. Bitten Sie ihn einfach darum, zum Beispiel <em>„Transkribiere die
-Voice Line des Intros und übersetze sie ins Französische und Spanische“</em>.</p>
-<p><strong>Einrichtung (einmalig):</strong></p>
+<h2 id="work-with-your-ai-assistant">Mit Ihrem KI-Assistenten arbeiten </h2>
+<p>Ein KI-Assistent mit MCP-Unterstützung (Claude Code, Claude Desktop, Cursor, VS Code Copilot, Windsurf …) kann
+SubVox Pro für Sie bedienen: Ihre Voice Lines auflisten, ihre Untertitel lesen, transkribieren, übersetzen, vertonen,
+den Text einer Zeile korrigieren oder ihren Speaker festlegen. Bitten Sie ihn einfach darum, zum Beispiel
+<em>„Transkribiere die Voice Line des Intros und übersetze sie ins Französische und Spanische“</em>.</p>
+<p><strong>Einrichtung (einmal pro Projekt):</strong></p>
 <ol>
-<li>Klicken Sie in <strong>Window ▸ Package Manager</strong> auf <strong>+ ▸ Add package by name</strong> und geben Sie <code>com.unity.pipeline</code>
-ein (ein experimentelles Unity-Paket). SubVox Pro erkennt es automatisch; sonst ist nichts zu installieren.</li>
-<li>Installieren Sie gemäß den Anweisungen des Pakets das Kommandozeilenwerkzeug <code>unity</code> und verbinden Sie dann Ihren
-Assistenten mit <code>unity mcp configure &lt;client&gt;</code> (zum Beispiel <code>unity mcp configure claude</code>).
-<code>unity mcp configure --list</code> zeigt die unterstützten Assistenten.</li>
+<li>Öffnen Sie <strong>Tools ▸ SubVox Pro ▸ AI Assistant</strong> (auch eine Kachel im Hub) und klicken Sie auf <strong>Start</strong>. Der
+Server startet bei jedem Öffnen des Projekts von selbst wieder.</li>
+<li>Wählen Sie unter <strong>Your assistant</strong> Ihren Assistenten in der Liste und klicken Sie auf <strong>Add to …</strong>: SubVox Pro
+trägt sich in die Einstellungsdatei des Assistenten ein. Für einen Assistenten, der nicht in der Liste steht,
+kopieren Sie die angezeigte Adresse und fügen Sie sie in seinen Einstellungen als MCP-Server hinzu.</li>
+<li>Starten Sie Ihren Assistenten neu (oder laden Sie seine MCP-Server neu). Claude Desktop benötigt außerdem
+<a href="https://nodejs.org">Node.js</a>.</li>
 <li>Lassen Sie den Unity-Editor mit Ihrem Projekt geöffnet: Der Assistent arbeitet über ihn.</li>
 </ol>
+<p>Wenn ein anderes Programm den Port bereits verwendet, wählen Sie im Fenster eine andere Nummer und klicken Sie dann
+erneut auf <strong>Add to …</strong>, damit der Assistent die neue Adresse erhält.</p>
 <p>Die Werkzeuge von SubVox Pro beginnen alle mit <code>subvox_</code>:</p>
 <table>
 <thead>

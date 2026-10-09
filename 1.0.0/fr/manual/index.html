@@ -104,7 +104,7 @@ Le guide et la référence d’API existent en français sur ce site ; le PDF li
 <li><a href="#trigger-gameplay-from-a-voice-line">Déclencher du gameplay depuis une voiceline</a></li>
 <li><a href="#unity-timeline">Timeline Unity</a></li>
 <li><a href="#process-many-files-at-once">Traiter plusieurs fichiers à la fois</a></li>
-<li><a href="#work-with-your-ai-assistant-unity-6">Travailler avec votre assistant IA (Unity 6)</a></li>
+<li><a href="#work-with-your-ai-assistant">Travailler avec votre assistant IA</a></li>
 <li><a href="#offline-engines-no-account-no-api-key">Moteurs locaux, sans compte ni clé API</a></li>
 <li><a href="#human-translation-with-google-sheets">Traduction humaine avec Google Sheets</a></li>
 <li><a href="#settings">Réglages</a></li>
@@ -590,20 +590,24 @@ et indique quoi.</li>
 (toutes les transcriptions, puis toutes les traductions…), ce qui va plus vite avec les moteurs locaux.
 Vous pouvez annuler à tout moment et exporter un rapport ; relancer <strong>Batch</strong> reprend chaque fichier là où il s’était arrêté.</p>
 <hr/>
-<h2 id="work-with-your-ai-assistant-unity-6">Travailler avec votre assistant IA (Unity 6) </h2>
-<p>Sur <strong>Unity 6 ou plus récent</strong>, un assistant IA compatible MCP (Claude, Cursor, VS Code Copilot, Windsurf…) peut utiliser
+<h2 id="work-with-your-ai-assistant">Travailler avec votre assistant IA </h2>
+<p>Un assistant IA compatible MCP (Claude Code, Claude Desktop, Cursor, VS Code Copilot, Windsurf…) peut utiliser
 SubVox Pro pour vous : lister vos voicelines, lire leurs sous-titres, transcrire, traduire, doubler, corriger le texte
 d’une ligne ou choisir son speaker. Demandez-le-lui simplement, par exemple <em>« Transcris la voiceline de l’intro et
 traduis-la en français et en espagnol »</em>.</p>
-<p><strong>Mise en place (une fois) :</strong></p>
+<p><strong>Mise en place (une fois par projet) :</strong></p>
 <ol>
-<li>Dans <strong>Window ▸ Package Manager</strong>, cliquez sur <strong>+ ▸ Add package by name</strong> et saisissez <code>com.unity.pipeline</code>
-(un package Unity expérimental). SubVox Pro le détecte tout seul ; rien d’autre à installer.</li>
-<li>Suivez les instructions du package pour installer l’outil en ligne de commande <code>unity</code>, puis connectez votre
-assistant avec <code>unity mcp configure &lt;client&gt;</code> (par exemple <code>unity mcp configure claude</code>).
-<code>unity mcp configure --list</code> affiche les assistants pris en charge.</li>
+<li>Ouvrez <strong>Tools ▸ SubVox Pro ▸ AI Assistant</strong> (aussi une tuile du Hub) et cliquez sur <strong>Start</strong>. Le serveur
+redémarre tout seul à chaque ouverture du projet.</li>
+<li>Sous <strong>Your assistant</strong>, choisissez le vôtre dans la liste et cliquez sur <strong>Add to …</strong> : SubVox Pro s’ajoute au
+fichier de réglages de l’assistant. Pour un assistant absent de la liste, copiez l’adresse affichée et ajoutez-la
+comme serveur MCP dans ses réglages.</li>
+<li>Redémarrez votre assistant (ou rechargez ses serveurs MCP). Claude Desktop demande aussi d’installer
+<a href="https://nodejs.org">Node.js</a>.</li>
 <li>Gardez l’éditeur Unity ouvert sur votre projet : l’assistant passe par lui.</li>
 </ol>
+<p>Si un autre programme utilise déjà le port, choisissez un autre numéro dans la fenêtre, puis cliquez de nouveau sur
+<strong>Add to …</strong> pour que l’assistant reçoive la nouvelle adresse.</p>
 <p>Les outils de SubVox Pro commencent tous par <code>subvox_</code> :</p>
 <table>
 <thead>
