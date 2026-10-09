@@ -446,12 +446,13 @@ private void Shake()
 <p><strong>设置（每个项目一次）：</strong></p>
 <ol>
 <li>打开 <strong>Tools ▸ SubVox Pro ▸ MCP Server</strong>（Hub 中也有对应磁贴），点击 <strong>Start</strong>。之后每次打开项目，服务器都会自动启动。</li>
-<li>在 <strong>Your assistant</strong> 下从列表中选择你的助手，点击 <strong>Add to …</strong>：SubVox Pro 会把自己添加到该助手的设置文件中。如果你的助手不在列表中，复制显示的地址，并在其设置中将它添加为 MCP 服务器。</li>
-<li>重启你的助手（或重新加载其 MCP 服务器）。Claude Desktop 还需要安装 <a href="https://nodejs.org">Node.js</a>。</li>
+<li><strong>Your assistants</strong> 下会列出你电脑上已安装的助手。点击 <strong>Connect my assistants</strong>：SubVox Pro 会一次性把自己添加到所有助手中，无需安装其他任何东西。</li>
+<li>重启你的助手（或重新加载其 MCP 服务器），然后直接提问即可。</li>
 <li>保持 Unity 编辑器打开你的项目：助手通过编辑器工作。</li>
 </ol>
-<p>选择 <strong>Codex</strong> 即可一次性配置 Codex 应用、其命令行和代码编辑器扩展。ChatGPT 应用本身无法连接：它只能访问互联网上的服务器，无法访问你电脑上的服务器。</p>
-<p>如果端口已被其他程序占用，在窗口中换一个端口号，然后再次点击 <strong>Add to …</strong>，让助手获得新地址。</p>
+<p>如果你的助手不在列表中，复制窗口底部显示的地址，并在其设置中将它添加为 MCP 服务器。</p>
+<p><strong>Codex</strong> 一次性涵盖 Codex 应用、其命令行和代码编辑器扩展。ChatGPT 应用本身无法连接：它只能访问互联网上的服务器，无法访问你电脑上的服务器。</p>
+<p>如果端口已被其他程序占用，在窗口中换一个端口号：已连接的助手会自动获得新地址（重启它们即可）。</p>
 <p>SubVox Pro 的工具都以 <code>subvox_</code> 开头：</p>
 <table>
 <thead>
