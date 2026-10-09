@@ -504,7 +504,7 @@ Timelineの再生開始時に選択されます。クリップはマネージャ
 </tr>
 </tbody>
 </table>
-<p><strong>コストは常にあなたが管理できます。</strong> 有料のオンラインサービスを使う前や、既存の字幕・吹き替えを置き換える前に、アシスタントはまずコストと置き換わる内容の見積もりを取得し、あなたの了承を得る必要があります。オフラインエンジンは無料です。サービス、モデル、ボイスはSubVox Proで設定したものが使われます。アシスタントは設定を変えずに、1回の処理だけ別のものを選ぶこともできます。</p>
+<p><strong>コストは常にあなたが管理できます。</strong> 有料のオンラインサービスを使う前や、既存の字幕・吹き替えを置き換える前に、アシスタントはまずコストと置き換わる内容の見積もりを取得し、あなたの了承を得る必要があります。確認を省くには、SubVox Proの設定（<strong>Preferences</strong>）で <strong>Assistants ask before paid runs</strong> または <strong>Assistants ask before overwriting</strong> をオフにします。オフラインエンジンは無料です。サービス、モデル、ボイスはSubVox Proで設定したものが使われます。アシスタントは設定を変えずに、1回の処理だけ別のものを選ぶこともできます。</p>
 <p>アシスタントによる変更は、開いているSubVox Proウィンドウに表示されます。文字起こし、翻訳、テキストや話者の変更は <strong>Ctrl+Z</strong> で元に戻せます。</p>
 <hr/>
 <h2 id="offline-engines-no-account-no-api-key">オフラインエンジン（アカウント不要、API key不要） </h2>
@@ -661,7 +661,7 @@ Unity内に存在しなくなった行）です。シートに残す場合は、
 <p><strong>Tools ▸ SubVox Pro ▸ Settings</strong>：</p>
 <ul>
 <li><strong>API Keys</strong> — サービスごとに1つのキーを使用します。キーはこのコンピューター内に保存され、プロジェクトへの保存、コミット、配布物への同梱は一切行われません。行の末尾にある目のアイコンでキーの表示／非表示を切り替え、赤い×マークで削除できます。</li>
-<li><strong>Preferences</strong> — <strong>Show CPS</strong>（字幕の読み取り速度）、<strong>Custom inspectors</strong>、<strong>Auto blanks on new lines</strong>、<strong>Start MCP server with Unity</strong>（既定はオフ）。</li>
+<li><strong>Preferences</strong> — <strong>Show CPS</strong>（字幕の読み取り速度）、<strong>Custom inspectors</strong>、<strong>Auto blanks on new lines</strong>、<strong>Start MCP server with Unity</strong>（既定はオフ）、<strong>Assistants ask before paid runs</strong>、<strong>Assistants ask before overwriting</strong>（既定はオン）。</li>
 <li><strong>Data folder</strong> — 新しいボイスライン、話者、吹き替え音声の作成先です。</li>
 <li><strong>Cloud Model Catalog</strong> — クラウドAIモデルとその価格を表示し、オンラインで更新します。<strong>Manage models</strong>では、まだ一覧にないモデルを追加できます。ローカルモデルは<strong>Additional Models</strong>と各プロバイダーの操作機能を使って選択・インストールします。</li>
 <li><strong>Local models &amp; services</strong> — 各オフラインエンジンの状態（<strong>Ready</strong>または<strong>Not installed</strong>）、オプション（グラフィックスカードの使用、Chatterboxの表現力）、インストールや設定を行うボタンが表示されます。また、
