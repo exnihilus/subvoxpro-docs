@@ -116,6 +116,7 @@
 <li><a href="#trigger-gameplay-from-a-voice-line">Trigger gameplay from a voice line</a></li>
 <li><a href="#unity-timeline">Unity Timeline</a></li>
 <li><a href="#process-many-files-at-once">Process many files at once</a></li>
+<li><a href="#work-with-your-ai-assistant-unity-6">Work with your AI assistant (Unity 6)</a></li>
 <li><a href="#offline-engines-no-account-no-api-key">Offline engines (no account, no API key)</a></li>
 <li><a href="#human-translation-with-google-sheets">Human translation with Google Sheets</a></li>
 <li><a href="#settings">Settings</a></li>
@@ -605,6 +606,78 @@ language the dubbing provider cannot voice), a ⚠ line under the file explains 
 <strong>Done with warnings</strong>.
 Once a file is done, <strong>Open</strong> shows its voice line in the editor, and <strong>Re-run</strong> queues its translation and
 dubbing again (for example after adding a language).</p>
+<hr>
+<h2 id="work-with-your-ai-assistant-unity-6">Work with your AI assistant (Unity 6)</h2>
+<p>On <strong>Unity 6 or newer</strong>, an AI assistant that supports MCP (Claude, Cursor, VS Code Copilot, Windsurf…) can use
+SubVox Pro for you: list your voice lines, read their subtitles, transcribe, translate, dub, fix a line's text or
+set its speaker. Just ask it, for example <em>&quot;Transcribe the intro voice line and translate it into French and
+Spanish&quot;</em>.</p>
+<p><strong>Setup (once):</strong></p>
+<ol>
+<li>In <strong>Window ▸ Package Manager</strong>, click <strong>+ ▸ Add package by name</strong> and enter <code>com.unity.pipeline</code>
+(an experimental Unity package). SubVox Pro detects it automatically; nothing else to install.</li>
+<li>Follow the package's instructions to install the <code>unity</code> command-line tool, then connect your assistant with
+<code>unity mcp configure &lt;client&gt;</code> (for example <code>unity mcp configure claude</code>). <code>unity mcp configure --list</code> shows
+the supported assistants.</li>
+<li>Keep the Unity editor open with your project: the assistant works through it.</li>
+</ol>
+<p>The SubVox Pro tools all start with <code>subvox_</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>subvox_list_voicelines</code></td>
+<td>Lists your voice lines with their languages and length.</td>
+</tr>
+<tr>
+<td><code>subvox_get_voiceline</code></td>
+<td>Reads the lines of a voice line (text, start time, speaker), and a translation if asked.</td>
+</tr>
+<tr>
+<td><code>subvox_list_speakers</code></td>
+<td>Lists your speakers.</td>
+</tr>
+<tr>
+<td><code>subvox_list_providers</code></td>
+<td>Lists the transcription, translation and dubbing services, and which ones are ready.</td>
+</tr>
+<tr>
+<td><code>subvox_create_voiceline</code></td>
+<td>Creates a voice line from an audio clip of your project.</td>
+</tr>
+<tr>
+<td><code>subvox_transcribe</code></td>
+<td>Transcribes the voice line's audio into subtitles.</td>
+</tr>
+<tr>
+<td><code>subvox_translate</code></td>
+<td>Translates the subtitles into one or more languages.</td>
+</tr>
+<tr>
+<td><code>subvox_dub</code></td>
+<td>Generates the dubs of translated languages.</td>
+</tr>
+<tr>
+<td><code>subvox_set_subtitle_text</code></td>
+<td>Changes the text of one line, in the source language or a translation.</td>
+</tr>
+<tr>
+<td><code>subvox_set_speaker</code></td>
+<td>Sets the speaker of the whole voice line or of one line.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Costs stay under your control.</strong> Before using a paid online service, or replacing subtitles or dubs that already
+exist, the assistant first gets an estimate of the cost and of what would be replaced, and must ask you before
+going on. Offline engines are free. The services, models and voices are the ones you set in SubVox Pro; the
+assistant can choose another one for a single run without changing your settings.</p>
+<p>Changes made by the assistant show up in the open SubVox Pro window. Transcriptions, translations and text or
+speaker changes can be undone with <strong>Ctrl+Z</strong>.</p>
 <hr>
 <h2 id="offline-engines-no-account-no-api-key">Offline engines (no account, no API key)</h2>
 <p>On the <strong>Windows</strong> editor, SubVox Pro can do everything offline, for free, on your own machine. Each engine is

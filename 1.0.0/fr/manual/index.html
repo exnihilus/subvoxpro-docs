@@ -104,6 +104,7 @@ Le guide et la référence d’API existent en français sur ce site ; le PDF li
 <li><a href="#trigger-gameplay-from-a-voice-line">Déclencher du gameplay depuis une voiceline</a></li>
 <li><a href="#unity-timeline">Timeline Unity</a></li>
 <li><a href="#process-many-files-at-once">Traiter plusieurs fichiers à la fois</a></li>
+<li><a href="#work-with-your-ai-assistant-unity-6">Travailler avec votre assistant IA (Unity 6)</a></li>
 <li><a href="#offline-engines-no-account-no-api-key">Moteurs locaux, sans compte ni clé API</a></li>
 <li><a href="#human-translation-with-google-sheets">Traduction humaine avec Google Sheets</a></li>
 <li><a href="#settings">Réglages</a></li>
@@ -588,6 +589,78 @@ et indique quoi.</li>
 <p>Chaque fichier devient une voiceline. Le lot traite une étape pour tous les fichiers avant de passer à la suivante
 (toutes les transcriptions, puis toutes les traductions…), ce qui va plus vite avec les moteurs locaux.
 Vous pouvez annuler à tout moment et exporter un rapport ; relancer <strong>Batch</strong> reprend chaque fichier là où il s’était arrêté.</p>
+<hr/>
+<h2 id="work-with-your-ai-assistant-unity-6">Travailler avec votre assistant IA (Unity 6) </h2>
+<p>Sur <strong>Unity 6 ou plus récent</strong>, un assistant IA compatible MCP (Claude, Cursor, VS Code Copilot, Windsurf…) peut utiliser
+SubVox Pro pour vous : lister vos voicelines, lire leurs sous-titres, transcrire, traduire, doubler, corriger le texte
+d’une ligne ou choisir son speaker. Demandez-le-lui simplement, par exemple <em>« Transcris la voiceline de l’intro et
+traduis-la en français et en espagnol »</em>.</p>
+<p><strong>Mise en place (une fois) :</strong></p>
+<ol>
+<li>Dans <strong>Window ▸ Package Manager</strong>, cliquez sur <strong>+ ▸ Add package by name</strong> et saisissez <code>com.unity.pipeline</code>
+(un package Unity expérimental). SubVox Pro le détecte tout seul ; rien d’autre à installer.</li>
+<li>Suivez les instructions du package pour installer l’outil en ligne de commande <code>unity</code>, puis connectez votre
+assistant avec <code>unity mcp configure &lt;client&gt;</code> (par exemple <code>unity mcp configure claude</code>).
+<code>unity mcp configure --list</code> affiche les assistants pris en charge.</li>
+<li>Gardez l’éditeur Unity ouvert sur votre projet : l’assistant passe par lui.</li>
+</ol>
+<p>Les outils de SubVox Pro commencent tous par <code>subvox_</code> :</p>
+<table>
+<thead>
+<tr>
+<th>Outil</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>subvox_list_voicelines</code></td>
+<td>Liste vos voicelines avec leurs langues et leur durée.</td>
+</tr>
+<tr>
+<td><code>subvox_get_voiceline</code></td>
+<td>Lit les lignes d’une voiceline (texte, début, speaker) et, si demandé, une traduction.</td>
+</tr>
+<tr>
+<td><code>subvox_list_speakers</code></td>
+<td>Liste vos speakers.</td>
+</tr>
+<tr>
+<td><code>subvox_list_providers</code></td>
+<td>Liste les services de transcription, de traduction et de doublage, et ceux qui sont prêts.</td>
+</tr>
+<tr>
+<td><code>subvox_create_voiceline</code></td>
+<td>Crée une voiceline à partir d’un clip audio du projet.</td>
+</tr>
+<tr>
+<td><code>subvox_transcribe</code></td>
+<td>Transcrit l’audio de la voiceline en sous-titres.</td>
+</tr>
+<tr>
+<td><code>subvox_translate</code></td>
+<td>Traduit les sous-titres dans une ou plusieurs langues.</td>
+</tr>
+<tr>
+<td><code>subvox_dub</code></td>
+<td>Génère les doublages des langues traduites.</td>
+</tr>
+<tr>
+<td><code>subvox_set_subtitle_text</code></td>
+<td>Modifie le texte d’une ligne, dans la langue source ou dans une traduction.</td>
+</tr>
+<tr>
+<td><code>subvox_set_speaker</code></td>
+<td>Choisit le speaker de toute la voiceline ou d’une ligne.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Vous gardez la main sur les coûts.</strong> Avant d’utiliser un service en ligne payant, ou de remplacer des sous-titres
+ou des doublages existants, l’assistant obtient d’abord une estimation du coût et de ce qui serait remplacé, et doit
+vous demander votre accord. Les moteurs locaux sont gratuits. Les services, modèles et voix sont ceux réglés dans
+SubVox Pro ; l’assistant peut en choisir un autre le temps d’une opération sans modifier vos réglages.</p>
+<p>Les changements faits par l’assistant apparaissent dans la fenêtre SubVox Pro ouverte. Les transcriptions, les
+traductions et les changements de texte ou de speaker s’annulent avec <strong>Ctrl+Z</strong>.</p>
 <hr/>
 <h2 id="offline-engines-no-account-no-api-key">Moteurs locaux, sans compte ni clé API </h2>
 <p>Dans l’éditeur <strong>Windows</strong>, SubVox Pro peut tout faire sur votre machine, gratuitement et sans connexion.

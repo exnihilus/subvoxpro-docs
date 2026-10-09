@@ -102,6 +102,7 @@
 <li><a href="#trigger-gameplay-from-a-voice-line">通过语音台词触发游戏事件</a></li>
 <li><a href="#unity-timeline">Unity Timeline</a></li>
 <li><a href="#process-many-files-at-once">批量处理文件</a></li>
+<li><a href="#work-with-your-ai-assistant-unity-6">与 AI 助手协作（Unity 6）</a></li>
 <li><a href="#offline-engines-no-account-no-api-key">离线引擎（无需账户，无需 API key）</a></li>
 <li><a href="#human-translation-with-google-sheets">通过 Google Sheets 进行人工翻译</a></li>
 <li><a href="#settings">设置</a></li>
@@ -439,6 +440,68 @@ private void Shake()
 </ol>
 <p>每个文件都会生成一个独立的台词资源。批量处理会先对所有文件执行一个步骤，再进行下一个步骤（例如先完成所有转写，再完成所有翻译，最后完成所有配音），使用离线引擎时，这样处理更快。你可以随时取消操作并导出本次运行的报告；再次点击 <strong>Run batch</strong> 时，系统会从每个文件上次停止的位置继续处理，即使重启 Unity 后也是如此，且不会再次复制音频。当某一步骤被跳过（例如配音提供商不支持某种语言）时，文件下方会显示一条 ⚠ 提示行说明原因，且该文件状态显示为
 <strong>Done with warnings</strong>。文件处理完成后，点击 <strong>Open</strong> 可在编辑器中查看其台词资源，点击 <strong>Re-run</strong> 则会将其翻译和配音任务重新加入队列（例如在添加新语言后）。</p>
+<hr/>
+<h2 id="work-with-your-ai-assistant-unity-6">与 AI 助手协作（Unity 6） </h2>
+<p>在 <strong>Unity 6 或更高版本</strong>中，支持 MCP 的 AI 助手（Claude、Cursor、VS Code Copilot、Windsurf 等）可以替你使用 SubVox Pro：列出台词资源、读取字幕、转写、翻译、配音、修改某一行的文本或设置其角色。直接告诉它即可，例如 <em>“转写开场的台词资源，并翻译成法语和西班牙语”</em>。</p>
+<p><strong>设置（仅需一次）：</strong></p>
+<ol>
+<li>在 <strong>Window ▸ Package Manager</strong> 中点击 <strong>+ ▸ Add package by name</strong>，输入 <code>com.unity.pipeline</code>（Unity 的实验性包）。SubVox Pro 会自动识别，无需安装其他内容。</li>
+<li>按照该包的说明安装命令行工具 <code>unity</code>，然后用 <code>unity mcp configure &lt;client&gt;</code>（例如 <code>unity mcp configure claude</code>）连接你的助手。<code>unity mcp configure --list</code> 会列出支持的助手。</li>
+<li>保持 Unity 编辑器打开你的项目：助手通过编辑器工作。</li>
+</ol>
+<p>SubVox Pro 的工具都以 <code>subvox_</code> 开头：</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>subvox_list_voicelines</code></td>
+<td>列出台词资源及其语言和时长。</td>
+</tr>
+<tr>
+<td><code>subvox_get_voiceline</code></td>
+<td>读取台词资源的各行（文本、开始时间、角色），也可附带某个译文。</td>
+</tr>
+<tr>
+<td><code>subvox_list_speakers</code></td>
+<td>列出你的角色。</td>
+</tr>
+<tr>
+<td><code>subvox_list_providers</code></td>
+<td>列出转写、翻译和配音服务，以及哪些已就绪。</td>
+</tr>
+<tr>
+<td><code>subvox_create_voiceline</code></td>
+<td>用项目中的音频片段创建台词资源。</td>
+</tr>
+<tr>
+<td><code>subvox_transcribe</code></td>
+<td>将台词资源的音频转写为字幕。</td>
+</tr>
+<tr>
+<td><code>subvox_translate</code></td>
+<td>将字幕翻译成一种或多种语言。</td>
+</tr>
+<tr>
+<td><code>subvox_dub</code></td>
+<td>为已翻译的语言生成配音。</td>
+</tr>
+<tr>
+<td><code>subvox_set_subtitle_text</code></td>
+<td>修改某一行的文本（源语言或译文）。</td>
+</tr>
+<tr>
+<td><code>subvox_set_speaker</code></td>
+<td>设置整个台词资源或某一行的角色。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>费用始终由你掌控。</strong> 在使用付费在线服务，或替换已有的字幕或配音之前，助手会先获取费用以及将被替换内容的估算，并必须征得你的同意。离线引擎免费。所用的服务、模型和语音均为你在 SubVox Pro 中的设置；助手可以仅为某一次操作选择其他选项，而不会更改你的设置。</p>
+<p>助手所做的更改会显示在打开的 SubVox Pro 窗口中。转写、翻译以及文本或角色的更改可以用 <strong>Ctrl+Z</strong> 撤销。</p>
 <hr/>
 <h2 id="offline-engines-no-account-no-api-key">离线引擎（无需账户，无需 API 密钥） </h2>
 <p>在 <strong>Windows</strong> 上的 Unity 编辑器中，SubVox Pro 可在本机免费离线完成所有操作。每个引擎只需下载一次（其提供商选项旁边的按钮显示为 <strong>Setup model</strong> 或 <strong>Install…</strong>），并可供所有项目共享。<strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>（也是 Hub 中的一个功能卡片）会在一个窗口中列出所有引擎，显示其状态，并为每个引擎提供 <strong>Download</strong> 按钮和用于释放磁盘空间的 <strong>Uninstall</strong> 按钮。每个引擎都会显示所需的<strong>最低配置和推荐配置</strong>。配备显卡可显著提升运行速度，但即使没有显卡也能运行。</p>

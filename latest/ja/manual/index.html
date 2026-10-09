@@ -102,6 +102,7 @@
 <li><a href="#trigger-gameplay-from-a-voice-line">ボイスラインからゲームプレイをトリガーする</a></li>
 <li><a href="#unity-timeline">Unity Timeline</a></li>
 <li><a href="#process-many-files-at-once">複数のファイルを一度に処理する</a></li>
+<li><a href="#work-with-your-ai-assistant-unity-6">AIアシスタントと連携する（Unity 6）</a></li>
 <li><a href="#offline-engines-no-account-no-api-key">オフラインエンジン（アカウント不要、APIキー不要）</a></li>
 <li><a href="#human-translation-with-google-sheets">Google Sheetsを使った人手による翻訳</a></li>
 <li><a href="#settings">設定</a></li>
@@ -439,6 +440,68 @@ Timelineの再生開始時に選択されます。クリップはマネージャ
 <li>「<strong>Estimated cost</strong>」を確認し、「<strong>Batch</strong>」をクリックします。すべての準備が整うまでボタンはグレーアウトされ、不足している項目が表示されます。</li>
 </ol>
 <p>各ファイルから個別のボイスラインが作成されます。バッチ処理では、次のステップに進む前に、すべてのファイルに対して1つのステップを実行します（例えば、すべての文字起こし、次にすべての翻訳、その次にすべての吹き替え）。これにより、オフラインエンジンでの処理が高速化されます。いつでもキャンセルでき、実行レポートをエクスポートすることもできます。「<strong>Batch</strong>」を再度クリックすると、各ファイルが中断した箇所から処理が再開されます。</p>
+<hr/>
+<h2 id="work-with-your-ai-assistant-unity-6">AIアシスタントと連携する（Unity 6） </h2>
+<p><strong>Unity 6以降</strong>では、MCPに対応したAIアシスタント（Claude、Cursor、VS Code Copilot、Windsurfなど）がSubVox Proを代わりに操作できます。ボイスラインの一覧表示、字幕の読み取り、文字起こし、翻訳、吹き替え、行のテキスト修正、話者の設定などです。たとえば <em>「イントロのボイスラインを文字起こしして、フランス語とスペイン語に翻訳して」</em> と頼むだけです。</p>
+<p><strong>セットアップ（初回のみ）：</strong></p>
+<ol>
+<li><strong>Window ▸ Package Manager</strong> で <strong>+ ▸ Add package by name</strong> をクリックし、<code>com.unity.pipeline</code>（Unityの実験的パッケージ）を入力します。SubVox Proは自動的に検出します。ほかにインストールするものはありません。</li>
+<li>パッケージの手順に従ってコマンドラインツール <code>unity</code> をインストールし、<code>unity mcp configure &lt;client&gt;</code>（例：<code>unity mcp configure claude</code>）でアシスタントを接続します。<code>unity mcp configure --list</code> で対応アシスタントを確認できます。</li>
+<li>Unityエディターでプロジェクトを開いたままにしてください。アシスタントはエディター経由で動作します。</li>
+</ol>
+<p>SubVox Proのツールはすべて <code>subvox_</code> で始まります：</p>
+<table>
+<thead>
+<tr>
+<th>ツール</th>
+<th>機能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>subvox_list_voicelines</code></td>
+<td>ボイスラインを言語と長さとともに一覧表示します。</td>
+</tr>
+<tr>
+<td><code>subvox_get_voiceline</code></td>
+<td>ボイスラインの各行（テキスト、開始時間、話者）と、必要に応じて翻訳を読み取ります。</td>
+</tr>
+<tr>
+<td><code>subvox_list_speakers</code></td>
+<td>話者を一覧表示します。</td>
+</tr>
+<tr>
+<td><code>subvox_list_providers</code></td>
+<td>文字起こし・翻訳・吹き替えのサービスと、その準備状況を一覧表示します。</td>
+</tr>
+<tr>
+<td><code>subvox_create_voiceline</code></td>
+<td>プロジェクト内のオーディオクリップからボイスラインを作成します。</td>
+</tr>
+<tr>
+<td><code>subvox_transcribe</code></td>
+<td>ボイスラインの音声を文字起こしして字幕にします。</td>
+</tr>
+<tr>
+<td><code>subvox_translate</code></td>
+<td>字幕を1つ以上の言語に翻訳します。</td>
+</tr>
+<tr>
+<td><code>subvox_dub</code></td>
+<td>翻訳済みの言語の吹き替えを生成します。</td>
+</tr>
+<tr>
+<td><code>subvox_set_subtitle_text</code></td>
+<td>1行のテキストを、ソース言語または翻訳で変更します。</td>
+</tr>
+<tr>
+<td><code>subvox_set_speaker</code></td>
+<td>ボイスライン全体または1行の話者を設定します。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>コストは常にあなたが管理できます。</strong> 有料のオンラインサービスを使う前や、既存の字幕・吹き替えを置き換える前に、アシスタントはまずコストと置き換わる内容の見積もりを取得し、あなたの了承を得る必要があります。オフラインエンジンは無料です。サービス、モデル、ボイスはSubVox Proで設定したものが使われます。アシスタントは設定を変えずに、1回の処理だけ別のものを選ぶこともできます。</p>
+<p>アシスタントによる変更は、開いているSubVox Proウィンドウに表示されます。文字起こし、翻訳、テキストや話者の変更は <strong>Ctrl+Z</strong> で元に戻せます。</p>
 <hr/>
 <h2 id="offline-engines-no-account-no-api-key">オフラインエンジン（アカウント不要、API key不要） </h2>
 <p><strong>Windows</strong>のUnityエディターでは、SubVox Proのすべての処理を、お使いのマシン上でオフラインかつ無料で実行できます。各エンジンは一度ダウンロードするだけで（プロバイダーの横のボタンには「<strong>Setup model</strong>」または「<strong>Install…</strong>」と表示されます）、すべてのプロジェクトで共有されます。「<strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>」（Hubのタイルからも開けます）では、すべてのエンジンが1つのウィンドウに一覧表示され、各エンジンのステータスと「<strong>Download</strong>」ボタン、ディスク容量を解放するための「<strong>Uninstall</strong>」ボタンを確認できます。各エンジンには、動作に必要な<strong>最小および推奨のPC環境</strong>が表示されます。グラフィックスカードがあると処理速度が大幅に向上しますが、なくても動作します。</p>
