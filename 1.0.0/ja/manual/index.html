@@ -445,7 +445,7 @@ Timelineの再生開始時に選択されます。クリップはマネージャ
 <p>MCPに対応したAIアシスタント（Claude Code、Claude Desktop、Codex、Cursor、VS Code Copilot、Windsurfなど）がSubVox Proを代わりに操作できます。ボイスラインの一覧表示、字幕の読み取り、文字起こし、翻訳、吹き替え、行のテキスト修正、話者の設定などです。たとえば <em>「イントロのボイスラインを文字起こしして、フランス語とスペイン語に翻訳して」</em> と頼むだけです。</p>
 <p><strong>セットアップ（プロジェクトごとに1回）：</strong></p>
 <ol>
-<li><strong>Tools ▸ SubVox Pro ▸ MCP Server</strong>（Hubのタイルからも開けます）を開き、<strong>Start</strong> をクリックします。以後、プロジェクトを開くたびにサーバーは自動で起動します。</li>
+<li><strong>Tools ▸ SubVox Pro ▸ MCP Server</strong>（Hubのタイルからも開けます）を開き、<strong>Start</strong> をクリックします。プロジェクトを開くたびにUnityと一緒に起動するには、SubVox Proの設定（<strong>Preferences</strong>）で <strong>Start MCP server with Unity</strong> をオンにします。</li>
 <li><strong>Your assistants</strong> に、このコンピューターにインストールされているアシスタントが表示されます。<strong>Connect my assistants</strong> をクリックすると、SubVox Proがすべてのアシスタントにまとめて追加されます。ほかにインストールするものはありません。ほかのMCPサーバーはそのまま残り、変更したファイルごとに隣にコピー（<code>.subvox-backup</code>）が保存されます。</li>
 <li>アシスタントを再起動し（またはMCPサーバーを再読み込みし）、あとは話しかけるだけです。アシスタントが接続すると、その行に <strong>Connected at</strong> と時刻が表示されます。</li>
 <li>Unityエディターでプロジェクトを開いたままにしてください。アシスタントはエディター経由で動作します。</li>
@@ -661,7 +661,7 @@ Unity内に存在しなくなった行）です。シートに残す場合は、
 <p><strong>Tools ▸ SubVox Pro ▸ Settings</strong>：</p>
 <ul>
 <li><strong>API Keys</strong> — サービスごとに1つのキーを使用します。キーはこのコンピューター内に保存され、プロジェクトへの保存、コミット、配布物への同梱は一切行われません。行の末尾にある目のアイコンでキーの表示／非表示を切り替え、赤い×マークで削除できます。</li>
-<li><strong>Preferences</strong> — <strong>Show CPS</strong>（字幕の読み取り速度）、<strong>Custom inspectors</strong>、<strong>Auto blanks on new lines</strong>。</li>
+<li><strong>Preferences</strong> — <strong>Show CPS</strong>（字幕の読み取り速度）、<strong>Custom inspectors</strong>、<strong>Auto blanks on new lines</strong>、<strong>Start MCP server with Unity</strong>（既定はオフ）。</li>
 <li><strong>Data folder</strong> — 新しいボイスライン、話者、吹き替え音声の作成先です。</li>
 <li><strong>Cloud Model Catalog</strong> — クラウドAIモデルとその価格を表示し、オンラインで更新します。<strong>Manage models</strong>では、まだ一覧にないモデルを追加できます。ローカルモデルは<strong>Additional Models</strong>と各プロバイダーの操作機能を使って選択・インストールします。</li>
 <li><strong>Local models &amp; services</strong> — 各オフラインエンジンの状態（<strong>Ready</strong>または<strong>Not installed</strong>）、オプション（グラフィックスカードの使用、Chatterboxの表現力）、インストールや設定を行うボタンが表示されます。また、

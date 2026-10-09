@@ -445,7 +445,7 @@ private void Shake()
 <p>支持 MCP 的 AI 助手（Claude Code、Claude Desktop、Codex、Cursor、VS Code Copilot、Windsurf 等）可以替你使用 SubVox Pro：列出台词资源、读取字幕、转写、翻译、配音、修改某一行的文本或设置其角色。直接告诉它即可，例如 <em>“转写开场的台词资源，并翻译成法语和西班牙语”</em>。</p>
 <p><strong>设置（每个项目一次）：</strong></p>
 <ol>
-<li>打开 <strong>Tools ▸ SubVox Pro ▸ MCP Server</strong>（Hub 中也有对应磁贴），点击 <strong>Start</strong>。之后每次打开项目，服务器都会自动启动。</li>
+<li>打开 <strong>Tools ▸ SubVox Pro ▸ MCP Server</strong>（Hub 中也有对应磁贴），点击 <strong>Start</strong>。若要每次打开项目时随 Unity 一起启动，请在 SubVox Pro 设置（<strong>Preferences</strong>）中开启 <strong>Start MCP server with Unity</strong>。</li>
 <li><strong>Your assistants</strong> 下会列出你电脑上已安装的助手。点击 <strong>Connect my assistants</strong>：SubVox Pro 会一次性把自己添加到所有助手中，无需安装其他任何东西。你的其他 MCP 服务器保持不变，每个被修改的文件旁都会留一份副本（<code>.subvox-backup</code>）。</li>
 <li>重启你的助手（或重新加载其 MCP 服务器），然后直接提问即可。助手连接后，它所在的行会显示 <strong>Connected at</strong> 和时间。</li>
 <li>保持 Unity 编辑器打开你的项目：助手通过编辑器工作。</li>
@@ -659,7 +659,7 @@ SubVox Pro 会显示所有差异，一侧是 Unity，另一侧是表格，你可
 <p><strong>Tools ▸ SubVox Pro ▸ Settings</strong>：</p>
 <ul>
 <li><strong>API Keys</strong> — 每个服务使用一个密钥。密钥仅保存在本机上：绝不会保存在项目中、提交到版本控制系统或随项目分发。行末的眼睛图标用于显示或隐藏密钥，红色叉号用于删除密钥。</li>
-<li><strong>Preferences</strong> — <strong>Show CPS</strong>（阅读速度）、<strong>Custom inspectors</strong> 和 <strong>Auto blanks on new lines</strong>。</li>
+<li><strong>Preferences</strong> — <strong>Show CPS</strong>（阅读速度）、<strong>Custom inspectors</strong>、<strong>Auto blanks on new lines</strong> 和 <strong>Start MCP server with Unity</strong>（默认关闭）。</li>
 <li><strong>Data folder</strong> — 新建台词资源、说话者资源和配音的存储位置。</li>
 <li><strong>Cloud Model Catalog</strong> — 云端 AI 模型及其价格，在线更新。通过 <strong>Manage models</strong> 可添加尚未列出的模型。本地模型通过 <strong>Additional Models</strong> 和相应提供商的控件来选择和安装。</li>
 <li><strong>Local models &amp; services</strong> — 各离线引擎及其状态（<strong>Ready</strong> 或 <strong>Not installed</strong>）、相关选项（显卡使用设置、Chatterbox 表现力）以及用于安装或设置的按钮；此外还可清理
