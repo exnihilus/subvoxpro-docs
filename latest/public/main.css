@@ -275,6 +275,7 @@ article p > img:only-child {
     position: relative;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-start;
     align-items: center;
     gap: 0.25rem;
     padding-bottom: 0.75rem;
