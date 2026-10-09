@@ -130,9 +130,9 @@
 <hr/>
 <h2 id="quick-start">快速入门 </h2>
 <p>只需几分钟，即可将一个音频剪辑转换为屏幕上的同步字幕。</p>
-<p>SubVox Pro 的所有功能也都可通过 <strong>Tools ▸ SubVox Pro ▸ Hub</strong> 一键访问：这个由功能卡片组成的窗口可打开台词资源编辑器、批量处理、Google Sheets、提供商比较、附加的离线模型、示例场景、文档、提供商设置指南和设置。主界面有<strong>九张功能卡片</strong>。点击 <strong>Documentation</strong> 会打开第二个界面，其中仅包含 <strong>Online</strong>（指南、提供商指南及脚本参考，带英语/法语语言选择器）和 <strong>Local</strong>（英文 PDF，可离线使用）。点击 <strong>Back</strong> 可返回主界面；点击 <strong>Provider Setup</strong> 会直接打开同一份 PDF 的提供商设置部分。</p>
+<p>SubVox Pro 的所有功能也都可通过 <strong>Tools ▸ SubVox Pro ▸ Hub</strong> 一键访问：这个由功能卡片组成的窗口可打开台词资源编辑器、批量处理、Google Sheets、提供商比较、附加的离线模型、面向 AI 助手的 MCP 服务器、示例场景、文档和设置。主界面有<strong>九张功能卡片</strong>。点击 <strong>Documentation</strong> 会打开第二个界面，其中仅包含 <strong>Online</strong>（指南、提供商指南及脚本参考，带英语/法语语言选择器）、<strong>Local</strong>（英文 PDF，可离线使用）和 <strong>Provider Setup</strong>（直接打开同一份 PDF 的提供商设置部分）。点击 <strong>Back</strong> 可返回主界面。</p>
 <p><img alt="SubVox Pro Hub 及其九张工具卡片" src="Images/subvoxpro-hub.png"/></p>
-<p><img alt="Hub 中的文档界面：Online、Local 和 Back" src="Images/subvoxpro-hub-documentation.png"/></p>
+<p><img alt="Hub 中的文档界面：Online、Local、Provider Setup 和 Back" src="Images/subvoxpro-hub-documentation.png"/></p>
 <p><strong>1. 选择转写方式。</strong>可以在
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong> 中粘贴语音识别服务的 API key（<a href="providers.html">如何获取</a>），或者在 Windows 上使用 <strong>Whisper</strong> 或
 <strong>Parakeet</strong>，这两款工具均可免费离线运行（首次使用时会提示下载模型）。</p>
@@ -504,7 +504,7 @@ private void Shake()
 </tr>
 </tbody>
 </table>
-<p><strong>费用始终由你掌控。</strong> 在使用付费在线服务，或替换已有的字幕或配音之前，助手会先获取费用以及将被替换内容的估算，并必须征得你的同意。若要跳过确认，请在 SubVox Pro 设置（<strong>Preferences</strong>）中关闭 <strong>Assistants ask before paid runs</strong> 或 <strong>Assistants ask before overwriting</strong>。离线引擎免费。所用的服务、模型和语音均为你在 SubVox Pro 中的设置；助手可以仅为某一次操作选择其他选项，而不会更改你的设置。</p>
+<p><strong>费用始终由你掌控。</strong> 在使用付费在线服务，或替换已有的字幕或配音之前，助手会先获取费用以及将被替换内容的估算，并必须征得你的同意。若要跳过确认，请在 SubVox Pro 设置（<strong>Preferences</strong>）中关闭 <strong>Assistants ask before paid runs</strong> 或 <strong>Assistants ask before overwriting</strong>，也可在 MCP Server 窗口中关闭 <strong>Ask before paid runs</strong> / <strong>Ask before overwriting</strong>。离线引擎免费。所用的服务、模型和语音均为你在 SubVox Pro 中的设置；助手可以仅为某一次操作选择其他选项，而不会更改你的设置。</p>
 <p>助手所做的更改会显示在打开的 SubVox Pro 窗口中。转写、翻译以及文本或角色的更改可以用 <strong>Ctrl+Z</strong> 撤销。</p>
 <hr/>
 <h2 id="offline-engines-no-account-no-api-key">离线引擎（无需账户，无需 API 密钥） </h2>

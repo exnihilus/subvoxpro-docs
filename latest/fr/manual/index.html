@@ -134,14 +134,16 @@ devraient aussi fonctionner sous macOS et Linux, mais n’y ont pas encore été
 <h2 id="quick-start">Démarrage rapide </h2>
 <p>D’un clip audio à des sous-titres synchronisés, en quelques minutes.</p>
 <p><strong>Tools ▸ SubVox Pro ▸ Hub</strong> regroupe tous les outils en <strong>neuf tuiles</strong> : éditeur de voicelines, traitement par lot,
-Google Sheets, comparaison des fournisseurs, modèles locaux supplémentaires, scène d’exemple, documentation,
-configuration des fournisseurs et réglages.</p>
+Google Sheets, comparaison des fournisseurs, modèles locaux supplémentaires, serveur MCP pour les assistants IA,
+scènes d’exemple, documentation et réglages. <strong>Documentation</strong> ouvre un second écran avec <strong>Online</strong> (site),
+<strong>Local</strong> (le PDF anglais, hors ligne) et <strong>Provider Setup</strong> (le même PDF, ouvert directement à la configuration des
+fournisseurs) ; <strong>Back</strong> revient à l’accueil.</p>
 <p><img alt="Le Hub SubVox Pro avec ses neuf tuiles" src="Images/subvoxpro-hub.png"/></p>
 <p>La tuile <strong>Documentation</strong> propose deux choix, <strong>Online</strong> et <strong>Local</strong>.
 <strong>Online</strong> ouvre ce site (guide, fournisseurs et référence d’API), en anglais ou en français.
 <strong>Local</strong> ouvre le PDF anglais, lisible hors connexion. <strong>Back</strong> revient à l’accueil.
 La tuile <strong>Provider Setup</strong> ouvre ce même PDF directement à sa partie consacrée aux fournisseurs.</p>
-<p><img alt="Écran Documentation du Hub : Online, Local et Back" src="Images/subvoxpro-hub-documentation.png"/></p>
+<p><img alt="Écran Documentation du Hub : Online, Local, Provider Setup et Back" src="Images/subvoxpro-hub-documentation.png"/></p>
 <p><strong>1. Choisissez comment transcrire.</strong> Collez la clé API d’un service de transcription dans
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong> (<a href="providers.html">obtenir une clé</a>), ou utilisez sous Windows <strong>Whisper</strong> ou
 <strong>Parakeet</strong>, gratuits et hors connexion. Ils proposent de télécharger leur modèle à la première utilisation.</p>
@@ -666,7 +668,8 @@ reçoivent la nouvelle adresse tout seuls (redémarrez-les).</p>
 <p><strong>Vous gardez la main sur les coûts.</strong> Avant d’utiliser un service en ligne payant, ou de remplacer des sous-titres
 ou des doublages existants, l’assistant obtient d’abord une estimation du coût et de ce qui serait remplacé, et doit
 vous demander votre accord. Pour ne plus être sollicité, désactivez <strong>Assistants ask before paid runs</strong> ou <strong>Assistants ask before
-overwriting</strong> dans les réglages SubVox Pro (<strong>Preferences</strong>). Les moteurs locaux sont gratuits. Les services, modèles et voix sont ceux réglés dans
+overwriting</strong> dans les réglages SubVox Pro (<strong>Preferences</strong>), ou <strong>Ask before paid runs</strong> / <strong>Ask before overwriting</strong> dans la
+fenêtre MCP Server. Les moteurs locaux sont gratuits. Les services, modèles et voix sont ceux réglés dans
 SubVox Pro ; l’assistant peut en choisir un autre le temps d’une opération sans modifier vos réglages.</p>
 <p>Les changements faits par l’assistant apparaissent dans la fenêtre SubVox Pro ouverte. Les transcriptions, les
 traductions et les changements de texte ou de speaker s’annulent avec <strong>Ctrl+Z</strong>.</p>

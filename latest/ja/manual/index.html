@@ -131,10 +131,10 @@ macOSおよびLinuxのエディターでも動作すると考えられますが�
 <hr/>
 <h2 id="quick-start">クイックスタート </h2>
 <p>1つのオーディオクリップから、数分で画面上に音声と同期した字幕を表示できます。</p>
-<p>SubVox Proのすべての機能には、<strong>Tools ▸ SubVox Pro ▸ Hub</strong>からワンクリックでアクセスできます。このタイル形式のウィンドウから、ボイスラインエディター、バッチ処理、Google Sheets、プロバイダーの比較、追加のオフラインモデル、サンプルシーン、ドキュメント、プロバイダーの設定ガイド、設定を開けます。ホーム画面には<strong>9つのタイル</strong>があります。<strong>Documentation</strong>を選択すると、<strong>Online</strong>（ガイド、プロバイダーのガイド、スクリプトリファレンス。英語／フランス語の切り替えが可能）と<strong>Local</strong>（オフラインで利用できる英語のPDF）だけの画面が開きます。
-<strong>Back</strong>でホーム画面に戻り、<strong>Provider Setup</strong>で同じPDFのProvider Setupセクションを直接開けます。</p>
+<p>SubVox Proのすべての機能には、<strong>Tools ▸ SubVox Pro ▸ Hub</strong>からワンクリックでアクセスできます。このタイル形式のウィンドウから、ボイスラインエディター、バッチ処理、Google Sheets、プロバイダーの比較、追加のオフラインモデル、AIアシスタント用のMCPサーバー、サンプルシーン、ドキュメント、設定を開けます。ホーム画面には<strong>9つのタイル</strong>があります。<strong>Documentation</strong>を選択すると、<strong>Online</strong>（ガイド、プロバイダーのガイド、スクリプトリファレンス。英語／フランス語の切り替えが可能）、<strong>Local</strong>（オフラインで利用できる英語のPDF）、<strong>Provider Setup</strong>（同じPDFのProvider Setupセクションを直接開く）の画面が開きます。
+<strong>Back</strong>でホーム画面に戻ります。</p>
 <p><img alt="9つのツールタイルを備えたSubVox Pro Hub" src="Images/subvoxpro-hub.png"/></p>
-<p><img alt="Hub内のDocumentation画面：Online、Local、Back" src="Images/subvoxpro-hub-documentation.png"/></p>
+<p><img alt="Hub内のDocumentation画面：Online、Local、Provider Setup、Back" src="Images/subvoxpro-hub-documentation.png"/></p>
 <p><strong>1. 文字起こしの方法を選択します。</strong>音声認識サービスのAPIキーを
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong>に貼り付けるか（<a href="providers.html">取得方法はこちら</a>）、Windowsでは<strong>Whisper</strong>または
 <strong>Parakeet</strong>を使用します。これらは無料でオフラインで動作します（初回利用時にモデルのダウンロードを案内します）。</p>
@@ -504,7 +504,7 @@ Timelineの再生開始時に選択されます。クリップはマネージャ
 </tr>
 </tbody>
 </table>
-<p><strong>コストは常にあなたが管理できます。</strong> 有料のオンラインサービスを使う前や、既存の字幕・吹き替えを置き換える前に、アシスタントはまずコストと置き換わる内容の見積もりを取得し、あなたの了承を得る必要があります。確認を省くには、SubVox Proの設定（<strong>Preferences</strong>）で <strong>Assistants ask before paid runs</strong> または <strong>Assistants ask before overwriting</strong> をオフにします。オフラインエンジンは無料です。サービス、モデル、ボイスはSubVox Proで設定したものが使われます。アシスタントは設定を変えずに、1回の処理だけ別のものを選ぶこともできます。</p>
+<p><strong>コストは常にあなたが管理できます。</strong> 有料のオンラインサービスを使う前や、既存の字幕・吹き替えを置き換える前に、アシスタントはまずコストと置き換わる内容の見積もりを取得し、あなたの了承を得る必要があります。確認を省くには、SubVox Proの設定（<strong>Preferences</strong>）で <strong>Assistants ask before paid runs</strong> または <strong>Assistants ask before overwriting</strong> をオフにするか、MCP Serverウィンドウで <strong>Ask before paid runs</strong> / <strong>Ask before overwriting</strong> をオフにします。オフラインエンジンは無料です。サービス、モデル、ボイスはSubVox Proで設定したものが使われます。アシスタントは設定を変えずに、1回の処理だけ別のものを選ぶこともできます。</p>
 <p>アシスタントによる変更は、開いているSubVox Proウィンドウに表示されます。文字起こし、翻訳、テキストや話者の変更は <strong>Ctrl+Z</strong> で元に戻せます。</p>
 <hr/>
 <h2 id="offline-engines-no-account-no-api-key">オフラインエンジン（アカウント不要、API key不要） </h2>
