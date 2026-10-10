@@ -173,6 +173,13 @@ SubVox.Play(myVoiceLine);
 <h3 id="recording-audio">オーディオの録音 </h3>
 <img alt="Add an audio track: pick an audio clip or record with a microphone" src="Images/subvoxpro-new-voice-line-audio.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p>「<strong>Record with a microphone</strong>」（「<strong>Add an audio track</strong>」内、またはAUDIOセレクターの横にある「<strong>+</strong>」から選択）を選択すると、小さな録音ウィンドウが開きます。マイクを選択し、レベルを確認しながら録音します。再生して確認した後、「<strong>Use recording</strong>」を選択します。録音した音声は、ボイスラインと同じフォルダーにWAV形式で保存されます。macOSでは、システム設定でUnityによるマイクの使用を許可してください。</p>
+<h3 id="adding-your-own-dubs">独自の吹き替えの追加 </h3>
+<p>録音済みの吹き替えがある場合は、AUDIOセレクターの横にある <strong>+</strong> をクリックし、クリップを選択または録音します。続いて、その言語を尋ねるウィンドウが表示されます。</p>
+<ul>
+<li><strong>Replace a track</strong>：元のオーディオまたは既存の吹き替えと置き換えます。</li>
+<li><strong>Add a new track</strong>：言語を選択して、新しい吹き替えとして追加します。</li>
+</ul>
+<p>ラインは新しいオーディオ上に比例配置されます。マーカーをドラッグして微調整してください。その言語の翻訳済みラインがある場合は、吹き替えに重ねて表示されます。</p>
 <h3 id="checking-your-subtitles">字幕の確認 </h3>
 <ul>
 <li>「<strong>Show CPS</strong>」（<a href="#settings">「Settings」</a>内）を有効にすると、各字幕の読み取り速度が表示され、速すぎる字幕が示されます。</li>
@@ -336,6 +343,7 @@ yield return SubVox.Play(answer);
 <p><strong>声に連動するエフェクト。</strong> エミッターの <code>Loudness</code> は今の声の大きさを 0（無音）から 1 で示します。キャラクターが話している間、ハローを脈打たせたり、ライトを揺らしたり、アイコンを光らせたりできます。聞こえている言語に追従し、ボイスラインやそのオーディオを保存すると自動で計測されます。設定は不要です。</p>
 <pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
 </code></pre>
+<p><strong>メロディボイス。</strong>「どうぶつの森」風の声にするには、キャラクターのエミッターの隣に <strong>Voice Line Melody Voice</strong> を追加します。話す単語ごとに、声のメロディに沿った短いブリップ音が鳴ります。すべての言語に対応し、何も生成する必要はありません。ブリップ音だけを聞くには <strong>Replace</strong>、声に重ねるには <strong>Background</strong> を選びます。<strong>Base Pitch</strong> でキャラクターごとの音域を決め（小さなキャラクターは高く、大きなキャラクターは低く）、<strong>Preset</strong> または独自の <strong>Custom Sound</strong> を選び、<strong>Pitch Range</strong> でブリップ音が声にどれだけ沿うかを調整します。音声のないラインでも、軽いランダムな変化をつけたブリップ音が鳴ります。</p>
 <p><strong>吹き出し。</strong>キャラクターを選択し、<strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong> を選択します。そのキャラクターの頭上に吹き出しが表示され、そのキャラクターの発言のみが表示されます。これらの字幕を画面下部に表示しないようにするには、エミッターの <strong>Show Subtitles</strong> をオフにします。</p>
 <h3 id="without-code">コード不要 </h3>
 <ul>

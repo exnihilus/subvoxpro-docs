@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>类 VoiceLineMelodyVoice | SubVox Pro 文档 </title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Class VoiceLineMelodyVoice | SubVox Pro 文档 " name="title"/>
+<meta content="在其播放源说出的每个词上播放一个“动物森友会”风格的短促提示音，支持所有语言，无需生成任何内容：每个提示音跟随正在播放的音频（原声或配音）中该词的语调；当台词没有音频或人声不清晰时，则使用轻微的随机音高。将其添加到  旁边，并为每个角色选择音域。" name="description"/>
+<link href="../images/logo.svg" rel="icon"/>
+<link href="../public/docfx.min.css" rel="stylesheet"/>
+<link href="../public/main.css?v=fd4daf7803" rel="stylesheet"/>
+<meta content="../toc.html" name="docfx:navrel"/>
+<meta content="toc.html" name="docfx:tocrel"/>
+<meta content="../" name="docfx:rel"/>
+<meta content="本文内容" name="loc:inThisArticle"/>
+<meta content="“{query}”的搜索结果：{count} 条" name="loc:searchResultsCount"/>
+<meta content="没有与“{query}”匹配的结果" name="loc:searchNoResults"/>
+<meta content="按标题筛选" name="loc:tocFilter"/>
+<meta content="下一页" name="loc:nextArticle"/>
+<meta content="上一页" name="loc:prevArticle"/>
+<meta content="浅色" name="loc:themeLight"/>
+<meta content="深色" name="loc:themeDark"/>
+<meta content="自动" name="loc:themeAuto"/>
+<meta content="Change theme" name="loc:changeTheme"/>
+<meta content="Copy" name="loc:copy"/>
+<meta content="Download PDF" name="loc:downloadPdf"/>
+<script src="./../public/docfx.min.js?v=fd4daf7803" type="module"></script>
+<script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+  <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="zh-Hans">
+  <link rel="alternate" hreflang="en" href="../../api/SubVoxPro.VoiceLineMelodyVoice.html">
+<link rel="alternate" hreflang="fr" href="../../fr/api/SubVoxPro.VoiceLineMelodyVoice.html">
+<link rel="alternate" hreflang="de" href="../../de/api/SubVoxPro.VoiceLineMelodyVoice.html">
+<link rel="alternate" hreflang="ja" href="../../ja/api/SubVoxPro.VoiceLineMelodyVoice.html">
+<link rel="alternate" hreflang="zh-Hans" href="../../zh-Hans/api/SubVoxPro.VoiceLineMelodyVoice.html">
+</head>
+<body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+<header class="bg-body border-bottom">
+<nav class="navbar navbar-expand-md" id="autocollapse" role="navigation">
+<div class="container-xxl flex-nowrap">
+<a class="navbar-brand" href="../index.html">
+<img alt="SubVox Pro" class="svg" id="logo" src="../images/logo.svg"/>
+            SubVox Pro
+          </a>
+<button aria-controls="navpanel" aria-expanded="false" aria-label="切换导航" class="btn btn-lg d-md-none border-0" data-bs-target="#navpanel" data-bs-toggle="collapse" type="button">
+<i class="bi bi-three-dots"></i>
+</button>
+<div class="collapse navbar-collapse" id="navpanel">
+<div id="navbar">
+<form class="search" id="search" role="search">
+<i class="bi bi-search"></i>
+<input aria-label="搜索" autocomplete="off" class="form-control" disabled="" id="search-query" placeholder="搜索" type="search"/>
+</form>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="container-xxl">
+<div class="toc-offcanvas">
+<div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title" id="tocOffcanvasLabel">目录</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<nav class="toc" id="toc"></nav>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="actionbar">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<nav id="breadcrumb"></nav>
+</div>
+<article data-uid="SubVoxPro.VoiceLineMelodyVoice">
+<h1 class="text-break" data-uid="SubVoxPro.VoiceLineMelodyVoice" id="SubVoxPro_VoiceLineMelodyVoice">
+类 VoiceLineMelodyVoice  
+  </h1>
+<div class="facts text-secondary">
+<dl><dt>命名空间</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+<dl><dt>程序集</dt><dd>SubVoxPro.dll</dd></dl>
+</div>
+<div class="markdown summary"><p>在其播放源说出的每个词上播放一个“动物森友会”风格的短促提示音，支持所有语言，无需生成任何内容：每个提示音跟随正在播放的音频（原声或配音）中该词的语调；当台词没有音频或人声不清晰时，则使用轻微的随机音高。将其添加到 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> 旁边，并为每个角色选择音域。</p>
+</div>
+<div class="markdown conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public class VoiceLineMelodyVoice : MonoBehaviour</code></pre>
+</div>
+<dl class="typelist inheritance">
+<dt>继承</dt>
+<dd>
+<div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+<div><span class="xref">VoiceLineMelodyVoice</span></div>
+</dd>
+</dl>
+<h2 id="SubVoxPro_VoiceLineMelodyVoice_examples">Examples</h2>
+<pre><code class="lang-csharp">VoiceLineMelodyVoice voice = _villager.GetComponent&lt;VoiceLineMelodyVoice&gt;();
+voice.Mode = EVoiceLineMelodyMode.Replace;
+voice.BasePitch = 5f;
+_villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
+<h2 class="section" id="constructors">构造函数
+</h2>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.#ctor*" id="SubVoxPro_VoiceLineMelodyVoice__ctor_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.#ctor" id="SubVoxPro_VoiceLineMelodyVoice__ctor">
+  VoiceLineMelodyVoice()
+  
+  </h3>
+<div class="markdown level1 summary"></div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineMelodyVoice()</code></pre>
+</div>
+<h2 class="section" id="properties">属性
+</h2>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.BasePitch*" id="SubVoxPro_VoiceLineMelodyVoice_BasePitch_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.BasePitch" id="SubVoxPro_VoiceLineMelodyVoice_BasePitch">
+  BasePitch
+  
+  </h3>
+<div class="markdown level1 summary"><p>角色的音域，以半音计（-12 到 12）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float BasePitch { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound*" id="SubVoxPro_VoiceLineMelodyVoice_CustomSound_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound" id="SubVoxPro_VoiceLineMelodyVoice_CustomSound">
+  CustomSound
+  
+  </h3>
+<div class="markdown level1 summary"><p>在每个词上代替内置提示音播放的音频剪辑，或为 null。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public AudioClip CustomSound { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><span class="xref">AudioClip</span></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.Emitter*" id="SubVoxPro_VoiceLineMelodyVoice_Emitter_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.Emitter" id="SubVoxPro_VoiceLineMelodyVoice_Emitter">
+  Emitter
+  
+  </h3>
+<div class="markdown level1 summary"><p>其词语被发声的播放源。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public VoiceLineEmitter Emitter { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.FollowLoudness*" id="SubVoxPro_VoiceLineMelodyVoice_FollowLoudness_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.FollowLoudness" id="SubVoxPro_VoiceLineMelodyVoice_FollowLoudness">
+  FollowLoudness
+  
+  </h3>
+<div class="markdown level1 summary"><p>响亮的词是否产生更响的提示音，轻柔的词产生更轻的提示音。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public bool FollowLoudness { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.Mode*" id="SubVoxPro_VoiceLineMelodyVoice_Mode_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.Mode" id="SubVoxPro_VoiceLineMelodyVoice_Mode">
+  Mode
+  
+  </h3>
+<div class="markdown level1 summary"><p>提示音是替代人声（静音）还是叠加在人声之上。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLineMelodyMode Mode { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyMode.html">EVoiceLineMelodyMode</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.PitchRange*" id="SubVoxPro_VoiceLineMelodyVoice_PitchRange_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.PitchRange" id="SubVoxPro_VoiceLineMelodyVoice_PitchRange">
+  PitchRange
+  
+  </h3>
+<div class="markdown level1 summary"><p>提示音跟随人声语调的程度：0 = 平直，1 = 与说话一致（最高 2）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float PitchRange { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.Preset*" id="SubVoxPro_VoiceLineMelodyVoice_Preset_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.Preset" id="SubVoxPro_VoiceLineMelodyVoice_Preset">
+  Preset
+  
+  </h3>
+<div class="markdown level1 summary"><p>内置提示音，在 <a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html#SubVoxPro_VoiceLineMelodyVoice_CustomSound">CustomSound</a> 为空时使用。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLineMelodyPreset Preset { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyPreset.html">EVoiceLineMelodyPreset</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.RandomPitch*" id="SubVoxPro_VoiceLineMelodyVoice_RandomPitch_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.RandomPitch" id="SubVoxPro_VoiceLineMelodyVoice_RandomPitch">
+  RandomPitch
+  
+  </h3>
+<div class="markdown level1 summary"><p>每个提示音的随机音高变化，以半音计（0 到 6）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float RandomPitch { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.Volume*" id="SubVoxPro_VoiceLineMelodyVoice_Volume_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.Volume" id="SubVoxPro_VoiceLineMelodyVoice_Volume">
+  Volume
+  
+  </h3>
+<div class="markdown level1 summary"><p>提示音音量，从 0 到 1，叠乘在播放源 AudioSource 的音量之上。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float Volume { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<h2 class="section" id="methods">方法
+</h2>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.OnBlip*" id="SubVoxPro_VoiceLineMelodyVoice_OnBlip_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.OnBlip(SubVoxPro.SubtitleWordInfo,System.Single)" id="SubVoxPro_VoiceLineMelodyVoice_OnBlip_SubVoxPro_SubtitleWordInfo_System_Single_">
+  OnBlip(SubtitleWordInfo, float)
+  
+  </h3>
+<div class="markdown level1 summary"><p>每个提示音之后调用，传入对应的词及其以半音计的音高（0 = 参考音）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnBlip(SubtitleWordInfo word, float semitones)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>word</code> <a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a></dt>
+<dd></dd>
+<dt><code>semitones</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.OnDestroy*" id="SubVoxPro_VoiceLineMelodyVoice_OnDestroy_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.OnDestroy" id="SubVoxPro_VoiceLineMelodyVoice_OnDestroy">
+  OnDestroy()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写此方法时需调用基类实现。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnDestroy()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.OnDisable*" id="SubVoxPro_VoiceLineMelodyVoice_OnDisable_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.OnDisable" id="SubVoxPro_VoiceLineMelodyVoice_OnDisable">
+  OnDisable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写此方法时需调用基类实现。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnDisable()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.OnEnable*" id="SubVoxPro_VoiceLineMelodyVoice_OnEnable_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.OnEnable" id="SubVoxPro_VoiceLineMelodyVoice_OnEnable">
+  OnEnable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写此方法时需调用基类实现。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnEnable()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.OnValidate*" id="SubVoxPro_VoiceLineMelodyVoice_OnValidate_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.OnValidate" id="SubVoxPro_VoiceLineMelodyVoice_OnValidate">
+  OnValidate()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写此方法时需调用基类实现。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void OnValidate()</code></pre>
+</div>
+</article>
+</div>
+<div class="affix">
+<nav id="affix"></nav>
+</div>
+</main>
+<div class="container-xxl search-results" id="search-results"></div>
+<footer class="border-top text-secondary">
+<div class="container-xxl">
+<div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+</div>
+</footer>
+</body>
+</html>

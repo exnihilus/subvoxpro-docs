@@ -172,6 +172,13 @@ SubVox.Play(myVoiceLine);
 <img alt="Add an audio track: pick an audio clip or record with a microphone" src="Images/subvoxpro-new-voice-line-audio.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p><strong>Record with a microphone</strong>（位于 <strong>Add an audio track</strong> 或 AUDIO 选择器旁的 <strong>+</strong> 菜单中）会打开一个小型录音窗口：选择麦克风，观察音量电平，开始录音，回放试听，然后点击 <strong>Use recording</strong>。录制的音频会保存为
 WAV 文件，存放在台词资源所在的文件夹中。在 macOS 上，请在系统设置中允许 Unity 使用麦克风。</p>
+<h3 id="adding-your-own-dubs">添加您自己的配音 </h3>
+<p>已经有录制好的配音？点击 AUDIO 选择器旁的 <strong>+</strong>，选择或录制音频剪辑。随后会弹出一个窗口询问其语言：</p>
+<ul>
+<li><strong>Replace a track</strong>：替换原始音频或某个现有配音；</li>
+<li><strong>Add a new track</strong>：选择其语言，将其添加为新的配音。</li>
+</ul>
+<p>台词会按比例放置在新音频上；拖动标记即可微调。若存在该语言的翻译台词，它们会显示在配音之上。</p>
 <h3 id="checking-your-subtitles">检查字幕 </h3>
 <ul>
 <li><strong>Show CPS</strong>（位于 <a href="#settings">Settings</a>）会显示每条字幕的阅读速度，并标记阅读速度过快的字幕。</li>
@@ -333,6 +340,7 @@ yield return SubVox.Play(answer);
 <p><strong>由语音驱动的效果。</strong> 发射器的 <code>Loudness</code> 表示此刻语音的音量，从 0（静音）到 1：可在角色说话时让光晕跳动、灯光闪烁或图标发光。它跟随正在播放的语言，并在保存语音台词或其音频时自动测量，无需任何设置。</p>
 <pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
 </code></pre>
+<p><strong>旋律语音。</strong>要实现“动物森友会”风格的语音，请在角色的台词播放源旁添加 <strong>Voice Line Melody Voice</strong>：说出的每个词都会播放一个跟随人声旋律的短促提示音，支持所有语言，无需生成任何内容。选择 <strong>Replace</strong> 只听提示音，或选择 <strong>Background</strong> 将其叠加在人声之上。用 <strong>Base Pitch</strong> 为每个角色设定音域（小角色更高，大角色更低），选择一个 <strong>Preset</strong> 或您自己的 <strong>Custom Sound</strong>，并用 <strong>Pitch Range</strong> 调整提示音跟随人声的程度。没有音频的台词也会播放提示音，并带有轻微的随机变化。</p>
 <p><strong>对话气泡。</strong>选择一个角色，然后使用 <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>：该角色的头顶会出现一个气泡，仅显示该角色所说的台词。关闭其台词播放源的 <strong>Show Subtitles</strong> 选项，以避免这些字幕出现在屏幕底部。</p>
 <h3 id="without-code">无需代码 </h3>
 <ul>

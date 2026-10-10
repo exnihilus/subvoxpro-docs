@@ -222,6 +222,11 @@ Classes
 </dd>
 </dl>
 <dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html">VoiceLineMelodyVoice</a></dt>
+<dd><p>エミッターが話す単語ごとに「どうぶつの森」風の短いブリップ音を鳴らします。すべての言語に対応し、何も生成する必要はありません。各ブリップは再生中の音声（ソースまたは吹き替え）での単語のイントネーションに沿い、音声がない、または声がはっきりしないラインでは軽いランダムな音程になります。<a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> の隣に追加し、キャラクターごとに音域を選んでください。</p>
+</dd>
+</dl>
+<dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoiceLinePlayOnStart.html">VoiceLinePlayOnStart</a></dt>
 <dd><p>このオブジェクトが開始（または再有効化）された際、オプションの遅延時間を経て、ボイスラインを自動的に再生します。レベル導入部のナレーションや冒頭のセリフなどに適しています。<a class="xref" href="SubVoxPro.VoiceLinePlayOnStart.html#SubVoxPro_VoiceLinePlayOnStart_Play">Play()</a>は、手動での再利用が可能となるようpublicのままにされています。</p>
 </dd>
@@ -318,6 +323,16 @@ Enums
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.EVoiceLineLanguageSource.html">EVoiceLineLanguageSource</a></dt>
 <dd><p><a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a>の取得元です。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyMode.html">EVoiceLineMelodyMode</a></dt>
+<dd><p><a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html">VoiceLineMelodyVoice</a> がブリップ音を声とどう組み合わせるかを表します。</p>
+</dd>
+</dl>
+<dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyPreset.html">EVoiceLineMelodyPreset</a></dt>
+<dd><p>カスタムクリップがない場合に <a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html">VoiceLineMelodyVoice</a> が合成する内蔵ブリップ音です。</p>
 </dd>
 </dl>
 <dl class="jumplist">

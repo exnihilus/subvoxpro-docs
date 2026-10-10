@@ -205,6 +205,15 @@ Réglez <strong>Length</strong> : c’est la durée de lecture de la voiceline e
 Choisissez le microphone, surveillez le niveau, enregistrez, réécoutez, puis cliquez sur <strong>Use recording</strong>.
 La prise est enregistrée en WAV à côté de la voiceline. Sur macOS, autorisez Unity à utiliser le microphone dans
 les Réglages Système.</p>
+<h3 id="adding-your-own-dubs">Ajouter vos propres doublages </h3>
+<p>Vous avez déjà des doublages enregistrés ? Cliquez sur le <strong>+</strong> à côté du sélecteur AUDIO et choisissez ou enregistrez le
+clip. Une fenêtre demande alors sa langue :</p>
+<ul>
+<li><strong>Replace a track</strong> : il remplace l’audio d’origine ou un doublage existant ;</li>
+<li><strong>Add a new track</strong> : choisissez sa langue pour l’ajouter comme nouveau doublage.</li>
+</ul>
+<p>Les lignes sont placées proportionnellement sur le nouvel audio ; déplacez les marqueurs pour les ajuster. Les lignes
+traduites dans cette langue s’affichent sur le doublage quand elles existent.</p>
 <h3 id="checking-your-subtitles">Vérifier vos sous-titres </h3>
 <ul>
 <li><strong>Show CPS</strong>, dans les <a href="#settings">réglages</a>, affiche la vitesse de lecture et signale les lignes trop rapides.</li>
@@ -449,6 +458,12 @@ et <code>CurrentWord</code> contient le mot en cours : de quoi animer la bouche 
 <p><strong>Effets pilotés par la voix.</strong> <code>Loudness</code> d’un émetteur indique le volume actuel de la voix, de 0 (silence) à 1 : de quoi faire pulser un halo, vaciller une lumière ou briller une icône pendant qu’un personnage parle. Il suit la langue entendue et il est mesuré pour vous à l’enregistrement d’une voice line ou de son audio — rien à configurer.</p>
 <pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
 </code></pre>
+<p><strong>Voix mélodique.</strong> Pour des voix à la « Animal Crossing », ajoutez un <strong>Voice Line Melody Voice</strong> à côté de l’émetteur d’un
+personnage : chaque mot prononcé joue un court blip qui suit la mélodie de la voix, dans toutes les langues et sans rien
+à générer. Choisissez <strong>Replace</strong> pour n’entendre que les blips, ou <strong>Background</strong> pour les jouer par-dessus la voix. Donnez
+à chaque personnage son registre avec <strong>Base Pitch</strong> (plus aigu pour un petit personnage, plus grave pour un grand),
+choisissez un <strong>Preset</strong> ou votre propre <strong>Custom Sound</strong>, et réglez à quel point les blips suivent la voix avec
+<strong>Pitch Range</strong>. Les lignes sans audio ont aussi leurs blips, avec une légère variation aléatoire.</p>
 <p><strong>Bulles de dialogue.</strong> Sélectionnez un personnage et utilisez <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>.
 Une bulle au-dessus de sa tête n’affiche que ses répliques. Désactivez <strong>Show Subtitles</strong> sur son émetteur
 pour ne pas les afficher aussi en bas de l’écran.</p>

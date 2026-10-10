@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class VoiceLineMelodyVoice | SubVox Pro Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class VoiceLineMelodyVoice | SubVox Pro Documentation ">
+      
+      <meta name="description" content="Plays a short blip on every spoken word of its emitter, &amp;quot;Animal Crossing&amp;quot; style, in every language and with nothing to generate: each blip follows the intonation of the word in the audio playing (source or dub), and gets a light random pitch when the line has no audio or no clear voice. Put it next to a  and pick a register per character.">
+      <link rel="icon" href="../images/logo.svg">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css?v=fd4daf7803">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js?v=fd4daf7803"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'dark'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+    <meta name="svx:version" content="1.0.0">
+  <meta name="svx:language" content="en">
+  <link rel="alternate" hreflang="en" href="../api/SubVoxPro.VoiceLineMelodyVoice.html">
+<link rel="alternate" hreflang="fr" href="../fr/api/SubVoxPro.VoiceLineMelodyVoice.html">
+<link rel="alternate" hreflang="de" href="../de/api/SubVoxPro.VoiceLineMelodyVoice.html">
+<link rel="alternate" hreflang="ja" href="../ja/api/SubVoxPro.VoiceLineMelodyVoice.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/api/SubVoxPro.VoiceLineMelodyVoice.html">
+</head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.svg" alt="SubVox Pro">
+            SubVox Pro
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SubVoxPro.VoiceLineMelodyVoice">
+
+
+
+  <h1 id="SubVoxPro_VoiceLineMelodyVoice" data-uid="SubVoxPro.VoiceLineMelodyVoice" class="text-break">
+Class VoiceLineMelodyVoice  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Plays a short blip on every spoken word of its emitter, &quot;Animal Crossing&quot; style, in every language and with
+nothing to generate: each blip follows the intonation of the word in the audio playing (source or dub), and
+gets a light random pitch when the line has no audio or no clear voice. Put it next to a
+<a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> and pick a register per character.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class VoiceLineMelodyVoice : MonoBehaviour</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">VoiceLineMelodyVoice</span></div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+  <h2 id="SubVoxPro_VoiceLineMelodyVoice_examples">Examples</h2>
+  <pre><code class="lang-csharp">VoiceLineMelodyVoice voice = _villager.GetComponent&lt;VoiceLineMelodyVoice&gt;();
+voice.Mode = EVoiceLineMelodyMode.Replace;
+voice.BasePitch = 5f;
+_villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice__ctor_" data-uid="SubVoxPro.VoiceLineMelodyVoice.#ctor*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice__ctor" data-uid="SubVoxPro.VoiceLineMelodyVoice.#ctor">
+  VoiceLineMelodyVoice()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VoiceLineMelodyVoice()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_BasePitch_" data-uid="SubVoxPro.VoiceLineMelodyVoice.BasePitch*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_BasePitch" data-uid="SubVoxPro.VoiceLineMelodyVoice.BasePitch">
+  BasePitch
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Register of the character, in semitones (-12 to 12).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float BasePitch { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_CustomSound_" data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_CustomSound" data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound">
+  CustomSound
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>A clip played on each word instead of the built-in blip, or null.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AudioClip CustomSound { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">AudioClip</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_Emitter_" data-uid="SubVoxPro.VoiceLineMelodyVoice.Emitter*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_Emitter" data-uid="SubVoxPro.VoiceLineMelodyVoice.Emitter">
+  Emitter
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The emitter whose words are voiced.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VoiceLineEmitter Emitter { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_FollowLoudness_" data-uid="SubVoxPro.VoiceLineMelodyVoice.FollowLoudness*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_FollowLoudness" data-uid="SubVoxPro.VoiceLineMelodyVoice.FollowLoudness">
+  FollowLoudness
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether loud words get louder blips and quiet words softer ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool FollowLoudness { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_Mode_" data-uid="SubVoxPro.VoiceLineMelodyVoice.Mode*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_Mode" data-uid="SubVoxPro.VoiceLineMelodyVoice.Mode">
+  Mode
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the blips replace the voice (muted) or play over it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EVoiceLineMelodyMode Mode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyMode.html">EVoiceLineMelodyMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_PitchRange_" data-uid="SubVoxPro.VoiceLineMelodyVoice.PitchRange*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_PitchRange" data-uid="SubVoxPro.VoiceLineMelodyVoice.PitchRange">
+  PitchRange
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>How much the blips follow the intonation of the voice: 0 = flat, 1 = as spoken (up to 2).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PitchRange { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_Preset_" data-uid="SubVoxPro.VoiceLineMelodyVoice.Preset*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_Preset" data-uid="SubVoxPro.VoiceLineMelodyVoice.Preset">
+  Preset
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The built-in blip, used when <a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html#SubVoxPro_VoiceLineMelodyVoice_CustomSound">CustomSound</a> is empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EVoiceLineMelodyPreset Preset { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyPreset.html">EVoiceLineMelodyPreset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_RandomPitch_" data-uid="SubVoxPro.VoiceLineMelodyVoice.RandomPitch*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_RandomPitch" data-uid="SubVoxPro.VoiceLineMelodyVoice.RandomPitch">
+  RandomPitch
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Random pitch change of each blip, in semitones (0 to 6).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RandomPitch { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_Volume_" data-uid="SubVoxPro.VoiceLineMelodyVoice.Volume*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_Volume" data-uid="SubVoxPro.VoiceLineMelodyVoice.Volume">
+  Volume
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Volume of the blips, from 0 to 1, on top of the emitter's AudioSource volume.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Volume { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_OnBlip_" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnBlip*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_OnBlip_SubVoxPro_SubtitleWordInfo_System_Single_" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnBlip(SubVoxPro.SubtitleWordInfo,System.Single)">
+  OnBlip(SubtitleWordInfo, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called after each blip, with its word and its pitch in semitones (0 = the reference tone).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnBlip(SubtitleWordInfo word, float semitones)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>word</code> <a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a></dt>
+    <dd></dd>
+    <dt><code>semitones</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_OnDestroy_" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnDestroy*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_OnDestroy" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnDestroy">
+  OnDestroy()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Unity message; call the base method when you override it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnDestroy()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_OnDisable_" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnDisable*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_OnDisable" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnDisable">
+  OnDisable()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Unity message; call the base method when you override it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnDisable()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_OnEnable_" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnEnable*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_OnEnable" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnEnable">
+  OnEnable()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Unity message; call the base method when you override it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnEnable()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_OnValidate_" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnValidate*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_OnValidate" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnValidate">
+  OnValidate()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Unity message; call the base method when you override it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnValidate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

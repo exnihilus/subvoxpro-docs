@@ -198,6 +198,15 @@ wiedergegeben, bis Sie Audio hinzufügen oder aus dem Text eine Sprachfassung ge
 <p><strong>Record with a microphone</strong> (unter <strong>Add an audio track</strong> oder über das <strong>+</strong> neben dem AUDIO-Auswahlfeld) öffnet ein kleines
 Aufnahmefenster: Wählen Sie das Mikrofon aus, achten Sie auf den Pegel, nehmen Sie auf, hören Sie sich die Aufnahme an und wählen Sie anschließend <strong>Use recording</strong>. Die Aufnahme wird als
 WAV-Datei neben der Voice Line gespeichert. Gestatten Sie Unity unter macOS in den Systemeinstellungen die Nutzung des Mikrofons.</p>
+<h3 id="adding-your-own-dubs">Eigene Synchronisationen hinzufügen </h3>
+<p>Sie haben bereits aufgenommene Synchronisationen? Klicken Sie auf das <strong>+</strong> neben der AUDIO-Auswahl und wählen oder nehmen
+Sie den Clip auf. Ein Fenster fragt dann nach seiner Sprache:</p>
+<ul>
+<li><strong>Replace a track</strong> – ersetzt das Originalaudio oder eine vorhandene Synchronisation;</li>
+<li><strong>Add a new track</strong> – wählen Sie seine Sprache, um ihn als neue Synchronisation hinzuzufügen.</li>
+</ul>
+<p>Die Zeilen werden proportional auf dem neuen Audio platziert; ziehen Sie die Marker zur Feinabstimmung. Übersetzte Zeilen
+in dieser Sprache werden über der Synchronisation angezeigt, sofern vorhanden.</p>
 <h3 id="checking-your-subtitles">Untertitel überprüfen </h3>
 <ul>
 <li><strong>Show CPS</strong> (unter <a href="#settings">Settings</a>) zeigt die Lesegeschwindigkeit jedes Untertitels an und markiert Untertitel, die zu
@@ -442,6 +451,12 @@ seine Voice Lines schneller oder langsamer ab.</p>
 <p><strong>Stimmgesteuerte Effekte.</strong> <code>Loudness</code> eines Emitters gibt an, wie laut die Stimme gerade ist, von 0 (Stille) bis 1: damit pulsiert ein Schein, flackert ein Licht oder leuchtet ein Sprechersymbol, während eine Figur spricht. Es folgt der gehörten Sprache und wird beim Speichern einer Voice Line oder ihres Audios automatisch gemessen — nichts einzurichten.</p>
 <pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
 </code></pre>
+<p><strong>Melodiestimme.</strong> Für Stimmen im „Animal Crossing“-Stil fügen Sie neben dem Emitter einer Figur eine <strong>Voice Line Melody Voice</strong>
+hinzu: Jedes gesprochene Wort spielt einen kurzen Blip, der der Melodie der Stimme folgt, in jeder Sprache und ohne etwas zu
+generieren. Wählen Sie <strong>Replace</strong>, um nur die Blips zu hören, oder <strong>Background</strong>, um sie über der Stimme abzuspielen. Geben Sie
+jeder Figur mit <strong>Base Pitch</strong> ihre eigene Stimmlage (höher für eine kleine Figur, tiefer für eine große), wählen Sie ein
+<strong>Preset</strong> oder Ihren eigenen <strong>Custom Sound</strong> und legen Sie mit <strong>Pitch Range</strong> fest, wie genau die Blips der Stimme folgen.
+Zeilen ohne Audio erhalten ebenfalls Blips, mit einer leichten zufälligen Variation.</p>
 <p><strong>Sprechblasen.</strong> Wählen Sie eine Figur aus und verwenden Sie <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>: Über
 ihrem Kopf erscheint eine Sprechblase, die nur das anzeigt, was diese Figur sagt. Deaktivieren Sie die Option <strong>Show Subtitles</strong> ihres Emitters, damit diese Voice Lines
 nicht am unteren Bildschirmrand angezeigt werden.</p>
