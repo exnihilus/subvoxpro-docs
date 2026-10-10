@@ -205,6 +205,36 @@ references:
   commentId: F:SubVoxPro.EVoiceLineMelodyPreset.Soft
   fullName: SubVoxPro.EVoiceLineMelodyPreset.Soft
   nameWithType: EVoiceLineMelodyPreset.Soft
+- uid: SubVoxPro.EVoiceLineMelodyScale
+  name: EVoiceLineMelodyScale
+  href: api/SubVoxPro.EVoiceLineMelodyScale.html
+  commentId: T:SubVoxPro.EVoiceLineMelodyScale
+  fullName: SubVoxPro.EVoiceLineMelodyScale
+  nameWithType: EVoiceLineMelodyScale
+- uid: SubVoxPro.EVoiceLineMelodyScale.Major
+  name: Major
+  href: api/SubVoxPro.EVoiceLineMelodyScale.html#SubVoxPro_EVoiceLineMelodyScale_Major
+  commentId: F:SubVoxPro.EVoiceLineMelodyScale.Major
+  fullName: SubVoxPro.EVoiceLineMelodyScale.Major
+  nameWithType: EVoiceLineMelodyScale.Major
+- uid: SubVoxPro.EVoiceLineMelodyScale.Minor
+  name: Minor
+  href: api/SubVoxPro.EVoiceLineMelodyScale.html#SubVoxPro_EVoiceLineMelodyScale_Minor
+  commentId: F:SubVoxPro.EVoiceLineMelodyScale.Minor
+  fullName: SubVoxPro.EVoiceLineMelodyScale.Minor
+  nameWithType: EVoiceLineMelodyScale.Minor
+- uid: SubVoxPro.EVoiceLineMelodyScale.None
+  name: None
+  href: api/SubVoxPro.EVoiceLineMelodyScale.html#SubVoxPro_EVoiceLineMelodyScale_None
+  commentId: F:SubVoxPro.EVoiceLineMelodyScale.None
+  fullName: SubVoxPro.EVoiceLineMelodyScale.None
+  nameWithType: EVoiceLineMelodyScale.None
+- uid: SubVoxPro.EVoiceLineMelodyScale.Pentatonic
+  name: Pentatonic
+  href: api/SubVoxPro.EVoiceLineMelodyScale.html#SubVoxPro_EVoiceLineMelodyScale_Pentatonic
+  commentId: F:SubVoxPro.EVoiceLineMelodyScale.Pentatonic
+  fullName: SubVoxPro.EVoiceLineMelodyScale.Pentatonic
+  nameWithType: EVoiceLineMelodyScale.Pentatonic
 - uid: SubVoxPro.EVoiceLineMelodyUnit
   name: EVoiceLineMelodyUnit
   href: api/SubVoxPro.EVoiceLineMelodyUnit.html
@@ -1153,6 +1183,18 @@ references:
   commentId: Overload:SubVoxPro.MelodyVoiceModifier.RandomPitch
   fullName: SubVoxPro.MelodyVoiceModifier.RandomPitch
   nameWithType: MelodyVoiceModifier.RandomPitch
+- uid: SubVoxPro.MelodyVoiceModifier.Scale
+  name: Scale
+  href: api/SubVoxPro.MelodyVoiceModifier.html#SubVoxPro_MelodyVoiceModifier_Scale
+  commentId: P:SubVoxPro.MelodyVoiceModifier.Scale
+  fullName: SubVoxPro.MelodyVoiceModifier.Scale
+  nameWithType: MelodyVoiceModifier.Scale
+- uid: SubVoxPro.MelodyVoiceModifier.Scale*
+  name: Scale
+  href: api/SubVoxPro.MelodyVoiceModifier.html#SubVoxPro_MelodyVoiceModifier_Scale_
+  commentId: Overload:SubVoxPro.MelodyVoiceModifier.Scale
+  fullName: SubVoxPro.MelodyVoiceModifier.Scale
+  nameWithType: MelodyVoiceModifier.Scale
 - uid: SubVoxPro.MelodyVoiceModifier.Update
   name: Update()
   href: api/SubVoxPro.MelodyVoiceModifier.html#SubVoxPro_MelodyVoiceModifier_Update

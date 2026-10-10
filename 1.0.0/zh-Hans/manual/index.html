@@ -340,7 +340,7 @@ yield return SubVox.Play(answer);
 <p><strong>由语音驱动的效果。</strong> 发射器的 <code>Loudness</code> 表示此刻语音的音量，从 0（静音）到 1：可在角色说话时让光晕跳动、灯光闪烁或图标发光。它跟随正在播放的语言，并在保存语音台词或其音频时自动测量，无需任何设置。</p>
 <pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
 </code></pre>
-<p><strong>旋律语音。</strong>要实现“动物森友会”风格的语音，请在角色的台词播放源旁添加 <strong>Melody Voice Modifier</strong>：说出的每个音节都会播放一个跟随人声旋律的短促提示音，支持所有语言，无需生成任何内容（将 <strong>Blip On</strong> 设为 <strong>Word</strong> 即每个词一个提示音）。选择 <strong>Replace</strong> 只听提示音，或选择 <strong>Background</strong> 将其叠加在人声之上。用 <strong>Base Pitch</strong> 为每个角色设定音域（小角色更高，大角色更低），选择一个 <strong>Preset</strong>（提示音，或钢琴、八音盒、马林巴、吉他的音符）或您自己的 <strong>Custom Sound</strong>，并用 <strong>Pitch Range</strong> 调整提示音跟随人声的程度。没有音频的台词也会播放提示音，并带有轻微的随机变化。</p>
+<p><strong>旋律语音。</strong>要实现“动物森友会”风格的语音，请在角色的台词播放源旁添加 <strong>Melody Voice Modifier</strong>：说出的每个音节都会播放一个跟随人声旋律的短促提示音，支持所有语言，无需生成任何内容（将 <strong>Blip On</strong> 设为 <strong>Word</strong> 即每个词一个提示音）。选择 <strong>Replace</strong> 只听提示音，或选择 <strong>Background</strong> 将其叠加在人声之上。用 <strong>Base Pitch</strong> 为每个角色设定音域（小角色更高，大角色更低），选择一个 <strong>Preset</strong>（提示音，或钢琴、八音盒、马林巴、吉他的音符）或您自己的 <strong>Custom Sound</strong>，并用 <strong>Pitch Range</strong> 调整提示音跟随人声的程度。使用乐器时，将 <strong>Scale</strong> 设为 <strong>Pentatonic</strong>（欢快的曲调用 <strong>Major</strong>，忧伤的用 <strong>Minor</strong>）：每个音符都会按角色人声的调对准音阶，旋律听起来更和谐。没有音频的台词也会播放提示音，并带有轻微的随机变化。</p>
 <p><strong>对话气泡。</strong>选择一个角色，然后使用 <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>：该角色的头顶会出现一个气泡，仅显示该角色所说的台词。关闭其台词播放源的 <strong>Show Subtitles</strong> 选项，以避免这些字幕出现在屏幕底部。</p>
 <h3 id="without-code">无需代码 </h3>
 <ul>
