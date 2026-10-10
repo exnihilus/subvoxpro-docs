@@ -451,7 +451,7 @@ seine Voice Lines schneller oder langsamer ab.</p>
 <p><strong>Stimmgesteuerte Effekte.</strong> <code>Loudness</code> eines Emitters gibt an, wie laut die Stimme gerade ist, von 0 (Stille) bis 1: damit pulsiert ein Schein, flackert ein Licht oder leuchtet ein Sprechersymbol, während eine Figur spricht. Es folgt der gehörten Sprache und wird beim Speichern einer Voice Line oder ihres Audios automatisch gemessen — nichts einzurichten.</p>
 <pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
 </code></pre>
-<p><strong>Melodiestimme.</strong> Für Stimmen im „Animal Crossing“-Stil fügen Sie neben dem Emitter einer Figur eine <strong>Voice Line Melody Voice</strong>
+<p><strong>Melodiestimme.</strong> Für Stimmen im „Animal Crossing“-Stil fügen Sie neben dem Emitter einer Figur eine <strong>Melody Voice Modifier</strong>
 hinzu: Jede gesprochene Silbe spielt einen kurzen Blip, der der Melodie der Stimme folgt, in jeder Sprache und ohne etwas zu
 generieren (stellen Sie <strong>Blip On</strong> auf <strong>Word</strong> für einen Blip pro Wort). Wählen Sie <strong>Replace</strong>, um nur die Blips zu hören, oder <strong>Background</strong>, um sie über der Stimme abzuspielen. Geben Sie
 jeder Figur mit <strong>Base Pitch</strong> ihre eigene Stimmlage (höher für eine kleine Figur, tiefer für eine große), wählen Sie ein

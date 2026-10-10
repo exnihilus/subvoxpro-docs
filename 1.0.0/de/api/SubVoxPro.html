@@ -107,6 +107,11 @@ Classes
 </dd>
 </dl>
 <dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.MelodyVoiceModifier.html">MelodyVoiceModifier</a></dt>
+<dd><p>Spielt bei jeder gesprochenen Silbe (oder jedem Wort) seines Emitters einen kurzen Blip im „Animal Crossing“-Stil, in jeder Sprache und ohne etwas zu generieren: Jeder Blip folgt der Intonation der Stimme im abgespielten Audio (Quelle oder Synchronisation) und erhält eine leichte zufällige Tonhöhe, wenn die Zeile kein Audio oder keine klare Stimme hat. Fügen Sie ihn neben einem <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> hinzu und wählen Sie eine Stimmlage pro Figur.</p>
+</dd>
+</dl>
+<dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a></dt>
 <dd><p>Ein benannter, stilistisch definierter Speaker, dem Untertitel zugeordnet werden können. Jeder Speaker ist ein eigenständiges Asset und kann daher für verschiedene Voice Lines wiederverwendet werden; das Geschlecht dient lediglich dazu, Speaker in der Editor-Auswahl zu gruppieren.</p>
 </dd>
@@ -222,11 +227,6 @@ Classes
 </dd>
 </dl>
 <dl class="jumplist">
-<dt><a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html">VoiceLineMelodyVoice</a></dt>
-<dd><p>Spielt bei jeder gesprochenen Silbe (oder jedem Wort) seines Emitters einen kurzen Blip im „Animal Crossing“-Stil, in jeder Sprache und ohne etwas zu generieren: Jeder Blip folgt der Intonation der Stimme im abgespielten Audio (Quelle oder Synchronisation) und erhält eine leichte zufällige Tonhöhe, wenn die Zeile kein Audio oder keine klare Stimme hat. Fügen Sie ihn neben einem <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> hinzu und wählen Sie eine Stimmlage pro Figur.</p>
-</dd>
-</dl>
-<dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoiceLinePlayOnStart.html">VoiceLinePlayOnStart</a></dt>
 <dd><p>Spielt eine Voice Line automatisch ab, wenn dieses Objekt gestartet (oder wieder aktiviert) wird, nach einer optionalen Verzögerung. Typisch für eine Einführungserzählung zu einem Level oder eine Eröffnungszeile. <a class="xref" href="SubVoxPro.VoiceLinePlayOnStart.html#SubVoxPro_VoiceLinePlayOnStart_Play">Play()</a> bleibt öffentlich zugänglich, um eine manuelle Wiederverwendung zu ermöglichen.</p>
 </dd>
@@ -327,17 +327,17 @@ Enums
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyMode.html">EVoiceLineMelodyMode</a></dt>
-<dd><p>Wie eine <a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html">VoiceLineMelodyVoice</a> ihre Blips mit der Stimme mischt.</p>
+<dd><p>Wie eine <a class="xref" href="SubVoxPro.MelodyVoiceModifier.html">MelodyVoiceModifier</a> ihre Blips mit der Stimme mischt.</p>
 </dd>
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyPreset.html">EVoiceLineMelodyPreset</a></dt>
-<dd><p>Der integrierte Blip, den eine <a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html">VoiceLineMelodyVoice</a> ohne eigenen Clip synthetisiert.</p>
+<dd><p>Der integrierte Blip, den eine <a class="xref" href="SubVoxPro.MelodyVoiceModifier.html">MelodyVoiceModifier</a> ohne eigenen Clip synthetisiert.</p>
 </dd>
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyUnit.html">EVoiceLineMelodyUnit</a></dt>
-<dd><p>Worauf ein <a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html">VoiceLineMelodyVoice</a> einen Blip abspielt.</p>
+<dd><p>Worauf ein <a class="xref" href="SubVoxPro.MelodyVoiceModifier.html">MelodyVoiceModifier</a> einen Blip abspielt.</p>
 </dd>
 </dl>
 <dl class="jumplist">

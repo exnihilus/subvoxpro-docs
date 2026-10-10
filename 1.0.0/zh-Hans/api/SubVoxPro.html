@@ -107,6 +107,11 @@ Classes
 </dd>
 </dl>
 <dl class="jumplist">
+<dt><a class="xref" href="SubVoxPro.MelodyVoiceModifier.html">MelodyVoiceModifier</a></dt>
+<dd><p>在其播放源说出的每个音节（或词）上播放一个“动物森友会”风格的短促提示音，支持所有语言，无需生成任何内容：每个提示音跟随正在播放的音频（原声或配音）中人声的语调；当台词没有音频或人声不清晰时，则使用轻微的随机音高。将其添加到 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> 旁边，并为每个角色选择音域。</p>
+</dd>
+</dl>
+<dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a></dt>
 <dd><p>具有名称和样式的说话者，可指定为字幕的说话者。每个说话者都是独立的资源，可在多个台词资源中复用；性别仅用于在编辑器的选择器中对说话者分组。</p>
 </dd>
@@ -222,11 +227,6 @@ Classes
 </dd>
 </dl>
 <dl class="jumplist">
-<dt><a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html">VoiceLineMelodyVoice</a></dt>
-<dd><p>在其播放源说出的每个音节（或词）上播放一个“动物森友会”风格的短促提示音，支持所有语言，无需生成任何内容：每个提示音跟随正在播放的音频（原声或配音）中人声的语调；当台词没有音频或人声不清晰时，则使用轻微的随机音高。将其添加到 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> 旁边，并为每个角色选择音域。</p>
-</dd>
-</dl>
-<dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.VoiceLinePlayOnStart.html">VoiceLinePlayOnStart</a></dt>
 <dd><p>当此对象启动（或重新启用）时，经过可选的延迟后自动播放一条台词资源。通常用于关卡开场旁白或开场白。<a class="xref" href="SubVoxPro.VoiceLinePlayOnStart.html#SubVoxPro_VoiceLinePlayOnStart_Play">Play()</a> 保持为 public 以便手动复用。</p>
 </dd>
@@ -327,17 +327,17 @@ Enums
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyMode.html">EVoiceLineMelodyMode</a></dt>
-<dd><p><a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html">VoiceLineMelodyVoice</a> 将提示音与人声混合的方式。</p>
+<dd><p><a class="xref" href="SubVoxPro.MelodyVoiceModifier.html">MelodyVoiceModifier</a> 将提示音与人声混合的方式。</p>
 </dd>
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyPreset.html">EVoiceLineMelodyPreset</a></dt>
-<dd><p><a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html">VoiceLineMelodyVoice</a> 在没有自定义音频剪辑时合成的内置提示音。</p>
+<dd><p><a class="xref" href="SubVoxPro.MelodyVoiceModifier.html">MelodyVoiceModifier</a> 在没有自定义音频剪辑时合成的内置提示音。</p>
 </dd>
 </dl>
 <dl class="jumplist">
 <dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyUnit.html">EVoiceLineMelodyUnit</a></dt>
-<dd><p><a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html">VoiceLineMelodyVoice</a> 播放提示音的单位。</p>
+<dd><p><a class="xref" href="SubVoxPro.MelodyVoiceModifier.html">MelodyVoiceModifier</a> 播放提示音的单位。</p>
 </dd>
 </dl>
 <dl class="jumplist">

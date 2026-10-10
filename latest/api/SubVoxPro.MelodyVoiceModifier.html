@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-      <title>Class VoiceLineMelodyVoice | SubVox Pro Documentation </title>
+      <title>Class MelodyVoiceModifier | SubVox Pro Documentation </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class VoiceLineMelodyVoice | SubVox Pro Documentation ">
+      <meta name="title" content="Class MelodyVoiceModifier | SubVox Pro Documentation ">
       
       <meta name="description" content="Plays a short blip on every spoken syllable (or word) of its emitter, &amp;quot;Animal Crossing&amp;quot; style, in every language and with nothing to generate: each blip follows the intonation of the voice in the audio playing (source or dub), and gets a light random pitch when the line has no audio or no clear voice. Put it next to a  and pick a register per character.">
       <link rel="icon" href="../images/logo.svg">
@@ -39,11 +39,11 @@
 
     <meta name="svx:version" content="1.0.0">
   <meta name="svx:language" content="en">
-  <link rel="alternate" hreflang="en" href="../api/SubVoxPro.VoiceLineMelodyVoice.html">
-<link rel="alternate" hreflang="fr" href="../fr/api/SubVoxPro.VoiceLineMelodyVoice.html">
-<link rel="alternate" hreflang="de" href="../de/api/SubVoxPro.VoiceLineMelodyVoice.html">
-<link rel="alternate" hreflang="ja" href="../ja/api/SubVoxPro.VoiceLineMelodyVoice.html">
-<link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/api/SubVoxPro.VoiceLineMelodyVoice.html">
+  <link rel="alternate" hreflang="en" href="../api/SubVoxPro.MelodyVoiceModifier.html">
+<link rel="alternate" hreflang="fr" href="../fr/api/SubVoxPro.MelodyVoiceModifier.html">
+<link rel="alternate" hreflang="de" href="../de/api/SubVoxPro.MelodyVoiceModifier.html">
+<link rel="alternate" hreflang="ja" href="../ja/api/SubVoxPro.MelodyVoiceModifier.html">
+<link rel="alternate" hreflang="zh-Hans" href="../zh-Hans/api/SubVoxPro.MelodyVoiceModifier.html">
 </head>
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
@@ -91,12 +91,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="SubVoxPro.VoiceLineMelodyVoice">
+        <article data-uid="SubVoxPro.MelodyVoiceModifier">
 
 
 
-  <h1 id="SubVoxPro_VoiceLineMelodyVoice" data-uid="SubVoxPro.VoiceLineMelodyVoice" class="text-break">
-Class VoiceLineMelodyVoice  
+  <h1 id="SubVoxPro_MelodyVoiceModifier" data-uid="SubVoxPro.MelodyVoiceModifier" class="text-break">
+Class MelodyVoiceModifier  
   </h1>
 
   <div class="facts text-secondary">
@@ -112,7 +112,7 @@ and gets a light random pitch when the line has no audio or no clear voice. Put 
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class VoiceLineMelodyVoice : MonoBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class MelodyVoiceModifier : MonoBehaviour</code></pre>
   </div>
 
 
@@ -122,7 +122,7 @@ and gets a light random pitch when the line has no audio or no clear voice. Put 
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">VoiceLineMelodyVoice</span></div>
+      <div><span class="xref">MelodyVoiceModifier</span></div>
     </dd>
   </dl>
 
@@ -131,8 +131,8 @@ and gets a light random pitch when the line has no audio or no clear voice. Put 
 
 
 
-  <h2 id="SubVoxPro_VoiceLineMelodyVoice_examples">Examples</h2>
-  <pre><code class="lang-csharp">VoiceLineMelodyVoice voice = _villager.GetComponent&lt;VoiceLineMelodyVoice&gt;();
+  <h2 id="SubVoxPro_MelodyVoiceModifier_examples">Examples</h2>
+  <pre><code class="lang-csharp">MelodyVoiceModifier voice = _villager.GetComponent&lt;MelodyVoiceModifier&gt;();
 voice.Mode = EVoiceLineMelodyMode.Replace;
 voice.BasePitch = 5f;
 _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
@@ -144,10 +144,10 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 </h2>
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice__ctor_" data-uid="SubVoxPro.VoiceLineMelodyVoice.#ctor*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier__ctor_" data-uid="SubVoxPro.MelodyVoiceModifier.#ctor*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice__ctor" data-uid="SubVoxPro.VoiceLineMelodyVoice.#ctor">
-  VoiceLineMelodyVoice()
+  <h3 id="SubVoxPro_MelodyVoiceModifier__ctor" data-uid="SubVoxPro.MelodyVoiceModifier.#ctor">
+  MelodyVoiceModifier()
   
   </h3>
 
@@ -155,7 +155,7 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public VoiceLineMelodyVoice()</code></pre>
+    <pre><code class="lang-csharp hljs">public MelodyVoiceModifier()</code></pre>
   </div>
 
 
@@ -174,9 +174,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 </h2>
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_BasePitch_" data-uid="SubVoxPro.VoiceLineMelodyVoice.BasePitch*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_BasePitch_" data-uid="SubVoxPro.MelodyVoiceModifier.BasePitch*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_BasePitch" data-uid="SubVoxPro.VoiceLineMelodyVoice.BasePitch">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_BasePitch" data-uid="SubVoxPro.MelodyVoiceModifier.BasePitch">
   BasePitch
   
   </h3>
@@ -206,9 +206,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_BlipOn_" data-uid="SubVoxPro.VoiceLineMelodyVoice.BlipOn*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_BlipOn_" data-uid="SubVoxPro.MelodyVoiceModifier.BlipOn*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_BlipOn" data-uid="SubVoxPro.VoiceLineMelodyVoice.BlipOn">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_BlipOn" data-uid="SubVoxPro.MelodyVoiceModifier.BlipOn">
   BlipOn
   
   </h3>
@@ -238,9 +238,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_CustomSound_" data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_CustomSound_" data-uid="SubVoxPro.MelodyVoiceModifier.CustomSound*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_CustomSound" data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_CustomSound" data-uid="SubVoxPro.MelodyVoiceModifier.CustomSound">
   CustomSound
   
   </h3>
@@ -270,9 +270,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_Emitter_" data-uid="SubVoxPro.VoiceLineMelodyVoice.Emitter*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_Emitter_" data-uid="SubVoxPro.MelodyVoiceModifier.Emitter*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_Emitter" data-uid="SubVoxPro.VoiceLineMelodyVoice.Emitter">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_Emitter" data-uid="SubVoxPro.MelodyVoiceModifier.Emitter">
   Emitter
   
   </h3>
@@ -302,9 +302,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_FollowLoudness_" data-uid="SubVoxPro.VoiceLineMelodyVoice.FollowLoudness*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_FollowLoudness_" data-uid="SubVoxPro.MelodyVoiceModifier.FollowLoudness*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_FollowLoudness" data-uid="SubVoxPro.VoiceLineMelodyVoice.FollowLoudness">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_FollowLoudness" data-uid="SubVoxPro.MelodyVoiceModifier.FollowLoudness">
   FollowLoudness
   
   </h3>
@@ -334,9 +334,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_Mode_" data-uid="SubVoxPro.VoiceLineMelodyVoice.Mode*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_Mode_" data-uid="SubVoxPro.MelodyVoiceModifier.Mode*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_Mode" data-uid="SubVoxPro.VoiceLineMelodyVoice.Mode">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_Mode" data-uid="SubVoxPro.MelodyVoiceModifier.Mode">
   Mode
   
   </h3>
@@ -366,9 +366,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_PitchRange_" data-uid="SubVoxPro.VoiceLineMelodyVoice.PitchRange*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_PitchRange_" data-uid="SubVoxPro.MelodyVoiceModifier.PitchRange*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_PitchRange" data-uid="SubVoxPro.VoiceLineMelodyVoice.PitchRange">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_PitchRange" data-uid="SubVoxPro.MelodyVoiceModifier.PitchRange">
   PitchRange
   
   </h3>
@@ -398,14 +398,14 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_Preset_" data-uid="SubVoxPro.VoiceLineMelodyVoice.Preset*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_Preset_" data-uid="SubVoxPro.MelodyVoiceModifier.Preset*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_Preset" data-uid="SubVoxPro.VoiceLineMelodyVoice.Preset">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_Preset" data-uid="SubVoxPro.MelodyVoiceModifier.Preset">
   Preset
   
   </h3>
 
-  <div class="markdown level1 summary"><p>The built-in blip, used when <a class="xref" href="SubVoxPro.VoiceLineMelodyVoice.html#SubVoxPro_VoiceLineMelodyVoice_CustomSound">CustomSound</a> is empty.</p>
+  <div class="markdown level1 summary"><p>The built-in blip, used when <a class="xref" href="SubVoxPro.MelodyVoiceModifier.html#SubVoxPro_MelodyVoiceModifier_CustomSound">CustomSound</a> is empty.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -430,9 +430,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_RandomPitch_" data-uid="SubVoxPro.VoiceLineMelodyVoice.RandomPitch*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_RandomPitch_" data-uid="SubVoxPro.MelodyVoiceModifier.RandomPitch*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_RandomPitch" data-uid="SubVoxPro.VoiceLineMelodyVoice.RandomPitch">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_RandomPitch" data-uid="SubVoxPro.MelodyVoiceModifier.RandomPitch">
   RandomPitch
   
   </h3>
@@ -462,9 +462,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_Volume_" data-uid="SubVoxPro.VoiceLineMelodyVoice.Volume*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_Volume_" data-uid="SubVoxPro.MelodyVoiceModifier.Volume*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_Volume" data-uid="SubVoxPro.VoiceLineMelodyVoice.Volume">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_Volume" data-uid="SubVoxPro.MelodyVoiceModifier.Volume">
   Volume
   
   </h3>
@@ -498,9 +498,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 </h2>
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_OnBlip_" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnBlip*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_OnBlip_" data-uid="SubVoxPro.MelodyVoiceModifier.OnBlip*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_OnBlip_SubVoxPro_SubtitleWordInfo_System_Single_" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnBlip(SubVoxPro.SubtitleWordInfo,System.Single)">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_OnBlip_SubVoxPro_SubtitleWordInfo_System_Single_" data-uid="SubVoxPro.MelodyVoiceModifier.OnBlip(SubVoxPro.SubtitleWordInfo,System.Single)">
   OnBlip(SubtitleWordInfo, float)
   
   </h3>
@@ -532,9 +532,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_OnDestroy_" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnDestroy*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_OnDestroy_" data-uid="SubVoxPro.MelodyVoiceModifier.OnDestroy*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_OnDestroy" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnDestroy">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_OnDestroy" data-uid="SubVoxPro.MelodyVoiceModifier.OnDestroy">
   OnDestroy()
   
   </h3>
@@ -559,9 +559,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_OnDisable_" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnDisable*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_OnDisable_" data-uid="SubVoxPro.MelodyVoiceModifier.OnDisable*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_OnDisable" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnDisable">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_OnDisable" data-uid="SubVoxPro.MelodyVoiceModifier.OnDisable">
   OnDisable()
   
   </h3>
@@ -586,9 +586,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_OnEnable_" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnEnable*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_OnEnable_" data-uid="SubVoxPro.MelodyVoiceModifier.OnEnable*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_OnEnable" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnEnable">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_OnEnable" data-uid="SubVoxPro.MelodyVoiceModifier.OnEnable">
   OnEnable()
   
   </h3>
@@ -613,9 +613,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_OnValidate_" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnValidate*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_OnValidate_" data-uid="SubVoxPro.MelodyVoiceModifier.OnValidate*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_OnValidate" data-uid="SubVoxPro.VoiceLineMelodyVoice.OnValidate">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_OnValidate" data-uid="SubVoxPro.MelodyVoiceModifier.OnValidate">
   OnValidate()
   
   </h3>
@@ -640,9 +640,9 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
-  <a id="SubVoxPro_VoiceLineMelodyVoice_Update_" data-uid="SubVoxPro.VoiceLineMelodyVoice.Update*"></a>
+  <a id="SubVoxPro_MelodyVoiceModifier_Update_" data-uid="SubVoxPro.MelodyVoiceModifier.Update*"></a>
 
-  <h3 id="SubVoxPro_VoiceLineMelodyVoice_Update" data-uid="SubVoxPro.VoiceLineMelodyVoice.Update">
+  <h3 id="SubVoxPro_MelodyVoiceModifier_Update" data-uid="SubVoxPro.MelodyVoiceModifier.Update">
   Update()
   
   </h3>

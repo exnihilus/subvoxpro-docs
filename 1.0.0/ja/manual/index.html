@@ -343,7 +343,7 @@ yield return SubVox.Play(answer);
 <p><strong>声に連動するエフェクト。</strong> エミッターの <code>Loudness</code> は今の声の大きさを 0（無音）から 1 で示します。キャラクターが話している間、ハローを脈打たせたり、ライトを揺らしたり、アイコンを光らせたりできます。聞こえている言語に追従し、ボイスラインやそのオーディオを保存すると自動で計測されます。設定は不要です。</p>
 <pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
 </code></pre>
-<p><strong>メロディボイス。</strong>「どうぶつの森」風の声にするには、キャラクターのエミッターの隣に <strong>Voice Line Melody Voice</strong> を追加します。話す音節ごとに、声のメロディに沿った短いブリップ音が鳴ります。すべての言語に対応し、何も生成する必要はありません（単語ごとに 1 回にするには <strong>Blip On</strong> を <strong>Word</strong> にします）。ブリップ音だけを聞くには <strong>Replace</strong>、声に重ねるには <strong>Background</strong> を選びます。<strong>Base Pitch</strong> でキャラクターごとの音域を決め（小さなキャラクターは高く、大きなキャラクターは低く）、<strong>Preset</strong> または独自の <strong>Custom Sound</strong> を選び、<strong>Pitch Range</strong> でブリップ音が声にどれだけ沿うかを調整します。音声のないラインでも、軽いランダムな変化をつけたブリップ音が鳴ります。</p>
+<p><strong>メロディボイス。</strong>「どうぶつの森」風の声にするには、キャラクターのエミッターの隣に <strong>Melody Voice Modifier</strong> を追加します。話す音節ごとに、声のメロディに沿った短いブリップ音が鳴ります。すべての言語に対応し、何も生成する必要はありません（単語ごとに 1 回にするには <strong>Blip On</strong> を <strong>Word</strong> にします）。ブリップ音だけを聞くには <strong>Replace</strong>、声に重ねるには <strong>Background</strong> を選びます。<strong>Base Pitch</strong> でキャラクターごとの音域を決め（小さなキャラクターは高く、大きなキャラクターは低く）、<strong>Preset</strong> または独自の <strong>Custom Sound</strong> を選び、<strong>Pitch Range</strong> でブリップ音が声にどれだけ沿うかを調整します。音声のないラインでも、軽いランダムな変化をつけたブリップ音が鳴ります。</p>
 <p><strong>吹き出し。</strong>キャラクターを選択し、<strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong> を選択します。そのキャラクターの頭上に吹き出しが表示され、そのキャラクターの発言のみが表示されます。これらの字幕を画面下部に表示しないようにするには、エミッターの <strong>Show Subtitles</strong> をオフにします。</p>
 <h3 id="without-code">コード不要 </h3>
 <ul>
