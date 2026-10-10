@@ -414,6 +414,7 @@ SubVox.PauseAll();                   // jeu en pause
 SubVox.ResumeAll();
 SubVox.StopAll();                    // cinématique passée
 SubVox.CurrentLanguage = "fr";       // sous-titres et doublages français, "" pour la source
+SubVox.AudioLanguage = "ja";         // voix japonaises, quels que soient les sous-titres (null = les suivre)
 </code></pre>
 <p><code>Play</code> renvoie la lecture en cours : vous pouvez consulter son <code>State</code>, son <code>Time</code> et son <code>Progress</code>, la mettre
 en pause ou l’arrêter, écouter ses événements <code>Completed</code> / <code>Interrupted</code>, ou l’attendre dans une coroutine :</p>
@@ -468,6 +469,9 @@ plus importante entre-temps, la séquence attend, puis reprend après <strong>Re
 <p>Quand la langue change, les sous-titres affichés changent aussitôt. Le doublage, lui, change à la réplique suivante,
 pour ne pas passer d’une langue à l’autre au milieu d’une phrase.</p>
 <ul>
+<li><strong>Audio dans une autre langue</strong> : par défaut, les voix suivent la langue des sous-titres. Pour qu’un joueur
+entende une langue et en lise une autre (voix japonaises, sous-titres français…), réglez <code>SubVox.AudioLanguage</code> ;
+remettez-le à <code>null</code> pour suivre à nouveau les sous-titres. Les scènes d’exemple proposent les deux sélecteurs.</li>
 <li><strong>Unity Localization</strong> : si ce package est installé, SubVox Pro suit sa langue. Pour gérer la langue vous-même,
 réglez <strong>Language Source</strong> sur <strong>Manual</strong> dans Voice Line Manager.</li>
 <li><strong>Noms des personnages</strong> : un speaker peut afficher un nom différent par langue. Remplissez ses

@@ -135,6 +135,43 @@ SubVox.ResumeAll();
 SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} starts");</code></pre>
 <h2 class="section" id="properties">属性
 </h2>
+<a data-uid="SubVoxPro.SubVox.AudioFollowsSubtitles*" id="SubVoxPro_SubVox_AudioFollowsSubtitles_"></a>
+<h3 data-uid="SubVoxPro.SubVox.AudioFollowsSubtitles" id="SubVoxPro_SubVox_AudioFollowsSubtitles">
+  AudioFollowsSubtitles
+  
+  </h3>
+<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> 是否跟随 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a>（从未设置，或已设回 null）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static bool AudioFollowsSubtitles { get; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.AudioLanguage*" id="SubVoxPro_SubVox_AudioLanguage_"></a>
+<h3 data-uid="SubVoxPro.SubVox.AudioLanguage" id="SubVoxPro_SubVox_AudioLanguage">
+  AudioLanguage
+  
+  </h3>
+<div class="markdown level1 summary"><p>要播放的配音语言代码（例如“ja”），源音频留空，玩家可以听一种语言、读另一种语言的字幕。设置之前跟随 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a>；设为 null 则重新跟随。配音从下一句台词开始；没有该语言配音的台词播放其源音频。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static string AudioLanguage { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_SubVox_AudioLanguage_examples">Examples</h4>
+<pre><code class="lang-csharp">SubVox.AudioLanguage = "";
+SubVox.CurrentLanguage = "fr";
+
+SubVox.AudioLanguage = null;</code></pre>
 <a data-uid="SubVoxPro.SubVox.BackgroundOpacity*" id="SubVoxPro_SubVox_BackgroundOpacity_"></a>
 <h3 data-uid="SubVoxPro.SubVox.BackgroundOpacity" id="SubVoxPro_SubVox_BackgroundOpacity">
   BackgroundOpacity
@@ -156,7 +193,7 @@ SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} st
   CurrentLanguage
   
   </h3>
-<div class="markdown level1 summary"><p>要显示的翻译语言代码和要播放的配音语言代码（例如“fr”），源语言留空。屏幕上已有的字幕会立即切换；配音则从下一句语音台词开始播放。</p>
+<div class="markdown level1 summary"><p>要显示的翻译语言代码（例如“fr”），源语言留空。在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> 跟随它时，也是要播放的配音语言。屏幕上已有的字幕会立即切换；配音则从下一句语音台词开始播放。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -460,7 +497,7 @@ public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = o
   Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)
   
   </h3>
-<div class="markdown level1 summary"><p>在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a> 上播放台词资源（如有 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> 对应的配音，则播放该配音）。有关优先级和播放模式的规则，参阅 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>。</p>
+<div class="markdown level1 summary"><p>在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a> 上播放台词资源（如有 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> 对应的配音，则播放该配音）。有关优先级和播放模式的规则，参阅 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -612,6 +649,21 @@ private void Shake(VoiceLineEventContext context)
 </dl>
 <h2 class="section" id="events">事件
 </h2>
+<h3 data-uid="SubVoxPro.SubVox.AudioLanguageChanged" id="SubVoxPro_SubVox_AudioLanguageChanged">
+  AudioLanguageChanged
+  
+  </h3>
+<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> 改变时（直接设置，或在跟随期间通过 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> 改变）携带新代码触发。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static event Action&lt;string&gt; AudioLanguageChanged</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+<dd></dd>
+</dl>
 <h3 data-uid="SubVoxPro.SubVox.DisplaySettingsChanged" id="SubVoxPro_SubVox_DisplaySettingsChanged">
   DisplaySettingsChanged
   

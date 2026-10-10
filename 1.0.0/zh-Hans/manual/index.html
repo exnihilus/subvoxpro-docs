@@ -308,6 +308,7 @@ SubVox.PauseAll();                   // game paused
 SubVox.ResumeAll();
 SubVox.StopAll();                    // cutscene skipped
 SubVox.CurrentLanguage = "fr";       // French subtitles and dubs ("" = original)
+SubVox.AudioLanguage = "ja";         // Japanese voices, whatever the subtitles (null = follow them)
 </code></pre>
 <p><code>Play</code> 返回该台词的播放对象：可以检查其 <code>State</code>、<code>Time</code> 和 <code>Progress</code>，暂停或停止播放，监听其
 <code>Completed</code> / <code>Interrupted</code> 事件，或在协程中等待播放结束：</p>
@@ -343,6 +344,7 @@ Zone 或 Play On Start 的 <strong>Bank</strong> 字段中。</li>
 <h3 id="switching-language">切换语言 </h3>
 <p>更改语言会立即切换屏幕上的字幕。配音从下一句台词开始切换，因为一句台词不能在说到一半时切换语言。</p>
 <ul>
+<li><strong>其他语言的音频</strong> — 默认情况下，语音跟随字幕语言。若要让玩家听一种语言、读另一种语言（例如日语配音配法语字幕），请设置 <code>SubVox.AudioLanguage</code>；设回 <code>null</code> 即重新跟随字幕。示例场景提供了这两个选择器。</li>
 <li><strong>Unity Localization</strong> — 如果项目使用了 Unity 的 Localization 包，SubVox Pro 会自动使用其中选择的语言。若要自行设置语言，请在 Voice Line Manager
 上将 <strong>Language Source</strong> 设置为 <strong>Manual</strong>。</li>
 <li><strong>Speaker 名称</strong> — 同一说话者在不同语言中可以显示不同的名称：填写其 <strong>Localized Names</strong>，或者，在使用 Unity Localization 时，将其 <strong>Localization Table</strong> 和 <strong>Localization Entry</strong> 指向一个字符串。</li>

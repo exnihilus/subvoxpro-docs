@@ -171,6 +171,78 @@ SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} st
 </h2>
 
 
+  <a id="SubVoxPro_SubVox_AudioFollowsSubtitles_" data-uid="SubVoxPro.SubVox.AudioFollowsSubtitles*"></a>
+
+  <h3 id="SubVoxPro_SubVox_AudioFollowsSubtitles" data-uid="SubVoxPro.SubVox.AudioFollowsSubtitles">
+  AudioFollowsSubtitles
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> follows <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> (it was never set, or set to null).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool AudioFollowsSubtitles { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_SubVox_AudioLanguage_" data-uid="SubVoxPro.SubVox.AudioLanguage*"></a>
+
+  <h3 id="SubVoxPro_SubVox_AudioLanguage" data-uid="SubVoxPro.SubVox.AudioLanguage">
+  AudioLanguage
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Language code of the dub to play (e.g. &quot;ja&quot;), or empty for the source audio, so players can hear one language
+and read another. Follows <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> until set; set it to null to follow again. A dub
+starts with the next voice line; a line without a dub in this language plays its source audio.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AudioLanguage { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="SubVoxPro_SubVox_AudioLanguage_examples">Examples</h4>
+  <pre><code class="lang-csharp">SubVox.AudioLanguage = "";
+SubVox.CurrentLanguage = "fr";
+
+SubVox.AudioLanguage = null;</code></pre>
+
+
+
+
+
+
   <a id="SubVoxPro_SubVox_BackgroundOpacity_" data-uid="SubVoxPro.SubVox.BackgroundOpacity*"></a>
 
   <h3 id="SubVoxPro_SubVox_BackgroundOpacity" data-uid="SubVoxPro.SubVox.BackgroundOpacity">
@@ -210,8 +282,9 @@ SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} st
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Language code of the translation to display and the dub to play (e.g. &quot;fr&quot;), or empty for the source.
-Subtitles already on screen switch at once; a dub starts with the next voice line.</p>
+  <div class="markdown level1 summary"><p>Language code of the translation to display (e.g. &quot;fr&quot;), or empty for the source. Also the dub to play while
+<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> follows it. Subtitles already on screen switch at once; a dub starts with the
+next voice line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -812,7 +885,7 @@ paused after <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_Resume
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Plays a voice line on the <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a> (the dub of <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> when one
+  <div class="markdown level1 summary"><p>Plays a voice line on the <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a> (the dub of <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> when one
 exists). See <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a> for the priority and play mode rules.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1098,6 +1171,38 @@ private void Shake(VoiceLineEventContext context)
 
   <h2 class="section" id="events">Events
 </h2>
+
+
+
+  <h3 id="SubVoxPro_SubVox_AudioLanguageChanged" data-uid="SubVoxPro.SubVox.AudioLanguageChanged">
+  AudioLanguageChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised with the new code when <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> changes, set directly or through
+<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> while the audio follows it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event Action&lt;string&gt; AudioLanguageChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
 
 
 

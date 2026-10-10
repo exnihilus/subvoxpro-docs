@@ -309,6 +309,7 @@ SubVox.PauseAll();                   // game paused
 SubVox.ResumeAll();
 SubVox.StopAll();                    // cutscene skipped
 SubVox.CurrentLanguage = "fr";       // French subtitles and dubs ("" = original)
+SubVox.AudioLanguage = "ja";         // Japanese voices, whatever the subtitles (null = follow them)
 </code></pre>
 <p><code>Play</code> はボイスラインの再生を表すオブジェクトを返します。<code>State</code>、<code>Time</code>、<code>Progress</code> を確認したり、一時停止や停止を行ったり、
 <code>Completed</code> / <code>Interrupted</code> イベントを監視したり、コルーチンで再生の終了を待ったりできます：</p>
@@ -346,6 +347,7 @@ mode中の進行状況を確認できます。<strong>Direction</strong>を<stro
 <h3 id="switching-language">言語の切り替え </h3>
 <p>言語を変更すると、画面上の字幕が即座に切り替わります。吹き替え音声は次のボイスラインから切り替わります。文の途中で再生中のボイスラインの言語を変更することはできないためです。</p>
 <ul>
+<li><strong>別の言語の音声</strong> — 既定では、音声は字幕の言語に従います。ある言語を聞きながら別の言語の字幕を読めるようにするには（日本語音声とフランス語字幕など）、<code>SubVox.AudioLanguage</code>を設定します。<code>null</code>に戻すと再び字幕に従います。サンプルシーンには両方の選択肢があります。</li>
 <li><strong>Unity Localization</strong> — プロジェクトでUnityのLocalizationパッケージを使用している場合、SubVox Proはそこで選択された言語を自動的に反映します。手動で言語を設定するには、Voice Line
 Managerの<strong>Language Source</strong>を<strong>Manual</strong>に設定します。</li>
 <li><strong>Speaker名</strong> — 話者の名前は言語ごとに変更できます。<strong>Localized Names</strong>に入力するか、

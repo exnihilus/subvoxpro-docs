@@ -422,6 +422,7 @@ SubVox.PauseAll();                   // game paused
 SubVox.ResumeAll();
 SubVox.StopAll();                    // cutscene skipped
 SubVox.CurrentLanguage = &quot;fr&quot;;       // French subtitles and dubs (&quot;&quot; = original)
+SubVox.AudioLanguage = &quot;ja&quot;;         // Japanese voices, whatever the subtitles (null = follow them)
 </code></pre>
 <p><code>Play</code> gives back the line's playback: check its <code>State</code>, <code>Time</code> and <code>Progress</code>, pause or stop it, listen to its
 <code>Completed</code> / <code>Interrupted</code> events, or wait for it in a coroutine:</p>
@@ -476,14 +477,22 @@ from a button or any UnityEvent.</p>
 <p>Changing the language switches the subtitles on screen immediately. The dubbed audio follows from the next line,
 since a line can't change language in the middle of a sentence.</p>
 <ul>
-<li><strong>Unity Localization</strong> — if your project uses Unity's Localization package, SubVox Pro follows the language chosen
+<li><p><strong>Audio in another language</strong> — by default the voices follow the subtitle language. To let players hear one
+language and read another (Japanese voices with French subtitles, for instance), set <code>SubVox.AudioLanguage</code>;
+set it back to <code>null</code> to follow the subtitles again. The example scenes show both pickers.</p>
+</li>
+<li><p><strong>Unity Localization</strong> — if your project uses Unity's Localization package, SubVox Pro follows the language chosen
 there automatically. To set the language yourself instead, set <strong>Language Source</strong> to <strong>Manual</strong> on the Voice Line
-Manager.</li>
-<li><strong>Speaker names</strong> — a speaker can show a different name in each language: fill in its <strong>Localized Names</strong>, or,
-with Unity Localization, point its <strong>Localization Table</strong> and <strong>Localization Entry</strong> at a string.</li>
-<li><strong>Close languages</strong> — a player in <code>pt-BR</code> hears and reads a <code>pt</code> translation when there is no <code>pt-BR</code> one (and the
-other way round).</li>
-<li><strong>Language menu</strong> — <code>myVoiceLine.GetSubtitleLanguages()</code> and <code>GetAudioLanguages()</code> list what a voice line offers.</li>
+Manager.</p>
+</li>
+<li><p><strong>Speaker names</strong> — a speaker can show a different name in each language: fill in its <strong>Localized Names</strong>, or,
+with Unity Localization, point its <strong>Localization Table</strong> and <strong>Localization Entry</strong> at a string.</p>
+</li>
+<li><p><strong>Close languages</strong> — a player in <code>pt-BR</code> hears and reads a <code>pt</code> translation when there is no <code>pt-BR</code> one (and the
+other way round).</p>
+</li>
+<li><p><strong>Language menu</strong> — <code>myVoiceLine.GetSubtitleLanguages()</code> and <code>GetAudioLanguages()</code> list what a voice line offers.</p>
+</li>
 </ul>
 <h3 id="subtitle-options-for-players">Subtitle options for players</h3>
 <p>Wire these to your options menu; every subtitle display follows them at once:</p>
@@ -571,7 +580,8 @@ Events only run in Play mode, never while you edit or scrub.</p>
 <p>Audio and subtitles stay in sync, including while scrubbing. Dropping a <strong>Voice Line Sequence</strong> lays out all its
 lines. Events of the voice line fire during playback; to move them as Timeline markers, right-click the clip and
 choose <strong>SubVox Pro ▸ Bake Voice Events to Timeline</strong>.</p>
-<p>The cutscene plays the dub of the current language when the line has one, with its subtitles in sync. The language
+<p>The cutscene plays the dub of the audio language (the current language unless <code>SubVox.AudioLanguage</code> is set) when
+the line has one, with its subtitles in sync. The language
 is picked when the Timeline starts playing. A clip follows the manager's <strong>Subtitle Reveal Mode</strong>, unless you tick
 <strong>Override Reveal Mode</strong> on it.</p>
 <p>An active SubVox clip has priority on the global subtitle display. Other voice lines keep playing, but their

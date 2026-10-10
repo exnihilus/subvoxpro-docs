@@ -1120,6 +1120,36 @@ references:
   commentId: T:SubVoxPro.SubVox
   fullName: SubVoxPro.SubVox
   nameWithType: SubVox
+- uid: SubVoxPro.SubVox.AudioFollowsSubtitles
+  name: AudioFollowsSubtitles
+  href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioFollowsSubtitles
+  commentId: P:SubVoxPro.SubVox.AudioFollowsSubtitles
+  fullName: SubVoxPro.SubVox.AudioFollowsSubtitles
+  nameWithType: SubVox.AudioFollowsSubtitles
+- uid: SubVoxPro.SubVox.AudioFollowsSubtitles*
+  name: AudioFollowsSubtitles
+  href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioFollowsSubtitles_
+  commentId: Overload:SubVoxPro.SubVox.AudioFollowsSubtitles
+  fullName: SubVoxPro.SubVox.AudioFollowsSubtitles
+  nameWithType: SubVox.AudioFollowsSubtitles
+- uid: SubVoxPro.SubVox.AudioLanguage
+  name: AudioLanguage
+  href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage
+  commentId: P:SubVoxPro.SubVox.AudioLanguage
+  fullName: SubVoxPro.SubVox.AudioLanguage
+  nameWithType: SubVox.AudioLanguage
+- uid: SubVoxPro.SubVox.AudioLanguage*
+  name: AudioLanguage
+  href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage_
+  commentId: Overload:SubVoxPro.SubVox.AudioLanguage
+  fullName: SubVoxPro.SubVox.AudioLanguage
+  nameWithType: SubVox.AudioLanguage
+- uid: SubVoxPro.SubVox.AudioLanguageChanged
+  name: AudioLanguageChanged
+  href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguageChanged
+  commentId: E:SubVoxPro.SubVox.AudioLanguageChanged
+  fullName: SubVoxPro.SubVox.AudioLanguageChanged
+  nameWithType: SubVox.AudioLanguageChanged
 - uid: SubVoxPro.SubVox.BackgroundOpacity
   name: BackgroundOpacity
   href: api/SubVoxPro.SubVox.html#SubVoxPro_SubVox_BackgroundOpacity

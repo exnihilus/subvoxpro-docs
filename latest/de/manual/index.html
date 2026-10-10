@@ -407,6 +407,7 @@ SubVox.PauseAll();                   // game paused
 SubVox.ResumeAll();
 SubVox.StopAll();                    // cutscene skipped
 SubVox.CurrentLanguage = "fr";       // French subtitles and dubs ("" = original)
+SubVox.AudioLanguage = "ja";         // Japanese voices, whatever the subtitles (null = follow them)
 </code></pre>
 <p><code>Play</code> gibt das Wiedergabeobjekt der Voice Line zurück: Prüfen Sie dessen <code>State</code>, <code>Time</code> und <code>Progress</code>, pausieren oder stoppen Sie die Wiedergabe, reagieren Sie auf die
 Ereignisse <code>Completed</code> / <code>Interrupted</code> oder warten Sie in einer Coroutine auf ihr Ende:</p>
@@ -461,6 +462,9 @@ mit einer wichtigeren Voice Line beschäftigt, wartet der Dialog und wird nach e
 <p>Beim Ändern der Sprache werden die Untertitel auf dem Bildschirm sofort umgestellt. Die synchronisierte Audiospur wechselt ab der nächsten Voice Line,
 da eine Voice Line die Sprache nicht mitten im Satz wechseln kann.</p>
 <ul>
+<li><strong>Audio in einer anderen Sprache</strong> — standardmäßig folgen die Stimmen der Untertitelsprache. Damit Spieler eine
+Sprache hören und eine andere lesen (japanische Stimmen mit französischen Untertiteln), setzen Sie
+<code>SubVox.AudioLanguage</code>; mit <code>null</code> folgt es wieder den Untertiteln. Die Beispielszenen zeigen beide Auswahlen.</li>
 <li><strong>Unity Localization</strong> — wenn Ihr Projekt das Localization-Paket von Unity verwendet, übernimmt SubVox Pro automatisch die dort gewählte
 Sprache. Um die Sprache stattdessen selbst festzulegen, setzen Sie <strong>Language Source</strong> im Voice Line
 Manager auf <strong>Manual</strong>.</li>

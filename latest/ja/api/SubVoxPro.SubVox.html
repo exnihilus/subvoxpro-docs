@@ -135,6 +135,43 @@ SubVox.ResumeAll();
 SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} starts");</code></pre>
 <h2 class="section" id="properties">プロパティ
 </h2>
+<a data-uid="SubVoxPro.SubVox.AudioFollowsSubtitles*" id="SubVoxPro_SubVox_AudioFollowsSubtitles_"></a>
+<h3 data-uid="SubVoxPro.SubVox.AudioFollowsSubtitles" id="SubVoxPro_SubVox_AudioFollowsSubtitles">
+  AudioFollowsSubtitles
+  
+  </h3>
+<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a>が<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a>に追従しているかどうか（未設定、またはnullに戻した場合）。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static bool AudioFollowsSubtitles { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+<dd></dd>
+</dl>
+<a data-uid="SubVoxPro.SubVox.AudioLanguage*" id="SubVoxPro_SubVox_AudioLanguage_"></a>
+<h3 data-uid="SubVoxPro.SubVox.AudioLanguage" id="SubVoxPro_SubVox_AudioLanguage">
+  AudioLanguage
+  
+  </h3>
+<div class="markdown level1 summary"><p>再生する吹き替え音声の言語コード（例：「ja」）です。ソースオーディオを使用する場合は空です。プレイヤーはある言語を聞きながら別の言語の字幕を読めます。設定するまでは<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a>に追従し、nullを設定すると再び追従します。吹き替え音声は次のボイスラインから切り替わり、その言語の吹き替えがないボイスラインはソースオーディオを再生します。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static string AudioLanguage { get; set; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_SubVox_AudioLanguage_examples">Examples</h4>
+<pre><code class="lang-csharp">SubVox.AudioLanguage = "";
+SubVox.CurrentLanguage = "fr";
+
+SubVox.AudioLanguage = null;</code></pre>
 <a data-uid="SubVoxPro.SubVox.BackgroundOpacity*" id="SubVoxPro_SubVox_BackgroundOpacity_"></a>
 <h3 data-uid="SubVoxPro.SubVox.BackgroundOpacity" id="SubVoxPro_SubVox_BackgroundOpacity">
   BackgroundOpacity
@@ -156,7 +193,7 @@ SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} st
   CurrentLanguage
   
   </h3>
-<div class="markdown level1 summary"><p>表示する翻訳と再生する生成された吹き替え音声の言語コード（例：「fr」）です。元の字幕とオーディオを使用する場合は空です。表示中の字幕は即座に切り替わり、吹き替え音声は次のボイスラインから切り替わります。</p>
+<div class="markdown level1 summary"><p>表示する翻訳の言語コード（例：「fr」）です。元の字幕を使用する場合は空です。<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a>が追従している間は、再生する吹き替え音声の言語にもなります。表示中の字幕は即座に切り替わり、吹き替え音声は次のボイスラインから切り替わります。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -460,7 +497,7 @@ public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = o
   Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)
   
   </h3>
-<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a>でボイスラインを再生します（<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a>の生成された吹き替え音声が存在する場合は、そちらを再生します）。優先度と再生モードのルールについては、<a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>を参照してください。</p>
+<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a>でボイスラインを再生します（<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a>の生成された吹き替え音声が存在する場合は、そちらを再生します）。優先度と再生モードのルールについては、<a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>を参照してください。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -612,6 +649,21 @@ private void Shake(VoiceLineEventContext context)
 </dl>
 <h2 class="section" id="events">イベント
 </h2>
+<h3 data-uid="SubVoxPro.SubVox.AudioLanguageChanged" id="SubVoxPro_SubVox_AudioLanguageChanged">
+  AudioLanguageChanged
+  
+  </h3>
+<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a>が変わったときに新しいコードとともに発生します。直接設定した場合も、追従中に<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a>が変わった場合も含みます。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public static event Action&lt;string&gt; AudioLanguageChanged</code></pre>
+</div>
+<h4 class="section">Event Type</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+<dd></dd>
+</dl>
 <h3 data-uid="SubVoxPro.SubVox.DisplaySettingsChanged" id="SubVoxPro_SubVox_DisplaySettingsChanged">
   DisplaySettingsChanged
   

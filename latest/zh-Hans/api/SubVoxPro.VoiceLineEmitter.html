@@ -135,7 +135,7 @@
   CurrentAudioLanguage
   
   </h3>
-<div class="markdown level1 summary"><p>当前台词资源播放的音频语言：若存在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> 对应的配音，则为该配音的语言；使用源音频时为空字符串。使用 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> 时，此属性指示需要自行启动的音频语言。</p>
+<div class="markdown level1 summary"><p>当前台词资源播放的音频语言：若存在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> 对应的配音，则为该配音的语言；使用源音频时为空字符串。使用 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> 时，此属性指示需要自行启动的音频语言。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -499,7 +499,7 @@
   Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)
   
   </h3>
-<div class="markdown level1 summary"><p>播放一个台词资源（若存在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_CurrentLanguage">CurrentLanguage</a> 对应的配音，则播放该配音）。此台词播放源已有台词正在播放时，由模式决定处理方式：<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Replace">Replace</a> 在新台词的优先级不低于当前台词时替换当前台词（优先级较低时拒绝播放）；<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Queue">Queue</a> 将新台词排在已等待的台词之后播放；<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_IfIdle">IfIdle</a> 拒绝播放。</p>
+<div class="markdown level1 summary"><p>播放一个台词资源（若存在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> 对应的配音，则播放该配音）。此台词播放源已有台词正在播放时，由模式决定处理方式：<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Replace">Replace</a> 在新台词的优先级不低于当前台词时替换当前台词（优先级较低时拒绝播放）；<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Queue">Queue</a> 将新台词排在已等待的台词之后播放；<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_IfIdle">IfIdle</a> 拒绝播放。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
