@@ -135,7 +135,7 @@ Klasse VoiceLineEmitter
   CurrentAudioLanguage
   
   </h3>
-<div class="markdown level1 summary"><p>Sprache des Audios, das die aktuelle Sprachzeile wiedergibt: die generierte Sprachfassung von <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a>, sofern vorhanden, oder leer für die Originalfassung. Mit <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> die Audiodatei, die auf Ihrer Seite abgespielt werden soll.</p>
+<div class="markdown level1 summary"><p>Sprache des Audios, das die aktuelle Sprachzeile wiedergibt: die generierte Sprachfassung von <code>CurrentLanguage</code>, sofern vorhanden, oder leer für die Originalfassung. Mit <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a> die Audiodatei, die auf Ihrer Seite abgespielt werden soll.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -258,6 +258,28 @@ Klasse VoiceLineEmitter
 <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
 <dd></dd>
 </dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Loudness*" id="SubVoxPro_VoiceLineEmitter_Loudness_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Loudness" id="SubVoxPro_VoiceLineEmitter_Loudness">
+  Loudness
+  
+  </h3>
+<div class="markdown level1 summary"><p>Wie laut die Stimme der aktuellen Zeile gerade ist, von 0 (Stille, pausiert oder inaktiv) bis 1. Siehe <a class="xref" href="SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_GetLoudness_System_Single_System_String_">GetLoudness(float, string)</a>. Leicht glätten für ein ruhiges Leuchten.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float Loudness { get; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_VoiceLineEmitter_Loudness_examples">Examples</h4>
+<pre><code class="lang-csharp">void Update()
+{
+    _glow = Mathf.Lerp(_glow, _emitter.Loudness, 15f * Time.deltaTime);
+    _halo.color = new Color(1f, 0.8f, 0.4f, _glow);
+}</code></pre>
 <a data-uid="SubVoxPro.VoiceLineEmitter.PlaybackProgress*" id="SubVoxPro_VoiceLineEmitter_PlaybackProgress_"></a>
 <h3 data-uid="SubVoxPro.VoiceLineEmitter.PlaybackProgress" id="SubVoxPro_VoiceLineEmitter_PlaybackProgress">
   PlaybackProgress
@@ -499,7 +521,7 @@ Klasse VoiceLineEmitter
   Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)
   
   </h3>
-<div class="markdown level1 summary"><p>Spielt eine Voice Line ab (die Sprachvertonung von <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a>, sofern vorhanden). Wenn hier bereits eine Voice Line abgespielt wird, entscheidet der Modus: <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Replace">Replace</a> ersetzt sie, wenn die Priorität mindestens ebenso hoch ist (eine niedrigere wird abgelehnt), <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Queue">Queue</a> spielt sie nach den bereits wartenden Voice Lines ab, <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_IfIdle">IfIdle</a> lehnt sie ab.</p>
+<div class="markdown level1 summary"><p>Spielt eine Voice Line ab (die Sprachvertonung von <code>CurrentLanguage</code>, sofern vorhanden). Wenn hier bereits eine Voice Line abgespielt wird, entscheidet der Modus: <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Replace">Replace</a> ersetzt sie, wenn die Priorität mindestens ebenso hoch ist (eine niedrigere wird abgelehnt), <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Queue">Queue</a> spielt sie nach den bereits wartenden Voice Lines ab, <a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_IfIdle">IfIdle</a> lehnt sie ab.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">

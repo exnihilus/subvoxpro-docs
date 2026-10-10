@@ -365,6 +365,32 @@ Classe VoiceLineData
 <dt><a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a></dt>
 <dd></dd>
 </dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetLoudness*" id="SubVoxPro_VoiceLineData_GetLoudness_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetLoudness(System.Single,System.String)" id="SubVoxPro_VoiceLineData_GetLoudness_System_Single_System_String_">
+  GetLoudness(float, string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>Le volume de la voix à un instant, en secondes, quand la ligne est jouée dans une langue : 0 pour le silence (-60 dB et moins) jusqu’à 1 à pleine échelle (0 dB), mesuré toutes les 10 ms à l’enregistrement de l’audio. 0 sans audio, quel que soit le volume de l’AudioSource. Pratique pour animer un halo, une lumière ou une bouche avec la voix.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float GetLoudness(float time, string language_code)</code></pre>
+</div>
+<h4 class="section">Paramètres</h4>
+<dl class="parameters">
+<dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">Retour</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_VoiceLineData_GetLoudness_System_Single_System_String__examples">Examples</h4>
+<pre><code class="lang-csharp">float level = voiceLine.GetLoudness(_video.time, SubVox.CurrentLanguage);
+_halo.intensity = Mathf.Lerp(0.2f, 2f, level);</code></pre>
 <a data-uid="SubVoxPro.VoiceLineData.GetSpeakerOverride*" id="SubVoxPro_VoiceLineData_GetSpeakerOverride_"></a>
 <h3 data-uid="SubVoxPro.VoiceLineData.GetSpeakerOverride(System.String)" id="SubVoxPro_VoiceLineData_GetSpeakerOverride_System_String_">
   GetSpeakerOverride(string)

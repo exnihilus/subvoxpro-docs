@@ -193,7 +193,7 @@ SubVox.AudioLanguage = null;</code></pre>
   CurrentLanguage
   
   </h3>
-<div class="markdown level1 summary"><p>表示する翻訳の言語コード（例：「fr」）です。元の字幕を使用する場合は空です。<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a>が追従している間は、再生する吹き替え音声の言語にもなります。表示中の字幕は即座に切り替わり、吹き替え音声は次のボイスラインから切り替わります。</p>
+<div class="markdown level1 summary"><p>表示する翻訳と再生する生成された吹き替え音声の言語コード（例：「fr」）です。元の字幕とオーディオを使用する場合は空です。表示中の字幕は即座に切り替わり、吹き替え音声は次のボイスラインから切り替わります。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -497,7 +497,7 @@ public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = o
   Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)
   
   </h3>
-<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a>でボイスラインを再生します（<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a>の生成された吹き替え音声が存在する場合は、そちらを再生します）。優先度と再生モードのルールについては、<a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>を参照してください。</p>
+<div class="markdown level1 summary"><p><a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a>でボイスラインを再生します（<code>CurrentLanguage</code>の生成された吹き替え音声が存在する場合は、そちらを再生します）。優先度と再生モードのルールについては、<a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>を参照してください。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">

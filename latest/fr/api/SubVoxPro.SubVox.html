@@ -193,7 +193,7 @@ SubVox.AudioLanguage = null;</code></pre>
   CurrentLanguage
   
   </h3>
-<div class="markdown level1 summary"><p>Code de la traduction à afficher, par exemple fr, ou vide pour la source. Aussi celui du doublage tant que <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> le suit. Les sous-titres changent aussitôt, le doublage à la voiceline suivante.</p>
+<div class="markdown level1 summary"><p>Code de la traduction et du doublage, par exemple fr, ou vide pour la source. Les sous-titres changent aussitôt, le doublage à la voiceline suivante.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -497,7 +497,7 @@ public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = o
   Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)
   
   </h3>
-<div class="markdown level1 summary"><p>Joue une voiceline sur <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a>, avec le doublage de <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> s’il existe. Les règles de priorité et de mode sont celles de <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>.</p>
+<div class="markdown level1 summary"><p>Joue une voiceline sur <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a>, avec le doublage de <code>CurrentLanguage</code> s’il existe. Les règles de priorité et de mode sont celles de <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">

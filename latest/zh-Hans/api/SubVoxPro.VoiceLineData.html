@@ -365,6 +365,32 @@
 <dt><a class="xref" href="SubVoxPro.SpeakerData.html">SpeakerData</a></dt>
 <dd></dd>
 </dl>
+<a data-uid="SubVoxPro.VoiceLineData.GetLoudness*" id="SubVoxPro_VoiceLineData_GetLoudness_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineData.GetLoudness(System.Single,System.String)" id="SubVoxPro_VoiceLineData_GetLoudness_System_Single_System_String_">
+  GetLoudness(float, string)
+  
+  </h3>
+<div class="markdown level1 summary"><p>以某种语言播放该台词时，某一时刻（秒）的语音音量：从静音（-60 dB 及以下）的 0 到满刻度（0 dB）的 1，保存音频时每 10 ms 测量一次。没有音频时为 0，且与 AudioSource 的音量无关。适合用语音驱动光晕、灯光或嘴型。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float GetLoudness(float time, string language_code)</code></pre>
+</div>
+<h4 class="section">参数</h4>
+<dl class="parameters">
+<dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+<dt><code>language_code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section">返回值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_VoiceLineData_GetLoudness_System_Single_System_String__examples">Examples</h4>
+<pre><code class="lang-csharp">float level = voiceLine.GetLoudness(_video.time, SubVox.CurrentLanguage);
+_halo.intensity = Mathf.Lerp(0.2f, 2f, level);</code></pre>
 <a data-uid="SubVoxPro.VoiceLineData.GetSpeakerOverride*" id="SubVoxPro_VoiceLineData_GetSpeakerOverride_"></a>
 <h3 data-uid="SubVoxPro.VoiceLineData.GetSpeakerOverride(System.String)" id="SubVoxPro_VoiceLineData_GetSpeakerOverride_System_String_">
   GetSpeakerOverride(string)

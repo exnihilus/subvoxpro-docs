@@ -193,7 +193,7 @@ SubVox.AudioLanguage = null;</code></pre>
   CurrentLanguage
   
   </h3>
-<div class="markdown level1 summary"><p>要显示的翻译语言代码（例如“fr”），源语言留空。在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> 跟随它时，也是要播放的配音语言。屏幕上已有的字幕会立即切换；配音则从下一句语音台词开始播放。</p>
+<div class="markdown level1 summary"><p>要显示的翻译语言代码和要播放的配音语言代码（例如“fr”），源语言留空。屏幕上已有的字幕会立即切换；配音则从下一句语音台词开始播放。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -497,7 +497,7 @@ public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = o
   Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)
   
   </h3>
-<div class="markdown level1 summary"><p>在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a> 上播放台词资源（如有 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> 对应的配音，则播放该配音）。有关优先级和播放模式的规则，参阅 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>。</p>
+<div class="markdown level1 summary"><p>在 <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a> 上播放台词资源（如有 <code>CurrentLanguage</code> 对应的配音，则播放该配音）。有关优先级和播放模式的规则，参阅 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">

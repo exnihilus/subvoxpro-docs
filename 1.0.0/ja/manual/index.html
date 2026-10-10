@@ -333,6 +333,9 @@ yield return SubVox.Play(answer);
 <code>CurrentWord</code> は現在話されている単語を保持します。これらの情報を使って、キャラクターの口を開けたり、ジェスチャーをトリガーしたりできます。</p>
 <pre><code class="lang-csharp">emitter.WordChanged += word =&gt; mouth.SetBool("Talking", word.Text != null);
 </code></pre>
+<p><strong>声に連動するエフェクト。</strong> エミッターの <code>Loudness</code> は今の声の大きさを 0（無音）から 1 で示します。キャラクターが話している間、ハローを脈打たせたり、ライトを揺らしたり、アイコンを光らせたりできます。聞こえている言語に追従し、ボイスラインやそのオーディオを保存すると自動で計測されます。設定は不要です。</p>
+<pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
+</code></pre>
 <p><strong>吹き出し。</strong>キャラクターを選択し、<strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong> を選択します。そのキャラクターの頭上に吹き出しが表示され、そのキャラクターの発言のみが表示されます。これらの字幕を画面下部に表示しないようにするには、エミッターの <strong>Show Subtitles</strong> をオフにします。</p>
 <h3 id="without-code">コード不要 </h3>
 <ul>

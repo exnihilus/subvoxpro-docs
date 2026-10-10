@@ -193,7 +193,7 @@ SubVox.AudioLanguage = null;</code></pre>
   CurrentLanguage
   
   </h3>
-<div class="markdown level1 summary"><p>Sprachcode der anzuzeigenden Übersetzung (z. B. „fr“) oder leer für die Quelle. Auch die abzuspielende Sprachfassung, solange <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a> ihm folgt. Bereits angezeigte Subtitles werden sofort umgeschaltet; eine Sprachfassung beginnt mit der nächsten Sprachzeile.</p>
+<div class="markdown level1 summary"><p>Sprachcode der anzuzeigenden Übersetzung und der abzuspielenden generierten Sprachfassung (z. B. „fr“) oder leer für die Quelle. Bereits auf dem Bildschirm angezeigte Subtitles werden sofort umgeschaltet; eine generierte Sprachfassung beginnt mit der nächsten Sprachzeile.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -497,7 +497,7 @@ public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = o
   Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)
   
   </h3>
-<div class="markdown level1 summary"><p>Spielt eine Voice Line auf dem <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a> ab (die Synchronisation von <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a>, sofern vorhanden). Informationen zu den Regeln für Priorität und Play mode finden Sie unter <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>.</p>
+<div class="markdown level1 summary"><p>Spielt eine Voice Line auf dem <a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_DefaultEmitter">DefaultEmitter</a> ab (die Synchronisation von <code>CurrentLanguage</code>, sofern vorhanden). Informationen zu den Regeln für Priorität und Play mode finden Sie unter <a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)</a>.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">

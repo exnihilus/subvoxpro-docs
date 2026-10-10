@@ -135,7 +135,7 @@
   CurrentAudioLanguage
   
   </h3>
-<div class="markdown level1 summary"><p>現在のボイスラインで再生するオーディオの言語です。<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a>の吹き替え音声がある場合はその言語、ソースオーディオを使用する場合は空文字列です。<a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a>では、開発者側で再生を開始するオーディオの言語を示します。</p>
+<div class="markdown level1 summary"><p>現在のボイスラインで再生するオーディオの言語です。<code>CurrentLanguage</code>の吹き替え音声がある場合はその言語、ソースオーディオを使用する場合は空文字列です。<a class="xref" href="SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_PlayExternal_SubVoxPro_VoiceLineData_SubVoxPro_IVoiceLineAudioClock_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode_">PlayExternal(VoiceLineData, IVoiceLineAudioClock, EVoiceLinePriority, EVoiceLinePlayMode)</a>では、開発者側で再生を開始するオーディオの言語を示します。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -258,6 +258,28 @@
 <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
 <dd></dd>
 </dl>
+<a data-uid="SubVoxPro.VoiceLineEmitter.Loudness*" id="SubVoxPro_VoiceLineEmitter_Loudness_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineEmitter.Loudness" id="SubVoxPro_VoiceLineEmitter_Loudness">
+  Loudness
+  
+  </h3>
+<div class="markdown level1 summary"><p>現在のラインの声の今の大きさ。0（無音、一時停止中、待機中）から 1 まで。<a class="xref" href="SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_GetLoudness_System_Single_System_String_">GetLoudness(float, string)</a> を参照。安定した光にするには少し平滑化してください。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public float Loudness { get; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+<dd></dd>
+</dl>
+<h4 class="section" id="SubVoxPro_VoiceLineEmitter_Loudness_examples">Examples</h4>
+<pre><code class="lang-csharp">void Update()
+{
+    _glow = Mathf.Lerp(_glow, _emitter.Loudness, 15f * Time.deltaTime);
+    _halo.color = new Color(1f, 0.8f, 0.4f, _glow);
+}</code></pre>
 <a data-uid="SubVoxPro.VoiceLineEmitter.PlaybackProgress*" id="SubVoxPro_VoiceLineEmitter_PlaybackProgress_"></a>
 <h3 data-uid="SubVoxPro.VoiceLineEmitter.PlaybackProgress" id="SubVoxPro_VoiceLineEmitter_PlaybackProgress">
   PlaybackProgress
@@ -499,7 +521,7 @@
   Play(VoiceLineData, EVoiceLinePriority, EVoiceLinePlayMode)
   
   </h3>
-<div class="markdown level1 summary"><p>ボイスラインを再生します（<a class="xref" href="SubVoxPro.SubVox.html#SubVoxPro_SubVox_AudioLanguage">AudioLanguage</a>の吹き替え版が存在する場合はそれを再生します）。ここで既にボイスラインが再生中の場合、モードによって動作が決まります：<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Replace">Replace</a>は、優先度が同等以上の場合にそれを置き換えます（優先度が低い場合は拒否されます）、<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Queue">Queue</a>は、待機中のボイスラインの後に再生します、<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_IfIdle">IfIdle</a>はそれを拒否します。</p>
+<div class="markdown level1 summary"><p>ボイスラインを再生します（<code>CurrentLanguage</code>の吹き替え版が存在する場合はそれを再生します）。ここで既にボイスラインが再生中の場合、モードによって動作が決まります：<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Replace">Replace</a>は、優先度が同等以上の場合にそれを置き換えます（優先度が低い場合は拒否されます）、<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_Queue">Queue</a>は、待機中のボイスラインの後に再生します、<a class="xref" href="SubVoxPro.EVoiceLinePlayMode.html#SubVoxPro_EVoiceLinePlayMode_IfIdle">IfIdle</a>はそれを拒否します。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">

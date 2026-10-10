@@ -2947,6 +2947,21 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineData.GetEffectiveSpeaker
   fullName: SubVoxPro.VoiceLineData.GetEffectiveSpeaker
   nameWithType: VoiceLineData.GetEffectiveSpeaker
+- uid: SubVoxPro.VoiceLineData.GetLoudness(System.Single,System.String)
+  name: GetLoudness(float, string)
+  href: api/SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_GetLoudness_System_Single_System_String_
+  commentId: M:SubVoxPro.VoiceLineData.GetLoudness(System.Single,System.String)
+  name.vb: GetLoudness(Single, String)
+  fullName: SubVoxPro.VoiceLineData.GetLoudness(float, string)
+  fullName.vb: SubVoxPro.VoiceLineData.GetLoudness(Single, String)
+  nameWithType: VoiceLineData.GetLoudness(float, string)
+  nameWithType.vb: VoiceLineData.GetLoudness(Single, String)
+- uid: SubVoxPro.VoiceLineData.GetLoudness*
+  name: GetLoudness
+  href: api/SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_GetLoudness_
+  commentId: Overload:SubVoxPro.VoiceLineData.GetLoudness
+  fullName: SubVoxPro.VoiceLineData.GetLoudness
+  nameWithType: VoiceLineData.GetLoudness
 - uid: SubVoxPro.VoiceLineData.GetSpeakerOverride(System.String)
   name: GetSpeakerOverride(string)
   href: api/SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_GetSpeakerOverride_System_String_
@@ -3304,6 +3319,18 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineEmitter.IsPlaying
   fullName: SubVoxPro.VoiceLineEmitter.IsPlaying
   nameWithType: VoiceLineEmitter.IsPlaying
+- uid: SubVoxPro.VoiceLineEmitter.Loudness
+  name: Loudness
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Loudness
+  commentId: P:SubVoxPro.VoiceLineEmitter.Loudness
+  fullName: SubVoxPro.VoiceLineEmitter.Loudness
+  nameWithType: VoiceLineEmitter.Loudness
+- uid: SubVoxPro.VoiceLineEmitter.Loudness*
+  name: Loudness
+  href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_Loudness_
+  commentId: Overload:SubVoxPro.VoiceLineEmitter.Loudness
+  fullName: SubVoxPro.VoiceLineEmitter.Loudness
+  nameWithType: VoiceLineEmitter.Loudness
 - uid: SubVoxPro.VoiceLineEmitter.OnDisable
   name: OnDisable()
   href: api/SubVoxPro.VoiceLineEmitter.html#SubVoxPro_VoiceLineEmitter_OnDisable

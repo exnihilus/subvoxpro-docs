@@ -438,6 +438,9 @@ seine Voice Lines schneller oder langsamer ab.</p>
 <code>CurrentWord</code> enthält das gerade gesprochene Wort: Das reicht aus, um den Mund einer Figur zu öffnen oder eine Geste auszulösen.</p>
 <pre><code class="lang-csharp">emitter.WordChanged += word =&gt; mouth.SetBool("Talking", word.Text != null);
 </code></pre>
+<p><strong>Stimmgesteuerte Effekte.</strong> <code>Loudness</code> eines Emitters gibt an, wie laut die Stimme gerade ist, von 0 (Stille) bis 1: damit pulsiert ein Schein, flackert ein Licht oder leuchtet ein Sprechersymbol, während eine Figur spricht. Es folgt der gehörten Sprache und wird beim Speichern einer Voice Line oder ihres Audios automatisch gemessen — nichts einzurichten.</p>
+<pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
+</code></pre>
 <p><strong>Sprechblasen.</strong> Wählen Sie eine Figur aus und verwenden Sie <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>: Über
 ihrem Kopf erscheint eine Sprechblase, die nur das anzeigt, was diese Figur sagt. Deaktivieren Sie die Option <strong>Show Subtitles</strong> ihres Emitters, damit diese Voice Lines
 nicht am unteren Bildschirmrand angezeigt werden.</p>

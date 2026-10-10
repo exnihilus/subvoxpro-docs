@@ -457,6 +457,46 @@ exists, or empty for the source. With <a class="xref" href="SubVoxPro.VoiceLineE
 
 
 
+  <a id="SubVoxPro_VoiceLineEmitter_Loudness_" data-uid="SubVoxPro.VoiceLineEmitter.Loudness*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineEmitter_Loudness" data-uid="SubVoxPro.VoiceLineEmitter.Loudness">
+  Loudness
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>How loud the current line's voice is right now, from 0 (silence, paused or idle) to 1. See
+<a class="xref" href="SubVoxPro.VoiceLineData.html#SubVoxPro_VoiceLineData_GetLoudness_System_Single_System_String_">GetLoudness(float, string)</a>. Smooth it a little for a steady glow.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Loudness { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="SubVoxPro_VoiceLineEmitter_Loudness_examples">Examples</h4>
+  <pre><code class="lang-csharp">void Update()
+{
+    _glow = Mathf.Lerp(_glow, _emitter.Loudness, 15f * Time.deltaTime);
+    _halo.color = new Color(1f, 0.8f, 0.4f, _glow);
+}</code></pre>
+
+
+
+
+
+
   <a id="SubVoxPro_VoiceLineEmitter_PlaybackProgress_" data-uid="SubVoxPro.VoiceLineEmitter.PlaybackProgress*"></a>
 
   <h3 id="SubVoxPro_VoiceLineEmitter_PlaybackProgress" data-uid="SubVoxPro.VoiceLineEmitter.PlaybackProgress">

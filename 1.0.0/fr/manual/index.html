@@ -445,6 +445,9 @@ ralentit les répliques.</p>
 et <code>CurrentWord</code> contient le mot en cours : de quoi animer la bouche d’un personnage ou déclencher un geste.</p>
 <pre><code class="lang-csharp">emitter.WordChanged += word =&gt; mouth.SetBool("Talking", word.Text != null);
 </code></pre>
+<p><strong>Effets pilotés par la voix.</strong> <code>Loudness</code> d’un émetteur indique le volume actuel de la voix, de 0 (silence) à 1 : de quoi faire pulser un halo, vaciller une lumière ou briller une icône pendant qu’un personnage parle. Il suit la langue entendue et il est mesuré pour vous à l’enregistrement d’une voice line ou de son audio — rien à configurer.</p>
+<pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
+</code></pre>
 <p><strong>Bulles de dialogue.</strong> Sélectionnez un personnage et utilisez <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>.
 Une bulle au-dessus de sa tête n’affiche que ses répliques. Désactivez <strong>Show Subtitles</strong> sur son émetteur
 pour ne pas les afficher aussi en bas de l’écran.</p>

@@ -330,6 +330,9 @@ yield return SubVox.Play(answer);
 <code>CurrentWord</code> 保存当前正在说的词：这足以让角色张嘴或触发动作。</p>
 <pre><code class="lang-csharp">emitter.WordChanged += word =&gt; mouth.SetBool("Talking", word.Text != null);
 </code></pre>
+<p><strong>由语音驱动的效果。</strong> 发射器的 <code>Loudness</code> 表示此刻语音的音量，从 0（静音）到 1：可在角色说话时让光晕跳动、灯光闪烁或图标发光。它跟随正在播放的语言，并在保存语音台词或其音频时自动测量，无需任何设置。</p>
+<pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
+</code></pre>
 <p><strong>对话气泡。</strong>选择一个角色，然后使用 <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>：该角色的头顶会出现一个气泡，仅显示该角色所说的台词。关闭其台词播放源的 <strong>Show Subtitles</strong> 选项，以避免这些字幕出现在屏幕底部。</p>
 <h3 id="without-code">无需代码 </h3>
 <ul>

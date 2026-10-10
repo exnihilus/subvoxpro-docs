@@ -453,6 +453,11 @@ its lines faster or slower.</p>
 <code>CurrentWord</code> holds the word being said: enough to open a character's mouth or trigger a gesture.</p>
 <pre><code class="lang-csharp">emitter.WordChanged += word =&gt; mouth.SetBool(&quot;Talking&quot;, word.Text != null);
 </code></pre>
+<p><strong>Voice-driven effects.</strong> An emitter's <code>Loudness</code> tells how loud the voice is right now, from 0 (silence) to 1: use
+it to make a halo pulse, a light flicker or a speaker icon glow while a character talks. It follows the language
+being heard, and it is measured for you when you save a voice line or its audio — nothing to set up.</p>
+<pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
+</code></pre>
 <p><strong>Speech bubbles.</strong> Select a character and use <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>: a bubble appears above
 its head and shows only what this character says. Turn off its emitter's <strong>Show Subtitles</strong> to keep those lines out
 of the bottom of the screen.</p>
