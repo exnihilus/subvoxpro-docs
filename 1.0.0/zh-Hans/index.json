@@ -37,7 +37,7 @@
   "api/SubVoxPro.EVoiceLineMelodyUnit.html": {
     "href": "api/SubVoxPro.EVoiceLineMelodyUnit.html",
     "title": "Enum EVoiceLineMelodyUnit | SubVox Pro 文档",
-    "summary": "Enum EVoiceLineMelodyUnit Namespace SubVoxPro Assembly SubVoxPro.dll VoiceLineMelodyVoice 播放提示音的单位。 public enum EVoiceLineMelodyUnit Fields Syllable = 0 每个音节一个提示音，分布在整个词上；有音频时对齐人声。 Word = 1 每个词一个提示音。"
+    "summary": "Enum EVoiceLineMelodyUnit Namespace SubVoxPro Assembly SubVoxPro.dll VoiceLineMelodyVoice 播放提示音的单位。 public enum EVoiceLineMelodyUnit Fields Syllable = 0 每个音节一个提示音：有音频时落在人声的每次起音上，否则根据文本计数。 Word = 1 每个词一个提示音。"
   },
   "api/SubVoxPro.EVoiceLinePlayMode.html": {
     "href": "api/SubVoxPro.EVoiceLinePlayMode.html",

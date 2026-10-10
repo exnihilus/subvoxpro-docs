@@ -37,7 +37,7 @@
   "api/SubVoxPro.EVoiceLineMelodyUnit.html": {
     "href": "api/SubVoxPro.EVoiceLineMelodyUnit.html",
     "title": "Enum EVoiceLineMelodyUnit | SubVox Pro Documentation",
-    "summary": "Enum EVoiceLineMelodyUnit Namespace SubVoxPro Assembly SubVoxPro.dll What a VoiceLineMelodyVoice plays a blip on. public enum EVoiceLineMelodyUnit Fields Syllable = 0 One blip per syllable, spread over the word and placed on the voice when there is audio. Word = 1 One blip per word."
+    "summary": "Enum EVoiceLineMelodyUnit Namespace SubVoxPro Assembly SubVoxPro.dll What a VoiceLineMelodyVoice plays a blip on. public enum EVoiceLineMelodyUnit Fields Syllable = 0 One blip per syllable: on each attack of the voice when there is audio, otherwise counted from the text. Word = 1 One blip per word."
   },
   "api/SubVoxPro.EVoiceLinePlayMode.html": {
     "href": "api/SubVoxPro.EVoiceLinePlayMode.html",

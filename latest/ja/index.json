@@ -37,7 +37,7 @@
   "api/SubVoxPro.EVoiceLineMelodyUnit.html": {
     "href": "api/SubVoxPro.EVoiceLineMelodyUnit.html",
     "title": "Enum EVoiceLineMelodyUnit | SubVox Pro ドキュメント",
-    "summary": "Enum EVoiceLineMelodyUnit Namespace SubVoxPro Assembly SubVoxPro.dll VoiceLineMelodyVoice がブリップ音を鳴らす単位。 public enum EVoiceLineMelodyUnit Fields Syllable = 0 音節ごとに 1 回。単語全体に配置され、音声がある場合は声に合わせます。 Word = 1 単語ごとに 1 回。"
+    "summary": "Enum EVoiceLineMelodyUnit Namespace SubVoxPro Assembly SubVoxPro.dll VoiceLineMelodyVoice がブリップ音を鳴らす単位。 public enum EVoiceLineMelodyUnit Fields Syllable = 0 音節ごとに 1 回。音声がある場合は声の立ち上がりごとに、ない場合はテキストから数えます。 Word = 1 単語ごとに 1 回。"
   },
   "api/SubVoxPro.EVoiceLinePlayMode.html": {
     "href": "api/SubVoxPro.EVoiceLinePlayMode.html",
