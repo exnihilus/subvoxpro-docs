@@ -469,8 +469,8 @@ being heard, and it is measured for you when you save a voice line or its audio 
 <pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
 </code></pre>
 <p><strong>Melody voice.</strong> For &quot;Animal Crossing&quot;-style voices, add a <strong>Voice Line Melody Voice</strong> next to a character's
-emitter: each spoken word plays a short blip that follows the melody of the voice, in every language and with nothing
-to generate. Choose <strong>Replace</strong> to hear only the blips, or <strong>Background</strong> to play them over the voice. Give each
+emitter: each spoken syllable plays a short blip that follows the melody of the voice, in every language and with
+nothing to generate (set <strong>Blip On</strong> to <strong>Word</strong> for one blip per word). Choose <strong>Replace</strong> to hear only the blips, or <strong>Background</strong> to play them over the voice. Give each
 character its own register with <strong>Base Pitch</strong> (higher for a small character, lower for a big one), pick a
 <strong>Preset</strong> or your own <strong>Custom Sound</strong>, and set how closely the blips follow the voice with <strong>Pitch Range</strong>. Lines
 without audio still get blips, with a light random variation.</p>

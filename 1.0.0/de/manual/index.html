@@ -452,8 +452,8 @@ seine Voice Lines schneller oder langsamer ab.</p>
 <pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
 </code></pre>
 <p><strong>Melodiestimme.</strong> Für Stimmen im „Animal Crossing“-Stil fügen Sie neben dem Emitter einer Figur eine <strong>Voice Line Melody Voice</strong>
-hinzu: Jedes gesprochene Wort spielt einen kurzen Blip, der der Melodie der Stimme folgt, in jeder Sprache und ohne etwas zu
-generieren. Wählen Sie <strong>Replace</strong>, um nur die Blips zu hören, oder <strong>Background</strong>, um sie über der Stimme abzuspielen. Geben Sie
+hinzu: Jede gesprochene Silbe spielt einen kurzen Blip, der der Melodie der Stimme folgt, in jeder Sprache und ohne etwas zu
+generieren (stellen Sie <strong>Blip On</strong> auf <strong>Word</strong> für einen Blip pro Wort). Wählen Sie <strong>Replace</strong>, um nur die Blips zu hören, oder <strong>Background</strong>, um sie über der Stimme abzuspielen. Geben Sie
 jeder Figur mit <strong>Base Pitch</strong> ihre eigene Stimmlage (höher für eine kleine Figur, tiefer für eine große), wählen Sie ein
 <strong>Preset</strong> oder Ihren eigenen <strong>Custom Sound</strong> und legen Sie mit <strong>Pitch Range</strong> fest, wie genau die Blips der Stimme folgen.
 Zeilen ohne Audio erhalten ebenfalls Blips, mit einer leichten zufälligen Variation.</p>

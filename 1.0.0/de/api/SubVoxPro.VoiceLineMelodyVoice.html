@@ -6,7 +6,7 @@
 <title>Klasse VoiceLineMelodyVoice | SubVox Pro-Dokumentation </title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="Class VoiceLineMelodyVoice | SubVox Pro-Dokumentation " name="title"/>
-<meta content="Spielt bei jedem gesprochenen Wort seines Emitters einen kurzen Blip im „Animal Crossing“-Stil, in jeder Sprache und ohne etwas zu generieren: Jeder Blip folgt der Intonation des Wortes im abgespielten Audio (Quelle oder Synchronisation) und erhält eine leichte zufällige Tonhöhe, wenn die Zeile kein Audio oder keine klare Stimme hat. Fügen Sie ihn neben einem  hinzu und wählen Sie eine Stimmlage pro Figur." name="description"/>
+<meta content="Spielt bei jeder gesprochenen Silbe (oder jedem Wort) seines Emitters einen kurzen Blip im „Animal Crossing“-Stil, in jeder Sprache und ohne etwas zu generieren: Jeder Blip folgt der Intonation der Stimme im abgespielten Audio (Quelle oder Synchronisation) und erhält eine leichte zufällige Tonhöhe, wenn die Zeile kein Audio oder keine klare Stimme hat. Fügen Sie ihn neben einem  hinzu und wählen Sie eine Stimmlage pro Figur." name="description"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
 <link href="../public/main.css?v=fd4daf7803" rel="stylesheet"/>
@@ -87,7 +87,7 @@ Klasse VoiceLineMelodyVoice
 <dl><dt>Namespace</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
 <dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
 </div>
-<div class="markdown summary"><p>Spielt bei jedem gesprochenen Wort seines Emitters einen kurzen Blip im „Animal Crossing“-Stil, in jeder Sprache und ohne etwas zu generieren: Jeder Blip folgt der Intonation des Wortes im abgespielten Audio (Quelle oder Synchronisation) und erhält eine leichte zufällige Tonhöhe, wenn die Zeile kein Audio oder keine klare Stimme hat. Fügen Sie ihn neben einem <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> hinzu und wählen Sie eine Stimmlage pro Figur.</p>
+<div class="markdown summary"><p>Spielt bei jeder gesprochenen Silbe (oder jedem Wort) seines Emitters einen kurzen Blip im „Animal Crossing“-Stil, in jeder Sprache und ohne etwas zu generieren: Jeder Blip folgt der Intonation der Stimme im abgespielten Audio (Quelle oder Synchronisation) und erhält eine leichte zufällige Tonhöhe, wenn die Zeile kein Audio oder keine klare Stimme hat. Fügen Sie ihn neben einem <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> hinzu und wählen Sie eine Stimmlage pro Figur.</p>
 </div>
 <div class="markdown conceptual"></div>
 <div class="codewrapper">
@@ -135,12 +135,28 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
 <dd></dd>
 </dl>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.BlipOn*" id="SubVoxPro_VoiceLineMelodyVoice_BlipOn_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.BlipOn" id="SubVoxPro_VoiceLineMelodyVoice_BlipOn">
+  BlipOn
+  
+  </h3>
+<div class="markdown level1 summary"><p>Ob ein Blip bei jeder Silbe oder bei jedem Wort abgespielt wird.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLineMelodyUnit BlipOn { get; set; }</code></pre>
+</div>
+<h4 class="section">Eigenschaftswert</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyUnit.html">EVoiceLineMelodyUnit</a></dt>
+<dd></dd>
+</dl>
 <a data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound*" id="SubVoxPro_VoiceLineMelodyVoice_CustomSound_"></a>
 <h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound" id="SubVoxPro_VoiceLineMelodyVoice_CustomSound">
   CustomSound
   
   </h3>
-<div class="markdown level1 summary"><p>Ein Clip, der bei jedem Wort statt des integrierten Blips abgespielt wird, oder null.</p>
+<div class="markdown level1 summary"><p>Ein Clip, der bei jedem Blip statt des integrierten Blips abgespielt wird, oder null.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -270,7 +286,7 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
   OnBlip(SubtitleWordInfo, float)
   
   </h3>
-<div class="markdown level1 summary"><p>Wird nach jedem Blip aufgerufen, mit seinem Wort und seiner Tonhöhe in Halbtönen (0 = Referenzton).</p>
+<div class="markdown level1 summary"><p>Wird nach jedem Blip aufgerufen, mit dem Wort, zu dem er gehört, und seiner Tonhöhe in Halbtönen (0 = Referenzton).</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -326,6 +342,17 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
 <pre><code class="lang-csharp hljs">protected virtual void OnValidate()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.Update*" id="SubVoxPro_VoiceLineMelodyVoice_Update_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.Update" id="SubVoxPro_VoiceLineMelodyVoice_Update">
+  Update()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity-Meldung: Rufen Sie die Base-Methode auf, wenn Sie diese überschreiben.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void Update()</code></pre>
 </div>
 </article>
 </div>

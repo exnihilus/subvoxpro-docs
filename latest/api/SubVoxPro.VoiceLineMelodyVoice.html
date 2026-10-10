@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class VoiceLineMelodyVoice | SubVox Pro Documentation ">
       
-      <meta name="description" content="Plays a short blip on every spoken word of its emitter, &amp;quot;Animal Crossing&amp;quot; style, in every language and with nothing to generate: each blip follows the intonation of the word in the audio playing (source or dub), and gets a light random pitch when the line has no audio or no clear voice. Put it next to a  and pick a register per character.">
+      <meta name="description" content="Plays a short blip on every spoken syllable (or word) of its emitter, &amp;quot;Animal Crossing&amp;quot; style, in every language and with nothing to generate: each blip follows the intonation of the voice in the audio playing (source or dub), and gets a light random pitch when the line has no audio or no clear voice. Put it next to a  and pick a register per character.">
       <link rel="icon" href="../images/logo.svg">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css?v=fd4daf7803">
@@ -104,9 +104,9 @@ Class VoiceLineMelodyVoice
   <dl><dt>Assembly</dt><dd>SubVoxPro.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Plays a short blip on every spoken word of its emitter, &quot;Animal Crossing&quot; style, in every language and with
-nothing to generate: each blip follows the intonation of the word in the audio playing (source or dub), and
-gets a light random pitch when the line has no audio or no clear voice. Put it next to a
+  <div class="markdown summary"><p>Plays a short blip on every spoken syllable (or word) of its emitter, &quot;Animal Crossing&quot; style, in every language
+and with nothing to generate: each blip follows the intonation of the voice in the audio playing (source or dub),
+and gets a light random pitch when the line has no audio or no clear voice. Put it next to a
 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> and pick a register per character.</p>
 </div>
   <div class="markdown conceptual"></div>
@@ -206,6 +206,38 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
 
 
+  <a id="SubVoxPro_VoiceLineMelodyVoice_BlipOn_" data-uid="SubVoxPro.VoiceLineMelodyVoice.BlipOn*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_BlipOn" data-uid="SubVoxPro.VoiceLineMelodyVoice.BlipOn">
+  BlipOn
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether a blip plays on each syllable or on each word.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EVoiceLineMelodyUnit BlipOn { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyUnit.html">EVoiceLineMelodyUnit</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="SubVoxPro_VoiceLineMelodyVoice_CustomSound_" data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound*"></a>
 
   <h3 id="SubVoxPro_VoiceLineMelodyVoice_CustomSound" data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound">
@@ -213,7 +245,7 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
   
   </h3>
 
-  <div class="markdown level1 summary"><p>A clip played on each word instead of the built-in blip, or null.</p>
+  <div class="markdown level1 summary"><p>A clip played on each blip instead of the built-in blip, or null.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -473,7 +505,7 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Called after each blip, with its word and its pitch in semitones (0 = the reference tone).</p>
+  <div class="markdown level1 summary"><p>Called after each blip, with the word it belongs to and its pitch in semitones (0 = the reference tone).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -594,6 +626,33 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected virtual void OnValidate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SubVoxPro_VoiceLineMelodyVoice_Update_" data-uid="SubVoxPro.VoiceLineMelodyVoice.Update*"></a>
+
+  <h3 id="SubVoxPro_VoiceLineMelodyVoice_Update" data-uid="SubVoxPro.VoiceLineMelodyVoice.Update">
+  Update()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Unity message; call the base method when you override it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Update()</code></pre>
   </div>
 
 

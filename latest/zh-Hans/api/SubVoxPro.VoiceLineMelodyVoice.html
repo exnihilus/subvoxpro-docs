@@ -6,7 +6,7 @@
 <title>类 VoiceLineMelodyVoice | SubVox Pro 文档 </title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="Class VoiceLineMelodyVoice | SubVox Pro 文档 " name="title"/>
-<meta content="在其播放源说出的每个词上播放一个“动物森友会”风格的短促提示音，支持所有语言，无需生成任何内容：每个提示音跟随正在播放的音频（原声或配音）中该词的语调；当台词没有音频或人声不清晰时，则使用轻微的随机音高。将其添加到  旁边，并为每个角色选择音域。" name="description"/>
+<meta content="在其播放源说出的每个音节（或词）上播放一个“动物森友会”风格的短促提示音，支持所有语言，无需生成任何内容：每个提示音跟随正在播放的音频（原声或配音）中人声的语调；当台词没有音频或人声不清晰时，则使用轻微的随机音高。将其添加到  旁边，并为每个角色选择音域。" name="description"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
 <link href="../public/main.css?v=fd4daf7803" rel="stylesheet"/>
@@ -87,7 +87,7 @@
 <dl><dt>命名空间</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
 <dl><dt>程序集</dt><dd>SubVoxPro.dll</dd></dl>
 </div>
-<div class="markdown summary"><p>在其播放源说出的每个词上播放一个“动物森友会”风格的短促提示音，支持所有语言，无需生成任何内容：每个提示音跟随正在播放的音频（原声或配音）中该词的语调；当台词没有音频或人声不清晰时，则使用轻微的随机音高。将其添加到 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> 旁边，并为每个角色选择音域。</p>
+<div class="markdown summary"><p>在其播放源说出的每个音节（或词）上播放一个“动物森友会”风格的短促提示音，支持所有语言，无需生成任何内容：每个提示音跟随正在播放的音频（原声或配音）中人声的语调；当台词没有音频或人声不清晰时，则使用轻微的随机音高。将其添加到 <a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> 旁边，并为每个角色选择音域。</p>
 </div>
 <div class="markdown conceptual"></div>
 <div class="codewrapper">
@@ -135,12 +135,28 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
 <dd></dd>
 </dl>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.BlipOn*" id="SubVoxPro_VoiceLineMelodyVoice_BlipOn_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.BlipOn" id="SubVoxPro_VoiceLineMelodyVoice_BlipOn">
+  BlipOn
+  
+  </h3>
+<div class="markdown level1 summary"><p>提示音是按每个音节还是每个词播放。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLineMelodyUnit BlipOn { get; set; }</code></pre>
+</div>
+<h4 class="section">属性值</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyUnit.html">EVoiceLineMelodyUnit</a></dt>
+<dd></dd>
+</dl>
 <a data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound*" id="SubVoxPro_VoiceLineMelodyVoice_CustomSound_"></a>
 <h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound" id="SubVoxPro_VoiceLineMelodyVoice_CustomSound">
   CustomSound
   
   </h3>
-<div class="markdown level1 summary"><p>在每个词上代替内置提示音播放的音频剪辑，或为 null。</p>
+<div class="markdown level1 summary"><p>在每个提示音处代替内置提示音播放的音频剪辑，或为 null。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -270,7 +286,7 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
   OnBlip(SubtitleWordInfo, float)
   
   </h3>
-<div class="markdown level1 summary"><p>每个提示音之后调用，传入对应的词及其以半音计的音高（0 = 参考音）。</p>
+<div class="markdown level1 summary"><p>每个提示音之后调用，传入其所属的词及其以半音计的音高（0 = 参考音）。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -326,6 +342,17 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
 <pre><code class="lang-csharp hljs">protected virtual void OnValidate()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.Update*" id="SubVoxPro_VoiceLineMelodyVoice_Update_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.Update" id="SubVoxPro_VoiceLineMelodyVoice_Update">
+  Update()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unity 消息方法；重写此方法时需调用基类实现。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void Update()</code></pre>
 </div>
 </article>
 </div>

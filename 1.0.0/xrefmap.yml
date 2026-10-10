@@ -181,6 +181,24 @@ references:
   commentId: F:SubVoxPro.EVoiceLineMelodyPreset.Soft
   fullName: SubVoxPro.EVoiceLineMelodyPreset.Soft
   nameWithType: EVoiceLineMelodyPreset.Soft
+- uid: SubVoxPro.EVoiceLineMelodyUnit
+  name: EVoiceLineMelodyUnit
+  href: api/SubVoxPro.EVoiceLineMelodyUnit.html
+  commentId: T:SubVoxPro.EVoiceLineMelodyUnit
+  fullName: SubVoxPro.EVoiceLineMelodyUnit
+  nameWithType: EVoiceLineMelodyUnit
+- uid: SubVoxPro.EVoiceLineMelodyUnit.Syllable
+  name: Syllable
+  href: api/SubVoxPro.EVoiceLineMelodyUnit.html#SubVoxPro_EVoiceLineMelodyUnit_Syllable
+  commentId: F:SubVoxPro.EVoiceLineMelodyUnit.Syllable
+  fullName: SubVoxPro.EVoiceLineMelodyUnit.Syllable
+  nameWithType: EVoiceLineMelodyUnit.Syllable
+- uid: SubVoxPro.EVoiceLineMelodyUnit.Word
+  name: Word
+  href: api/SubVoxPro.EVoiceLineMelodyUnit.html#SubVoxPro_EVoiceLineMelodyUnit_Word
+  commentId: F:SubVoxPro.EVoiceLineMelodyUnit.Word
+  fullName: SubVoxPro.EVoiceLineMelodyUnit.Word
+  nameWithType: EVoiceLineMelodyUnit.Word
 - uid: SubVoxPro.EVoiceLinePlayMode
   name: EVoiceLinePlayMode
   href: api/SubVoxPro.EVoiceLinePlayMode.html
@@ -4540,6 +4558,18 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineMelodyVoice.BasePitch
   fullName: SubVoxPro.VoiceLineMelodyVoice.BasePitch
   nameWithType: VoiceLineMelodyVoice.BasePitch
+- uid: SubVoxPro.VoiceLineMelodyVoice.BlipOn
+  name: BlipOn
+  href: api/SubVoxPro.VoiceLineMelodyVoice.html#SubVoxPro_VoiceLineMelodyVoice_BlipOn
+  commentId: P:SubVoxPro.VoiceLineMelodyVoice.BlipOn
+  fullName: SubVoxPro.VoiceLineMelodyVoice.BlipOn
+  nameWithType: VoiceLineMelodyVoice.BlipOn
+- uid: SubVoxPro.VoiceLineMelodyVoice.BlipOn*
+  name: BlipOn
+  href: api/SubVoxPro.VoiceLineMelodyVoice.html#SubVoxPro_VoiceLineMelodyVoice_BlipOn_
+  commentId: Overload:SubVoxPro.VoiceLineMelodyVoice.BlipOn
+  fullName: SubVoxPro.VoiceLineMelodyVoice.BlipOn
+  nameWithType: VoiceLineMelodyVoice.BlipOn
 - uid: SubVoxPro.VoiceLineMelodyVoice.CustomSound
   name: CustomSound
   href: api/SubVoxPro.VoiceLineMelodyVoice.html#SubVoxPro_VoiceLineMelodyVoice_CustomSound
@@ -4687,6 +4717,18 @@ references:
   commentId: Overload:SubVoxPro.VoiceLineMelodyVoice.RandomPitch
   fullName: SubVoxPro.VoiceLineMelodyVoice.RandomPitch
   nameWithType: VoiceLineMelodyVoice.RandomPitch
+- uid: SubVoxPro.VoiceLineMelodyVoice.Update
+  name: Update()
+  href: api/SubVoxPro.VoiceLineMelodyVoice.html#SubVoxPro_VoiceLineMelodyVoice_Update
+  commentId: M:SubVoxPro.VoiceLineMelodyVoice.Update
+  fullName: SubVoxPro.VoiceLineMelodyVoice.Update()
+  nameWithType: VoiceLineMelodyVoice.Update()
+- uid: SubVoxPro.VoiceLineMelodyVoice.Update*
+  name: Update
+  href: api/SubVoxPro.VoiceLineMelodyVoice.html#SubVoxPro_VoiceLineMelodyVoice_Update_
+  commentId: Overload:SubVoxPro.VoiceLineMelodyVoice.Update
+  fullName: SubVoxPro.VoiceLineMelodyVoice.Update
+  nameWithType: VoiceLineMelodyVoice.Update
 - uid: SubVoxPro.VoiceLineMelodyVoice.Volume
   name: Volume
   href: api/SubVoxPro.VoiceLineMelodyVoice.html#SubVoxPro_VoiceLineMelodyVoice_Volume

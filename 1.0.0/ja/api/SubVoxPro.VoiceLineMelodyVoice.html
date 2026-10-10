@@ -6,7 +6,7 @@
 <title>クラス VoiceLineMelodyVoice | SubVox Pro ドキュメント </title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="Class VoiceLineMelodyVoice | SubVox Pro ドキュメント " name="title"/>
-<meta content="エミッターが話す単語ごとに「どうぶつの森」風の短いブリップ音を鳴らします。すべての言語に対応し、何も生成する必要はありません。各ブリップは再生中の音声（ソースまたは吹き替え）での単語のイントネーションに沿い、音声がない、または声がはっきりしないラインでは軽いランダムな音程になります。 の隣に追加し、キャラクターごとに音域を選んでください。" name="description"/>
+<meta content="エミッターが話す音節（または単語）ごとに「どうぶつの森」風の短いブリップ音を鳴らします。すべての言語に対応し、何も生成する必要はありません。各ブリップは再生中の音声（ソースまたは吹き替え）での声のイントネーションに沿い、音声がない、または声がはっきりしないラインでは軽いランダムな音程になります。 の隣に追加し、キャラクターごとに音域を選んでください。" name="description"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
 <link href="../public/main.css?v=fd4daf7803" rel="stylesheet"/>
@@ -87,7 +87,7 @@
 <dl><dt>名前空間</dt><dd><a class="xref" href="SubVoxPro.html">SubVoxPro</a></dd></dl>
 <dl><dt>アセンブリ</dt><dd>SubVoxPro.dll</dd></dl>
 </div>
-<div class="markdown summary"><p>エミッターが話す単語ごとに「どうぶつの森」風の短いブリップ音を鳴らします。すべての言語に対応し、何も生成する必要はありません。各ブリップは再生中の音声（ソースまたは吹き替え）での単語のイントネーションに沿い、音声がない、または声がはっきりしないラインでは軽いランダムな音程になります。<a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> の隣に追加し、キャラクターごとに音域を選んでください。</p>
+<div class="markdown summary"><p>エミッターが話す音節（または単語）ごとに「どうぶつの森」風の短いブリップ音を鳴らします。すべての言語に対応し、何も生成する必要はありません。各ブリップは再生中の音声（ソースまたは吹き替え）での声のイントネーションに沿い、音声がない、または声がはっきりしないラインでは軽いランダムな音程になります。<a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a> の隣に追加し、キャラクターごとに音域を選んでください。</p>
 </div>
 <div class="markdown conceptual"></div>
 <div class="codewrapper">
@@ -135,12 +135,28 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
 <dd></dd>
 </dl>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.BlipOn*" id="SubVoxPro_VoiceLineMelodyVoice_BlipOn_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.BlipOn" id="SubVoxPro_VoiceLineMelodyVoice_BlipOn">
+  BlipOn
+  
+  </h3>
+<div class="markdown level1 summary"><p>ブリップ音を音節ごとに鳴らすか、単語ごとに鳴らすか。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public EVoiceLineMelodyUnit BlipOn { get; set; }</code></pre>
+</div>
+<h4 class="section">プロパティ値</h4>
+<dl class="parameters">
+<dt><a class="xref" href="SubVoxPro.EVoiceLineMelodyUnit.html">EVoiceLineMelodyUnit</a></dt>
+<dd></dd>
+</dl>
 <a data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound*" id="SubVoxPro_VoiceLineMelodyVoice_CustomSound_"></a>
 <h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.CustomSound" id="SubVoxPro_VoiceLineMelodyVoice_CustomSound">
   CustomSound
   
   </h3>
-<div class="markdown level1 summary"><p>内蔵ブリップ音の代わりに各単語で再生するクリップ、または null。</p>
+<div class="markdown level1 summary"><p>内蔵ブリップ音の代わりにブリップごとに再生するクリップ、または null。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -270,7 +286,7 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
   OnBlip(SubtitleWordInfo, float)
   
   </h3>
-<div class="markdown level1 summary"><p>各ブリップの後に、その単語と半音単位の音程（0 = 基準音）とともに呼び出されます。</p>
+<div class="markdown level1 summary"><p>各ブリップの後に、それが属する単語と半音単位の音程（0 = 基準音）とともに呼び出されます。</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -326,6 +342,17 @@ _villager.GetComponent&lt;VoiceLineEmitter&gt;().Play(greeting);</code></pre>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
 <pre><code class="lang-csharp hljs">protected virtual void OnValidate()</code></pre>
+</div>
+<a data-uid="SubVoxPro.VoiceLineMelodyVoice.Update*" id="SubVoxPro_VoiceLineMelodyVoice_Update_"></a>
+<h3 data-uid="SubVoxPro.VoiceLineMelodyVoice.Update" id="SubVoxPro_VoiceLineMelodyVoice_Update">
+  Update()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Unityのメッセージです。オーバーライドする際は、基底クラスのメソッドを呼び出してください。</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected virtual void Update()</code></pre>
 </div>
 </article>
 </div>
