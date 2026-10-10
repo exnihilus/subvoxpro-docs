@@ -169,6 +169,30 @@ references:
   commentId: F:SubVoxPro.EVoiceLineMelodyPreset.Chirp
   fullName: SubVoxPro.EVoiceLineMelodyPreset.Chirp
   nameWithType: EVoiceLineMelodyPreset.Chirp
+- uid: SubVoxPro.EVoiceLineMelodyPreset.Guitar
+  name: Guitar
+  href: api/SubVoxPro.EVoiceLineMelodyPreset.html#SubVoxPro_EVoiceLineMelodyPreset_Guitar
+  commentId: F:SubVoxPro.EVoiceLineMelodyPreset.Guitar
+  fullName: SubVoxPro.EVoiceLineMelodyPreset.Guitar
+  nameWithType: EVoiceLineMelodyPreset.Guitar
+- uid: SubVoxPro.EVoiceLineMelodyPreset.Marimba
+  name: Marimba
+  href: api/SubVoxPro.EVoiceLineMelodyPreset.html#SubVoxPro_EVoiceLineMelodyPreset_Marimba
+  commentId: F:SubVoxPro.EVoiceLineMelodyPreset.Marimba
+  fullName: SubVoxPro.EVoiceLineMelodyPreset.Marimba
+  nameWithType: EVoiceLineMelodyPreset.Marimba
+- uid: SubVoxPro.EVoiceLineMelodyPreset.MusicBox
+  name: MusicBox
+  href: api/SubVoxPro.EVoiceLineMelodyPreset.html#SubVoxPro_EVoiceLineMelodyPreset_MusicBox
+  commentId: F:SubVoxPro.EVoiceLineMelodyPreset.MusicBox
+  fullName: SubVoxPro.EVoiceLineMelodyPreset.MusicBox
+  nameWithType: EVoiceLineMelodyPreset.MusicBox
+- uid: SubVoxPro.EVoiceLineMelodyPreset.Piano
+  name: Piano
+  href: api/SubVoxPro.EVoiceLineMelodyPreset.html#SubVoxPro_EVoiceLineMelodyPreset_Piano
+  commentId: F:SubVoxPro.EVoiceLineMelodyPreset.Piano
+  fullName: SubVoxPro.EVoiceLineMelodyPreset.Piano
+  nameWithType: EVoiceLineMelodyPreset.Piano
 - uid: SubVoxPro.EVoiceLineMelodyPreset.Robot
   name: Robot
   href: api/SubVoxPro.EVoiceLineMelodyPreset.html#SubVoxPro_EVoiceLineMelodyPreset_Robot
