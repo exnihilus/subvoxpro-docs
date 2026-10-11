@@ -138,7 +138,7 @@ macOSおよびLinuxのエディターでも動作すると考えられますが�
 <p><strong>1. 文字起こしの方法を選択します。</strong>音声認識サービスのAPIキーを
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong>に貼り付けるか（<a href="providers.html">取得方法はこちら</a>）、Windowsでは<strong>Whisper</strong>または
 <strong>Parakeet</strong>を使用します。これらは無料でオフラインで動作します（初回利用時にモデルのダウンロードを案内します）。</p>
-<p><strong>2. ボイスラインを作成します。</strong> <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line</strong>で作成し、そのアセットを選択して、Inspectorの<strong>Set Up Voice Line</strong>
+<p><strong>2. ボイスラインを作成します。</strong> <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line</strong>で作成し、そのアセットを選択して、Inspectorの<strong>Edit Voice Line</strong>
 をクリックします。新しいボイスラインのSubVox Proウィンドウが開きます。<strong>Language</strong>（初回は英語、その後は前回選択した言語）を確認し、<strong>Add an audio track</strong>を選択してクリップを指定するか、音声を録音します。</p>
 <p>または、Projectウィンドウでオーディオファイルを右クリックし、<strong>SubVox Pro ▸ Set Up Voice Line</strong>を選択します。新しいボイスラインの保存先を選択すると、そのオーディオが割り当てられた状態でエディターが開きます。</p>
 <img alt="新しいボイスラインの開始画面：言語、オーディオトラックの追加、字幕トラックの追加" src="Images/subvoxpro-new-voice-line.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
@@ -153,7 +153,7 @@ SubVox.Play(myVoiceLine);
 <hr/>
 <h2 id="the-subvox-pro-window">SubVox Proのウィンドウ </h2>
 <img alt="SubVox Proのウィンドウ：ソーストラック、AI Tools、波形タイムライン、ライブプレビュー、字幕リスト" src="Images/subvoxpro-window-overview.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
-<p><strong>Tools ▸ SubVox Pro ▸ Voice Line Editor</strong>、またはボイスラインのInspectorにある<strong>Set Up Voice Line</strong>から開けます。上から順に説明します。</p>
+<p><strong>Tools ▸ SubVox Pro ▸ Voice Line Editor</strong>、またはボイスラインのInspectorにある<strong>Edit Voice Line</strong>から開けます。上から順に説明します。</p>
 <ul>
 <li><strong>Voice Line Data</strong> — 編集中のボイスラインです。新規作成、他のボイスラインの参照、分割、削除用のボタンがあります。色付きのドットは、Projectウィンドウのアセットアイコンに表示される<strong>タグ</strong>で、ボイスラインの分類に使います。</li>
 <li><strong>Source</strong> — <strong>AUDIO</strong>と<strong>SUBTITLES</strong>のセレクターです。各ボイスラインには1つのソース言語（旗アイコン。クリックすると変更できます）があり、翻訳または吹き替えされた言語ごとに1つのトラックがあります。2つのセレクターは独立しているため、例えば英語の音声を聞きながらフランス語の字幕を読むこともできます。</li>

@@ -136,7 +136,7 @@
 <p><strong>1. 选择转写方式。</strong>可以在
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong> 中粘贴语音识别服务的 API key（<a href="providers.html">如何获取</a>），或者在 Windows 上使用 <strong>Whisper</strong> 或
 <strong>Parakeet</strong>，这两款工具均可免费离线运行（首次使用时会提示下载模型）。</p>
-<p><strong>2. 创建台词资源。</strong>选择 <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line</strong>，选中该资源，然后在 Inspector 中点击 <strong>Set Up Voice Line</strong>。
+<p><strong>2. 创建台词资源。</strong>选择 <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line</strong>，选中该资源，然后在 Inspector 中点击 <strong>Edit Voice Line</strong>。
 SubVox Pro 窗口将打开并显示新的台词资源：检查其 <strong>Language</strong>（首次使用时为英语，之后为上次选择的语言），选择 <strong>Add an audio track</strong> 并选取音频剪辑，或录制一段音频。</p>
 <p>或者，在 Project 窗口中右键单击音频文件，然后选择 <strong>SubVox Pro ▸ Set Up Voice Line</strong>。选择新台词资源的保存位置；编辑器随即打开，并已关联该音频。</p>
 <img alt="新台词资源的起始界面：语言、添加音轨、添加字幕轨道" src="Images/subvoxpro-new-voice-line.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
@@ -151,7 +151,7 @@ SubVox.Play(myVoiceLine);
 <hr/>
 <h2 id="the-subvox-pro-window">SubVox Pro 窗口 </h2>
 <img alt="SubVox Pro 窗口：源轨道、AI Tools、波形时间轴、实时预览和字幕列表" src="Images/subvoxpro-window-overview.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
-<p>通过 <strong>Tools ▸ SubVox Pro ▸ Voice Line Editor</strong> 打开窗口，或在台词资源的 Inspector 中点击 <strong>Set Up Voice Line</strong>。从上到下依次为：</p>
+<p>通过 <strong>Tools ▸ SubVox Pro ▸ Voice Line Editor</strong> 打开窗口，或在台词资源的 Inspector 中点击 <strong>Edit Voice Line</strong>。从上到下依次为：</p>
 <ul>
 <li><strong>Voice Line Data</strong>——正在编辑的台词资源，包含创建新资源、浏览其他资源、拆分及删除的按钮。彩色圆点是显示在 Project 窗口中资源图标上的<strong>标签</strong>，用于整理台词资源。</li>
 <li><strong>Source</strong>——<strong>AUDIO</strong> 和 <strong>SUBTITLES</strong> 选择器。每个台词资源有一种源语言（旗帜图标；点击可更改），每种翻译或配音语言各有一条轨道。这两个选择器相互独立，因此可以一边收听英语音频，一边阅读法语字幕。</li>
