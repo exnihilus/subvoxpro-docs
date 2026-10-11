@@ -1957,6 +1957,30 @@ references:
   commentId: Overload:SubVoxPro.SubtitleBubbleDisplayer.LateUpdate
   fullName: SubVoxPro.SubtitleBubbleDisplayer.LateUpdate
   nameWithType: SubtitleBubbleDisplayer.LateUpdate
+- uid: SubVoxPro.SubtitleBubbleDisplayer.OnDisable
+  name: OnDisable()
+  href: api/SubVoxPro.SubtitleBubbleDisplayer.html#SubVoxPro_SubtitleBubbleDisplayer_OnDisable
+  commentId: M:SubVoxPro.SubtitleBubbleDisplayer.OnDisable
+  fullName: SubVoxPro.SubtitleBubbleDisplayer.OnDisable()
+  nameWithType: SubtitleBubbleDisplayer.OnDisable()
+- uid: SubVoxPro.SubtitleBubbleDisplayer.OnDisable*
+  name: OnDisable
+  href: api/SubVoxPro.SubtitleBubbleDisplayer.html#SubVoxPro_SubtitleBubbleDisplayer_OnDisable_
+  commentId: Overload:SubVoxPro.SubtitleBubbleDisplayer.OnDisable
+  fullName: SubVoxPro.SubtitleBubbleDisplayer.OnDisable
+  nameWithType: SubtitleBubbleDisplayer.OnDisable
+- uid: SubVoxPro.SubtitleBubbleDisplayer.OnEnable
+  name: OnEnable()
+  href: api/SubVoxPro.SubtitleBubbleDisplayer.html#SubVoxPro_SubtitleBubbleDisplayer_OnEnable
+  commentId: M:SubVoxPro.SubtitleBubbleDisplayer.OnEnable
+  fullName: SubVoxPro.SubtitleBubbleDisplayer.OnEnable()
+  nameWithType: SubtitleBubbleDisplayer.OnEnable()
+- uid: SubVoxPro.SubtitleBubbleDisplayer.OnEnable*
+  name: OnEnable
+  href: api/SubVoxPro.SubtitleBubbleDisplayer.html#SubVoxPro_SubtitleBubbleDisplayer_OnEnable_
+  commentId: Overload:SubVoxPro.SubtitleBubbleDisplayer.OnEnable
+  fullName: SubVoxPro.SubtitleBubbleDisplayer.OnEnable
+  nameWithType: SubtitleBubbleDisplayer.OnEnable
 - uid: SubVoxPro.SubtitleBubbleDisplayer.SubscribeToSubtitles
   name: SubscribeToSubtitles()
   href: api/SubVoxPro.SubtitleBubbleDisplayer.html#SubVoxPro_SubtitleBubbleDisplayer_SubscribeToSubtitles
@@ -1969,6 +1993,18 @@ references:
   commentId: Overload:SubVoxPro.SubtitleBubbleDisplayer.SubscribeToSubtitles
   fullName: SubVoxPro.SubtitleBubbleDisplayer.SubscribeToSubtitles
   nameWithType: SubtitleBubbleDisplayer.SubscribeToSubtitles
+- uid: SubVoxPro.SubtitleBubbleDisplayer.TargetCamera
+  name: TargetCamera
+  href: api/SubVoxPro.SubtitleBubbleDisplayer.html#SubVoxPro_SubtitleBubbleDisplayer_TargetCamera
+  commentId: P:SubVoxPro.SubtitleBubbleDisplayer.TargetCamera
+  fullName: SubVoxPro.SubtitleBubbleDisplayer.TargetCamera
+  nameWithType: SubtitleBubbleDisplayer.TargetCamera
+- uid: SubVoxPro.SubtitleBubbleDisplayer.TargetCamera*
+  name: TargetCamera
+  href: api/SubVoxPro.SubtitleBubbleDisplayer.html#SubVoxPro_SubtitleBubbleDisplayer_TargetCamera_
+  commentId: Overload:SubVoxPro.SubtitleBubbleDisplayer.TargetCamera
+  fullName: SubVoxPro.SubtitleBubbleDisplayer.TargetCamera
+  nameWithType: SubtitleBubbleDisplayer.TargetCamera
 - uid: SubVoxPro.SubtitleBubbleDisplayer.UnsubscribeFromSubtitles
   name: UnsubscribeFromSubtitles()
   href: api/SubVoxPro.SubtitleBubbleDisplayer.html#SubVoxPro_SubtitleBubbleDisplayer_UnsubscribeFromSubtitles

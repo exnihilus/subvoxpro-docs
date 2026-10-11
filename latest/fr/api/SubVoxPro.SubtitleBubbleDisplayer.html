@@ -105,12 +105,6 @@ Classe SubtitleBubbleDisplayer
 <dt>Membres hérités</dt>
 <dd>
 <div>
-<a class="xref" href="SubVoxPro.SubtitleDisplayer.html#SubVoxPro_SubtitleDisplayer_OnEnable">SubtitleDisplayer.OnEnable()</a>
-</div>
-<div>
-<a class="xref" href="SubVoxPro.SubtitleDisplayer.html#SubVoxPro_SubtitleDisplayer_OnDisable">SubtitleDisplayer.OnDisable()</a>
-</div>
-<div>
 <a class="xref" href="SubVoxPro.SubtitleDisplayer.html#SubVoxPro_SubtitleDisplayer_Update">SubtitleDisplayer.Update()</a>
 </div>
 <div>
@@ -162,6 +156,22 @@ Classe SubtitleBubbleDisplayer
 <dt><a class="xref" href="SubVoxPro.VoiceLineEmitter.html">VoiceLineEmitter</a></dt>
 <dd></dd>
 </dl>
+<a data-uid="SubVoxPro.SubtitleBubbleDisplayer.TargetCamera*" id="SubVoxPro_SubtitleBubbleDisplayer_TargetCamera_"></a>
+<h3 data-uid="SubVoxPro.SubtitleBubbleDisplayer.TargetCamera" id="SubVoxPro_SubtitleBubbleDisplayer_TargetCamera">
+  TargetCamera
+  
+  </h3>
+<div class="markdown level1 summary"><p>Caméra que la bulle regarde et dont la distance règle sa taille : celle définie dans l’Inspector, sinon la caméra principale.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">public Camera TargetCamera { get; }</code></pre>
+</div>
+<h4 class="section">Valeur de la propriété</h4>
+<dl class="parameters">
+<dt><span class="xref">Camera</span></dt>
+<dd></dd>
+</dl>
 <h2 class="section" id="methods">Méthodes
 </h2>
 <a data-uid="SubVoxPro.SubtitleBubbleDisplayer.LateUpdate*" id="SubVoxPro_SubtitleBubbleDisplayer_LateUpdate_"></a>
@@ -174,6 +184,28 @@ Classe SubtitleBubbleDisplayer
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
 <pre><code class="lang-csharp hljs">protected virtual void LateUpdate()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleBubbleDisplayer.OnDisable*" id="SubVoxPro_SubtitleBubbleDisplayer_OnDisable_"></a>
+<h3 data-uid="SubVoxPro.SubtitleBubbleDisplayer.OnDisable" id="SubVoxPro_SubtitleBubbleDisplayer_OnDisable">
+  OnDisable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Message Unity ; appelez la méthode de base lorsque vous la redéfinissez.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected override void OnDisable()</code></pre>
+</div>
+<a data-uid="SubVoxPro.SubtitleBubbleDisplayer.OnEnable*" id="SubVoxPro_SubtitleBubbleDisplayer_OnEnable_"></a>
+<h3 data-uid="SubVoxPro.SubtitleBubbleDisplayer.OnEnable" id="SubVoxPro_SubtitleBubbleDisplayer_OnEnable">
+  OnEnable()
+  
+  </h3>
+<div class="markdown level1 summary"><p>Message Unity ; appelez la méthode de base lorsque vous la redéfinissez.</p>
+</div>
+<div class="markdown level1 conceptual"></div>
+<div class="codewrapper">
+<pre><code class="lang-csharp hljs">protected override void OnEnable()</code></pre>
 </div>
 <a data-uid="SubVoxPro.SubtitleBubbleDisplayer.SubscribeToSubtitles*" id="SubVoxPro_SubtitleBubbleDisplayer_SubscribeToSubtitles_"></a>
 <h3 data-uid="SubVoxPro.SubtitleBubbleDisplayer.SubscribeToSubtitles" id="SubVoxPro_SubtitleBubbleDisplayer_SubscribeToSubtitles">
