@@ -468,10 +468,10 @@ pour un air triste) : chaque note est alors accordée à la gamme, dans la tonal
 mélodie sonne juste. Les lignes sans audio ont aussi leurs blips, avec une légère variation aléatoire.</p>
 <p><strong>Bulles de dialogue.</strong> Sélectionnez un personnage et utilisez <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>.
 Une bulle au-dessus de sa tête n’affiche que ses répliques. Désactivez <strong>Show Subtitles</strong> sur son émetteur
-pour ne pas les afficher aussi en bas de l’écran. Activez <strong>Scale With Distance</strong> pour que la bulle garde la même taille à l’écran, que le personnage soit proche ou loin :
-elle a sa propre taille à <strong>Near Distance</strong> et cesse de s’adapter au-delà de <strong>Far Distance</strong>, où elle rapetisse comme
-le reste de la scène. Elle suit la caméra principale, ou celle de son champ <strong>Camera</strong>,
-et reste sans effet avec une caméra orthographique (2D), où la taille ne dépend jamais de la distance.</p>
+pour ne pas les afficher aussi en bas de l’écran. Activez <strong>Constant Screen Size</strong> pour que son texte garde la même taille à l’écran, que le personnage soit proche ou loin,
+puis réglez <strong>Text Height</strong> en part de la hauteur de l’écran : l’Inspector affiche la taille correspondante en pixels en 1080p et en 4K.
+Au-delà de <strong>Max Distance</strong>, la bulle cesse de s’adapter et rapetisse comme le reste de la scène. Elle suit la caméra principale,
+ou celle de son champ <strong>Camera</strong>, et fonctionne aussi avec les caméras 2D (orthographiques).</p>
 <h3 id="without-code">Sans code </h3>
 <ul>
 <li><strong>Voice Line Zone</strong> joue une réplique quand le joueur entre dans un trigger 2D ou 3D, une seule fois ou avec un

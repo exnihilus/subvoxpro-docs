@@ -480,10 +480,10 @@ to the scale, in the key of the character's voice, so the melody sounds in tune.
 with a light random variation.</p>
 <p><strong>Speech bubbles.</strong> Select a character and use <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>: a bubble appears above
 its head and shows only what this character says. Turn off its emitter's <strong>Show Subtitles</strong> to keep those lines out
-of the bottom of the screen. Turn on <strong>Scale With Distance</strong> to keep the bubble the same size on screen whether the
-character is near or far: it has its own size at <strong>Near Distance</strong>, and stops adapting beyond <strong>Far Distance</strong>, where
-it shrinks like the rest of the scene. It follows the main camera, or the one in its <strong>Camera</strong> field, and does
-nothing with an orthographic (2D) camera, where size never depends on distance.</p>
+of the bottom of the screen. Turn on <strong>Constant Screen Size</strong> to keep its text the same size on screen whether the
+character is near or far, then set <strong>Text Height</strong> as a share of the screen height: the Inspector shows the matching
+size in pixels at 1080p and 4K. Beyond <strong>Max Distance</strong>, the bubble stops adapting and shrinks like the rest of the
+scene. It follows the main camera, or the one in its <strong>Camera</strong> field, and works with 2D (orthographic) cameras too.</p>
 <h3 id="without-code">Without code</h3>
 <ul>
 <li><strong>Voice Line Zone</strong> — plays a line when the player enters a trigger (2D or 3D), once or with a cooldown. It can
