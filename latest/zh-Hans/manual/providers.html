@@ -98,7 +98,7 @@
 <tbody>
 <tr>
 <td><strong>转写</strong></td>
-<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-translation.html#openai">OpenAI</a></td>
+<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-translation.html#openai">OpenAI</a></td>
 </tr>
 <tr>
 <td><strong>翻译</strong></td>
@@ -106,7 +106,7 @@
 </tr>
 <tr>
 <td><strong>配音 / 语音合成</strong></td>
-<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro 本地版</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox 本地版</a> · <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B 本地版</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 本地版</a></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro 本地版</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox 本地版</a> · <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B 本地版</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 本地版</a></td>
 </tr>
 <tr>
 <td><strong>本地对齐</strong></td>
@@ -160,6 +160,11 @@
 <td><strong>STT</strong></td>
 <td>Rev AI</td>
 <td>阿拉伯语、中文（普通话）、荷兰语、英语、法语、德语、印地语、意大利语、日语、韩语、波兰语、葡萄牙语、俄语、西班牙语、土耳其语。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Cartesia（<code>ink-whisper</code>）</td>
+<td>阿拉伯语、保加利亚语、粤语、中文、克罗地亚语、捷克语、丹麦语、荷兰语、英语、芬兰语、法语、德语、希腊语、希伯来语、印地语、匈牙利语、印度尼西亚语、意大利语、日语、韩语、马来语、挪威语、波兰语、葡萄牙语、罗马尼亚语、俄语、斯洛伐克语、西班牙语、瑞典语、泰米尔语、泰语、土耳其语、乌克兰语、越南语。</td>
 </tr>
 <tr>
 <td><strong>STT</strong></td>
@@ -228,6 +233,11 @@
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
+<td>Cartesia（Sonic 3.6）</td>
+<td>阿拉伯语、孟加拉语、保加利亚语、中文、克罗地亚语、捷克语、丹麦语、荷兰语、英语、菲律宾语、芬兰语、法语、格鲁吉亚语、德语、希腊语、古吉拉特语、希伯来语、印地语、匈牙利语、印度尼西亚语、意大利语、日语、卡纳达语、韩语、马来语、马拉雅拉姆语、马拉地语、挪威语、奥里亚语、波兰语、葡萄牙语、旁遮普语、罗马尼亚语、俄语、斯洛伐克语、西班牙语、瑞典语、泰米尔语、泰卢固语、泰语、土耳其语、乌克兰语、乌尔都语、越南语。每个音色都能说所有语言；较旧的 Sonic 模型支持的语言较少。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
 <td>Kokoro（本地）</td>
 <td>英语（美国和英国音色）。</td>
 </tr>
@@ -291,7 +301,7 @@ SubVox Pro 所需的功能：转写提供商的语音转文字功能、翻译提
 <tbody>
 <tr>
 <td><strong>转写</strong>（音频 → 带时间信息的字幕）</td>
-<td>AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、OpenAI——或 <strong>Whisper（本地）</strong>和 <strong>Parakeet（本地）</strong>（完全离线，无需密钥，仅限 Windows——参见 <a href="index.html#whisper-offline-transcription">Documentation.md</a>）</td>
+<td>AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、OpenAI——或 <strong>Whisper（本地）</strong>和 <strong>Parakeet（本地）</strong>（完全离线，无需密钥，仅限 Windows——参见 <a href="index.html#whisper-offline-transcription">Documentation.md</a>）</td>
 </tr>
 <tr>
 <td><strong>翻译</strong>（字幕 → 其他语言）</td>
@@ -299,7 +309,7 @@ SubVox Pro 所需的功能：转写提供商的语音转文字功能、翻译提
 </tr>
 <tr>
 <td><strong>配音 / 文本转语音</strong></td>
-<td>ElevenLabs、InWorld AI、Gemini（与 Gemini 翻译使用同一 AI Studio 密钥）、OpenAI（与 OpenAI 翻译使用同一密钥）、Google Cloud Text-to-Speech、Azure AI Speech——或 <strong>Kokoro</strong>（本地，英语）和 <strong>Chatterbox</strong>（本地，21 种语言 + 可选日语，声音克隆），或 <strong>Qwen3 TTS 1.7B</strong>（本地，10 种语言，基于参考音频克隆声音、固定音色或通过描述设计音色），或 <strong>VoxCPM2</strong>（本地，30 种语言，声音克隆并可通过文字控制配音风格）</td>
+<td>ElevenLabs、InWorld AI、Gemini（与 Gemini 翻译使用同一 AI Studio 密钥）、OpenAI（与 OpenAI 翻译使用同一密钥）、Google Cloud Text-to-Speech、Azure AI Speech、Cartesia（与 Cartesia 转写使用同一密钥）——或 <strong>Kokoro</strong>（本地，英语）和 <strong>Chatterbox</strong>（本地，21 种语言 + 可选日语，声音克隆），或 <strong>Qwen3 TTS 1.7B</strong>（本地，10 种语言，基于参考音频克隆声音、固定音色或通过描述设计音色），或 <strong>VoxCPM2</strong>（本地，30 种语言，声音克隆并可通过文字控制配音风格）</td>
 </tr>
 <tr>
 <td><strong>强制对齐</strong>（精确的配音词级时间信息，保留原文）</td>
@@ -365,6 +375,12 @@ SubVox Pro 中支持的功能、价格、免费套餐以及该套餐是否允许
 <td>未说明——请查阅 Rev AI 的条款。</td>
 </tr>
 <tr>
+<td>Cartesia（STT + TTS）</td>
+<td>每月 20,000 积分：配音每字符 1 积分，转写每秒 3 积分（约 1.8 小时）</td>
+<td>否</td>
+<td><strong>否</strong>——仅限个人使用，且除非您选择退出，否则输入可能被用于训练其模型。付费套餐起价 $5/月。</td>
+</tr>
+<tr>
 <td>DeepL（Developer 套餐）</td>
 <td>一次性 1,000,000 个字符的额度</td>
 <td>可能需要提供信用卡进行验证，但不会扣费</td>
@@ -422,7 +438,7 @@ SubVox Pro 中支持的功能、价格、免费套餐以及该套餐是否允许
 </table>
 <blockquote>
 <p><strong>商业使用</strong>指将提供商生成的内容——字幕、翻译或配音音频——
-随你销售的游戏或产品一起发布。使用 <strong>ElevenLabs</strong> 或 <strong>Azure</strong> 语音进行配音的游戏需要使用其付费套餐。本栏总结了各提供商截至 2026 年 9 月的条款；此内容不构成法律建议，且始终以提供商当前的条款为准。离线引擎（Whisper、Parakeet、Hy-MT2、Kokoro、Chatterbox、Qwen3、VoxCPM2）可免费用于商业用途（使用 Parakeet 时，建议注明 NVIDIA 为来源）——参见 <a href="notices.html">Third-Party Notices.md</a>。</p>
+随你销售的游戏或产品一起发布。使用 <strong>ElevenLabs</strong>、<strong>Azure</strong> 或 <strong>Cartesia</strong> 语音进行配音的游戏需要使用其付费套餐。本栏总结了各提供商截至 2026 年 9 月的条款；此内容不构成法律建议，且始终以提供商当前的条款为准。离线引擎（Whisper、Parakeet、Hy-MT2、Kokoro、Chatterbox、Qwen3、VoxCPM2）可免费用于商业用途（使用 Parakeet 时，建议注明 NVIDIA 为来源）——参见 <a href="notices.html">Third-Party Notices.md</a>。</p>
 </blockquote>
 <hr/>
 <h2 id="where-to-paste-your-key-in-subvox-pro">在 SubVox Pro 中粘贴密钥的位置 </h2>
@@ -433,7 +449,7 @@ SubVox Pro 中支持的功能、价格、免费套餐以及该套餐是否允许
 <p>也可以直接在 <strong>SubVox Pro</strong> 窗口内的提供商面板中粘贴密钥。输入密钥，点击 <strong>Save</strong>，出现 <strong>API Ready</strong> 徽标即表示密钥已被接受（点击 <strong>Clear</strong> 可移除密钥）。</p>
 <img alt="A provider panel inside the SubVox Pro window showing the API key field, Save/Clear buttons and the API Ready badge" src="Images/subvoxpro-provider-api-ready.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <hr/>
-<div data-svx-provider-articles='{"transcription-providers": "providers-transcription.md", "assemblyai": "providers-transcription.md", "gladia": "providers-transcription.md", "deepgram": "providers-transcription.md", "speechmatics": "providers-transcription.md", "elevenlabs": "providers-transcription.md", "rev-ai": "providers-transcription.md", "translation-providers": "providers-translation.md", "deepl": "providers-translation.md", "google-cloud-translation": "providers-translation.md", "openai": "providers-translation.md", "anthropic-claude": "providers-translation.md", "google-gemini": "providers-translation.md", "deepseek": "providers-translation.md", "dubbing--text-to-speech": "providers-dubbing.md", "inworld-ai": "providers-dubbing.md", "google-cloud-tts": "providers-dubbing.md", "azure": "providers-dubbing.md", "after-pasting-a-key": "providers-api-key.md"}' hidden=""></div>
+<div data-svx-provider-articles='{"transcription-providers": "providers-transcription.md", "assemblyai": "providers-transcription.md", "gladia": "providers-transcription.md", "deepgram": "providers-transcription.md", "speechmatics": "providers-transcription.md", "elevenlabs": "providers-transcription.md", "rev-ai": "providers-transcription.md", "cartesia": "providers-transcription.md", "translation-providers": "providers-translation.md", "deepl": "providers-translation.md", "google-cloud-translation": "providers-translation.md", "openai": "providers-translation.md", "anthropic-claude": "providers-translation.md", "google-gemini": "providers-translation.md", "deepseek": "providers-translation.md", "dubbing--text-to-speech": "providers-dubbing.md", "inworld-ai": "providers-dubbing.md", "google-cloud-tts": "providers-dubbing.md", "azure": "providers-dubbing.md", "after-pasting-a-key": "providers-api-key.md"}' hidden=""></div>
 </article>
 <div class="next-article d-print-none border-top" id="nextArticle"></div>
 </div>

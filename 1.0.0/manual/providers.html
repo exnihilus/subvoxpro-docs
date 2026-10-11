@@ -115,7 +115,7 @@ always confirm the current offer on the provider's own pricing page before relyi
 <tbody>
 <tr>
 <td><strong>Transcription</strong></td>
-<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-translation.html#openai">OpenAI</a></td>
+<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-translation.html#openai">OpenAI</a></td>
 </tr>
 <tr>
 <td><strong>Translation</strong></td>
@@ -123,7 +123,7 @@ always confirm the current offer on the provider's own pricing page before relyi
 </tr>
 <tr>
 <td><strong>Dubbing / Text-to-Speech</strong></td>
-<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro local</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox local</a> · <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B local</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 local</a></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro local</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox local</a> · <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B local</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 local</a></td>
 </tr>
 <tr>
 <td><strong>Local alignment</strong></td>
@@ -178,6 +178,11 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 <td><strong>STT</strong></td>
 <td>Rev AI</td>
 <td>Arabic, Chinese (Mandarin), Dutch, English, French, German, Hindi, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Turkish.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Cartesia (<code>ink-whisper</code>)</td>
+<td>Arabic, Bulgarian, Cantonese, Chinese, Croatian, Czech, Danish, Dutch, English, Finnish, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Malay, Norwegian, Polish, Portuguese, Romanian, Russian, Slovak, Spanish, Swedish, Tamil, Thai, Turkish, Ukrainian, Vietnamese.</td>
 </tr>
 <tr>
 <td><strong>STT</strong></td>
@@ -243,6 +248,11 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 <td><strong>TTS</strong></td>
 <td>Azure AI Speech</td>
 <td><strong>Dynamic catalog</strong> — languages are read from Azure neural voices for the configured region.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Cartesia (Sonic 3.6)</td>
+<td>Arabic, Bengali, Bulgarian, Chinese, Croatian, Czech, Danish, Dutch, English, Filipino, Finnish, French, Georgian, German, Greek, Gujarati, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Kannada, Korean, Malay, Malayalam, Marathi, Norwegian, Odia, Polish, Portuguese, Punjabi, Romanian, Russian, Slovak, Spanish, Swedish, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Vietnamese. Every voice speaks every language; older Sonic models speak fewer.</td>
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
@@ -321,7 +331,7 @@ or a team-managed key, depending on how the provider handles billing and access.
 <tbody>
 <tr>
 <td><strong>Transcription</strong> (audio → timed subtitles)</td>
-<td>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, OpenAI — or <strong>Whisper (local)</strong> and <strong>Parakeet (local)</strong> (fully offline, no key, Windows only — see <a href="index.html#whisper-offline-transcription">Documentation.md</a>)</td>
+<td>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, OpenAI — or <strong>Whisper (local)</strong> and <strong>Parakeet (local)</strong> (fully offline, no key, Windows only — see <a href="index.html#whisper-offline-transcription">Documentation.md</a>)</td>
 </tr>
 <tr>
 <td><strong>Translation</strong> (subtitles → other languages)</td>
@@ -329,7 +339,7 @@ or a team-managed key, depending on how the provider handles billing and access.
 </tr>
 <tr>
 <td><strong>Dubbing / Text-to-Speech</strong></td>
-<td>ElevenLabs, InWorld AI, Gemini (same AI Studio key as Gemini translation), OpenAI (same key as OpenAI translation), Google Cloud Text-to-Speech, Azure AI Speech — or <strong>Kokoro</strong> (local, English) and <strong>Chatterbox</strong> (local, 21 languages + optional Japanese, voice cloning), or <strong>Qwen3 TTS 1.7B</strong> (local, ten languages, reference cloning, fixed voices or voice design), or <strong>VoxCPM2</strong> (local, 30 languages, cloning with written style control)</td>
+<td>ElevenLabs, InWorld AI, Gemini (same AI Studio key as Gemini translation), OpenAI (same key as OpenAI translation), Google Cloud Text-to-Speech, Azure AI Speech, Cartesia (same key as Cartesia transcription) — or <strong>Kokoro</strong> (local, English) and <strong>Chatterbox</strong> (local, 21 languages + optional Japanese, voice cloning), or <strong>Qwen3 TTS 1.7B</strong> (local, ten languages, reference cloning, fixed voices or voice design), or <strong>VoxCPM2</strong> (local, 30 languages, cloning with written style control)</td>
 </tr>
 <tr>
 <td><strong>Forced alignment</strong> (exact dub word timings, text preserved)</td>
@@ -398,6 +408,12 @@ only changes how much you can generate — and, for some providers, what you may
 <td>Not stated — check Rev AI's terms.</td>
 </tr>
 <tr>
+<td>Cartesia (STT + TTS)</td>
+<td>20,000 credits / month: 1 per character dubbed, 3 per second transcribed (~1.8 h)</td>
+<td>No</td>
+<td><strong>No</strong> — personal use only, and inputs may train their models unless you opt out. Paid plans start at $5/month.</td>
+</tr>
+<tr>
 <td>DeepL (Developer plan)</td>
 <td>One-time 1,000,000-character credit</td>
 <td>Card may be required to verify, not charged</td>
@@ -455,7 +471,7 @@ only changes how much you can generate — and, for some providers, what you may
 </table>
 <blockquote>
 <p><strong>Commercial use</strong> means shipping what the provider generated — subtitles, translations or dubbed audio —
-in a game or product you sell. A game dubbed with <strong>ElevenLabs</strong> or <strong>Azure</strong> voices needs their paid plan.
+in a game or product you sell. A game dubbed with <strong>ElevenLabs</strong>, <strong>Azure</strong> or <strong>Cartesia</strong> voices needs their paid plan.
 This column summarizes each provider's terms as of September 2026; it is not legal advice, and the
 provider's current terms always prevail. The offline engines (Whisper, Parakeet, Hy-MT2, Kokoro, Chatterbox, Qwen3, VoxCPM2) are
 free for commercial use (crediting NVIDIA for Parakeet is good practice) — see <a href="notices.html">Third-Party Notices.md</a>.</p>
@@ -472,7 +488,7 @@ its row (the field masks the value), and use the type badges — <strong>STT</st
 press <strong>Save</strong>, and an <strong>API Ready</strong> badge confirms it was accepted (<strong>Clear</strong> removes it).</p>
 <img src="Images/subvoxpro-provider-api-ready.png" alt="A provider panel inside the SubVox Pro window showing the API key field, Save/Clear buttons and the API Ready badge" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <hr>
-<div hidden data-svx-provider-articles='{"assemblyai": "providers-transcription.md", "gladia": "providers-transcription.md", "deepgram": "providers-transcription.md", "speechmatics": "providers-transcription.md", "elevenlabs": "providers-transcription.md", "rev-ai": "providers-transcription.md", "transcription-providers": "providers-transcription.md", "deepl": "providers-translation.md", "google-cloud-translation": "providers-translation.md", "openai": "providers-translation.md", "anthropic-claude": "providers-translation.md", "google-gemini": "providers-translation.md", "deepseek": "providers-translation.md", "translation-providers": "providers-translation.md", "inworld-ai": "providers-dubbing.md", "google-cloud-tts": "providers-dubbing.md", "azure": "providers-dubbing.md", "dubbing--text-to-speech": "providers-dubbing.md", "after-pasting-a-key": "providers-api-key.md"}'></div>
+<div hidden data-svx-provider-articles='{"assemblyai": "providers-transcription.md", "gladia": "providers-transcription.md", "deepgram": "providers-transcription.md", "speechmatics": "providers-transcription.md", "elevenlabs": "providers-transcription.md", "rev-ai": "providers-transcription.md", "cartesia": "providers-transcription.md", "transcription-providers": "providers-transcription.md", "deepl": "providers-translation.md", "google-cloud-translation": "providers-translation.md", "openai": "providers-translation.md", "anthropic-claude": "providers-translation.md", "google-gemini": "providers-translation.md", "deepseek": "providers-translation.md", "translation-providers": "providers-translation.md", "inworld-ai": "providers-dubbing.md", "google-cloud-tts": "providers-dubbing.md", "azure": "providers-dubbing.md", "dubbing--text-to-speech": "providers-dubbing.md", "after-pasting-a-key": "providers-api-key.md"}'></div>
 
 </article>
 

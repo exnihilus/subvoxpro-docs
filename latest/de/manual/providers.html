@@ -101,7 +101,7 @@ den Sie unter <strong>Tools ▸ SubVox Pro ▸ Settings</strong> (oder im Anbiet
 <tbody>
 <tr>
 <td><strong>Transkription</strong></td>
-<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-translation.html#openai">OpenAI</a></td>
+<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-translation.html#openai">OpenAI</a></td>
 </tr>
 <tr>
 <td><strong>Übersetzung</strong></td>
@@ -109,7 +109,7 @@ den Sie unter <strong>Tools ▸ SubVox Pro ▸ Settings</strong> (oder im Anbiet
 </tr>
 <tr>
 <td><strong>Sprachvertonung / Sprachsynthese</strong></td>
-<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro (lokal)</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox (lokal)</a> · <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B (lokal)</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 (lokal)</a></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro (lokal)</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox (lokal)</a> · <a href="index.html#qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B (lokal)</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 (lokal)</a></td>
 </tr>
 <tr>
 <td><strong>Lokale zeitliche Zuordnung</strong></td>
@@ -164,6 +164,11 @@ maßgeblich. Regionale Sprachvarianten wie <code>en-US</code> und <code>pt-BR</c
 <td><strong>STT</strong></td>
 <td>Rev AI</td>
 <td>Arabisch, Chinesisch (Mandarin), Niederländisch, Englisch, Französisch, Deutsch, Hindi, Italienisch, Japanisch, Koreanisch, Polnisch, Portugiesisch, Russisch, Spanisch, Türkisch.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Cartesia (<code>ink-whisper</code>)</td>
+<td>Arabisch, Bulgarisch, Kantonesisch, Chinesisch, Kroatisch, Tschechisch, Dänisch, Niederländisch, Englisch, Finnisch, Französisch, Deutsch, Griechisch, Hebräisch, Hindi, Ungarisch, Indonesisch, Italienisch, Japanisch, Koreanisch, Malaiisch, Norwegisch, Polnisch, Portugiesisch, Rumänisch, Russisch, Slowakisch, Spanisch, Schwedisch, Tamil, Thai, Türkisch, Ukrainisch, Vietnamesisch.</td>
 </tr>
 <tr>
 <td><strong>STT</strong></td>
@@ -229,6 +234,11 @@ maßgeblich. Regionale Sprachvarianten wie <code>en-US</code> und <code>pt-BR</c
 <td><strong>TTS</strong></td>
 <td>Azure AI Speech</td>
 <td><strong>Dynamischer Katalog</strong> — die Sprachen werden aus den neuronalen Azure-Stimmen für die konfigurierte Region ermittelt.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td>Cartesia (Sonic 3.6)</td>
+<td>Arabisch, Bengalisch, Bulgarisch, Chinesisch, Kroatisch, Tschechisch, Dänisch, Niederländisch, Englisch, Filipino, Finnisch, Französisch, Georgisch, Deutsch, Griechisch, Gujarati, Hebräisch, Hindi, Ungarisch, Indonesisch, Italienisch, Japanisch, Kannada, Koreanisch, Malaiisch, Malayalam, Marathi, Norwegisch, Odia, Polnisch, Portugiesisch, Panjabi, Rumänisch, Russisch, Slowakisch, Spanisch, Schwedisch, Tamil, Telugu, Thai, Türkisch, Ukrainisch, Urdu, Vietnamesisch. Jede Stimme spricht jede Sprache; ältere Sonic-Modelle sprechen weniger.</td>
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
@@ -307,7 +317,7 @@ oder einen vom Team verwalteten Schlüssel verwenden, je nachdem, wie der Anbiet
 <tbody>
 <tr>
 <td><strong>Transcription</strong> (Audio → Untertitel mit Zeitangaben)</td>
-<td>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, OpenAI — oder <strong>Whisper (local)</strong> und <strong>Parakeet (local)</strong> (vollständig offline, kein Schlüssel, nur Windows — siehe <a href="index.html#whisper-offline-transcription">Documentation.md</a>)</td>
+<td>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, OpenAI — oder <strong>Whisper (local)</strong> und <strong>Parakeet (local)</strong> (vollständig offline, kein Schlüssel, nur Windows — siehe <a href="index.html#whisper-offline-transcription">Documentation.md</a>)</td>
 </tr>
 <tr>
 <td><strong>Translation</strong> (Untertitel → andere Sprachen)</td>
@@ -315,7 +325,7 @@ oder einen vom Team verwalteten Schlüssel verwenden, je nachdem, wie der Anbiet
 </tr>
 <tr>
 <td><strong>Dubbing / Text-to-Speech</strong></td>
-<td>ElevenLabs, InWorld AI, Gemini (derselbe Schlüssel für AI Studio wie für die Gemini-Übersetzung), OpenAI (derselbe Schlüssel wie für die OpenAI-Übersetzung), Google Cloud Text-to-Speech, Azure AI Speech — oder <strong>Kokoro</strong> (lokal, Englisch) und <strong>Chatterbox</strong> (lokal, 21 Sprachen + optional Japanisch, Stimmklonung), oder <strong>Qwen3 TTS 1.7B</strong> (lokal, zehn Sprachen, Stimmklonung anhand einer Audioreferenz, feste Stimmen oder Stimmgestaltung), oder <strong>VoxCPM2</strong> (lokal, 30 Sprachen, Stimmklonung mit schriftlichen Stilvorgaben)</td>
+<td>ElevenLabs, InWorld AI, Gemini (derselbe Schlüssel für AI Studio wie für die Gemini-Übersetzung), OpenAI (derselbe Schlüssel wie für die OpenAI-Übersetzung), Google Cloud Text-to-Speech, Azure AI Speech, Cartesia (derselbe Schlüssel wie für die Cartesia-Transkription) — oder <strong>Kokoro</strong> (lokal, Englisch) und <strong>Chatterbox</strong> (lokal, 21 Sprachen + optional Japanisch, Stimmklonung), oder <strong>Qwen3 TTS 1.7B</strong> (lokal, zehn Sprachen, Stimmklonung anhand einer Audioreferenz, feste Stimmen oder Stimmgestaltung), oder <strong>VoxCPM2</strong> (lokal, 30 Sprachen, Stimmklonung mit schriftlichen Stilvorgaben)</td>
 </tr>
 <tr>
 <td><strong>Forced alignment</strong> (exakte Wortzeitangaben der Sprachvertonung, Text bleibt erhalten)</td>
@@ -384,6 +394,12 @@ beeinflusst lediglich, wie viel Sie generieren können — und bei einigen Anbie
 <td>Keine Angabe — bitte prüfen Sie die Nutzungsbedingungen von Rev AI.</td>
 </tr>
 <tr>
+<td>Cartesia (STT + TTS)</td>
+<td>20.000 Credits / Monat: 1 pro vertontem Zeichen, 3 pro transkribierter Sekunde (~1,8 Std.)</td>
+<td>Nein</td>
+<td><strong>Nein</strong> — nur private Nutzung, und Eingaben können zum Training der Modelle verwendet werden, sofern Sie nicht widersprechen. Kostenpflichtige Tarife ab 5 $/Monat.</td>
+</tr>
+<tr>
 <td>DeepL (Developer-Tarif)</td>
 <td>Einmaliges Guthaben von 1.000.000 Zeichen</td>
 <td>Zur Verifizierung ist möglicherweise eine Kreditkarte erforderlich; sie wird jedoch nicht belastet</td>
@@ -441,7 +457,7 @@ beeinflusst lediglich, wie viel Sie generieren können — und bei einigen Anbie
 </table>
 <blockquote>
 <p><strong>Kommerzielle Nutzung</strong> bedeutet, dass Sie das vom Anbieter Erzeugte — Untertitel, Übersetzungen oder vertonte Audiodateien —
-in einem von Ihnen verkauften Spiel oder Produkt verwenden. Für ein Spiel, das mit Stimmen von <strong>ElevenLabs</strong> oder <strong>Azure</strong> vertont wurde, ist der jeweilige kostenpflichtige Tarif erforderlich.
+in einem von Ihnen verkauften Spiel oder Produkt verwenden. Für ein Spiel, das mit Stimmen von <strong>ElevenLabs</strong>, <strong>Azure</strong> oder <strong>Cartesia</strong> vertont wurde, ist der jeweilige kostenpflichtige Tarif erforderlich.
 Diese Spalte fasst die Bedingungen der einzelnen Anbieter mit Stand September 2026 zusammen; sie stellt keine Rechtsberatung dar, und es
 gelten stets die aktuellen Bedingungen des jeweiligen Anbieters. Die Offline-Engines (Whisper, Parakeet, Hy-MT2, Kokoro, Chatterbox, Qwen3, VoxCPM2) sind
 für die kommerzielle Nutzung kostenlos (die Nennung von NVIDIA als Quelle für Parakeet gilt als bewährte Praxis) — siehe <a href="notices.html">Third-Party Notices.md</a>.</p>
@@ -458,7 +474,7 @@ die entsprechende Zeile ein (das Feld verbirgt den Wert) und nutzen Sie die Typk
 klicken Sie auf <strong>Save</strong>, und die Statusanzeige <strong>API Ready</strong> bestätigt, dass er akzeptiert wurde (<strong>Clear</strong> entfernt ihn).</p>
 <img alt="A provider panel inside the SubVox Pro window showing the API key field, Save/Clear buttons and the API Ready badge" src="Images/subvoxpro-provider-api-ready.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <hr/>
-<div data-svx-provider-articles='{"transcription-providers": "providers-transcription.md", "assemblyai": "providers-transcription.md", "gladia": "providers-transcription.md", "deepgram": "providers-transcription.md", "speechmatics": "providers-transcription.md", "elevenlabs": "providers-transcription.md", "rev-ai": "providers-transcription.md", "translation-providers": "providers-translation.md", "deepl": "providers-translation.md", "google-cloud-translation": "providers-translation.md", "openai": "providers-translation.md", "anthropic-claude": "providers-translation.md", "google-gemini": "providers-translation.md", "deepseek": "providers-translation.md", "dubbing--text-to-speech": "providers-dubbing.md", "inworld-ai": "providers-dubbing.md", "google-cloud-tts": "providers-dubbing.md", "azure": "providers-dubbing.md", "after-pasting-a-key": "providers-api-key.md"}' hidden=""></div>
+<div data-svx-provider-articles='{"transcription-providers": "providers-transcription.md", "assemblyai": "providers-transcription.md", "gladia": "providers-transcription.md", "deepgram": "providers-transcription.md", "speechmatics": "providers-transcription.md", "elevenlabs": "providers-transcription.md", "rev-ai": "providers-transcription.md", "cartesia": "providers-transcription.md", "translation-providers": "providers-translation.md", "deepl": "providers-translation.md", "google-cloud-translation": "providers-translation.md", "openai": "providers-translation.md", "anthropic-claude": "providers-translation.md", "google-gemini": "providers-translation.md", "deepseek": "providers-translation.md", "dubbing--text-to-speech": "providers-dubbing.md", "inworld-ai": "providers-dubbing.md", "google-cloud-tts": "providers-dubbing.md", "azure": "providers-dubbing.md", "after-pasting-a-key": "providers-api-key.md"}' hidden=""></div>
 </article>
 <div class="next-article d-print-none border-top" id="nextArticle"></div>
 </div>
