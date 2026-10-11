@@ -308,6 +308,17 @@ au milieu : il peut commencer ou finir au milieu d’une ligne, et chaque nouvea
 Glissez la limite entre deux groupes pour la déplacer : la pousser au-delà d’un groupe entier le supprime, et revenir
 en arrière avant de relâcher le rétablit. Un clic droit sur un groupe le supprime : son voisin prend sa place. Le
 bouton corbeille fusionne tout en un seul groupe. Les groupes sont enregistrés par langue de sous-titres.</p>
+<p><strong>Sons (rires, soupirs, pauses…).</strong> L’outil <strong>Sounds</strong> au-dessus de la forme d’onde ajoute un son que la voix joue
+entre deux mots. Cliquez entre deux mots et choisissez un son : une pastille marque l’endroit. Glissez une pastille
+pour la déplacer vers un autre intervalle, et faites un clic droit dessus pour la supprimer. Les sons sont seulement
+envoyés à la voix, jamais affichés dans les sous-titres. Chaque langue de sous-titres a ses propres sons. Le bouton
+copier les place dans les autres langues, au même point de chaque ligne, et le bouton corbeille supprime ceux de la
+langue courante. Ajouter, déplacer ou supprimer un son pose une puce <strong>REGEN</strong> sur la ligne.</p>
+<p>La liste ne montre que les sons que le fournisseur choisi sait jouer : InWorld, ElevenLabs v3 et v4, Gemini et
+Cartesia Sonic 3. Sous la liste, vous pouvez ajouter vos propres mots (par exemple <em>giggles</em>). Ils sont enregistrés
+dans votre bibliothèque, pour toutes les voicelines. Seuls ElevenLabs v3 et v4 et Gemini savent jouer vos propres
+mots : ils sont donc masqués chez les autres fournisseurs. Une pastille grisée est un son que le fournisseur actuel
+ne sait pas jouer : il est ignoré à la génération.</p>
 <p>Fournisseurs : InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, Cartesia, et les moteurs locaux <strong>Kokoro</strong>
 (anglais), <strong>Chatterbox</strong> (21 langues, en gardant la voix du personnage), <strong>Qwen3 TTS 1.7B</strong> (dix langues, clonage de références, voix fixes et descriptions de voix) et <strong>VoxCPM2</strong> (30 langues, clonage avec consignes de jeu, et voix décrites).</p>
 <ul>
@@ -974,7 +985,7 @@ l’expressivité de Chatterbox, installation ou configuration, et nettoyage des
 </tr>
 </tbody>
 </table>
-<p><strong>Markers</strong>, <strong>Words</strong> et <strong>Events</strong> déterminent ce que vous modifiez. Dans la liste, un double-clic joue le sous-titre.</p>
+<p><strong>Markers</strong>, <strong>Words</strong> et <strong>Events</strong> (et, dans l’onglet Dubbing, <strong>Groups</strong> et <strong>Sounds</strong>) déterminent ce que vous modifiez. Dans la liste, un double-clic joue le sous-titre.</p>
 <hr/>
 <h2 id="supported-languages">Langues prises en charge </h2>
 <p><code>✓</code> disponible · <code>◐</code> dépend du fournisseur ou de la voix · <code>—</code> indisponible</p>

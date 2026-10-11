@@ -319,6 +319,17 @@ start or end in the middle of a line, and each new group gets its own color. Dra
 to move it: pushing it past a whole group removes that group, and dragging back before releasing brings it back.
 Right-click a group to remove it: its neighbor takes its place. The bin button merges everything back into one group. Groups are saved per
 subtitle language.</p>
+<p><strong>Sounds (laughs, sighs, pauses…).</strong> The <strong>Sounds</strong> tool above the waveform adds a sound for the voice to perform
+between two words. Click between two words and pick a sound: a pill marks the spot. Drag a pill to move it to
+another gap, and right-click it to remove it. Sounds are only sent to the voice, never shown in the subtitles.
+Each subtitle language has its own sounds. The copy button places them in the other languages, at the same point
+in each line, and the bin button removes those of the current language. Adding, moving or removing a sound puts a
+<strong>REGEN</strong> chip on the line.</p>
+<p>The list only shows the sounds the selected provider can perform: InWorld, ElevenLabs v3 and v4, Gemini and
+Cartesia Sonic 3. Below the list, you can add your own words (for example <em>giggles</em>). They are saved in your
+library for every voice line. Only ElevenLabs v3 and v4 and Gemini can perform your own words, so they are hidden
+with the other providers. A greyed pill is a sound the current provider can't perform: it is skipped when
+generating.</p>
 <p>Providers: InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, Cartesia, and offline <strong>Kokoro</strong> (English) and
 <strong>Chatterbox</strong> (21 languages, keeps each character's voice), plus <strong>Qwen3 TTS 1.7B</strong> (ten languages, reference cloning, fixed voices and voice design) and <strong>VoxCPM2</strong> (30 languages, reference cloning with written style control, and voice design).</p>
 <ul>
@@ -1006,7 +1017,8 @@ the cleanup of ElevenLabs voice clones.</li>
 </tr>
 </tbody>
 </table>
-<p>The <strong>Markers</strong>, <strong>Words</strong> and <strong>Events</strong> buttons above the waveform choose what you edit. In the list,
+<p>The <strong>Markers</strong>, <strong>Words</strong> and <strong>Events</strong> buttons above the waveform choose what you edit (and, in the Dubbing tab,
+<strong>Groups</strong> and <strong>Sounds</strong>). In the list,
 double-click a row to play that subtitle.</p>
 <hr>
 <h2 id="supported-languages">Supported languages</h2>
