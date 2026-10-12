@@ -204,7 +204,7 @@ WAV 文件，存放在台词资源所在的文件夹中。在 macOS 上，请在
 <li>点击 <strong>Transcribe</strong>：音频将转换为词，并直接组织为字幕。<strong>Split settings</strong> 用于设定单条字幕的最长时长、字幕比第一个词的发声时间提前多久显示，以及字幕是否应在标点符号处结束。如果该语音行已有字幕，替换前会先请您确认。</li>
 <li>对分割结果不满意？修改 <strong>Split settings</strong> 后点击 <strong>Re-split</strong>：同样的词会重新组织为字幕，无需再次转写（也不会再次产生费用）。</li>
 </ol>
-<p><strong>Word timing</strong> 用于选择每个词的时间信息来源：<strong>From the provider</strong>（默认）保留转写返回的时间信息；<strong>Qwen3 aligner (local)</strong> 会在字幕分割完成后立即重新确定每个词在音频中的时间位置，且不更改文本——这是逐词显示字幕最精确的选项（<a href="#qwen3-offline-word-timing">安装一次即可</a>）。对于 Qwen3 不支持的语言，将保留提供商的时间信息。</p>
+<p><strong>Word timing</strong> 用于选择每个词的时间信息来源：<strong>From the provider</strong>（默认）保留转写返回的时间信息；<strong>Qwen3 aligner (local)</strong> 会在字幕分割完成后立即重新确定每个词在音频中的时间位置，且不更改文本——这是逐词显示字幕最精确的选项（<a href="#qwen3-offline-word-timing">安装一次即可</a>）。对于 Qwen3 不支持的语言，将保留提供商的时间信息。选择 Qwen3 后还会出现 <strong>Re-align</strong> 按钮：手动修改某个词或移动分割点后，点击它即可在保留文本和分割点的同时，将各词重新对齐到音频上。</p>
 <p>提供商：AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、OpenAI，或离线的 <strong>Whisper</strong> 和 <strong>Parakeet</strong>。不确定该选哪个？<strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> 可将它们并列展示，方便比较价格、免费套餐、商业使用和支持的语言。</p>
 <img alt="Provider Comparison window, Transcription tab" src="Images/subvoxpro-provider-comparison.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <blockquote>

@@ -203,7 +203,7 @@ SubVox.Play(myVoiceLine);
 <li>「<strong>Transcribe</strong>」をクリックします。オーディオが単語に変換され、そのまま字幕にまとめられます。「<strong>Split settings</strong>」では、字幕の最大表示時間、最初の単語が発話されるどれくらい前に字幕を表示するか、字幕の区切りを句読点に合わせるかどうかを設定します。ボイスラインに既に字幕がある場合は、置き換える前に確認が表示されます。</li>
 <li>区切り方が気に入らない場合は、「<strong>Split settings</strong>」を変更して「<strong>Re-split</strong>」をクリックします。同じ単語が再びまとめられ、文字起こしをやり直す（費用がかかる）必要はありません。</li>
 </ol>
-<p>「<strong>Word timing</strong>」では、各単語のタイミングの取得元を選択します。「<strong>From the provider</strong>」（デフォルト）は、文字起こしによって返されたタイミングをそのまま保持します。「<strong>Qwen3 aligner (local)</strong>」は、字幕に区切られた直後に、テキストを変更せずに、オーディオに合わせて各単語のタイミングを再調整します。単語単位の字幕には最も正確なオプションです（<a href="#qwen3-offline-word-timing">初回のみインストールが必要です</a>）。
+<p>「<strong>Word timing</strong>」では、各単語のタイミングの取得元を選択します。「<strong>From the provider</strong>」（デフォルト）は、文字起こしによって返されたタイミングをそのまま保持します。「<strong>Qwen3 aligner (local)</strong>」は、字幕に区切られた直後に、テキストを変更せずに、オーディオに合わせて各単語のタイミングを再調整します。単語単位の字幕には最も正確なオプションです（<a href="#qwen3-offline-word-timing">初回のみインストールが必要です</a>）。Qwen3を選択すると「<strong>Re-align</strong>」ボタンも表示されます。単語を修正したり区切り位置を手動で移動したりした後にクリックすると、テキストと区切り位置を保ったまま、単語のタイミングをオーディオに合わせて再調整します。
 Qwen3が対応していない言語の場合は、プロバイダーのタイミングがそのまま使用されます。</p>
 <p>プロバイダー：AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、OpenAI、またはオフライン版の<strong>Whisper</strong>および<strong>Parakeet</strong>。選択に迷った場合は、「<strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong>」で、価格、無料プラン、商用利用、対応言語を並べて比較できます。</p>
 <img alt="Provider Comparison window, Transcription tab" src="Images/subvoxpro-provider-comparison.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
