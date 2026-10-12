@@ -214,6 +214,19 @@ audio or generate a dub from the text.</p>
 <p><strong>Record with a microphone</strong> (in <strong>Add an audio track</strong> or the <strong>+</strong> next to the AUDIO selector) opens a small
 recorder: pick the microphone, watch the level, record, listen back, then <strong>Use recording</strong>. The take is saved as a
 WAV next to the voice line. On macOS, allow Unity to use the microphone in System Settings.</p>
+<h3 id="reading-along-while-you-record">Reading along while you record</h3>
+<img src="Images/subvoxpro-read-along.png" alt="The recorder following the text while recording: heard words in green" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p>When the voice line already has subtitles, the recorder shows them in <strong>Read along</strong> so you can record a dub
+while reading the text. Pick the language to read in the dropdown (or <strong>Off</strong>). As you speak, the words turn
+<strong>green</strong> when they are heard and <strong>red</strong> when they were skipped; the text scrolls gently to keep up.</p>
+<ul>
+<li>It runs on your computer, for free: it needs <strong>Parakeet</strong> or a local <strong>Whisper</strong> model (<strong>Tools ▸ SubVox Pro ▸
+Additional Models</strong>).</li>
+<li><strong>Retake</strong> throws the take away and starts recording again right away.</li>
+<li>After <strong>Stop</strong>, the whole take is checked once more. Red words you did say can be clicked to accept them.</li>
+<li><strong>Use recording</strong> adds the take as usual (replace a track or add a dub), with each word timed from your take.
+When <strong>Qwen3</strong> word timing is installed, it refines those timings. <strong>Undo</strong> restores the previous timings.</li>
+</ul>
 <h3 id="adding-your-own-dubs">Adding your own dubs</h3>
 <p>Already have recorded dubs? Click the <strong>+</strong> next to the AUDIO selector and pick or record the clip. A window then
 asks which language it is:</p>
@@ -221,7 +234,7 @@ asks which language it is:</p>
 <li><strong>Replace a track</strong> — put it in place of the original audio or of an existing dub;</li>
 <li><strong>Add a new track</strong> — pick its language to add it as a new dub.</li>
 </ul>
-<p>The lines are placed proportionally on the new audio; drag the markers to fine-tune them. Translated lines in that
+<p>The lines are placed proportionally on the new audio (or timed from the take when you read along); drag the markers to fine-tune them. Translated lines in that
 language are shown over the dub when they exist.</p>
 <h3 id="checking-your-subtitles">Checking your subtitles</h3>
 <ul>
@@ -765,13 +778,13 @@ free the disk space again. A graphics card makes them much faster, but they also
 <tbody>
 <tr>
 <td><strong>Whisper</strong></td>
-<td>Transcription</td>
+<td>Transcription, read-along recording</td>
 <td>1.6 GB (up to 3.1 GB for the larger models)</td>
 <td>Many, with automatic detection</td>
 </tr>
 <tr>
 <td><strong>Parakeet</strong></td>
-<td>Transcription, fast even without a graphics card</td>
+<td>Transcription and read-along recording, fast even without a graphics card</td>
 <td>670 MB</td>
 <td>25 European languages, detected automatically</td>
 </tr>
@@ -807,7 +820,7 @@ free the disk space again. A graphics card makes them much faster, but they also
 </tr>
 <tr>
 <td><strong>Qwen3 Aligner</strong></td>
-<td>Exact word timing, on transcriptions and dubs</td>
+<td>Exact word timing, on transcriptions, dubs and recorded takes</td>
 <td>1.0 GB</td>
 <td>11 languages</td>
 </tr>
