@@ -265,7 +265,7 @@ punctuation. If the voice line already has subtitles, you are asked before they 
 without transcribing (or paying) a second time.</li>
 </ol>
 <p><strong>Word timing</strong> chooses where the timing of each word comes from: <strong>From the provider</strong> (default) keeps the timings
-returned by the transcription, <strong>Qwen3 aligner (local)</strong> places every word again on the audio as soon as the subtitles are cut, without
+returned by the transcription, <strong>Qwen3 aligner (local)</strong> places every word again on the audio before the subtitles are cut, so cuts fall on the real pauses, without
 changing the text — the most precise option for word-by-word subtitles (<a href="#qwen3-offline-word-timing">install it once</a>).
 In a language Qwen3 does not support, the provider's timings are kept.
 With Qwen3, a <strong>Re-align</strong> button also appears: after fixing a word or moving a cut by hand, click it to place the

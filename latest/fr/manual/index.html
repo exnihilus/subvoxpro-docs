@@ -254,7 +254,7 @@ sous-titres, une confirmation est demandée avant de les remplacer.</li>
 sont regroupés à nouveau, sans nouvelle transcription (ni nouveau coût).</li>
 </ol>
 <p><strong>Word timing</strong> permet de choisir la source des timings de mots. <strong>From the provider</strong>, par défaut, conserve celui de
-la transcription. <strong>Qwen3 aligner (local)</strong> recale chaque mot sur l’audio dès le découpage en sous-titres, sans modifier le texte : c’est
+la transcription. <strong>Qwen3 aligner (local)</strong> recale chaque mot sur l’audio avant le découpage en sous-titres (les coupes tombent donc sur les vraies pauses), sans modifier le texte : c’est
 le choix le plus précis pour l’affichage mot par mot (<a href="#qwen3-offline-word-timing">installation</a>).
 Si Qwen3 ne prend pas la langue en charge, les timings du fournisseur sont conservés.
 Avec Qwen3, un bouton <strong>Re-align</strong> apparaît aussi : après avoir corrigé un mot ou déplacé une coupure à la main,
