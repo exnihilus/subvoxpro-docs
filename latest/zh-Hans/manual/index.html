@@ -140,7 +140,7 @@
 SubVox Pro 窗口将打开并显示新的台词资源：检查其 <strong>Language</strong>（首次使用时为英语，之后为上次选择的语言），选择 <strong>Add an audio track</strong> 并选取音频剪辑，或录制一段音频。</p>
 <p>或者，在 Project 窗口中右键单击音频文件，然后选择 <strong>SubVox Pro ▸ Create Voice Line</strong>。选择新台词资源的保存位置；编辑器随即打开，并已关联该音频。</p>
 <img alt="新台词资源的起始界面：语言、添加音轨、添加字幕轨道" src="Images/subvoxpro-new-voice-line.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
-<p><strong>3. 转写。</strong>在 <strong>AI Tools ▸ Transcription</strong> 中，选择提供商和音频中使用的语言，点击 <strong>Analyze</strong>，然后点击 <strong>Split</strong>。字幕将显示在波形上。</p>
+<p><strong>3. 转写。</strong>在 <strong>AI Tools ▸ Transcription</strong> 中，选择提供商和音频中使用的语言，然后点击 <strong>Transcribe</strong>。字幕将显示在波形上。</p>
 <p><strong>4. 调整。</strong>拖动波形上的标记，修正下方列表中的文本，按 <strong>Space</strong> 收听。</p>
 <p><strong>5. 在游戏中显示字幕。</strong>将 <strong>[SubVox Pro]</strong> 和 <strong>Subtitle Displayer</strong> 预制体（<code>SubVoxPro/Prefabs</code>）拖放到场景中，然后播放该台词：</p>
 <pre><code class="lang-csharp">using SubVoxPro;
@@ -201,10 +201,10 @@ WAV 文件，存放在台词资源所在的文件夹中。在 macOS 上，请在
 <ol>
 <li>选择一个 <strong>Provider</strong>；如果该提供商提供多个模型，再选择一个 <strong>Model</strong>。右侧的状态徽标会显示其是否已就绪（已设置密钥或已下载模型）。</li>
 <li>检查 <strong>Audio Language</strong>：语言跟随所选音轨的旗帜。对于源音频，点击即可更改语言。如果提供商无法转写该语言，该字段会变红，并列出可以转写的提供商。如果源音频还没有语言，请在列表中选择（部分提供商会自动检测）。</li>
-<li>点击 <strong>Analyze</strong>：音频将转换为带时间信息的词。</li>
-<li>点击 <strong>Split</strong>：词将被组织为字幕。<strong>Split settings</strong> 用于设定单条字幕的最长时长、字幕比第一个词的发声时间提前多久显示，以及字幕是否应在标点符号处结束。</li>
+<li>点击 <strong>Transcribe</strong>：音频将转换为词，并直接组织为字幕。<strong>Split settings</strong> 用于设定单条字幕的最长时长、字幕比第一个词的发声时间提前多久显示，以及字幕是否应在标点符号处结束。如果该语音行已有字幕，替换前会先请您确认。</li>
+<li>对分割结果不满意？修改 <strong>Split settings</strong> 后点击 <strong>Re-split</strong>：同样的词会重新组织为字幕，无需再次转写（也不会再次产生费用）。</li>
 </ol>
-<p><strong>Word timing</strong> 用于选择每个词的时间信息来源：<strong>From the provider</strong>（默认）保留转写返回的时间信息；<strong>Qwen3 aligner (local)</strong> 会在 <strong>Split</strong> 后立即重新确定每个词在音频中的时间位置，且不更改文本——这是逐词显示字幕最精确的选项（<a href="#qwen3-offline-word-timing">安装一次即可</a>）。对于 Qwen3 不支持的语言，将保留提供商的时间信息。</p>
+<p><strong>Word timing</strong> 用于选择每个词的时间信息来源：<strong>From the provider</strong>（默认）保留转写返回的时间信息；<strong>Qwen3 aligner (local)</strong> 会在字幕分割完成后立即重新确定每个词在音频中的时间位置，且不更改文本——这是逐词显示字幕最精确的选项（<a href="#qwen3-offline-word-timing">安装一次即可</a>）。对于 Qwen3 不支持的语言，将保留提供商的时间信息。</p>
 <p>提供商：AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、OpenAI，或离线的 <strong>Whisper</strong> 和 <strong>Parakeet</strong>。不确定该选哪个？<strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> 可将它们并列展示，方便比较价格、免费套餐、商业使用和支持的语言。</p>
 <img alt="Provider Comparison window, Transcription tab" src="Images/subvoxpro-provider-comparison.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <blockquote>
@@ -648,7 +648,7 @@ private void Shake()
 文件夹中的自己的音频片段，或 <strong>Record a reference…</strong>。用<strong>英语或中文</strong>输入指令，例如 <code>Speak softly, with a sad tone</code> 或 <code>Whisper quietly</code>：无论台词使用哪种语言，用这两种语言编写指令效果最佳。随附音色用于其他语言时会保留轻微口音；如需地道的口音，使用以配音目标语言录制的参考音频。在 Settings 中启用 <strong>Use GPU</strong> 可通过显卡加速生成。</p>
 <p>若要创建不存在的声音，选择 <strong>Designed voice</strong> 并进行描述，例如 <code>A deep, calm male voice in his fifties</code>，或在描述下方选择 <strong>Age</strong>。该声音会在首次生成时创建，随后保留用于每条台词，因此角色的声音始终一致；配音风格预设仍会决定其语气。若希望每个角色使用不同的声音，在每个说话者资源中填写音色描述，并将其音色设置为 <strong>Designed voice</strong>。</p>
 <h3 id="qwen3-offline-word-timing">Qwen3（离线逐词时间定位） </h3>
-<p>在 Transcription 或 Dubbing 选项卡中，将 <strong>Word timing</strong> 设置为 <strong>Qwen3 aligner (local)</strong>，然后点击 <strong>Install…</strong>。此后，每次对转写结果执行 <strong>Split</strong>，以及每次生成配音时，都会自动逐词对齐，使逐词显示的字幕与声音完全吻合。该功能只确定词的时间位置，绝不会更改文本。支持语言：中文、粤语、英语、法语、德语、意大利语、日语、韩语、葡萄牙语、俄语和西班牙语，音频时长上限为 5 分钟。</p>
+<p>在 Transcription 或 Dubbing 选项卡中，将 <strong>Word timing</strong> 设置为 <strong>Qwen3 aligner (local)</strong>，然后点击 <strong>Install…</strong>。此后，每次转写（以及每次 <strong>Re-split</strong>），以及每次生成配音时，都会自动逐词对齐，使逐词显示的字幕与声音完全吻合。该功能只确定词的时间位置，绝不会更改文本。支持语言：中文、粤语、英语、法语、德语、意大利语、日语、韩语、葡萄牙语、俄语和西班牙语，音频时长上限为 5 分钟。</p>
 <blockquote>
 <p>如果脚本重新编译或进入 Play 模式，下载会停止：只需在同一窗口中重新开始下载，即可从中断处继续。</p>
 </blockquote>

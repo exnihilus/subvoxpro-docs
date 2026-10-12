@@ -154,8 +154,8 @@ choisie. Cliquez sur <strong>Add an audio track</strong> pour choisir un clip ou
 <strong>SubVox Pro ▸ Create Voice Line</strong>. Choisissez où enregistrer la nouvelle voiceline : l’éditeur s’ouvre avec
 ce clip audio déjà renseigné.</p>
 <p><img alt="Nouvelle voiceline : langue, piste audio et piste de sous-titres" src="Images/subvoxpro-new-voice-line.png"/></p>
-<p><strong>3. Transcrivez.</strong> Dans <strong>AI Tools ▸ Transcription</strong>, choisissez le fournisseur et la langue parlée, cliquez sur
-<strong>Analyze</strong>, puis sur <strong>Split</strong>. Les sous-titres apparaissent sur la forme d’onde.</p>
+<p><strong>3. Transcrivez.</strong> Dans <strong>AI Tools ▸ Transcription</strong>, choisissez le fournisseur et la langue parlée, puis cliquez sur
+<strong>Transcribe</strong>. Les sous-titres apparaissent sur la forme d’onde.</p>
 <p><strong>4. Ajustez.</strong> Déplacez les marqueurs, corrigez le texte dans la liste et appuyez sur <strong>Space</strong> pour écouter.</p>
 <p><strong>5. Affichez le résultat en jeu.</strong> Placez les prefabs <strong>[SubVox Pro]</strong> et <strong>Subtitle Displayer</strong>
 (<code>SubVoxPro/Prefabs</code>) dans votre scène, puis jouez la réplique :</p>
@@ -247,12 +247,14 @@ d’origine sont conservés. Une découpe ne peut pas être annulée.</p>
 <li>Choisissez un <strong>Provider</strong> et, s’il en propose plusieurs, un <strong>Model</strong>. Le badge indique si le fournisseur est
 prêt : clé enregistrée ou modèle téléchargé.</li>
 <li>Vérifiez <strong>Audio Language</strong> : la langue suit le drapeau de la piste audio sélectionnée. Pour l'audio source, cliquez dessus pour changer de langue. Le champ passe au rouge si le fournisseur ne sait pas transcrire cette langue, et un message liste ceux qui le peuvent. Si la source n'a pas encore de langue, choisissez-la dans la liste (certains fournisseurs la détectent eux-mêmes).</li>
-<li>Cliquez sur <strong>Analyze</strong> pour obtenir les mots et leurs timings.</li>
-<li>Cliquez sur <strong>Split</strong> pour regrouper les mots en sous-titres. <strong>Split settings</strong> règle la durée maximale,
-l’avance avant le premier mot et la coupure sur la ponctuation.</li>
+<li>Cliquez sur <strong>Transcribe</strong> : l’audio est converti en mots, puis regroupé en sous-titres. <strong>Split settings</strong> règle
+la durée maximale, l’avance avant le premier mot et la coupure sur la ponctuation. Si la voiceline a déjà des
+sous-titres, une confirmation est demandée avant de les remplacer.</li>
+<li>Le découpage ne vous convient pas ? Modifiez les <strong>Split settings</strong> et cliquez sur <strong>Re-split</strong> : les mêmes mots
+sont regroupés à nouveau, sans nouvelle transcription (ni nouveau coût).</li>
 </ol>
 <p><strong>Word timing</strong> permet de choisir la source des timings de mots. <strong>From the provider</strong>, par défaut, conserve celui de
-la transcription. <strong>Qwen3 aligner (local)</strong> recale chaque mot sur l’audio après <strong>Split</strong>, sans modifier le texte : c’est
+la transcription. <strong>Qwen3 aligner (local)</strong> recale chaque mot sur l’audio dès le découpage en sous-titres, sans modifier le texte : c’est
 le choix le plus précis pour l’affichage mot par mot (<a href="#qwen3-offline-word-timing">installation</a>).
 Si Qwen3 ne prend pas la langue en charge, les timings du fournisseur sont conservés.</p>
 <p>Fournisseurs : AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, OpenAI, ou <strong>Whisper</strong> et <strong>Parakeet</strong>
@@ -870,7 +872,7 @@ personnage garde toujours la même voix, et vos personnalités règlent toujours
 personnage, écrivez la description sur chaque speaker et réglez sa voix sur <strong>Designed voice</strong>.</p>
 <h3 id="qwen3-offline-word-timing">Qwen3, timing local des mots </h3>
 <p>Choisissez <strong>Word timing: Qwen3 aligner (local)</strong> dans Transcription ou Dubbing, puis cliquez sur <strong>Install…</strong>.
-Chaque <strong>Split</strong> et chaque doublage sont ensuite alignés mot par mot. Qwen3 ne touche jamais au texte : il ne fait
+Chaque transcription (et chaque <strong>Re-split</strong>) et chaque doublage sont ensuite alignés mot par mot. Qwen3 ne touche jamais au texte : il ne fait
 que placer les mots. Langues : chinois, cantonais, anglais, français, allemand, italien, japonais, coréen,
 portugais, russe et espagnol, pour des audios de 5 minutes maximum.</p>
 <blockquote>

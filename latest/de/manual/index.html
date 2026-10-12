@@ -149,8 +149,8 @@ danach die zuletzt ausgewählte Sprache), wählen Sie <strong>Add an audio track
 <p>Alternativ klicken Sie im Project-Fenster mit der rechten Maustaste auf eine Audiodatei und wählen <strong>SubVox Pro ▸ Create Voice Line</strong>.
 Legen Sie den Speicherort der neuen Voice Line fest; der Editor öffnet sich mit der bereits zugewiesenen Audiodatei.</p>
 <img alt="Startbildschirm einer neuen Voice Line: Sprache, Audiospur hinzufügen, Untertitelspur hinzufügen" src="Images/subvoxpro-new-voice-line.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
-<p><strong>3. Transkribieren.</strong> Wählen Sie unter <strong>AI Tools ▸ Transcription</strong> den Anbieter und die gesprochene Sprache aus, klicken Sie auf <strong>Analyze</strong>
-und anschließend auf <strong>Split</strong>. Ihre Untertitel erscheinen auf der Wellenform.</p>
+<p><strong>3. Transkribieren.</strong> Wählen Sie unter <strong>AI Tools ▸ Transcription</strong> den Anbieter und die gesprochene Sprache aus und klicken Sie
+auf <strong>Transcribe</strong>. Ihre Untertitel erscheinen auf der Wellenform.</p>
 <p><strong>4. Anpassen.</strong> Ziehen Sie die Marker auf der Wellenform, korrigieren Sie den Text in der Liste darunter und drücken Sie <strong>Space</strong>, um sich das Audio anzuhören.</p>
 <p><strong>5. Im Spiel anzeigen.</strong> Fügen Sie die Prefabs <strong>[SubVox Pro]</strong> und <strong>Subtitle Displayer</strong> (<code>SubVoxPro/Prefabs</code>) in
 Ihre Szene ein und spielen Sie anschließend die Voice Line ab:</p>
@@ -241,12 +241,12 @@ Originaldateien bleiben erhalten. Das Aufteilen kann nicht rückgängig gemacht 
 <li>Wählen Sie einen <strong>Provider</strong> und, falls dieser mehrere Modelle anbietet, ein <strong>Model</strong> aus. Die Statusanzeige auf der rechten Seite zeigt an, ob er einsatzbereit ist
 (Schlüssel eingerichtet oder Modell heruntergeladen).</li>
 <li>Prüfen Sie die <strong>Audio Language</strong>: Sie folgt der Flagge der ausgewählten Audiospur. Beim Quell-Audio klicken Sie darauf, um die Sprache zu ändern. Das Feld wird rot, wenn der Anbieter diese Sprache nicht transkribieren kann, und ein Hinweis nennt die Anbieter, die es können. Hat die Quelle noch keine Sprache, wählen Sie sie in der Liste (einige Anbieter erkennen sie automatisch).</li>
-<li>Klicken Sie auf <strong>Analyze</strong>: Das Audio wird in Wörter mit Zeitangaben umgewandelt.</li>
-<li>Klicken Sie auf <strong>Split</strong>: Die Wörter werden zu Untertiteln gruppiert. Über die <strong>Split settings</strong> legen Sie fest, wie lange ein Untertitel maximal dauern darf,
-wie früh er vor seinem ersten Wort erscheint und ob Untertitel an Satzzeichen enden sollen.</li>
+<li>Klicken Sie auf <strong>Transcribe</strong>: Das Audio wird in Wörter umgewandelt, die anschließend zu Untertiteln gruppiert werden. Über die <strong>Split settings</strong> legen Sie fest, wie lange ein Untertitel maximal dauern darf,
+wie früh er vor seinem ersten Wort erscheint und ob Untertitel an Satzzeichen enden sollen. Hat die Voice Line bereits Untertitel, werden Sie vor dem Ersetzen gefragt.</li>
+<li>Passt die Aufteilung nicht? Ändern Sie die <strong>Split settings</strong> und klicken Sie auf <strong>Re-split</strong>: Dieselben Wörter werden neu gruppiert, ohne erneute Transkription (und ohne erneute Kosten).</li>
 </ol>
 <p>Unter <strong>Word timing</strong> wählen Sie aus, woher die Zeitangaben für jedes Wort stammen: <strong>From the provider</strong> (Standard) behält die
-von der Transkription zurückgegebenen Zeitangaben bei, <strong>Qwen3 aligner (local)</strong> ordnet jedes Wort unmittelbar nach <strong>Split</strong> erneut zeitlich dem Audio zu, ohne
+von der Transkription zurückgegebenen Zeitangaben bei, <strong>Qwen3 aligner (local)</strong> ordnet jedes Wort erneut zeitlich dem Audio zu, sobald die Untertitel aufgeteilt sind, ohne
 den Text zu ändern – die präziseste Option für wortweise angezeigte Untertitel (<a href="#qwen3-offline-word-timing">einmal installieren</a>).
 Bei einer Sprache, die Qwen3 nicht unterstützt, werden die Zeitangaben des Anbieters beibehalten.</p>
 <p>Anbieter: AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, OpenAI oder <strong>Whisper</strong> und <strong>Parakeet</strong> offline. Sie sind sich nicht
@@ -859,8 +859,8 @@ Zielsprache der Sprachvertonung. Die Option <strong>Use GPU</strong> in den Sett
 gleich klingt; Ihre Stimmprofile bestimmen weiterhin den Tonfall. Für eine andere Stimme pro Figur tragen Sie die Beschreibung
 bei jedem Speaker ein und stellen Sie dessen Stimme auf <strong>Designed voice</strong>.</p>
 <h3 id="qwen3-offline-word-timing">Qwen3 (Offline-Timing auf Wortebene) </h3>
-<p>Stellen Sie <strong>Word timing</strong> auf der Registerkarte Transcription oder Dubbing auf <strong>Qwen3 aligner (local)</strong> ein und klicken Sie auf <strong>Install…</strong>. Danach werden bei jedem
-<strong>Split</strong> einer Transkription und bei jeder generierten Sprachvertonung die Wörter automatisch zeitlich ausgerichtet, sodass Wort-für-Wort-Untertitel
+<p>Stellen Sie <strong>Word timing</strong> auf der Registerkarte Transcription oder Dubbing auf <strong>Qwen3 aligner (local)</strong> ein und klicken Sie auf <strong>Install…</strong>. Danach werden bei jeder
+Transkription (und jedem <strong>Re-split</strong>) und bei jeder generierten Sprachvertonung die Wörter automatisch zeitlich ausgerichtet, sodass Wort-für-Wort-Untertitel
 genau zur Stimme passen. Dabei werden nur die Zeitpunkte der Wörter festgelegt — Ihr Text wird niemals verändert. Sprachen: Chinesisch, Kantonesisch,
 Englisch, Französisch, Deutsch, Italienisch, Japanisch, Koreanisch, Portugiesisch, Russisch und Spanisch, für Audioaufnahmen mit einer Dauer von bis zu 5 Minuten.</p>
 <blockquote>

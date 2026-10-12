@@ -142,7 +142,7 @@ macOSおよびLinuxのエディターでも動作すると考えられますが�
 をクリックします。新しいボイスラインのSubVox Proウィンドウが開きます。<strong>Language</strong>（初回は英語、その後は前回選択した言語）を確認し、<strong>Add an audio track</strong>を選択してクリップを指定するか、音声を録音します。</p>
 <p>または、Projectウィンドウでオーディオファイルを右クリックし、<strong>SubVox Pro ▸ Create Voice Line</strong>を選択します。新しいボイスラインの保存先を選択すると、そのオーディオが割り当てられた状態でエディターが開きます。</p>
 <img alt="新しいボイスラインの開始画面：言語、オーディオトラックの追加、字幕トラックの追加" src="Images/subvoxpro-new-voice-line.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
-<p><strong>3. 文字起こしします。</strong> <strong>AI Tools ▸ Transcription</strong>でプロバイダーと音声の言語を選択し、<strong>Analyze</strong>、続いて<strong>Split</strong>をクリックします。字幕が波形上に表示されます。</p>
+<p><strong>3. 文字起こしします。</strong> <strong>AI Tools ▸ Transcription</strong>でプロバイダーと音声の言語を選択し、<strong>Transcribe</strong>をクリックします。字幕が波形上に表示されます。</p>
 <p><strong>4. 調整します。</strong>波形上のマーカーをドラッグし、下のリストでテキストを修正して、<strong>Space</strong>を押して音声を確認します。</p>
 <p><strong>5. ゲーム内で表示します。</strong> <strong>[SubVox Pro]</strong>と<strong>Subtitle Displayer</strong>のプレハブ（<code>SubVoxPro/Prefabs</code>）をシーンにドラッグ＆ドロップし、ボイスラインを再生します。</p>
 <pre><code class="lang-csharp">using SubVoxPro;
@@ -200,10 +200,10 @@ SubVox.Play(myVoiceLine);
 <ol>
 <li>「<strong>Provider</strong>」を選択し、そのプロバイダーが複数のモデルを提供している場合は「<strong>Model</strong>」を選択します。右側のバッジには、準備が整っているかどうか（キーが設定済み、またはモデルがダウンロード済み）が表示されます。</li>
 <li>「<strong>Audio Language</strong>」を確認します。言語は選択中のオーディオトラックの旗に従います。ソース音声の場合はクリックして言語を変更できます。プロバイダーがその言語を文字起こしできない場合はフィールドが赤くなり、対応しているプロバイダーが表示されます。ソースにまだ言語がない場合は、リストから選びます（一部のプロバイダーは自動的に検出します）。</li>
-<li>「<strong>Analyze</strong>」をクリックします。オーディオがタイミング付きの単語データに変換されます。</li>
-<li>「<strong>Split</strong>」をクリックします。単語が字幕にまとめられます。「<strong>Split settings</strong>」では、字幕の最大表示時間、最初の単語が発話されるどれくらい前に字幕を表示するか、字幕の区切りを句読点に合わせるかどうかを設定します。</li>
+<li>「<strong>Transcribe</strong>」をクリックします。オーディオが単語に変換され、そのまま字幕にまとめられます。「<strong>Split settings</strong>」では、字幕の最大表示時間、最初の単語が発話されるどれくらい前に字幕を表示するか、字幕の区切りを句読点に合わせるかどうかを設定します。ボイスラインに既に字幕がある場合は、置き換える前に確認が表示されます。</li>
+<li>区切り方が気に入らない場合は、「<strong>Split settings</strong>」を変更して「<strong>Re-split</strong>」をクリックします。同じ単語が再びまとめられ、文字起こしをやり直す（費用がかかる）必要はありません。</li>
 </ol>
-<p>「<strong>Word timing</strong>」では、各単語のタイミングの取得元を選択します。「<strong>From the provider</strong>」（デフォルト）は、文字起こしによって返されたタイミングをそのまま保持します。「<strong>Qwen3 aligner (local)</strong>」は、「<strong>Split</strong>」直後に、テキストを変更せずに、オーディオに合わせて各単語のタイミングを再調整します。単語単位の字幕には最も正確なオプションです（<a href="#qwen3-offline-word-timing">初回のみインストールが必要です</a>）。
+<p>「<strong>Word timing</strong>」では、各単語のタイミングの取得元を選択します。「<strong>From the provider</strong>」（デフォルト）は、文字起こしによって返されたタイミングをそのまま保持します。「<strong>Qwen3 aligner (local)</strong>」は、字幕に区切られた直後に、テキストを変更せずに、オーディオに合わせて各単語のタイミングを再調整します。単語単位の字幕には最も正確なオプションです（<a href="#qwen3-offline-word-timing">初回のみインストールが必要です</a>）。
 Qwen3が対応していない言語の場合は、プロバイダーのタイミングがそのまま使用されます。</p>
 <p>プロバイダー：AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、OpenAI、またはオフライン版の<strong>Whisper</strong>および<strong>Parakeet</strong>。選択に迷った場合は、「<strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong>」で、価格、無料プラン、商用利用、対応言語を並べて比較できます。</p>
 <img alt="Provider Comparison window, Transcription tab" src="Images/subvoxpro-provider-comparison.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
@@ -649,7 +649,7 @@ Timelineの再生開始時に選択されます。クリップはマネージャ
 <p>実在しない声を作成するには、<strong>Designed voice</strong>を選択し、声の特徴を説明します。例えば、<code>A deep, calm male voice in his fifties</code>と入力するか、説明の下で<strong>Age</strong>を選択します。ボイスは最初の生成時に作成され、以降のすべてのボイスラインで維持されるため、キャラクターの声は常に同じになります。声の調子は、引き続き音声演技プリセットで設定できます。キャラクターごとに異なるボイスを使う場合は、各話者に説明を入力し、ボイスを<strong>Designed voice</strong>に設定します。</p>
 <h3 id="qwen3-offline-word-timing">Qwen3（オフラインの単語タイミング） </h3>
 <p>「Transcription」または「Dubbing」タブで、<strong>Word timing</strong>を<strong>Qwen3 aligner (local)</strong>に設定し、<strong>Install…</strong>をクリックします。それ以降、文字起こし結果に対して
-<strong>Split</strong>を実行するたびに、また吹き替え音声を生成するたびに、自動的に単語のタイミングが音声に合わせて調整されるため、単語ごとの字幕が音声と正確に同期します。調整されるのは単語のタイミングだけで、テキストは変更されません。対応言語は中国語、広東語、英語、フランス語、ドイツ語、イタリア語、日本語、韓国語、ポルトガル語、ロシア語、スペイン語で、最大5分間の音声を処理できます。</p>
+文字起こし（および<strong>Re-split</strong>）を実行するたびに、また吹き替え音声を生成するたびに、自動的に単語のタイミングが音声に合わせて調整されるため、単語ごとの字幕が音声と正確に同期します。調整されるのは単語のタイミングだけで、テキストは変更されません。対応言語は中国語、広東語、英語、フランス語、ドイツ語、イタリア語、日本語、韓国語、ポルトガル語、ロシア語、スペイン語で、最大5分間の音声を処理できます。</p>
 <blockquote>
 <p>スクリプトが再コンパイルされるか、Playモードに入ると、ダウンロードが中断されます。同じウィンドウからもう一度開始すれば、中断した位置から再開されます。</p>
 </blockquote>
