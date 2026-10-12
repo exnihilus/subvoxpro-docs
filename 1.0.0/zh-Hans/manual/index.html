@@ -202,7 +202,7 @@ WAV 文件，存放在台词资源所在的文件夹中。在 macOS 上，请在
 <li>选择一个 <strong>Provider</strong>；如果该提供商提供多个模型，再选择一个 <strong>Model</strong>。右侧的状态徽标会显示其是否已就绪（已设置密钥或已下载模型）。</li>
 <li>检查 <strong>Audio Language</strong>：语言跟随所选音轨的旗帜。对于源音频，点击即可更改语言。如果提供商无法转写该语言，该字段会变红，并列出可以转写的提供商。如果源音频还没有语言，请在列表中选择（部分提供商会自动检测）。</li>
 <li>点击 <strong>Transcribe</strong>：音频将转换为词，并直接组织为字幕。<strong>Split settings</strong> 用于设定单条字幕的最长时长、字幕比第一个词的发声时间提前多久显示，以及字幕是否应在标点符号处结束。如果该语音行已有字幕，替换前会先请您确认。</li>
-<li>对分割结果不满意？修改 <strong>Split settings</strong> 后点击 <strong>Re-split</strong>：同样的词会重新组织为字幕，无需再次转写（也不会再次产生费用）。</li>
+<li>对分割结果不满意？修改 <strong>Split settings</strong> 后，<strong>Smart split</strong> 一行末尾会出现一个小的 <strong>Re-split</strong> 按钮，点击它：同样的词会重新组织为字幕，无需再次转写（也不会再次产生费用）。</li>
 </ol>
 <p><strong>Word timing</strong> 用于选择每个词的时间信息来源：<strong>From the provider</strong>（默认）保留转写返回的时间信息；<strong>Qwen3 aligner (local)</strong> 会在分割字幕之前重新确定每个词在音频中的时间位置，且不更改文本——这是逐词显示字幕最精确的选项（<a href="#qwen3-offline-word-timing">安装一次即可</a>）。对于 Qwen3 不支持的语言，将保留提供商的时间信息。选择 Qwen3 后还会出现 <strong>Re-align</strong> 按钮：手动修改某个词或移动分割点后，点击它即可在保留文本和分割点的同时，将各词重新对齐到音频上。</p>
 <p>提供商：AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、OpenAI，或离线的 <strong>Whisper</strong> 和 <strong>Parakeet</strong>。不确定该选哪个？<strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> 可将它们并列展示，方便比较价格、免费套餐、商业使用和支持的语言。</p>
