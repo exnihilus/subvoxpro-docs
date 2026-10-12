@@ -147,13 +147,13 @@ translation and dubbing without any account) need the <strong>Windows</strong> e
 <h2 id="quick-start">Quick start</h2>
 <p>From one audio clip to synced subtitles on screen in a few minutes.</p>
 <p>Everything in SubVox Pro is also one click away in <strong>Tools ▸ SubVox Pro ▸ Hub</strong>: a window of tiles that opens the
-voice line editor, batch processing, Google Sheets, the provider comparison,
+voice line editor, the Dub Booth, batch processing, Google Sheets, the provider comparison,
 the additional (offline) models, the MCP server for AI assistants, the example scenes, the documentation and the
-settings. The home screen has <strong>nine tiles</strong>. <strong>Documentation</strong> opens a second screen with <strong>Online</strong> (guide,
+settings. The home screen has <strong>ten tiles</strong>. <strong>Documentation</strong> opens a second screen with <strong>Online</strong> (guide,
 providers and scripting reference, with an English/French language selector), <strong>Local</strong> (the English PDF,
 available offline) and <strong>Provider Setup</strong> (the same PDF, opened directly at its Provider Setup part). <strong>Back</strong>
 returns to the home screen.</p>
-<p><img src="Images/subvoxpro-hub.png" alt="The SubVox Pro Hub with its nine tool tiles"></p>
+<p><img src="Images/subvoxpro-hub.png" alt="The SubVox Pro Hub with its ten tool tiles"></p>
 <p><img src="Images/subvoxpro-hub-documentation.png" alt="Documentation screen in the Hub: Online, Local, Provider Setup and Back"></p>
 <p><strong>1. Pick how you will transcribe.</strong> Either paste an API key for a speech-to-text service in
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong> (<a href="providers.html">where to get one</a>), or, on Windows, use <strong>Whisper</strong> or
@@ -228,6 +228,26 @@ Additional Models</strong>). When several are installed, pick the one to use in 
 <li><strong>Use recording</strong> adds the take as usual (replace a track or add a dub), with each word timed from your take.
 When <strong>Qwen3</strong> word timing is installed, it refines those timings. <strong>Undo</strong> restores the previous timings.</li>
 </ul>
+<h3 id="dubbing-in-sync-with-the-original-dub-booth">Dubbing in sync with the original (Dub Booth)</h3>
+<img src="Images/subvoxpro-dub-booth.png" alt="The Dub Booth: the line to dub, the original and your take on a scrolling band" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<p>The <strong>Dub Booth</strong> records a dub the way voice actors do: one line at a time, over the original performance, so
+your take lands where the original line is. Open it from <strong>+ Add audio ▸ Dub over the original</strong>, the Hub, or
+<strong>Tools ▸ SubVox Pro ▸ Dub Booth</strong>. Wear headphones, so the original does not reach the microphone.</p>
+<ol>
+<li>Pick the voice line and the language to dub. Picking <strong>Original (ADR)</strong> re-records the original language.</li>
+<li>Press <strong>Space</strong>: the original plays a few seconds before the line, three beeps count down, and recording starts
+on the fourth, silent beat. The text scrolls past the playhead, word by word, between the <strong>IN</strong> and <strong>OUT</strong> marks.</li>
+<li>The take stops by itself at the end of the line (or press <strong>Space</strong>). Badges tell you whether you started
+<strong>on cue</strong> and how much <strong>longer</strong> or <strong>shorter</strong> than the original you were.</li>
+<li><strong>Play</strong> plays your take in sync with the original; <strong>Hear</strong> switches between your take and the original.
+<strong>Redo</strong> (or <strong>R</strong>) records another take; every take is kept and can be picked again in <strong>TAKE</strong>.</li>
+<li><strong>Validate &amp; next</strong> (or <strong>Enter</strong>) keeps the take and moves to the next line to record.</li>
+<li><strong>Build dub</strong> places the kept takes on the original timeline and adds them as that language's dub (or, for
+<strong>Original (ADR)</strong>, <strong>Replace original</strong>). Words are then timed on your takes when <strong>Qwen3</strong> word timing is installed.</li>
+</ol>
+<p>Takes are saved as you go: close the window and come back later to pick up where you left off.
+<strong>Booth settings</strong> sets the microphone, gain (<strong>Auto</strong> works as in the recorder), how much of the original plays
+before the line, the beeps, what you hear while recording and the scrolling speed.</p>
 <h3 id="adding-your-own-dubs">Adding your own dubs</h3>
 <p>Already have recorded dubs? Click the <strong>+</strong> next to the AUDIO selector and pick or record the clip. A window then
 asks which language it is:</p>

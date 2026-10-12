@@ -133,12 +133,12 @@ in den Editoren unter macOS und Linux funktionieren, wurden dort jedoch noch nic
 <h2 id="quick-start">Schnellstart </h2>
 <p>Von einem Audio-Clip zu synchronisierten Untertiteln auf dem Bildschirm in wenigen Minuten.</p>
 <p>Alle Funktionen von SubVox Pro erreichen Sie außerdem mit einem Klick über <strong>Tools ▸ SubVox Pro ▸ Hub</strong>: ein Fenster mit Kacheln, über die Sie
-den Voice Line Editor, die Stapelverarbeitung, Google Sheets, den Anbietervergleich,
+den Voice Line Editor, die Dub Booth, die Stapelverarbeitung, Google Sheets, den Anbietervergleich,
 die zusätzlichen Offline-Modelle, den MCP-Server für KI-Assistenten, die Beispielszenen, die Dokumentation und die Einstellungen öffnen.
-Der Startbildschirm verfügt über <strong>neun Kacheln</strong>. <strong>Documentation</strong> öffnet einen zweiten Bildschirm mit <strong>Online</strong> (Anleitung,
+Der Startbildschirm verfügt über <strong>zehn Kacheln</strong>. <strong>Documentation</strong> öffnet einen zweiten Bildschirm mit <strong>Online</strong> (Anleitung,
 Anbieterleitfaden und Skript-Referenz mit einer Sprachauswahl für Englisch und Französisch), <strong>Local</strong> (das englische PDF,
 das offline verfügbar ist) und <strong>Provider Setup</strong> (dasselbe PDF, direkt im Abschnitt zur Einrichtung der Anbieter geöffnet). Mit <strong>Back</strong> gelangen Sie zum Startbildschirm zurück.</p>
-<p><img alt="Der SubVox Pro Hub mit seinen neun Werkzeugkacheln" src="Images/subvoxpro-hub.png"/></p>
+<p><img alt="Der SubVox Pro Hub mit seinen zehn Werkzeugkacheln" src="Images/subvoxpro-hub.png"/></p>
 <p><img alt="Dokumentationsbildschirm im Hub: Online, Local, Provider Setup und Back" src="Images/subvoxpro-hub-documentation.png"/></p>
 <p><strong>1. Transkriptionsmethode wählen.</strong> Fügen Sie entweder einen API-Schlüssel für einen Spracherkennungsdienst unter
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong> ein (<a href="providers.html">wo Sie einen erhalten</a>) oder verwenden Sie unter Windows <strong>Whisper</strong> oder
@@ -215,6 +215,29 @@ anklicken, um sie zu übernehmen.</li>
 Wort anhand Ihrer Aufnahme getimt wird. Ist das <strong>Qwen3</strong>-Wort-Timing installiert, verfeinert es diese Zeiten.
 <strong>Undo</strong> stellt die vorherigen Zeiten wieder her.</li>
 </ul>
+<h3 id="dubbing-in-sync-with-the-original-dub-booth">Synchron zum Original synchronisieren (Dub Booth) </h3>
+<img alt="Die Dub Booth: die zu synchronisierende Zeile, das Original und Ihre Aufnahme auf einem laufenden Band" src="Images/subvoxpro-dub-booth.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>Die <strong>Dub Booth</strong> nimmt eine Synchronisation so auf, wie Sprecher es tun: Zeile für Zeile, über die
+Originalaufnahme, damit Ihre Aufnahme genau dort liegt, wo die Originalzeile ist. Öffnen Sie sie über <strong>+ Add audio ▸
+Dub over the original</strong>, den Hub oder <strong>Tools ▸ SubVox Pro ▸ Dub Booth</strong>. Tragen Sie Kopfhörer, damit das Original
+nicht ins Mikrofon gelangt.</p>
+<ol>
+<li>Wählen Sie die Voice Line und die zu synchronisierende Sprache. <strong>Original (ADR)</strong> nimmt die Originalsprache neu auf.</li>
+<li>Drücken Sie die <strong>Leertaste</strong>: Das Original spielt einige Sekunden vor der Zeile, drei Pieptöne zählen herunter, und
+die Aufnahme beginnt auf dem vierten, stummen Schlag. Der Text läuft Wort für Wort am Abspielkopf vorbei, zwischen
+den Marken <strong>IN</strong> und <strong>OUT</strong>.</li>
+<li>Die Aufnahme endet am Ende der Zeile von selbst (oder drücken Sie die <strong>Leertaste</strong>). Plaketten zeigen, ob Sie
+<strong>on cue</strong> (im Timing) begonnen haben und um wie viel Sie länger (<strong>longer</strong>) oder kürzer (<strong>shorter</strong>) als das Original waren.</li>
+<li><strong>Play</strong> spielt Ihre Aufnahme synchron zum Original; <strong>Hear</strong> wechselt zwischen Ihrer Aufnahme und dem Original.
+<strong>Redo</strong> (oder <strong>R</strong>) nimmt eine weitere Aufnahme auf; alle Aufnahmen bleiben erhalten und lassen sich unter <strong>TAKE</strong> wieder wählen.</li>
+<li><strong>Validate &amp; next</strong> (oder <strong>Eingabe</strong>) behält die Aufnahme und geht zur nächsten aufzunehmenden Zeile.</li>
+<li><strong>Build dub</strong> legt die behaltenen Aufnahmen auf die Zeitleiste des Originals und fügt sie als Synchronisation
+dieser Sprache hinzu (bei <strong>Original (ADR)</strong>: <strong>Replace original</strong>). Ist das <strong>Qwen3</strong>-Wort-Timing installiert,
+werden die Wörter anschließend auf Ihre Aufnahmen getimt.</li>
+</ol>
+<p>Aufnahmen werden laufend gespeichert: Schließen Sie das Fenster und machen Sie später dort weiter, wo Sie aufgehört
+haben. <strong>Booth settings</strong> stellt Mikrofon, Verstärkung (<strong>Auto</strong> funktioniert wie im Aufnahmefenster), den Vorlauf
+des Originals vor der Zeile, die Pieptöne, das während der Aufnahme Gehörte und die Laufgeschwindigkeit ein.</p>
 <h3 id="adding-your-own-dubs">Eigene Synchronisationen hinzufügen </h3>
 <p>Sie haben bereits aufgenommene Synchronisationen? Klicken Sie auf das <strong>+</strong> neben der AUDIO-Auswahl und wählen oder nehmen
 Sie den Clip auf. Ein Fenster fragt dann nach seiner Sprache:</p>

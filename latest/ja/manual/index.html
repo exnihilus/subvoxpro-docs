@@ -131,9 +131,9 @@ macOSおよびLinuxのエディターでも動作すると考えられますが�
 <hr/>
 <h2 id="quick-start">クイックスタート </h2>
 <p>1つのオーディオクリップから、数分で画面上に音声と同期した字幕を表示できます。</p>
-<p>SubVox Proのすべての機能には、<strong>Tools ▸ SubVox Pro ▸ Hub</strong>からワンクリックでアクセスできます。このタイル形式のウィンドウから、ボイスラインエディター、バッチ処理、Google Sheets、プロバイダーの比較、追加のオフラインモデル、AIアシスタント用のMCPサーバー、サンプルシーン、ドキュメント、設定を開けます。ホーム画面には<strong>9つのタイル</strong>があります。<strong>Documentation</strong>を選択すると、<strong>Online</strong>（ガイド、プロバイダーのガイド、スクリプトリファレンス。英語／フランス語の切り替えが可能）、<strong>Local</strong>（オフラインで利用できる英語のPDF）、<strong>Provider Setup</strong>（同じPDFのProvider Setupセクションを直接開く）の画面が開きます。
+<p>SubVox Proのすべての機能には、<strong>Tools ▸ SubVox Pro ▸ Hub</strong>からワンクリックでアクセスできます。このタイル形式のウィンドウから、ボイスラインエディター、Dub Booth、バッチ処理、Google Sheets、プロバイダーの比較、追加のオフラインモデル、AIアシスタント用のMCPサーバー、サンプルシーン、ドキュメント、設定を開けます。ホーム画面には<strong>10個のタイル</strong>があります。<strong>Documentation</strong>を選択すると、<strong>Online</strong>（ガイド、プロバイダーのガイド、スクリプトリファレンス。英語／フランス語の切り替えが可能）、<strong>Local</strong>（オフラインで利用できる英語のPDF）、<strong>Provider Setup</strong>（同じPDFのProvider Setupセクションを直接開く）の画面が開きます。
 <strong>Back</strong>でホーム画面に戻ります。</p>
-<p><img alt="9つのツールタイルを備えたSubVox Pro Hub" src="Images/subvoxpro-hub.png"/></p>
+<p><img alt="10個のツールタイルを備えたSubVox Pro Hub" src="Images/subvoxpro-hub.png"/></p>
 <p><img alt="Hub内のDocumentation画面：Online、Local、Provider Setup、Back" src="Images/subvoxpro-hub-documentation.png"/></p>
 <p><strong>1. 文字起こしの方法を選択します。</strong>音声認識サービスのAPIキーを
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong>に貼り付けるか（<a href="providers.html">取得方法はこちら</a>）、Windowsでは<strong>Whisper</strong>または
@@ -182,6 +182,18 @@ SubVox.Play(myVoiceLine);
 <li>「<strong>Stop</strong>」の後、テイク全体がもう一度確認されます。実際に言った赤い単語はクリックして承認できます。</li>
 <li>「<strong>Use recording</strong>」を選択すると、いつもどおり（トラックの置き換えまたは吹き替えの追加）テイクが追加され、各単語のタイミングはテイクから設定されます。<strong>Qwen3</strong> の単語タイミングがインストールされている場合は、それがタイミングを精密化します。「<strong>Undo</strong>」で以前のタイミングに戻せます。</li>
 </ul>
+<h3 id="dubbing-in-sync-with-the-original-dub-booth">原音に合わせて吹き替える（Dub Booth） </h3>
+<img alt="Dub Booth：吹き替えるライン、原音、自分のテイクがスクロールする帯に表示される" src="Images/subvoxpro-dub-booth.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p><strong>Dub Booth</strong> は、声優と同じやり方で吹き替えを録音します。原音の演技に重ねて1ラインずつ録音するので、テイクは元のラインと同じ位置に収まります。<strong>+ Add audio ▸ Dub over the original</strong>、Hub、または <strong>Tools ▸ SubVox Pro ▸ Dub Booth</strong> から開きます。原音がマイクに入らないよう、ヘッドホンを使用してください。</p>
+<ol>
+<li>ボイスラインと吹き替える言語を選択します。<strong>Original (ADR)</strong> を選ぶと元の言語を録り直します。</li>
+<li><strong>Space</strong> を押します。ラインの数秒前から原音が再生され、3回のビープでカウントダウンし、4拍目（無音）で録音が始まります。テキストは <strong>IN</strong> と <strong>OUT</strong> のマークの間で、再生ヘッドの下を単語ごとに流れます。</li>
+<li>テイクはラインの終わりで自動的に止まります（または <strong>Space</strong> を押します）。バッジに、タイミングどおりに入れたか（<strong>on cue</strong>）、原音よりどれだけ長いか（<strong>longer</strong>）短いか（<strong>shorter</strong>）が表示されます。</li>
+<li><strong>Play</strong> はテイクを原音と同期して再生し、<strong>Hear</strong> でテイクと原音を切り替えます。<strong>Redo</strong>（または <strong>R</strong>）で別のテイクを録音します。テイクはすべて保持され、<strong>TAKE</strong> で選び直せます。</li>
+<li><strong>Validate &amp; next</strong>（または <strong>Enter</strong>）でテイクを確定し、次に録音するラインへ進みます。</li>
+<li><strong>Build dub</strong> は確定したテイクを原音のタイムライン上に配置し、その言語の吹き替えとして追加します（<strong>Original (ADR)</strong> の場合は <strong>Replace original</strong>）。<strong>Qwen3</strong> の単語タイミングがインストールされていれば、単語のタイミングがテイクに合わせて設定されます。</li>
+</ol>
+<p>テイクは随時保存されます。ウィンドウを閉じても、後で続きから再開できます。<strong>Booth settings</strong> では、マイク、ゲイン（<strong>Auto</strong> は録音ウィンドウと同じ動作）、ラインの前に再生する原音の長さ、ビープ、録音中に聞こえる音、スクロール速度を設定できます。</p>
 <h3 id="adding-your-own-dubs">独自の吹き替えの追加 </h3>
 <p>録音済みの吹き替えがある場合は、AUDIOセレクターの横にある <strong>+</strong> をクリックし、クリップを選択または録音します。続いて、その言語を尋ねるウィンドウが表示されます。</p>
 <ul>

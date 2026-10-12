@@ -133,12 +133,12 @@ devraient aussi fonctionner sous macOS et Linux, mais n’y ont pas encore été
 <hr/>
 <h2 id="quick-start">Démarrage rapide </h2>
 <p>D’un clip audio à des sous-titres synchronisés, en quelques minutes.</p>
-<p><strong>Tools ▸ SubVox Pro ▸ Hub</strong> regroupe tous les outils en <strong>neuf tuiles</strong> : éditeur de voicelines, traitement par lot,
+<p><strong>Tools ▸ SubVox Pro ▸ Hub</strong> regroupe tous les outils en <strong>dix tuiles</strong> : éditeur de voicelines, Dub Booth, traitement par lot,
 Google Sheets, comparaison des fournisseurs, modèles locaux supplémentaires, serveur MCP pour les assistants IA,
 scènes d’exemple, documentation et réglages. <strong>Documentation</strong> ouvre un second écran avec <strong>Online</strong> (site),
 <strong>Local</strong> (le PDF anglais, hors ligne) et <strong>Provider Setup</strong> (le même PDF, ouvert directement à la configuration des
 fournisseurs) ; <strong>Back</strong> revient à l’accueil.</p>
-<p><img alt="Le Hub SubVox Pro avec ses neuf tuiles" src="Images/subvoxpro-hub.png"/></p>
+<p><img alt="Le Hub SubVox Pro avec ses dix tuiles" src="Images/subvoxpro-hub.png"/></p>
 <p>La tuile <strong>Documentation</strong> propose deux choix, <strong>Online</strong> et <strong>Local</strong>.
 <strong>Online</strong> ouvre ce site (guide, fournisseurs et référence d’API), en anglais ou en français.
 <strong>Local</strong> ouvre le PDF anglais, lisible hors connexion. <strong>Back</strong> revient à l’accueil.
@@ -222,6 +222,29 @@ pour les accepter.</li>
 calé sur votre prise. Si le timing des mots <strong>Qwen3</strong> est installé, il affine ces timings. <strong>Undo</strong> rétablit les
 timings précédents.</li>
 </ul>
+<h3 id="dubbing-in-sync-with-the-original-dub-booth">Doubler en synchro avec l’original (Dub Booth) </h3>
+<img alt="Le Dub Booth : la ligne à doubler, l’original et votre prise sur une bande qui défile" src="Images/subvoxpro-dub-booth.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>Le <strong>Dub Booth</strong> enregistre un doublage comme le font les comédiens : une ligne à la fois, par-dessus le jeu
+original, pour que votre prise tombe là où se trouve la ligne originale. Ouvrez-le depuis <strong>+ Add audio ▸ Dub over
+the original</strong>, le Hub ou <strong>Tools ▸ SubVox Pro ▸ Dub Booth</strong>. Portez un casque, pour que l’original n’atteigne pas
+le micro.</p>
+<ol>
+<li>Choisissez la voiceline et la langue à doubler. <strong>Original (ADR)</strong> réenregistre la langue d’origine.</li>
+<li>Appuyez sur <strong>Espace</strong> : l’original joue quelques secondes avant la ligne, trois bips décomptent et
+l’enregistrement démarre sur le quatrième temps, muet. Le texte défile mot à mot sous la tête de lecture, entre
+les repères <strong>IN</strong> et <strong>OUT</strong>.</li>
+<li>La prise s’arrête d’elle-même à la fin de la ligne (ou appuyez sur <strong>Espace</strong>). Des badges indiquent si vous êtes
+parti <strong>on cue</strong> (dans le temps) et de combien vous êtes plus long (<strong>longer</strong>) ou plus court (<strong>shorter</strong>) que l’original.</li>
+<li><strong>Play</strong> joue votre prise en synchro avec l’original ; <strong>Hear</strong> bascule entre votre prise et l’original.
+<strong>Redo</strong> (ou <strong>R</strong>) enregistre une autre prise ; toutes les prises sont gardées et peuvent être reprises dans <strong>TAKE</strong>.</li>
+<li><strong>Validate &amp; next</strong> (ou <strong>Entrée</strong>) garde la prise et passe à la ligne suivante à enregistrer.</li>
+<li><strong>Build dub</strong> place les prises gardées sur la timeline de l’original et les ajoute comme doublage de cette langue
+(ou, pour <strong>Original (ADR)</strong>, <strong>Replace original</strong>). Les mots sont ensuite calés sur vos prises si le timing des
+mots <strong>Qwen3</strong> est installé.</li>
+</ol>
+<p>Les prises sont sauvegardées au fil de l’eau : fermez la fenêtre et revenez plus tard pour reprendre où vous en
+étiez. <strong>Booth settings</strong> règle le micro, le gain (<strong>Auto</strong> fonctionne comme dans l’enregistreur), la part
+d’original jouée avant la ligne, les bips, ce que vous entendez pendant la prise et la vitesse de défilement.</p>
 <h3 id="adding-your-own-dubs">Ajouter vos propres doublages </h3>
 <p>Vous avez déjà des doublages enregistrés ? Cliquez sur le <strong>+</strong> à côté du sélecteur AUDIO et choisissez ou enregistrez le
 clip. Une fenêtre demande alors sa langue :</p>
