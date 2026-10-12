@@ -172,13 +172,22 @@ SubVox.Play(myVoiceLine);
 <img alt="Add an audio track: pick an audio clip or record with a microphone" src="Images/subvoxpro-new-voice-line-audio.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p><strong>Record with a microphone</strong>（位于 <strong>Add an audio track</strong> 或 AUDIO 选择器旁的 <strong>+</strong> 菜单中）会打开一个小型录音窗口：选择麦克风，观察音量电平，开始录音，回放试听，然后点击 <strong>Use recording</strong>。录制的音频会保存为
 WAV 文件，存放在台词资源所在的文件夹中。在 macOS 上，请在系统设置中允许 Unity 使用麦克风。</p>
+<h3 id="reading-along-while-you-record">边录边读 </h3>
+<img alt="录音窗口在录音时跟随文本：已识别的词显示为绿色" src="Images/subvoxpro-read-along.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>如果台词已有字幕，录音窗口会在 <strong>Read along</strong> 中显示字幕，方便您一边朗读文本一边录制配音。在下拉菜单中选择要朗读的语言（或 <strong>Off</strong>）。说话时，被识别的词会变为<strong>绿色</strong>，被跳过的词会变为<strong>红色</strong>；文本会平滑滚动以跟上进度。</p>
+<ul>
+<li>全部在您的电脑上免费运行：需要 <strong>Parakeet</strong> 或本地 <strong>Whisper</strong> 模型（<strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>）。</li>
+<li><strong>Retake</strong> 会丢弃当前录音并立即重新开始录音。</li>
+<li>点击 <strong>Stop</strong> 后，会再次检查整段录音。对于您确实说出的红色词，可以点击接受。</li>
+<li><strong>Use recording</strong> 会照常添加录音（替换音轨或添加配音），每个词的时间都取自您的录音。如果已安装 <strong>Qwen3</strong> 词级时间对齐，它会进一步精确这些时间。<strong>Undo</strong> 可恢复之前的时间。</li>
+</ul>
 <h3 id="adding-your-own-dubs">添加您自己的配音 </h3>
 <p>已经有录制好的配音？点击 AUDIO 选择器旁的 <strong>+</strong>，选择或录制音频剪辑。随后会弹出一个窗口询问其语言：</p>
 <ul>
 <li><strong>Replace a track</strong>：替换原始音频或某个现有配音；</li>
 <li><strong>Add a new track</strong>：选择其语言，将其添加为新的配音。</li>
 </ul>
-<p>台词会按比例放置在新音频上；拖动标记即可微调。若存在该语言的翻译台词，它们会显示在配音之上。</p>
+<p>台词会按比例放置在新音频上（如果您边录边读，则按录音定时）；拖动标记即可微调。若存在该语言的翻译台词，它们会显示在配音之上。</p>
 <h3 id="checking-your-subtitles">检查字幕 </h3>
 <ul>
 <li><strong>Show CPS</strong>（位于 <a href="#settings">Settings</a>）会显示每条字幕的阅读速度，并标记阅读速度过快的字幕。</li>
@@ -536,13 +545,13 @@ private void Shake()
 <tbody>
 <tr>
 <td><strong>Whisper</strong></td>
-<td>转写</td>
+<td>转写、边录边读</td>
 <td>1.6 GB（较大模型最高可达 3.1 GB）</td>
 <td>多种语言，支持自动检测</td>
 </tr>
 <tr>
 <td><strong>Parakeet</strong></td>
-<td>转写，即使没有显卡也能快速运行</td>
+<td>转写和边录边读，即使没有显卡也能快速运行</td>
 <td>670 MB</td>
 <td>25 种欧洲语言，支持自动检测</td>
 </tr>
@@ -578,7 +587,7 @@ private void Shake()
 </tr>
 <tr>
 <td><strong>Qwen3 Aligner</strong></td>
-<td>为转写结果和配音提供精确的词级时间信息</td>
+<td>为转写结果、配音和录音提供精确的词级时间信息</td>
 <td>1.0 GB</td>
 <td>11 种语言</td>
 </tr>

@@ -173,13 +173,22 @@ SubVox.Play(myVoiceLine);
 <h3 id="recording-audio">オーディオの録音 </h3>
 <img alt="Add an audio track: pick an audio clip or record with a microphone" src="Images/subvoxpro-new-voice-line-audio.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p>「<strong>Record with a microphone</strong>」（「<strong>Add an audio track</strong>」内、またはAUDIOセレクターの横にある「<strong>+</strong>」から選択）を選択すると、小さな録音ウィンドウが開きます。マイクを選択し、レベルを確認しながら録音します。再生して確認した後、「<strong>Use recording</strong>」を選択します。録音した音声は、ボイスラインと同じフォルダーにWAV形式で保存されます。macOSでは、システム設定でUnityによるマイクの使用を許可してください。</p>
+<h3 id="reading-along-while-you-record">録音しながらテキストを読む </h3>
+<img alt="録音中にテキストを追跡する録音ウィンドウ：認識された単語は緑" src="Images/subvoxpro-read-along.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<p>ボイスラインにすでに字幕がある場合、録音ウィンドウの「<strong>Read along</strong>」にその字幕が表示され、テキストを読みながら吹き替えを録音できます。読む言語をドロップダウンで選択します（または「<strong>Off</strong>」）。話すと、認識された単語は<strong>緑</strong>に、飛ばされた単語は<strong>赤</strong>に変わり、テキストは滑らかにスクロールして追従します。</p>
+<ul>
+<li>すべてお使いのコンピューター上で無料で動作します。<strong>Parakeet</strong> またはローカルの <strong>Whisper</strong> モデルが必要です（<strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>）。</li>
+<li>「<strong>Retake</strong>」を押すとテイクを破棄し、すぐに録音をやり直します。</li>
+<li>「<strong>Stop</strong>」の後、テイク全体がもう一度確認されます。実際に言った赤い単語はクリックして承認できます。</li>
+<li>「<strong>Use recording</strong>」を選択すると、いつもどおり（トラックの置き換えまたは吹き替えの追加）テイクが追加され、各単語のタイミングはテイクから設定されます。<strong>Qwen3</strong> の単語タイミングがインストールされている場合は、それがタイミングを精密化します。「<strong>Undo</strong>」で以前のタイミングに戻せます。</li>
+</ul>
 <h3 id="adding-your-own-dubs">独自の吹き替えの追加 </h3>
 <p>録音済みの吹き替えがある場合は、AUDIOセレクターの横にある <strong>+</strong> をクリックし、クリップを選択または録音します。続いて、その言語を尋ねるウィンドウが表示されます。</p>
 <ul>
 <li><strong>Replace a track</strong>：元のオーディオまたは既存の吹き替えと置き換えます。</li>
 <li><strong>Add a new track</strong>：言語を選択して、新しい吹き替えとして追加します。</li>
 </ul>
-<p>ラインは新しいオーディオ上に比例配置されます。マーカーをドラッグして微調整してください。その言語の翻訳済みラインがある場合は、吹き替えに重ねて表示されます。</p>
+<p>ラインは新しいオーディオ上に比例配置されます（テキストを読みながら録音した場合はテイクからタイミングが設定されます）。マーカーをドラッグして微調整してください。その言語の翻訳済みラインがある場合は、吹き替えに重ねて表示されます。</p>
 <h3 id="checking-your-subtitles">字幕の確認 </h3>
 <ul>
 <li>「<strong>Show CPS</strong>」（<a href="#settings">「Settings」</a>内）を有効にすると、各字幕の読み取り速度が表示され、速すぎる字幕が示されます。</li>
@@ -536,13 +545,13 @@ Timelineの再生開始時に選択されます。クリップはマネージャ
 <tbody>
 <tr>
 <td><strong>Whisper</strong></td>
-<td>文字起こし</td>
+<td>文字起こし、録音中のテキスト追跡</td>
 <td>1.6 GB（より大規模なモデルでは最大3.1 GB）</td>
 <td>多数の言語（自動検出に対応）</td>
 </tr>
 <tr>
 <td><strong>Parakeet</strong></td>
-<td>文字起こし（グラフィックスカードがなくても高速）</td>
+<td>文字起こしと録音中のテキスト追跡（グラフィックスカードがなくても高速）</td>
 <td>670 MB</td>
 <td>ヨーロッパの25言語（自動検出）</td>
 </tr>
@@ -578,7 +587,7 @@ Timelineの再生開始時に選択されます。クリップはマネージャ
 </tr>
 <tr>
 <td><strong>Qwen3 Aligner</strong></td>
-<td>文字起こしと吹き替え音声の正確な単語タイミング</td>
+<td>文字起こし、吹き替え音声、録音テイクの正確な単語タイミング</td>
 <td>1.0 GB</td>
 <td>11言語</td>
 </tr>

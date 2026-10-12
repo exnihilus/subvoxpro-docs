@@ -205,6 +205,21 @@ Réglez <strong>Length</strong> : c’est la durée de lecture de la voiceline e
 Choisissez le microphone, surveillez le niveau, enregistrez, réécoutez, puis cliquez sur <strong>Use recording</strong>.
 La prise est enregistrée en WAV à côté de la voiceline. Sur macOS, autorisez Unity à utiliser le microphone dans
 les Réglages Système.</p>
+<h3 id="reading-along-while-you-record">Lire le texte pendant l’enregistrement </h3>
+<p><img alt="L’enregistreur suit le texte pendant l’enregistrement : mots entendus en vert" src="Images/subvoxpro-read-along.png"/></p>
+<p>Quand la voiceline a déjà des sous-titres, l’enregistreur les affiche dans <strong>Read along</strong> pour enregistrer un doublage
+en lisant le texte. Choisissez la langue à lire dans la liste (ou <strong>Off</strong>). Pendant que vous parlez, les mots passent en
+<strong>vert</strong> quand ils sont entendus et en <strong>rouge</strong> quand ils ont été sautés ; le texte défile en douceur pour suivre.</p>
+<ul>
+<li>Tout se passe sur votre ordinateur, gratuitement : il faut <strong>Parakeet</strong> ou un modèle <strong>Whisper</strong> local
+(<strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>).</li>
+<li><strong>Retake</strong> jette la prise et relance l’enregistrement aussitôt.</li>
+<li>Après <strong>Stop</strong>, toute la prise est vérifiée une dernière fois. Cliquez sur les mots rouges que vous avez bien dits
+pour les accepter.</li>
+<li><strong>Use recording</strong> ajoute la prise comme d’habitude (remplacer une piste ou ajouter un doublage), chaque mot étant
+calé sur votre prise. Si le timing des mots <strong>Qwen3</strong> est installé, il affine ces timings. <strong>Undo</strong> rétablit les
+timings précédents.</li>
+</ul>
 <h3 id="adding-your-own-dubs">Ajouter vos propres doublages </h3>
 <p>Vous avez déjà des doublages enregistrés ? Cliquez sur le <strong>+</strong> à côté du sélecteur AUDIO et choisissez ou enregistrez le
 clip. Une fenêtre demande alors sa langue :</p>
@@ -212,7 +227,7 @@ clip. Une fenêtre demande alors sa langue :</p>
 <li><strong>Replace a track</strong> : il remplace l’audio d’origine ou un doublage existant ;</li>
 <li><strong>Add a new track</strong> : choisissez sa langue pour l’ajouter comme nouveau doublage.</li>
 </ul>
-<p>Les lignes sont placées proportionnellement sur le nouvel audio ; déplacez les marqueurs pour les ajuster. Les lignes
+<p>Les lignes sont placées proportionnellement sur le nouvel audio (ou calées sur la prise si vous avez lu le texte) ; déplacez les marqueurs pour les ajuster. Les lignes
 traduites dans cette langue s’affichent sur le doublage quand elles existent.</p>
 <h3 id="checking-your-subtitles">Vérifier vos sous-titres </h3>
 <ul>
@@ -736,13 +751,13 @@ mais ils fonctionnent aussi sans.</p>
 <tbody>
 <tr>
 <td><strong>Whisper</strong></td>
-<td>Transcription</td>
+<td>Transcription, lecture guidée à l’enregistrement</td>
 <td>1,6 Go, jusqu’à 3,1 Go pour les grands modèles</td>
 <td>Nombreuses langues, détection automatique</td>
 </tr>
 <tr>
 <td><strong>Parakeet</strong></td>
-<td>Transcription rapide, même sans carte graphique</td>
+<td>Transcription et lecture guidée à l’enregistrement, rapide même sans carte graphique</td>
 <td>670 Mo</td>
 <td>25 langues européennes, détectées automatiquement</td>
 </tr>
@@ -778,7 +793,7 @@ mais ils fonctionnent aussi sans.</p>
 </tr>
 <tr>
 <td><strong>Qwen3 Aligner</strong></td>
-<td>Timing exact des mots</td>
+<td>Timing exact des mots : transcriptions, doublages et prises enregistrées</td>
 <td>1,0 Go</td>
 <td>11 langues</td>
 </tr>
