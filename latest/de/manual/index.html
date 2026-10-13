@@ -295,10 +295,10 @@ wie früh er vor seinem ersten Wort erscheint und ob Untertitel an Satzzeichen e
 <li>Passt die Aufteilung nicht? Ändern Sie die <strong>Split settings</strong>: Am Ende der Zeile <strong>Smart split</strong> erscheint eine kleine Schaltfläche <strong>Re-split</strong>; klicken Sie darauf: Dieselben Wörter werden neu gruppiert, ohne erneute Transkription (und ohne erneute Kosten).</li>
 </ol>
 <p>Unter <strong>Word timing</strong> wählen Sie aus, woher die Zeitangaben für jedes Wort stammen: <strong>From the provider</strong> (Standard) behält die
-von der Transkription zurückgegebenen Zeitangaben bei, <strong>Qwen3 aligner (local)</strong> ordnet jedes Wort erneut zeitlich dem Audio zu, bevor die Untertitel aufgeteilt werden (die Schnitte liegen so auf den echten Pausen), ohne
-den Text zu ändern – die präziseste Option für wortweise angezeigte Untertitel (<a href="#qwen3-offline-word-timing">einmal installieren</a>).
+von der Transkription zurückgegebenen Zeitangaben bei. <strong>Built-in aligner</strong> und <strong>Qwen3 aligner (local)</strong> ordnen jedes Wort erneut zeitlich dem Audio zu, bevor die Untertitel aufgeteilt werden (die Schnitte liegen so auf den echten Pausen), ohne
+den Text zu ändern. Der integrierte Aligner muss nicht installiert werden und funktioniert in jeder Sprache; Qwen3 ist die präziseste Option für wortweise angezeigte Untertitel (<a href="#qwen3-offline-word-timing">einmal installieren</a>).
 Bei einer Sprache, die Qwen3 nicht unterstützt, werden die Zeitangaben des Anbieters beibehalten.
-Mit Qwen3 erscheint außerdem die Schaltfläche <strong>Re-align</strong>: Wenn Sie ein Wort korrigiert oder eine Trennstelle von Hand verschoben haben, ordnet sie die Wörter erneut dem Audio zu und behält dabei Ihren Text und Ihre Trennstellen bei.</p>
+Mit beiden Alignern erscheint außerdem die Schaltfläche <strong>Re-align</strong>: Wenn Sie ein Wort korrigiert oder eine Trennstelle von Hand verschoben haben, ordnet sie die Wörter erneut dem Audio zu und behält dabei Ihren Text und Ihre Trennstellen bei.</p>
 <p>Anbieter: AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, OpenAI oder <strong>Whisper</strong> und <strong>Parakeet</strong> offline. Sie sind sich nicht
 sicher, welchen Sie wählen sollen? Unter <strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> werden sie direkt miteinander verglichen – Preis, kostenloser Tarif,
 kommerzielle Nutzung, Sprachen.</p>
@@ -367,7 +367,8 @@ Generierung übersprungen.</p>
 <strong>Chatterbox</strong> (21 Sprachen, behält die Stimme jeder Figur bei), außerdem <strong>Qwen3 TTS 1.7B</strong> (zehn Sprachen, Stimmklonung anhand von Referenzaudio, vorgegebene Stimmen und Stimmgestaltung) und <strong>VoxCPM2</strong> (30 Sprachen, Stimmklonung anhand von Referenzaudio mit schriftlichen Stilanweisungen und Stimmgestaltung).</p>
 <ul>
 <li><strong>Word timing</strong> — lassen Sie die Einstellung auf <strong>Qwen3 aligner (local)</strong>, damit Wörter genau dann erscheinen, wenn sie gesprochen werden
-(<a href="#qwen3-offline-word-timing">einmal installieren</a>), oder wählen Sie <strong>Estimated</strong>, wenn Sie Untertitel nicht Wort für
+(<a href="#qwen3-offline-word-timing">einmal installieren</a>); <strong>Built-in aligner</strong> ordnet jedes Wort ohne Installation dem
+erzeugten Audio zu, etwas weniger präzise; oder wählen Sie <strong>Estimated</strong>, wenn Sie Untertitel nicht Wort für
 Wort einblenden.</li>
 <li><strong>Voice direction</strong> — mit der Sprechblasen-Schaltfläche neben der Stimme geben Sie den Tonfall vor (zum Beispiel
 <em>ruhig, flüsternd</em>), sofern der Anbieter solche Anweisungen unterstützt.</li>
@@ -1403,6 +1404,7 @@ auf eine Zeile, um den zugehörigen Untertitel abzuspielen.</p>
 </tr>
 </tbody>
 </table>
+<p><em>Word timing bei Sprachfassungen</em> bezieht sich auf den Qwen3-Aligner. Der <strong>Built-in aligner</strong> ordnet die Wörter einer Sprachfassung in jeder Sprache zu, etwas weniger präzise.</p>
 <hr/>
 <h2 id="your-data-and-online-services">Ihre Daten und Online-Dienste </h2>
 <p>SubVox Pro sendet nur dann Daten an einen Online-Dienst, wenn Sie eine Aktion starten, die diesen nutzt. Die Übertragung erfolgt direkt

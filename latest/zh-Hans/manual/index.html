@@ -225,7 +225,7 @@ WAV 文件，存放在台词资源所在的文件夹中。在 macOS 上，请在
 <li>点击 <strong>Transcribe</strong>：音频将转换为词，并直接组织为字幕。<strong>Split settings</strong> 用于设定单条字幕的最长时长、字幕比第一个词的发声时间提前多久显示，以及字幕是否应在标点符号处结束。如果该语音行已有字幕，替换前会先请您确认。</li>
 <li>对分割结果不满意？修改 <strong>Split settings</strong> 后，<strong>Smart split</strong> 一行末尾会出现一个小的 <strong>Re-split</strong> 按钮，点击它：同样的词会重新组织为字幕，无需再次转写（也不会再次产生费用）。</li>
 </ol>
-<p><strong>Word timing</strong> 用于选择每个词的时间信息来源：<strong>From the provider</strong>（默认）保留转写返回的时间信息；<strong>Qwen3 aligner (local)</strong> 会在分割字幕之前重新确定每个词在音频中的时间位置，且不更改文本——这是逐词显示字幕最精确的选项（<a href="#qwen3-offline-word-timing">安装一次即可</a>）。对于 Qwen3 不支持的语言，将保留提供商的时间信息。选择 Qwen3 后还会出现 <strong>Re-align</strong> 按钮：手动修改某个词或移动分割点后，点击它即可在保留文本和分割点的同时，将各词重新对齐到音频上。</p>
+<p><strong>Word timing</strong> 用于选择每个词的时间信息来源：<strong>From the provider</strong>（默认）保留转写返回的时间信息；<strong>Built-in aligner</strong> 和 <strong>Qwen3 aligner (local)</strong> 会在分割字幕之前重新确定每个词在音频中的时间位置，且不更改文本。内置对齐器无需安装，支持所有语言；Qwen3 是逐词显示字幕最精确的选项（<a href="#qwen3-offline-word-timing">安装一次即可</a>）。对于 Qwen3 不支持的语言，将保留提供商的时间信息。选择任一对齐器后还会出现 <strong>Re-align</strong> 按钮：手动修改某个词或移动分割点后，点击它即可在保留文本和分割点的同时，将各词重新对齐到音频上。</p>
 <p>提供商：AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、OpenAI，或离线的 <strong>Whisper</strong> 和 <strong>Parakeet</strong>。不确定该选哪个？<strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> 可将它们并列展示，方便比较价格、免费套餐、商业使用和支持的语言。</p>
 <img alt="Provider Comparison window, Transcription tab" src="Images/subvoxpro-provider-comparison.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <blockquote>
@@ -270,7 +270,7 @@ WAV 文件，存放在台词资源所在的文件夹中。在 macOS 上，请在
 <p>提供商：InWorld、ElevenLabs、Gemini、OpenAI、Google Cloud、Azure、Cartesia，以及离线版 <strong>Kokoro</strong>（英语）和
 <strong>Chatterbox</strong>（21 种语言，保留每个角色的声音），此外还有 <strong>Qwen3 TTS 1.7B</strong>（10 种语言，支持参考音频克隆、固定音色和音色设计）以及 <strong>VoxCPM2</strong>（30 种语言，支持通过文字控制风格的参考音频克隆，以及音色设计）。</p>
 <ul>
-<li><strong>Word timing</strong> — <strong>Qwen3 aligner (local)</strong> 使词在被说出的准确时刻显示（<a href="#qwen3-offline-word-timing">只需安装一次</a>）；<strong>Estimated</strong> 将每条字幕中各词的显示时间均匀分配到该字幕的时长内；如果不采用逐词显示，<strong>None</strong> 仅保留字幕的时间信息。安装对齐器后，默认使用 <strong>Qwen3 aligner</strong>；安装前则默认使用 <strong>None</strong>。</li>
+<li><strong>Word timing</strong> — <strong>Qwen3 aligner (local)</strong> 使词在被说出的准确时刻显示（<a href="#qwen3-offline-word-timing">只需安装一次</a>）；<strong>Built-in aligner</strong> 无需安装即可将每个词对齐到生成的音频上（精度稍低）；<strong>Estimated</strong> 将每条字幕中各词的显示时间均匀分配到该字幕的时长内；如果不采用逐词显示，<strong>None</strong> 仅保留字幕的时间信息。安装对齐器后，默认使用 <strong>Qwen3 aligner</strong>；安装前则默认使用 <strong>None</strong>。</li>
 <li><strong>Voice direction</strong> — 对于支持配音指导的提供商，音色旁边的对话气泡按钮可用于指定演绎的语气（例如
 <em>平静、低语</em>）。</li>
 <li><strong>REGEN</strong> — 当某条字幕的配音不再匹配（文本、音色或配音风格预设发生变化）时，该条目上会出现橙色的 <strong>REGEN</strong> 状态徽标。将鼠标悬停在徽标上可查看原因，点击它即可仅重新生成所需部分。</li>
@@ -1146,6 +1146,7 @@ ElevenLabs 克隆声音。</li>
 </tr>
 </tbody>
 </table>
+<p>“配音的逐词时间信息”指 Qwen3 对齐器的支持情况。<strong>Built-in aligner</strong> 可在所有语言中对齐配音的逐词时间（精度稍低）。</p>
 <hr/>
 <h2 id="your-data-and-online-services">你的数据与在线服务 </h2>
 <p>SubVox Pro 仅在你启动使用在线服务的操作时，才会向该服务发送数据。数据直接从你的计算机发送，使用你自己的 API 密钥，且仅包含该操作所需的内容：</p>

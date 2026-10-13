@@ -303,10 +303,10 @@ sous-titres, une confirmation est demandée avant de les remplacer.</li>
 sont regroupés à nouveau, sans nouvelle transcription (ni nouveau coût).</li>
 </ol>
 <p><strong>Word timing</strong> permet de choisir la source des timings de mots. <strong>From the provider</strong>, par défaut, conserve celui de
-la transcription. <strong>Qwen3 aligner (local)</strong> recale chaque mot sur l’audio avant le découpage en sous-titres (les coupes tombent donc sur les vraies pauses), sans modifier le texte : c’est
+la transcription. <strong>Built-in aligner</strong> et <strong>Qwen3 aligner (local)</strong> recalent chaque mot sur l’audio avant le découpage en sous-titres (les coupes tombent donc sur les vraies pauses), sans modifier le texte. L’aligneur intégré ne demande aucune installation et fonctionne dans toutes les langues ; Qwen3 est
 le choix le plus précis pour l’affichage mot par mot (<a href="#qwen3-offline-word-timing">installation</a>).
 Si Qwen3 ne prend pas la langue en charge, les timings du fournisseur sont conservés.
-Avec Qwen3, un bouton <strong>Re-align</strong> apparaît aussi : après avoir corrigé un mot ou déplacé une coupure à la main,
+Avec l’un ou l’autre aligneur, un bouton <strong>Re-align</strong> apparaît aussi : après avoir corrigé un mot ou déplacé une coupure à la main,
 cliquez dessus pour recaler les mots sur l’audio en gardant votre texte et vos coupures.</p>
 <p>Fournisseurs : AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, OpenAI, ou <strong>Whisper</strong> et <strong>Parakeet</strong>
 hors connexion. <strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> compare prix, offre gratuite, utilisation commerciale
@@ -377,7 +377,8 @@ ne sait pas jouer : il est ignoré à la génération.</p>
 (anglais), <strong>Chatterbox</strong> (21 langues, en gardant la voix du personnage), <strong>Qwen3 TTS 1.7B</strong> (dix langues, clonage de références, voix fixes et descriptions de voix) et <strong>VoxCPM2</strong> (30 langues, clonage avec consignes de jeu, et voix décrites).</p>
 <ul>
 <li><strong>Word timing</strong> : <strong>Qwen3 aligner (local)</strong> affiche les mots au moment exact où ils sont prononcés
-(<a href="#qwen3-offline-word-timing">installation</a>). <strong>Estimated</strong> suffit si vous n’affichez pas les mots un à un.</li>
+(<a href="#qwen3-offline-word-timing">installation</a>). <strong>Built-in aligner</strong> cale chaque mot sur l’audio généré sans rien
+installer, un peu moins précisément. <strong>Estimated</strong> suffit si vous n’affichez pas les mots un à un.</li>
 <li><strong>Voice direction</strong> : le bouton bulle à côté de la voix transmet une indication de jeu (<em>calm, whispering</em>…)
 aux fournisseurs qui la prennent en compte.</li>
 <li><strong>REGEN</strong> : ce badge orange signale qu’un doublage ne correspond plus au texte, à la voix ou à la personnalité.
@@ -1413,6 +1414,7 @@ l’expressivité de Chatterbox, installation ou configuration, et nettoyage des
 </tr>
 </tbody>
 </table>
+<p><em>Timing des mots du doublage</em> indique l’aligneur Qwen3. <strong>Built-in aligner</strong> cale les mots d’un doublage dans toutes les langues, un peu moins précisément.</p>
 <hr/>
 <h2 id="your-data-and-online-services">Vos données et les services en ligne </h2>
 <p>SubVox Pro n’envoie quelque chose à un service en ligne que lorsque vous lancez une action qui l’utilise. L’envoi part
