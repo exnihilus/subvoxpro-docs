@@ -189,11 +189,13 @@ SubVox.Play(myVoiceLine);
 <li>ボイスラインと吹き替える言語を選択します。<strong>Original (ADR)</strong> を選ぶと元の言語を録り直します。</li>
 <li><strong>Space</strong> を押します。ラインの数秒前から原音が再生され、3回のビープでカウントダウンし、4拍目（無音）で録音が始まります。テキストは <strong>IN</strong> と <strong>OUT</strong> のマークの間で、再生ヘッドの下を単語ごとに流れます。</li>
 <li>テイクはラインの終わりで自動的に止まります（または <strong>Space</strong> を押します）。バッジに、タイミングどおりに入れたか（<strong>on cue</strong>）、原音よりどれだけ長いか（<strong>longer</strong>）短いか（<strong>shorter</strong>）が表示されます。バッジにカーソルを合わせると両方の長さが表示されます。録音中に失敗したら、<strong>Discard</strong>（または <strong>Esc</strong>）で終わりを待たずにそのテイクを破棄できます。</li>
-<li><strong>Play</strong> はテイクを原音と同期して再生します。隣のメニューで再生範囲を選べます：<strong>This line</strong>、<strong>With previous line</strong>（修正したテイクが前のラインと自然につながるか確認）、<strong>All lines</strong>（それぞれ確定したテイクで再生）。<strong>Hear</strong> でテイクと原音を切り替えます。<strong>Redo</strong>（または <strong>R</strong>）で別のテイクを録音します。テイクはすべて保持され、<strong>TAKE</strong> で選び直せます。確定したテイクには ✓ が付きます。すぐ隣のゴミ箱ボタンで選択中のテイクを削除できます。</li>
+<li><strong>Play</strong> はテイクを原音と同期して再生します。隣のメニューで再生範囲を選べます：<strong>This line</strong>、<strong>With previous line</strong>（修正したテイクが前のラインと自然につながるか確認）、<strong>All lines</strong>（それぞれ確定したテイクで再生）。<strong>ORIGINAL</strong> と <strong>YOUR TAKE</strong> のトラック左にあるスピーカーアイコンで、聞く音を選べます（<strong>A</strong> で両者を切り替え）。<strong>Redo</strong>（または <strong>R</strong>）で別のテイクを録音します。テイクはすべて保持され、<strong>TAKE</strong> で選び直せます。確定したテイクには ✓ が付きます。すぐ隣のゴミ箱ボタンで選択中のテイクを削除できます（新しいテイクには空いている最小の番号が付きます）。</li>
 <li><strong>Validate &amp; next</strong>（または <strong>Enter</strong>）でテイクを確定し、次に録音するラインへ進みます。<strong>Unvalidate</strong> で確定を取り消せます。</li>
 <li><strong>Build dub</strong> は確定したテイクを原音のタイムライン上に配置し、その言語の吹き替えとして追加します（<strong>Original (ADR)</strong> の場合は <strong>Replace original</strong>）。その後、モデルをインストールしなくても、単語のタイミングが 1 行ずつテイクに合わせて設定されます。さらに正確なタイミングが必要な場合は、<strong>Qwen3</strong> の単語タイミング（Additional Models）をインストールしてください。</li>
 </ol>
-<p>テイクは随時保存されます。ウィンドウを閉じても、後で続きから再開できます。<strong>Booth settings</strong> では、マイク、ゲイン（<strong>Auto</strong> は録音ウィンドウと同じ動作）、ラインの前に再生する原音の長さ、ビープ、録音中に聞こえる音、スクロール速度（最小値：ラインが収まらない場合はテキストが速く流れます）を設定できます。<strong>Lines per take</strong> を使うと複数のラインを自然なペースで一度に録音でき、録音はラインごとのテイクに分割されます。</p>
+<p><strong>ラインが長すぎる場合：</strong>翻訳は原文より 20〜30% 長くなりがちです。原音の時間内に言い切るのが難しいラインでは、録音前にテキストの下に注意が表示されます。<strong>Shorten</strong> は翻訳プロバイダー（OpenAI、Claude、Gemini、DeepSeek）に、同じ意味でその時間に収まる短いラインを依頼します。<strong>Undo</strong> で元のテキストに戻せます。</p>
+<p>バッジの隣の <strong>Fit to original</strong> は、声の高さを変えずにテイクを最大 10% 伸縮し、原音と同時に始まるよう位置を合わせます。結果は新しいテイクとして追加され、そのまま確定できます。10% を超えてずれている場合は録り直してください。それ以上伸縮すると不自然に聞こえます。</p>
+<p>テイクは随時保存されます。ウィンドウを閉じても、後で続きから再開できます。<strong>Booth settings</strong> では、マイク、ゲイン（<strong>Auto</strong> は録音ウィンドウと同じ動作）、ラインの前に再生する原音の長さ、ビープ、録音中に聞こえる音、スクロール速度（最小値：ラインが収まらない場合はテキストが速く流れます）を設定できます。ラインリスト上のメニューで、1 回の録音の範囲を選べます：<strong>Record one line</strong>、<strong>Record several lines</strong>（最初のラインをクリックし、最後のラインを Shift + クリック）、<strong>Record all lines</strong>（選択したラインから最後まで）。複数のラインは自然なペースで一度に録音され、ラインごとのテイクに分割されます。</p>
 <h3 id="adding-your-own-dubs">独自の吹き替えの追加 </h3>
 <p>録音済みの吹き替えがある場合は、AUDIOセレクターの横にある <strong>+</strong> をクリックし、クリップを選択または録音します。続いて、その言語を尋ねるウィンドウが表示されます。</p>
 <ul>

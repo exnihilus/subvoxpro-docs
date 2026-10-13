@@ -242,19 +242,29 @@ on the fourth, silent beat. The text scrolls past the playhead, word by word, be
 Botched it while recording? <strong>Discard</strong> (or <strong>Esc</strong>) throws the take away at once, without waiting for the end.</li>
 <li><strong>Play</strong> plays your take in sync with the original. The menu next to it picks what to play: <strong>This line</strong>,
 <strong>With previous line</strong> (to check that a correction follows the line before) or <strong>All lines</strong>, each with its
-validated take. <strong>Hear</strong> switches between your takes and the original. <strong>Redo</strong> (or <strong>R</strong>) records another take;
-every take is kept and can be picked again in <strong>TAKE</strong>, where the validated one is marked ✓; the bin next to it deletes the selected take.</li>
+validated take. The speaker icons left of the <strong>ORIGINAL</strong> and <strong>YOUR TAKE</strong> tracks choose what you hear
+(<strong>A</strong> swaps between them). <strong>Redo</strong> (or <strong>R</strong>) records another take; every take is kept and can be picked again
+in <strong>TAKE</strong>, where the validated one is marked ✓; the bin next to it deletes the selected take (a new take reuses
+the first free number).</li>
 <li><strong>Validate &amp; next</strong> (or <strong>Enter</strong>) marks the take as final and moves to the next line to record.
 <strong>Unvalidate</strong> takes it back.</li>
 <li><strong>Build dub</strong> places the kept takes on the original timeline and adds them as that language's dub (or, for
 <strong>Original (ADR)</strong>, <strong>Replace original</strong>). Words are then timed on your takes, line by line, with no model to
 install. Install <strong>Qwen3</strong> word timing (Additional Models) for even more precise timings.</li>
 </ol>
+<p><strong>Line too long?</strong> A translation often runs 20 to 30% longer than the original. When a line will be hard to say
+in the time of the original, a notice under its text says so before you record. <strong>Shorten</strong> asks your translator
+(OpenAI, Claude, Gemini or DeepSeek) for a shorter line with the same meaning that fits that time; <strong>Undo</strong> brings the
+previous text back.</p>
+<p><strong>Fit to original</strong>, next to the badges, stretches or compresses a take by up to 10%, without changing the pitch of
+the voice, and moves it so it starts with the original. The result is a new take, ready to validate. Further off
+than 10%? Redo the take: stretching it more would sound unnatural.</p>
 <p>Takes are saved as you go: close the window and come back later to pick up where you left off.
 <strong>Booth settings</strong> sets the microphone, gain (<strong>Auto</strong> works as in the recorder), how much of the original plays
 before the line, the beeps, what you hear while recording and the scrolling speed (a minimum: the text speeds up when a line would not fit).
-<strong>Lines per take</strong> records several lines in one go, at a natural pace: the recording is then split into one take
-per line.</p>
+The menu above the line list sets what one recording covers: <strong>Record one line</strong>, <strong>Record several lines</strong> (click
+the first line, then Shift-click the last) or <strong>Record all lines</strong> (from the selected line to the end). Several lines
+are recorded in one go, at a natural pace, then split into one take per line.</p>
 <h3 id="adding-your-own-dubs">Adding your own dubs</h3>
 <p>Already have recorded dubs? Click the <strong>+</strong> next to the AUDIO selector and pick or record the clip. A window then
 asks which language it is:</p>

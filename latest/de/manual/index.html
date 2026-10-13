@@ -232,9 +232,10 @@ Original waren; fahren Sie mit der Maus darüber, um beide Dauern zu sehen. Scho
 (oder <strong>Esc</strong>) verwirft sie sofort, ohne das Ende abzuwarten.</li>
 <li><strong>Play</strong> spielt Ihre Aufnahme synchron zum Original. Das Menü daneben wählt, was gespielt wird: <strong>This line</strong>,
 <strong>With previous line</strong> (um zu prüfen, ob eine Korrektur an die vorige Zeile anschließt) oder <strong>All lines</strong>, jeweils
-mit der bestätigten Aufnahme. <strong>Hear</strong> wechselt zwischen Ihren Aufnahmen und dem Original. <strong>Redo</strong> (oder <strong>R</strong>)
-nimmt eine weitere Aufnahme auf; alle Aufnahmen bleiben erhalten und lassen sich unter <strong>TAKE</strong> wieder wählen,
-wo die bestätigte mit ✓ markiert ist; der Papierkorb direkt daneben löscht die gewählte Aufnahme.</li>
+mit der bestätigten Aufnahme. Die Lautsprecher-Symbole links der Spuren <strong>ORIGINAL</strong> und <strong>YOUR TAKE</strong> wählen, was
+Sie hören (<strong>A</strong> wechselt zwischen beiden). <strong>Redo</strong> (oder <strong>R</strong>) nimmt eine weitere Aufnahme auf; alle Aufnahmen
+bleiben erhalten und lassen sich unter <strong>TAKE</strong> wieder wählen, wo die bestätigte mit ✓ markiert ist; der Papierkorb
+direkt daneben löscht die gewählte Aufnahme (eine neue Aufnahme erhält die erste freie Nummer).</li>
 <li><strong>Validate &amp; next</strong> (oder <strong>Eingabe</strong>) bestätigt die Aufnahme und geht zur nächsten aufzunehmenden Zeile.
 <strong>Unvalidate</strong> nimmt die Bestätigung zurück.</li>
 <li><strong>Build dub</strong> legt die behaltenen Aufnahmen auf die Zeitleiste des Originals und fügt sie als Synchronisation
@@ -242,11 +243,20 @@ dieser Sprache hinzu (bei <strong>Original (ADR)</strong>: <strong>Replace origi
 auf Ihre Aufnahmen getimt, ohne dass ein Modell installiert werden muss. Installieren Sie das <strong>Qwen3</strong>-Wort-Timing
 (Additional Models) für noch genauere Timings.</li>
 </ol>
+<p><strong>Zeile zu lang?</strong> Eine Übersetzung ist oft 20 bis 30 % länger als das Original. Wenn eine Zeile in der Zeit des
+Originals schwer zu sprechen ist, weist ein Hinweis unter ihrem Text vor der Aufnahme darauf hin. <strong>Shorten</strong> bittet
+Ihren Übersetzer (OpenAI, Claude, Gemini oder DeepSeek) um eine kürzere Zeile mit derselben Bedeutung, die in diese
+Zeit passt; <strong>Undo</strong> stellt den vorherigen Text wieder her.</p>
+<p><strong>Fit to original</strong> neben den Badges dehnt oder staucht eine Aufnahme um höchstens 10 %, ohne die Tonhöhe der Stimme
+zu ändern, und verschiebt sie so, dass sie mit dem Original beginnt. Das Ergebnis ist eine neue Aufnahme, bereit zur
+Bestätigung. Mehr als 10 % Abweichung? Nehmen Sie die Zeile neu auf: Stärkeres Dehnen würde unnatürlich klingen.</p>
 <p>Aufnahmen werden laufend gespeichert: Schließen Sie das Fenster und machen Sie später dort weiter, wo Sie aufgehört
 haben. <strong>Booth settings</strong> stellt Mikrofon, Verstärkung (<strong>Auto</strong> funktioniert wie im Aufnahmefenster), den Vorlauf
 des Originals vor der Zeile, die Pieptöne, das während der Aufnahme Gehörte und die Laufgeschwindigkeit ein (ein Mindestwert: Der Text läuft schneller, wenn
-eine Zeile sonst nicht passt). <strong>Lines per take</strong> nimmt mehrere Zeilen am Stück in natürlichem Tempo auf: Die
-Aufnahme wird danach in eine Aufnahme pro Zeile geteilt.</p>
+eine Zeile sonst nicht passt). Das Menü über der Zeilenliste legt fest, was eine
+Aufnahme umfasst: <strong>Record one line</strong>, <strong>Record several lines</strong> (erste Zeile anklicken, dann die letzte mit
+Umschalt-Klick) oder <strong>Record all lines</strong> (von der gewählten Zeile bis zum Ende). Mehrere Zeilen werden am Stück in
+natürlichem Tempo aufgenommen und danach in eine Aufnahme pro Zeile geteilt.</p>
 <h3 id="adding-your-own-dubs">Eigene Synchronisationen hinzufügen </h3>
 <p>Sie haben bereits aufgenommene Synchronisationen? Klicken Sie auf das <strong>+</strong> neben der AUDIO-Auswahl und wählen oder nehmen
 Sie den Clip auf. Ein Fenster fragt dann nach seiner Sprache:</p>

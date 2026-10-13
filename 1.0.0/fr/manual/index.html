@@ -239,9 +239,10 @@ l’original ; survolez-les pour voir les deux durées. Prise ratée en cours d�
 <strong>Échap</strong>) la jette aussitôt, sans attendre la fin.</li>
 <li><strong>Play</strong> joue votre prise en synchro avec l’original. Le menu à côté choisit ce qui est joué : <strong>This line</strong>,
 <strong>With previous line</strong> (pour vérifier qu’une correction s’enchaîne bien avec la ligne d’avant) ou <strong>All lines</strong>,
-chacune avec sa prise validée. <strong>Hear</strong> bascule entre vos prises et l’original. <strong>Redo</strong> (ou <strong>R</strong>) enregistre une
-autre prise ; toutes les prises sont gardées et peuvent être reprises dans <strong>TAKE</strong>, où la prise validée est
-marquée ✓ ; la corbeille juste à côté supprime la prise sélectionnée.</li>
+chacune avec sa prise validée. Les icônes de haut-parleur à gauche des pistes <strong>ORIGINAL</strong> et <strong>YOUR TAKE</strong>
+choisissent ce que vous entendez (<strong>A</strong> passe de l’une à l’autre). <strong>Redo</strong> (ou <strong>R</strong>) enregistre une autre prise ;
+toutes les prises sont gardées et peuvent être reprises dans <strong>TAKE</strong>, où la prise validée est marquée ✓ ; la
+corbeille juste à côté supprime la prise sélectionnée (une nouvelle prise reprend le premier numéro libre).</li>
 <li><strong>Validate &amp; next</strong> (ou <strong>Entrée</strong>) valide la prise et passe à la ligne suivante à enregistrer. <strong>Unvalidate</strong>
 retire la validation.</li>
 <li><strong>Build dub</strong> place les prises gardées sur la timeline de l’original et les ajoute comme doublage de cette langue
@@ -249,11 +250,20 @@ retire la validation.</li>
 sans modèle à installer. Installez le timing des mots <strong>Qwen3</strong> (Additional Models) pour des timings encore plus
 précis.</li>
 </ol>
+<p><strong>Ligne trop longue ?</strong> Une traduction est souvent 20 à 30 % plus longue que l’original. Quand une ligne sera
+difficile à dire dans le temps de l’original, un avertissement s’affiche sous son texte avant l’enregistrement.
+<strong>Shorten</strong> demande à votre traducteur (OpenAI, Claude, Gemini ou DeepSeek) une version plus courte, de même sens,
+qui tient dans ce temps ; <strong>Undo</strong> rétablit le texte précédent.</p>
+<p><strong>Fit to original</strong>, à côté des badges, étire ou compresse une prise de 10 % au plus, sans changer la hauteur de la
+voix, et la décale pour qu’elle commence avec l’original. Le résultat est une nouvelle prise, prête à valider. Plus
+de 10 % d’écart ? Refaites la prise : l’étirer davantage sonnerait faux.</p>
 <p>Les prises sont sauvegardées au fil de l’eau : fermez la fenêtre et revenez plus tard pour reprendre où vous en
 étiez. <strong>Booth settings</strong> règle le micro, le gain (<strong>Auto</strong> fonctionne comme dans l’enregistreur), la part
 d’original jouée avant la ligne, les bips, ce que vous entendez pendant la prise et la vitesse de défilement (un minimum : le texte accélère quand une ligne
-ne tiendrait pas). <strong>Lines per take</strong> enregistre plusieurs lignes d’un coup, à un rythme naturel : l’enregistrement
-est ensuite découpé en une prise par ligne.</p>
+ne tiendrait pas). Le menu au-dessus de la liste des lignes règle ce que couvre un
+enregistrement : <strong>Record one line</strong>, <strong>Record several lines</strong> (cliquez la première ligne, puis Maj-clic sur la
+dernière) ou <strong>Record all lines</strong> (de la ligne sélectionnée jusqu’à la fin). Plusieurs lignes s’enregistrent d’un
+coup, à un rythme naturel, puis sont découpées en une prise par ligne.</p>
 <h3 id="adding-your-own-dubs">Ajouter vos propres doublages </h3>
 <p>Vous avez déjà des doublages enregistrés ? Cliquez sur le <strong>+</strong> à côté du sélecteur AUDIO et choisissez ou enregistrez le
 clip. Une fenêtre demande alors sa langue :</p>
