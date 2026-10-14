@@ -203,6 +203,13 @@ SubVox.Play(myVoiceLine);
 <li><strong>Add a new track</strong>：言語を選択して、新しい吹き替えとして追加します。</li>
 </ul>
 <p>ラインは新しいオーディオ上に比例配置されます（テキストを読みながら録音した場合はテイクからタイミングが設定されます）。マーカーをドラッグして微調整してください。その言語の翻訳済みラインがある場合は、吹き替えに重ねて表示されます。</p>
+<h3 id="importing-subtitles-in-another-language">別の言語の字幕をインポートする </h3>
+<p>SUBTITLESセレクターの横にある<strong>+</strong>で<strong>.srt</strong>または<strong>.txt</strong>ファイルをインポートできます。すでに内容のあるボイスラインでは、ファイルの言語を尋ねるウィンドウが開きます。</p>
+<ul>
+<li><strong>Replace a track</strong>：元の字幕（ファイルのタイミングを使用）または既存の翻訳を置き換えます。</li>
+<li><strong>Add a new track</strong>：言語を選択して、新しい翻訳として追加します。</li>
+</ul>
+<p>翻訳は元のラインのタイミングを保持します。インポートされた各ラインは同じ位置にある元のラインに割り当てられます。ライン数が異なる<code>.srt</code>の場合は、その時刻に再生されている元のラインに割り当てられます。</p>
 <h3 id="checking-your-subtitles">字幕の確認 </h3>
 <ul>
 <li>「<strong>Show CPS</strong>」（<a href="#settings">「Settings」</a>内）を有効にすると、各字幕の読み取り速度が表示され、速すぎる字幕が示されます。</li>
@@ -777,6 +784,7 @@ ElevenLabsのボイスクローンを整理・削除できます。</li>
 </tbody>
 </table>
 <p>波形の上にある<strong>Markers</strong>、<strong>Words</strong>、<strong>Events</strong>ボタン（Dubbingタブでは<strong>Groups</strong>と<strong>Sounds</strong>も）で編集対象を選択します。リスト内で行をダブルクリックすると、その字幕が再生されます。</p>
+<p>波形上に表示される単語は、選択中のオーディオで話されている単語です。字幕がオーディオと同じ言語のときにのみ表示されます。フランス語のオーディオに英語の字幕を表示している場合、波形には行のマーカーだけが残り、単語は非表示になり、<strong>Words</strong>タブはグレーアウトします。マーカーは引き続き移動できます。</p>
 <hr/>
 <h2 id="supported-languages">対応言語 </h2>
 <p><code>✓</code> 利用可能 · <code>◐</code> 選択するプロバイダーまたはボイスによる · <code>—</code> 利用不可</p>

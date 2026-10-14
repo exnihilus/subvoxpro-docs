@@ -266,6 +266,15 @@ Sie den Clip auf. Ein Fenster fragt dann nach seiner Sprache:</p>
 </ul>
 <p>Die Zeilen werden proportional auf dem neuen Audio platziert (oder nach der Aufnahme getimt, wenn Sie mitgelesen haben); ziehen Sie die Marker zur Feinabstimmung. Übersetzte Zeilen
 in dieser Sprache werden über der Synchronisation angezeigt, sofern vorhanden.</p>
+<h3 id="importing-subtitles-in-another-language">Untertitel in einer anderen Sprache importieren </h3>
+<p>Das <strong>+</strong> neben der Auswahl SUBTITLES importiert eine <strong>.srt</strong>- oder <strong>.txt</strong>-Datei. Bei einer Voice Line, die
+bereits Inhalt hat, fragt ein Fenster, in welcher Sprache die Datei ist:</p>
+<ul>
+<li><strong>Replace a track</strong>: ersetzt die Originaluntertitel (mit den Timings der Datei) oder eine vorhandene Übersetzung;</li>
+<li><strong>Add a new track</strong>: wählen Sie ihre Sprache, um sie als neue Übersetzung hinzuzufügen.</li>
+</ul>
+<p>Eine Übersetzung behält das Timing der Originalzeilen: Jede importierte Zeile geht an die Originalzeile an derselben
+Position oder, bei einer <code>.srt</code> mit anderer Zeilenanzahl, an die Originalzeile, die zu diesem Zeitpunkt läuft.</p>
 <h3 id="checking-your-subtitles">Untertitel überprüfen </h3>
 <ul>
 <li><strong>Show CPS</strong> (unter <a href="#settings">Settings</a>) zeigt die Lesegeschwindigkeit jedes Untertitels an und markiert Untertitel, die zu
@@ -1041,6 +1050,7 @@ ElevenLabs-Stimmklonen.</li>
 </table>
 <p>Mit den Schaltflächen <strong>Markers</strong>, <strong>Words</strong> und <strong>Events</strong> oberhalb der Wellenform (im Tab Dubbing auch <strong>Groups</strong> und <strong>Sounds</strong>) wählen Sie aus, was Sie bearbeiten. Doppelklicken Sie in der Liste
 auf eine Zeile, um den zugehörigen Untertitel abzuspielen.</p>
+<p>Die Wörter auf der Wellenform sind die im ausgewählten Audio gesprochenen Wörter. Sie erscheinen nur, wenn die Untertitel dieselbe Sprache wie das Audio haben: Zeigen Sie englische Untertitel zu einem französischen Audio an, behält die Wellenform die Zeilenmarker, blendet aber die Wörter aus, und der Tab <strong>Words</strong> ist ausgegraut. Die Marker lassen sich weiterhin verschieben.</p>
 <hr/>
 <h2 id="supported-languages">Unterstützte Sprachen </h2>
 <p><code>✓</code> verfügbar · <code>◐</code> abhängig vom gewählten Anbieter oder der gewählten Stimme · <code>—</code> nicht verfügbar</p>

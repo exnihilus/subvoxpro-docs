@@ -273,6 +273,15 @@ clip. Une fenêtre demande alors sa langue :</p>
 </ul>
 <p>Les lignes sont placées proportionnellement sur le nouvel audio (ou calées sur la prise si vous avez lu le texte) ; déplacez les marqueurs pour les ajuster. Les lignes
 traduites dans cette langue s’affichent sur le doublage quand elles existent.</p>
+<h3 id="importing-subtitles-in-another-language">Importer des sous-titres dans une autre langue </h3>
+<p>Le <strong>+</strong> à côté du sélecteur SUBTITLES importe un fichier <strong>.srt</strong> ou <strong>.txt</strong>. Sur une voice line qui a déjà du
+contenu, une fenêtre demande dans quelle langue est le fichier :</p>
+<ul>
+<li><strong>Replace a track</strong> : remplace les sous-titres originaux (avec les timings du fichier) ou une traduction existante ;</li>
+<li><strong>Add a new track</strong> : choisissez sa langue pour l’ajouter comme nouvelle traduction.</li>
+</ul>
+<p>Une traduction garde le timing des lignes originales : chaque ligne importée va sur la ligne originale de même
+position ou, pour un <code>.srt</code> qui n’a pas le même nombre de lignes, sur la ligne originale jouée à ce moment-là.</p>
 <h3 id="checking-your-subtitles">Vérifier vos sous-titres </h3>
 <ul>
 <li><strong>Show CPS</strong>, dans les <a href="#settings">réglages</a>, affiche la vitesse de lecture et signale les lignes trop rapides.</li>
@@ -1051,6 +1060,7 @@ l’expressivité de Chatterbox, installation ou configuration, et nettoyage des
 </tbody>
 </table>
 <p><strong>Markers</strong>, <strong>Words</strong> et <strong>Events</strong> (et, dans l’onglet Dubbing, <strong>Groups</strong> et <strong>Sounds</strong>) déterminent ce que vous modifiez. Dans la liste, un double-clic joue le sous-titre.</p>
+<p>Les mots affichés sur la forme d’onde sont ceux prononcés dans l’audio sélectionné. Ils n’apparaissent que si les sous-titres sont dans la même langue que l’audio : avec des sous-titres anglais sur un audio français, la forme d’onde garde les marqueurs de lignes mais masque les mots, et l’onglet <strong>Words</strong> est grisé. Vous pouvez toujours déplacer les marqueurs.</p>
 <hr/>
 <h2 id="supported-languages">Langues prises en charge </h2>
 <p><code>✓</code> disponible · <code>◐</code> dépend du fournisseur ou de la voix · <code>—</code> indisponible</p>

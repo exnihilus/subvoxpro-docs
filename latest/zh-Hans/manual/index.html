@@ -202,6 +202,13 @@ WAV 文件，存放在台词资源所在的文件夹中。在 macOS 上，请在
 <li><strong>Add a new track</strong>：选择其语言，将其添加为新的配音。</li>
 </ul>
 <p>台词会按比例放置在新音频上（如果您边录边读，则按录音定时）；拖动标记即可微调。若存在该语言的翻译台词，它们会显示在配音之上。</p>
+<h3 id="importing-subtitles-in-another-language">导入其他语言的字幕 </h3>
+<p>SUBTITLES 选择器旁边的 <strong>+</strong> 可导入 <strong>.srt</strong> 或 <strong>.txt</strong> 文件。如果语音台词已有内容，会弹出一个窗口询问该文件的语言：</p>
+<ul>
+<li><strong>Replace a track</strong>：替换原始字幕（使用文件的时间轴）或现有的翻译；</li>
+<li><strong>Add a new track</strong>：选择其语言，将其添加为新的翻译。</li>
+</ul>
+<p>翻译会保留原始台词的时间轴：每条导入的台词会对应到相同位置的原始台词；如果 <code>.srt</code> 的行数不同，则对应到该时刻正在播放的原始台词。</p>
 <h3 id="checking-your-subtitles">检查字幕 </h3>
 <ul>
 <li><strong>Show CPS</strong>（位于 <a href="#settings">Settings</a>）会显示每条字幕的阅读速度，并标记阅读速度过快的字幕。</li>
@@ -775,6 +782,7 @@ ElevenLabs 克隆声音。</li>
 </tbody>
 </table>
 <p>波形上方的 <strong>Markers</strong>、<strong>Words</strong> 和 <strong>Events</strong> 按钮（在 Dubbing 标签页中还有 <strong>Groups</strong> 和 <strong>Sounds</strong>）用于选择编辑对象。在列表中，双击一行即可播放该字幕。</p>
+<p>波形上显示的词是所选音频中说出的词。只有当字幕与音频语言相同时才会显示：在法语音频上显示英语字幕时，波形只保留行标记并隐藏这些词，<strong>Words</strong> 标签也会变灰。标记仍然可以移动。</p>
 <hr/>
 <h2 id="supported-languages">支持的语言 </h2>
 <p><code>✓</code> 可用 · <code>◐</code> 取决于所选提供商或音色 · <code>—</code> 不可用</p>
