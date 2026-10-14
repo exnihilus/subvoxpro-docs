@@ -279,7 +279,7 @@ WAV 文件，存放在台词资源所在的文件夹中。在 macOS 上，请在
 <p>提供商：InWorld、ElevenLabs、Gemini、OpenAI、Google Cloud、Azure、Cartesia，以及离线版 <strong>Kokoro</strong>（英语）和
 <strong>Chatterbox</strong>（21 种语言，保留每个角色的声音），此外还有 <strong>Qwen3 TTS 1.7B</strong>（10 种语言，支持参考音频克隆、固定音色和音色设计）以及 <strong>VoxCPM2</strong>（30 种语言，支持通过文字控制风格的参考音频克隆，以及音色设计）。</p>
 <ul>
-<li><strong>Word timing</strong> — <strong>Qwen3 aligner (local)</strong> 使词在被说出的准确时刻显示（<a href="#qwen3-offline-word-timing">只需安装一次</a>）；<strong>Built-in aligner</strong> 无需安装即可将每个词对齐到生成的音频上（精度稍低）；如果不采用逐词显示，<strong>None</strong> 仅保留字幕的时间信息。安装对齐器后，默认使用 <strong>Qwen3 aligner</strong>；安装前则默认使用 <strong>None</strong>。行末的 <strong>Re-align</strong> 按钮可重新对齐所选配音的词。</li>
+<li><strong>Word timing</strong> — <strong>Qwen3 aligner (local)</strong> 使词在被说出的准确时刻显示（<a href="#qwen3-offline-word-timing">只需安装一次</a>）；<strong>Built-in aligner</strong> 无需安装即可将每个词对齐到生成的音频上（精度稍低）；如果不采用逐词显示，<strong>None</strong> 仅保留字幕的时间信息。安装对齐器后，默认使用 <strong>Qwen3 aligner</strong>；安装前则默认使用 <strong>None</strong>。行末的 <strong>Re-align</strong> 按钮可重新对齐所选音频（配音或源音频）的词。</li>
 <li><strong>Voice direction</strong> — 对于支持配音指导的提供商，音色旁边的对话气泡按钮可用于指定演绎的语气（例如
 <em>平静、低语</em>）。</li>
 <li><strong>REGEN</strong> — 当某条字幕的配音不再匹配（文本、音色或配音风格预设发生变化）时，该条目上会出现橙色的 <strong>REGEN</strong> 状态徽标。将鼠标悬停在徽标上可查看原因，点击它即可仅重新生成所需部分。</li>
