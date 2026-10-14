@@ -175,7 +175,8 @@ klicken Sie darauf, um sie zu ändern) und eine Spur pro übersetzter oder verto
 Sie beispielsweise französische Untertitel lesen können, während Sie den englischen Ton hören.</li>
 <li><strong>AI Tools</strong> – Transkription, Übersetzung und Vertonung (<a href="#transcribe">siehe unten</a>).</li>
 <li><strong>Timeline</strong> – die Wellenform mit Ihren Untertitel-<strong>Markern</strong>. Jeder Marker kennzeichnet den Beginn eines Untertitels; ein Marker ohne
-Text leert die Untertitelanzeige (ein <strong>Leermarker</strong>).</li>
+Text leert die Untertitelanzeige (ein <strong>Leermarker</strong>). Marker gehören zum Audio: Die Quelle und jede Vertonung haben
+eigene Marker auf ihrem eigenen Audio.</li>
 <li><strong>Live preview</strong> – der Untertitel an der Position des Abspielkopfs, so wie er im Spiel erscheinen wird. Wählen Sie darüber eine Farbe oder einen Stil aus
 und ziehen Sie dann über Wörter, um sie zu formatieren (Ziehen mit gedrückter rechter Maustaste entfernt die Formatierung).</li>
 <li><strong>Subtitles</strong> – eine Zeile pro Untertitel: Name, Dauer, Speaker und Text, dazu eine Schaltfläche zum Abspielen.</li>
@@ -362,7 +363,8 @@ Mit <strong>Use speakers' voices</strong> verwendet jeder Untertitel die Stimme 
 </ul>
 </li>
 <li>Klicken Sie auf <strong>Generate <em>Sprache</em> audio track</strong> (zum Beispiel <strong>Generate French audio track</strong>). Die Vertonung wird als neue Audiospur angelegt und anstelle des Originals wiedergegeben, wenn diese Sprache
-aktiv ist.</li>
+aktiv ist. Eine Vertonung ist nicht genau so lang wie das Original und erhält daher eigene Marker: Sie liegen nicht
+an denselben Stellen wie die der Quelle, und das Verschieben des einen verschiebt nicht den anderen.</li>
 </ol>
 <p><strong>Groups-Modus.</strong> Wenn Sie <strong>Groups</strong> auswählen, wird das Werkzeug <strong>Groups</strong> oberhalb der Wellenform aktiviert. Jede Gruppe wird in einem
 Take mit der Stimme und dem Stimmprofil ihres ersten Wortes gesprochen, und der Untertiteltext erhält die Farbe der Gruppe. Anfangs

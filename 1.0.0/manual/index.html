@@ -191,7 +191,8 @@ click it to change it) and one track per translated or dubbed language. The two 
 you can, for example, read the French subtitles while listening to the English audio.</li>
 <li><strong>AI Tools</strong> — transcription, translation and dubbing (<a href="#transcribe">below</a>).</li>
 <li><strong>Timeline</strong> — the waveform with your subtitle <strong>markers</strong>. Each marker is where a subtitle starts; a marker with
-no text clears the screen (a <strong>blank</strong>).</li>
+no text clears the screen (a <strong>blank</strong>). Markers belong to the audio: the source and each dub have their own
+markers, placed on their own audio.</li>
 <li><strong>Live preview</strong> — the subtitle under the playhead, as it will look in game. Pick a color or a style above it,
 then drag over words to paint them (right-drag erases).</li>
 <li><strong>Subtitles</strong> — one row per subtitle: its name, length, speaker and text, with a button to play it.</li>
@@ -379,7 +380,8 @@ follow automatically.</p>
 </ul>
 </li>
 <li>Click <strong>Generate <em>language</em> audio track</strong> (for example <strong>Generate French audio track</strong>). The dub becomes a new audio track, played instead of the original when that language
-is active.</li>
+is active. A dub does not last exactly as long as the original, so it gets its own markers: they do not line up
+with the source's, and moving one does not move the other.</li>
 </ol>
 <p><strong>Groups mode.</strong> Choosing <strong>Groups</strong> turns on the <strong>Groups</strong> tool above the waveform. Each group is spoken in one
 take, with the voice and personality of its first word, and the subtitle text takes the group's color. At first,

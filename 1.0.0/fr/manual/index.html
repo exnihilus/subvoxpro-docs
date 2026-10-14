@@ -180,7 +180,8 @@ drapeau, et une piste par langue traduite ou doublée. Les deux sélecteurs sont
 afficher les sous-titres français sur l’audio anglais.</li>
 <li><strong>AI Tools</strong> : transcription, traduction et doublage (<a href="#transcribe">voir ci-dessous</a>).</li>
 <li><strong>Timeline</strong> : la forme d’onde et les <strong>marqueurs</strong> de sous-titres. Chaque marqueur indique le début d’un
-sous-titre ; un marqueur sans texte, appelé <strong>blank</strong>, efface l’affichage.</li>
+sous-titre ; un marqueur sans texte, appelé <strong>blank</strong>, efface l’affichage. Les marqueurs appartiennent à
+l’audio : la source et chaque doublage ont leurs propres marqueurs, placés sur leur propre audio.</li>
 <li><strong>Live preview</strong> : le sous-titre à la position de lecture, tel qu’il apparaîtra en jeu. Choisissez une couleur
 ou un style, puis glissez sur les mots pour les appliquer. Glisser avec le bouton droit les retire.</li>
 <li><strong>Subtitles</strong> : une ligne par sous-titre, avec son nom, sa durée, son speaker, son texte et un bouton de lecture.</li>
@@ -371,7 +372,8 @@ source, sans changer ses mots. Les doublages sont mis à jour automatiquement.</
 </ul>
 </li>
 <li>Cliquez sur <strong>Generate <em>langue</em> audio track</strong> (par exemple <strong>Generate French audio track</strong>). Le doublage est ajouté comme nouvelle piste audio et se joue à la place de
-l’original quand cette langue est active.</li>
+l’original quand cette langue est active. Un doublage ne dure pas exactement comme l’original : il a donc
+ses propres marqueurs, qui ne tombent pas au même endroit que ceux de la source, et déplacer l’un ne déplace pas l’autre.</li>
 </ol>
 <p><strong>Mode Groups.</strong> Choisir <strong>Groups</strong> active l’outil <strong>Groups</strong> au-dessus de la forme d’onde. Chaque groupe est dit
 d’une seule prise, avec la voix et la personnalité de son premier mot, et le texte des sous-titres prend la couleur
