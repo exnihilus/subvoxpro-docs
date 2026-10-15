@@ -1,4 +1,4 @@
-import { documentationRoot, localize } from "./languages.js?v=b15ef1decb";
+import { documentationRoot, localize } from "./languages.js?v=5361c2db19";
 
 const VERSION_META = "svx:version";
 const LATEST_FOLDER = "latest";

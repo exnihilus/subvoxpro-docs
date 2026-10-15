@@ -8,7 +8,7 @@
 <meta content="Fournisseurs de traduction | Documentation SubVox Pro " name="title"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
-<link href="../public/main.css?v=b15ef1decb" rel="stylesheet"/>
+<link href="../public/main.css?v=5361c2db19" rel="stylesheet"/>
 <meta content="../toc.html" name="docfx:navrel"/>
 <meta name="docfx:tocrel" content="toc-providers.html">
 <meta content="../" name="docfx:rel"/>
@@ -25,7 +25,7 @@
 <meta content="Change theme" name="loc:changeTheme"/>
 <meta content="Copy" name="loc:copy"/>
 <meta content="Download PDF" name="loc:downloadPdf"/>
-<script src="./../public/docfx.min.js?v=b15ef1decb" type="module"></script>
+<script src="./../public/docfx.min.js?v=5361c2db19" type="module"></script>
 <script>
         const theme = localStorage.getItem('theme') || 'dark'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
@@ -84,15 +84,11 @@
 <details id="deepl" open="">
 <summary><h2 class="svx-provider-title" id="deepl-setup"><strong>DeepL</strong></h2></summary>
 <p><strong>Utilisé pour :</strong> traduction automatique avec choix de formalité.</p>
-<ol>
-<li>Sur <a href="https://www.deepl.com/pro-api">https://www.deepl.com/pro-api</a>, choisissez <strong>Sign up for free</strong> dans <strong>Developer</strong>.
-DeepL vérifie votre e-mail et votre carte bancaire, sans rien prélever pour l’offre Developer, qui comprend
-<strong>1 000 000 de caractères</strong> offerts une fois.
-<img alt="Offre API Developer de DeepL" src="Images/deepl-pricing.png"/></li>
-<li>Ouvrez <strong>Account ▸ API Keys</strong>, <a href="https://www.deepl.com/your-account/keys">https://www.deepl.com/your-account/keys</a>, puis copiez <strong>Authentication Key</strong>.
-<img alt="Clé d’authentification API DeepL" src="Images/deepl-api-keys.png"/></li>
-<li>Collez-la dans <strong>Settings ▸ DeepL</strong>. SubVox Pro choisit automatiquement l’endpoint adapté à votre clé Free ou Pro.</li>
-</ol>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Sur <a href="https://www.deepl.com/pro-api">https://www.deepl.com/pro-api</a>, choisissez <strong>Sign up for free</strong> dans <strong>Developer</strong>. DeepL vérifie votre e-mail et votre carte bancaire, sans rien prélever pour l’offre Developer, qui comprend <strong>1 000 000 de caractères</strong> offerts une fois.</p>
+<img alt="Offre API Developer de DeepL" src="Images/deepl-pricing.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Ouvrez <strong>Account ▸ API Keys</strong>, <a href="https://www.deepl.com/your-account/keys">https://www.deepl.com/your-account/keys</a>, puis copiez <strong>Authentication Key</strong>.</p>
+<img alt="Clé d’authentification API DeepL" src="Images/deepl-api-keys.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Collez-la dans <strong>Settings ▸ DeepL</strong>. SubVox Pro choisit automatiquement l’endpoint adapté à votre clé Free ou Pro.</p>
 <blockquote>
 <p><a href="https://support.deepl.com/hc/en-us/articles/360020695820-API-key-for-DeepL-API">Aide</a>.</p>
 </blockquote>
@@ -100,15 +96,10 @@ DeepL vérifie votre e-mail et votre carte bancaire, sans rien prélever pour l�
 <details id="google-cloud-translation" open="">
 <summary><h2 class="svx-provider-title" id="google-cloud-translation-setup"><strong>Google Cloud Translation</strong></h2></summary>
 <p><strong>Utilisé pour :</strong> traduction automatique.</p>
-<ol>
-<li>Créez ou choisissez un projet sur <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>. Les nouveaux comptes reçoivent
-<strong>300 $ d’essai valables 90 jours</strong>, et Translation offre <strong>500 000 caractères par mois</strong>.
-Un compte de facturation est malgré tout obligatoire.</li>
-<li>Dans <strong>APIs &amp; Services ▸ Library</strong>, activez <strong>Cloud Translation API</strong> avec <strong>Enable</strong>.</li>
-<li>Dans <strong>APIs &amp; Services ▸ Credentials</strong>, choisissez <strong>Create credentials ▸ API key</strong>. Copiez la clé et,
-au besoin, limitez-la à Cloud Translation API.</li>
-<li>Collez-la dans <strong>Settings ▸ Google Translate</strong>.</li>
-</ol>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Créez ou choisissez un projet sur <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>. Les nouveaux comptes reçoivent <strong>300 $ d’essai valables 90 jours</strong>, et Translation offre <strong>500 000 caractères par mois</strong>. Un compte de facturation est malgré tout obligatoire.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Dans <strong>APIs &amp; Services ▸ Library</strong>, activez <strong>Cloud Translation API</strong> avec <strong>Enable</strong>.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Dans <strong>APIs &amp; Services ▸ Credentials</strong>, choisissez <strong>Create credentials ▸ API key</strong>. Copiez la clé et, au besoin, limitez-la à Cloud Translation API.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Collez-la dans <strong>Settings ▸ Google Translate</strong>.</p>
 <blockquote>
 <p>Fixez un quota ou une alerte de budget avant la fin du crédit d’essai.</p>
 </blockquote>
@@ -117,33 +108,24 @@ au besoin, limitez-la à Cloud Translation API.</li>
 <summary><h2 class="svx-provider-title" id="openai-setup"><strong>OpenAI</strong></h2></summary>
 <p><strong>Utilisé pour :</strong> transcription, traduction par modèle de langage, transfert des styles de mots entre langues et doublage.
 Une seule clé sert à tout.</p>
-<ol>
-<li>Créez un compte ou connectez-vous sur <a href="https://platform.openai.com">https://platform.openai.com</a>.
-<img alt="Connexion à la plateforme API OpenAI" src="Images/openai-platform-sign-in.png"/></li>
-<li>Ouvrez <strong>API Keys</strong> dans le projet.
-<img alt="Menu API Keys d’OpenAI" src="Images/openai-api-keys-sidebar.png"/></li>
-<li>Cliquez sur <strong>Create new secret key</strong>.
-<img alt="Page des clés API OpenAI" src="Images/openai-api-keys-page.png"/></li>
-<li>Donnez-lui un nom si vous le souhaitez, vérifiez le projet et les permissions, puis cliquez sur <strong>Create secret key</strong>.
-<img alt="Formulaire de nouvelle clé OpenAI" src="Images/openai-create-secret-key-dialog.png"/></li>
-<li>Copiez tout de suite le secret : <strong>OpenAI ne l’affiche qu’une fois</strong>.
-<img alt="Clé secrète OpenAI générée" src="Images/openai-secret-key-created.png"/></li>
-<li>Ajoutez des crédits depuis <a href="https://platform.openai.com/settings/organization/billing/overview">https://platform.openai.com/settings/organization/billing/overview</a>.
-Ou passez par le menu du compte, <strong>Organization settings</strong> ou <strong>Profile settings</strong>, puis <strong>Billing</strong>.
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Créez un compte ou connectez-vous sur <a href="https://platform.openai.com">https://platform.openai.com</a>.</p>
+<img alt="Connexion à la plateforme API OpenAI" src="Images/openai-platform-sign-in.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Ouvrez <strong>API Keys</strong> dans le projet.</p>
+<img alt="Menu API Keys d’OpenAI" src="Images/openai-api-keys-sidebar.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Cliquez sur <strong>Create new secret key</strong>.</p>
+<img alt="Page des clés API OpenAI" src="Images/openai-api-keys-page.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Donnez-lui un nom si vous le souhaitez, vérifiez le projet et les permissions, puis cliquez sur <strong>Create secret key</strong>.</p>
+<img alt="Formulaire de nouvelle clé OpenAI" src="Images/openai-create-secret-key-dialog.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Copiez tout de suite le secret : <strong>OpenAI ne l’affiche qu’une fois</strong>.</p>
+<img alt="Clé secrète OpenAI générée" src="Images/openai-secret-key-created.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Ajoutez des crédits depuis <a href="https://platform.openai.com/settings/organization/billing/overview">https://platform.openai.com/settings/organization/billing/overview</a>. Ou passez par le menu du compte, <strong>Organization settings</strong> ou <strong>Profile settings</strong>, puis <strong>Billing</strong>.</p>
 <img alt="Menu de compte OpenAI et réglages" src="Images/openai-account-menu.png"/>
-<img alt="Menu Billing d’OpenAI" src="Images/openai-billing-sidebar.png"/></li>
-<li>Dans <strong>Billing</strong>, cliquez sur <strong>Add to credit balance</strong> : l’API puise dans ce solde.
-<img alt="Solde et ajout de crédit OpenAI" src="Images/openai-billing-overview.png"/></li>
-<li>Choisissez le montant et le moyen de paiement, puis <strong>Continue</strong>. Le minimum est en général de <strong>5 $</strong>.
-<img alt="Ajout de crédit OpenAI" src="Images/openai-add-credit-balance.png"/></li>
-<li>Collez la clé dans <strong>Settings ▸ OpenAI</strong> et choisissez le modèle dans le panneau concerné.
-En <strong>Text-to-Speech</strong>, <strong>gpt-realtime-2.1-mini</strong> propose 10 voix et suit les indications de jeu via Realtime.
-Les modèles enregistrés auparavant sont remplacés automatiquement par leurs équivalents actuels. Les voix <strong>fable</strong>, <strong>nova</strong> et <strong>onyx</strong> exigent un nouveau choix.
-Realtime reçoit une consigne lui demandant de lire le texte à l’identique : vérifiez les dialogues générés.
-L’audio généré coûte environ <strong>0,024 $/minute</strong>, plus les tokens texte (0,60 <span class="math">\(en entrée / 2,40\)</span> en sortie par million).
-L’estimation du coût en traitement par lot inclut l’audio et le texte, sur la base de 14 caractères/seconde et de 4 caractères/token ; les consignes de jeu et le rythme peuvent modifier le montant facturé.
-En <strong>Speech-to-Text</strong>, choisissez OpenAI, puis le modèle de transcription.</li>
-</ol>
+<img alt="Menu Billing d’OpenAI" src="Images/openai-billing-sidebar.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">7</span> Dans <strong>Billing</strong>, cliquez sur <strong>Add to credit balance</strong> : l’API puise dans ce solde.</p>
+<img alt="Solde et ajout de crédit OpenAI" src="Images/openai-billing-overview.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">8</span> Choisissez le montant et le moyen de paiement, puis <strong>Continue</strong>. Le minimum est en général de <strong>5 $</strong>.</p>
+<img alt="Ajout de crédit OpenAI" src="Images/openai-add-credit-balance.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">9</span> Collez la clé dans <strong>Settings ▸ OpenAI</strong> et choisissez le modèle dans le panneau concerné. En <strong>Text-to-Speech</strong>, <strong>gpt-realtime-2.1-mini</strong> propose 10 voix et suit les indications de jeu via Realtime. Les modèles enregistrés auparavant sont remplacés automatiquement par leurs équivalents actuels. Les voix <strong>fable</strong>, <strong>nova</strong> et <strong>onyx</strong> exigent un nouveau choix. Realtime reçoit une consigne lui demandant de lire le texte à l’identique : vérifiez les dialogues générés. L’audio généré coûte environ <strong>0,024 $/minute</strong>, plus les tokens texte (0,60 <span class="math">\(en entrée / 2,40\)</span> en sortie par million). L’estimation du coût en traitement par lot inclut l’audio et le texte, sur la base de 14 caractères/seconde et de 4 caractères/token ; les consignes de jeu et le rythme peuvent modifier le montant facturé. En <strong>Speech-to-Text</strong>, choisissez OpenAI, puis le modèle de transcription.</p>
 <blockquote>
 <p><strong>Timings de transcription :</strong></p>
 <ul>
@@ -165,43 +147,35 @@ exemple dans les crédits ou sur la page du jeu. <a href="https://openai.com/api
 <details id="anthropic-claude" open="">
 <summary><h2 class="svx-provider-title" id="anthropic-claude-setup"><strong>Anthropic, Claude</strong></h2></summary>
 <p><strong>Utilisé pour :</strong> traduction par modèle de langage et transfert des styles de mots entre langues.</p>
-<ol>
-<li>Créez un compte ou connectez-vous sur <a href="https://console.anthropic.com">https://console.anthropic.com</a>.
-<img alt="Connexion à la console Anthropic" src="Images/anthropic-console-sign-in.png"/></li>
-<li>Achetez des crédits avant toute requête : l’API est prépayée et refuse les appels sans solde.
-Le premier montant proposé est souvent de <strong>5 $</strong>.
-<img alt="Achat de crédits Anthropic" src="Images/anthropic-buy-credits.png"/></li>
-<li>Ouvrez <strong>API keys</strong> dans la console Claude.
-<img alt="Menu API keys de Claude" src="Images/anthropic-api-keys-sidebar.png"/></li>
-<li>Cliquez sur <strong>Create key</strong>.
-<img alt="Page des clés Claude" src="Images/anthropic-api-keys-page.png"/></li>
-<li>Choisissez l’espace de travail, donnez éventuellement un nom, puis cliquez sur <strong>Add</strong>.
-<img alt="Création d’une clé Claude" src="Images/anthropic-create-api-key-dialog.png"/></li>
-<li>Copiez la clé tout de suite : <strong>elle ne sera plus affichée en entier</strong>.
-<img alt="Clé Claude générée" src="Images/anthropic-api-key-created.png"/></li>
-<li>Collez-la dans <strong>Settings ▸ Claude</strong>.</li>
-</ol>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Créez un compte ou connectez-vous sur <a href="https://console.anthropic.com">https://console.anthropic.com</a>.</p>
+<img alt="Connexion à la console Anthropic" src="Images/anthropic-console-sign-in.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Achetez des crédits avant toute requête : l’API est prépayée et refuse les appels sans solde. Le premier montant proposé est souvent de <strong>5 $</strong>.</p>
+<img alt="Achat de crédits Anthropic" src="Images/anthropic-buy-credits.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Ouvrez <strong>API keys</strong> dans la console Claude.</p>
+<img alt="Menu API keys de Claude" src="Images/anthropic-api-keys-sidebar.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Cliquez sur <strong>Create key</strong>.</p>
+<img alt="Page des clés Claude" src="Images/anthropic-api-keys-page.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Choisissez l’espace de travail, donnez éventuellement un nom, puis cliquez sur <strong>Add</strong>.</p>
+<img alt="Création d’une clé Claude" src="Images/anthropic-create-api-key-dialog.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Copiez la clé tout de suite : <strong>elle ne sera plus affichée en entier</strong>.</p>
+<img alt="Clé Claude générée" src="Images/anthropic-api-key-created.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">7</span> Collez-la dans <strong>Settings ▸ Claude</strong>.</p>
 </details>
 <details id="google-gemini" open="">
 <summary><h2 class="svx-provider-title" id="google-gemini-setup"><strong>Google, Gemini</strong></h2></summary>
 <p><strong>Utilisé pour :</strong> traduction par modèle de langage et doublage. C’est l’option gratuite la plus simple, sans
 compte de facturation, et une seule clé sert aux deux.</p>
-<ol>
-<li>Connectez-vous avec Google sur <a href="https://aistudio.google.com">https://aistudio.google.com</a>.
-<img alt="Accueil Google AI Studio" src="Images/gemini-ai-studio-home.png"/></li>
-<li>Ouvrez <strong>API keys</strong>, <a href="https://aistudio.google.com/app/apikey">https://aistudio.google.com/app/apikey</a>, puis <strong>Create an API key</strong>.
-<img alt="Page des clés AI Studio" src="Images/gemini-api-keys-page.png"/></li>
-<li>Nommez la clé, choisissez ou créez un projet, puis créez-la.
-<img alt="Création de clé Gemini" src="Images/gemini-create-api-key-dialog.png"/></li>
-<li>Copiez-la depuis son panneau de détails.
-<img alt="Détails de la clé Gemini" src="Images/gemini-api-key-details.png"/></li>
-<li>Depuis la liste, vous pourrez ensuite copier à nouveau la clé, consulter votre consommation ou configurer la facturation.
-<img alt="Ligne de clé Gemini" src="Images/gemini-api-key-row.png"/></li>
-<li>Collez-la dans <strong>Settings ▸ Gemini</strong>. Pour doubler, choisissez <strong>Gemini</strong> dans <strong>Text-to-Speech</strong> : 30 voix
-multilingues (<em>Kore</em>, <em>Puck</em>, <em>Leda</em>…) qui suivent les indications de jeu.
-Modèles : <strong>gemini-3.1-flash-tts-preview</strong> (par défaut, le plus naturel), <strong>gemini-2.5-flash-preview-tts</strong>
-(moitié moins cher en usage payant) et <strong>gemini-2.5-pro-preview-tts</strong> (sans offre gratuite, facturation requise).</li>
-</ol>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Connectez-vous avec Google sur <a href="https://aistudio.google.com">https://aistudio.google.com</a>.</p>
+<img alt="Accueil Google AI Studio" src="Images/gemini-ai-studio-home.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Ouvrez <strong>API keys</strong>, <a href="https://aistudio.google.com/app/apikey">https://aistudio.google.com/app/apikey</a>, puis <strong>Create an API key</strong>.</p>
+<img alt="Page des clés AI Studio" src="Images/gemini-api-keys-page.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Nommez la clé, choisissez ou créez un projet, puis créez-la.</p>
+<img alt="Création de clé Gemini" src="Images/gemini-create-api-key-dialog.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Copiez-la depuis son panneau de détails.</p>
+<img alt="Détails de la clé Gemini" src="Images/gemini-api-key-details.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Depuis la liste, vous pourrez ensuite copier à nouveau la clé, consulter votre consommation ou configurer la facturation.</p>
+<img alt="Ligne de clé Gemini" src="Images/gemini-api-key-row.png"/>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Collez-la dans <strong>Settings ▸ Gemini</strong>. Pour doubler, choisissez <strong>Gemini</strong> dans <strong>Text-to-Speech</strong> : 30 voix multilingues (<em>Kore</em>, <em>Puck</em>, <em>Leda</em>…) qui suivent les indications de jeu. Modèles : <strong>gemini-3.1-flash-tts-preview</strong> (par défaut, le plus naturel), <strong>gemini-2.5-flash-preview-tts</strong> (moitié moins cher en usage payant) et <strong>gemini-2.5-pro-preview-tts</strong> (sans offre gratuite, facturation requise).</p>
 <blockquote>
 <p>L’offre gratuite ne demande <strong>aucune facturation</strong>, mais limite le débit (voir <strong>Rate limit</strong> dans AI Studio).
 Les limites du doublage sont les plus strictes : quelques requêtes par minute et par jour. SubVox Pro patiente
@@ -213,13 +187,10 @@ peuvent servir à améliorer les produits Google.</p>
 <details id="deepseek" open="">
 <summary><h2 class="svx-provider-title" id="deepseek-setup"><strong>DeepSeek</strong></h2></summary>
 <p><strong>Utilisé pour :</strong> traduction à bas coût, avec une API compatible OpenAI.</p>
-<ol>
-<li>Créez un compte ou connectez-vous sur <a href="https://platform.deepseek.com">https://platform.deepseek.com</a>.</li>
-<li>Ajoutez du crédit avec <strong>Top up</strong> avant de commencer : sans solde, les requêtes échouent.</li>
-<li>Ouvrez <strong>API keys</strong>, <a href="https://platform.deepseek.com/api_keys">https://platform.deepseek.com/api_keys</a>, puis <strong>Create new API key</strong>. Nommez-la
-(<code>SubVoxPro</code>, par exemple) et copiez-la tout de suite : elle ne s’affiche en entier qu’une fois.</li>
-<li>Collez-la dans <strong>Settings ▸ DeepSeek</strong>, puis choisissez le modèle dans le panneau de traduction.</li>
-</ol>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Créez un compte ou connectez-vous sur <a href="https://platform.deepseek.com">https://platform.deepseek.com</a>.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Ajoutez du crédit avec <strong>Top up</strong> avant de commencer : sans solde, les requêtes échouent.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> Ouvrez <strong>API keys</strong>, <a href="https://platform.deepseek.com/api_keys">https://platform.deepseek.com/api_keys</a>, puis <strong>Create new API key</strong>. Nommez-la (<code>SubVoxPro</code>, par exemple) et copiez-la tout de suite : elle ne s’affiche en entier qu’une fois.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> Collez-la dans <strong>Settings ▸ DeepSeek</strong>, puis choisissez le modèle dans le panneau de traduction.</p>
 <blockquote>
 <p><a href="https://api-docs.deepseek.com/quick_start/pricing">Tarifs</a>.</p>
 </blockquote>

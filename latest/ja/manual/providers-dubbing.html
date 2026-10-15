@@ -8,7 +8,7 @@
 <meta content="Dubbing / 音声合成 | SubVox Pro ドキュメント " name="title"/>
 <link href="../images/logo.svg" rel="icon"/>
 <link href="../public/docfx.min.css" rel="stylesheet"/>
-<link href="../public/main.css?v=b15ef1decb" rel="stylesheet"/>
+<link href="../public/main.css?v=5361c2db19" rel="stylesheet"/>
 <meta content="../toc.html" name="docfx:navrel"/>
 <meta name="docfx:tocrel" content="toc-providers.html">
 <meta content="../" name="docfx:rel"/>
@@ -25,7 +25,7 @@
 <meta content="Change theme" name="loc:changeTheme"/>
 <meta content="Copy" name="loc:copy"/>
 <meta content="Download PDF" name="loc:downloadPdf"/>
-<script src="./../public/docfx.min.js?v=b15ef1decb" type="module"></script>
+<script src="./../public/docfx.min.js?v=5361c2db19" type="module"></script>
 <script>
         const theme = localStorage.getItem('theme') || 'dark'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
@@ -113,21 +113,16 @@ Geminiボイスは、別の<strong>Vertex AI</strong> APIを使用します。</
 <p>他のプロバイダーとは異なり、Google Cloud TTSではAPIキーではなく<strong>OAuthサインイン</strong>を使用します。Gemini
 ボイスが利用するVertex AIでは、IAMによってアクセスが制御されているためです（<code>aiplatform.endpoints.predict</code>）。APIキーには
 IAM権限がありませんが、サインインしたGoogleアカウントには、プロジェクトの所有権または編集権限があればIAM権限があります。1回のサインインで両方のボイスファミリーを利用できます。</p>
-<ol>
-<li><strong><a href="https://console.cloud.google.com">https://console.cloud.google.com</a></strong>で<strong>Google Cloud Console</strong>を開き、プロジェクトを作成（または選択）します。新規アカウントには<strong>$300のトライアルクレジット（90日間）</strong>が付与されます。無料枠のみを使用する場合でも、請求先アカウントが必要です。</li>
-<li><strong>APIs &amp; Services ▸ Library</strong>で、<strong>Cloud Text-to-Speech API</strong>（Classicボイス）を有効にし、
-<strong>Gemini</strong>ボイスを使用する場合は、<strong>Vertex AI API</strong>（<code>aiplatform.googleapis.com</code>）も有効にします。従来の「AI Platform」（<code>ml.googleapis.com</code>）では<em>ありません</em>。Classicボイスのみが必要な場合は、Vertex AIを有効にする必要はありません。</li>
-<li><strong>APIs &amp; Services ▸ OAuth consent screen：</strong> <strong>User type / Audience</strong>を<strong>External</strong>に設定します（Internalでは、個人のGmailアカウントが<code>403: org_internal</code>エラーでブロックされます）。また、<strong>Test
-users</strong>に自分のGoogleアカウントを追加します。</li>
-<li><strong>APIs &amp; Services ▸ Credentials ▸ Create credentials ▸ OAuth client ID</strong>で、アプリケーションの種類に<strong>Desktop
-app</strong>を選択します。<strong>Client ID</strong>と<strong>Client secret</strong>をコピーします。（
-<code>http://127.0.0.1</code>を使用するループバックサインインには、<em>Desktop</em>クライアントが必要です。Google Sheetsとの連携でも同様です。）</li>
-<li>SubVox Proで<strong>Text-to-Speech</strong>タブを開き、<strong>Google Cloud</strong>を選択して、<strong>Client ID</strong>と
-<strong>Client secret</strong>を貼り付けます。続いて<strong>Connect…</strong>をクリックし、ブラウザでサインインします。<em>「app not verified」</em>
-という警告が表示されたら（Testingモードでは通常の表示です）、<strong>Continue</strong>を選択します。（課金とクォータの対象となるプロジェクトは
-Client IDから特定されるため、ほかに入力する項目はありません。）認証情報とリフレッシュトークンは、このコンピューターの
-Editorの環境設定に保存され、プロジェクトには保存されません。</li>
-</ol>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> <strong><a href="https://console.cloud.google.com">https://console.cloud.google.com</a></strong>で<strong>Google Cloud Console</strong>を開き、プロジェクトを作成（または選択）します。新規アカウントには<strong>$300のトライアルクレジット（90日間）</strong>が付与されます。無料枠のみを使用する場合でも、請求先アカウントが必要です。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> <strong>APIs &amp; Services ▸ Library</strong>で、<strong>Cloud Text-to-Speech API</strong>（Classicボイス）を有効にし、</p>
+<p><strong>Gemini</strong>ボイスを使用する場合は、<strong>Vertex AI API</strong>（<code>aiplatform.googleapis.com</code>）も有効にします。従来の「AI Platform」（<code>ml.googleapis.com</code>）では<em>ありません</em>。Classicボイスのみが必要な場合は、Vertex AIを有効にする必要はありません。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> <strong>APIs &amp; Services ▸ OAuth consent screen：</strong> <strong>User type / Audience</strong>を<strong>External</strong>に設定します（Internalでは、個人のGmailアカウントが<code>403: org_internal</code>エラーでブロックされます）。また、<strong>Test users</strong>に自分のGoogleアカウントを追加します。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> <strong>APIs &amp; Services ▸ Credentials ▸ Create credentials ▸ OAuth client ID</strong>で、アプリケーションの種類に<strong>Desktop app</strong>を選択します。<strong>Client ID</strong>と<strong>Client secret</strong>をコピーします。（ <code>http://127.0.0.1</code>を使用するループバックサインインには、<em>Desktop</em>クライアントが必要です。Google Sheetsとの連携でも同様です。）</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> SubVox Proで<strong>Text-to-Speech</strong>タブを開き、<strong>Google Cloud</strong>を選択して、<strong>Client ID</strong>と</p>
+<p><strong>Client secret</strong>を貼り付けます。続いて<strong>Connect…</strong>をクリックし、ブラウザでサインインします。<em>「app not verified」</em></p>
+<p>という警告が表示されたら（Testingモードでは通常の表示です）、<strong>Continue</strong>を選択します。（課金とクォータの対象となるプロジェクトは</p>
+<p>Client IDから特定されるため、ほかに入力する項目はありません。）認証情報とリフレッシュトークンは、このコンピューターの</p>
+<p>Editorの環境設定に保存され、プロジェクトには保存されません。</p>
 <p>続いてボイスを選択します。Classicボイスは<code>Tier Leaf (locale)</code>の形式で表示されます（例：<em>Neural2 A (fr-FR)</em>）。Geminiボイスは
 <code>Name · Gemini</code>の形式で表示され、languageフィルターの設定は適用されません（対応しているすべての言語で発話できます）。
 Geminiボイスを選択すると、<strong>ボイスの演技指示</strong>ボタン（ボイス選択欄の横にある吹き出しアイコン）が有効になります。*「ひどく悲しんでいて、精神的に崩れそうな状態」*のような口調の指示を入力すると、各行に対するGeminiのスタイル指示として送信されます。</p>
@@ -139,23 +134,17 @@ Neural2/WaveNetは約100万文字、Standardは400万文字）を消費します
 <details id="azure" open="">
 <summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="azure-setup"><strong>Azure AI Speech</strong></h2></summary>
 <p><strong>用途：</strong>高品質な多言語ニューラルボイスによる、翻訳されたトラック用の吹き替え音声（TTS）の生成。<strong>サブスクリプションキー + リージョン</strong>を使用します（OAuthは不要です）。</p>
-<ol>
-<li><p><strong><a href="https://azure.microsoft.com/free">https://azure.microsoft.com/free</a></strong>で<strong>Microsoft Azure</strong>アカウントを作成します。Azureでは、本人確認のためにクレジットカード情報の入力が求められますが、Speechの<strong>無料枠（F0）</strong>は完全に無料のSKUです（課金する代わりに利用量に上限が設けられます）。そのため、F0ではカードへの請求は発生しません。</p>
-</li>
-<li><p><strong>Azure Portal</strong>（<a href="https://portal.azure.com">https://portal.azure.com</a>）で、<strong>Create a resource</strong>をクリックし、<strong>Speech</strong>を検索します。
-<strong>Microsoft</strong>が公開している<strong>Speech</strong>というタイルを選択します（<strong>Create</strong>ボタンが付いています。<em>Subscribe</em>と表示されるサードパーティのMarketplaceのオファーでは<em>ありません</em>）。<strong>Create</strong>をクリックし、サブスクリプションとリソースグループ、<strong>Region</strong>（覚えておいてください）、名前、<strong>Pricing tier F0 (free)</strong>を選択します。
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> <strong><a href="https://azure.microsoft.com/free">https://azure.microsoft.com/free</a></strong>で<strong>Microsoft Azure</strong>アカウントを作成します。Azureでは、本人確認のためにクレジットカード情報の入力が求められますが、Speechの<strong>無料枠（F0）</strong>は完全に無料のSKUです（課金する代わりに利用量に上限が設けられます）。そのため、F0ではカードへの請求は発生しません。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> <strong>Azure Portal</strong>（<a href="https://portal.azure.com">https://portal.azure.com</a>）で、<strong>Create a resource</strong>をクリックし、<strong>Speech</strong>を検索します。</p>
+<p><strong>Microsoft</strong>が公開している<strong>Speech</strong>というタイルを選択します（<strong>Create</strong>ボタンが付いています。<em>Subscribe</em>と表示されるサードパーティのMarketplaceのオファーでは<em>ありません</em>）。<strong>Create</strong>をクリックし、サブスクリプションとリソースグループ、<strong>Region</strong>（覚えておいてください）、名前、<strong>Pricing tier F0 (free)</strong>を選択します。
 <strong>Review + create</strong>をクリックします。</p>
 <blockquote>
 <p>適切なリソースへの直接リンク：<a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices">https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices</a></p>
 </blockquote>
-</li>
-<li><p>デプロイが完了したら、リソースを開き、<strong>Keys and Endpoint</strong>に移動します。<strong>KEY 1</strong>をコピーし、
-<strong>Location/Region</strong>の値（例：<code>westeurope</code>）を控えます。</p>
-</li>
-<li><p>キーをSubVox Pro（Settings ▸ <em>Azure Speech</em>）に貼り付けます。続いて、<strong>Text-to-Speech</strong>タブで
-<strong>Azure</strong>を選択し、ドロップダウンから<strong>同じRegion</strong>を選択します。</p>
-</li>
-</ol>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">3</span> デプロイが完了したら、リソースを開き、<strong>Keys and Endpoint</strong>に移動します。<strong>KEY 1</strong>をコピーし、</p>
+<p><strong>Location/Region</strong>の値（例：<code>westeurope</code>）を控えます。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">4</span> キーをSubVox Pro（Settings ▸ <em>Azure Speech</em>）に貼り付けます。続いて、<strong>Text-to-Speech</strong>タブで</p>
+<p><strong>Azure</strong>を選択し、ドロップダウンから<strong>同じRegion</strong>を選択します。</p>
 <blockquote>
 <p>キーとリージョンは、<strong>同じ</strong>Speechリソースのものである必要があります。一致しない場合、Azureは
 <code>401</code>エラーでリクエストを拒否します。リージョンは、ドロップダウンから選択する短い識別子（<code>westeurope</code>、<code>eastus</code>など）であり、表示名（「West Europe」）ではありません。</p>
