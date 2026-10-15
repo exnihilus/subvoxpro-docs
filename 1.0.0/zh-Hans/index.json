@@ -362,7 +362,7 @@
   "index.html": {
     "href": "index.html",
     "title": "SubVox Pro API | SubVox Pro 文档",
-    "summary": "SubVox Pro API SubVox.RevealMode = EVoiceLineSubtitleRevealMode.Karaoke; SubVox.Play(gateSealed); 整句显示 逐词显示 卡拉 OK 语音由 SubVox Pro 的离线 Chatterbox 引擎生成，词级时间信息来自其离线 Whisper 转写。 入门指南 SubVox 代码入口：播放台词、暂停或停止所有台词、设置语言和字幕选项，并监听台词播放。 VoiceLineEmitter 让角色在 3D 环境中说出台词，一次播放一条，支持优先级和队列管理。 VoiceLinePlayback 每次播放调用返回的对象，可用于跟踪台词的播放状态、停止播放，或在协程中等待播放完成。 VoiceLineData 包含字幕、翻译、配音、说话者和事件的台词资源。 按任务查找 播放台词并等待其结束 SubVox.Play 让角色说话而不中断对话 EVoiceLinePlayMode.Queue 在说出某个词时运行代码 SubVox.Subscribe 切换字幕和配音的语言 SubVox.CurrentLanguage 向玩家提供字幕选项 SubVox.SubtitleScale 保持字幕与 FMOD、Wwise 或视频同步 IVoiceLineAudioClock 在角色上方显示对话气泡 SubtitleBubbleDisplayer 构建对话日志 SubVox.History 软件包中附带用户指南（Documentation.pdf），以及针对上述各项任务、可直接复制使用的脚本（Example/Snippets）。"
+    "summary": "SubVox Pro API SubVox.RevealMode = EVoiceLineSubtitleRevealMode.Karaoke; SubVox.Play(gateSealed); 整句显示 逐词显示 卡拉 OK 语音由 SubVox Pro 的离线 Chatterbox 引擎生成，词级时间信息来自其离线 Whisper 转写。 入门指南 SubVox 代码入口：播放台词、暂停或停止所有台词、设置语言和字幕选项，并监听台词播放。 VoiceLineEmitter 让角色在 3D 环境中说出台词，一次播放一条，支持优先级和队列管理。 VoiceLinePlayback 每次播放调用返回的对象，可用于跟踪台词的播放状态、停止播放，或在协程中等待播放完成。 VoiceLineData 包含字幕、翻译、配音、说话者和事件的台词资源。 按任务查找 播放台词并等待其结束 SubVox.Play 让角色说话而不中断对话 EVoiceLinePlayMode.Queue 在说出某个词时运行代码 SubVox.Subscribe 切换字幕和配音的语言 SubVox.CurrentLanguage 向玩家提供字幕选项 SubVox.SubtitleScale 保持字幕与 FMOD、Wwise 或视频同步 IVoiceLineAudioClock 在角色上方显示对话气泡 SubtitleBubbleDisplayer 构建对话日志 SubVox.History"
   },
   "manual/index.html": {
     "href": "manual/index.html",

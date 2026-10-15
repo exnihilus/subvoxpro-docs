@@ -967,12 +967,6 @@ details.svx-member-zone > summary.svx-zone-header {
   grid-template-columns: minmax(16rem, 1.3fr) 1fr;
 }
 
-.svx-index .svx-foot {
-  margin-top: 2.6rem;
-  color: var(--bs-secondary-color);
-  max-width: 62ch;
-}
-
 @media (max-width: 640px) {
   .svx-index dl > div,
   .svx-index .svx-tasks > div {

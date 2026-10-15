@@ -1,6 +1,6 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=fd4daf7803";
-import { startVersionPicker } from "./versions.js?v=fd4daf7803";
-import { localize, startLanguagePicker } from "./languages.js?v=fd4daf7803";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=b15ef1decb";
+import { startVersionPicker } from "./versions.js?v=b15ef1decb";
+import { localize, startLanguagePicker } from "./languages.js?v=b15ef1decb";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
@@ -371,6 +371,23 @@ function startMemberFlash() {
   flashMember(location.hash.slice(1));
 }
 
+function activateProvidersTab() {
+  const navbar = document.getElementById("navbar");
+  if (!navbar) {
+    return;
+  }
+
+  const activate = () => {
+    const link = navbar.querySelector("a.nav-link[href$='/manual/providers.html']:not(.active)");
+    if (link) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+    }
+  };
+  new MutationObserver(activate).observe(navbar, { childList: true, subtree: true });
+  activate();
+}
+
 function trimInheritance(article) {
   const inheritance = article.querySelector("dl.inheritance");
   if (!inheritance) {
@@ -421,6 +438,7 @@ export default {
       };
       addEventListener("hashchange", reveal);
       reveal();
+      activateProvidersTab();
     }
     document.querySelector("header")?.setAttribute("data-bs-theme", "dark");
     startCodeThemes();
