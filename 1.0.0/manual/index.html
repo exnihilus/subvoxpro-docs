@@ -304,6 +304,36 @@ adjust how long a silence must be; the hidden parts are shaded on the waveform.<
 <p><strong>Silence</strong> sets how much quieter a pause must be than the voice; <strong>Min pause</strong> ignores very short gaps.
 <strong>Hold out</strong> keeps the text briefly after the voice stops, and <strong>Lead in</strong> brings it back before speech resumes.
 <strong>Only between two lines</strong> prevents a subtitle from disappearing and reappearing in the middle of its sentence.</p>
+<h3 id="the-sync-chips">The SYNC chips</h3>
+<p>Each row of the <strong>Subtitles</strong> list starts with a colored chip, in the <strong>SYNC</strong> column, that tells you the state of
+that line. Hover a chip to see the details; when a chip can be clicked, its tooltip says what the click does.</p>
+<p>On the <strong>source</strong> subtitles, the chip tells you how well the words are timed on the audio:</p>
+<img src="Images/subvoxpro-sync-chips-source.png" alt="Source subtitles with the SYNC, FIX 2, TEXT + and BLANK chips" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<ul>
+<li><strong>SYNC</strong> (green) — every word is timed on the audio: words appear exactly when they are spoken.</li>
+<li><strong>FIX</strong> <em>n</em> (orange) — <em>n</em> words have an estimated time: they were not heard on the audio. Check their word
+markers on the waveform (<strong>Words</strong> mode) and move them if needed.</li>
+<li><strong>TEXT +</strong> (grey) — the line has no word timings, so it appears all at once. Click the chip to estimate a time for
+each word from the text; the line then shows <strong>FIX</strong>, since those times are estimates.</li>
+<li><strong>BLANK</strong> (grey-blue) — a marker with no text: it clears the screen until the next subtitle.</li>
+</ul>
+<p>On a <strong>translation</strong> (pick its language in the SUBTITLES selector), the chip tells you whether the line still matches
+the source and its dub:</p>
+<img src="Images/subvoxpro-sync-chips-translation.png" alt="French subtitles with the FR, OUT, CUT and REGEN chips" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
+<ul>
+<li><strong>Language code</strong> (blue, for example <strong>FR</strong> or <strong>EN-US</strong>) — the translation is up to date with the source. The
+tooltip also says whether its dub is up to date.</li>
+<li><strong>OUT</strong> (orange) — the source line, or its translation note, changed after it was translated. Click
+<strong>Synchronize translations</strong> (Translation tab) to translate it again, or click the chip once you have checked the
+line to mark it as up to date.</li>
+<li><strong>CUT</strong> (purple) — a source marker moved, so the translated line was cut again automatically and may break in the
+middle of a phrase. Click <strong>Fix splits</strong> (Translation tab) to cut it again with AI, or click the chip to keep this cut.</li>
+<li><strong>REGEN</strong> (red) — the dub no longer matches the line: its text, voice, personality, sounds or groups changed, the
+provider, model or generation mode changed, or the line was never dubbed. Hover it to see why, click it to
+regenerate only what is needed.</li>
+<li><strong>DUBBING</strong> (animated) — the dub of this line is being generated.</li>
+</ul>
+<p>A line shows one chip at a time: <strong>OUT</strong> first, then <strong>CUT</strong>, then <strong>REGEN</strong>. A <strong>BLANK</strong> line always shows <strong>BLANK</strong>.</p>
 <h3 id="deleting-a-voice-line">Deleting a voice line</h3>
 <p>The trash button deletes the voice line. It lists the files that go with it: the ones SubVox Pro generated (dubs,
 recordings) are selected, your own files are not, and a file still used elsewhere is locked. Everything goes to the
@@ -365,7 +395,7 @@ voice line (speech-bubble button) and, if needed, a note on a single line (its s
 badge: click <strong>Synchronize</strong> to re-translate only the lines that changed, or click the badge once you have checked
 the line. When you move markers so that a sentence is cut in a new place, the translated lines show a <strong>CUT</strong> badge:
 <strong>Fix splits</strong> asks an AI provider to cut the translation at the same meaning, without changing its words. Dubs
-follow automatically.</p>
+follow automatically. All the chips are explained in <a href="#the-sync-chips">The SYNC chips</a>.</p>
 <hr>
 <h2 id="dub-with-text-to-speech">Dub with text-to-speech</h2>
 <img src="Images/subvoxpro-ai-tools-dubbing.png" alt="AI Tools, Dubbing tab with local Chatterbox" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">

@@ -298,6 +298,38 @@ et choisissez la durée minimale du silence. Les parties masquées sont ombrées
 <p><strong>Silence</strong> définit l’écart de volume nécessaire entre une pause et la voix pour que cette pause soit considérée comme un silence. <strong>Min pause</strong> ignore les silences
 trop courts. <strong>Hold out</strong> conserve brièvement le texte après l’arrêt de la voix, et <strong>Lead in</strong> le fait réapparaître
 avant la reprise. <strong>Only between two lines</strong> évite de masquer puis de réafficher un sous-titre au milieu de sa phrase.</p>
+<h3 id="the-sync-chips">Les badges SYNC </h3>
+<p>Chaque ligne de la liste <strong>Subtitles</strong> commence par un badge coloré, dans la colonne <strong>SYNC</strong>, qui indique l’état de
+la ligne. Survolez un badge pour voir le détail ; quand un badge est cliquable, son infobulle indique ce que fait le clic.</p>
+<p>Sur les sous-titres <strong>originaux</strong>, le badge indique la qualité du calage des mots sur l’audio :</p>
+<p><img alt="Sous-titres originaux avec les badges SYNC, FIX 2, TEXT + et BLANK" src="Images/subvoxpro-sync-chips-source.png"/></p>
+<ul>
+<li><strong>SYNC</strong> (vert) : chaque mot est calé sur l’audio et apparaît exactement quand il est prononcé.</li>
+<li><strong>FIX</strong> <em>n</em> (orange) : <em>n</em> mots ont un timing estimé, car ils n’ont pas été entendus dans l’audio. Vérifiez leurs
+marqueurs de mots sur la forme d’onde (mode <strong>Words</strong>) et déplacez-les si besoin.</li>
+<li><strong>TEXT +</strong> (gris) : la ligne n’a pas de timings de mots et s’affiche donc d’un coup. Cliquez sur le badge pour estimer
+le timing de chaque mot à partir du texte ; la ligne passe alors en <strong>FIX</strong>, puisque ces timings sont estimés.</li>
+<li><strong>BLANK</strong> (gris-bleu) : un marqueur sans texte, qui efface l’écran jusqu’au sous-titre suivant.</li>
+</ul>
+<p>Sur une <strong>traduction</strong> (choisissez sa langue dans le sélecteur SUBTITLES), le badge indique si la ligne correspond
+toujours à l’original et à son doublage :</p>
+<p><img alt="Sous-titres français avec les badges FR, OUT, CUT et REGEN" src="Images/subvoxpro-sync-chips-translation.png"/></p>
+<ul>
+<li><strong>Code de langue</strong> (bleu, par exemple <strong>FR</strong> ou <strong>EN-US</strong>) : la traduction est à jour. L’infobulle indique aussi si
+son doublage est à jour.</li>
+<li><strong>OUT</strong> (orange) : la ligne originale, ou sa note de traduction, a changé après la traduction. Cliquez sur
+<strong>Synchronize translations</strong> (onglet Translation) pour la retraduire, ou cliquez sur le badge après avoir vérifié la
+ligne pour la marquer comme à jour.</li>
+<li><strong>CUT</strong> (violet) : un marqueur original a bougé, la ligne traduite a donc été recoupée automatiquement et peut se
+couper au milieu d’une expression. Cliquez sur <strong>Fix splits</strong> (onglet Translation) pour la recouper avec l’IA, ou
+cliquez sur le badge pour garder ce découpage.</li>
+<li><strong>REGEN</strong> (rouge) : le doublage ne correspond plus à la ligne : son texte, sa voix, sa personnalité, ses sons ou ses
+groupes ont changé, le fournisseur, le modèle ou le mode de génération a changé, ou la ligne n’a jamais été doublée.
+Survolez-le pour savoir pourquoi, cliquez dessus pour ne régénérer que le nécessaire.</li>
+<li><strong>DUBBING</strong> (animé) : le doublage de cette ligne est en cours de génération.</li>
+</ul>
+<p>Une ligne n’affiche qu’un badge à la fois : <strong>OUT</strong> d’abord, puis <strong>CUT</strong>, puis <strong>REGEN</strong>. Une ligne <strong>BLANK</strong> affiche
+toujours <strong>BLANK</strong>.</p>
 <h3 id="deleting-a-voice-line">Supprimer une voiceline </h3>
 <p>Le bouton corbeille supprime la voiceline et affiche la liste des fichiers qui lui sont associés. Les fichiers générés par SubVox Pro, comme les
 doublages et les enregistrements, sont cochés ; vos fichiers d’origine ne le sont pas. Un fichier encore utilisé
@@ -357,7 +389,7 @@ voiceline, et au besoin une note sur la ligne concernée avec son propre bouton 
 <strong>Synchronize</strong> ne retraduit que les lignes modifiées ; cliquez sur le badge si vous avez vérifié la ligne vous-même.
 Si vous déplacez les marqueurs et coupez une phrase autrement, le badge <strong>CUT</strong> apparaît :
 <strong>Fix splits</strong> demande alors à un fournisseur IA de redécouper la traduction en respectant le sens du découpage
-source, sans changer ses mots. Les doublages sont mis à jour automatiquement.</p>
+source, sans changer ses mots. Les doublages sont mis à jour automatiquement. Tous les badges sont expliqués dans <a href="#the-sync-chips">Les badges SYNC</a>.</p>
 <hr/>
 <h2 id="dub-with-text-to-speech">Doubler par synthèse vocale </h2>
 <p><img alt="Onglet Dubbing avec Chatterbox local" src="Images/subvoxpro-ai-tools-dubbing.png"/></p>

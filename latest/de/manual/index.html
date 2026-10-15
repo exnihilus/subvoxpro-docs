@@ -292,6 +292,39 @@ legen Sie fest, wie lange eine Sprechpause mindestens dauern muss; die ausgeblen
 <p><strong>Silence</strong> legt fest, wie viel leiser eine Pause im Vergleich zur Stimme sein muss; <strong>Min pause</strong> ignoriert sehr kurze Pausen.
 <strong>Hold out</strong> zeigt den Text noch kurz an, nachdem die Stimme verstummt ist, und <strong>Lead in</strong> blendet ihn wieder ein, bevor das Sprechen fortgesetzt wird.
 <strong>Only between two lines</strong> verhindert, dass ein Untertitel mitten im Satz verschwindet und wieder erscheint.</p>
+<h3 id="the-sync-chips">Die SYNC-Chips </h3>
+<p>Jede Zeile der Liste <strong>Subtitles</strong> beginnt in der Spalte <strong>SYNC</strong> mit einem farbigen Chip, der den Zustand dieser
+Zeile anzeigt. Fahren Sie mit der Maus über einen Chip, um Details zu sehen; ist ein Chip anklickbar, beschreibt sein
+Tooltip, was der Klick bewirkt.</p>
+<p>Bei den <strong>Originaluntertiteln</strong> zeigt der Chip, wie gut die Wörter auf das Audio abgestimmt sind:</p>
+<p><img alt="Originaluntertitel mit den Chips SYNC, FIX 2, TEXT + und BLANK" src="Images/subvoxpro-sync-chips-source.png"/></p>
+<ul>
+<li><strong>SYNC</strong> (grün) – jedes Wort ist auf das Audio abgestimmt und erscheint genau dann, wenn es gesprochen wird.</li>
+<li><strong>FIX</strong> <em>n</em> (orange) – <em>n</em> Wörter haben eine geschätzte Zeit, weil sie im Audio nicht erkannt wurden. Prüfen Sie ihre
+Wortmarker auf der Wellenform (Modus <strong>Words</strong>) und verschieben Sie sie bei Bedarf.</li>
+<li><strong>TEXT +</strong> (grau) – die Zeile hat keine Wort-Timings und erscheint daher auf einmal. Klicken Sie auf den Chip, um die
+Zeit jedes Wortes aus dem Text zu schätzen; die Zeile zeigt danach <strong>FIX</strong>, da diese Zeiten geschätzt sind.</li>
+<li><strong>BLANK</strong> (graublau) – ein Marker ohne Text: Er leert den Bildschirm bis zum nächsten Untertitel.</li>
+</ul>
+<p>Bei einer <strong>Übersetzung</strong> (wählen Sie ihre Sprache im Auswahlfeld SUBTITLES) zeigt der Chip, ob die Zeile noch zum
+Original und zu ihrer Sprachfassung passt:</p>
+<p><img alt="Französische Untertitel mit den Chips FR, OUT, CUT und REGEN" src="Images/subvoxpro-sync-chips-translation.png"/></p>
+<ul>
+<li><strong>Sprachcode</strong> (blau, zum Beispiel <strong>FR</strong> oder <strong>EN-US</strong>) – die Übersetzung ist aktuell. Der Tooltip zeigt auch, ob
+ihre Sprachfassung aktuell ist.</li>
+<li><strong>OUT</strong> (orange) – die Originalzeile oder ihr Übersetzungshinweis wurde nach der Übersetzung geändert. Klicken Sie auf
+<strong>Synchronize translations</strong> (Registerkarte Translation), um sie neu zu übersetzen, oder klicken Sie auf den Chip,
+nachdem Sie die Zeile geprüft haben, um sie als aktuell zu markieren.</li>
+<li><strong>CUT</strong> (violett) – ein Originalmarker wurde verschoben, daher wurde die übersetzte Zeile automatisch neu geteilt und
+bricht womöglich mitten in einer Wendung um. Klicken Sie auf <strong>Fix splits</strong> (Registerkarte Translation), um sie mit KI
+neu zu teilen, oder klicken Sie auf den Chip, um diese Teilung zu behalten.</li>
+<li><strong>REGEN</strong> (rot) – die Sprachfassung passt nicht mehr zur Zeile: Text, Stimme, Persönlichkeit, Sounds oder Gruppen
+wurden geändert, der Anbieter, das Modell oder der Generierungsmodus wurde geändert, oder die Zeile wurde nie
+vertont. Fahren Sie darüber, um den Grund zu sehen, und klicken Sie darauf, um nur das Nötige neu zu erzeugen.</li>
+<li><strong>DUBBING</strong> (animiert) – die Sprachfassung dieser Zeile wird gerade erzeugt.</li>
+</ul>
+<p>Eine Zeile zeigt immer nur einen Chip: zuerst <strong>OUT</strong>, dann <strong>CUT</strong>, dann <strong>REGEN</strong>. Eine <strong>BLANK</strong>-Zeile zeigt immer
+<strong>BLANK</strong>.</p>
 <h3 id="deleting-a-voice-line">Eine Voice Line löschen </h3>
 <p>Die Papierkorbschaltfläche löscht die Voice Line. Dabei werden die dazugehörigen Dateien aufgelistet: Die von SubVox Pro generierten Dateien (Sprachfassungen,
 Aufnahmen) sind ausgewählt, Ihre eigenen Dateien nicht, und eine Datei, die an anderer Stelle noch verwendet wird, ist gesperrt. Alles wird in den
@@ -348,7 +381,7 @@ Voice Line ein (Schaltfläche mit Sprechblasensymbol) und bei Bedarf eine Anmerk
 Klicken Sie auf <strong>Synchronize</strong>, um nur die geänderten Untertitel neu zu übersetzen, oder klicken Sie auf die Statusanzeige, sobald Sie
 den Untertitel überprüft haben. Wenn Sie Marker so verschieben, dass ein Satz an einer neuen Stelle geteilt wird, zeigen die übersetzten Untertitel eine <strong>CUT</strong>-Statusanzeige an:
 Mit <strong>Fix splits</strong> wird ein KI-Anbieter beauftragt, die Übersetzung an der inhaltlich entsprechenden Stelle zu teilen, ohne ihre Wörter zu ändern. Die Sprachfassungen
-werden automatisch angepasst.</p>
+werden automatisch angepasst. Alle Chips werden unter <a href="#the-sync-chips">Die SYNC-Chips</a> erklärt.</p>
 <hr/>
 <h2 id="dub-with-text-to-speech">Mit Sprachsynthese vertonen </h2>
 <img alt="AI Tools, Dubbing tab with local Chatterbox" src="Images/subvoxpro-ai-tools-dubbing.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>

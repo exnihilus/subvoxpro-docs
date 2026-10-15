@@ -221,6 +221,26 @@ WAV 文件，存放在台词资源所在的文件夹中。在 macOS 上，请在
 <p><strong>Silence</strong> 设置停顿处的音量需要比说话时低多少；<strong>Min pause</strong> 忽略非常短的停顿。
 <strong>Hold out</strong> 在语音停止后短暂保留字幕，而 <strong>Lead in</strong> 则在语音恢复前提前显示字幕。
 <strong>Only between two lines</strong> 可防止字幕在句子中间消失并重新出现。</p>
+<h3 id="the-sync-chips">SYNC 标签 </h3>
+<p><strong>Subtitles</strong> 列表的每一行开头，在 <strong>SYNC</strong> 列中都有一个彩色标签，用于表示该行的状态。将鼠标悬停在标签上可查看详情；如果标签可以点击，其提示会说明点击后的操作。</p>
+<p>在<strong>原文</strong>字幕中，标签表示单词与音频的对齐程度：</p>
+<p><img alt="带有 SYNC、FIX 2、TEXT + 和 BLANK 标签的原文字幕" src="Images/subvoxpro-sync-chips-source.png"/></p>
+<ul>
+<li><strong>SYNC</strong>（绿色）：每个词都已与音频对齐，会在说出时准确显示。</li>
+<li><strong>FIX</strong> <em>n</em>（橙色）：有 <em>n</em> 个词未在音频中识别出来，其时间为估算值。请在波形上检查这些词的标记（<strong>Words</strong> 模式），必要时进行移动。</li>
+<li><strong>TEXT +</strong>（灰色）：该行没有单词时间，因此会整行同时显示。点击标签可根据文本估算每个词的时间；由于这些时间是估算的，该行随后会显示 <strong>FIX</strong>。</li>
+<li><strong>BLANK</strong>（灰蓝色）：没有文本的标记，会清空屏幕上的字幕，直到下一条字幕。</li>
+</ul>
+<p>在<strong>译文</strong>中（在 SUBTITLES 选择器中选择其语言），标签表示该行是否仍与原文及其配音一致：</p>
+<p><img alt="带有 FR、OUT、CUT 和 REGEN 标签的法语字幕" src="Images/subvoxpro-sync-chips-translation.png"/></p>
+<ul>
+<li><strong>语言代码</strong>（蓝色，例如 <strong>FR</strong> 或 <strong>EN-US</strong>）：译文是最新的。提示中还会说明其配音是否为最新。</li>
+<li><strong>OUT</strong>（橙色）：翻译之后，原文行或其翻译说明已被修改。点击 <strong>Synchronize translations</strong>（Translation 选项卡）重新翻译，或在检查该行后点击标签，将其标记为最新。</li>
+<li><strong>CUT</strong>（紫色）：原文标记被移动，因此译文行已被自动重新切分，可能在短语中间断开。点击 <strong>Fix splits</strong>（Translation 选项卡）用 AI 重新切分，或点击标签保留当前切分。</li>
+<li><strong>REGEN</strong>（红色）：配音已与该行不一致：其文本、声音、性格、音效或分组已更改，提供商、模型或生成模式已更改，或者该行从未配音。悬停可查看原因，点击则只重新生成需要的部分。</li>
+<li><strong>DUBBING</strong>（动画）：正在生成这一行的配音。</li>
+</ul>
+<p>每行一次只显示一个标签：优先显示 <strong>OUT</strong>，其次是 <strong>CUT</strong>，然后是 <strong>REGEN</strong>。<strong>BLANK</strong> 行始终显示 <strong>BLANK</strong>。</p>
 <h3 id="deleting-a-voice-line">删除台词资源 </h3>
 <p>垃圾桶按钮可删除台词资源。它会列出与该台词资源相关的文件：SubVox Pro 生成的文件（配音、录音）会被选中，你自己的文件则不会被选中，而在其他地方仍被使用的文件会被锁定。所有删除的文件都会被移至系统回收站，因此可以恢复。</p>
 <h3 id="splitting-a-voice-line">拆分台词资源 </h3>
@@ -256,7 +276,7 @@ WAV 文件，存放在台词资源所在的文件夹中。在 macOS 上，请在
 <p><strong>辅助翻译。</strong>提供上下文有助于改善含义不明确的台词的翻译效果：为整个台词资源填写<strong>整体上下文</strong>（通过对话气泡按钮）；如有需要，还可为单条字幕添加备注（通过列表中该字幕的对话气泡按钮）。</p>
 <p><strong>保持翻译同步。</strong>在翻译后修改源字幕时，对应译文会显示 <strong>OUT</strong>
 状态徽标：点击 <strong>Synchronize</strong> 仅重新翻译已更改的字幕，也可以在检查该字幕后点击此徽标。移动标记后，句子的切分位置发生变化时，译文字幕会显示 <strong>CUT</strong> 状态徽标：
-<strong>Fix splits</strong> 会请求 AI 提供商在译文中与原文含义相对应的位置重新切分，且不改变译文中的词。配音会自动随之调整。</p>
+<strong>Fix splits</strong> 会请求 AI 提供商在译文中与原文含义相对应的位置重新切分，且不改变译文中的词。配音会自动随之调整。所有标签的说明见 <a href="#the-sync-chips">SYNC 标签</a>。</p>
 <hr/>
 <h2 id="dub-with-text-to-speech">使用语音合成进行配音 </h2>
 <img alt="AI Tools, Dubbing tab with local Chatterbox" src="Images/subvoxpro-ai-tools-dubbing.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>

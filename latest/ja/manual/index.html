@@ -220,6 +220,26 @@ SubVox.Play(myVoiceLine);
 </ul>
 <p><img alt="Auto blanks popup with silence, minimum pause, hold out and lead in settings" src="Images/subvoxpro-auto-blanks.png"/></p>
 <p>「<strong>Silence</strong>」では、無音区間と判定するために、声よりどの程度音量が小さい必要があるかを設定します。「<strong>Min pause</strong>」では、ごく短い無音区間を無視します。「<strong>Hold out</strong>」では、声が止まった後もテキストを短時間表示し続け、「<strong>Lead in</strong>」では、発話が再開する前にテキストを再び表示します。「<strong>Only between two lines</strong>」では、文の途中で字幕が消えたり再表示されたりするのを防ぎます。</p>
+<h3 id="the-sync-chips">SYNCチップ </h3>
+<p>「<strong>Subtitles</strong>」リストの各行の先頭、「<strong>SYNC</strong>」列には、その字幕の状態を示す色付きのチップが表示されます。チップにカーソルを合わせると詳細が表示されます。クリックできるチップでは、クリックしたときの動作もツールチップに表示されます。</p>
+<p><strong>原文</strong>の字幕では、チップは単語が音声にどの程度正確に合わせられているかを示します。</p>
+<p><img alt="SYNC、FIX 2、TEXT +、BLANKチップが表示された原文の字幕" src="Images/subvoxpro-sync-chips-source.png"/></p>
+<ul>
+<li><strong>SYNC</strong>（緑）：すべての単語が音声に合わせられており、話された瞬間に表示されます。</li>
+<li><strong>FIX</strong> <em>n</em>（オレンジ）：<em>n</em> 個の単語は音声から聞き取れなかったため、推定のタイミングになっています。波形上の単語マーカー（「<strong>Words</strong>」モード）を確認し、必要に応じて移動してください。</li>
+<li><strong>TEXT +</strong>（グレー）：単語のタイミングがないため、字幕全体が一度に表示されます。チップをクリックすると、テキストから各単語のタイミングを推定します。推定値なので、その後は「<strong>FIX</strong>」と表示されます。</li>
+<li><strong>BLANK</strong>（青みがかったグレー）：テキストのないマーカーです。次の字幕まで画面の字幕を消します。</li>
+</ul>
+<p><strong>翻訳</strong>（SUBTITLESセレクターで言語を選択）では、チップはその字幕が原文と吹き替え音声にまだ一致しているかを示します。</p>
+<p><img alt="FR、OUT、CUT、REGENチップが表示されたフランス語の字幕" src="Images/subvoxpro-sync-chips-translation.png"/></p>
+<ul>
+<li><strong>言語コード</strong>（青、例：<strong>FR</strong>、<strong>EN-US</strong>）：翻訳は最新です。ツールチップには、吹き替え音声が最新かどうかも表示されます。</li>
+<li><strong>OUT</strong>（オレンジ）：翻訳後に原文の字幕、またはその翻訳メモが変更されました。「<strong>Synchronize translations</strong>」（Translationタブ）をクリックして再翻訳するか、字幕を確認した後でチップをクリックして最新としてマークします。</li>
+<li><strong>CUT</strong>（紫）：原文のマーカーが移動したため、翻訳された字幕が自動的に分割し直され、表現の途中で区切られている可能性があります。「<strong>Fix splits</strong>」（Translationタブ）をクリックしてAIで分割し直すか、チップをクリックして現在の区切りを維持します。</li>
+<li><strong>REGEN</strong>（赤）：吹き替え音声がその字幕と一致しなくなりました。テキスト、声、パーソナリティ、サウンド、グループ、プロバイダー、モデル、生成モードのいずれかが変更されたか、一度も吹き替えられていません。カーソルを合わせると理由が表示され、クリックすると必要な部分だけが再生成されます。</li>
+<li><strong>DUBBING</strong>（アニメーション）：この字幕の吹き替え音声を生成中です。</li>
+</ul>
+<p>1行に表示されるチップは1つだけです。優先順位は「<strong>OUT</strong>」、「<strong>CUT</strong>」、「<strong>REGEN</strong>」の順です。「<strong>BLANK</strong>」の行には常に「<strong>BLANK</strong>」が表示されます。</p>
 <h3 id="deleting-a-voice-line">ボイスラインの削除 </h3>
 <p>ごみ箱ボタンでボイスラインを削除します。関連するファイルが一覧表示されます。SubVox Proが生成したファイル（吹き替え音声、録音）は選択済みで、自分で用意したファイルは選択されていません。他で使用中のファイルはロックされています。削除した項目はすべてシステムのごみ箱に移動するため、復元できます。</p>
 <h3 id="splitting-a-voice-line">ボイスラインの分割 </h3>
@@ -254,7 +274,7 @@ Qwen3が対応していない言語の場合は、プロバイダーのタイミ
 <p><img alt="Translation target popup with a preset of several languages and its editable language list" src="Images/subvoxpro-translation-targets.png"/></p>
 <p>「<strong>Target</strong>」ポップアップでは、左側で好きなだけ言語にチェックを入れ、右側の「<strong>Save as preset</strong>」で保存すると再利用できます。プリセットを選択すると、1回の操作でプリセットに含まれるすべての言語に翻訳されます。右側の列でプリセットの名前と言語を編集できます。</p>
 <p><strong>翻訳に役立つ情報の追加。</strong>曖昧な字幕は、コンテキストがあると翻訳の質が向上します。吹き出しボタンからボイスライン全体の<strong>コンテキスト</strong>を入力し、必要に応じて個々の字幕にも注釈を追加します（リスト内の該当する字幕の吹き出しボタン）。</p>
-<p><strong>翻訳の同期。</strong>翻訳後に原文の字幕を変更すると、その翻訳には「<strong>OUT</strong>」バッジが表示されます。「<strong>Synchronize</strong>」をクリックすると、原文が変更された字幕のみが再翻訳されます。または、字幕を確認した後でバッジをクリックします。マーカーを移動して文の区切り位置を変更すると、翻訳された字幕に「<strong>CUT</strong>」バッジが表示されます。「<strong>Fix splits</strong>」では、AIプロバイダーに、単語を変更せずに原文の区切りに意味上対応する位置で翻訳を分割するよう依頼します。吹き替え音声も、変更後の区切りに自動的に合わせられます。</p>
+<p><strong>翻訳の同期。</strong>翻訳後に原文の字幕を変更すると、その翻訳には「<strong>OUT</strong>」バッジが表示されます。「<strong>Synchronize</strong>」をクリックすると、原文が変更された字幕のみが再翻訳されます。または、字幕を確認した後でバッジをクリックします。マーカーを移動して文の区切り位置を変更すると、翻訳された字幕に「<strong>CUT</strong>」バッジが表示されます。「<strong>Fix splits</strong>」では、AIプロバイダーに、単語を変更せずに原文の区切りに意味上対応する位置で翻訳を分割するよう依頼します。吹き替え音声も、変更後の区切りに自動的に合わせられます。すべてのチップについては「<a href="#the-sync-chips">SYNCチップ</a>」で説明しています。</p>
 <hr/>
 <h2 id="dub-with-text-to-speech">音声合成による吹き替え </h2>
 <img alt="AI Tools, Dubbing tab with local Chatterbox" src="Images/subvoxpro-ai-tools-dubbing.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
