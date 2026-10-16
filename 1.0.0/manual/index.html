@@ -102,6 +102,15 @@
 <li><strong>Play</strong> everything in game with a few components, trigger <strong>gameplay events</strong> from a line, and drop lines onto
 <strong>Unity Timeline</strong>.</li>
 </ul>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 22px 0 26px; font-size: 0.9em; text-align: center; line-height: 1.35;">
+<div style="flex: 0 1 calc(33.3% - 8px); min-width: 150px; box-sizing: border-box; padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.5em; height: 1.5em; margin-right: 0.45em; border-radius: 5px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1;">1</span><strong>Audio or text</strong><br><span style="opacity: 0.75;">clip, recording, .srt, .txt</span></div>
+<div style="flex: 0 1 calc(33.3% - 8px); min-width: 150px; box-sizing: border-box; padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.5em; height: 1.5em; margin-right: 0.45em; border-radius: 5px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1;">2</span><strong>Transcribe</strong><br><span style="opacity: 0.75;">timed subtitles</span></div>
+<div style="flex: 0 1 calc(33.3% - 8px); min-width: 150px; box-sizing: border-box; padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.5em; height: 1.5em; margin-right: 0.45em; border-radius: 5px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1;">3</span><strong>Edit</strong><br><span style="opacity: 0.75;">markers, words, styles</span></div>
+<div style="flex: 0 1 calc(33.3% - 8px); min-width: 150px; box-sizing: border-box; padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.5em; height: 1.5em; margin-right: 0.45em; border-radius: 5px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1;">4</span><strong>Translate</strong><br><span style="opacity: 0.75;">48 languages</span></div>
+<div style="flex: 0 1 calc(33.3% - 8px); min-width: 150px; box-sizing: border-box; padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.5em; height: 1.5em; margin-right: 0.45em; border-radius: 5px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1;">5</span><strong>Dub</strong><br><span style="opacity: 0.75;">text-to-speech, cloned voices</span></div>
+<div style="flex: 0 1 calc(33.3% - 8px); min-width: 150px; box-sizing: border-box; padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.5em; height: 1.5em; margin-right: 0.45em; border-radius: 5px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1;">6</span><strong>Play in game</strong><br><span style="opacity: 0.75;">components, events, Timeline</span></div>
+</div>
+<p>Start from audio or from text, and use only the steps you need.</p>
 <h2 id="contents">Contents</h2>
 <ul>
 <li><a href="#before-you-start">Before you start</a></li>
@@ -146,15 +155,36 @@ translation and dubbing without any account) need the <strong>Windows</strong> e
 <hr>
 <h2 id="quick-start">Quick start</h2>
 <p>From one audio clip to synced subtitles on screen in a few minutes.</p>
-<p>Everything in SubVox Pro is also one click away in <strong>Tools ▸ SubVox Pro ▸ Hub</strong>: a window of tiles that opens the
-voice line editor, the Dub Booth, batch processing, Google Sheets, the provider comparison,
-the additional (offline) models, the MCP server for AI assistants, the example scenes, the documentation and the
-settings. The home screen has <strong>ten tiles</strong>. <strong>Documentation</strong> opens a second screen with <strong>Online</strong> (guide,
-providers and scripting reference, with an English/French language selector), <strong>Local</strong> (the English PDF,
-available offline) and <strong>Provider Setup</strong> (the same PDF, opened directly at its Provider Setup part). <strong>Back</strong>
-returns to the home screen.</p>
+<h4 id="the-hub">The Hub</h4>
+<p>Everything in SubVox Pro is one click away in <strong>Tools ▸ SubVox Pro ▸ Hub</strong>. Its <strong>ten tiles</strong> open the voice line
+editor, the Dub Booth, batch processing, Google Sheets, the provider comparison, the additional (offline) models,
+the MCP server for AI assistants, the example scenes, the documentation and the settings.</p>
 <p><img src="Images/subvoxpro-hub.png" alt="The SubVox Pro Hub with its ten tool tiles"></p>
+<p><strong>Documentation</strong> opens a second screen (<strong>Back</strong> returns to the tiles):</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Opens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Online</strong></td>
+<td>The guide, providers and scripting reference, with an English/French language selector</td>
+</tr>
+<tr>
+<td><strong>Local</strong></td>
+<td>The English PDF, available offline</td>
+</tr>
+<tr>
+<td><strong>Provider Setup</strong></td>
+<td>The same PDF, opened directly at its Provider Setup part</td>
+</tr>
+</tbody>
+</table>
 <p><img src="Images/subvoxpro-hub-documentation.png" alt="Documentation screen in the Hub: Online, Local, Provider Setup and Back"></p>
+<h4 id="five-steps">Five steps</h4>
 <p><strong>1. Pick how you will transcribe.</strong> Either paste an API key for a speech-to-text service in
 <strong>Tools ▸ SubVox Pro ▸ Settings</strong> (<a href="providers.html">where to get one</a>), or, on Windows, use <strong>Whisper</strong> or
 <strong>Parakeet</strong>, which run offline for free (they offer to download their model the first time).</p>
@@ -173,10 +203,17 @@ your scene, then play the line:</p>
 
 SubVox.Play(myVoiceLine);
 </code></pre>
-<p>Want to see it running first? Open <strong>Examples</strong> in the <strong>Hub</strong> (or <strong>Tools ▸ SubVox Pro ▸ Example Scenes</strong>): four
-ready-made scenes — a 3D temple, a 2D neon station, a noir visual novel and a first-person sandbox with one stand
-per feature — with voice lines in four languages, speech bubbles, dialogue sequences, voice events and subtitle
-options. Just press <strong>Play</strong>.</p>
+<blockquote>
+<p><strong>Want to see it running first?</strong> Open <strong>Examples</strong> in the <strong>Hub</strong> (or <strong>Tools ▸ SubVox Pro ▸ Example Scenes</strong>)
+and press <strong>Play</strong>. Four ready-made scenes, with voice lines in four languages, speech bubbles, dialogue
+sequences, voice events and subtitle options:</p>
+<ul>
+<li>a 3D temple;</li>
+<li>a 2D neon station;</li>
+<li>a noir visual novel;</li>
+<li>a first-person sandbox with one stand per feature.</li>
+</ul>
+</blockquote>
 <hr>
 <h2 id="the-subvox-pro-window">The SubVox Pro window</h2>
 <img src="Images/subvoxpro-window-overview.png" alt="The SubVox Pro window: source tracks, AI Tools, waveform timeline, live preview and subtitles list" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
@@ -201,29 +238,57 @@ then drag over words to paint them (right-drag erases).</li>
 <p>Click the tag beside <strong>Voice Line Data</strong> to choose both a color and a shape. <strong>Clear tag</strong> removes it.
 The shape helps distinguish voice lines without relying on color alone. Click <strong>A-Z</strong> or <strong>0-9</strong> to use a letter or a digit as the shape.</p>
 <p><img src="Images/subvoxpro-tag-popup.png" alt="Color and shape tag popup with the A-Z picker open and a blue letter A selected"></p>
-<p>Click the source flag to choose the spoken language. Flags identify languages, not a speaker's nationality;
-the picker shows their names and codes so you do not have to recognize the flag. Languages already used by a
-translation or a dub are greyed out. To clear the source subtitles, use the cross on the source row of the
-<strong>SUBTITLES</strong> selector.</p>
+<p>Click the source flag to choose the spoken language.</p>
+<ul>
+<li>Flags identify languages, not a speaker's nationality: the picker shows their names and codes, so you do not
+have to recognize the flag.</li>
+<li>Languages already used by a translation or a dub are greyed out.</li>
+<li>To clear the source subtitles, use the cross on the source row of the <strong>SUBTITLES</strong> selector.</li>
+</ul>
 <p><img src="Images/subvoxpro-language-picker.png" alt="Source language picker showing language names, codes and flags"></p>
 <h3 id="starting-without-audio">Starting without audio</h3>
 <img src="Images/subvoxpro-new-voice-line-subtitles.png" alt="Add a subtitles track: import an .srt file, import a .txt file or add lines manually" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
-<p>A voice line can start from text instead of audio: choose <strong>Add a subtitles track</strong>, then import an <strong>.srt</strong> file
-(subtitles with timings), a <strong>.txt</strong> file (one subtitle per line, timed automatically at a comfortable reading
-speed) or type the lines yourself. Set the <strong>Length</strong> of the line; it plays for that long in game until you add
-audio or generate a dub from the text.</p>
+<p>A voice line can start from text instead of audio. Choose <strong>Add a subtitles track</strong>, then:</p>
+<table>
+<thead>
+<tr>
+<th>Choice</th>
+<th>Gives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Import an <strong>.srt</strong> file</td>
+<td>Subtitles with their timings</td>
+</tr>
+<tr>
+<td>Import a <strong>.txt</strong> file</td>
+<td>One subtitle per line, timed automatically at a comfortable reading speed</td>
+</tr>
+<tr>
+<td>Add lines manually</td>
+<td>The lines you type yourself</td>
+</tr>
+</tbody>
+</table>
+<p>Set the <strong>Length</strong> of the line: it plays for that long in game until you add audio or generate a dub from the text.</p>
 <h3 id="recording-audio">Recording audio</h3>
 <img src="Images/subvoxpro-new-voice-line-audio.png" alt="Add an audio track: pick an audio clip or record with a microphone" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <p><strong>Record with a microphone</strong> (in <strong>Add an audio track</strong> or the <strong>+</strong> next to the AUDIO selector) opens a small
-recorder: pick the microphone, watch the level, record, listen back, then <strong>Use recording</strong>. To set the level, click
-<strong>Calibrate</strong> next to <strong>Gain</strong> and speak normally for 3 seconds. The take is saved as a
-WAV next to the voice line. On macOS, allow Unity to use the microphone in System Settings.</p>
+recorder:</p>
+<ol>
+<li>Pick the microphone and watch the level. To set it, click <strong>Calibrate</strong> next to <strong>Gain</strong> and speak normally for
+3 seconds.</li>
+<li>Record, then listen back.</li>
+<li>Click <strong>Use recording</strong>. The take is saved as a WAV next to the voice line.</li>
+</ol>
+<p>On macOS, allow Unity to use the microphone in System Settings.</p>
 <h3 id="reading-along-while-you-record">Reading along while you record</h3>
 <img src="Images/subvoxpro-read-along.png" alt="The recorder following the text while recording: heard words in green" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
-<p>When the voice line already has subtitles, the recorder shows them in <strong>Read along</strong> so you can record a dub
-while reading the text. Pick the language to read in the dropdown (or <strong>Off</strong>). As you speak, the words turn
-<strong>green</strong> when they are heard and <strong>red</strong> when they were skipped; the text scrolls one line at a time, keeping the
-previous line in view.</p>
+<p>When the voice line already has subtitles, the recorder shows them in <strong>Read along</strong>, so you can record a dub
+while reading the text. Pick the language to read in the dropdown (or <strong>Off</strong>).</p>
+<p>As you speak, the words turn <strong>green</strong> when they are heard and <strong>red</strong> when they were skipped. The text scrolls one
+line at a time, keeping the previous line in view.</p>
 <ul>
 <li>It runs on your computer, for free: it needs <strong>Parakeet</strong> or a local <strong>Whisper</strong> model (<strong>Tools ▸ SubVox Pro ▸
 Additional Models</strong>). When several are installed, pick the one to use in the menu next to the language.</li>
@@ -239,38 +304,111 @@ When <strong>Qwen3</strong> word timing is installed, it refines those timings. 
 <p>The <strong>Dub Booth</strong> records a dub the way voice actors do: one line at a time, over the original performance, so
 your take lands where the original line is. Open it from <strong>+ Add audio ▸ Dub over the original</strong>, the Hub, or
 <strong>Tools ▸ SubVox Pro ▸ Dub Booth</strong>. Wear headphones, so the original does not reach the microphone.</p>
+<h4 id="recording-a-line">Recording a line</h4>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 8px; margin: 18px 0 22px; font-size: 0.9em; text-align: center; line-height: 1.35;">
+<div style="padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><strong>Original plays</strong><br><span style="opacity: 0.75;">first</span></div>
+<span style="opacity: 0.6;">→</span>
+<div style="padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><strong>Beep · beep · beep</strong><br><span style="opacity: 0.75;">countdown</span></div>
+<span style="opacity: 0.6;">→</span>
+<div style="padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><strong>Record</strong><br><span style="opacity: 0.75;">on the 4th beat</span></div>
+<span style="opacity: 0.6;">→</span>
+<div style="padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><strong>Stop</strong><br><span style="opacity: 0.75;">at the line's end</span></div>
+</div>
 <ol>
 <li>Pick the voice line and the language to dub. Picking <strong>Original (ADR)</strong> re-records the original language.</li>
-<li>Press <strong>Space</strong>: the original plays a few seconds before the line, three beeps count down, and recording starts
+<li>Press <strong>Space</strong>. The original plays a few seconds before the line, three beeps count down, and recording starts
 on the fourth, silent beat. The text scrolls past the playhead, word by word, between the <strong>IN</strong> and <strong>OUT</strong> marks.</li>
-<li>The take stops by itself at the end of the line (or press <strong>Space</strong>). Badges tell you whether you started
-<strong>on cue</strong> and how much <strong>longer</strong> or <strong>shorter</strong> than the original you spoke; hover them to see both timings.
-Botched it while recording? <strong>Discard</strong> (or <strong>Esc</strong>) throws the take away at once, without waiting for the end.</li>
-<li><strong>Play</strong> plays your take in sync with the original. The menu next to it picks what to play: <strong>This line</strong>,
-<strong>With previous line</strong> (to check that a correction follows the line before) or <strong>All lines</strong>, each with its
-validated take. The speaker icons left of the <strong>ORIGINAL</strong> and <strong>YOUR TAKE</strong> tracks choose what you hear
-(<strong>A</strong> swaps between them). <strong>Redo</strong> (or <strong>R</strong>) records another take; every take is kept and can be picked again
-in <strong>TAKE</strong>, where the validated one is marked ✓; the bin next to it deletes the selected take (a new take reuses
-the first free number).</li>
+<li>The take stops by itself at the end of the line (or press <strong>Space</strong>).
+<ul>
+<li>Badges tell you whether you started <strong>on cue</strong> and how much <strong>longer</strong> or <strong>shorter</strong> than the original
+you spoke. Hover them to see both timings.</li>
+<li>Botched it while recording? <strong>Discard</strong> (or <strong>Esc</strong>) throws the take away at once, without waiting for the end.</li>
+</ul>
+</li>
+<li>Listen and compare (see the table below), or <strong>Redo</strong> the take.</li>
 <li><strong>Validate &amp; next</strong> (or <strong>Enter</strong>) marks the take as final and moves to the next line to record.
 <strong>Unvalidate</strong> takes it back.</li>
 <li><strong>Build dub</strong> places the kept takes on the original timeline and adds them as that language's dub (or, for
 <strong>Original (ADR)</strong>, <strong>Replace original</strong>). Words are then timed on your takes, line by line, with no model to
 install. Install <strong>Qwen3</strong> word timing (Additional Models) for even more precise timings.</li>
 </ol>
-<p><strong>Line too long?</strong> A translation often runs 20 to 30% longer than the original. When a line will be hard to say
-in the time of the original, a notice under its text says so before you record. <strong>Shorten</strong> asks your translator
-(OpenAI, Claude, Gemini or DeepSeek) for a shorter line with the same meaning that fits that time; <strong>Undo</strong> brings the
-previous text back.</p>
-<p><strong>Fit to original</strong>, next to the badges, stretches or compresses a take by up to 10%, without changing the pitch of
-the voice, and moves it so it starts with the original. The result is a new take, ready to validate. Further off
-than 10%? Redo the take: stretching it more would sound unnatural.</p>
-<p>Takes are saved as you go: close the window and come back later to pick up where you left off.
-<strong>Booth settings</strong> sets the microphone, gain (<strong>Calibrate</strong> works as in the recorder), how much of the original plays
-before the line, the beeps, what you hear while recording and the scrolling speed (a minimum: the text speeds up when a line would not fit).
-The menu above the line list sets what one recording covers: <strong>Record one line</strong>, <strong>Record several lines</strong> (click
-the first line, then Shift-click the last) or <strong>Record all lines</strong> (from the selected line to the end). Several lines
-are recorded in one go, at a natural pace, then split into one take per line.</p>
+<h4 id="listening-and-comparing-takes">Listening and comparing takes</h4>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Play</strong></td>
+<td>Plays your take in sync with the original</td>
+</tr>
+<tr>
+<td>Menu next to <strong>Play</strong></td>
+<td><strong>This line</strong>, <strong>With previous line</strong> (to check that a correction follows the line before) or <strong>All lines</strong>, each with its validated take</td>
+</tr>
+<tr>
+<td>Speaker icons (<strong>ORIGINAL</strong>, <strong>YOUR TAKE</strong>)</td>
+<td>Choose what you hear; <strong>A</strong> swaps between them</td>
+</tr>
+<tr>
+<td><strong>Redo</strong> (or <strong>R</strong>)</td>
+<td>Records another take. Every take is kept</td>
+</tr>
+<tr>
+<td><strong>TAKE</strong></td>
+<td>Picks a take again; the validated one is marked ✓</td>
+</tr>
+<tr>
+<td>Bin next to <strong>TAKE</strong></td>
+<td>Deletes the selected take (a new take reuses the first free number)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="line-too-long-or-too-short">Line too long or too short</h4>
+<ul>
+<li><strong>Shorten</strong> — a translation often runs 20 to 30% longer than the original. When a line will be hard to say in
+the time of the original, a notice under its text says so before you record. <strong>Shorten</strong> asks your translator
+(OpenAI, Claude, Gemini or DeepSeek) for a shorter line with the same meaning that fits that time; <strong>Undo</strong> brings
+the previous text back.</li>
+<li><strong>Fit to original</strong> — next to the badges, it stretches or compresses a take by up to 10%, without changing the
+pitch of the voice, and moves it so it starts with the original. The result is a new take, ready to validate.
+Further off than 10%? Redo the take: stretching it more would sound unnatural.</li>
+</ul>
+<h4 id="several-lines-at-once">Several lines at once</h4>
+<p>The menu above the line list sets what one recording covers:</p>
+<table>
+<thead>
+<tr>
+<th>Choice</th>
+<th>Records</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Record one line</strong></td>
+<td>The selected line</td>
+</tr>
+<tr>
+<td><strong>Record several lines</strong></td>
+<td>From the line you click to the one you Shift-click</td>
+</tr>
+<tr>
+<td><strong>Record all lines</strong></td>
+<td>From the selected line to the end</td>
+</tr>
+</tbody>
+</table>
+<p>Several lines are recorded in one go, at a natural pace, then split into one take per line.</p>
+<h4 id="settings-and-saving">Settings and saving</h4>
+<ul>
+<li><strong>Booth settings</strong> sets the microphone, the gain (<strong>Calibrate</strong> works as in the recorder), how much of the
+original plays before the line, the beeps, what you hear while recording and the scrolling speed (a minimum: the
+text speeds up when a line would not fit).</li>
+<li>Takes are saved as you go: close the window and come back later to pick up where you left off.</li>
+</ul>
 <h3 id="adding-your-own-dubs">Adding your own dubs</h3>
 <p>Already have recorded dubs? Click the <strong>+</strong> next to the AUDIO selector and pick or record the clip. A window then
 asks which language it is:</p>
@@ -278,8 +416,8 @@ asks which language it is:</p>
 <li><strong>Replace a track</strong> — put it in place of the original audio or of an existing dub;</li>
 <li><strong>Add a new track</strong> — pick its language to add it as a new dub.</li>
 </ul>
-<p>The lines are placed proportionally on the new audio (or timed from the take when you read along); drag the markers to fine-tune them. Translated lines in that
-language are shown over the dub when they exist.</p>
+<p>The lines are placed proportionally on the new audio (or timed from the take when you read along): drag the markers
+to fine-tune them. Translated lines in that language are shown over the dub when they exist.</p>
 <h3 id="importing-subtitles-in-another-language">Importing subtitles in another language</h3>
 <p>The <strong>+</strong> next to the SUBTITLES selector imports an <strong>.srt</strong> or a <strong>.txt</strong> file. On a voice line that already has
 content, a window asks which language the file is in:</p>
@@ -287,8 +425,8 @@ content, a window asks which language the file is in:</p>
 <li><strong>Replace a track</strong> — replace the original subtitles (with the file's timings) or an existing translation;</li>
 <li><strong>Add a new track</strong> — pick its language to add it as a new translation.</li>
 </ul>
-<p>A translation keeps the timing of the original lines: each imported line goes to the original line at the same position,
-or, for an <code>.srt</code> with a different number of lines, to the original line playing at that time.</p>
+<p>A translation keeps the timing of the original lines. Each imported line goes to the original line at the same
+position or, for an <code>.srt</code> with a different number of lines, to the original line playing at that time.</p>
 <h3 id="checking-your-subtitles">Checking your subtitles</h3>
 <ul>
 <li><strong>Show CPS</strong> (in <a href="#settings">Settings</a>) displays the reading speed of each line and flags lines that go too
@@ -301,51 +439,142 @@ adjust how long a silence must be; the hidden parts are shaded on the waveform.<
 <li><strong>Export SRT</strong> saves the subtitles as an <code>.srt</code> file.</li>
 </ul>
 <p><img src="Images/subvoxpro-auto-blanks.png" alt="Auto blanks popup with silence, minimum pause, hold out and lead in settings"></p>
-<p><strong>Silence</strong> sets how much quieter a pause must be than the voice; <strong>Min pause</strong> ignores very short gaps.
-<strong>Hold out</strong> keeps the text briefly after the voice stops, and <strong>Lead in</strong> brings it back before speech resumes.
-<strong>Only between two lines</strong> prevents a subtitle from disappearing and reappearing in the middle of its sentence.</p>
+<table>
+<thead>
+<tr>
+<th>Auto blanks setting</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Silence</strong></td>
+<td>How much quieter a pause must be than the voice</td>
+</tr>
+<tr>
+<td><strong>Min pause</strong></td>
+<td>Ignores very short gaps</td>
+</tr>
+<tr>
+<td><strong>Hold out</strong></td>
+<td>Keeps the text briefly after the voice stops</td>
+</tr>
+<tr>
+<td><strong>Lead in</strong></td>
+<td>Brings the text back before speech resumes</td>
+</tr>
+<tr>
+<td><strong>Only between two lines</strong></td>
+<td>Prevents a subtitle from disappearing and reappearing in the middle of its sentence</td>
+</tr>
+</tbody>
+</table>
 <h3 id="the-sync-chips">The SYNC chips</h3>
 <p>Each row of the <strong>Subtitles</strong> list starts with a colored chip, in the <strong>SYNC</strong> column, that tells you the state of
 that line. Hover a chip to see the details; when a chip can be clicked, its tooltip says what the click does.</p>
 <p>On the <strong>source</strong> subtitles, the chip tells you how well the words are timed on the audio:</p>
 <img src="Images/subvoxpro-sync-chips-source.png" alt="Source subtitles with the SYNC, FIX 2, TEXT + and BLANK chips" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
-<ul>
-<li><strong>SYNC</strong> (green) — every word is timed on the audio: words appear exactly when they are spoken.</li>
-<li><strong>FIX</strong> <em>n</em> (orange) — <em>n</em> words have an estimated time: they were not heard on the audio. Check their word
-markers on the waveform (<strong>Words</strong> mode) and move them if needed.</li>
-<li><strong>TEXT +</strong> (grey) — the line has no word timings, so it appears all at once. Click the chip to estimate a time for
-each word from the text; the line then shows <strong>FIX</strong>, since those times are estimates.</li>
-<li><strong>BLANK</strong> (grey-blue) — a marker with no text: it clears the screen until the next subtitle.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Chip</th>
+<th>Meaning</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="display: inline-block; padding: 0.15em 0.55em; border-radius: 5px; background: #6bbd8c; color: #111; font-size: 0.8em; font-weight: 700; letter-spacing: 0.03em; line-height: 1.3; white-space: nowrap;">SYNC</span></td>
+<td>Every word is timed on the audio: words appear exactly when they are spoken.</td>
+<td>Nothing.</td>
+</tr>
+<tr>
+<td><span style="display: inline-block; padding: 0.15em 0.55em; border-radius: 5px; background: #f5a84d; color: #111; font-size: 0.8em; font-weight: 700; letter-spacing: 0.03em; line-height: 1.3; white-space: nowrap;">FIX n</span></td>
+<td><em>n</em> words have an estimated time: they were not heard on the audio.</td>
+<td>Check their word markers on the waveform (<strong>Words</strong> mode) and move them if needed.</td>
+</tr>
+<tr>
+<td><span style="display: inline-block; padding: 0.15em 0.55em; border-radius: 5px; background: #a3a9b3; color: #111; font-size: 0.8em; font-weight: 700; letter-spacing: 0.03em; line-height: 1.3; white-space: nowrap;">TEXT +</span></td>
+<td>The line has no word timings, so it appears all at once.</td>
+<td>Click the chip to estimate a time for each word from the text. The line then shows <strong>FIX</strong>, since those times are estimates.</td>
+</tr>
+<tr>
+<td><span style="display: inline-block; padding: 0.15em 0.55em; border-radius: 5px; background: #8b9bbd; color: #111; font-size: 0.8em; font-weight: 700; letter-spacing: 0.03em; line-height: 1.3; white-space: nowrap;">BLANK</span></td>
+<td>A marker with no text: it clears the screen until the next subtitle.</td>
+<td>Nothing.</td>
+</tr>
+</tbody>
+</table>
 <p>On a <strong>translation</strong> (pick its language in the SUBTITLES selector), the chip tells you whether the line still matches
 the source and its dub:</p>
 <img src="Images/subvoxpro-sync-chips-translation.png" alt="French subtitles with the FR, OUT, CUT and REGEN chips" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
-<ul>
-<li><strong>Language code</strong> (blue, for example <strong>FR</strong> or <strong>EN-US</strong>) — the translation is up to date with the source. The
-tooltip also says whether its dub is up to date.</li>
-<li><strong>OUT</strong> (orange) — the source line, or its translation note, changed after it was translated. Click
-<strong>Synchronize translations</strong> (Translation tab) to translate it again, or click the chip once you have checked the
-line to mark it as up to date.</li>
-<li><strong>CUT</strong> (purple) — a source marker moved, so the translated line was cut again automatically and may break in the
-middle of a phrase. Click <strong>Fix splits</strong> (Translation tab) to cut it again with AI, or click the chip to keep this cut.</li>
-<li><strong>REGEN</strong> (red) — the dub no longer matches the line: its text, voice, personality, sounds or groups changed, the
-provider, model or generation mode changed, or the line was never dubbed. Hover it to see why, click it to
-regenerate only what is needed.</li>
-<li><strong>DUBBING</strong> (animated) — the dub of this line is being generated.</li>
-</ul>
-<p>A line shows one chip at a time: <strong>OUT</strong> first, then <strong>CUT</strong>, then <strong>REGEN</strong>. A <strong>BLANK</strong> line always shows <strong>BLANK</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Chip</th>
+<th>Meaning</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="display: inline-block; padding: 0.15em 0.55em; border-radius: 5px; background: #5cb8ff; color: #111; font-size: 0.8em; font-weight: 700; letter-spacing: 0.03em; line-height: 1.3; white-space: nowrap;">FR</span></td>
+<td>The language code (<strong>FR</strong>, <strong>EN-US</strong>…): the translation is up to date with the source. The tooltip also says whether its dub is up to date.</td>
+<td>Nothing.</td>
+</tr>
+<tr>
+<td><span style="display: inline-block; padding: 0.15em 0.55em; border-radius: 5px; background: #f5a84d; color: #111; font-size: 0.8em; font-weight: 700; letter-spacing: 0.03em; line-height: 1.3; white-space: nowrap;">OUT</span></td>
+<td>The source line, or its translation note, changed after it was translated.</td>
+<td>Click <strong>Synchronize translations</strong> (Translation tab) to translate it again, or click the chip once you have checked the line to mark it as up to date.</td>
+</tr>
+<tr>
+<td><span style="display: inline-block; padding: 0.15em 0.55em; border-radius: 5px; background: #bd94fa; color: #111; font-size: 0.8em; font-weight: 700; letter-spacing: 0.03em; line-height: 1.3; white-space: nowrap;">CUT</span></td>
+<td>A source marker moved, so the translated line was cut again automatically and may break in the middle of a phrase.</td>
+<td>Click <strong>Fix splits</strong> (Translation tab) to cut it again with AI, or click the chip to keep this cut.</td>
+</tr>
+<tr>
+<td><span style="display: inline-block; padding: 0.15em 0.55em; border-radius: 5px; background: #f58061; color: #111; font-size: 0.8em; font-weight: 700; letter-spacing: 0.03em; line-height: 1.3; white-space: nowrap;">REGEN</span></td>
+<td>The dub no longer matches the line: its text, voice, personality, sounds or groups changed, the provider, model or generation mode changed, or the line was never dubbed.</td>
+<td>Hover it to see why, click it to regenerate only what is needed.</td>
+</tr>
+<tr>
+<td><span style="display: inline-block; padding: 0.15em 0.55em; border-radius: 5px; background: #f58061; color: #111; font-size: 0.8em; font-weight: 700; letter-spacing: 0.03em; line-height: 1.3; white-space: nowrap;">DUBBING</span></td>
+<td>The dub of this line is being generated (the chip is animated).</td>
+<td>Wait.</td>
+</tr>
+</tbody>
+</table>
+<p>A line shows one chip at a time, in this order of importance:</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 10px; margin: 14px 0 18px; font-size: 0.95em;">
+<span style="display: inline-block; padding: 0.15em 0.55em; border-radius: 5px; background: #f5a84d; color: #111; font-size: 0.8em; font-weight: 700; letter-spacing: 0.03em; line-height: 1.3; white-space: nowrap;">OUT</span>
+<span style="opacity: 0.6;">then</span>
+<span style="display: inline-block; padding: 0.15em 0.55em; border-radius: 5px; background: #bd94fa; color: #111; font-size: 0.8em; font-weight: 700; letter-spacing: 0.03em; line-height: 1.3; white-space: nowrap;">CUT</span>
+<span style="opacity: 0.6;">then</span>
+<span style="display: inline-block; padding: 0.15em 0.55em; border-radius: 5px; background: #f58061; color: #111; font-size: 0.8em; font-weight: 700; letter-spacing: 0.03em; line-height: 1.3; white-space: nowrap;">REGEN</span>
+</div>
+<p>A <strong>BLANK</strong> line always shows <strong>BLANK</strong>.</p>
 <h3 id="deleting-a-voice-line">Deleting a voice line</h3>
 <p>The trash button deletes the voice line. It lists the files that go with it: the ones SubVox Pro generated (dubs,
 recordings) are selected, your own files are not, and a file still used elsewhere is locked. Everything goes to the
 system trash, so it can be recovered.</p>
 <h3 id="splitting-a-voice-line">Splitting a voice line</h3>
 <p>When one voice line holds several moments you want to play separately, the split button (beside the trash) cuts it
-into several voice lines. Click between two subtitles to cut there, add as many cuts as you need, and name the new
-voice lines. A cut always falls between two subtitles, in the pause that separates them.</p>
-<p>Each part keeps everything that belongs to its subtitles: audio, translations, dubs, speakers, audio effects and
-events. The first part stays in the current voice line, so your scenes and Timelines still point to it; the other
-parts are created next to it. Each part gets its own audio files, and your original files are kept. A split cannot
-be undone.</p>
+into several voice lines:</p>
+<ol>
+<li>Click between two subtitles to cut there. A cut always falls between two subtitles, in the pause that separates
+them.</li>
+<li>Add as many cuts as you need.</li>
+<li>Name the new voice lines.</li>
+</ol>
+<p>What happens to the parts:</p>
+<ul>
+<li>Each part keeps everything that belongs to its subtitles: audio, translations, dubs, speakers, audio effects and
+events.</li>
+<li>The first part stays in the current voice line, so your scenes and Timelines still point to it. The other parts
+are created next to it.</li>
+<li>Each part gets its own audio files, and your original files are kept.</li>
+<li>A split cannot be undone.</li>
+</ul>
 <hr>
 <h2 id="transcribe">Transcribe</h2>
 <img src="Images/subvoxpro-ai-tools-transcription.png" alt="AI Tools, Transcription tab with local Whisper" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
@@ -362,14 +591,37 @@ punctuation. If the voice line already has subtitles, you are asked before they 
 <li>Not happy with the cuts? Change the <strong>Split settings</strong>: a small <strong>Re-split</strong> button appears at the end of the <strong>Smart split</strong> row; click it: the same words are grouped again,
 without transcribing (or paying) a second time.</li>
 </ol>
-<p><strong>Word timing</strong> chooses where the timing of each word comes from: <strong>From the provider</strong> (default) keeps the timings
-returned by the transcription. <strong>Built-in aligner</strong> and <strong>Qwen3 aligner (local)</strong> place every word again on the audio before the subtitles are cut, so cuts fall on the real pauses, without
-changing the text. The built-in aligner has nothing to install and works in every language; Qwen3 is the most precise option for word-by-word subtitles (<a href="#qwen3-offline-word-timing">install it once</a>).
-In a language Qwen3 does not support, the provider's timings are kept.
-The <strong>Re-align</strong> button at the end of this row works with either aligner (it is greyed out with <strong>From the provider</strong>): after fixing a word or moving a cut by hand, click it to place the
-words on the audio again while keeping your text and cuts.</p>
-<p>Providers: AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, OpenAI, or <strong>Whisper</strong> and <strong>Parakeet</strong> offline. Not
-sure which one to take? <strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> puts them side by side — price, free plan,
+<h4 id="word-timing">Word timing</h4>
+<p><strong>Word timing</strong> chooses where the timing of each word comes from:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>From the provider</strong> (default)</td>
+<td>Keeps the timings returned by the transcription.</td>
+</tr>
+<tr>
+<td><strong>Built-in aligner</strong></td>
+<td>Places every word again on the audio before the subtitles are cut, so cuts fall on the real pauses. Nothing to install, works in every language.</td>
+</tr>
+<tr>
+<td><strong>Qwen3 aligner (local)</strong></td>
+<td>The same, with the most precise timings for word-by-word subtitles (<a href="#qwen3-offline-word-timing">install it once</a>). In a language Qwen3 does not support, the provider's timings are kept.</td>
+</tr>
+</tbody>
+</table>
+<p>The aligners never change the text. The <strong>Re-align</strong> button at the end of this row works with either aligner (it
+is greyed out with <strong>From the provider</strong>): after fixing a word or moving a cut by hand, click it to place the words
+on the audio again while keeping your text and cuts.</p>
+<h4 id="providers">Providers</h4>
+<p>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, OpenAI, or <strong>Whisper</strong> and <strong>Parakeet</strong>
+offline.</p>
+<p>Not sure which one to take? <strong>Tools ▸ SubVox Pro ▸ Provider Comparison</strong> puts them side by side: price, free plan,
 commercial use, languages.</p>
 <img src="Images/subvoxpro-provider-comparison.png" alt="Provider Comparison window, Transcription tab" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <blockquote>
@@ -387,15 +639,41 @@ Use local alignment or a provider with word timestamps when timing matters.</p>
 <li>Click <strong>Translate</strong>. Each language gets its own track; switch between them with the SUBTITLES selector.</li>
 </ol>
 <p><img src="Images/subvoxpro-translation-targets.png" alt="Translation target popup with a preset of several languages and its editable language list"></p>
-<p>In the <strong>Target</strong> popup, check as many languages as you want on the left, then <strong>Save as preset</strong> on the right to reuse them.
-Choosing a preset translates into all its languages in one operation; the right-hand column edits its name and languages.</p>
-<p><strong>Help the translator.</strong> Ambiguous lines translate better with context: write a <strong>global context</strong> for the whole
-voice line (speech-bubble button) and, if needed, a note on a single line (its speech-bubble button in the list).</p>
-<p><strong>Keep translations in sync.</strong> When you change a source line after translating it, its translations show an <strong>OUT</strong>
-badge: click <strong>Synchronize</strong> to re-translate only the lines that changed, or click the badge once you have checked
-the line. When you move markers so that a sentence is cut in a new place, the translated lines show a <strong>CUT</strong> badge:
-<strong>Fix splits</strong> asks an AI provider to cut the translation at the same meaning, without changing its words. Dubs
-follow automatically. All the chips are explained in <a href="#the-sync-chips">The SYNC chips</a>.</p>
+<p>In the <strong>Target</strong> popup:</p>
+<ul>
+<li>check as many languages as you want on the left, then <strong>Save as preset</strong> on the right to reuse them;</li>
+<li>choosing a preset translates into all its languages in one operation;</li>
+<li>the right-hand column edits the preset's name and languages.</li>
+</ul>
+<h4 id="help-the-translator">Help the translator</h4>
+<p>Ambiguous lines translate better with context:</p>
+<ul>
+<li>a <strong>global context</strong> for the whole voice line (speech-bubble button);</li>
+<li>if needed, a note on a single line (its speech-bubble button in the list).</li>
+</ul>
+<h4 id="keep-translations-in-sync">Keep translations in sync</h4>
+<table>
+<thead>
+<tr>
+<th>When you…</th>
+<th>The translated lines show</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>change a source line after translating it</td>
+<td><strong>OUT</strong></td>
+<td>Click <strong>Synchronize</strong> to re-translate only the lines that changed, or click the chip once you have checked the line.</td>
+</tr>
+<tr>
+<td>move markers so that a sentence is cut in a new place</td>
+<td><strong>CUT</strong></td>
+<td><strong>Fix splits</strong> asks an AI provider to cut the translation at the same meaning, without changing its words.</td>
+</tr>
+</tbody>
+</table>
+<p>Dubs follow automatically. All the chips are explained in <a href="#the-sync-chips">The SYNC chips</a>.</p>
 <hr>
 <h2 id="dub-with-text-to-speech">Dub with text-to-speech</h2>
 <img src="Images/subvoxpro-ai-tools-dubbing.png" alt="AI Tools, Dubbing tab with local Chatterbox" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
@@ -403,53 +681,175 @@ follow automatically. All the chips are explained in <a href="#the-sync-chips">T
 <li>Select the language to dub in the SUBTITLES selector.</li>
 <li>In <strong>AI Tools ▸ Dubbing</strong>, pick a <strong>Provider</strong> and a <strong>Voice</strong>. The ▶ button next to a voice plays a sample.
 <strong>Use speakers' voices</strong> lets each line use the voice of its <a href="#speakers-and-voice-personalities">speaker</a>.</li>
-<li>Choose the <strong>Generation</strong> mode:
-<ul>
-<li><strong>Each subtitle</strong> — one take per line: easiest to fix line by line;</li>
-<li><strong>Per speaker</strong> — one take per group of lines from the same character: more natural flow;</li>
-<li><strong>All together</strong> — one continuous take: the most natural, but everything is regenerated at once;</li>
-<li><strong>Groups</strong> — you choose which words are spoken in one take (see below).</li>
-</ul>
-</li>
-<li>Click <strong>Generate <em>language</em> audio track</strong> (for example <strong>Generate French audio track</strong>). The dub becomes a new audio track, played instead of the original when that language
-is active. A dub does not last exactly as long as the original, so it gets its own markers: they do not line up
-with the source's, and moving one does not move the other.</li>
+<li>Choose the <strong>Generation</strong> mode (see the table below).</li>
+<li>Click <strong>Generate <em>language</em> audio track</strong> (for example <strong>Generate French audio track</strong>). The dub becomes a new
+audio track, played instead of the original when that language is active.</li>
 </ol>
-<p><strong>Groups mode.</strong> Choosing <strong>Groups</strong> turns on the <strong>Groups</strong> tool above the waveform. Each group is spoken in one
-take, with the voice and personality of its first word, and the subtitle text takes the group's color. At first,
-one group holds everything. Drag inside a group to split it in three, with the new group in the middle: it can
-start or end in the middle of a line, and each new group gets its own color. Drag the boundary between two groups
-to move it: pushing it past a whole group removes that group, and dragging back before releasing brings it back.
-Right-click a group to remove it: its neighbor takes its place. The bin button merges everything back into one group. Groups are saved per
-subtitle language.</p>
-<p><strong>Sounds (laughs, sighs, pauses…).</strong> The <strong>Sounds</strong> tool above the waveform adds a sound for the voice to perform
-between two words. Middle-click between two words and pick a sound: a pill marks the spot. A left click moves the
-playhead, as in the other modes. Drag a pill to move it to
-another gap, and right-click it to remove it. Sounds are only sent to the voice, never shown in the subtitles.
-Each subtitle language has its own sounds. The copy button places them in the other languages, at the same point
-in each line, and the bin button removes those of the current language. Adding, moving or removing a sound puts a
-<strong>REGEN</strong> chip on the line.</p>
-<p>The list only shows the sounds the selected provider can perform: InWorld, ElevenLabs v3 and v4, Gemini and
-Cartesia Sonic 3. Below the list, you can add your own words (for example <em>giggles</em>). They are saved in your
-library for every voice line. Only ElevenLabs v3 and v4 and Gemini can perform your own words, so they are hidden
-with the other providers. A greyed pill is a sound the current provider can't perform: it is skipped when
-generating.</p>
-<p>Providers: InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, Cartesia, and offline <strong>Kokoro</strong> (English) and
-<strong>Chatterbox</strong> (21 languages, keeps each character's voice), plus <strong>Qwen3 TTS 1.7B</strong> (ten languages, reference cloning, fixed voices and voice design) and <strong>VoxCPM2</strong> (30 languages, reference cloning with written style control, and voice design).</p>
+<p>A dub does not last exactly as long as the original, so it gets its own markers: they do not line up with the
+source's, and moving one does not move the other.</p>
+<h4 id="generation-modes">Generation modes</h4>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>One take for</th>
+<th>Good to know</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Each subtitle</strong></td>
+<td>Each line</td>
+<td>Easiest to fix line by line</td>
+</tr>
+<tr>
+<td><strong>Per speaker</strong></td>
+<td>Each group of lines from the same character</td>
+<td>More natural flow</td>
+</tr>
+<tr>
+<td><strong>All together</strong></td>
+<td>The whole voice line</td>
+<td>The most natural, but everything is regenerated at once</td>
+</tr>
+<tr>
+<td><strong>Groups</strong></td>
+<td>The words you choose</td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<h4 id="groups-mode">Groups mode</h4>
+<p>Choosing <strong>Groups</strong> turns on the <strong>Groups</strong> tool above the waveform. Each group is spoken in one take, with the
+voice and personality of its first word, and the subtitle text takes the group's color. At first, one group holds
+everything.</p>
+<table>
+<thead>
+<tr>
+<th>On the waveform</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drag inside a group</td>
+<td>Splits it in three, with the new group in the middle. It can start or end in the middle of a line, and gets its own color.</td>
+</tr>
+<tr>
+<td>Drag the boundary between two groups</td>
+<td>Moves it. Pushing it past a whole group removes that group; dragging back before releasing brings it back.</td>
+</tr>
+<tr>
+<td>Right-click a group</td>
+<td>Removes it: its neighbor takes its place.</td>
+</tr>
+<tr>
+<td>Bin button</td>
+<td>Merges everything back into one group.</td>
+</tr>
+</tbody>
+</table>
+<p>Groups are saved per subtitle language.</p>
+<h4 id="sounds-laughs-sighs-pauses">Sounds (laughs, sighs, pauses…)</h4>
+<p>The <strong>Sounds</strong> tool above the waveform adds a sound for the voice to perform between two words. Sounds are only
+sent to the voice, never shown in the subtitles.</p>
+<table>
+<thead>
+<tr>
+<th>On the waveform</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Middle-click between two words</td>
+<td>Pick a sound: a pill marks the spot.</td>
+</tr>
+<tr>
+<td>Left click</td>
+<td>Moves the playhead, as in the other modes.</td>
+</tr>
+<tr>
+<td>Drag a pill</td>
+<td>Moves it to another gap.</td>
+</tr>
+<tr>
+<td>Right-click a pill</td>
+<td>Removes it.</td>
+</tr>
+<tr>
+<td>Copy button</td>
+<td>Places the sounds in the other languages, at the same point in each line.</td>
+</tr>
+<tr>
+<td>Bin button</td>
+<td>Removes the sounds of the current language.</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><strong>Word timing</strong> — <strong>Qwen3 aligner (local)</strong> makes words appear exactly when they are spoken
-(<a href="#qwen3-offline-word-timing">install it once</a>); <strong>Built-in aligner</strong> times each word on the generated audio with
-nothing to install, a little less precisely; <strong>None</strong> keeps line timings only, if you don't reveal subtitles word
-by word. It starts on <strong>Qwen3 aligner</strong> once the aligner is installed, and on <strong>None</strong> before that. The
-<strong>Re-align</strong> button at the end of the row places the words of the selected audio (a dub or the source) on it again, for example
-after fixing a word by hand.</li>
-<li><strong>Voice direction</strong> — the speech-bubble button next to the voice gives the tone of the performance (for example
-<em>calm, whispering</em>), on the providers that understand it.</li>
-<li><strong>REGEN</strong> — when a line's dub no longer matches (text, voice or personality changed), an orange <strong>REGEN</strong> chip
-appears on it. Hover it to see why, click it to regenerate only what is needed.</li>
-<li><strong>Voice cloning</strong> — with ElevenLabs (paid plan), Chatterbox, Qwen Base or VoxCPM2, pick <strong>Original voice</strong> to dub each character in
+<li>Each subtitle language has its own sounds. Adding, moving or removing a sound puts a <strong>REGEN</strong> chip on the line.</li>
+<li>The list only shows the sounds the selected provider can perform: InWorld, ElevenLabs v3 and v4, Gemini and
+Cartesia Sonic 3.</li>
+<li>Below the list, you can add your own words (for example <em>giggles</em>). They are saved in your library for every
+voice line. Only ElevenLabs v3 and v4 and Gemini can perform your own words, so they are hidden with the other
+providers.</li>
+<li>A greyed pill is a sound the current provider can't perform: it is skipped when generating.</li>
+</ul>
+<h4 id="providers-1">Providers</h4>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>InWorld, ElevenLabs, Gemini, OpenAI, Google Cloud, Azure, Cartesia</td>
+<td>Online services</td>
+</tr>
+<tr>
+<td><strong>Kokoro</strong></td>
+<td>Offline, English</td>
+</tr>
+<tr>
+<td><strong>Chatterbox</strong></td>
+<td>Offline, 21 languages, keeps each character's voice</td>
+</tr>
+<tr>
+<td><strong>Qwen3 TTS 1.7B</strong></td>
+<td>Offline, ten languages: reference cloning, fixed voices and voice design</td>
+</tr>
+<tr>
+<td><strong>VoxCPM2</strong></td>
+<td>Offline, 30 languages: reference cloning with written style control, and voice design</td>
+</tr>
+</tbody>
+</table>
+<h4 id="options">Options</h4>
+<ul>
+<li><p><strong>Word timing</strong> — how the words of the dub are timed:</p>
+<ul>
+<li><strong>Qwen3 aligner (local)</strong> makes words appear exactly when they are spoken
+(<a href="#qwen3-offline-word-timing">install it once</a>);</li>
+<li><strong>Built-in aligner</strong> times each word on the generated audio with nothing to install, a little less precisely;</li>
+<li><strong>None</strong> keeps line timings only, if you don't reveal subtitles word by word.</li>
+</ul>
+<p>It starts on <strong>Qwen3 aligner</strong> once the aligner is installed, and on <strong>None</strong> before that. The <strong>Re-align</strong>
+button at the end of the row places the words of the selected audio (a dub or the source) on it again, for
+example after fixing a word by hand.</p>
+</li>
+<li><p><strong>Voice direction</strong> — the speech-bubble button next to the voice gives the tone of the performance (for example
+<em>calm, whispering</em>), on the providers that understand it.</p>
+</li>
+<li><p><strong>REGEN</strong> — when a line's dub no longer matches (text, voice or personality changed), a <strong>REGEN</strong> chip
+appears on it. Hover it to see why, click it to regenerate only what is needed.</p>
+</li>
+<li><p><strong>Voice cloning</strong> — with ElevenLabs (paid plan), Chatterbox, Qwen Base or VoxCPM2, pick <strong>Original voice</strong> to dub each character in
 their own voice, cloned from the source audio. You can also clone a voice from a clip placed in the <code>Voices</code>
-folder of your <a href="#where-your-files-go">data folder</a>. Only clone voices you have the right to use.</li>
+folder of your <a href="#where-your-files-go">data folder</a>. Only clone voices you have the right to use.</p>
+</li>
 </ul>
 <blockquote>
 <p>OpenAI and some other services require telling your players that the voices are AI-generated — see
@@ -475,69 +875,175 @@ is on by default; a blank before the first line or after the last one still hide
 <p><img src="Images/subvoxpro-speaker-picker.png" alt="Speaker picker with gender tabs, a selected speaker and a shortcut to create a speaker"></p>
 <p>The speaker picker groups characters by gender. The pencil edits an existing speaker; <strong>New speaker</strong> creates one.</p>
 <h3 id="voice-personalities">Voice personalities</h3>
-<p>A <strong>personality</strong> is a reusable acting direction — <em>Angry</em>, <em>Mysterious</em>, <em>Whispering</em>… Create one from a speaker
-(<strong>New personality</strong>) or with <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Personality</strong>, then either write the direction
-yourself or combine an emotion and a delivery, how strong they are, then the speed, volume, pitch and articulation.
-Click its icon to pick one of about forty symbols (emotions, moods, voice and character), so you recognize it at a
-glance in the lists.</p>
-<p>Give each line a personality from its chip in the list (in <strong>Each subtitle</strong> mode), or use the speaker's default.
-Every provider applies what it can, in the form it understands: a written direction, audio tags or speaking
-styles; others only follow the pace. The chip's tooltip tells you what the selected voice will use. A personality sets
-how a line is performed, not who speaks: the age of a voice belongs to its description (see below).</p>
+<p>A <strong>personality</strong> is a reusable acting direction — <em>Angry</em>, <em>Mysterious</em>, <em>Whispering</em>…</p>
+<ol>
+<li>Create one from a speaker (<strong>New personality</strong>) or with <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Personality</strong>.</li>
+<li>Either write the direction yourself, or combine an emotion and a delivery, how strong they are, then the speed,
+volume, pitch and articulation.</li>
+<li>Click its icon to pick one of about forty symbols (emotions, moods, voice and character), so you recognize it at
+a glance in the lists.</li>
+</ol>
+<p>Give each line a personality from its chip in the list (in <strong>Each subtitle</strong> mode), or use the speaker's default.</p>
+<ul>
+<li>Every provider applies what it can, in the form it understands: a written direction, audio tags or speaking
+styles. Others only follow the pace.</li>
+<li>The chip's tooltip tells you what the selected voice will use.</li>
+<li>A personality sets how a line is performed, not who speaks: the age of a voice belongs to its description (see
+below).</li>
+</ul>
 <hr>
 <h2 id="edit-the-audio">Edit the audio</h2>
-<p>The tabs at the right of the timeline toolbar (<strong>Crop</strong>, <strong>Time edit</strong>, <strong>Audio effects</strong>) edit the audio itself. Every edit can be undone with <strong>Ctrl+Z</strong>.</p>
-<p><img src="Images/subvoxpro-audio-effect-picker.png" alt="Audio effects picker separating applied effects from available ones"></p>
-<p>The <strong>Audio effects</strong> button opens the effect list. Applied effects appear first; pick one to edit it,
-or use its cross to reset and remove it.</p>
+<p>The tabs at the right of the timeline toolbar (<strong>Crop</strong>, <strong>Time edit</strong>, <strong>Audio effects</strong>) edit the audio itself.
+Every edit can be undone with <strong>Ctrl+Z</strong>.</p>
+<h4 id="crop">Crop</h4>
+<p>Drag the start and end handles, then <strong>Apply crop</strong>. It works on the source or on the selected dub and rewrites
+that audio file, so keep a copy of the full take if you may need it.</p>
+<h4 id="insert-a-pause-or-remove-a-segment">Insert a pause or remove a segment</h4>
+<p>The <code>|↔|</code> button. Handy when a TTS voice runs two sentences together.</p>
 <ul>
-<li><strong>Crop</strong> — drag the start and end handles, then <strong>Apply crop</strong>. It works on the source or on the selected dub and
-rewrites that audio file, so keep a copy of the full take if you may need it.</li>
-<li><strong>Insert a pause / remove a segment</strong> (the <code>|↔|</code> button) — left-drag to insert silence, right-drag to cut a part
-out. Subtitles, words and events after it move with the audio. Handy when a TTS voice runs two sentences
-together.</li>
-<li><strong>Audio effects</strong> — volume curve, fades, normalize, compressor, limiter, noise gate, filters, equalizer,
-telephone/radio, pitch, intonation, pan, distance muffling, room reverb. Draw <em>where</em> an effect applies on the
-timeline, set <em>how</em> with the sliders, then <strong>Apply effects</strong>. The <strong>magnet</strong> in the corner of a curve aligns
-points with the base value, 0 and their neighbors (hold <strong>Alt</strong> to place a point freely). SubVox Pro keeps your original audio so effects stay editable;
-<strong>Flatten</strong> makes them permanent, <strong>Discard</strong> removes them all.</li>
-<li><strong>Voice filter</strong> — one click to change the whole voice: <strong>Telephone</strong>, <strong>Radio / walkie-talkie</strong> (with static
-and squelch), <strong>Robot</strong>, <strong>Cathedral</strong>, <strong>Behind a door</strong>, <strong>Monster</strong> or <strong>Inner voice</strong>.
-Pick the look in the <strong>Filter</strong> dropdown and set its strength with <strong>Intensity</strong>. The filter covers the whole
-line by default; lower its curve to keep part of the line clean. <strong>Cathedral</strong> rings on after each word but
-fades out at the end of the clip: leave a short silence after the last word to hear its echo.</li>
-<li><strong>Intonation</strong> — the melody of the voice is shown on top; draw how much to raise (<strong>+</strong>) or lower (<strong>−</strong>) it in
-the lane below, where <strong>0</strong> leaves it unchanged. The <strong>magnet</strong> snaps your stroke to the step next to it
-(0.5 st by default; hold <strong>Alt</strong> to draw freely), and the <strong>wave</strong> smooths new strokes over the time you set
-(0 draws exactly what you trace). Right-drag restores the voice and <strong>Esc</strong> cancels a stroke. The rest of the line stays untouched.
-<strong>Pitch</strong> shifts a whole passage and shows the same melody. Both keep the voice natural; a few semitones
-(st) work best. The <strong>Engine</strong> dropdown offers <strong>WORLD</strong> (natural, default), <strong>PSOLA</strong> (lighter) or <strong>Classic</strong> (fastest; also changes the voice's character).</li>
+<li><strong>Left-drag</strong> inserts silence.</li>
+<li><strong>Right-drag</strong> cuts a part out.</li>
 </ul>
+<p>Subtitles, words and events after it move with the audio.</p>
+<h4 id="audio-effects">Audio effects</h4>
+<p>The <strong>Audio effects</strong> button opens the effect list. Applied effects appear first; pick one to edit it, or use its
+cross to reset and remove it.</p>
+<p><img src="Images/subvoxpro-audio-effect-picker.png" alt="Audio effects picker separating applied effects from available ones"></p>
+<p>Available effects: volume curve, fades, normalize, compressor, limiter, noise gate, filters, equalizer,
+telephone/radio, pitch, intonation, pan, distance muffling, room reverb.</p>
+<ol>
+<li>Draw <em>where</em> an effect applies on the timeline.</li>
+<li>Set <em>how</em> with the sliders.</li>
+<li>Click <strong>Apply effects</strong>.</li>
+</ol>
+<p>The <strong>magnet</strong> in the corner of a curve aligns points with the base value, 0 and their neighbors (hold <strong>Alt</strong> to
+place a point freely).</p>
 <p><img src="Images/subvoxpro-audio-effects.png" alt="Volume effect editing on the waveform, with a decibel curve and editable points"></p>
 <p>The volume curve above reduces only the selected passages. The waveform keeps the timing visible while the
 points control the gain; <strong>0 dB</strong> leaves the original volume unchanged.</p>
+<p>SubVox Pro keeps your original audio, so effects stay editable:</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flatten</strong></td>
+<td>Makes the effects permanent</td>
+</tr>
+<tr>
+<td><strong>Discard</strong></td>
+<td>Removes them all</td>
+</tr>
+</tbody>
+</table>
+<h4 id="voice-filter">Voice filter</h4>
+<p>One click to change the whole voice. Pick the look in the <strong>Filter</strong> dropdown and set its strength with
+<strong>Intensity</strong>:</p>
+<ul>
+<li><strong>Telephone</strong></li>
+<li><strong>Radio / walkie-talkie</strong>, with static and squelch</li>
+<li><strong>Robot</strong></li>
+<li><strong>Cathedral</strong> — it rings on after each word but fades out at the end of the clip: leave a short silence after the
+last word to hear its echo.</li>
+<li><strong>Behind a door</strong></li>
+<li><strong>Monster</strong></li>
+<li><strong>Inner voice</strong></li>
+</ul>
+<p>The filter covers the whole line by default; lower its curve to keep part of the line clean.</p>
+<h4 id="intonation-and-pitch">Intonation and pitch</h4>
 <p><img src="Images/subvoxpro-intonation.png" alt="Intonation editor showing the detected voice melody and a separate pitch-offset drawing lane"></p>
-<p>In <strong>Intonation</strong>, the upper curve shows the detected voice melody. The lower lane is your change, in semitones:
-positive raises the pitch, negative lowers it, and zero keeps the original. They are separate so you can see
-what the voice did and what you are changing.</p>
+<p>In <strong>Intonation</strong>, the upper curve shows the detected melody of the voice. In the lane below, draw how much to
+raise (<strong>+</strong>) or lower (<strong>−</strong>) it, in semitones (st): <strong>0</strong> leaves it unchanged. They are separate so you can see
+what the voice did and what you are changing. The rest of the line stays untouched.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Magnet</strong></td>
+<td>Snaps your stroke to the step next to it (0.5 st by default); hold <strong>Alt</strong> to draw freely</td>
+</tr>
+<tr>
+<td><strong>Wave</strong></td>
+<td>Smooths new strokes over the time you set (0 draws exactly what you trace)</td>
+</tr>
+<tr>
+<td><strong>Right-drag</strong></td>
+<td>Restores the voice</td>
+</tr>
+<tr>
+<td><strong>Esc</strong></td>
+<td>Cancels a stroke</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pitch</strong> shifts a whole passage and shows the same melody. Both keep the voice natural; a few semitones work
+best. The <strong>Engine</strong> dropdown offers:</p>
+<table>
+<thead>
+<tr>
+<th>Engine</th>
+<th>Character</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WORLD</strong> (default)</td>
+<td>Natural</td>
+</tr>
+<tr>
+<td><strong>PSOLA</strong></td>
+<td>Lighter</td>
+</tr>
+<tr>
+<td><strong>Classic</strong></td>
+<td>Fastest; also changes the voice's character</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2 id="play-voice-lines-in-your-game">Play voice lines in your game</h2>
 <h3 id="set-up-the-scene">Set up the scene</h3>
 <ol>
-<li><p>Drop the <strong>[SubVox Pro]</strong> prefab (<code>SubVoxPro/Prefabs</code>) once into your startup scene. It plays voice lines and
+<li>Drop the <strong>[SubVox Pro]</strong> prefab (<code>SubVoxPro/Prefabs</code>) once into your startup scene. It plays voice lines and
 dispatches their events. (If you forget, a default player is created the first time a line plays, with a
-warning.)</p>
-</li>
-<li><p>Drop the <strong>Subtitle Displayer</strong> prefab (<code>SubVoxPro/Prefabs</code>) into the scene: a ready-made subtitle box at the
-bottom of the screen, which grows with long lines and hides between them. Restyle it freely (font, colors,
-position, size), or add the <strong>Subtitle Displayer</strong> component to your own Canvas and assign its <strong>Subtitle Text</strong>
-(and <strong>Background</strong>, to hide it between lines).</p>
-<p><strong>Using UI Toolkit instead of a Canvas?</strong> Drop the <strong>Subtitle Document Displayer</strong> prefab instead. It shows the
-same subtitles, speaker names and styles in a UI Toolkit document. Restyle it in <code>Subtitle Document.uss</code>
-(<code>SubVoxPro/Prefabs/UI/UI Toolkit</code>), or add the <strong>Subtitle Document Displayer</strong> component to your own UI Document
-and give it the name of the Label to fill (and of the element to hide between lines).</p>
-</li>
+warning.)</li>
+<li>Drop a subtitle display into the scene (<code>SubVoxPro/Prefabs</code>):</li>
 </ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Subtitle Displayer</strong> (Canvas)</th>
+<th><strong>Subtitle Document Displayer</strong> (UI Toolkit)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What you get</td>
+<td>A ready-made subtitle box at the bottom of the screen, which grows with long lines and hides between them</td>
+<td>The same subtitles, speaker names and styles in a UI Toolkit document</td>
+</tr>
+<tr>
+<td>Restyle it</td>
+<td>Freely: font, colors, position, size</td>
+<td>In <code>Subtitle Document.uss</code> (<code>SubVoxPro/Prefabs/UI/UI Toolkit</code>)</td>
+</tr>
+<tr>
+<td>Or use your own UI</td>
+<td>Add the component to your own Canvas and assign its <strong>Subtitle Text</strong> (and <strong>Background</strong>, to hide it between lines)</td>
+<td>Add the component to your own UI Document and give it the name of the Label to fill (and of the element to hide between lines)</td>
+</tr>
+</tbody>
+</table>
 <h3 id="play-a-line-from-code">Play a line from code</h3>
 <p>Everything goes through <code>SubVox</code>. Ready-to-copy scripts for the common cases (waiting for a line, reacting to an
 event, a language menu, an options menu, a dialogue log, video subtitles…) are in <code>SubVoxPro/Example/Snippets</code>, and
@@ -558,86 +1064,259 @@ SubVox.AudioLanguage = &quot;ja&quot;;         // Japanese voices, whatever the 
 <pre><code class="lang-csharp">yield return SubVox.Play(greeting);  // waits until the line is over
 yield return SubVox.Play(answer);
 </code></pre>
-<p><code>SubVox.IsPlaying(line)</code> tells whether a line is being said, <code>SubVox.Stop(line)</code> stops only that line, and
-<code>SubVox.PlayAt(line, position)</code> says a line once at a point in the world, like a voice from a loudspeaker.
-To show a line somewhere else (a video, a menu), <code>myVoiceLine.GetSubtitleAt(time, language)</code> gives the subtitle at
-any moment, and <code>TryGetWordAt</code> the word being said.</p>
-<p>On the <strong>Voice Line Manager</strong>, <strong>Subtitle Reveal Mode</strong> shows subtitles one full line at a time (the default), word
-by word, or as <strong>Karaoke</strong> (the whole line, with the word being spoken highlighted); Timeline cutscenes follow it
-too. To lower the music while someone speaks, give it two Audio Mixer
-snapshots: <strong>Ducked Snapshot</strong> (music lowered) and <strong>Normal Snapshot</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Call</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SubVox.IsPlaying(line)</code></td>
+<td>Tells whether a line is being said</td>
+</tr>
+<tr>
+<td><code>SubVox.Stop(line)</code></td>
+<td>Stops only that line</td>
+</tr>
+<tr>
+<td><code>SubVox.PlayAt(line, position)</code></td>
+<td>Says a line once at a point in the world, like a voice from a loudspeaker</td>
+</tr>
+<tr>
+<td><code>myVoiceLine.GetSubtitleAt(time, language)</code></td>
+<td>Gives the subtitle at any moment, to show a line somewhere else (a video, a menu)</td>
+</tr>
+<tr>
+<td><code>myVoiceLine.TryGetWordAt(time, language, out word)</code></td>
+<td>Gives the word being said at that moment</td>
+</tr>
+</tbody>
+</table>
+<h4 id="voice-line-manager-settings">Voice Line Manager settings</h4>
+<ul>
+<li><strong>Subtitle Reveal Mode</strong> — shows subtitles one full line at a time (the default), word by word, or as
+<strong>Karaoke</strong> (the whole line, with the word being spoken highlighted). Timeline cutscenes follow it too.</li>
+<li><strong>Ducked Snapshot</strong> / <strong>Normal Snapshot</strong> — to lower the music while someone speaks, give it two Audio Mixer
+snapshots: one with the music lowered, one normal.</li>
+</ul>
 <h3 id="voices-in-3d-and-several-at-once">Voices in 3D and several at once</h3>
 <p>Add a <strong>Voice Line Emitter</strong> to each character that speaks and set its AudioSource to 3D: the voice comes from the
 character, and several characters can talk at the same time.</p>
 <pre><code class="lang-csharp">npc.GetComponent&lt;VoiceLineEmitter&gt;().Play(barkLine, EVoiceLinePriority.Low);
 </code></pre>
-<p><strong>Priorities</strong> keep important lines safe: on one emitter, a new line replaces the current one only if it is at
-least as important; on screen, the subtitle of the most important line wins. To let a line wait for its turn
-instead, play it with <code>EVoiceLinePlayMode.Queue</code>; <code>EVoiceLinePlayMode.IfIdle</code> plays it only if the emitter is free.
-<code>Skip()</code> ends the current line at once, as for a &quot;skip dialogue&quot; button, and <code>ClearQueue()</code> drops the lines waiting
-their turn. An emitter's <strong>Show Subtitles</strong> can be turned off for background chatter, and its <code>VoiceLineCompleted</code> /
-<code>VoiceLineInterrupted</code> events tell you when a line ends; <code>Paused</code> / <code>Resumed</code> follow pauses. <code>PlaybackSpeed</code> plays
-its lines faster or slower.</p>
-<p><strong>Lip-sync.</strong> An emitter's <code>WordChanged</code> event fires each time a new word is said (and between words), and
-<code>CurrentWord</code> holds the word being said: enough to open a character's mouth or trigger a gesture.</p>
+<h4 id="priorities-and-queue">Priorities and queue</h4>
+<p>Priorities keep important lines safe:</p>
+<ul>
+<li><strong>on one emitter</strong>, a new line replaces the current one only if it is at least as important;</li>
+<li><strong>on screen</strong>, the subtitle of the most important line wins.</li>
+</ul>
+<p>How a new line is played depends on its play mode:</p>
+<table>
+<thead>
+<tr>
+<th>Play mode</th>
+<th>When the emitter is already speaking</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EVoiceLinePlayMode.Replace</code> (default)</td>
+<td>The new line replaces the current one, if it is at least as important</td>
+</tr>
+<tr>
+<td><code>EVoiceLinePlayMode.Queue</code></td>
+<td>The new line waits for its turn</td>
+</tr>
+<tr>
+<td><code>EVoiceLinePlayMode.IfIdle</code></td>
+<td>The new line is played only if the emitter is free</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>On the emitter</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Skip()</code></td>
+<td>Ends the current line at once, as for a &quot;skip dialogue&quot; button</td>
+</tr>
+<tr>
+<td><code>ClearQueue()</code></td>
+<td>Drops the lines waiting their turn</td>
+</tr>
+<tr>
+<td><code>PlaybackSpeed</code></td>
+<td>Plays its lines faster or slower</td>
+</tr>
+<tr>
+<td><strong>Show Subtitles</strong></td>
+<td>Turn it off for background chatter</td>
+</tr>
+<tr>
+<td><code>VoiceLineCompleted</code> / <code>VoiceLineInterrupted</code></td>
+<td>Tell you when a line ends</td>
+</tr>
+<tr>
+<td><code>Paused</code> / <code>Resumed</code></td>
+<td>Follow pauses</td>
+</tr>
+</tbody>
+</table>
+<h4 id="lip-sync">Lip-sync</h4>
+<p>An emitter's <code>WordChanged</code> event fires each time a new word is said (and between words), and <code>CurrentWord</code> holds
+the word being said: enough to open a character's mouth or trigger a gesture.</p>
 <pre><code class="lang-csharp">emitter.WordChanged += word =&gt; mouth.SetBool(&quot;Talking&quot;, word.Text != null);
 </code></pre>
-<p><strong>Voice-driven effects.</strong> An emitter's <code>Loudness</code> tells how loud the voice is right now, from 0 (silence) to 1: use
-it to make a halo pulse, a light flicker or a speaker icon glow while a character talks. It follows the language
-being heard, and it is measured for you when you save a voice line or its audio — nothing to set up.</p>
+<h4 id="voice-driven-effects">Voice-driven effects</h4>
+<p>An emitter's <code>Loudness</code> tells how loud the voice is right now, from 0 (silence) to 1. Use it to make a halo pulse,
+a light flicker or a speaker icon glow while a character talks.</p>
 <pre><code class="lang-csharp">halo.intensity = Mathf.Lerp(halo.intensity, emitter.Loudness * 3f, Time.deltaTime * 20f);
 </code></pre>
-<p><strong>Melody voice.</strong> For &quot;Animal Crossing&quot;-style voices, add a <strong>Melody Voice Modifier</strong> next to a character's
-emitter: each spoken syllable plays a short blip that follows the melody of the voice, in every language and with
-nothing to generate (set <strong>Blip On</strong> to <strong>Word</strong> for one blip per word). Choose <strong>Replace</strong> to hear only the blips, or <strong>Background</strong> to play them over the voice, an octave above it so the words stay clear. Give each
-character its own register with <strong>Base Pitch</strong> (higher for a small character, lower for a big one), pick a
-<strong>Preset</strong> (a blip, or a piano, music box, marimba or guitar note) or your own <strong>Custom Sound</strong>, and set how closely the blips follow the voice with <strong>Pitch Range</strong>. For instruments,
-set <strong>Scale</strong> to <strong>Pentatonic</strong> (or <strong>Major</strong> for a cheerful tune, <strong>Minor</strong> for a sad one): every note is then tuned
-to the scale, in the key of the character's voice, so the melody sounds in tune. Lines without audio still get blips,
-with a light random variation.</p>
-<p><strong>Speech bubbles.</strong> Select a character and use <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>: a bubble appears above
-its head and shows only what this character says. Turn off its emitter's <strong>Show Subtitles</strong> to keep those lines out
-of the bottom of the screen. Turn on <strong>Constant Screen Size</strong> to keep its text the same size on screen whether the
-character is near or far, then set <strong>Text Height</strong> as a share of the screen height: the Inspector shows the matching
-size in pixels at 1080p and 4K. Beyond <strong>Max Distance</strong>, the bubble stops adapting and shrinks like the rest of the
-scene. It follows the main camera, or the one in its <strong>Camera</strong> field, and works with 2D (orthographic) cameras too.</p>
+<p>It follows the language being heard, and it is measured for you when you save a voice line or its audio — nothing
+to set up.</p>
+<h4 id="melody-voice">Melody voice</h4>
+<p>For &quot;Animal Crossing&quot;-style voices, add a <strong>Melody Voice Modifier</strong> next to a character's emitter. Each spoken
+syllable plays a short blip that follows the melody of the voice, in every language and with nothing to generate.
+Lines without audio still get blips, with a light random variation.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Blip On</strong></td>
+<td><strong>Syllable</strong> (one blip per syllable) or <strong>Word</strong> (one blip per word)</td>
+</tr>
+<tr>
+<td><strong>Mode</strong></td>
+<td><strong>Replace</strong> to hear only the blips, or <strong>Background</strong> to play them over the voice, an octave above it so the words stay clear</td>
+</tr>
+<tr>
+<td><strong>Base Pitch</strong></td>
+<td>The character's own register: higher for a small character, lower for a big one</td>
+</tr>
+<tr>
+<td><strong>Preset</strong> / <strong>Custom Sound</strong></td>
+<td>A blip, or a piano, music box, marimba or guitar note, or your own sound</td>
+</tr>
+<tr>
+<td><strong>Pitch Range</strong></td>
+<td>How closely the blips follow the voice</td>
+</tr>
+<tr>
+<td><strong>Scale</strong></td>
+<td>For instruments: <strong>Pentatonic</strong>, <strong>Major</strong> for a cheerful tune or <strong>Minor</strong> for a sad one. Every note is then tuned to the scale, in the key of the character's voice, so the melody sounds in tune.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="speech-bubbles">Speech bubbles</h4>
+<p>Select a character and use <strong>GameObject ▸ SubVox Pro ▸ Subtitle Bubble</strong>: a bubble appears above its head and
+shows only what this character says. Turn off its emitter's <strong>Show Subtitles</strong> to keep those lines out of the
+bottom of the screen.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Constant Screen Size</strong></td>
+<td>Keeps the text the same size on screen whether the character is near or far</td>
+</tr>
+<tr>
+<td><strong>Text Height</strong></td>
+<td>That size, as a share of the screen height. The Inspector shows the matching size in pixels at 1080p and 4K.</td>
+</tr>
+<tr>
+<td><strong>Max Distance</strong></td>
+<td>Beyond it, the bubble stops adapting and shrinks like the rest of the scene</td>
+</tr>
+<tr>
+<td><strong>Camera</strong></td>
+<td>The camera to follow (empty = the main camera). 2D (orthographic) cameras work too.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="without-code">Without code</h3>
-<ul>
-<li><strong>Voice Line Zone</strong> — plays a line when the player enters a trigger (2D or 3D), once or with a cooldown. It can
-wait for the character to finish speaking (<strong>Play mode: Queue</strong>), stop the line when the player leaves, and play
-again the next time the player comes in.</li>
-<li><strong>Voice Line Play On Start</strong> — plays a line when the object starts, after an optional delay.</li>
-<li><strong>Voice Line Bank</strong> (<strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line Bank</strong>) — several lines to pick from, such as a
-guard's barks: at random without saying the same thing twice in a row, shuffled, or in order. Put it in the
-<strong>Bank</strong> field of a zone or of Play On Start.</li>
-<li><strong>Voice Line Sequence</strong> (<strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line Sequence</strong>) — a dialogue: a list of lines
-that follow each other, automatically or when you call <code>Advance()</code>; <code>Previous()</code> goes back one line, for a
-&quot;previous line&quot; button. Play it with a <strong>Voice Line Sequence Player</strong>, whose Inspector shows the progress in Play
-mode. Set its <strong>Direction</strong> to <strong>Backward</strong> to play the lines from the last to the first. If its character is busy
-with a more important line, the dialogue waits, then picks up after a short <strong>Resume Delay</strong>.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Plays</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Voice Line Zone</strong></td>
+<td>A line when the player enters a trigger (2D or 3D)</td>
+</tr>
+<tr>
+<td><strong>Voice Line Play On Start</strong></td>
+<td>A line when the object starts, after an optional delay</td>
+</tr>
+<tr>
+<td><strong>Voice Line Bank</strong></td>
+<td>One line among several, such as a guard's barks</td>
+</tr>
+<tr>
+<td><strong>Voice Line Sequence</strong></td>
+<td>A dialogue: a list of lines that follow each other</td>
+</tr>
+</tbody>
+</table>
 <p>Each of them has an <strong>Emitter</strong> (empty = the default one) and a <strong>Priority</strong>, and a public <code>Play()</code> you can call
 from a button or any UnityEvent.</p>
+<h4 id="voice-line-zone">Voice Line Zone</h4>
+<ul>
+<li>Plays once, or again after a cooldown.</li>
+<li>Can wait for the character to finish speaking (<strong>Play mode: Queue</strong>).</li>
+<li>Can stop the line when the player leaves, and play again the next time the player comes in.</li>
+</ul>
+<h4 id="voice-line-bank">Voice Line Bank</h4>
+<p>Create it with <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line Bank</strong>, then put it in the <strong>Bank</strong> field of a zone or of
+Play On Start. It picks its lines:</p>
+<ul>
+<li>at random, without saying the same thing twice in a row;</li>
+<li>shuffled;</li>
+<li>or in order.</li>
+</ul>
+<h4 id="voice-line-sequence">Voice Line Sequence</h4>
+<p>Create it with <strong>Assets ▸ Create ▸ SubVox Pro ▸ Voice Line Sequence</strong>, then play it with a <strong>Voice Line Sequence
+Player</strong>, whose Inspector shows the progress in Play mode.</p>
+<ul>
+<li>The lines follow each other automatically, or when you call <code>Advance()</code>.</li>
+<li><code>Previous()</code> goes back one line, for a &quot;previous line&quot; button.</li>
+<li>Set <strong>Direction</strong> to <strong>Backward</strong> to play the lines from the last to the first.</li>
+<li>If its character is busy with a more important line, the dialogue waits, then picks up after a short
+<strong>Resume Delay</strong>.</li>
+</ul>
 <h3 id="switching-language">Switching language</h3>
 <p>Changing the language switches the subtitles on screen immediately. The dubbed audio follows from the next line,
 since a line can't change language in the middle of a sentence.</p>
 <ul>
-<li><p><strong>Audio in another language</strong> — by default the voices follow the subtitle language. To let players hear one
+<li><strong>Audio in another language</strong> — by default the voices follow the subtitle language. To let players hear one
 language and read another (Japanese voices with French subtitles, for instance), set <code>SubVox.AudioLanguage</code>;
-set it back to <code>null</code> to follow the subtitles again. The example scenes show both pickers.</p>
-</li>
-<li><p><strong>Unity Localization</strong> — if your project uses Unity's Localization package, SubVox Pro follows the language chosen
+set it back to <code>null</code> to follow the subtitles again. The example scenes show both pickers.</li>
+<li><strong>Unity Localization</strong> — if your project uses Unity's Localization package, SubVox Pro follows the language chosen
 there automatically. To set the language yourself instead, set <strong>Language Source</strong> to <strong>Manual</strong> on the Voice Line
-Manager.</p>
-</li>
-<li><p><strong>Speaker names</strong> — a speaker can show a different name in each language: fill in its <strong>Localized Names</strong>, or,
-with Unity Localization, point its <strong>Localization Table</strong> and <strong>Localization Entry</strong> at a string.</p>
-</li>
-<li><p><strong>Close languages</strong> — a player in <code>pt-BR</code> hears and reads a <code>pt</code> translation when there is no <code>pt-BR</code> one (and the
-other way round).</p>
-</li>
-<li><p><strong>Language menu</strong> — <code>myVoiceLine.GetSubtitleLanguages()</code> and <code>GetAudioLanguages()</code> list what a voice line offers.</p>
-</li>
+Manager.</li>
+<li><strong>Speaker names</strong> — a speaker can show a different name in each language: fill in its <strong>Localized Names</strong>, or,
+with Unity Localization, point its <strong>Localization Table</strong> and <strong>Localization Entry</strong> at a string.</li>
+<li><strong>Close languages</strong> — a player in <code>pt-BR</code> hears and reads a <code>pt</code> translation when there is no <code>pt-BR</code> one (and the
+other way round).</li>
+<li><strong>Language menu</strong> — <code>myVoiceLine.GetSubtitleLanguages()</code> and <code>GetAudioLanguages()</code> list what a voice line offers.</li>
 </ul>
 <h3 id="subtitle-options-for-players">Subtitle options for players</h3>
 <p>Wire these to your options menu; every subtitle display follows them at once:</p>
@@ -649,18 +1328,42 @@ SubVox.RevealMode = EVoiceLineSubtitleRevealMode.Karaoke;  // whole line, spoken
 </code></pre>
 <p><code>SubVox.History</code> keeps the last lines shown (text, speaker), to build a dialogue log screen.</p>
 <h3 id="your-own-subtitle-display">Your own subtitle display</h3>
-<p>The displayers cover most needs. To draw subtitles your own way, listen to
-<code>SubVox.SubtitleUpdated</code>, which gives you the subtitle to show whenever it changes (empty text means
-&quot;clear the screen&quot;). Read <code>SubVox.CurrentSubtitle</code> just after subscribing, so your display also shows a line
-that was already playing. The built-in displayers do this automatically when enabled or re-enabled; a speech
-bubble reads its own emitter's current subtitle instead.</p>
-<p><code>SubVox.DisplayedVoiceLine</code> gives the voice line selected for the global display, including a Timeline clip.
-<code>SubVox.PublishSubtitle(...)</code> shows your own text on the displayers, for example during a video. Custom
-publications are ignored while a SubVox Timeline clip is active, because that clip owns the display.</p>
+<p>The displayers cover most needs. To draw subtitles your own way:</p>
+<table>
+<thead>
+<tr>
+<th>Call</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SubVox.SubtitleUpdated</code></td>
+<td>Gives you the subtitle to show whenever it changes (empty text means &quot;clear the screen&quot;)</td>
+</tr>
+<tr>
+<td><code>SubVox.CurrentSubtitle</code></td>
+<td>The subtitle on screen now: read it just after subscribing, so your display also shows a line that was already playing</td>
+</tr>
+<tr>
+<td><code>SubVox.DisplayedVoiceLine</code></td>
+<td>The voice line selected for the global display, including a Timeline clip</td>
+</tr>
+<tr>
+<td><code>SubVox.PublishSubtitle(...)</code></td>
+<td>Shows your own text on the displayers, for example during a video</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The built-in displayers read the current subtitle automatically when enabled or re-enabled; a speech bubble
+reads its own emitter's current subtitle instead.</li>
+<li>Your own publications are ignored while a SubVox Timeline clip is active, because that clip owns the display.</li>
+</ul>
 <p>To only tweak a displayer (change the text, animate the box), create a script that inherits from it and override
 <code>ComposeText</code> or <code>SetVisible</code>. The other components can be extended the same way.</p>
 <h3 id="playing-the-audio-with-fmod-wwise-or-a-video">Playing the audio with FMOD, Wwise or a video</h3>
-<p>Import the voice line's audio (and its dubs) into your audio tool as usual, then let the emitter follow your audio
+<p>Import the voice line's audio (and its dubs) into your audio tool as usual. Then let the emitter follow your audio
 instead of playing it:</p>
 <pre><code class="lang-csharp">class FmodClock : IVoiceLineAudioClock
 {
@@ -711,9 +1414,13 @@ Scripts without an assembly definition see them directly; if your scripts have o
 (<code>SubVox.Unsubscribe</code> to stop).</p>
 </li>
 </ul>
-<p>An event can also carry a <strong>Payload</strong> — any asset delivered with the event; a method that takes that asset type as
-its parameter receives it — and be limited to <strong>once per playback</strong>.
-Events only run in Play mode, never while you edit or scrub.</p>
+<p>An event can also:</p>
+<ul>
+<li>carry a <strong>Payload</strong> — any asset delivered with the event; a method that takes that asset type as its parameter
+receives it;</li>
+<li>be limited to <strong>once per playback</strong>.</li>
+</ul>
+<p>Events only run in Play mode, never while you edit or scrub.</p>
 <hr>
 <h2 id="unity-timeline">Unity Timeline</h2>
 <ol>
@@ -722,54 +1429,82 @@ Events only run in Play mode, never while you edit or scrub.</p>
 <li>Bind that audio track to an AudioSource, like any Audio Track.</li>
 <li>Make sure the scene has a Subtitle Displayer (the prefab is the quickest).</li>
 </ol>
-<p>Audio and subtitles stay in sync, including while scrubbing. Dropping a <strong>Voice Line Sequence</strong> lays out all its
-lines. Events of the voice line fire during playback; to move them as Timeline markers, right-click the clip and
-choose <strong>SubVox Pro ▸ Bake Voice Events to Timeline</strong>.</p>
-<p>The cutscene plays the dub of the audio language (the current language unless <code>SubVox.AudioLanguage</code> is set) when
-the line has one, with its subtitles in sync. The language
-is picked when the Timeline starts playing. A clip follows the manager's <strong>Subtitle Reveal Mode</strong>, unless you tick
-<strong>Override Reveal Mode</strong> on it.</p>
-<p>An active SubVox clip has priority on the global subtitle display. Other voice lines keep playing, but their
-subtitles cannot replace the clip's text, including during a blank or before its first subtitle. A blank inside
-the clip follows <strong>Keep Background Between Subtitles</strong> as usual.</p>
-<p>When the clip ends or the director is stopped, the display immediately returns to the highest-priority emitter
-still playing, at its current position; its audio is not restarted. If no emitter is playing, the panel hides.
-When several SubVox Timeline tracks or directors overlap, the most recently entered clip takes priority;
-ending another clip does not clear its subtitles.
-Pausing the director keeps its selected subtitle until playback resumes or the director is stopped.</p>
+<p>Audio and subtitles stay in sync, including while scrubbing.</p>
+<ul>
+<li><strong>Sequences</strong> — dropping a <strong>Voice Line Sequence</strong> lays out all its lines.</li>
+<li><strong>Events</strong> — the events of the voice line fire during playback. To move them as Timeline markers, right-click the
+clip and choose <strong>SubVox Pro ▸ Bake Voice Events to Timeline</strong>.</li>
+<li><strong>Language</strong> — the cutscene plays the dub of the audio language (the current language unless
+<code>SubVox.AudioLanguage</code> is set) when the line has one, with its subtitles in sync. The language is picked when the
+Timeline starts playing.</li>
+<li><strong>Reveal mode</strong> — a clip follows the manager's <strong>Subtitle Reveal Mode</strong>, unless you tick <strong>Override Reveal Mode</strong>
+on it.</li>
+</ul>
+<h4 id="timeline-clips-and-other-voice-lines">Timeline clips and other voice lines</h4>
+<p>An active SubVox clip has priority on the global subtitle display:</p>
+<ul>
+<li>Other voice lines keep playing, but their subtitles cannot replace the clip's text, including during a blank or
+before its first subtitle. A blank inside the clip follows <strong>Keep Background Between Subtitles</strong> as usual.</li>
+<li>When the clip ends or the director is stopped, the display immediately returns to the highest-priority emitter
+still playing, at its current position; its audio is not restarted. If no emitter is playing, the panel hides.</li>
+<li>When several SubVox Timeline tracks or directors overlap, the most recently entered clip takes priority; ending
+another clip does not clear its subtitles.</li>
+<li>Pausing the director keeps its selected subtitle until playback resumes or the director is stopped.</li>
+</ul>
 <hr>
 <h2 id="process-many-files-at-once">Process many files at once</h2>
 <img src="Images/subvoxpro-batch-window.png" alt="Batch Processing window" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> turns a list of audio or <code>.srt</code> files into voice lines in one go.</p>
-<p>To queue audio already in your project, select several audio files, right-click and choose
-<strong>SubVox Pro ▸ Batch Processing</strong>. The files are added to the existing queue without starting the batch;
-duplicates are ignored. Wait for a running batch to finish before adding files this way.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 8px; margin: 22px 0 26px; font-size: 0.9em; text-align: center; line-height: 1.35;">
+<div style="padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><strong>Import</strong><br><span style="opacity: 0.75;">all files</span></div>
+<span style="opacity: 0.6;">→</span>
+<div style="padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><strong>Transcription</strong><br><span style="opacity: 0.75;">all files</span></div>
+<span style="opacity: 0.6;">→</span>
+<div style="padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><strong>Translation</strong><br><span style="opacity: 0.75;">all files</span></div>
+<span style="opacity: 0.6;">→</span>
+<div style="padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><strong>Dubbing</strong><br><span style="opacity: 0.75;">all files</span></div>
+</div>
+<p>Each file becomes its own voice line. The batch does one step for all files before the next one, which is faster
+with the offline engines.</p>
 <ol>
 <li>Drop files or folders, or use <strong>Add files…</strong> / <strong>Add folder…</strong> (subfolders included). A line under the
 buttons tells you how many files were added.</li>
 <li>Turn on the steps you need — <strong>Transcription</strong>, <strong>Translation</strong>, <strong>Dubbing</strong> — and set them up once for all
-files. Transcription and translation each have a <strong>Model</strong> choice, shared with the main window. A file can override its languages. To clear a voice chosen for a language, right-click it. The batch
-offers <strong>One per line</strong> and <strong>All together</strong> for dubbing; <strong>Groups</strong> are drawn per voice line in the editor.
-With many languages, the voice list scrolls.</li>
-<li>Check the <strong>Estimated cost</strong> (its total is shown on the folded header; click it to see the detail), then click <strong>Run batch</strong>. The button stays grayed out until everything is ready, and
-tells you what is missing. If the length of an audio file cannot be read, the estimate says so and does not
-count it.</li>
+files:
+<ul>
+<li>Transcription and translation each have a <strong>Model</strong> choice, shared with the main window.</li>
+<li>A file can override its languages.</li>
+<li>To clear a voice chosen for a language, right-click it. With many languages, the voice list scrolls.</li>
+<li>For dubbing, the batch offers <strong>One per line</strong> and <strong>All together</strong>; <strong>Groups</strong> are drawn per voice line in
+the editor.</li>
+</ul>
+</li>
+<li>Check the <strong>Estimated cost</strong> (its total is shown on the folded header; click it to see the detail). If the
+length of an audio file cannot be read, the estimate says so and does not count it.</li>
+<li>Click <strong>Run batch</strong>. The button stays grayed out until everything is ready, and tells you what is missing.</li>
 </ol>
-<p>Each file becomes its own voice line. The batch does one step for all files before the next one (for example
-every transcription, then every translation, then every dub), which is faster with the offline engines. You can
-cancel at any time and export a report of the run; clicking <strong>Run batch</strong> again picks up where each file stopped,
-even after restarting Unity, without copying the audio a second time. When a step is skipped (for example a
-language the dubbing provider cannot voice), a ⚠ line under the file explains why and the file reads
-<strong>Done with warnings</strong>.
-Once a file is done, <strong>Open</strong> shows its voice line in the editor, and <strong>Re-run</strong> queues its translation and
-dubbing again (for example after adding a language).</p>
+<blockquote>
+<p>To queue audio already in your project, select several audio files, right-click and choose
+<strong>SubVox Pro ▸ Batch Processing</strong>. The files are added to the existing queue without starting the batch;
+duplicates are ignored. Wait for a running batch to finish before adding files this way.</p>
+</blockquote>
+<h4 id="during-and-after-the-run">During and after the run</h4>
+<ul>
+<li>You can cancel at any time and export a report of the run.</li>
+<li>Clicking <strong>Run batch</strong> again picks up where each file stopped, even after restarting Unity, without copying the
+audio a second time.</li>
+<li>When a step is skipped (for example a language the dubbing provider cannot voice), a ⚠ line under the file
+explains why and the file reads <strong>Done with warnings</strong>.</li>
+<li>Once a file is done, <strong>Open</strong> shows its voice line in the editor, and <strong>Re-run</strong> queues its translation and
+dubbing again (for example after adding a language).</li>
+</ul>
 <hr>
 <h2 id="work-with-your-ai-assistant">Work with your AI assistant</h2>
 <p>An AI assistant that supports MCP (Claude Code, Claude Desktop, Codex, Cursor, VS Code Copilot, Windsurf…) can use
 SubVox Pro for you: list your voice lines, read their subtitles, transcribe, translate, dub, fix a line's text or
 set its speaker. Just ask it, for example <em>&quot;Transcribe the intro voice line and translate it into French and
 Spanish&quot;</em>.</p>
-<p><strong>Setup (once per project):</strong></p>
+<h4 id="setup-once-per-project">Setup (once per project)</h4>
 <ol>
 <li>Open <strong>Tools ▸ SubVox Pro ▸ MCP Server</strong> (also a tile of the Hub) and click <strong>Start</strong>. To start it with
 Unity each time you open the project, turn on <strong>Start MCP server with Unity</strong> in the SubVox Pro settings (<strong>Preferences</strong>).</li>
@@ -780,12 +1515,15 @@ are left as they are, and each file it changes keeps a copy next to it (<code>.s
 shows <strong>Connected at</strong> and the time.</li>
 <li>Keep the Unity editor open with your project: the assistant works through it.</li>
 </ol>
-<p>For an assistant that is not in the list, copy the address shown at the bottom of the window and add it as an MCP
-server in its settings.</p>
-<p><strong>Codex</strong> covers the Codex app, its command line and its code editor extension in one go. The ChatGPT app itself
-cannot be connected: it only reaches servers on the internet, not on your computer.</p>
-<p>If another program already uses the port, pick another number in the window: the connected assistants get the new
-address by themselves (restart them).</p>
+<ul>
+<li><strong>An assistant that is not in the list</strong> — copy the address shown at the bottom of the window and add it as an
+MCP server in its settings.</li>
+<li><strong>Codex</strong> covers the Codex app, its command line and its code editor extension in one go. The ChatGPT app itself
+cannot be connected: it only reaches servers on the internet, not on your computer.</li>
+<li><strong>Port already used</strong> — if another program already uses the port, pick another number in the window: the
+connected assistants get the new address by themselves (restart them).</li>
+</ul>
+<h4 id="tools">Tools</h4>
 <p>The SubVox Pro tools all start with <code>subvox_</code>:</p>
 <table>
 <thead>
@@ -837,23 +1575,33 @@ address by themselves (restart them).</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Costs stay under your control.</strong> Before using a paid online service, or replacing subtitles or dubs that already
-exist, the assistant first gets an estimate of the cost and of what would be replaced, and must ask you before
-going on. To skip either question, turn off <strong>Assistants ask before paid runs</strong> or <strong>Assistants ask before
-overwriting</strong> in the SubVox Pro settings (<strong>Preferences</strong>), or <strong>Ask before paid runs</strong> / <strong>Ask before overwriting</strong> in the
-MCP Server window. Offline engines are free. The services, models and voices are the ones you set in SubVox Pro; the
-assistant can choose another one for a single run without changing your settings.</p>
+<h4 id="costs-stay-under-your-control">Costs stay under your control</h4>
+<ul>
+<li>Before using a paid online service, or replacing subtitles or dubs that already exist, the assistant first gets
+an estimate of the cost and of what would be replaced, and must ask you before going on.</li>
+<li>To skip either question, turn off <strong>Assistants ask before paid runs</strong> or <strong>Assistants ask before overwriting</strong> in
+the SubVox Pro settings (<strong>Preferences</strong>), or <strong>Ask before paid runs</strong> / <strong>Ask before overwriting</strong> in the MCP
+Server window.</li>
+<li>Offline engines are free.</li>
+<li>The services, models and voices are the ones you set in SubVox Pro; the assistant can choose another one for a
+single run without changing your settings.</li>
+</ul>
 <p>Changes made by the assistant show up in the open SubVox Pro window. Transcriptions, translations and text or
 speaker changes can be undone with <strong>Ctrl+Z</strong>.</p>
 <hr>
 <h2 id="offline-engines-no-account-no-api-key">Offline engines (no account, no API key)</h2>
 <p>On the <strong>Windows</strong> editor, SubVox Pro can do everything offline, for free, on your own machine. Each engine is
 downloaded once (the button next to its provider says <strong>Setup model</strong> or <strong>Install…</strong>) and shared by all your
-projects. <strong>Tools ▸ SubVox Pro ▸ Additional Models</strong> (also a tile of the Hub) lists them all in one window, with
-their status and a <strong>?</strong> describing each one. Click an engine's name to unfold it: model choice, <strong>System requirements</strong> (the minimum and
-recommended computer, folded by default) and its <strong>Download</strong> button; Chatterbox's Japanese add-on sits inside it once
-Chatterbox is installed. The folder icon on the right opens the install folder, the red bin uninstalls the engine to
-free the disk space again. A graphics card makes them much faster, but they also run without one.</p>
+projects. A graphics card makes them much faster, but they also run without one.</p>
+<p><strong>Tools ▸ SubVox Pro ▸ Additional Models</strong> (also a tile of the Hub) lists them all in one window, with their status
+and a <strong>?</strong> describing each one:</p>
+<ul>
+<li>Click an engine's name to unfold it: model choice, <strong>System requirements</strong> (the minimum and recommended computer,
+folded by default) and its <strong>Download</strong> button. Chatterbox's Japanese add-on sits inside it once Chatterbox is
+installed.</li>
+<li>The folder icon on the right opens the install folder.</li>
+<li>The red bin uninstalls the engine to free the disk space again.</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -922,9 +1670,10 @@ a second.</p>
 <h3 id="parakeet-offline-transcription-european-languages">Parakeet (offline transcription, European languages)</h3>
 <img src="Images/subvoxpro-parakeet-setup.png" alt="Parakeet local model setup window" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <p>Pick <strong>Parakeet</strong> in the Transcription tab and click <strong>Setup model</strong> (670 MB). NVIDIA's Parakeet TDT gives punctuated
-text with word timings and recognizes the spoken language on its own, so there is nothing to set. It is fast on any
-recent processor, even without a graphics card: a short voice line takes a fraction of a second, two minutes of audio
-a few seconds. Languages: Bulgarian, Croatian, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hungarian, Italian, Latvian, Lithuanian, Maltese, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Spanish, Swedish and Ukrainian. For other languages, use Whisper.</p>
+text with word timings and recognizes the spoken language on its own, so there is nothing to set.</p>
+<p>It is fast on any recent processor, even without a graphics card: a short voice line takes a fraction of a second,
+two minutes of audio a few seconds.</p>
+<p>Languages: Bulgarian, Croatian, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hungarian, Italian, Latvian, Lithuanian, Maltese, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Spanish, Swedish and Ukrainian. For other languages, use Whisper.</p>
 <h3 id="hy-mt2-offline-translation">Hy-MT2 (offline translation)</h3>
 <img src="Images/subvoxpro-hymt-setup.png" alt="Hy-MT2 local translation setup window" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <p>Pick <strong>Hy-MT2</strong> in the Translation tab and click <strong>Setup model</strong>. The <strong>1.8B</strong> model is fast on any machine; the
@@ -943,10 +1692,13 @@ respect your context notes and the formality setting.</p>
 </ul>
 <p>Languages: Arabic, Chinese, Danish, Dutch, English, Finnish, French, German, Greek, Hindi, Italian, Korean, Malay,
 Norwegian, Polish, Portuguese, Russian, Spanish, Swahili, Swedish, Turkish, and Japanese after installing its
-support from the same window. <strong>Exaggeration</strong>, under the provider in the Dubbing panel (also in Batch Processing
-and the Settings), makes the delivery more or less expressive. Each
-generation is slightly different: if a word comes out wrong, generate it again. Some languages come out more reliably than
-others: see <a href="providers.html#chatterbox-how-reliable-each-language-is">how reliable each language is</a>.</p>
+support from the same window.</p>
+<ul>
+<li><strong>Exaggeration</strong>, under the provider in the Dubbing panel (also in Batch Processing and the Settings), makes the
+delivery more or less expressive.</li>
+<li>Each generation is slightly different: if a word comes out wrong, generate it again.</li>
+<li>Some languages come out more reliably than others: see <a href="providers.html#chatterbox-how-reliable-each-language-is">how reliable each language is</a>.</li>
+</ul>
 <h3 id="qwen3-tts-17b-offline-multilingual-dubbing">Qwen3 TTS 1.7B (offline multilingual dubbing)</h3>
 <p>Pick <strong>Qwen3 TTS 1.7B</strong> in the Dubbing tab and click <strong>Install…</strong>. It speaks Chinese, English, Japanese, Korean,
 German, French, Russian, Portuguese, Spanish and Italian, and comes in three models; install the ones you need
@@ -993,12 +1745,16 @@ voice must stay identical.</li>
 personalities and retouch directions, in 30 languages: Arabic, Burmese, Chinese, Danish, Dutch, English, Finnish,
 French, German, Greek, Hebrew, Hindi, Indonesian, Italian, Japanese, Khmer, Korean, Lao, Malay, Norwegian, Polish,
 Portuguese, Russian, Spanish, Swahili, Swedish, Filipino, Thai, Turkish and Vietnamese.</p>
-<p>Its voices are the same as Qwen3 Base: <strong>Original voice</strong>, the 20 ready-made voices, your clips in the <code>Voices</code>
-folder, or <strong>Record a reference…</strong>. Write directions in <strong>English or Chinese</strong>, for example <code>Speak softly, with a sad tone</code> or <code>Whisper quietly</code>: they work best in these two languages, whatever the language of the line. A ready-made
-voice keeps a slight accent outside its own language; for a perfect accent, use a reference recorded in the dubbed
-language. <strong>Use GPU</strong> in the Settings speeds up generation with a graphics card.</p>
-<p>To create a voice that does not exist, pick <strong>Designed voice</strong> and describe it, for example <code>A deep, calm male voice in his fifties</code>, or choose an <strong>Age</strong> under the description. The voice is created the first time you generate, then kept for every line, so a character always
-sounds the same; your personalities still set the tone. For a different voice per character, write the description
+<ul>
+<li><strong>Voices</strong> — the same as Qwen3 Base: <strong>Original voice</strong>, the 20 ready-made voices, your clips in the <code>Voices</code>
+folder, or <strong>Record a reference…</strong>. A ready-made voice keeps a slight accent outside its own language; for a
+perfect accent, use a reference recorded in the dubbed language.</li>
+<li><strong>Directions</strong> — write them in <strong>English or Chinese</strong>, for example <code>Speak softly, with a sad tone</code> or
+<code>Whisper quietly</code>: they work best in these two languages, whatever the language of the line.</li>
+<li><strong>Use GPU</strong> in the Settings speeds up generation with a graphics card.</li>
+</ul>
+<p>To create a voice that does not exist, pick <strong>Designed voice</strong> and describe it, for example <code>A deep, calm male voice in his fifties</code>, or choose an <strong>Age</strong> under the description. The voice is created the first time you generate, then
+kept for every line, so a character always sounds the same; your personalities still set the tone. For a different voice per character, write the description
 on each speaker and set their voice to <strong>Designed voice</strong>.</p>
 <h3 id="qwen3-offline-word-timing">Qwen3 (offline word timing)</h3>
 <p>Set <strong>Word timing</strong> to <strong>Qwen3 aligner (local)</strong> in the Transcription or Dubbing tab and click <strong>Install…</strong>. From then on, each
@@ -1023,17 +1779,40 @@ as <strong>Editor</strong> with your translators.</li>
 <strong>Connect</strong>, then sign in in the browser.</li>
 </ol>
 <h3 id="every-day">Every day</h3>
-<p>Translators fill the language columns and mark each line <strong>reviewed</strong> or <strong>final</strong>. Click <strong>Sync with Sheet</strong>:
-SubVox Pro shows every difference, Unity on one side and the Sheet on the other, and you choose which to keep before
-anything is written. The key columns of the Sheet are locked, so translators can only edit translations. Statuses are
-colored (<strong>reviewed</strong> in amber, <strong>final</strong> in green) and empty translations are tinted, so the remaining work is easy
-to see. Each voice line starts with a dark title row; fold or unfold its lines with the <strong>+ / −</strong> button in the left
-margin.</p>
+<ol>
+<li>Translators fill the language columns and mark each line <strong>reviewed</strong> or <strong>final</strong>.</li>
+<li>Click <strong>Sync with Sheet</strong>: SubVox Pro shows every difference, Unity on one side and the Sheet on the other.</li>
+<li>Choose which to keep. Nothing is written before that.</li>
+</ol>
+<p>In the Sheet:</p>
+<ul>
+<li>The key columns are locked, so translators can only edit translations.</li>
+<li>Statuses are colored (<strong>reviewed</strong> in amber, <strong>final</strong> in green) and empty translations are tinted, so the
+remaining work is easy to see.</li>
+<li>Each voice line starts with a dark title row; fold or unfold its lines with the <strong>+ / −</strong> button in the left
+margin.</li>
+</ul>
 <p>A line added only in the Sheet is never imported (a subtitle needs a timing), but it is never deleted without asking
-either. Two kinds of rows are set to <strong>Drop</strong> by default, so one sync cleans them up: a <strong>Duplicate</strong> (the same line
-appears twice in the Sheet) and a <strong>Removed</strong> line (it no longer exists in Unity, for example after re-cutting the
-subtitles). Click <strong>Keep</strong> to leave one in the Sheet.</p>
-<p>The button next to the Spreadsheet ID opens the Sheet in your browser.</p>
+either. Two kinds of rows are set to <strong>Drop</strong> by default, so one sync cleans them up:</p>
+<table>
+<thead>
+<tr>
+<th>Row</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Duplicate</strong></td>
+<td>The same line appears twice in the Sheet</td>
+</tr>
+<tr>
+<td><strong>Removed</strong></td>
+<td>The line no longer exists in Unity, for example after re-cutting the subtitles</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Keep</strong> to leave one in the Sheet. The button next to the Spreadsheet ID opens the Sheet in your browser.</p>
 <hr>
 <h2 id="settings">Settings</h2>
 <img src="Images/subvoxpro-settings.png" alt="SubVox Pro settings: API keys, preferences, data folder and model catalog" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
@@ -1041,7 +1820,17 @@ subtitles). Click <strong>Keep</strong> to leave one in the Sheet.</p>
 <ul>
 <li><strong>API Keys</strong> — one key per service. Keys stay on this computer: they are never saved in your project, committed
 or shipped. The eye at the end of a row shows or hides the key, the red cross removes it.</li>
-<li><strong>Preferences</strong> — <strong>Native language names</strong> (show languages under their own name, such as <em>Français</em> or <em>日本語</em>, instead of in English; off by default), <strong>Show CPS</strong> (reading speed), <strong>Custom inspectors</strong>, <strong>Auto blanks on new lines</strong>, <strong>Start MCP server with Unity</strong> (off by default), <strong>Assistants ask before paid runs</strong> and <strong>Assistants ask before overwriting</strong> (on by default).</li>
+<li><strong>Preferences</strong>:
+<ul>
+<li><strong>Native language names</strong> — show languages under their own name, such as <em>Français</em> or <em>日本語</em>, instead of
+in English (off by default);</li>
+<li><strong>Show CPS</strong> — reading speed;</li>
+<li><strong>Custom inspectors</strong>;</li>
+<li><strong>Auto blanks on new lines</strong>;</li>
+<li><strong>Start MCP server with Unity</strong> (off by default);</li>
+<li><strong>Assistants ask before paid runs</strong> and <strong>Assistants ask before overwriting</strong> (on by default).</li>
+</ul>
+</li>
 <li><strong>Project languages</strong> — the languages of your game. They come first wherever you pick a language (for example the
 <strong>Current Language</strong> of the Voice Line Manager); every other language stays available below them. English is
 set by default. Click <strong>Add languages</strong> and tick as many languages as you need; untick one to remove it.</li>
@@ -1615,17 +2404,36 @@ folder, which needs SubVox Pro to compile.</li>
 <p>Temporary files are deleted by Unity when it closes.</p>
 <hr>
 <h2 id="troubleshooting">Troubleshooting</h2>
-<ul>
-<li><strong>An offline engine fails to load, mentioning a missing DLL</strong> — install the latest <em>Microsoft Visual C++
-Redistributable (x64)</em> from Microsoft, then restart Unity.</li>
-<li><strong>A download stopped</strong> — scripts recompiled or Play mode started. Open the same setup window again: it resumes.</li>
-<li><strong>Gemini dubbing slows down or stops</strong> — the free Gemini plan allows only a few voice requests per minute and per
-day. SubVox Pro waits and retries on its own; <strong>Per speaker</strong> or <strong>All together</strong> send fewer requests, and
-enabling billing on your Google project lifts the limit.</li>
-<li><strong>The recorder finds no microphone on macOS</strong> — allow Unity in System Settings ▸ Privacy &amp; Security ▸ Microphone.</li>
-<li><strong>Nothing shows on screen in game</strong> — check that the scene has a Subtitle Displayer with its text assigned, and
-that the line plays on an emitter whose <strong>Show Subtitles</strong> is on.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>An offline engine fails to load, mentioning a missing DLL</strong></td>
+<td>Install the latest <em>Microsoft Visual C++ Redistributable (x64)</em> from Microsoft, then restart Unity.</td>
+</tr>
+<tr>
+<td><strong>A download stopped</strong></td>
+<td>Scripts recompiled or Play mode started. Open the same setup window again: it resumes.</td>
+</tr>
+<tr>
+<td><strong>Gemini dubbing slows down or stops</strong></td>
+<td>The free Gemini plan allows only a few voice requests per minute and per day. SubVox Pro waits and retries on its own; <strong>Per speaker</strong> or <strong>All together</strong> send fewer requests, and enabling billing on your Google project lifts the limit.</td>
+</tr>
+<tr>
+<td><strong>The recorder finds no microphone on macOS</strong></td>
+<td>Allow Unity in System Settings ▸ Privacy &amp; Security ▸ Microphone.</td>
+</tr>
+<tr>
+<td><strong>Nothing shows on screen in game</strong></td>
+<td>Check that the scene has a Subtitle Displayer with its text assigned, and that the line plays on an emitter whose <strong>Show Subtitles</strong> is on.</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2 id="support">Support</h2>
 <p>Questions, bugs and feature requests: **exnihilus.assets@gmail.com**. Please include your Unity version, the
