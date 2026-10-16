@@ -1,6 +1,6 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=5361c2db19";
-import { startVersionPicker } from "./versions.js?v=5361c2db19";
-import { localize, startLanguagePicker } from "./languages.js?v=5361c2db19";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=830cce96cd";
+import { startVersionPicker } from "./versions.js?v=830cce96cd";
+import { localize, startLanguagePicker } from "./languages.js?v=830cce96cd";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
@@ -401,6 +401,19 @@ function trimInheritance(article) {
   }
 }
 
+function markExamples(article) {
+  article.querySelectorAll("[id$='_examples']").forEach(heading => {
+    const example = labelElement("div", "svx-example", "");
+    heading.before(example);
+    heading.classList.add("svx-example-title");
+    heading.replaceChildren(labelElement("i", "bi bi-code-slash", ""), localize("Example", "Exemple", "Beispiel", "例", "示例"));
+    example.append(heading);
+    while (example.nextElementSibling?.matches("pre")) {
+      example.append(example.nextElementSibling);
+    }
+  });
+}
+
 function removeEmptyValueSections() {
   document.querySelectorAll("article h4.section").forEach(heading => {
     const list = heading.nextElementSibling;
@@ -449,6 +462,7 @@ export default {
     if (article) {
       trimInheritance(article);
       buildMemberOverview(article);
+      markExamples(article);
       startMemberFlash();
     }
 

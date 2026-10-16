@@ -24,6 +24,7 @@
   --svx-code-bg: #f4f4f5;
   --svx-rule: #e4e4e7;
   --svx-highlight: #fff4cc;
+  --svx-example: #b45309;
 }
 
 [data-bs-theme="dark"] {
@@ -41,6 +42,7 @@
   --svx-code-bg: #141416;
   --svx-rule: #232326;
   --svx-highlight: rgba(255, 209, 77, 0.12);
+  --svx-example: #ffd14d;
 }
 
 body {
@@ -127,6 +129,31 @@ header .navbar-brand #logo {
 pre {
   border-radius: 10px;
   border: 1px solid var(--svx-rule);
+}
+
+.svx-example {
+  margin: 1.25rem 0;
+  padding: 0.6rem 0.9rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--svx-example) 30%, transparent);
+  border-left: 3px solid var(--svx-example);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--svx-example) 6%, transparent);
+}
+
+article .svx-example .svx-example-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.55rem !important;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--svx-example);
+}
+
+.svx-example pre {
+  margin: 0;
 }
 
 pre,
