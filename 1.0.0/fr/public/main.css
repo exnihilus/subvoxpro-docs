@@ -25,6 +25,9 @@
   --svx-rule: #e4e4e7;
   --svx-highlight: #fff4cc;
   --svx-example: #b45309;
+  --svx-available-bg: rgba(22, 163, 74, 0.1);
+  --svx-partial-bg: rgba(202, 138, 4, 0.12);
+  --svx-unavailable-bg: rgba(220, 38, 38, 0.08);
 }
 
 [data-bs-theme="dark"] {
@@ -43,6 +46,9 @@
   --svx-rule: #232326;
   --svx-highlight: rgba(255, 209, 77, 0.12);
   --svx-example: #ffd14d;
+  --svx-available-bg: rgba(74, 222, 128, 0.09);
+  --svx-partial-bg: rgba(250, 204, 21, 0.09);
+  --svx-unavailable-bg: rgba(248, 113, 113, 0.08);
 }
 
 body {
@@ -1069,6 +1075,22 @@ article div:has(> img) {
 article div:has(> img) > img {
   margin-left: 0 !important;
   margin-right: 0 !important;
+}
+
+.svx-sortable {
+  overflow-anchor: none;
+}
+
+.svx-sortable td.svx-available {
+  background-color: var(--svx-available-bg);
+}
+
+.svx-sortable td.svx-partial {
+  background-color: var(--svx-partial-bg);
+}
+
+.svx-sortable td.svx-unavailable {
+  background-color: var(--svx-unavailable-bg);
 }
 
 .svx-sortable th button {

@@ -1,6 +1,6 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=8a552c34dc";
-import { startVersionPicker } from "./versions.js?v=8a552c34dc";
-import { localize, startLanguagePicker } from "./languages.js?v=8a552c34dc";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=0413646b53";
+import { startVersionPicker } from "./versions.js?v=0413646b53";
+import { localize, startLanguagePicker } from "./languages.js?v=0413646b53";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
@@ -415,6 +415,7 @@ function markExamples(article) {
 }
 
 const AVAILABILITY = { "✓": 2, "◐": 1, "—": 0 };
+const AVAILABILITY_CLASSES = { "✓": "svx-available", "◐": "svx-partial", "—": "svx-unavailable" };
 
 function sortAvailabilityTable(table, column, descending) {
   const body = table.tBodies[0];
@@ -428,7 +429,7 @@ function sortAvailabilityTable(table, column, descending) {
   body.append(...rows);
 }
 
-function startSortableTables() {
+function startAvailabilityTables() {
   document.querySelectorAll("article table").forEach(table => {
     const rows = table.tBodies[0] ? [...table.tBodies[0].rows] : [];
     const header = table.tHead?.rows[0];
@@ -437,6 +438,9 @@ function startSortableTables() {
     }
 
     table.classList.add("svx-sortable");
+    rows.flatMap(row => [...row.cells])
+      .filter(cell => cell.textContent.trim() in AVAILABILITY_CLASSES)
+      .forEach(cell => cell.classList.add(AVAILABILITY_CLASSES[cell.textContent.trim()]));
     [...header.cells].forEach((cell, column) => {
       const button = labelElement("button", "", "");
       button.type = "button";
@@ -449,7 +453,9 @@ function startSortableTables() {
         const order = cell.getAttribute("aria-sort") === first ? (numeric ? "ascending" : "descending") : first;
         [...header.cells].forEach(other => other.removeAttribute("aria-sort"));
         cell.setAttribute("aria-sort", order);
+        const top = button.getBoundingClientRect().top;
         sortAvailabilityTable(table, column, order === "descending");
+        scrollBy({ top: button.getBoundingClientRect().top - top, behavior: "instant" });
       });
     });
   });
@@ -499,7 +505,7 @@ export default {
     startLanguagePicker();
     startVersionPicker();
     removeEmptyValueSections();
-    startSortableTables();
+    startAvailabilityTables();
     const article = document.querySelector("article[data-uid]");
     if (article) {
       trimInheritance(article);
