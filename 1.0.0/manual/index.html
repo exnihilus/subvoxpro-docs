@@ -2393,17 +2393,20 @@ downloaded models are kept. If you moved the SubVox Pro folder, the update follo
 <li>Restart Unity, so the new offline engine files are used.</li>
 </ol>
 <p><strong>Uninstalling</strong></p>
+<p>Commit or back up your project, then open <strong>Tools ▸ SubVox Pro ▸ Uninstall…</strong> (also at the bottom of
+<a href="#settings">Settings</a>). The window goes through four steps:</p>
 <ol>
-<li>Remove the SubVox Pro components from your scenes and prefabs.</li>
-<li>To remove the API keys from this computer, click <strong>Clear API Keys</strong> in <a href="#settings">Settings</a>. If you connected
-a Google account, also click <strong>Disconnect</strong> in the Google Sheets window and in the Google Cloud TTS sign-in.</li>
-<li>To free the disk space used by the offline engines, click the red bin of each one in <strong>Additional Models</strong>.
-They are shared by all your projects, so only do this if no other project uses them.</li>
-<li>Delete the SubVox Pro folder, <code>Assets/Editor/SubVoxPro</code> (the settings) and, if you no longer need your voice
-lines, the data folder (<code>Assets/Data/SubVoxPro</code> by default). If you keep it, delete at least its <code>Generated</code>
-folder, which needs SubVox Pro to compile.</li>
+<li><strong>Where SubVox Pro is used</strong>: the scenes, prefabs, Timelines, assets and scripts of your project that use
+SubVox Pro. Click one to find it. Once SubVox Pro is removed, its components there become <em>Missing Scripts</em> and
+those scripts stop compiling, so remove or update them first, then click <strong>Scan again</strong>.</li>
+<li><strong>API keys and Google accounts</strong> (on by default): clears your keys and disconnects Google from this computer.
+Turn it off if another project still uses SubVox Pro.</li>
+<li><strong>Local models</strong> (off by default): deletes the offline engines. They are shared by all your projects.</li>
+<li><strong>Project files</strong>: the SubVox Pro folder, its settings, the <code>Generated</code> folder and its cache are always deleted.
+Your data folder (voice lines, dubs, recordings, speakers, event signals) is only deleted if you tick it.</li>
 </ol>
-<p>Temporary files are deleted by Unity when it closes.</p>
+<p>Click <strong>Uninstall SubVox Pro</strong> and confirm. A progress bar shows each step. If a file could not be deleted, restart
+Unity and delete it by hand.</p>
 <hr>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <table>

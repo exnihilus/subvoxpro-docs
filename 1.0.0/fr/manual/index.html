@@ -2418,19 +2418,22 @@ mise à jour le suit.</li>
 <li>Redémarrez Unity pour que les nouveaux fichiers des moteurs locaux soient utilisés.</li>
 </ol>
 <p><strong>Désinstaller</strong></p>
+<p>Committez ou sauvegardez votre projet, puis ouvrez <strong>Tools ▸ SubVox Pro ▸ Uninstall…</strong> (aussi en bas des
+<a href="#settings">Réglages</a>). La fenêtre passe par quatre étapes :</p>
 <ol>
-<li>Retirez les composants SubVox Pro de vos scènes et prefabs.</li>
-<li>Pour effacer les clés API de cet ordinateur, cliquez sur <strong>Clear API Keys</strong> dans les <a href="#settings">Réglages</a>. Si
-vous avez connecté un compte Google, cliquez aussi sur <strong>Disconnect</strong> dans la fenêtre Google Sheets et dans la
-connexion Google Cloud TTS.</li>
-<li>Pour libérer l’espace disque des moteurs locaux, cliquez sur la corbeille rouge de chacun dans
-<strong>Additional Models</strong>. Ils sont partagés par tous vos projets : ne le faites que si aucun autre projet ne les
-utilise.</li>
-<li>Supprimez le dossier SubVox Pro, <code>Assets/Editor/SubVoxPro</code> (les réglages) et, si vous n’avez plus besoin de vos
-voicelines, le dossier de données (<code>Assets/Data/SubVoxPro</code> par défaut). Si vous le gardez, supprimez au moins
-son dossier <code>Generated</code>, qui a besoin de SubVox Pro pour compiler.</li>
+<li><strong>Where SubVox Pro is used</strong> : les scènes, prefabs, Timelines, assets et scripts de votre projet qui utilisent
+SubVox Pro. Cliquez sur l’un d’eux pour le retrouver. Une fois SubVox Pro supprimé, ses composants y deviennent
+des <em>Missing Scripts</em> et ces scripts ne compilent plus : retirez-les ou modifiez-les d’abord, puis cliquez sur
+<strong>Scan again</strong>.</li>
+<li><strong>API keys and Google accounts</strong> (coché par défaut) : efface vos clés et déconnecte Google de cet ordinateur.
+Décochez si un autre projet utilise encore SubVox Pro.</li>
+<li><strong>Local models</strong> (décoché par défaut) : supprime les moteurs locaux. Ils sont partagés par tous vos projets.</li>
+<li><strong>Project files</strong> : le dossier SubVox Pro, ses réglages, le dossier <code>Generated</code> et son cache sont toujours
+supprimés. Votre dossier de données (voicelines, doublages, enregistrements, speakers, signaux d’events) n’est
+supprimé que si vous le cochez.</li>
 </ol>
-<p>Les fichiers temporaires sont supprimés par Unity à sa fermeture.</p>
+<p>Cliquez sur <strong>Uninstall SubVox Pro</strong> et confirmez. Une barre de progression affiche chaque étape. Si un fichier n’a
+pas pu être supprimé, redémarrez Unity et supprimez-le à la main.</p>
 <hr/>
 <h2 id="troubleshooting">Dépannage </h2>
 <table>

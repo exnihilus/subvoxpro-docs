@@ -2474,19 +2474,24 @@ verschoben haben, wird die Aktualisierung dort installiert.</li>
 <li>Starten Sie Unity neu, damit die neuen Dateien der Offline-Engines verwendet werden.</li>
 </ol>
 <p><strong>Deinstallieren</strong></p>
+<p>Committen Sie Ihr Projekt oder erstellen Sie eine Sicherungskopie, und öffnen Sie dann
+<strong>Tools ▸ SubVox Pro ▸ Uninstall…</strong> (auch unten in den <a href="#settings">Einstellungen</a>). Das Fenster führt durch vier
+Schritte:</p>
 <ol>
-<li>Entfernen Sie die SubVox Pro-Komponenten aus Ihren Szenen und Prefabs.</li>
-<li>Um die API-Schlüssel von diesem Computer zu entfernen, klicken Sie in den <a href="#settings">Einstellungen</a> auf
-<strong>Clear API Keys</strong>. Falls Sie ein Google-Konto verknüpft haben, klicken Sie außerdem im Google Sheets-Fenster und
-bei der Google Cloud TTS-Anmeldung auf <strong>Disconnect</strong>.</li>
-<li>Um den Speicherplatz der Offline-Engines freizugeben, klicken Sie in <strong>Additional Models</strong> bei jeder Engine auf den
-roten Papierkorb. Sie werden von allen Ihren Projekten gemeinsam genutzt: Tun Sie das nur, wenn kein anderes
-Projekt sie verwendet.</li>
-<li>Löschen Sie den SubVox Pro-Ordner, <code>Assets/Editor/SubVoxPro</code> (die Einstellungen) und, falls Sie Ihre Voice Lines
-nicht mehr benötigen, den Datenordner (standardmäßig <code>Assets/Data/SubVoxPro</code>). Falls Sie ihn behalten, löschen Sie
-zumindest seinen Ordner <code>Generated</code>, der SubVox Pro zum Kompilieren benötigt.</li>
+<li><strong>Where SubVox Pro is used</strong>: die Szenen, Prefabs, Timelines, Assets und Skripte Ihres Projekts, die SubVox Pro
+verwenden. Klicken Sie auf einen Eintrag, um ihn zu finden. Nach dem Entfernen von SubVox Pro werden dessen
+Komponenten dort zu <em>Missing Scripts</em>, und diese Skripte kompilieren nicht mehr: Entfernen oder ändern Sie sie
+zuerst und klicken Sie dann auf <strong>Scan again</strong>.</li>
+<li><strong>API keys and Google accounts</strong> (standardmäßig aktiviert): löscht Ihre Schlüssel und trennt Google von diesem
+Computer. Deaktivieren Sie es, wenn ein anderes Projekt SubVox Pro noch verwendet.</li>
+<li><strong>Local models</strong> (standardmäßig deaktiviert): löscht die Offline-Engines. Sie werden von allen Ihren Projekten
+gemeinsam genutzt.</li>
+<li><strong>Project files</strong>: Der SubVox Pro-Ordner, seine Einstellungen, der Ordner <code>Generated</code> und sein Cache werden immer
+gelöscht. Ihr Datenordner (Voice Lines, Synchronisationen, Aufnahmen, Speaker, Event-Signale) wird nur gelöscht,
+wenn Sie ihn ankreuzen.</li>
 </ol>
-<p>Temporäre Dateien werden von Unity beim Beenden gelöscht.</p>
+<p>Klicken Sie auf <strong>Uninstall SubVox Pro</strong> und bestätigen Sie. Ein Fortschrittsbalken zeigt jeden Schritt an. Falls
+eine Datei nicht gelöscht werden konnte, starten Sie Unity neu und löschen Sie sie von Hand.</p>
 <hr/>
 <h2 id="troubleshooting">Fehlerbehebung </h2>
 <table>

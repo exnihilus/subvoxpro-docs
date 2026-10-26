@@ -2161,15 +2161,14 @@ ElevenLabs 克隆声音。</li>
 <li>重启 Unity，以便使用新的离线引擎文件。</li>
 </ol>
 <p><strong>卸载</strong></p>
+<p>先提交或备份项目，然后打开 <strong>Tools ▸ SubVox Pro ▸ Uninstall…</strong>（也可在 <a href="#settings">Settings</a> 底部打开）。该窗口分为四个步骤：</p>
 <ol>
-<li>从场景和预制体中移除 SubVox Pro 组件。</li>
-<li>要从本机删除 API 密钥，请在 <a href="#settings">Settings</a> 中点击 <strong>Clear API Keys</strong>。如果已连接
-Google 账户，还需在 Google Sheets 窗口和 Google Cloud TTS 登录界面中分别点击 <strong>Disconnect</strong>。</li>
-<li>要释放离线引擎占用的磁盘空间，请在 <strong>Additional Models</strong> 中针对每个引擎点击红色垃圾桶图标。这些引擎由所有项目共享，因此仅在没有其他项目使用它们时执行此操作。</li>
-<li>删除 SubVox Pro 文件夹、<code>Assets/Editor/SubVoxPro</code>（设置），并在不再需要台词资源时删除数据文件夹（默认位于 <code>Assets/Data/SubVoxPro</code>）。如果保留数据文件夹，至少删除其中的 <code>Generated</code>
-文件夹，因为该文件夹中的代码需要 SubVox Pro 才能编译。</li>
+<li><strong>Where SubVox Pro is used</strong>：列出项目中使用 SubVox Pro 的场景、预制体、Timeline、资源和脚本。点击某一项即可定位。移除 SubVox Pro 后，其中的组件会变成 <em>Missing Script</em>，这些脚本也将无法编译：请先移除或修改它们，然后点击 <strong>Scan again</strong>。</li>
+<li><strong>API keys and Google accounts</strong>（默认勾选）：从本机清除密钥并断开 Google 连接。如果其他项目仍在使用 SubVox Pro，请取消勾选。</li>
+<li><strong>Local models</strong>（默认不勾选）：删除离线引擎。这些引擎由所有项目共享。</li>
+<li><strong>Project files</strong>：SubVox Pro 文件夹、其设置、<code>Generated</code> 文件夹及其缓存总会被删除。数据文件夹（台词、配音、录音、说话人、事件信号）仅在勾选后才会删除。</li>
 </ol>
-<p>关闭 Unity 时会自动删除临时文件。</p>
+<p>点击 <strong>Uninstall SubVox Pro</strong> 并确认。进度条会显示每个步骤。如果某个文件无法删除，请重启 Unity 后手动删除。</p>
 <hr/>
 <h2 id="troubleshooting">故障排除 </h2>
 <table>
