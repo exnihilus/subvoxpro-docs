@@ -1070,3 +1070,39 @@ article div:has(> img) > img {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
+
+.svx-sortable th button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.svx-sortable th button::after {
+  content: "\2195";
+  opacity: 0.35;
+  font-size: 0.85em;
+}
+
+.svx-sortable th button:hover::after {
+  opacity: 0.7;
+}
+
+.svx-sortable th[aria-sort] button {
+  color: rgb(var(--bs-link-color-rgb));
+}
+
+.svx-sortable th[aria-sort="descending"] button::after {
+  content: "\2193";
+  opacity: 1;
+}
+
+.svx-sortable th[aria-sort="ascending"] button::after {
+  content: "\2191";
+  opacity: 1;
+}

@@ -1,6 +1,6 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=fc9867f24a";
-import { startVersionPicker } from "./versions.js?v=fc9867f24a";
-import { localize, startLanguagePicker } from "./languages.js?v=fc9867f24a";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=8a552c34dc";
+import { startVersionPicker } from "./versions.js?v=8a552c34dc";
+import { localize, startLanguagePicker } from "./languages.js?v=8a552c34dc";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
@@ -414,6 +414,47 @@ function markExamples(article) {
   });
 }
 
+const AVAILABILITY = { "✓": 2, "◐": 1, "—": 0 };
+
+function sortAvailabilityTable(table, column, descending) {
+  const body = table.tBodies[0];
+  const text = (row, index) => row.cells[index].textContent.trim();
+  const compare = (first, second) => typeof first === "number" ? first - second : first.localeCompare(second, document.documentElement.lang);
+  const key = row => AVAILABILITY[text(row, column)] ?? text(row, column);
+  const rows = [...body.rows].sort((a, b) => {
+    const [first, second] = descending ? [key(b), key(a)] : [key(a), key(b)];
+    return compare(first, second) || compare(text(a, 0), text(b, 0));
+  });
+  body.append(...rows);
+}
+
+function startSortableTables() {
+  document.querySelectorAll("article table").forEach(table => {
+    const rows = table.tBodies[0] ? [...table.tBodies[0].rows] : [];
+    const header = table.tHead?.rows[0];
+    if (!header || !rows.some(row => [...row.cells].some(cell => cell.textContent.trim() in AVAILABILITY))) {
+      return;
+    }
+
+    table.classList.add("svx-sortable");
+    [...header.cells].forEach((cell, column) => {
+      const button = labelElement("button", "", "");
+      button.type = "button";
+      button.title = localize("Sort", "Trier", "Sortieren", "並べ替え", "排序");
+      button.append(...cell.childNodes);
+      cell.append(button);
+      button.addEventListener("click", () => {
+        const numeric = rows.some(row => row.cells[column].textContent.trim() in AVAILABILITY);
+        const first = numeric ? "descending" : "ascending";
+        const order = cell.getAttribute("aria-sort") === first ? (numeric ? "ascending" : "descending") : first;
+        [...header.cells].forEach(other => other.removeAttribute("aria-sort"));
+        cell.setAttribute("aria-sort", order);
+        sortAvailabilityTable(table, column, order === "descending");
+      });
+    });
+  });
+}
+
 function removeEmptyValueSections() {
   document.querySelectorAll("article h4.section").forEach(heading => {
     const list = heading.nextElementSibling;
@@ -458,6 +499,7 @@ export default {
     startLanguagePicker();
     startVersionPicker();
     removeEmptyValueSections();
+    startSortableTables();
     const article = document.querySelector("article[data-uid]");
     if (article) {
       trimInheritance(article);
