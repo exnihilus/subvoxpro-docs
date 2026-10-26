@@ -1,6 +1,6 @@
-import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=830cce96cd";
-import { startVersionPicker } from "./versions.js?v=830cce96cd";
-import { localize, startLanguagePicker } from "./languages.js?v=830cce96cd";
+import { highlightCSharp, renderCSharp, startCodeThemes } from "./code-themes.js?v=fc9867f24a";
+import { startVersionPicker } from "./versions.js?v=fc9867f24a";
+import { localize, startLanguagePicker } from "./languages.js?v=fc9867f24a";
 
 const DEMO_SPEAKER = "Alex";
 const DEMO_LINES = [
@@ -107,10 +107,10 @@ function badgesOf(signature, name) {
   if (/\bstatic\b/.test(declaration)) badges.push(["static", "static"]);
   if (/\bconst\b/.test(declaration)) badges.push(["const", "static"]);
   if (/\babstract\b/.test(declaration)) badges.push(["abstract", "override"]);
-  if (/\bvirtual\b/.test(declaration)) badges.push([localize("overridable", "redéfinissable", "überschreibbar", "オーバーライド可能", "可重写"), "override"]);
+  if (/\bvirtual\b/.test(declaration)) badges.push(["overridable", "override"]);
   if (/\boverride\b/.test(declaration)) badges.push(["override", "override"]);
-  if (/\{\s*get;\s*\}/.test(signature) || /\breadonly\b/.test(declaration)) badges.push([localize("read-only", "lecture seule", "schreibgeschützt", "読み取り専用", "只读"), "readonly"]);
-  if (UNITY_MESSAGES.has(name.replace(/\(.*$/, ""))) badges.push([localize("Unity message", "message Unity", "Unity-Nachricht", "Unity メッセージ", "Unity 消息"), "unity"]);
+  if (/\{\s*get;\s*\}/.test(signature) || /\breadonly\b/.test(declaration)) badges.push(["read-only", "readonly"]);
+  if (UNITY_MESSAGES.has(name.replace(/\(.*$/, ""))) badges.push(["Unity message", "unity"]);
   return badges;
 }
 
