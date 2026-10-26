@@ -66,7 +66,7 @@
 <div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
 <div class="offcanvas-header">
 <h5 class="offcanvas-title" id="tocOffcanvasLabel">Inhaltsverzeichnis</h5>
-<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+<button aria-label="Schließen" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
 </div>
 <div class="offcanvas-body">
 <nav class="toc" id="toc"></nav>
@@ -75,7 +75,7 @@
 </div>
 <div class="content">
 <div class="actionbar">
-<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Inhaltsverzeichnis anzeigen" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
 <i class="bi bi-list"></i>
 </button>
 <nav id="breadcrumb"></nav>
@@ -216,7 +216,7 @@ Klasse VoiceLineEmitter
   Duration
   
   </h3>
-<div class="markdown level1 summary"><p>Length of the current Voice Line in seconds.</p>
+<div class="markdown level1 summary"><p>Länge der aktuellen Voice Line in Sekunden.</p>
 </div>
 <div class="markdown level1 conceptual"></div>
 <div class="codewrapper">
@@ -275,7 +275,7 @@ Klasse VoiceLineEmitter
 <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
 <dd></dd>
 </dl>
-<h4 class="section" id="SubVoxPro_VoiceLineEmitter_Loudness_examples">Examples</h4>
+<h4 class="section" id="SubVoxPro_VoiceLineEmitter_Loudness_examples">Beispiele</h4>
 <pre><code class="lang-csharp">void Update()
 {
     _glow = Mathf.Lerp(_glow, _emitter.Loudness, 15f * Time.deltaTime);
@@ -542,7 +542,7 @@ Klasse VoiceLineEmitter
 <dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
 <dd></dd>
 </dl>
-<h4 class="section" id="SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode__examples">Examples</h4>
+<h4 class="section" id="SubVoxPro_VoiceLineEmitter_Play_SubVoxPro_VoiceLineData_SubVoxPro_EVoiceLinePriority_SubVoxPro_EVoiceLinePlayMode__examples">Beispiele</h4>
 <pre><code class="lang-csharp">VoiceLineEmitter guard = _guard.GetComponent&lt;VoiceLineEmitter&gt;();
 guard.Play(alertLine, EVoiceLinePriority.High);
 guard.Play(idleBark, EVoiceLinePriority.Low, EVoiceLinePlayMode.Queue);</code></pre>
@@ -740,7 +740,7 @@ guard.Play(idleBark, EVoiceLinePriority.Low, EVoiceLinePlayMode.Queue);</code></
 <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.SubtitleWordInfo.html">SubtitleWordInfo</a>&gt;</dt>
 <dd></dd>
 </dl>
-<h4 class="section" id="SubVoxPro_VoiceLineEmitter_WordChanged_examples">Examples</h4>
+<h4 class="section" id="SubVoxPro_VoiceLineEmitter_WordChanged_examples">Beispiele</h4>
 <pre><code class="lang-csharp">_emitter.WordChanged += word =&gt; _mouth.SetBool("Talking", word.Text != null);</code></pre>
 </article>
 </div>
@@ -752,7 +752,7 @@ guard.Play(idleBark, EVoiceLinePriority.Low, EVoiceLinePlayMode.Queue);</code></
 <footer class="border-top text-secondary">
 <div class="container-xxl">
 <div class="flex-fill">
-          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). Alle Rechte vorbehalten.
         </div>
 </div>
 </footer>

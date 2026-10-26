@@ -66,7 +66,7 @@
 <div aria-labelledby="tocOffcanvasLabel" class="offcanvas-md offcanvas-start" id="tocOffcanvas" tabindex="-1">
 <div class="offcanvas-header">
 <h5 class="offcanvas-title" id="tocOffcanvasLabel">Sommaire</h5>
-<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
+<button aria-label="Fermer" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" type="button"></button>
 </div>
 <div class="offcanvas-body">
 <nav class="toc" id="toc"></nav>
@@ -75,7 +75,7 @@
 </div>
 <div class="content">
 <div class="actionbar">
-<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
+<button aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Afficher le sommaire" class="btn btn-lg border-0 d-md-none" data-bs-target="#tocOffcanvas" data-bs-toggle="offcanvas" type="button">
 <i class="bi bi-list"></i>
 </button>
 <nav id="breadcrumb"></nav>
@@ -126,7 +126,7 @@ Classe SubVox
 <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
 </div>
 </dd></dl>
-<h2 id="SubVoxPro_SubVox_examples">Examples</h2>
+<h2 id="SubVoxPro_SubVox_examples">Exemples</h2>
 <pre><code class="lang-csharp">SubVox.CurrentLanguage = "fr";
 VoiceLinePlayback playback = SubVox.Play(greeting);
 
@@ -168,7 +168,7 @@ SubVox.VoiceLineStarted += started =&gt; Debug.Log($"{started.VoiceLine.name} st
 <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
 <dd></dd>
 </dl>
-<h4 class="section" id="SubVoxPro_SubVox_AudioLanguage_examples">Examples</h4>
+<h4 class="section" id="SubVoxPro_SubVox_AudioLanguage_examples">Exemples</h4>
 <pre><code class="lang-csharp">SubVox.AudioLanguage = "";
 SubVox.CurrentLanguage = "fr";
 
@@ -285,7 +285,7 @@ SubVox.AudioLanguage = null;</code></pre>
 <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="SubVoxPro.SubtitleHistoryEntry.html">SubtitleHistoryEntry</a>&gt;</dt>
 <dd></dd>
 </dl>
-<h4 class="section" id="SubVoxPro_SubVox_History_examples">Examples</h4>
+<h4 class="section" id="SubVoxPro_SubVox_History_examples">Exemples</h4>
 <pre><code class="lang-csharp">foreach (SubtitleHistoryEntry entry in SubVox.History)
 {
     string speaker = entry.Speaker != null ? entry.Speaker.DisplayName + ": " : string.Empty;
@@ -419,7 +419,7 @@ SubVox.AudioLanguage = null;</code></pre>
 <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
 <dd></dd>
 </dl>
-<h4 class="section" id="SubVoxPro_SubVox_SubtitlesEnabled_examples">Examples</h4>
+<h4 class="section" id="SubVoxPro_SubVox_SubtitlesEnabled_examples">Exemples</h4>
 <pre><code class="lang-csharp">public void OnSubtitlesToggle(bool enabled) =&gt; SubVox.SubtitlesEnabled = enabled;
 public void OnTextSizeSlider(float scale) =&gt; SubVox.SubtitleScale = scale;
 public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = opacity;</code></pre>
@@ -543,7 +543,7 @@ public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = o
 <dt><a class="xref" href="SubVoxPro.VoiceLinePlayback.html">VoiceLinePlayback</a></dt>
 <dd></dd>
 </dl>
-<h4 class="section" id="SubVoxPro_SubVox_PlayAt_SubVoxPro_VoiceLineData_UnityEngine_Vector3_SubVoxPro_EVoiceLinePriority__examples">Examples</h4>
+<h4 class="section" id="SubVoxPro_SubVox_PlayAt_SubVoxPro_VoiceLineData_UnityEngine_Vector3_SubVoxPro_EVoiceLinePriority__examples">Exemples</h4>
 <pre><code class="lang-csharp">SubVox.PlayAt(explosionShout, transform.position, EVoiceLinePriority.High);</code></pre>
 <a data-uid="SubVoxPro.SubVox.PublishSubtitle*" id="SubVoxPro_SubVox_PublishSubtitle_"></a>
 <h3 data-uid="SubVoxPro.SubVox.PublishSubtitle(SubVoxPro.SubtitleInfo)" id="SubVoxPro_SubVox_PublishSubtitle_SubVoxPro_SubtitleInfo_">
@@ -561,7 +561,7 @@ public void OnBackgroundSlider(float opacity) =&gt; SubVox.BackgroundOpacity = o
 <dt><code>subtitle</code> <a class="xref" href="SubVoxPro.SubtitleInfo.html">SubtitleInfo</a></dt>
 <dd></dd>
 </dl>
-<h4 class="section" id="SubVoxPro_SubVox_PublishSubtitle_SubVoxPro_SubtitleInfo__examples">Examples</h4>
+<h4 class="section" id="SubVoxPro_SubVox_PublishSubtitle_SubVoxPro_SubtitleInfo__examples">Exemples</h4>
 <pre><code class="lang-csharp">SubVox.PublishSubtitle(new SubtitleInfo("intro", 0f, "Somewhere in the north, ten years ago."));
 SubVox.PublishSubtitle(new SubtitleInfo("intro", 0f, string.Empty));</code></pre>
 <a data-uid="SubVoxPro.SubVox.ResumeAll*" id="SubVoxPro_SubVox_ResumeAll_"></a>
@@ -620,7 +620,7 @@ SubVox.PublishSubtitle(new SubtitleInfo("intro", 0f, string.Empty));</code></pre
 <dt><code>handler</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="SubVoxPro.VoiceLineEventContext.html">VoiceLineEventContext</a>&gt;</dt>
 <dd></dd>
 </dl>
-<h4 class="section" id="SubVoxPro_SubVox_Subscribe_SubVoxPro_VoiceLineEventSignalData_System_Action_SubVoxPro_VoiceLineEventContext___examples">Examples</h4>
+<h4 class="section" id="SubVoxPro_SubVox_Subscribe_SubVoxPro_VoiceLineEventSignalData_System_Action_SubVoxPro_VoiceLineEventContext___examples">Exemples</h4>
 <pre><code class="lang-csharp">[SerializeField] private VoiceLineEventSignalData _cameraShake = null;
 
 private void OnEnable() =&gt; SubVox.Subscribe(_cameraShake, Shake);
@@ -795,7 +795,7 @@ private void Shake(VoiceLineEventContext context)
 <footer class="border-top text-secondary">
 <div class="container-xxl">
 <div class="flex-fill">
-          SubVox Pro © 2026 Louis Nillus (ExNihilus). All rights reserved.
+          SubVox Pro © 2026 Louis Nillus (ExNihilus). Tous droits réservés.
         </div>
 </div>
 </footer>
