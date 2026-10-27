@@ -2163,7 +2163,13 @@ ElevenLabs 克隆声音。</li>
 <p><strong>卸载</strong></p>
 <p>先提交或备份项目，然后打开 <strong>Tools ▸ SubVox Pro ▸ Uninstall…</strong>（也可在 <a href="#settings">Settings</a> 底部打开）。该窗口分为四个步骤：</p>
 <ol>
-<li><strong>Where SubVox Pro is used</strong>：列出项目中使用 SubVox Pro 的场景、预制体、Timeline、资源和脚本。点击某一项即可定位。移除 SubVox Pro 后，其中的组件会变成 <em>Missing Script</em>，这些脚本也将无法编译：请先移除或修改它们，然后点击 <strong>Scan again</strong>。</li>
+<li><strong>Where SubVox Pro is used</strong>：列出项目中使用 SubVox Pro 的场景、预制体、Timeline、资源和脚本。点击某一项即可定位。
+<ul>
+<li>勾选 <strong>Remove SubVox Pro from these scenes, prefabs and assets</strong>（默认不勾选），即可在卸载时清理它们：移除其中的 SubVox Pro 组件、Timeline 中的 SubVox Pro 轨道、片段和标记，以及调用 SubVox Pro 的事件监听器，并删除此处列出的 SubVox Pro 资源。您的其他监听器和引用不会被改动。原先指向 SubVox Pro 的字段会在 Console 中列出。请先保存已打开的场景。</li>
+<li>不勾选时，SubVox Pro 组件会变成 <em>Missing Script</em>。重新安装 SubVox Pro 即可恢复。</li>
+<li>脚本永远不会被修改：请先更新它们，否则将无法编译。然后点击 <strong>Scan again</strong>。</li>
+</ul>
+</li>
 <li><strong>API keys and Google accounts</strong>（默认勾选）：从本机清除密钥并断开 Google 连接。如果其他项目仍在使用 SubVox Pro，请取消勾选。</li>
 <li><strong>Local models</strong>（默认不勾选）：删除离线引擎。这些引擎由所有项目共享。</li>
 <li><strong>Project files</strong>：SubVox Pro 文件夹、其设置、<code>Generated</code> 文件夹及其缓存总会被删除。数据文件夹（台词、配音、录音、说话人、事件信号）仅在勾选后才会删除。</li>

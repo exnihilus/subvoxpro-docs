@@ -2479,9 +2479,19 @@ verschoben haben, wird die Aktualisierung dort installiert.</li>
 Schritte:</p>
 <ol>
 <li><strong>Where SubVox Pro is used</strong>: die Szenen, Prefabs, Timelines, Assets und Skripte Ihres Projekts, die SubVox Pro
-verwenden. Klicken Sie auf einen Eintrag, um ihn zu finden. Nach dem Entfernen von SubVox Pro werden dessen
-Komponenten dort zu <em>Missing Scripts</em>, und diese Skripte kompilieren nicht mehr: Entfernen oder ändern Sie sie
-zuerst und klicken Sie dann auf <strong>Scan again</strong>.</li>
+verwenden. Klicken Sie auf einen Eintrag, um ihn zu finden.
+<ul>
+<li>Aktivieren Sie <strong>Remove SubVox Pro from these scenes, prefabs and assets</strong> (standardmäßig deaktiviert), um sie
+bei der Deinstallation zu bereinigen: Ihre SubVox-Pro-Komponenten, die SubVox-Pro-Spuren, -Clips und -Marker
+ihrer Timelines und die Event-Listener, die SubVox Pro aufrufen, werden entfernt, und die hier aufgeführten
+SubVox-Pro-Assets werden gelöscht. Ihre anderen Listener und Referenzen bleiben unberührt. Die Felder, die auf
+SubVox Pro verwiesen, werden in der Console aufgeführt. Speichern Sie zuerst Ihre geöffneten Szenen.</li>
+<li>Bleibt die Option deaktiviert, werden die SubVox-Pro-Komponenten zu <em>Missing Scripts</em>. Eine Neuinstallation von
+SubVox Pro stellt sie wieder her.</li>
+<li>Skripte werden nie geändert: Passen Sie sie zuerst an, sonst kompilieren sie nicht mehr. Klicken Sie dann auf
+<strong>Scan again</strong>.</li>
+</ul>
+</li>
 <li><strong>API keys and Google accounts</strong> (standardmäßig aktiviert): löscht Ihre Schlüssel und trennt Google von diesem
 Computer. Deaktivieren Sie es, wenn ein anderes Projekt SubVox Pro noch verwendet.</li>
 <li><strong>Local models</strong> (standardmäßig deaktiviert): löscht die Offline-Engines. Sie werden von allen Ihren Projekten

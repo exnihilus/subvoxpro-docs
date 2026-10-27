@@ -2397,8 +2397,16 @@ downloaded models are kept. If you moved the SubVox Pro folder, the update follo
 <a href="#settings">Settings</a>). The window goes through four steps:</p>
 <ol>
 <li><strong>Where SubVox Pro is used</strong>: the scenes, prefabs, Timelines, assets and scripts of your project that use
-SubVox Pro. Click one to find it. Once SubVox Pro is removed, its components there become <em>Missing Scripts</em> and
-those scripts stop compiling, so remove or update them first, then click <strong>Scan again</strong>.</li>
+SubVox Pro. Click one to find it.
+<ul>
+<li>Tick <strong>Remove SubVox Pro from these scenes, prefabs and assets</strong> (off by default) to clean them during the
+uninstall: their SubVox Pro components, Timeline tracks, clips and markers and the event listeners that call
+SubVox Pro are removed, and the SubVox Pro assets listed here are deleted. Your other listeners and references
+are never touched. The fields that pointed to SubVox Pro are listed in the Console. Save your open scenes first.</li>
+<li>Left off, the SubVox Pro components become <em>Missing Scripts</em>. Reinstalling SubVox Pro restores them.</li>
+<li>Scripts are never changed: update them first, or they stop compiling. Then click <strong>Scan again</strong>.</li>
+</ul>
+</li>
 <li><strong>API keys and Google accounts</strong> (on by default): clears your keys and disconnects Google from this computer.
 Turn it off if another project still uses SubVox Pro.</li>
 <li><strong>Local models</strong> (off by default): deletes the offline engines. They are shared by all your projects.</li>

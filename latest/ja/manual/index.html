@@ -2157,7 +2157,13 @@ Steamなどの一部のストアでは、公開時にAI生成コンテンツの�
 <p><strong>アンインストール</strong></p>
 <p>プロジェクトをコミットするかバックアップを取ってから、<strong>Tools ▸ SubVox Pro ▸ Uninstall…</strong>を開きます（<a href="#settings">Settings</a>の下部からも開けます）。ウィンドウは次の4つのステップで構成されています。</p>
 <ol>
-<li><strong>Where SubVox Pro is used</strong>：SubVox Proを使用しているプロジェクト内のシーン、プレハブ、Timeline、アセット、スクリプトの一覧です。項目をクリックすると、その場所を表示します。SubVox Proを削除すると、そこにあるコンポーネントは<em>Missing Script</em>になり、スクリプトはコンパイルできなくなります。先に削除または修正してから、<strong>Scan again</strong>をクリックしてください。</li>
+<li><strong>Where SubVox Pro is used</strong>：SubVox Proを使用しているプロジェクト内のシーン、プレハブ、Timeline、アセット、スクリプトの一覧です。項目をクリックすると、その場所を表示します。
+<ul>
+<li><strong>Remove SubVox Pro from these scenes, prefabs and assets</strong>（デフォルトでオフ）にチェックを入れると、アンインストール時にこれらを整理します。SubVox Proのコンポーネント、TimelineのSubVox Proトラック・クリップ・マーカー、SubVox Proを呼び出すイベントリスナーが削除され、ここに表示されたSubVox Proのアセットも削除されます。それ以外のリスナーや参照には一切触れません。SubVox Proを参照していたフィールドはConsoleに一覧表示されます。先に開いているシーンを保存してください。</li>
+<li>オフのままにすると、SubVox Proのコンポーネントは<em>Missing Script</em>になります。SubVox Proを再インストールすると元に戻ります。</li>
+<li>スクリプトは変更されません。先に修正しないとコンパイルできなくなります。その後、<strong>Scan again</strong>をクリックしてください。</li>
+</ul>
+</li>
 <li><strong>API keys and Google accounts</strong>（デフォルトでオン）：このコンピューターからキーを削除し、Googleとの連携を解除します。他のプロジェクトでまだSubVox Proを使用している場合はオフにしてください。</li>
 <li><strong>Local models</strong>（デフォルトでオフ）：オフラインエンジンを削除します。オフラインエンジンはすべてのプロジェクトで共有されています。</li>
 <li><strong>Project files</strong>：SubVox Proフォルダー、その設定、<code>Generated</code>フォルダー、およびキャッシュは常に削除されます。データフォルダー（ボイスライン、吹き替え、録音、スピーカー、イベントシグナル）は、チェックを入れた場合にのみ削除されます。</li>

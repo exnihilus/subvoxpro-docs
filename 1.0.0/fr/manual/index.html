@@ -2422,9 +2422,19 @@ mise à jour le suit.</li>
 <a href="#settings">Réglages</a>). La fenêtre passe par quatre étapes :</p>
 <ol>
 <li><strong>Where SubVox Pro is used</strong> : les scènes, prefabs, Timelines, assets et scripts de votre projet qui utilisent
-SubVox Pro. Cliquez sur l’un d’eux pour le retrouver. Une fois SubVox Pro supprimé, ses composants y deviennent
-des <em>Missing Scripts</em> et ces scripts ne compilent plus : retirez-les ou modifiez-les d’abord, puis cliquez sur
-<strong>Scan again</strong>.</li>
+SubVox Pro. Cliquez sur l’un d’eux pour le retrouver.
+<ul>
+<li>Cochez <strong>Remove SubVox Pro from these scenes, prefabs and assets</strong> (décoché par défaut) pour les nettoyer
+pendant la désinstallation : leurs composants SubVox Pro, les pistes, clips et markers SubVox Pro de leurs
+Timelines et les listeners d’events qui appellent SubVox Pro sont retirés, et les assets SubVox Pro listés ici
+sont supprimés. Vos autres listeners et références ne sont jamais touchés. Les champs qui pointaient vers
+SubVox Pro sont listés dans la Console. Enregistrez d’abord vos scènes ouvertes.</li>
+<li>Si l’option reste décochée, les composants SubVox Pro deviennent des <em>Missing Scripts</em>. Réinstaller SubVox Pro
+les restaure.</li>
+<li>Les scripts ne sont jamais modifiés : mettez-les à jour d’abord, sinon ils ne compilent plus. Cliquez ensuite
+sur <strong>Scan again</strong>.</li>
+</ul>
+</li>
 <li><strong>API keys and Google accounts</strong> (coché par défaut) : efface vos clés et déconnecte Google de cet ordinateur.
 Décochez si un autre projet utilise encore SubVox Pro.</li>
 <li><strong>Local models</strong> (décoché par défaut) : supprime les moteurs locaux. Ils sont partagés par tous vos projets.</li>
