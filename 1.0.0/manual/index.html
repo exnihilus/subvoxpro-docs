@@ -1465,7 +1465,8 @@ another clip does not clear its subtitles.</li>
 <hr>
 <h2 id="process-many-files-at-once">Process many files at once</h2>
 <img src="Images/subvoxpro-batch-window.png" alt="Batch Processing window" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
-<p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> turns a list of audio or <code>.srt</code> files into voice lines in one go.</p>
+<p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> turns a list of audio or <code>.srt</code> files into voice lines in one go. It can
+also continue voice lines already in your project.</p>
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 8px; margin: 22px 0 26px; font-size: 0.9em; text-align: center; line-height: 1.35;">
 <div style="padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><strong>Import</strong><br><span style="opacity: 0.75;">all files</span></div>
 <span style="opacity: 0.6;">→</span>
@@ -1478,16 +1479,16 @@ another clip does not clear its subtitles.</li>
 <p>Each file becomes its own voice line. The batch does one step for all files before the next one, which is faster
 with the offline engines.</p>
 <ol>
-<li>Drop files or folders on the drop zone, or click the <strong>+</strong> button next to it and choose <strong>Files…</strong> or
-<strong>Folder…</strong> (subfolders included). A line below tells you how many files were added. Audio and subtitle files
-are listed in two tables: click a column header to sort (again to reverse, a third time for the queue order),
-and click a row to open its options — one row at a time.</li>
+<li>Drop files or folders on the drop zone, or click the <strong>+</strong> button next to it and choose <strong>Files…</strong>,
+<strong>Folder…</strong> (subfolders included) or <strong>Voice lines…</strong>. A line below tells you how many files were added. Audio
+files, subtitle files and voice lines are listed in separate tables: click a column header to sort (again to
+reverse, a third time for the queue order), and click a row to open its options — one row at a time.</li>
 <li>Turn on the steps you need — <strong>Transcription</strong>, <strong>Translation</strong>, <strong>Dubbing</strong> — and set them up once for all
 files:
 <ul>
 <li>Transcription and translation each have a <strong>Model</strong> choice, shared with the main window.</li>
-<li>A file can override its languages: open its row and tick <strong>Use different languages for this file</strong>. A
-<strong>CUSTOM</strong> chip then marks it in the list.</li>
+<li>A file can override its languages: open its row and tick <strong>Override languages</strong>. A
+yellow <strong>*</strong> then marks it in the list.</li>
 <li>To clear a voice chosen for a language, right-click it. With many languages, the voice list scrolls.</li>
 <li>For dubbing, the batch offers <strong>One per line</strong> and <strong>All together</strong>; <strong>Groups</strong> are drawn per voice line in
 the editor.</li>
@@ -1496,10 +1497,22 @@ the editor.</li>
 <li>Click <strong>Run batch</strong>. The button stays grayed out until everything is ready, and tells you what is missing.</li>
 </ol>
 <blockquote>
-<p>To queue audio already in your project, select several audio files, right-click and choose
-<strong>SubVox Pro ▸ Batch Processing</strong>. The files are added to the existing queue without starting the batch;
+<p>To queue assets already in your project, select several audio files or one or more voice lines, right-click and
+choose <strong>SubVox Pro ▸ Batch Processing</strong>. They are added to the existing queue without starting the batch;
 duplicates are ignored. Wait for a running batch to finish before adding files this way.</p>
 </blockquote>
+<h4 id="continue-existing-voice-lines">Continue existing voice lines</h4>
+<p>A voice line you started in the editor can be finished in the batch:</p>
+<ul>
+<li>Its subtitles are kept as they are. It is transcribed only if it has audio but no subtitles yet.</li>
+<li>It only gets the languages it misses: translations and dubs it already has are skipped. The <strong>LANGUAGES</strong> column
+shows what it has and what the batch will add.</li>
+<li>To make its translations and dubs again, tick <strong>Replace the translations and dubs voice lines already have</strong>.
+This also replaces your manual edits, so the batch asks you to confirm first. The option turns off again the
+next time you open the window.</li>
+<li>Removing a voice line from the queue never deletes it from your project. If it is open in the editor, the editor
+shows the new languages as soon as each step finishes.</li>
+</ul>
 <h4 id="during-and-after-the-run">During and after the run</h4>
 <ul>
 <li>You can cancel at any time and export a report of the run.</li>

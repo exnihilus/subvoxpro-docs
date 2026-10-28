@@ -1479,7 +1479,8 @@ la fin d’un autre clip n’efface pas ses sous-titres.</li>
 <hr/>
 <h2 id="process-many-files-at-once">Traiter plusieurs fichiers à la fois </h2>
 <img alt="Fenêtre Batch Processing" src="Images/subvoxpro-batch-window.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
-<p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> transforme d’un coup une liste de fichiers audio ou <code>.srt</code> en voicelines.</p>
+<p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> transforme d’un coup une liste de fichiers audio ou <code>.srt</code> en voicelines.
+Il peut aussi poursuivre des voicelines déjà présentes dans votre projet.</p>
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 8px; margin: 22px 0 26px; font-size: 0.9em; text-align: center; line-height: 1.35;">
 <div style="padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><strong>Import</strong><br/><span style="opacity: 0.75;">tous les fichiers</span></div>
 <span style="opacity: 0.6;">→</span>
@@ -1493,16 +1494,17 @@ la fin d’un autre clip n’efface pas ses sous-titres.</li>
 suivante, ce qui va plus vite avec les moteurs locaux.</p>
 <ol>
 <li>Glissez des fichiers ou des dossiers sur la zone de dépôt, ou cliquez sur le bouton <strong>+</strong> à côté et choisissez
-<strong>Files…</strong> ou <strong>Folder…</strong> (sous-dossiers compris). Une ligne en dessous indique combien de fichiers ont été
-ajoutés. Les fichiers audio et de sous-titres sont listés dans deux tableaux : cliquez sur un en-tête de colonne
+<strong>Files…</strong>, <strong>Folder…</strong> (sous-dossiers compris) ou <strong>Voice lines…</strong>. Une ligne en dessous indique combien de
+fichiers ont été ajoutés. Les fichiers audio, les fichiers de sous-titres et les voicelines sont listés dans des
+tableaux séparés : cliquez sur un en-tête de colonne
 pour trier (à nouveau pour inverser, une troisième fois pour revenir à l'ordre de la file), et sur une ligne pour
 ouvrir ses options — une ligne à la fois.</li>
 <li>Activez les étapes utiles (<strong>Transcription</strong>, <strong>Translation</strong>, <strong>Dubbing</strong>) et réglez-les une fois pour tous les
 fichiers :
 <ul>
 <li>La transcription et la traduction ont chacune un choix de <strong>Model</strong>, partagé avec la fenêtre principale.</li>
-<li>Un fichier peut avoir ses propres langues : ouvrez sa ligne et cochez <strong>Use different languages for this file</strong>.
-Une puce <strong>CUSTOM</strong> le signale alors dans la liste.</li>
+<li>Un fichier peut avoir ses propres langues : ouvrez sa ligne et cochez <strong>Override languages</strong>.
+Un <strong>*</strong> jaune le signale alors dans la liste.</li>
 <li>Pour effacer la voix choisie pour une langue, faites un clic droit dessus. Avec beaucoup de langues, la liste
 des voix défile.</li>
 <li>Pour le doublage, le lot propose <strong>One per line</strong> et <strong>All together</strong> ; les <strong>Groups</strong> se tracent par voiceline
@@ -1512,10 +1514,23 @@ dans l’éditeur.</li>
 <li>Cliquez sur <strong>Run batch</strong>. Le bouton reste grisé tant que tout n’est pas prêt, et indique ce qui manque.</li>
 </ol>
 <blockquote>
-<p>Pour mettre en file des audios déjà dans votre projet, sélectionnez plusieurs fichiers audio, faites un clic droit
-et choisissez <strong>SubVox Pro ▸ Batch Processing</strong>. Les fichiers s’ajoutent à la file actuelle sans lancer le
-traitement ; les doublons sont ignorés. Attendez la fin d’un traitement en cours avant d’ajouter des fichiers ainsi.</p>
+<p>Pour mettre en file des assets déjà dans votre projet, sélectionnez plusieurs fichiers audio ou une ou plusieurs
+voicelines, faites un clic droit et choisissez <strong>SubVox Pro ▸ Batch Processing</strong>. Ils s’ajoutent à la file actuelle
+sans lancer le traitement ; les doublons sont ignorés. Attendez la fin d’un traitement en cours avant d’ajouter des
+fichiers ainsi.</p>
 </blockquote>
+<h4 id="poursuivre-des-voicelines-existantes">Poursuivre des voicelines existantes</h4>
+<p>Une voiceline commencée dans l’éditeur peut être terminée dans le lot :</p>
+<ul>
+<li>Ses sous-titres restent tels quels. Elle n’est transcrite que si elle a un audio mais pas encore de sous-titres.</li>
+<li>Elle ne reçoit que les langues qui lui manquent : ses traductions et doublages existants sont ignorés. La colonne
+<strong>LANGUAGES</strong> montre ce qu’elle a déjà et ce que le lot va ajouter.</li>
+<li>Pour refaire ses traductions et doublages, cochez <strong>Replace the translations and dubs voice lines already have</strong>.
+Vos retouches manuelles sont alors remplacées elles aussi : le lot demande donc d’abord une confirmation. L’option
+se désactive à la prochaine ouverture de la fenêtre.</li>
+<li>Retirer une voiceline de la file ne la supprime jamais de votre projet. Si elle est ouverte dans l’éditeur,
+celui-ci affiche les nouvelles langues dès la fin de chaque étape.</li>
+</ul>
 <h4 id="pendant-et-après-le-traitement">Pendant et après le traitement</h4>
 <ul>
 <li>Vous pouvez annuler à tout moment et exporter un rapport du traitement.</li>

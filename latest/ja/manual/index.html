@@ -1302,7 +1302,7 @@ private void Shake()
 <hr/>
 <h2 id="process-many-files-at-once">複数のファイルを一度に処理する </h2>
 <img alt="Batch Processing window" src="Images/subvoxpro-batch-window.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
-<p>「<strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong>」を使用すると、オーディオファイルまたは<code>.srt</code>ファイルのリストを、一度にボイスラインに変換できます。</p>
+<p>「<strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong>」を使用すると、オーディオファイルまたは<code>.srt</code>ファイルのリストを、一度にボイスラインに変換できます。プロジェクト内にすでにあるボイスラインの作業を続けることもできます。</p>
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 8px; margin: 22px 0 26px; font-size: 0.9em; text-align: center; line-height: 1.35;">
 <div style="padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><strong>Import</strong><br/><span style="opacity: 0.75;">すべてのファイル</span></div>
 <span style="opacity: 0.6;">→</span>
@@ -1314,11 +1314,11 @@ private void Shake()
 </div>
 <p>各ファイルから個別のボイスラインが作成されます。バッチ処理では、次のステップに進む前に、すべてのファイルに対して1つのステップを実行します。これにより、オフラインエンジンでの処理が高速化されます。</p>
 <ol>
-<li>ファイルやフォルダーをドロップゾーンにドラッグ＆ドロップするか、その横の「<strong>+</strong>」ボタンをクリックして「<strong>Files…</strong>」または「<strong>Folder…</strong>」（サブフォルダーを含む）を選択します。その下に、追加されたファイル数が表示されます。音声ファイルと字幕ファイルは 2 つの表に分かれて表示されます。列見出しをクリックすると並べ替え（もう一度で逆順、3 回目でキューの順序）、行をクリックするとそのオプションが開きます（一度に 1 行のみ）。</li>
+<li>ファイルやフォルダーをドロップゾーンにドラッグ＆ドロップするか、その横の「<strong>+</strong>」ボタンをクリックして「<strong>Files…</strong>」、「<strong>Folder…</strong>」（サブフォルダーを含む）または「<strong>Voice lines…</strong>」を選択します。その下に、追加されたファイル数が表示されます。音声ファイル、字幕ファイル、ボイスラインはそれぞれ別の表に表示されます。列見出しをクリックすると並べ替え（もう一度で逆順、3 回目でキューの順序）、行をクリックするとそのオプションが開きます（一度に 1 行のみ）。</li>
 <li>必要なステップ（「<strong>Transcription</strong>」、「<strong>Translation</strong>」、「<strong>Dubbing</strong>」）を有効にし、すべてのファイルに共通の設定を一度行います。
 <ul>
 <li>文字起こしと翻訳には、それぞれメインウィンドウと共通の「<strong>Model</strong>」の選択があります。</li>
-<li>言語設定はファイルごとに上書きできます。行を開いて<strong>Use different languages for this file</strong>にチェックを入れると、一覧ではそのファイルに<strong>CUSTOM</strong>チップが表示されます。</li>
+<li>言語設定はファイルごとに上書きできます。行を開いて<strong>Override languages</strong>にチェックを入れると、一覧ではそのファイルに黄色の<strong>*</strong>が表示されます。</li>
 <li>言語に選択したボイスを消去するには、右クリックします。言語が多い場合、ボイスのリストはスクロールします。</li>
 <li>吹き替えでは、バッチ処理は「<strong>One per line</strong>」と「<strong>All together</strong>」に対応します。「<strong>Groups</strong>」はエディターでボイスラインごとに設定します。</li>
 </ul>
@@ -1326,8 +1326,16 @@ private void Shake()
 <li>「<strong>Run batch</strong>」をクリックします。すべての準備が整うまでボタンはグレーアウトされ、不足している項目が表示されます。</li>
 </ol>
 <blockquote>
-<p>プロジェクト内にすでにあるオーディオファイルをキューに追加するには、複数のオーディオファイルを選択し、右クリックして「<strong>SubVox Pro ▸ Batch Processing</strong>」を選択します。バッチ処理は開始されず、ファイルが既存のキューに追加されます。重複するファイルは無視されます。この方法でファイルを追加する場合は、実行中のバッチ処理が終了するのを待ってください。</p>
+<p>プロジェクト内にすでにあるアセットをキューに追加するには、複数のオーディオファイル、または 1 つ以上のボイスラインを選択し、右クリックして「<strong>SubVox Pro ▸ Batch Processing</strong>」を選択します。バッチ処理は開始されず、既存のキューに追加されます。重複するファイルは無視されます。この方法でファイルを追加する場合は、実行中のバッチ処理が終了するのを待ってください。</p>
 </blockquote>
+<h4 id="既存のボイスラインを続ける">既存のボイスラインを続ける</h4>
+<p>エディターで作成を始めたボイスラインは、バッチ処理で仕上げることができます。</p>
+<ul>
+<li>字幕はそのまま保持されます。オーディオがあり、字幕がまだない場合にのみ文字起こしされます。</li>
+<li>不足している言語だけが追加されます。既存の翻訳と吹き替えはスキップされます。「<strong>LANGUAGES</strong>」列には、既存の内容とバッチ処理で追加される内容が表示されます。</li>
+<li>翻訳と吹き替えを作り直すには、「<strong>Replace the translations and dubs voice lines already have</strong>」にチェックを入れます。手動で行った編集も置き換えられるため、バッチ処理は最初に確認を求めます。このオプションは、次にウィンドウを開いたときにオフに戻ります。</li>
+<li>キューからボイスラインを削除しても、プロジェクトから削除されることはありません。エディターで開いている場合は、各ステップが終わるとすぐに新しい言語が表示されます。</li>
+</ul>
 <h4 id="処理中と処理後">処理中と処理後</h4>
 <ul>
 <li>いつでもキャンセルでき、実行レポートをエクスポートすることもできます。</li>

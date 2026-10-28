@@ -1522,7 +1522,7 @@ anderen Clips löscht seine Untertitel nicht.</li>
 <h2 id="process-many-files-at-once">Viele Dateien gleichzeitig verarbeiten </h2>
 <img alt="Fenster für die Stapelverarbeitung" src="Images/subvoxpro-batch-window.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> wandelt eine Liste von Audio- oder <code>.srt</code>-Dateien in einem Durchgang in
-Voice Lines um.</p>
+Voice Lines um. Sie kann auch bereits in Ihrem Projekt vorhandene Voice Lines fortsetzen.</p>
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 8px; margin: 22px 0 26px; font-size: 0.9em; text-align: center; line-height: 1.35;">
 <div style="padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><strong>Import</strong><br/><span style="opacity: 0.75;">alle Dateien</span></div>
 <span style="opacity: 0.6;">→</span>
@@ -1536,16 +1536,17 @@ Voice Lines um.</p>
 nächste folgt, was mit den Offline-Engines schneller ist.</p>
 <ol>
 <li>Ziehen Sie Dateien oder Ordner auf die Ablagefläche oder klicken Sie auf die Schaltfläche <strong>+</strong> daneben und wählen
-Sie <strong>Files…</strong> oder <strong>Folder…</strong> (einschließlich Unterordnern). Eine Zeile darunter zeigt, wie viele Dateien
-hinzugefügt wurden. Audio- und Untertiteldateien stehen in zwei Tabellen: Klicken Sie auf eine Spaltenüberschrift,
+Sie <strong>Files…</strong>, <strong>Folder…</strong> (einschließlich Unterordnern) oder <strong>Voice lines…</strong>. Eine Zeile darunter zeigt, wie
+viele Dateien hinzugefügt wurden. Audiodateien, Untertiteldateien und Voice Lines stehen in getrennten Tabellen:
+Klicken Sie auf eine Spaltenüberschrift,
 um zu sortieren (erneut für umgekehrte Reihenfolge, ein drittes Mal für die Warteschlangenreihenfolge), und auf
 eine Zeile, um ihre Optionen zu öffnen – jeweils eine Zeile.</li>
 <li>Aktivieren Sie die benötigten Schritte (<strong>Transcription</strong>, <strong>Translation</strong>, <strong>Dubbing</strong>) und richten Sie sie einmal
 für alle Dateien ein:
 <ul>
 <li>Transkription und Übersetzung haben jeweils eine <strong>Model</strong>-Auswahl, die mit dem Hauptfenster geteilt wird.</li>
-<li>Eine Datei kann eigene Sprachen haben: Öffnen Sie ihre Zeile und aktivieren Sie <strong>Use different languages for this file</strong>.
-Ein <strong>CUSTOM</strong>-Chip kennzeichnet sie dann in der Liste.</li>
+<li>Eine Datei kann eigene Sprachen haben: Öffnen Sie ihre Zeile und aktivieren Sie <strong>Override languages</strong>.
+Ein gelbes <strong>*</strong> kennzeichnet sie dann in der Liste.</li>
 <li>Um die für eine Sprache gewählte Stimme zu löschen, klicken Sie mit der rechten Maustaste darauf. Bei vielen
 Sprachen lässt sich die Stimmenliste scrollen.</li>
 <li>Für die Vertonung bietet die Stapelverarbeitung <strong>One per line</strong> und <strong>All together</strong>; <strong>Groups</strong> werden pro
@@ -1556,12 +1557,25 @@ Voice Line im Editor gezogen.</li>
 fehlt.</li>
 </ol>
 <blockquote>
-<p>Um bereits in Ihrem Projekt vorhandene Audiodateien in die Warteschlange aufzunehmen, wählen Sie mehrere
-Audiodateien aus, klicken Sie mit der rechten Maustaste und wählen Sie <strong>SubVox Pro ▸ Batch Processing</strong>. Die Dateien
-werden der aktuellen Warteschlange hinzugefügt, ohne die Verarbeitung zu starten; doppelte Einträge werden
-ignoriert. Warten Sie, bis eine laufende Verarbeitung abgeschlossen ist, bevor Sie auf diese Weise Dateien
-hinzufügen.</p>
+<p>Um bereits in Ihrem Projekt vorhandene Assets in die Warteschlange aufzunehmen, wählen Sie mehrere Audiodateien
+oder eine oder mehrere Voice Lines aus, klicken Sie mit der rechten Maustaste und wählen Sie
+<strong>SubVox Pro ▸ Batch Processing</strong>. Sie werden der aktuellen Warteschlange hinzugefügt, ohne die Verarbeitung zu
+starten; doppelte Einträge werden ignoriert. Warten Sie, bis eine laufende Verarbeitung abgeschlossen ist, bevor Sie
+auf diese Weise Dateien hinzufügen.</p>
 </blockquote>
+<h4 id="vorhandene-voice-lines-fortsetzen">Vorhandene Voice Lines fortsetzen</h4>
+<p>Eine im Editor begonnene Voice Line lässt sich in der Stapelverarbeitung fertigstellen:</p>
+<ul>
+<li>Ihre Untertitel bleiben unverändert. Sie wird nur transkribiert, wenn sie Audio, aber noch keine Untertitel hat.</li>
+<li>Sie erhält nur die Sprachen, die ihr fehlen: vorhandene Übersetzungen und Vertonungen werden übersprungen. Die
+Spalte <strong>LANGUAGES</strong> zeigt, was sie bereits hat und was die Stapelverarbeitung hinzufügt.</li>
+<li>Um ihre Übersetzungen und Vertonungen neu zu erstellen, aktivieren Sie
+<strong>Replace the translations and dubs voice lines already have</strong>. Dabei werden auch Ihre manuellen Änderungen
+ersetzt, daher fragt die Stapelverarbeitung zuerst nach einer Bestätigung. Die Option ist beim nächsten Öffnen
+des Fensters wieder deaktiviert.</li>
+<li>Wenn Sie eine Voice Line aus der Warteschlange entfernen, wird sie nie aus Ihrem Projekt gelöscht. Ist sie im
+Editor geöffnet, zeigt der Editor die neuen Sprachen an, sobald ein Schritt abgeschlossen ist.</li>
+</ul>
 <h4 id="während-und-nach-der-verarbeitung">Während und nach der Verarbeitung</h4>
 <ul>
 <li>Sie können jederzeit abbrechen und einen Bericht über den Durchlauf exportieren.</li>

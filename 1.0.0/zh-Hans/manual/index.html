@@ -1308,7 +1308,7 @@ private void Shake()
 <hr/>
 <h2 id="process-many-files-at-once">批量处理多个文件 </h2>
 <img alt="Batch Processing window" src="Images/subvoxpro-batch-window.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
-<p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> 可一次性将一组音频文件或 <code>.srt</code> 文件转换为台词资源。</p>
+<p><strong>Tools ▸ SubVox Pro ▸ Batch Processing</strong> 可一次性将一组音频文件或 <code>.srt</code> 文件转换为台词资源，也可以继续处理项目中已有的台词资源。</p>
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 8px; margin: 22px 0 26px; font-size: 0.9em; text-align: center; line-height: 1.35;">
 <div style="padding: 9px 12px; border: 1px solid rgba(127, 127, 127, 0.45); border-radius: 8px;"><strong>Import</strong><br/><span style="opacity: 0.75;">所有文件</span></div>
 <span style="opacity: 0.6;">→</span>
@@ -1320,11 +1320,11 @@ private void Shake()
 </div>
 <p>每个文件都会生成一个独立的台词资源。批量处理会先对所有文件执行一个步骤，再进行下一个步骤，使用离线引擎时，这样处理更快。</p>
 <ol>
-<li>将文件或文件夹拖放到投放区，或点击其旁边的 <strong>+</strong> 按钮并选择 <strong>Files…</strong> 或 <strong>Folder…</strong>（包含子文件夹）。下方的提示行会显示已添加的文件数量。音频文件和字幕文件分别列在两个表格中：点击列标题即可排序（再次点击为倒序，第三次恢复队列顺序），点击某一行可展开其选项（一次只展开一行）。</li>
+<li>将文件或文件夹拖放到投放区，或点击其旁边的 <strong>+</strong> 按钮并选择 <strong>Files…</strong>、<strong>Folder…</strong>（包含子文件夹）或 <strong>Voice lines…</strong>。下方的提示行会显示已添加的文件数量。音频文件、字幕文件和台词资源分别列在不同的表格中：点击列标题即可排序（再次点击为倒序，第三次恢复队列顺序），点击某一行可展开其选项（一次只展开一行）。</li>
 <li>启用所需的步骤：<strong>Transcription</strong>、<strong>Translation</strong>、<strong>Dubbing</strong>，并为所有文件统一设置。
 <ul>
 <li>转写和翻译各有一个 <strong>Model</strong> 选项，与主窗口共享。</li>
-<li>单个文件可覆盖其语言设置：展开该行并勾选 <strong>Use different languages for this file</strong>，列表中会以 <strong>CUSTOM</strong> 标签标出该文件。</li>
+<li>单个文件可覆盖其语言设置：展开该行并勾选 <strong>Override languages</strong>，列表中会以黄色的 <strong>*</strong> 标出该文件。</li>
 <li>要清除为某种语言选择的音色，请右键单击该音色。若语言较多，音色列表可滚动查看。</li>
 <li>批量处理为配音提供 <strong>One per line</strong> 和 <strong>All together</strong> 两种选项；<strong>Groups</strong> 则在编辑器中为每个台词资源单独划分。</li>
 </ul>
@@ -1332,8 +1332,16 @@ private void Shake()
 <li>点击 <strong>Run batch</strong>。该按钮在一切准备就绪前始终呈灰色，并会提示缺少哪些设置。</li>
 </ol>
 <blockquote>
-<p>若要将项目中已有的音频加入队列，请选中多个音频文件，右键单击并选择 <strong>SubVox Pro ▸ Batch Processing</strong>。文件会添加到现有队列中，但不会启动批量处理；重复文件将被忽略。请等待正在运行的批量处理完成后，再通过此方式添加文件。</p>
+<p>若要将项目中已有的资源加入队列，请选中多个音频文件或一个及以上的台词资源，右键单击并选择 <strong>SubVox Pro ▸ Batch Processing</strong>。它们会添加到现有队列中，但不会启动批量处理；重复文件将被忽略。请等待正在运行的批量处理完成后，再通过此方式添加文件。</p>
 </blockquote>
+<h4 id="继续处理已有的台词资源">继续处理已有的台词资源</h4>
+<p>在编辑器中开始制作的台词资源可以在批量处理中完成：</p>
+<ul>
+<li>其字幕保持不变。只有在有音频但还没有字幕时才会进行转写。</li>
+<li>只会添加缺少的语言：已有的翻译和配音会被跳过。<strong>LANGUAGES</strong> 列会显示已有的内容以及批量处理将添加的内容。</li>
+<li>若要重新生成翻译和配音，请勾选 <strong>Replace the translations and dubs voice lines already have</strong>。这也会覆盖你的手动修改，因此批量处理会先请求确认。下次打开窗口时，该选项会重新关闭。</li>
+<li>从队列中移除台词资源绝不会将其从项目中删除。如果它已在编辑器中打开，每个步骤完成后编辑器会立即显示新的语言。</li>
+</ul>
 <h4 id="处理期间与之后">处理期间与之后</h4>
 <ul>
 <li>你可以随时取消操作并导出本次运行的报告。</li>
