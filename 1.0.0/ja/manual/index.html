@@ -1318,7 +1318,7 @@ private void Shake()
 <li>必要なステップ（「<strong>Transcription</strong>」、「<strong>Translation</strong>」、「<strong>Dubbing</strong>」）を有効にし、すべてのファイルに共通の設定を一度行います。
 <ul>
 <li>文字起こしと翻訳には、それぞれメインウィンドウと共通の「<strong>Model</strong>」の選択があります。</li>
-<li>言語設定はファイルごとに上書きできます。行を開いて<strong>Override languages</strong>にチェックを入れると、一覧ではそのファイルに黄色の<strong>*</strong>が表示されます。</li>
+<li>言語設定はファイルごとに上書きできます。行を開いて<strong>Override languages</strong>にチェックを入れると、一覧ではそのファイルに黄色の<strong>*</strong>が表示され、<strong>LANGUAGES</strong>列には<strong>Default</strong>の代わりにそのファイルの言語が表示されます。</li>
 <li>言語に選択したボイスを消去するには、右クリックします。言語が多い場合、ボイスのリストはスクロールします。</li>
 <li>吹き替えでは、バッチ処理は「<strong>One per line</strong>」と「<strong>All together</strong>」に対応します。「<strong>Groups</strong>」はエディターでボイスラインごとに設定します。</li>
 </ul>
@@ -1332,7 +1332,7 @@ private void Shake()
 <p>エディターで作成を始めたボイスラインは、バッチ処理で仕上げることができます。</p>
 <ul>
 <li>字幕はそのまま保持されます。オーディオがあり、字幕がまだない場合にのみ文字起こしされます。</li>
-<li>不足している言語だけが追加されます。既存の翻訳と吹き替えはスキップされます。「<strong>LANGUAGES</strong>」列には、既存の内容とバッチ処理で追加される内容が表示されます。</li>
+<li>不足している言語だけが追加されます。既存の翻訳と吹き替えはスキップされます。「<strong>LANGUAGES</strong>」列には、既存の内容とバッチ処理で追加される内容が表示されます。灰色のコードは既存、色付きのコードは翻訳予定、スピーカーは吹き替えを表します。マウスを重ねると一覧全体が表示されます。</li>
 <li>翻訳と吹き替えを作り直すには、「<strong>Replace the translations and dubs voice lines already have</strong>」にチェックを入れます。手動で行った編集も置き換えられるため、バッチ処理は最初に確認を求めます。このオプションは、次にウィンドウを開いたときにオフに戻ります。</li>
 <li>キューからボイスラインを削除しても、プロジェクトから削除されることはありません。エディターで開いている場合は、各ステップが終わるとすぐに新しい言語が表示されます。</li>
 </ul>

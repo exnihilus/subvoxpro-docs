@@ -1324,7 +1324,7 @@ private void Shake()
 <li>启用所需的步骤：<strong>Transcription</strong>、<strong>Translation</strong>、<strong>Dubbing</strong>，并为所有文件统一设置。
 <ul>
 <li>转写和翻译各有一个 <strong>Model</strong> 选项，与主窗口共享。</li>
-<li>单个文件可覆盖其语言设置：展开该行并勾选 <strong>Override languages</strong>，列表中会以黄色的 <strong>*</strong> 标出该文件。</li>
+<li>单个文件可覆盖其语言设置：展开该行并勾选 <strong>Override languages</strong>，列表中会以黄色的 <strong>*</strong> 标出该文件，其 <strong>LANGUAGES</strong> 列也会显示它自己的语言，而不是 <strong>Default</strong>。</li>
 <li>要清除为某种语言选择的音色，请右键单击该音色。若语言较多，音色列表可滚动查看。</li>
 <li>批量处理为配音提供 <strong>One per line</strong> 和 <strong>All together</strong> 两种选项；<strong>Groups</strong> 则在编辑器中为每个台词资源单独划分。</li>
 </ul>
@@ -1338,7 +1338,7 @@ private void Shake()
 <p>在编辑器中开始制作的台词资源可以在批量处理中完成：</p>
 <ul>
 <li>其字幕保持不变。只有在有音频但还没有字幕时才会进行转写。</li>
-<li>只会添加缺少的语言：已有的翻译和配音会被跳过。<strong>LANGUAGES</strong> 列会显示已有的内容以及批量处理将添加的内容。</li>
+<li>只会添加缺少的语言：已有的翻译和配音会被跳过。<strong>LANGUAGES</strong> 列会显示已有的内容以及批量处理将添加的内容：灰色代码表示已有，彩色代码表示将翻译，扬声器图标表示将配音。将鼠标悬停其上可查看完整列表。</li>
 <li>若要重新生成翻译和配音，请勾选 <strong>Replace the translations and dubs voice lines already have</strong>。这也会覆盖你的手动修改，因此批量处理会先请求确认。下次打开窗口时，该选项会重新关闭。</li>
 <li>从队列中移除台词资源绝不会将其从项目中删除。如果它已在编辑器中打开，每个步骤完成后编辑器会立即显示新的语言。</li>
 </ul>
