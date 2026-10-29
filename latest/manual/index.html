@@ -845,6 +845,8 @@ providers.</li>
 <li><strong>Qwen3 aligner (local)</strong> makes words appear exactly when they are spoken
 (<a href="#qwen3-offline-word-timing">install it once</a>);</li>
 <li><strong>Built-in aligner</strong> times each word on the generated audio with nothing to install, a little less precisely;</li>
+<li><strong>From the provider</strong> uses the word timings returned by InWorld, ElevenLabs, Cartesia or AssemblyAI, with
+nothing to install and no extra cost (other providers fall back to the built-in aligner);</li>
 <li><strong>None</strong> keeps line timings only, if you don't reveal subtitles word by word.</li>
 </ul>
 <p>It starts on <strong>Qwen3 aligner</strong> once the aligner is installed, and on <strong>None</strong> before that. The <strong>Re-align</strong>
