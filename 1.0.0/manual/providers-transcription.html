@@ -96,7 +96,7 @@
 
 <details id="assemblyai" open>
 <summary style="cursor: pointer; padding: 8px 0;"><h2 id="assemblyai-setup" class="svx-provider-title"><strong>AssemblyAI</strong></h2></summary>
-<p><strong>Used for:</strong> speech-to-text with word-level timing.</p>
+<p><strong>Used for:</strong> speech-to-text with word-level timing, and dubbing (AssemblyAI TTS 1).</p>
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Go to <strong><a href="https://www.assemblyai.com/dashboard/signup">https://www.assemblyai.com/dashboard/signup</a></strong> and create an account (email or SSO). No credit card is required; new accounts get roughly <strong>$50 in free credits</strong> (~330 hours).</p>
 <img src="Images/assemblyai-signup.png" alt="AssemblyAI sign-up page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> After verifying your email, open <strong>Manage ▸ API Keys</strong> in the left sidebar.</p>
@@ -107,9 +107,16 @@
 <img src="Images/assemblyai-create-api-key-dialog.png" alt="AssemblyAI create API key dialog" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> Copy the API key from the key row.</p>
 <img src="Images/assemblyai-api-key-row.png" alt="AssemblyAI API key row" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
-<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Paste it into SubVox Pro (Settings ▸ <em>AssemblyAI</em>).</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Paste it into SubVox Pro (Settings ▸ <em>AssemblyAI</em>). The same key is used for AssemblyAI transcription and
+AssemblyAI dubbing.</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">7</span> For dubbing, pick <strong>AssemblyAI</strong> in the <strong>Text-to-Speech</strong> tab, then a voice. The list holds the eleven
+preset voices, AssemblyAI's voice library and the voices you cloned in your account; every voice speaks English,
+French, German, Italian, Portuguese and Spanish, best in its own language. Previewing a voice synthesizes a short
+sample, billed like a dub.</p>
 <blockquote>
 <p>Free accounts are capped at 2 projects / 2 API keys, which is plenty for SubVox Pro.
+AssemblyAI TTS has no delivery settings: voice personalities are ignored.
+TTS pricing: <a href="https://www.assemblyai.com/pricing">https://www.assemblyai.com/pricing</a>
 Help article: <a href="https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key">https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key</a></p>
 </blockquote>
 </details>

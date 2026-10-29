@@ -109,7 +109,7 @@ apparaissent sur chaque site, pour suivre les captures plus facilement.</p>
 </tr>
 <tr>
 <td><strong>Doublage</strong></td>
-<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud TTS</a> · <a href="providers-dubbing.html#azure">Azure</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox</a> · <a href="index.html#qwen3-tts-offline-multilingual-dubbing">Qwen3 TTS</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2</a></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud TTS</a> · <a href="providers-dubbing.html#azure">Azure</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox</a> · <a href="index.html#qwen3-tts-offline-multilingual-dubbing">Qwen3 TTS</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2</a></td>
 </tr>
 <tr>
 <td><strong>Alignement local</strong></td>
@@ -242,6 +242,11 @@ Les variantes comme <code>en-US</code> ou <code>pt-BR</code> sont rangées sous 
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
+<td>AssemblyAI, <code>assemblyai-tts-1</code></td>
+<td>Anglais, français, allemand, italien, portugais, espagnol. Chaque voix parle les six, mieux dans sa propre langue.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
 <td>Kokoro, local</td>
 <td>Anglais, voix américaines et britanniques.</td>
 </tr>
@@ -320,7 +325,7 @@ un test sur une machine partagée.</li>
 </tr>
 <tr>
 <td><strong>Doublage TTS</strong></td>
-<td>ElevenLabs, InWorld AI, Gemini, OpenAI, Google Cloud TTS, Azure, Cartesia (même clé que la transcription Cartesia) ; ou <strong>Kokoro</strong>, anglais local, et <strong>Chatterbox</strong>, 21 langues et japonais facultatif, avec clonage vocal ; ou <strong>Qwen3 TTS</strong>, dix langues locales, clonage de références, neuf voix fixes ou voix décrites ; consignes écrites avec CustomVoice et VoiceDesign ; <strong>VoxCPM2</strong>, 30 langues locales, clonage avec consignes de jeu.</td>
+<td>ElevenLabs, InWorld AI, Gemini, OpenAI, Google Cloud TTS, Azure, Cartesia (même clé que la transcription Cartesia), AssemblyAI (même clé que la transcription AssemblyAI) ; ou <strong>Kokoro</strong>, anglais local, et <strong>Chatterbox</strong>, 21 langues et japonais facultatif, avec clonage vocal ; ou <strong>Qwen3 TTS</strong>, dix langues locales, clonage de références, neuf voix fixes ou voix décrites ; consignes écrites avec CustomVoice et VoiceDesign ; <strong>VoxCPM2</strong>, 30 langues locales, clonage avec consignes de jeu.</td>
 </tr>
 <tr>
 <td><strong>Alignement exact des mots</strong> (texte inchangé)</td>
@@ -350,8 +355,8 @@ Seuls changent les volumes autorisés et, parfois, ce que vous avez le droit de 
 </thead>
 <tbody>
 <tr>
-<td>AssemblyAI</td>
-<td>Crédit unique d’environ 50 $, environ 330 h</td>
+<td>AssemblyAI, STT + TTS</td>
+<td>Crédit unique d’environ 50 $, environ 330 h de transcription, partagé avec le doublage</td>
 <td>Non</td>
 <td>Oui ; les données peuvent servir à entraîner les modèles, sauf opposition de votre part.</td>
 </tr>

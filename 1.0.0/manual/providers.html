@@ -123,7 +123,7 @@ always confirm the current offer on the provider's own pricing page before relyi
 </tr>
 <tr>
 <td><strong>Dubbing / Text-to-Speech</strong></td>
-<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro local</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox local</a> · <a href="index.html#qwen3-tts-offline-multilingual-dubbing">Qwen3 TTS local</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 local</a></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro local</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox local</a> · <a href="index.html#qwen3-tts-offline-multilingual-dubbing">Qwen3 TTS local</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 local</a></td>
 </tr>
 <tr>
 <td><strong>Local alignment</strong></td>
@@ -256,6 +256,11 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
+<td>AssemblyAI (<code>assemblyai-tts-1</code>)</td>
+<td>English, French, German, Italian, Portuguese, Spanish. Every voice speaks all six, best in its own language.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
 <td>Kokoro (local)</td>
 <td>English (US and UK voices).</td>
 </tr>
@@ -339,7 +344,7 @@ or a team-managed key, depending on how the provider handles billing and access.
 </tr>
 <tr>
 <td><strong>Dubbing / Text-to-Speech</strong></td>
-<td>ElevenLabs, InWorld AI, Gemini (same AI Studio key as Gemini translation), OpenAI (same key as OpenAI translation), Google Cloud Text-to-Speech, Azure AI Speech, Cartesia (same key as Cartesia transcription) — or <strong>Kokoro</strong> (local, English) and <strong>Chatterbox</strong> (local, 21 languages + optional Japanese, voice cloning), or <strong>Qwen3 TTS</strong> (local, ten languages, reference cloning, fixed voices or voice design), or <strong>VoxCPM2</strong> (local, 30 languages, cloning with written style control)</td>
+<td>ElevenLabs, InWorld AI, Gemini (same AI Studio key as Gemini translation), OpenAI (same key as OpenAI translation), Google Cloud Text-to-Speech, Azure AI Speech, Cartesia (same key as Cartesia transcription), AssemblyAI (same key as AssemblyAI transcription) — or <strong>Kokoro</strong> (local, English) and <strong>Chatterbox</strong> (local, 21 languages + optional Japanese, voice cloning), or <strong>Qwen3 TTS</strong> (local, ten languages, reference cloning, fixed voices or voice design), or <strong>VoxCPM2</strong> (local, 30 languages, cloning with written style control)</td>
 </tr>
 <tr>
 <td><strong>Forced alignment</strong> (exact dub word timings, text preserved)</td>
@@ -372,8 +377,8 @@ only changes how much you can generate — and, for some providers, what you may
 </thead>
 <tbody>
 <tr>
-<td>AssemblyAI</td>
-<td>~$50 one-time credit (~330 h)</td>
+<td>AssemblyAI (STT + TTS)</td>
+<td>~$50 one-time credit (~330 h of transcription), shared with dubbing</td>
 <td>No</td>
 <td>Yes. Your data may be used to train their models unless you opt out.</td>
 </tr>

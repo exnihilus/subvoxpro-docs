@@ -107,7 +107,7 @@
 </tr>
 <tr>
 <td><strong>配音 / 语音合成</strong></td>
-<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro 本地版</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox 本地版</a> · <a href="index.html#qwen3-tts-offline-multilingual-dubbing">Qwen3 TTS 本地版</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 本地版</a></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro 本地版</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox 本地版</a> · <a href="index.html#qwen3-tts-offline-multilingual-dubbing">Qwen3 TTS 本地版</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 本地版</a></td>
 </tr>
 <tr>
 <td><strong>本地对齐</strong></td>
@@ -239,6 +239,11 @@
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
+<td>AssemblyAI（<code>assemblyai-tts-1</code>）</td>
+<td>英语、法语、德语、意大利语、葡萄牙语、西班牙语。每个音色都能说全部六种语言，以其本身语言效果最佳。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
 <td>Kokoro（本地）</td>
 <td>英语（美国和英国音色）。</td>
 </tr>
@@ -310,7 +315,7 @@ SubVox Pro 所需的功能：转写提供商的语音转文字功能、翻译提
 </tr>
 <tr>
 <td><strong>配音 / 文本转语音</strong></td>
-<td>ElevenLabs、InWorld AI、Gemini（与 Gemini 翻译使用同一 AI Studio 密钥）、OpenAI（与 OpenAI 翻译使用同一密钥）、Google Cloud Text-to-Speech、Azure AI Speech、Cartesia（与 Cartesia 转写使用同一密钥）——或 <strong>Kokoro</strong>（本地，英语）和 <strong>Chatterbox</strong>（本地，21 种语言 + 可选日语，声音克隆），或 <strong>Qwen3 TTS</strong>（本地，10 种语言，基于参考音频克隆声音、固定音色或通过描述设计音色），或 <strong>VoxCPM2</strong>（本地，30 种语言，声音克隆并可通过文字控制配音风格）</td>
+<td>ElevenLabs、InWorld AI、Gemini（与 Gemini 翻译使用同一 AI Studio 密钥）、OpenAI（与 OpenAI 翻译使用同一密钥）、Google Cloud Text-to-Speech、Azure AI Speech、Cartesia（与 Cartesia 转写使用同一密钥）、AssemblyAI（与 AssemblyAI 转写使用同一密钥）——或 <strong>Kokoro</strong>（本地，英语）和 <strong>Chatterbox</strong>（本地，21 种语言 + 可选日语，声音克隆），或 <strong>Qwen3 TTS</strong>（本地，10 种语言，基于参考音频克隆声音、固定音色或通过描述设计音色），或 <strong>VoxCPM2</strong>（本地，30 种语言，声音克隆并可通过文字控制配音风格）</td>
 </tr>
 <tr>
 <td><strong>强制对齐</strong>（精确的配音词级时间信息，保留原文）</td>
@@ -340,8 +345,8 @@ SubVox Pro 中支持的功能、价格、免费套餐以及该套餐是否允许
 </thead>
 <tbody>
 <tr>
-<td>AssemblyAI</td>
-<td>约 $50 一次性额度（约 330 小时）</td>
+<td>AssemblyAI（STT + TTS）</td>
+<td>约 $50 一次性额度（约 330 小时转写），与配音共享</td>
 <td>否</td>
 <td>是。除非选择退出，否则数据可能会被用于训练其模型。</td>
 </tr>

@@ -83,7 +83,7 @@
 <h1 id="transcription-providers">文字起こしプロバイダー </h1>
 <details id="assemblyai" open="">
 <summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="assemblyai-setup"><strong>AssemblyAI</strong></h2></summary>
-<p><strong>用途：</strong>単語単位のタイミング情報を伴う音声認識。</p>
+<p><strong>用途：</strong>単語単位のタイミング情報を伴う音声認識、および吹き替え（AssemblyAI TTS 1）。</p>
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> <strong><a href="https://www.assemblyai.com/dashboard/signup">https://www.assemblyai.com/dashboard/signup</a></strong> にアクセスし、アカウントを作成します（メールまたはSSO）。クレジットカードは不要です。新規アカウントには、約 <strong>$50相当の無料クレジット</strong>（約330時間分）が付与されます。</p>
 <img alt="AssemblyAI sign-up page" src="Images/assemblyai-signup.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> メールの認証後、左サイドバーの <strong>Manage ▸ API Keys</strong> を開きます。</p>
@@ -94,9 +94,12 @@
 <img alt="AssemblyAI create API key dialog" src="Images/assemblyai-create-api-key-dialog.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> キーの行からAPIキーをコピーします。</p>
 <img alt="AssemblyAI API key row" src="Images/assemblyai-api-key-row.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
-<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> SubVox Pro（Settings ▸ <em>AssemblyAI</em>）に貼り付けます。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> SubVox Pro（Settings ▸ <em>AssemblyAI</em>）に貼り付けます。同じキーがAssemblyAIの文字起こしと吹き替えの両方に使用されます。</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">7</span> 吹き替えを行うには、<strong>Text-to-Speech</strong>タブで<strong>AssemblyAI</strong>を選び、ボイスを選択します。リストには、11種類のプリセットボイス、AssemblyAIのボイスライブラリ、アカウントでクローンしたボイスが表示されます。どのボイスも英語、フランス語、ドイツ語、イタリア語、ポルトガル語、スペイン語を話せますが、最も自然なのは各ボイス本来の言語です。ボイスを試聴すると短いサンプルが合成され、吹き替えと同様に課金されます。</p>
 <blockquote>
-<p>無料アカウントでは、プロジェクト2つ／APIキー2つまでという制限がありますが、SubVox Proを使用するには十分な数です。ヘルプ記事：<a href="https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key">https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key</a></p>
+<p>無料アカウントでは、プロジェクト2つ／APIキー2つまでという制限がありますが、SubVox Proを使用するには十分な数です。ヘルプ記事：<a href="https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key">https://support.assemblyai.com/articles/7562135267-how-to-get-your-api-key</a>
+AssemblyAI TTSには話し方の設定がないため、ボイスパーソナリティは無視されます。
+TTSの料金：<a href="https://www.assemblyai.com/pricing">https://www.assemblyai.com/pricing</a></p>
 </blockquote>
 </details>
 <details id="gladia" open="">

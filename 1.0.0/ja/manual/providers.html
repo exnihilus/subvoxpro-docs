@@ -107,7 +107,7 @@
 </tr>
 <tr>
 <td><strong>吹き替え / 音声合成</strong></td>
-<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro（ローカル）</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox（ローカル）</a> · <a href="index.html#qwen3-tts-offline-multilingual-dubbing">Qwen3 TTS（ローカル）</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2（ローカル）</a></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro（ローカル）</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox（ローカル）</a> · <a href="index.html#qwen3-tts-offline-multilingual-dubbing">Qwen3 TTS（ローカル）</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2（ローカル）</a></td>
 </tr>
 <tr>
 <td><strong>ローカルアラインメント</strong></td>
@@ -239,6 +239,11 @@
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
+<td>AssemblyAI（<code>assemblyai-tts-1</code>）</td>
+<td>英語、フランス語、ドイツ語、イタリア語、ポルトガル語、スペイン語。どのボイスも6言語すべてを話せますが、最も自然なのは各ボイス本来の言語です。</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
 <td>Kokoro（ローカル）</td>
 <td>英語（米国および英国のボイス）。</td>
 </tr>
@@ -310,7 +315,7 @@ TTSは吹き替えにのみ使用します。</li>
 </tr>
 <tr>
 <td><strong>吹き替え／音声合成</strong></td>
-<td>ElevenLabs、InWorld AI、Gemini（Gemini翻訳と同じAI Studioキー）、OpenAI（OpenAI翻訳と同じキー）、Google Cloud Text-to-Speech、Azure AI Speech、Cartesia（Cartesia文字起こしと同じキー） — または <strong>Kokoro</strong>（ローカル、英語）および <strong>Chatterbox</strong>（ローカル、21言語＋オプションで日本語、ボイスクローニング）、または <strong>Qwen3 TTS</strong>（ローカル、10言語、参照音声によるボイスクローニング、固定ボイスまたはボイスデザイン）、または <strong>VoxCPM2</strong>（ローカル、30言語、文章でスタイルを指定できるボイスクローニング）</td>
+<td>ElevenLabs、InWorld AI、Gemini（Gemini翻訳と同じAI Studioキー）、OpenAI（OpenAI翻訳と同じキー）、Google Cloud Text-to-Speech、Azure AI Speech、Cartesia（Cartesia文字起こしと同じキー）、AssemblyAI（AssemblyAI文字起こしと同じキー） — または <strong>Kokoro</strong>（ローカル、英語）および <strong>Chatterbox</strong>（ローカル、21言語＋オプションで日本語、ボイスクローニング）、または <strong>Qwen3 TTS</strong>（ローカル、10言語、参照音声によるボイスクローニング、固定ボイスまたはボイスデザイン）、または <strong>VoxCPM2</strong>（ローカル、30言語、文章でスタイルを指定できるボイスクローニング）</td>
 </tr>
 <tr>
 <td><strong>強制アラインメント</strong>（テキストを維持したまま、吹き替え音声の単語ごとのタイミングを正確に取得）</td>
@@ -339,8 +344,8 @@ TTSは吹き替えにのみ使用します。</li>
 </thead>
 <tbody>
 <tr>
-<td>AssemblyAI</td>
-<td>約$50の1回限りのクレジット（約330時間）</td>
+<td>AssemblyAI（STT＋TTS）</td>
+<td>約$50の1回限りのクレジット（文字起こし約330時間分）、吹き替えと共有</td>
 <td>不要</td>
 <td>可能。オプトアウトしない限り、データが同社のモデルの学習に使用される場合があります。</td>
 </tr>

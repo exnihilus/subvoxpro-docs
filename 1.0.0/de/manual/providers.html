@@ -110,7 +110,7 @@ den Sie unter <strong>Tools ▸ SubVox Pro ▸ Settings</strong> (oder im Anbiet
 </tr>
 <tr>
 <td><strong>Sprachvertonung / Sprachsynthese</strong></td>
-<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro (lokal)</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox (lokal)</a> · <a href="index.html#qwen3-tts-offline-multilingual-dubbing">Qwen3 TTS (lokal)</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 (lokal)</a></td>
+<td><a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-dubbing.html#inworld-ai">InWorld AI</a> · <a href="providers-translation.html#google-gemini">Gemini</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-dubbing.html#google-cloud-tts">Google Cloud Text-to-Speech</a> · <a href="providers-dubbing.html#azure">Azure AI Speech</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="index.html#kokoro-offline-english-dubbing">Kokoro (lokal)</a> · <a href="index.html#chatterbox-offline-dubbing-in-21-languages">Chatterbox (lokal)</a> · <a href="index.html#qwen3-tts-offline-multilingual-dubbing">Qwen3 TTS (lokal)</a> · <a href="index.html#voxcpm2-offline-voice-cloning-with-style-control">VoxCPM2 (lokal)</a></td>
 </tr>
 <tr>
 <td><strong>Lokale zeitliche Zuordnung</strong></td>
@@ -243,6 +243,11 @@ maßgeblich. Regionale Sprachvarianten wie <code>en-US</code> und <code>pt-BR</c
 </tr>
 <tr>
 <td><strong>TTS</strong></td>
+<td>AssemblyAI (<code>assemblyai-tts-1</code>)</td>
+<td>Englisch, Französisch, Deutsch, Italienisch, Portugiesisch, Spanisch. Jede Stimme spricht alle sechs, am besten ihre eigene Sprache.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
 <td>Kokoro (lokal)</td>
 <td>Englisch (US-amerikanische und britische Stimmen).</td>
 </tr>
@@ -326,7 +331,7 @@ oder einen vom Team verwalteten Schlüssel verwenden, je nachdem, wie der Anbiet
 </tr>
 <tr>
 <td><strong>Dubbing / Text-to-Speech</strong></td>
-<td>ElevenLabs, InWorld AI, Gemini (derselbe Schlüssel für AI Studio wie für die Gemini-Übersetzung), OpenAI (derselbe Schlüssel wie für die OpenAI-Übersetzung), Google Cloud Text-to-Speech, Azure AI Speech, Cartesia (derselbe Schlüssel wie für die Cartesia-Transkription) — oder <strong>Kokoro</strong> (lokal, Englisch) und <strong>Chatterbox</strong> (lokal, 21 Sprachen + optional Japanisch, Stimmklonung), oder <strong>Qwen3 TTS</strong> (lokal, zehn Sprachen, Stimmklonung anhand einer Audioreferenz, feste Stimmen oder Stimmgestaltung), oder <strong>VoxCPM2</strong> (lokal, 30 Sprachen, Stimmklonung mit schriftlichen Stilvorgaben)</td>
+<td>ElevenLabs, InWorld AI, Gemini (derselbe Schlüssel für AI Studio wie für die Gemini-Übersetzung), OpenAI (derselbe Schlüssel wie für die OpenAI-Übersetzung), Google Cloud Text-to-Speech, Azure AI Speech, Cartesia (derselbe Schlüssel wie für die Cartesia-Transkription), AssemblyAI (derselbe Schlüssel wie für die AssemblyAI-Transkription) — oder <strong>Kokoro</strong> (lokal, Englisch) und <strong>Chatterbox</strong> (lokal, 21 Sprachen + optional Japanisch, Stimmklonung), oder <strong>Qwen3 TTS</strong> (lokal, zehn Sprachen, Stimmklonung anhand einer Audioreferenz, feste Stimmen oder Stimmgestaltung), oder <strong>VoxCPM2</strong> (lokal, 30 Sprachen, Stimmklonung mit schriftlichen Stilvorgaben)</td>
 </tr>
 <tr>
 <td><strong>Forced alignment</strong> (exakte Wortzeitangaben der Sprachvertonung, Text bleibt erhalten)</td>
@@ -359,8 +364,8 @@ beeinflusst lediglich, wie viel Sie generieren können — und bei einigen Anbie
 </thead>
 <tbody>
 <tr>
-<td>AssemblyAI</td>
-<td>~50 $ einmaliges Guthaben (~330 Std.)</td>
+<td>AssemblyAI (STT + TTS)</td>
+<td>~50 $ einmaliges Guthaben (~330 Std. Transkription), gemeinsam mit der Vertonung</td>
 <td>Nein</td>
 <td>Ja. Ihre Daten können zum Trainieren der Modelle des Anbieters verwendet werden, sofern Sie der Datennutzung nicht widersprechen.</td>
 </tr>
