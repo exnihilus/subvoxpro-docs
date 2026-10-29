@@ -752,6 +752,7 @@ SubVox.Play(myVoiceLine);
 <ul>
 <li><strong>Qwen3 aligner (local)</strong>：使词在被说出的准确时刻显示（<a href="#qwen3-offline-word-timing">只需安装一次</a>）；</li>
 <li><strong>Built-in aligner</strong>：无需安装即可将每个词对齐到生成的音频上（精度稍低）；</li>
+<li><strong>From the provider</strong>：使用 InWorld、ElevenLabs、Cartesia 或 AssemblyAI 返回的逐词时间，无需安装，也无额外费用（其他服务商改用内置对齐器）；</li>
 <li><strong>None</strong>：如果不采用逐词显示，仅保留字幕的时间信息。</li>
 </ul>
 <p>安装对齐器后，默认使用 <strong>Qwen3 aligner</strong>；安装前则默认使用 <strong>None</strong>。行末的 <strong>Re-align</strong> 按钮可重新对齐所选音频（配音或源音频）的词。</p>
