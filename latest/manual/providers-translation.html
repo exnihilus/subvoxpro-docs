@@ -148,7 +148,7 @@ text-to-speech dubbing. One key covers all three.</p>
 SubVox Pro estimates timings over the clip. Use local alignment or a provider with word timestamps when timing matters.</li>
 <li>Saved selections of <strong><code>whisper-1</code></strong>, <strong><code>gpt-4o-transcribe</code></strong> and <strong><code>gpt-4o-mini-transcribe</code></strong> migrate to
 <code>gpt-transcribe</code>; this removes the word timestamps previously supplied by <code>whisper-1</code>.</li>
-<li>The other providers (AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, local Whisper and Parakeet)
+<li>The other providers (AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, Gemini, local Whisper and Parakeet)
 return punctuated word timings directly: prefer them when timing matters.</li>
 </ul>
 <p>The transcription endpoint caps uploads at <strong>25 MB</strong>. See <a href="https://developers.openai.com/api/docs/deprecations">OpenAI deprecations</a>.</p>
@@ -177,8 +177,8 @@ not human — for example in the game's credits or store page. TTS pricing: <a h
 </details>
 <details id="google-gemini" open>
 <summary style="cursor: pointer; padding: 8px 0;"><h2 id="google-gemini-setup" class="svx-provider-title"><strong>Google (Gemini)</strong></h2></summary>
-<p><strong>Used for:</strong> LLM translation and text-to-speech dubbing (Gemini voices) — the easiest free option (no
-billing required). One key covers both.</p>
+<p><strong>Used for:</strong> transcription (with word timings, up to 30 minutes per clip), LLM translation and text-to-speech dubbing (Gemini voices) — the easiest free option (no
+billing required). One key covers all three.</p>
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> Go to <strong>Google AI Studio</strong> at <strong><a href="https://aistudio.google.com">https://aistudio.google.com</a></strong> and sign in with a Google account.</p>
 <img src="Images/gemini-ai-studio-home.png" alt="Google AI Studio home page" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> Open <strong>API keys</strong> directly at <strong><a href="https://aistudio.google.com/app/apikey">https://aistudio.google.com/app/apikey</a></strong>, then click <strong>Create an API key</strong>.</p>
@@ -189,7 +189,7 @@ billing required). One key covers both.</p>
 <img src="Images/gemini-api-key-details.png" alt="Google AI Studio API key details panel" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> The key then appears in the API keys list, where you can copy, inspect usage or configure billing later.</p>
 <img src="Images/gemini-api-key-row.png" alt="Google AI Studio API key row" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;">
-<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Paste it into SubVox Pro (Settings ▸ <em>Gemini</em>). For dubbing, pick <strong>Gemini</strong> as the provider in the <strong>Text-to-Speech</strong> tab: it offers 30 multilingual voices (<em>Kore</em>, <em>Puck</em>, <em>Leda</em>…) and the voice direction button. Two models are available: <strong>gemini-3.8-flash-tts</strong> (default, most natural) and <strong>gemini-3.8-flash-lite-tts</strong> (cheaper when billed).</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> Paste it into SubVox Pro (Settings ▸ <em>Gemini</em>). For transcription, pick <strong>Gemini</strong> as the provider and leave the language on <em>Auto-detect</em> or choose one. For dubbing, pick <strong>Gemini</strong> as the provider in the <strong>Text-to-Speech</strong> tab: it offers 30 multilingual voices (<em>Kore</em>, <em>Puck</em>, <em>Leda</em>…) and the voice direction button. Two models are available: <strong>gemini-3.8-flash-tts</strong> (default, most natural) and <strong>gemini-3.8-flash-lite-tts</strong> (cheaper when billed).</p>
 <blockquote>
 <p>The free tier needs <strong>no billing</strong> but is rate-limited; the limits of each model are shown in AI Studio
 (<strong>Rate limit</strong> page). Text-to-speech has the tightest ones — only a few requests per minute and per day.

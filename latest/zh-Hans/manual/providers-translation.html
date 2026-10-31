@@ -140,7 +140,7 @@
 SubVox Pro 会根据音频片段估算时间信息。如果时间定位很重要，请使用本地对齐或提供词级时间戳的提供商。</strong></li>
 <li><code>whisper-1</code><strong>、</strong><code>gpt-4o-transcribe</code><strong> 和 </strong><code>gpt-4o-mini-transcribe</code>** 的已保存选项将迁移至
 <code>gpt-transcribe</code>；这将移除此前由 <code>whisper-1</code> 提供的词级时间戳。</li>
-<li>其他提供商（AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、本地 Whisper 和 Parakeet）会直接返回带标点的词级时间信息：如果时间定位很重要，请优先选用这些提供商。</li>
+<li>其他提供商（AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、Gemini、本地 Whisper 和 Parakeet）会直接返回带标点的词级时间信息：如果时间定位很重要，请优先选用这些提供商。</li>
 </ul>
 <p>转写端点的上传上限为 <strong>25 MB</strong>。请参阅 <a href="https://developers.openai.com/api/docs/deprecations">OpenAI 弃用说明</a>。</p>
 </blockquote>
@@ -167,7 +167,7 @@ SubVox Pro 会根据音频片段估算时间信息。如果时间定位很重要
 </details>
 <details id="google-gemini" open="">
 <summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="google-gemini-setup"><strong>Google (Gemini)</strong></h2></summary>
-<p><strong>用途：</strong> LLM 翻译和语音合成配音（Gemini 音色）——最简单的免费选项（无需启用计费）。一个密钥即可支持这两项功能。</p>
+<p><strong>用途：</strong> 转写（带词级时间信息，每个音频最长 30 分钟）、LLM 翻译和语音合成配音（Gemini 音色）——最简单的免费选项（无需启用计费）。一个密钥即可支持这三项功能。</p>
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> 访问 <strong><a href="https://aistudio.google.com">https://aistudio.google.com</a></strong>，打开 <strong>Google AI Studio</strong>，并使用 Google 账户登录。</p>
 <img alt="Google AI Studio home page" src="Images/gemini-ai-studio-home.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> 直接访问 <strong><a href="https://aistudio.google.com/app/apikey">https://aistudio.google.com/app/apikey</a></strong>，打开 <strong>API keys</strong>，然后点击</p>
@@ -179,7 +179,7 @@ SubVox Pro 会根据音频片段估算时间信息。如果时间定位很重要
 <img alt="Google AI Studio API key details panel" src="Images/gemini-api-key-details.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> 该密钥随后会显示在 API 密钥列表中，你可以在列表中复制密钥、查看使用情况，或稍后配置计费。</p>
 <img alt="Google AI Studio API key row" src="Images/gemini-api-key-row.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
-<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> 将其粘贴到 SubVox Pro 中（Settings ▸ <em>Gemini</em>）。进行配音时，在</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> 将其粘贴到 SubVox Pro 中（Settings ▸ <em>Gemini</em>）。进行转写时，选择 <strong>Gemini</strong> 作为提供商，语言保留为 <em>Auto-detect</em> 或选择一种语言。进行配音时，在</p>
 <p><strong>Text-to-Speech</strong> 选项卡中选择 <strong>Gemini</strong> 作为提供商：它提供 30 种多语言音色（<em>Kore</em>、<em>Puck</em>、<em>Leda</em>……）以及 voice direction</p>
 <p>按钮。可选模型有两种：<strong>gemini-3.8-flash-tts</strong>（默认，最自然）和
 <strong>gemini-3.8-flash-lite-tts</strong>（计费时价格更低）。</p>

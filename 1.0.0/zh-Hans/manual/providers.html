@@ -99,7 +99,7 @@
 <tbody>
 <tr>
 <td><strong>转写</strong></td>
-<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-translation.html#openai">OpenAI</a></td>
+<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-translation.html#google-gemini">Gemini</a></td>
 </tr>
 <tr>
 <td><strong>翻译</strong></td>
@@ -166,6 +166,11 @@
 <td><strong>STT</strong></td>
 <td>Cartesia（<code>ink-whisper</code>）</td>
 <td>阿拉伯语、保加利亚语、粤语、中文、克罗地亚语、捷克语、丹麦语、荷兰语、英语、芬兰语、法语、德语、希腊语、希伯来语、印地语、匈牙利语、印度尼西亚语、意大利语、日语、韩语、马来语、挪威语、波兰语、葡萄牙语、罗马尼亚语、俄语、斯洛伐克语、西班牙语、瑞典语、泰米尔语、泰语、土耳其语、乌克兰语、越南语。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Gemini（<code>gemini-3.5-transcribe</code>）</td>
+<td>阿拉伯语、保加利亚语、粤语、中文、克罗地亚语、捷克语、丹麦语、荷兰语、英语、芬兰语、法语、德语、希腊语、希伯来语、印地语、匈牙利语、印度尼西亚语、意大利语、日语、韩语、马来语、挪威语、波兰语、葡萄牙语、罗马尼亚语、俄语、斯洛伐克语、西班牙语、瑞典语、泰语、土耳其语、乌克兰语、越南语。</td>
 </tr>
 <tr>
 <td><strong>STT</strong></td>
@@ -307,7 +312,7 @@ SubVox Pro 所需的功能：转写提供商的语音转文字功能、翻译提
 <tbody>
 <tr>
 <td><strong>转写</strong>（音频 → 带时间信息的字幕）</td>
-<td>AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、OpenAI——或 <strong>Whisper（本地）</strong>和 <strong>Parakeet（本地）</strong>（完全离线，无需密钥，仅限 Windows——参见 <a href="index.html#whisper-offline-transcription">Documentation.md</a>）</td>
+<td>AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、OpenAI、Gemini——或 <strong>Whisper（本地）</strong>和 <strong>Parakeet（本地）</strong>（完全离线，无需密钥，仅限 Windows——参见 <a href="index.html#whisper-offline-transcription">Documentation.md</a>）</td>
 </tr>
 <tr>
 <td><strong>翻译</strong>（字幕 → 其他语言）</td>
@@ -423,7 +428,7 @@ SubVox Pro 中支持的功能、价格、免费套餐以及该套餐是否允许
 <td>是（没有严格意义上的免费套餐）。</td>
 </tr>
 <tr>
-<td>Google Gemini（翻译 + TTS）</td>
+<td>Google Gemini（STT + 翻译 + TTS）</td>
 <td>免费套餐，有请求频率限制，<strong>无需启用计费</strong></td>
 <td>否</td>
 <td>是。Google 可能会使用免费套餐中的提示词来改进其产品。</td>

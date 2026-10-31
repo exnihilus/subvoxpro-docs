@@ -99,7 +99,7 @@
 <tbody>
 <tr>
 <td><strong>文字起こし</strong></td>
-<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-translation.html#openai">OpenAI</a></td>
+<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-translation.html#google-gemini">Gemini</a></td>
 </tr>
 <tr>
 <td><strong>翻訳</strong></td>
@@ -166,6 +166,11 @@
 <td><strong>STT</strong></td>
 <td>Cartesia（<code>ink-whisper</code>）</td>
 <td>アラビア語、ブルガリア語、広東語、中国語、クロアチア語、チェコ語、デンマーク語、オランダ語、英語、フィンランド語、フランス語、ドイツ語、ギリシャ語、ヘブライ語、ヒンディー語、ハンガリー語、インドネシア語、イタリア語、日本語、韓国語、マレー語、ノルウェー語、ポーランド語、ポルトガル語、ルーマニア語、ロシア語、スロバキア語、スペイン語、スウェーデン語、タミル語、タイ語、トルコ語、ウクライナ語、ベトナム語。</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Gemini（<code>gemini-3.5-transcribe</code>）</td>
+<td>アラビア語、ブルガリア語、広東語、中国語、クロアチア語、チェコ語、デンマーク語、オランダ語、英語、フィンランド語、フランス語、ドイツ語、ギリシャ語、ヘブライ語、ヒンディー語、ハンガリー語、インドネシア語、イタリア語、日本語、韓国語、マレー語、ノルウェー語、ポーランド語、ポルトガル語、ルーマニア語、ロシア語、スロバキア語、スペイン語、スウェーデン語、タイ語、トルコ語、ウクライナ語、ベトナム語。</td>
 </tr>
 <tr>
 <td><strong>STT</strong></td>
@@ -307,7 +312,7 @@ TTSは吹き替えにのみ使用します。</li>
 <tbody>
 <tr>
 <td><strong>文字起こし</strong>（音声 → タイミング情報付き字幕）</td>
-<td>AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、OpenAI — または <strong>Whisper（ローカル）</strong>および<strong>Parakeet（ローカル）</strong>（完全オフライン、キー不要、Windowsのみ — <a href="index.html#whisper-offline-transcription">Documentation.md</a>を参照）</td>
+<td>AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、OpenAI、Gemini — または <strong>Whisper（ローカル）</strong>および<strong>Parakeet（ローカル）</strong>（完全オフライン、キー不要、Windowsのみ — <a href="index.html#whisper-offline-transcription">Documentation.md</a>を参照）</td>
 </tr>
 <tr>
 <td><strong>翻訳</strong>（字幕 → 他の言語）</td>
@@ -422,7 +427,7 @@ TTSは吹き替えにのみ使用します。</li>
 <td>可能（無料プラン自体はありません）。</td>
 </tr>
 <tr>
-<td>Google Gemini（翻訳＋TTS）</td>
+<td>Google Gemini（STT＋翻訳＋TTS）</td>
 <td>無料利用枠、レート制限あり、<strong>課金設定不要</strong></td>
 <td>不要</td>
 <td>可能。Googleは、無料利用枠のプロンプトを製品改善に使用する場合があります。</td>

@@ -141,7 +141,7 @@
 SubVox Proがクリップ全体にわたってタイミングを推定します。タイミングが重要な場合は、ローカルのアラインメント機能または単語のタイムスタンプを提供するプロバイダーを使用してください。</strong></li>
 <li>保存済みの<code>whisper-1</code><strong>、</strong><code>gpt-4o-transcribe</code><strong>、</strong><code>gpt-4o-mini-transcribe</code>**の選択は、
 <code>gpt-transcribe</code>へ移行されます。これにより、<code>whisper-1</code>が以前提供していた単語のタイムスタンプは提供されなくなります。</li>
-<li>その他のプロバイダー（AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、ローカルのWhisperおよびParakeet）は、句読点付きの単語とその時刻（time）情報を直接返します。タイミングが重要な場合は、これらを優先して使用してください。</li>
+<li>その他のプロバイダー（AssemblyAI、Gladia、Deepgram、Speechmatics、ElevenLabs、Rev AI、Cartesia、Gemini、ローカルのWhisperおよびParakeet）は、句読点付きの単語とその時刻（time）情報を直接返します。タイミングが重要な場合は、これらを優先して使用してください。</li>
 </ul>
 <p>文字起こしエンドポイントのアップロード上限は<strong>25 MB</strong>です。<a href="https://developers.openai.com/api/docs/deprecations">OpenAIの非推奨機能</a>を参照してください。</p>
 </blockquote>
@@ -168,7 +168,7 @@ SubVox Proがクリップ全体にわたってタイミングを推定します�
 </details>
 <details id="google-gemini" open="">
 <summary style="cursor: pointer; padding: 8px 0;"><h2 class="svx-provider-title" id="google-gemini-setup"><strong>Google (Gemini)</strong></h2></summary>
-<p><strong>用途：</strong> LLMによる翻訳および音声合成による吹き替え（Geminiのボイス）。最も手軽な無料の選択肢です（課金不要）。1つのキーで両方を利用できます。</p>
+<p><strong>用途：</strong> 文字起こし（単語タイミング付き、1クリップ最大30分）、LLMによる翻訳および音声合成による吹き替え（Geminiのボイス）。最も手軽な無料の選択肢です（課金不要）。1つのキーで3つすべてを利用できます。</p>
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">1</span> <strong><a href="https://aistudio.google.com">https://aistudio.google.com</a></strong>の<strong>Google AI Studio</strong>にアクセスし、Googleアカウントでログインします。</p>
 <img alt="Google AI Studio home page" src="Images/gemini-ai-studio-home.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">2</span> <strong><a href="https://aistudio.google.com/app/apikey">https://aistudio.google.com/app/apikey</a></strong>で<strong>API keys</strong>を直接開き、</p>
@@ -180,7 +180,7 @@ SubVox Proがクリップ全体にわたってタイミングを推定します�
 <img alt="Google AI Studio API key details panel" src="Images/gemini-api-key-details.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">5</span> キーがAPI keysの一覧に表示されます。ここでは、キーのコピーや使用状況の確認ができ、課金の設定も後から行えます。</p>
 <img alt="Google AI Studio API key row" src="Images/gemini-api-key-row.png" style="display: block; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
-<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> SubVox Pro（Settings ▸ <em>Gemini</em>）にキーを貼り付けます。吹き替えを行う場合は、プロバイダーとして<strong>Gemini</strong>を</p>
+<p><span style="display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; width: 1.6em; height: 1.6em; margin-right: 0.5em; border-radius: 6px; background: #cbd5e1; color: #334155; font-size: 0.85em; font-weight: 600; line-height: 1; text-align: center;">6</span> SubVox Pro（Settings ▸ <em>Gemini</em>）にキーを貼り付けます。文字起こしを行う場合は、プロバイダーとして<strong>Gemini</strong>を選択し、言語は<em>Auto-detect</em>のままにするか、言語を選択します。吹き替えを行う場合は、プロバイダーとして<strong>Gemini</strong>を</p>
 <p><strong>Text-to-Speech</strong>タブで選択します。30種類の多言語ボイス（<em>Kore</em>、<em>Puck</em>、<em>Leda</em>など）と、</p>
 <p>voice directionを設定するボタンを利用できます。利用可能なモデルは2つあります。<strong>gemini-3.8-flash-tts</strong>（デフォルト、最も自然）と
 <strong>gemini-3.8-flash-lite-tts</strong>（有料利用時の料金が割安）です。</p>

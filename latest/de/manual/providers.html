@@ -102,7 +102,7 @@ den Sie unter <strong>Tools ▸ SubVox Pro ▸ Settings</strong> (oder im Anbiet
 <tbody>
 <tr>
 <td><strong>Transkription</strong></td>
-<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-translation.html#openai">OpenAI</a></td>
+<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-translation.html#google-gemini">Gemini</a></td>
 </tr>
 <tr>
 <td><strong>Übersetzung</strong></td>
@@ -170,6 +170,11 @@ maßgeblich. Regionale Sprachvarianten wie <code>en-US</code> und <code>pt-BR</c
 <td><strong>STT</strong></td>
 <td>Cartesia (<code>ink-whisper</code>)</td>
 <td>Arabisch, Bulgarisch, Kantonesisch, Chinesisch, Kroatisch, Tschechisch, Dänisch, Niederländisch, Englisch, Finnisch, Französisch, Deutsch, Griechisch, Hebräisch, Hindi, Ungarisch, Indonesisch, Italienisch, Japanisch, Koreanisch, Malaiisch, Norwegisch, Polnisch, Portugiesisch, Rumänisch, Russisch, Slowakisch, Spanisch, Schwedisch, Tamil, Thai, Türkisch, Ukrainisch, Vietnamesisch.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Gemini (<code>gemini-3.5-transcribe</code>)</td>
+<td>Arabisch, Bulgarisch, Kantonesisch, Chinesisch, Kroatisch, Tschechisch, Dänisch, Niederländisch, Englisch, Finnisch, Französisch, Deutsch, Griechisch, Hebräisch, Hindi, Ungarisch, Indonesisch, Italienisch, Japanisch, Koreanisch, Malaiisch, Norwegisch, Polnisch, Portugiesisch, Rumänisch, Russisch, Slowakisch, Spanisch, Schwedisch, Thai, Türkisch, Ukrainisch, Vietnamesisch.</td>
 </tr>
 <tr>
 <td><strong>STT</strong></td>
@@ -323,7 +328,7 @@ oder einen vom Team verwalteten Schlüssel verwenden, je nachdem, wie der Anbiet
 <tbody>
 <tr>
 <td><strong>Transcription</strong> (Audio → Untertitel mit Zeitangaben)</td>
-<td>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, OpenAI — oder <strong>Whisper (local)</strong> und <strong>Parakeet (local)</strong> (vollständig offline, kein Schlüssel, nur Windows — siehe <a href="index.html#whisper-offline-transcription">Documentation.md</a>)</td>
+<td>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, OpenAI, Gemini — oder <strong>Whisper (local)</strong> und <strong>Parakeet (local)</strong> (vollständig offline, kein Schlüssel, nur Windows — siehe <a href="index.html#whisper-offline-transcription">Documentation.md</a>)</td>
 </tr>
 <tr>
 <td><strong>Translation</strong> (Untertitel → andere Sprachen)</td>
@@ -442,7 +447,7 @@ beeinflusst lediglich, wie viel Sie generieren können — und bei einigen Anbie
 <td>Ja (kein kostenloser Tarif im eigentlichen Sinne).</td>
 </tr>
 <tr>
-<td>Google Gemini (Übersetzung + TTS)</td>
+<td>Google Gemini (STT + Übersetzung + TTS)</td>
 <td>Kostenloser Tarif mit begrenzter Anfragerate, <strong>keine Abrechnung erforderlich</strong></td>
 <td>Nein</td>
 <td>Ja. Google kann Eingaben aus dem kostenlosen Tarif zur Verbesserung seiner Produkte verwenden.</td>

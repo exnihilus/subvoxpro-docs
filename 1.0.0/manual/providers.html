@@ -115,7 +115,7 @@ always confirm the current offer on the provider's own pricing page before relyi
 <tbody>
 <tr>
 <td><strong>Transcription</strong></td>
-<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-translation.html#openai">OpenAI</a></td>
+<td><a href="providers-transcription.html#assemblyai">AssemblyAI</a> · <a href="providers-transcription.html#gladia">Gladia</a> · <a href="providers-transcription.html#deepgram">Deepgram</a> · <a href="providers-transcription.html#speechmatics">Speechmatics</a> · <a href="providers-transcription.html#elevenlabs">ElevenLabs</a> · <a href="providers-transcription.html#rev-ai">Rev AI</a> · <a href="providers-transcription.html#cartesia">Cartesia</a> · <a href="providers-translation.html#openai">OpenAI</a> · <a href="providers-translation.html#google-gemini">Gemini</a></td>
 </tr>
 <tr>
 <td><strong>Translation</strong></td>
@@ -183,6 +183,11 @@ list. Region variants such as <code>en-US</code> and <code>pt-BR</code> are grou
 <td><strong>STT</strong></td>
 <td>Cartesia (<code>ink-whisper</code>)</td>
 <td>Arabic, Bulgarian, Cantonese, Chinese, Croatian, Czech, Danish, Dutch, English, Finnish, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Malay, Norwegian, Polish, Portuguese, Romanian, Russian, Slovak, Spanish, Swedish, Tamil, Thai, Turkish, Ukrainian, Vietnamese.</td>
+</tr>
+<tr>
+<td><strong>STT</strong></td>
+<td>Gemini (<code>gemini-3.5-transcribe</code>)</td>
+<td>Arabic, Bulgarian, Cantonese, Chinese, Croatian, Czech, Danish, Dutch, English, Finnish, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Malay, Norwegian, Polish, Portuguese, Romanian, Russian, Slovak, Spanish, Swedish, Thai, Turkish, Ukrainian, Vietnamese.</td>
 </tr>
 <tr>
 <td><strong>STT</strong></td>
@@ -336,7 +341,7 @@ or a team-managed key, depending on how the provider handles billing and access.
 <tbody>
 <tr>
 <td><strong>Transcription</strong> (audio → timed subtitles)</td>
-<td>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, OpenAI — or <strong>Whisper (local)</strong> and <strong>Parakeet (local)</strong> (fully offline, no key, Windows only — see <a href="index.html#whisper-offline-transcription">Documentation.md</a>)</td>
+<td>AssemblyAI, Gladia, Deepgram, Speechmatics, ElevenLabs, Rev AI, Cartesia, OpenAI, Gemini — or <strong>Whisper (local)</strong> and <strong>Parakeet (local)</strong> (fully offline, no key, Windows only — see <a href="index.html#whisper-offline-transcription">Documentation.md</a>)</td>
 </tr>
 <tr>
 <td><strong>Translation</strong> (subtitles → other languages)</td>
@@ -455,7 +460,7 @@ only changes how much you can generate — and, for some providers, what you may
 <td>Yes (no free plan as such).</td>
 </tr>
 <tr>
-<td>Google Gemini (translation + TTS)</td>
+<td>Google Gemini (STT + translation + TTS)</td>
 <td>Free tier, rate-limited, <strong>no billing needed</strong></td>
 <td>No</td>
 <td>Yes. Google may use free-tier prompts to improve its products.</td>
