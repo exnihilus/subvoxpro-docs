@@ -1511,9 +1511,12 @@ duplicates are ignored. Wait for a running batch to finish before adding files t
 <li>Its subtitles are kept as they are. It is transcribed only if it has audio but no subtitles yet.</li>
 <li>It only gets the languages it misses: translations and dubs it already has are skipped. The <strong>SUBTITLES</strong> and
 <strong>AUDIO</strong> columns show what it has (grey outline) and what the batch will add (filled, with a <strong>+</strong>).</li>
-<li>To make its translations and dubs again, tick <strong>Replace the translations and dubs voice lines already have</strong>.
-This also replaces your manual edits, so the batch asks you to confirm first. The option turns off again the
-next time you open the window.</li>
+<li>To make its translations again, tick <strong>Replace existing translations</strong> in the Translation column. This also
+replaces your manual edits. Its dubs stay as they are unless you tick the next option too.</li>
+<li>To make its dubs again, tick <strong>Replace existing dubs</strong> in the Dubbing column. The audio is made again from the
+current subtitles, which are not touched.</li>
+<li>The batch asks you to confirm before replacing anything. Both options turn off again the next time you open the
+window.</li>
 <li>Removing a voice line from the queue never deletes it from your project. If it is open in the editor, the editor
 shows the new languages as soon as each step finishes.</li>
 </ul>

@@ -1341,7 +1341,9 @@ private void Shake()
 <ul>
 <li>其字幕保持不变。只有在有音频但还没有字幕时才会进行转写。</li>
 <li>只会添加缺少的语言：已有的翻译和配音会被跳过。<strong>SUBTITLES</strong> 和 <strong>AUDIO</strong> 列会显示已有的内容（灰色边框）以及批量处理将添加的内容（实心并带 <strong>+</strong>）。</li>
-<li>若要重新生成翻译和配音，请勾选 <strong>Replace the translations and dubs voice lines already have</strong>。这也会覆盖你的手动修改，因此批量处理会先请求确认。下次打开窗口时，该选项会重新关闭。</li>
+<li>若要重新生成翻译，请在 Translation 列勾选 <strong>Replace existing translations</strong>。这也会覆盖你的手动修改。除非同时勾选下一个选项，否则配音保持不变。</li>
+<li>若要重新生成配音，请在 Dubbing 列勾选 <strong>Replace existing dubs</strong>。音频会根据当前字幕重新生成，字幕不会被修改。</li>
+<li>批量处理在替换前会先请求确认。下次打开窗口时，这两个选项都会重新关闭。</li>
 <li>从队列中移除台词资源绝不会将其从项目中删除。如果它已在编辑器中打开，每个步骤完成后编辑器会立即显示新的语言。</li>
 </ul>
 <h4 id="处理期间与之后">处理期间与之后</h4>
