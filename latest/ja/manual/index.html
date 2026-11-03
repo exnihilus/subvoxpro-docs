@@ -350,7 +350,7 @@ SubVox.Play(myVoiceLine);
 </tr>
 <tr>
 <td><strong>Record several lines</strong></td>
-<td>クリックしたラインから Shift + クリックしたラインまで</td>
+<td>リストで選択したライン</td>
 </tr>
 <tr>
 <td><strong>Record all lines</strong></td>
@@ -358,7 +358,13 @@ SubVox.Play(myVoiceLine);
 </tr>
 </tbody>
 </table>
-<p>複数のラインは自然なペースで一度に録音され、ラインごとのテイクに分割されます。</p>
+<p><strong>Record several lines</strong> では、Windows のファイルと同じようにラインを選択します。</p>
+<ul>
+<li>ラインを<strong>クリック</strong>すると、選択と解除が切り替わります。ほかのラインは変わりません。</li>
+<li><strong>Shift + クリック</strong>で、最後にクリックしたラインからの範囲を選択します。</li>
+<li>ラインを<strong>右クリック</strong>すると選択を解除します。<strong>Shift + 右クリック</strong>で範囲の選択を解除します。</li>
+</ul>
+<p>連続するラインは自然なペースで一度に録音され、ラインごとのテイクに分割されます。選択に飛びがある場合は、ラインのまとまりごとに順番に、それぞれプリロール付きで録音します。<strong>Stop</strong> で録音を終了しても、録音済みのラインは残ります。</p>
 <h4 id="設定と保存">設定と保存</h4>
 <ul>
 <li><strong>Booth settings</strong> では、マイク、ゲイン（<strong>Calibrate</strong> は録音ウィンドウと同じ動作）、ラインの前に再生する原音の長さ、ビープ、録音中に聞こえる音、スクロール速度（最小値：ラインが収まらない場合はテキストが速く流れます）を設定できます。</li>
@@ -1320,7 +1326,7 @@ private void Shake()
 <ul>
 <li>文字起こしと翻訳には、それぞれメインウィンドウと共通の「<strong>Model</strong>」の選択があります。</li>
 <li><strong>SUBTITLES</strong>列と<strong>AUDIO</strong>列には、各ファイルの言語が表示されます。常に先頭にある白いコードはボイスラインのソース言語、灰色の枠のコードは既存、<strong>+</strong>付きの塗りつぶされたコード(<strong>+DE</strong>など)は作成予定、<strong>—</strong>は言語なしを表します。マウスを重ねると詳細が表示されます。</li>
-<li>言語設定はファイルごとに上書きできます。行を開いて<strong>Override languages</strong>にチェックを入れると、一覧ではそのファイルに黄色の<strong>*</strong>が表示され、これらの列にはそのファイル独自の言語が表示されます。</li>
+<li>言語設定はファイルごとに上書きできます。行を開いて<strong>Override languages</strong>にチェックを入れると、一覧ではそのファイルに黄色の<strong>*</strong>が表示され、これらの列にはそのファイル独自の言語が表示されます。ボイスラインは、すでに字幕がある言語なら翻訳を選ばずに吹き替えできます。</li>
 <li>言語に選択したボイスを消去するには、右クリックします。言語が多い場合、ボイスのリストはスクロールします。</li>
 <li>吹き替えでは、バッチ処理は「<strong>One per line</strong>」と「<strong>All together</strong>」に対応します。「<strong>Groups</strong>」はエディターでボイスラインごとに設定します。</li>
 </ul>
@@ -1335,8 +1341,8 @@ private void Shake()
 <ul>
 <li>字幕はそのまま保持されます。オーディオがあり、字幕がまだない場合にのみ文字起こしされます。</li>
 <li>不足している言語だけが追加されます。既存の翻訳と吹き替えはスキップされます。<strong>SUBTITLES</strong>列と<strong>AUDIO</strong>列には、既存の内容(灰色の枠)とバッチ処理で追加される内容(<strong>+</strong>付きの塗りつぶし)が表示されます。</li>
-<li>翻訳を作り直すには、Translation列の「<strong>Replace existing translations</strong>」にチェックを入れます。手動で行った編集も置き換えられます。次のオプションにもチェックを入れない限り、吹き替えはそのまま残ります。</li>
-<li>吹き替えを作り直すには、Dubbing列の「<strong>Replace existing dubs</strong>」にチェックを入れます。オーディオは現在の字幕から作り直され、字幕は変更されません。</li>
+<li>翻訳を作り直すには、3 つのステップの上にある「<strong>Existing voice lines</strong>」行の「<strong>Replace existing translations</strong>」にチェックを入れます。手動で行った編集も置き換えられます。次のオプションにもチェックを入れない限り、吹き替えはそのまま残ります。</li>
+<li>吹き替えを作り直すには、同じ行の「<strong>Replace existing dubs</strong>」にチェックを入れます。オーディオは現在の字幕から作り直され、字幕は変更されません。</li>
 <li>バッチ処理は置き換える前に確認を求めます。どちらのオプションも、次にウィンドウを開いたときにオフに戻ります。</li>
 <li>キューからボイスラインを削除しても、プロジェクトから削除されることはありません。エディターで開いている場合は、各ステップが終わるとすぐに新しい言語が表示されます。</li>
 </ul>
@@ -1344,8 +1350,9 @@ private void Shake()
 <ul>
 <li>いつでもキャンセルでき、実行レポートをエクスポートすることもできます。</li>
 <li>「<strong>Run batch</strong>」を再度クリックすると、Unityを再起動した後でも、オーディオを再びコピーすることなく、各ファイルが中断した箇所から処理が再開されます。</li>
-<li>ステップがスキップされた場合（吹き替えプロバイダーが対応していない言語など）、ファイルの下に⚠の行で理由が表示され、ファイルには「<strong>Done with warnings</strong>」と表示されます。</li>
-<li>ファイルの処理が終わると、「<strong>Open</strong>」でそのボイスラインをエディターに表示し、「<strong>Re-run</strong>」で翻訳と吹き替えを再びキューに入れます（言語を追加した後など）。</li>
+<li>ステップがスキップされた場合（吹き替えプロバイダーが対応していない言語など）、ファイルの下に⚠の行で理由が表示され、ファイルには「<strong>Done with warnings</strong>」と表示されて、行は黄色のままになります。</li>
+<li>ファイルの処理が終わると、「<strong>Open</strong>」でそのボイスラインをエディターに表示し、「<strong>Re-run</strong>」で翻訳と吹き替えを再びキューに入れます（言語を追加した後など）。ファイルにまだ字幕がない場合は、文字起こしも再実行されます。</li>
+<li>開始前、<strong>赤</strong>の行は問題を解決するまでバッチ処理をブロックします（プロバイダーが未設定の場合など）。<strong>黄色</strong>の行はブロックしませんが、そのファイルの一部は処理されません（文字起こしをオフにした音声ファイルなど）。どちらの場合も、「<strong>Status</strong>」列に問題の内容が表示されます。</li>
 </ul>
 <hr/>
 <h2 id="work-with-your-ai-assistant">AIアシスタントと連携する </h2>

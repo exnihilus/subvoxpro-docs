@@ -412,7 +412,7 @@ klingen.</li>
 </tr>
 <tr>
 <td><strong>Record several lines</strong></td>
-<td>Von der angeklickten Zeile bis zur mit Umschalt-Klick gewählten</td>
+<td>Die in der Liste ausgewählten Zeilen</td>
 </tr>
 <tr>
 <td><strong>Record all lines</strong></td>
@@ -420,7 +420,13 @@ klingen.</li>
 </tr>
 </tbody>
 </table>
-<p>Mehrere Zeilen werden am Stück in natürlichem Tempo aufgenommen und danach in eine Aufnahme pro Zeile geteilt.</p>
+<p>Bei <strong>Record several lines</strong> wählen Sie Zeilen wie Dateien in Windows aus:</p>
+<ul>
+<li><strong>Klicken</strong> Sie auf eine Zeile, um sie aus- oder abzuwählen. Die anderen Zeilen bleiben unverändert.</li>
+<li><strong>Umschalt-Klick</strong> wählt alle Zeilen seit der zuletzt angeklickten aus.</li>
+<li><strong>Rechtsklick</strong> auf eine Zeile wählt sie ab. <strong>Umschalt-Rechtsklick</strong> wählt einen Bereich ab.</li>
+</ul>
+<p>Aufeinanderfolgende Zeilen werden am Stück in natürlichem Tempo aufgenommen und danach in eine Aufnahme pro Zeile geteilt. Hat die Auswahl Lücken, wird jede Zeilengruppe nacheinander aufgenommen, mit eigenem Pre-Roll. <strong>Stop</strong> beendet die Aufnahme: Bereits aufgenommene Zeilen bleiben erhalten.</p>
 <h4 id="einstellungen-und-speichern">Einstellungen und Speichern</h4>
 <ul>
 <li><strong>Booth settings</strong> stellt Mikrofon, Verstärkung (<strong>Calibrate</strong> funktioniert wie im Aufnahmefenster), den Vorlauf des
@@ -1552,7 +1558,8 @@ für alle Dateien ein:
 Ausgangssprache der Voice Line, ein Code mit grauem Rahmen ist bereits vorhanden, ein ausgefüllter Code mit <strong>+</strong> (etwa <strong>+DE</strong>) wird erstellt, und <strong>—</strong> bedeutet keine. Fahren Sie mit
 der Maus darüber, um die Details zu sehen.</li>
 <li>Eine Datei kann eigene Sprachen haben: Öffnen Sie ihre Zeile und aktivieren Sie <strong>Override languages</strong>.
-Ein gelbes <strong>*</strong> kennzeichnet sie dann in der Liste, und die Spalten zeigen ihre eigenen Sprachen.</li>
+Ein gelbes <strong>*</strong> kennzeichnet sie dann in der Liste, und die Spalten zeigen ihre eigenen Sprachen. Eine Voice
+Line lässt sich in jeder Sprache vertonen, für die sie bereits Untertitel hat, ohne eine Übersetzung zu wählen.</li>
 <li>Um die für eine Sprache gewählte Stimme zu löschen, klicken Sie mit der rechten Maustaste darauf. Bei vielen
 Sprachen lässt sich die Stimmenliste scrollen.</li>
 <li>Für die Vertonung bietet die Stapelverarbeitung <strong>One per line</strong> und <strong>All together</strong>; <strong>Groups</strong> werden pro
@@ -1576,10 +1583,10 @@ auf diese Weise Dateien hinzufügen.</p>
 <li>Sie erhält nur die Sprachen, die ihr fehlen: vorhandene Übersetzungen und Vertonungen werden übersprungen. Die
 Spalten <strong>SUBTITLES</strong> und <strong>AUDIO</strong> zeigen, was sie bereits hat (grauer Rahmen) und was die Stapelverarbeitung
 hinzufügt (ausgefüllt, mit <strong>+</strong>).</li>
-<li>Um ihre Übersetzungen neu zu erstellen, aktivieren Sie <strong>Replace existing translations</strong> in der Spalte Translation.
+<li>Um ihre Übersetzungen neu zu erstellen, aktivieren Sie <strong>Replace existing translations</strong> in der Zeile <strong>Existing voice lines</strong> über den drei Schritten.
 Dabei werden auch Ihre manuellen Änderungen ersetzt. Ihre Vertonungen bleiben unverändert, sofern Sie nicht auch die
 nächste Option aktivieren.</li>
-<li>Um ihre Vertonungen neu zu erstellen, aktivieren Sie <strong>Replace existing dubs</strong> in der Spalte Dubbing. Das Audio wird
+<li>Um ihre Vertonungen neu zu erstellen, aktivieren Sie <strong>Replace existing dubs</strong> in derselben Zeile. Das Audio wird
 aus den aktuellen Untertiteln neu erstellt, die dabei nicht geändert werden.</li>
 <li>Die Stapelverarbeitung fragt vor jedem Ersetzen nach einer Bestätigung. Beide Optionen sind beim nächsten Öffnen des
 Fensters wieder deaktiviert.</li>
@@ -1592,9 +1599,14 @@ Editor geöffnet, zeigt der Editor die neuen Sprachen an, sobald ein Schritt abg
 <li>Ein erneuter Klick auf <strong>Run batch</strong> setzt jede Datei dort fort, wo sie unterbrochen wurde, auch nach einem Neustart
 von Unity, ohne das Audio ein zweites Mal zu kopieren.</li>
 <li>Wird ein Schritt übersprungen (zum Beispiel eine Sprache, die der Vertonungsanbieter nicht sprechen kann), erklärt
-eine ⚠-Zeile unter der Datei den Grund, und die Datei zeigt <strong>Done with warnings</strong>.</li>
+eine ⚠-Zeile unter der Datei den Grund, die Datei zeigt <strong>Done with warnings</strong> und ihre Zeile bleibt gelb.</li>
 <li>Ist eine Datei fertig, öffnet <strong>Open</strong> ihre Voice Line im Editor, und <strong>Re-run</strong> stellt ihre Übersetzung und
-Vertonung erneut in die Warteschlange (zum Beispiel nach dem Hinzufügen einer Sprache).</li>
+Vertonung erneut in die Warteschlange (zum Beispiel nach dem Hinzufügen einer Sprache). Hat die Datei noch immer
+keine Untertitel, wird auch ihre Transkription erneut ausgeführt.</li>
+<li>Vor dem Start blockiert eine <strong>rote</strong> Zeile die Stapelverarbeitung, bis das Problem behoben ist (zum Beispiel ein
+nicht eingerichteter Anbieter). Eine <strong>gelbe</strong> Zeile blockiert sie nicht, aber ein Teil dieser Datei wird nicht
+erledigt (zum Beispiel eine Audiodatei bei deaktivierter Transkription). In beiden Fällen nennt die Spalte
+<strong>Status</strong> das Problem.</li>
 </ul>
 <hr/>
 <h2 id="work-with-your-ai-assistant">Mit Ihrem KI-Assistenten arbeiten </h2>

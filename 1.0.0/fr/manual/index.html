@@ -403,7 +403,7 @@ valider. Plus de 10 % d’écart ? Refaites la prise : l’étirer davantage son
 </tr>
 <tr>
 <td><strong>Record several lines</strong></td>
-<td>De la ligne cliquée jusqu’à celle choisie avec Maj-clic</td>
+<td>Les lignes sélectionnées dans la liste</td>
 </tr>
 <tr>
 <td><strong>Record all lines</strong></td>
@@ -411,7 +411,13 @@ valider. Plus de 10 % d’écart ? Refaites la prise : l’étirer davantage son
 </tr>
 </tbody>
 </table>
-<p>Plusieurs lignes s’enregistrent d’un coup, à un rythme naturel, puis sont découpées en une prise par ligne.</p>
+<p>Avec <strong>Record several lines</strong>, sélectionnez les lignes comme des fichiers dans Windows :</p>
+<ul>
+<li><strong>Cliquez</strong> sur une ligne pour la sélectionner ou la désélectionner. Les autres lignes ne changent pas.</li>
+<li><strong>Maj-clic</strong> sélectionne toutes les lignes depuis la dernière cliquée.</li>
+<li><strong>Clic droit</strong> sur une ligne la désélectionne. <strong>Maj-clic droit</strong> désélectionne une plage.</li>
+</ul>
+<p>Les lignes qui se suivent s’enregistrent d’un coup, à un rythme naturel, puis sont découpées en une prise par ligne. S’il y a des trous dans la sélection, chaque groupe de lignes est enregistré à son tour, avec son propre pré-roll. <strong>Stop</strong> met fin à l’enregistrement : les lignes déjà enregistrées sont gardées.</p>
 <h4 id="réglages-et-sauvegarde">Réglages et sauvegarde</h4>
 <ul>
 <li><strong>Booth settings</strong> règle le micro, le gain (<strong>Calibrate</strong> fonctionne comme dans l’enregistreur), la part d’original
@@ -1510,7 +1516,8 @@ fichiers :
 la langue source de la voice line, un code à contour gris existe déjà, un code plein précédé d’un <strong>+</strong> (comme <strong>+DE</strong>) sera créé, et <strong>—</strong> signifie aucune. Survolez-les pour le
 détail.</li>
 <li>Un fichier peut avoir ses propres langues : ouvrez sa ligne et cochez <strong>Override languages</strong>.
-Un <strong>*</strong> jaune le signale alors dans la liste, et les colonnes affichent ses propres langues.</li>
+Un <strong>*</strong> jaune le signale alors dans la liste, et les colonnes affichent ses propres langues. Une voice line
+peut être doublée dans toute langue dont elle a déjà les sous-titres, sans traduction à choisir.</li>
 <li>Pour effacer la voix choisie pour une langue, faites un clic droit dessus. Avec beaucoup de langues, la liste
 des voix défile.</li>
 <li>Pour le doublage, le lot propose <strong>One per line</strong> et <strong>All together</strong> ; les <strong>Groups</strong> se tracent par voiceline
@@ -1531,9 +1538,9 @@ fichiers ainsi.</p>
 <li>Ses sous-titres restent tels quels. Elle n’est transcrite que si elle a un audio mais pas encore de sous-titres.</li>
 <li>Elle ne reçoit que les langues qui lui manquent : ses traductions et doublages existants sont ignorés. Les colonnes
 <strong>SUBTITLES</strong> et <strong>AUDIO</strong> montrent ce qu’elle a déjà (contour gris) et ce que le lot va ajouter (plein, avec un <strong>+</strong>).</li>
-<li>Pour refaire ses traductions, cochez <strong>Replace existing translations</strong> dans la colonne Translation. Vos retouches
+<li>Pour refaire ses traductions, cochez <strong>Replace existing translations</strong> dans la ligne <strong>Existing voice lines</strong>, au-dessus des trois étapes. Vos retouches
 manuelles sont alors remplacées elles aussi. Ses doublages restent tels quels, sauf si vous cochez aussi l’option suivante.</li>
-<li>Pour refaire ses doublages, cochez <strong>Replace existing dubs</strong> dans la colonne Dubbing. L’audio est refait à partir des
+<li>Pour refaire ses doublages, cochez <strong>Replace existing dubs</strong> dans la même ligne. L’audio est refait à partir des
 sous-titres actuels, qui ne sont pas modifiés.</li>
 <li>Le lot demande une confirmation avant de remplacer quoi que ce soit. Les deux options se désactivent à la prochaine
 ouverture de la fenêtre.</li>
@@ -1546,9 +1553,14 @@ celui-ci affiche les nouvelles langues dès la fin de chaque étape.</li>
 <li>Cliquer de nouveau sur <strong>Run batch</strong> reprend chaque fichier là où il s’était arrêté, même après un redémarrage de
 Unity, sans copier l’audio une seconde fois.</li>
 <li>Quand une étape est sautée (par exemple une langue que le fournisseur de doublage ne sait pas dire), une ligne ⚠
-sous le fichier explique pourquoi et le fichier affiche <strong>Done with warnings</strong>.</li>
+sous le fichier explique pourquoi, le fichier affiche <strong>Done with warnings</strong> et sa ligne reste jaune.</li>
 <li>Une fois un fichier terminé, <strong>Open</strong> affiche sa voiceline dans l’éditeur, et <strong>Re-run</strong> remet en file sa
-traduction et son doublage (par exemple après l’ajout d’une langue).</li>
+traduction et son doublage (par exemple après l’ajout d’une langue). Si le fichier n’a toujours pas de sous-titres,
+sa transcription est relancée aussi.</li>
+<li>Avant le lancement, une ligne <strong>rouge</strong> bloque le lot tant que le problème n’est pas réglé (par exemple un
+fournisseur non configuré). Une ligne <strong>jaune</strong> ne le bloque pas, mais une partie de ce fichier ne sera pas faite
+(par exemple un fichier audio avec la transcription désactivée). Dans les deux cas, la colonne <strong>Status</strong> indique
+ce qui ne va pas.</li>
 </ul>
 <hr/>
 <h2 id="work-with-your-ai-assistant">Travailler avec votre assistant IA </h2>

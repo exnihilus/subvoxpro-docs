@@ -349,7 +349,7 @@ SubVox.Play(myVoiceLine);
 </tr>
 <tr>
 <td><strong>Record several lines</strong></td>
-<td>从点击的第一句到按住 Shift 点击的最后一句</td>
+<td>在列表中选中的台词</td>
 </tr>
 <tr>
 <td><strong>Record all lines</strong></td>
@@ -357,7 +357,13 @@ SubVox.Play(myVoiceLine);
 </tr>
 </tbody>
 </table>
-<p>多句台词会按自然节奏一次录完，随后拆分为每句一条录音。</p>
+<p>使用 <strong>Record several lines</strong> 时，可以像在 Windows 中选择文件一样选择台词：</p>
+<ul>
+<li><strong>单击</strong>台词可选中或取消选中，其他台词不受影响。</li>
+<li><strong>按住 Shift 单击</strong>可选中从上次单击的台词开始的范围。</li>
+<li><strong>右键单击</strong>台词可取消选中。<strong>按住 Shift 右键单击</strong>可取消选中一个范围。</li>
+</ul>
+<p>连续的台词会按自然节奏一次录完，随后拆分为每句一条录音。如果选择中有间隔，每组台词会依次录制，并各有自己的预备段。<strong>Stop</strong> 结束录音，已录好的台词会保留。</p>
 <h4 id="设置与保存">设置与保存</h4>
 <ul>
 <li><strong>Booth settings</strong> 可设置麦克风、增益（<strong>Calibrate</strong> 与录音窗口中的作用相同）、台词前播放的原声长度、提示音、录音时听到的内容以及滚动速度（这是最小值：当台词放不下时文本会加快滚动）。</li>
@@ -1326,7 +1332,7 @@ private void Shake()
 <ul>
 <li>转写和翻译各有一个 <strong>Model</strong> 选项，与主窗口共享。</li>
 <li><strong>SUBTITLES</strong> 和 <strong>AUDIO</strong> 列显示每个文件的语言：始终排在最前的白色代码是语音行的源语言，灰色边框的代码表示已有，带 <strong>+</strong> 的实心代码（如 <strong>+DE</strong>）表示将创建，<strong>—</strong> 表示没有语言。将鼠标悬停其上可查看详情。</li>
-<li>单个文件可覆盖其语言设置：展开该行并勾选 <strong>Override languages</strong>，列表中会以黄色的 <strong>*</strong> 标出该文件，这些列也会显示它自己的语言。</li>
+<li>单个文件可覆盖其语言设置：展开该行并勾选 <strong>Override languages</strong>，列表中会以黄色的 <strong>*</strong> 标出该文件，这些列也会显示它自己的语言。语音行已有字幕的任何语言都可以直接配音，无需选择翻译。</li>
 <li>要清除为某种语言选择的音色，请右键单击该音色。若语言较多，音色列表可滚动查看。</li>
 <li>批量处理为配音提供 <strong>One per line</strong> 和 <strong>All together</strong> 两种选项；<strong>Groups</strong> 则在编辑器中为每个台词资源单独划分。</li>
 </ul>
@@ -1341,8 +1347,8 @@ private void Shake()
 <ul>
 <li>其字幕保持不变。只有在有音频但还没有字幕时才会进行转写。</li>
 <li>只会添加缺少的语言：已有的翻译和配音会被跳过。<strong>SUBTITLES</strong> 和 <strong>AUDIO</strong> 列会显示已有的内容（灰色边框）以及批量处理将添加的内容（实心并带 <strong>+</strong>）。</li>
-<li>若要重新生成翻译，请在 Translation 列勾选 <strong>Replace existing translations</strong>。这也会覆盖你的手动修改。除非同时勾选下一个选项，否则配音保持不变。</li>
-<li>若要重新生成配音，请在 Dubbing 列勾选 <strong>Replace existing dubs</strong>。音频会根据当前字幕重新生成，字幕不会被修改。</li>
+<li>若要重新生成翻译，请在三个步骤上方的 <strong>Existing voice lines</strong> 行勾选 <strong>Replace existing translations</strong>。这也会覆盖你的手动修改。除非同时勾选下一个选项，否则配音保持不变。</li>
+<li>若要重新生成配音，请在同一行勾选 <strong>Replace existing dubs</strong>。音频会根据当前字幕重新生成，字幕不会被修改。</li>
 <li>批量处理在替换前会先请求确认。下次打开窗口时，这两个选项都会重新关闭。</li>
 <li>从队列中移除台词资源绝不会将其从项目中删除。如果它已在编辑器中打开，每个步骤完成后编辑器会立即显示新的语言。</li>
 </ul>
@@ -1350,8 +1356,9 @@ private void Shake()
 <ul>
 <li>你可以随时取消操作并导出本次运行的报告。</li>
 <li>再次点击 <strong>Run batch</strong> 时，系统会从每个文件上次停止的位置继续处理，即使重启 Unity 后也是如此，且不会再次复制音频。</li>
-<li>当某一步骤被跳过（例如配音提供商不支持某种语言）时，文件下方会显示一条 ⚠ 提示行说明原因，且该文件状态显示为 <strong>Done with warnings</strong>。</li>
-<li>文件处理完成后，点击 <strong>Open</strong> 可在编辑器中查看其台词资源，点击 <strong>Re-run</strong> 则会将其翻译和配音任务重新加入队列（例如在添加新语言后）。</li>
+<li>当某一步骤被跳过（例如配音提供商不支持某种语言）时，文件下方会显示一条 ⚠ 提示行说明原因，该文件状态显示为 <strong>Done with warnings</strong>，其所在行保持黄色。</li>
+<li>文件处理完成后，点击 <strong>Open</strong> 可在编辑器中查看其台词资源，点击 <strong>Re-run</strong> 则会将其翻译和配音任务重新加入队列（例如在添加新语言后）。如果该文件仍没有字幕，也会重新运行转录。</li>
+<li>开始之前，<strong>红色</strong>行会阻止批量处理，直到问题解决（例如提供商尚未设置）。<strong>黄色</strong>行不会阻止批量处理，但该文件的部分内容不会完成（例如关闭了语音转文字的音频文件）。两种情况下，<strong>Status</strong> 列都会说明问题所在。</li>
 </ul>
 <hr/>
 <h2 id="work-with-your-ai-assistant">与 AI 助手协作 </h2>

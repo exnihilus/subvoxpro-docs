@@ -402,7 +402,7 @@ Further off than 10%? Redo the take: stretching it more would sound unnatural.</
 </tr>
 <tr>
 <td><strong>Record several lines</strong></td>
-<td>From the line you click to the one you Shift-click</td>
+<td>The lines you select in the list</td>
 </tr>
 <tr>
 <td><strong>Record all lines</strong></td>
@@ -410,7 +410,15 @@ Further off than 10%? Redo the take: stretching it more would sound unnatural.</
 </tr>
 </tbody>
 </table>
-<p>Several lines are recorded in one go, at a natural pace, then split into one take per line.</p>
+<p>With <strong>Record several lines</strong>, select lines like files in Windows:</p>
+<ul>
+<li><strong>Click</strong> a line to select or deselect it. The other lines stay as they are.</li>
+<li><strong>Shift-click</strong> to select every line since the last one you clicked.</li>
+<li><strong>Right-click</strong> a line to deselect it. <strong>Shift-right-click</strong> deselects a range.</li>
+</ul>
+<p>Lines that follow each other are recorded in one go, at a natural pace, then split into one take per line. If there
+are gaps in your selection, each group of lines is recorded in turn, with its own pre-roll. <strong>Stop</strong> ends the
+recording: the lines already recorded are kept.</p>
 <h4 id="settings-and-saving">Settings and saving</h4>
 <ul>
 <li><strong>Booth settings</strong> sets the microphone, the gain (<strong>Calibrate</strong> works as in the recorder), how much of the
@@ -1490,18 +1498,32 @@ tables, and click a row to open its options — one row at a time.</li>
 files:
 <ul>
 <li>Transcription and translation each have a <strong>Model</strong> choice, shared with the main window.</li>
+<li>Transcription has its own <strong>Word timing</strong> choice, set to <strong>From the provider</strong> by default. It can differ from
+the one in the main window.</li>
 <li>The <strong>SUBTITLES</strong> and <strong>AUDIO</strong> columns show each file's languages: the white code, always first, is the voice
 line's source language, a grey outlined code already exists, a filled code with a <strong>+</strong> (such as <strong>+DE</strong>) will be
 created, and <strong>—</strong> means none. Hover them for the details.</li>
+<li><strong>Dub these languages</strong> also offers the languages your queued voice lines already have subtitles for, even if
+you don't translate to them. They start unticked. Tick one to dub it: only the voice lines with those subtitles
+are dubbed in that language.</li>
 <li>A file can override its languages: open its row and tick <strong>Override languages</strong>. A
-yellow <strong>*</strong> then marks it in the list, and the columns show its own languages.</li>
-<li>To clear a voice chosen for a language, right-click it. With many languages, the voice list scrolls.</li>
+yellow <strong>*</strong> then marks it in the list, and the columns show its own languages. A voice line can be dubbed in
+any language it already has subtitles for, with no translation to choose.</li>
+<li>To clear <strong>Target languages</strong>, <strong>Dub these languages</strong> or a voice chosen for a language, right-click it. With
+many languages, the voice list scrolls.</li>
 <li>For dubbing, the batch offers <strong>One per line</strong> and <strong>All together</strong>; <strong>Groups</strong> are drawn per voice line in
 the editor.</li>
 </ul>
 </li>
 <li>Click <strong>Run batch</strong>. The button stays grayed out until everything is ready, and tells you what is missing.</li>
 </ol>
+<p>New voice lines are created in the folder shown just above <strong>Run batch</strong>, along with the audio files copied into the
+project. It starts on <code>Voicelines/</code> in the data folder: click the folder button to pick another folder inside
+<code>Assets</code>, and right-click it to go back. Voice lines already in your project stay where they are.</p>
+<p>If that folder already has a voice line with the same name, the batch creates a numbered copy (<code>Intro 1</code>) and leaves
+the first one alone. Tick <strong>Overwrite existing</strong>, next to the folder, to replace it instead: the batch asks you to
+confirm, and its current content is lost, but scenes and Timelines that use it keep working. The option turns off
+again the next time you open the window.</p>
 <blockquote>
 <p>To queue assets already in your project, select several audio files or one or more voice lines, right-click and
 choose <strong>SubVox Pro ▸ Batch Processing</strong>. They are added to the existing queue without starting the batch;
@@ -1513,9 +1535,10 @@ duplicates are ignored. Wait for a running batch to finish before adding files t
 <li>Its subtitles are kept as they are. It is transcribed only if it has audio but no subtitles yet.</li>
 <li>It only gets the languages it misses: translations and dubs it already has are skipped. The <strong>SUBTITLES</strong> and
 <strong>AUDIO</strong> columns show what it has (grey outline) and what the batch will add (filled, with a <strong>+</strong>).</li>
-<li>To make its translations again, tick <strong>Replace existing translations</strong> in the Translation column. This also
+<li>To make its translations again, tick <strong>Replace existing translations</strong> in the <strong>Existing voice lines</strong> row, above the
+three steps. This also
 replaces your manual edits. Its dubs stay as they are unless you tick the next option too.</li>
-<li>To make its dubs again, tick <strong>Replace existing dubs</strong> in the Dubbing column. The audio is made again from the
+<li>To make its dubs again, tick <strong>Replace existing dubs</strong> in the same row. The audio is made again from the
 current subtitles, which are not touched.</li>
 <li>The batch asks you to confirm before replacing anything. Both options turn off again the next time you open the
 window.</li>
@@ -1524,13 +1547,17 @@ shows the new languages as soon as each step finishes.</li>
 </ul>
 <h4 id="during-and-after-the-run">During and after the run</h4>
 <ul>
+<li>Before you start, a <strong>red</strong> row blocks the batch until you fix it (for example a provider that isn't set up). A
+<strong>yellow</strong> row doesn't block it, but part of that file won't be done (for example an audio file with speech to
+text turned off). The <strong>Status</strong> column says what's wrong on both.</li>
 <li>You can cancel at any time and export a report of the run.</li>
 <li>Clicking <strong>Run batch</strong> again picks up where each file stopped, even after restarting Unity, without copying the
 audio a second time.</li>
 <li>When a step is skipped (for example a language the dubbing provider cannot voice), a ⚠ line under the file
-explains why and the file reads <strong>Done with warnings</strong>.</li>
+explains why, the file reads <strong>Done with warnings</strong> and its row stays yellow.</li>
 <li>Once a file is done, <strong>Open</strong> shows its voice line in the editor, and <strong>Re-run</strong> queues its translation and
-dubbing again (for example after adding a language).</li>
+dubbing again (for example after adding a language). If the file still has no subtitles, its transcription runs
+again too.</li>
 </ul>
 <hr>
 <h2 id="work-with-your-ai-assistant">Work with your AI assistant</h2>
