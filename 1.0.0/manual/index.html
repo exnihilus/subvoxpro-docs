@@ -1845,7 +1845,8 @@ Drive trash, restorable for 30 days) or <strong>Rename</strong> (the new one is 
 </ol>
 <p>In the Sheet:</p>
 <ul>
-<li>The key columns are locked, so translators can only edit translations.</li>
+<li><code>asset_name</code> and <code>id</code> are locked. Translators can edit the translations, the <code>context</code> notes and the <code>source</code>
+text; a changed <code>context</code> or <code>source</code> shows up at the next sync, where you choose which version to keep.</li>
 <li>Statuses are colored (<strong>reviewed</strong> in amber, <strong>final</strong> in green) and empty translations are tinted, so the
 remaining work is easy to see.</li>
 <li>Each voice line starts with a dark title row; fold or unfold its lines with the <strong>+ / −</strong> button in the left
