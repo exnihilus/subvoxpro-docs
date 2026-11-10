@@ -1575,7 +1575,7 @@ private void Shake()
 <p>共有のGoogleスプレッドシートで翻訳者にセリフを渡し、翻訳結果を取り込めます。やり取りは双方向で行えます。</p>
 <h3 id="setup-once">設定（1回のみ） </h3>
 <ol>
-<li><strong>Google Cloud</strong> — <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>でプロジェクトを作成し、<strong>Google Sheets API</strong>と<strong>Google Drive API</strong>を有効にします。
+<li><strong>Google Cloud</strong> — <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>でプロジェクトを作成し、<strong>Google Sheets API</strong>を有効にします（任意で<strong>Google Drive API</strong>も有効にすると、同じ名前のシートがすでにある場合に<strong>Create</strong>が知らせてくれます）。
 <strong>OAuth consent screen</strong>で<strong>External</strong>を選択し、自分と翻訳者を<strong>Test users</strong>として追加します。次に、種類が<strong>Desktop app</strong>の<strong>OAuth client ID</strong>を作成し、<strong>Client ID</strong>と<strong>Client secret</strong>をコピーします。</li>
 <li><strong>Unity</strong> — <strong>Tools ▸ SubVox Pro ▸ Google Sheets Localization</strong>を開き、Client IDとClient secretを貼り付けて
 <strong>Connect</strong>をクリックし、ブラウザでサインインします。</li>

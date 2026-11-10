@@ -1581,7 +1581,7 @@ private void Shake()
 <p>通过共享的 Google Sheets 表格将台词交给译员，再取回他们的译文，支持双向同步。</p>
 <h3 id="setup-once">设置（仅需一次） </h3>
 <ol>
-<li><strong>Google Cloud</strong> —— 访问 <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>，创建一个项目并启用 <strong>Google Sheets API</strong> 和 <strong>Google Drive API</strong>。在 <strong>OAuth consent screen</strong> 下，选择 <strong>External</strong>，并将自己和译员添加为 <strong>Test users</strong>。然后创建类型为 <strong>Desktop app</strong> 的 <strong>OAuth client ID</strong>，并复制其 <strong>Client ID</strong> 和 <strong>Client secret</strong>。</li>
+<li><strong>Google Cloud</strong> —— 访问 <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>，创建一个项目并启用 <strong>Google Sheets API</strong>（可选启用 <strong>Google Drive API</strong>：启用后，若已存在同名表格，<strong>Create</strong> 会提醒您）。在 <strong>OAuth consent screen</strong> 下，选择 <strong>External</strong>，并将自己和译员添加为 <strong>Test users</strong>。然后创建类型为 <strong>Desktop app</strong> 的 <strong>OAuth client ID</strong>，并复制其 <strong>Client ID</strong> 和 <strong>Client secret</strong>。</li>
 <li><strong>Unity</strong> —— 打开 <strong>Tools ▸ SubVox Pro ▸ Google Sheets Localization</strong>，粘贴 Client ID 和 Client secret，点击
 <strong>Connect</strong>，然后在浏览器中登录。</li>
 <li><strong>表格</strong> —— 在 <strong>New sheet</strong> 旁输入名称并点击 <strong>Create</strong>：表格会创建在 Google 云端硬盘的根目录（<strong>我的云端硬盘</strong>，之后可随意移动），并填入你的语音台词，其 ID 会自动填入。如果已存在同名表格，请选择 <strong>Replace</strong>（旧表格移入云端硬盘回收站，30 天内可恢复）或 <strong>Rename</strong>（新表格命名为“…(2)”）。若要使用现有表格，请从 URL 中粘贴其 ID（位于 <code>/d/</code> 和 <code>/edit</code> 之间）。以 <strong>Editor</strong> 权限与译员共享表格。</li>
