@@ -409,6 +409,7 @@ the previous text back.</p>
 <li><strong>Click</strong> a checkbox to tick or untick the line. The other lines stay as they are.</li>
 <li><strong>Shift-click</strong> a checkbox to tick (or untick) every line since the last one you clicked.</li>
 <li>In every mode, click the rest of a line (or use <strong>↑ ↓</strong>) to go to it without changing what is ticked.</li>
+<li><strong>Record</strong> stays greyed out until at least one line is ticked.</li>
 </ul>
 <p>The recording runs without stopping, at a natural pace, from the first selected line to the last. The original plays
 on the lines you did not select and goes quiet on the ones you are dubbing. Each selected line then gets its own take.
@@ -1829,10 +1830,11 @@ resume where they stopped.</p>
 <li><strong>Google Cloud</strong> — at <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>, create a project and enable the <strong>Google Sheets API</strong>.
 Under <strong>OAuth consent screen</strong>, choose <strong>External</strong> and add yourself and your translators as <strong>Test users</strong>.
 Then create an <strong>OAuth client ID</strong> of type <strong>Desktop app</strong> and copy its <strong>Client ID</strong> and <strong>Client secret</strong>.</li>
-<li><strong>The Sheet</strong> — create an empty Google Sheet, copy its ID from the URL (between <code>/d/</code> and <code>/edit</code>) and share it
-as <strong>Editor</strong> with your translators.</li>
-<li><strong>Unity</strong> — open <strong>Tools ▸ SubVox Pro ▸ Google Sheets Localization</strong>, paste the three values and click
-<strong>Connect</strong>, then sign in in the browser.</li>
+<li><strong>Unity</strong> — open <strong>Tools ▸ SubVox Pro ▸ Google Sheets Localization</strong>, paste the Client ID and Client secret,
+click <strong>Connect</strong>, then sign in in the browser.</li>
+<li><strong>The Sheet</strong> — type a name next to <strong>New sheet</strong> and click <strong>Create</strong>: the Sheet is created in your Google
+Drive and its ID is filled in. To use an existing Sheet instead, paste its ID from the URL (between <code>/d/</code> and
+<code>/edit</code>). Share the Sheet as <strong>Editor</strong> with your translators.</li>
 </ol>
 <h3 id="every-day">Every day</h3>
 <ol>
