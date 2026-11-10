@@ -1575,11 +1575,11 @@ private void Shake()
 <p>共有のGoogleスプレッドシートで翻訳者にセリフを渡し、翻訳結果を取り込めます。やり取りは双方向で行えます。</p>
 <h3 id="setup-once">設定（1回のみ） </h3>
 <ol>
-<li><strong>Google Cloud</strong> — <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>でプロジェクトを作成し、<strong>Google Sheets API</strong>を有効にします。
+<li><strong>Google Cloud</strong> — <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>でプロジェクトを作成し、<strong>Google Sheets API</strong>と<strong>Google Drive API</strong>を有効にします。
 <strong>OAuth consent screen</strong>で<strong>External</strong>を選択し、自分と翻訳者を<strong>Test users</strong>として追加します。次に、種類が<strong>Desktop app</strong>の<strong>OAuth client ID</strong>を作成し、<strong>Client ID</strong>と<strong>Client secret</strong>をコピーします。</li>
 <li><strong>Unity</strong> — <strong>Tools ▸ SubVox Pro ▸ Google Sheets Localization</strong>を開き、Client IDとClient secretを貼り付けて
 <strong>Connect</strong>をクリックし、ブラウザでサインインします。</li>
-<li><strong>シート</strong> — <strong>New sheet</strong>の横に名前を入力して<strong>Create</strong>をクリックすると、Google ドライブのルート（<strong>マイドライブ</strong>、あとで自由に移動できます）にシートが作成され、ボイスラインが書き込まれ、IDが入力されます。既存のシートを使う場合は、URLからID（<code>/d/</code>と<code>/edit</code>の間）を貼り付けます。翻訳者に<strong>Editor</strong>権限で共有します。</li>
+<li><strong>シート</strong> — <strong>New sheet</strong>の横に名前を入力して<strong>Create</strong>をクリックすると、Google ドライブのルート（<strong>マイドライブ</strong>、あとで自由に移動できます）にシートが作成され、ボイスラインが書き込まれ、IDが入力されます。同じ名前のシートがすでにある場合は、<strong>Replace</strong>（古いシートはドライブのゴミ箱へ移動し、30日間復元できます）または<strong>Rename</strong>（新しいシートの名前は「…(2)」）を選びます。既存のシートを使う場合は、URLからID（<code>/d/</code>と<code>/edit</code>の間）を貼り付けます。翻訳者に<strong>Editor</strong>権限で共有します。</li>
 </ol>
 <h3 id="every-day">日常の作業 </h3>
 <ol>

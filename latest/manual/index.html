@@ -1827,13 +1827,14 @@ resume where they stopped.</p>
 <p>Hand your lines to translators in a shared Google Sheet and bring their work back, in both directions.</p>
 <h3 id="setup-once">Setup (once)</h3>
 <ol>
-<li><strong>Google Cloud</strong> — at <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>, create a project and enable the <strong>Google Sheets API</strong>.
+<li><strong>Google Cloud</strong> — at <a href="https://console.cloud.google.com">https://console.cloud.google.com</a>, create a project and enable the <strong>Google Sheets API</strong> and the <strong>Google Drive API</strong>.
 Under <strong>OAuth consent screen</strong>, choose <strong>External</strong> and add yourself and your translators as <strong>Test users</strong>.
 Then create an <strong>OAuth client ID</strong> of type <strong>Desktop app</strong> and copy its <strong>Client ID</strong> and <strong>Client secret</strong>.</li>
 <li><strong>Unity</strong> — open <strong>Tools ▸ SubVox Pro ▸ Google Sheets Localization</strong>, paste the Client ID and Client secret,
 click <strong>Connect</strong>, then sign in in the browser.</li>
 <li><strong>The Sheet</strong> — type a name next to <strong>New sheet</strong> and click <strong>Create</strong>: the Sheet is created at the root of your
-Google Drive (<strong>My Drive</strong>, move it anywhere afterwards), filled with your voice lines, and its ID is filled in. To use an existing Sheet instead, paste its ID from the URL (between <code>/d/</code> and
+Google Drive (<strong>My Drive</strong>, move it anywhere afterwards), filled with your voice lines, and its ID is filled in. If a Sheet with that name already exists, choose <strong>Replace</strong> (the old one goes to the
+Drive trash, restorable for 30 days) or <strong>Rename</strong> (the new one is named “… (2)”). To use an existing Sheet instead, paste its ID from the URL (between <code>/d/</code> and
 <code>/edit</code>). Share the Sheet as <strong>Editor</strong> with your translators.</li>
 </ol>
 <h3 id="every-day">Every day</h3>

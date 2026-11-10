@@ -1885,14 +1885,15 @@ Arbeit zurück, in beide Richtungen.</p>
 <h3 id="setup-once">Einrichtung (einmalig) </h3>
 <ol>
 <li><strong>Google Cloud</strong>: Erstellen Sie unter <a href="https://console.cloud.google.com">https://console.cloud.google.com</a> ein Projekt und aktivieren Sie die
-<strong>Google Sheets API</strong>. Wählen Sie unter <strong>OAuth consent screen</strong> die Option <strong>External</strong> und fügen Sie sich selbst
+<strong>Google Sheets API</strong> und die <strong>Google Drive API</strong>. Wählen Sie unter <strong>OAuth consent screen</strong> die Option <strong>External</strong> und fügen Sie sich selbst
 sowie Ihre Übersetzer als <strong>Test users</strong> hinzu. Erstellen Sie dann eine <strong>OAuth client ID</strong> vom Typ <strong>Desktop app</strong>
 und kopieren Sie deren <strong>Client ID</strong> und <strong>Client secret</strong>.</li>
 <li><strong>Unity</strong>: Öffnen Sie <strong>Tools ▸ SubVox Pro ▸ Google Sheets Localization</strong>, fügen Sie Client ID und Client secret
 ein, klicken Sie auf <strong>Connect</strong> und melden Sie sich im Browser an.</li>
 <li><strong>Die Tabelle</strong>: Geben Sie neben <strong>New sheet</strong> einen Namen ein und klicken Sie auf <strong>Create</strong>: Die Tabelle wird im
 Stammverzeichnis Ihres Google Drive (<strong>Meine Ablage</strong>, danach beliebig verschiebbar) erstellt, mit Ihren Voice Lines
-gefüllt und ihre ID eingetragen. Für eine vorhandene Tabelle fügen Sie stattdessen ihre ID aus der URL ein (zwischen <code>/d/</code> und
+gefüllt und ihre ID eingetragen. Gibt es bereits eine Tabelle mit diesem Namen, wählen Sie <strong>Replace</strong> (die alte
+wandert in den Drive-Papierkorb, 30 Tage wiederherstellbar) oder <strong>Rename</strong> (die neue heißt „… (2)“). Für eine vorhandene Tabelle fügen Sie stattdessen ihre ID aus der URL ein (zwischen <code>/d/</code> und
 <code>/edit</code>). Geben Sie die Tabelle Ihren Übersetzern mit der Rolle <strong>Editor</strong> frei.</li>
 </ol>
 <h3 id="every-day">Täglicher Ablauf </h3>
