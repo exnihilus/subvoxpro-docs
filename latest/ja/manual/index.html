@@ -142,9 +142,9 @@ macOSおよびLinuxのエディターでも動作すると考えられますが�
 <h2 id="quick-start">クイックスタート </h2>
 <p>1つのオーディオクリップから、数分で画面上に音声と同期した字幕を表示できます。</p>
 <h4 id="hub">Hub</h4>
-<p>SubVox Proのすべての機能には、<strong>Tools ▸ SubVox Pro ▸ Hub</strong>からワンクリックでアクセスできます。<strong>9個のタイル</strong>から、ボイスラインエディター（およびバッチ処理）、Dub Booth、Google Sheets、AIアシスタント用のMCPサーバー、追加のオフラインモデル、プロバイダーの比較、ドキュメント、サンプルシーン、設定を開けます。</p>
+<p>SubVox Proのすべての機能には、<strong>Tools ▸ SubVox Pro ▸ Hub</strong>からワンクリックでアクセスできます。<strong>9個のタイル</strong>から、ボイスラインエディター（およびバッチ処理）、Dub Booth、Google Sheets、AIアシスタント用のMCPサーバー、モデル（オフラインモデルとプロバイダーの比較）、用語集、ドキュメント、サンプルシーン、設定を開けます。</p>
 <p><img alt="9個のツールタイルを備えたSubVox Pro Hub" src="Images/subvoxpro-hub.png"/></p>
-<p><strong>Voice Lines</strong>を選択すると2つ目の画面が開き、<strong>Voice Line Editor</strong>と、複数のファイルを一度に処理する<strong>Batch Processing</strong>を選べます（<strong>Back</strong>でタイルに戻ります）。<strong>Documentation</strong>を選択すると、別の画面が開きます。</p>
+<p><strong>Voice Lines</strong>を選択すると2つ目の画面が開き、<strong>Voice Line Editor</strong>と、複数のファイルを一度に処理する<strong>Batch Processing</strong>を選べます（<strong>Back</strong>でタイルに戻ります）。<strong>Models</strong>では<strong>Local Models</strong>（オフラインエンジン）と<strong>Provider Comparison</strong>を開けます。<strong>Documentation</strong>を選択すると、別の画面が開きます。</p>
 <table>
 <thead>
 <tr>
@@ -262,7 +262,7 @@ SubVox.Play(myVoiceLine);
 <p>ボイスラインにすでに字幕がある場合、録音ウィンドウの「<strong>Read along</strong>」にその字幕が表示され、テキストを読みながら吹き替えを録音できます。読む言語をドロップダウンで選択します（または「<strong>Off</strong>」）。</p>
 <p>話すと、認識された単語は<strong>緑</strong>に、飛ばされた単語は<strong>赤</strong>に変わります。テキストは1行ずつスクロールし、直前の行も表示されたままになります。</p>
 <ul>
-<li>すべてお使いのコンピューター上で無料で動作します。<strong>Parakeet</strong> またはローカルの <strong>Whisper</strong> モデルが必要です（<strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>）。複数インストールされている場合は、言語の横のメニューで使用するものを選択します。</li>
+<li>すべてお使いのコンピューター上で無料で動作します。<strong>Parakeet</strong> またはローカルの <strong>Whisper</strong> モデルが必要です（<strong>Tools ▸ SubVox Pro ▸ Local Models</strong>）。複数インストールされている場合は、言語の横のメニューで使用するものを選択します。</li>
 <li>「<strong>Retake</strong>」を押すとテイクを破棄し、すぐに録音をやり直します。</li>
 <li>「<strong>Listen</strong>」は再生マーカーの位置からテイクを再生します。波形をクリックまたはドラッグするとマーカーを移動でき、「<strong>Stop</strong>」で止めた位置にマーカーが残ります。<strong>Space</strong>キーでも再生と停止を切り替えられます。</li>
 <li>「<strong>Stop</strong>」の後、テイク全体がもう一度確認されます。実際に言った赤い単語はクリックして承認できます。</li>
@@ -292,7 +292,7 @@ SubVox.Play(myVoiceLine);
 </li>
 <li>聞いて比べるか（下の表を参照）、<strong>Redo</strong> で録り直します。バンドを左右にドラッグして聞きたい位置に移動し、<strong>Space</strong> を押します。</li>
 <li><strong>Validate &amp; next</strong>（または <strong>Enter</strong>）でテイクを確定し、次に録音するラインへ進みます。<strong>Unvalidate</strong> で確定を取り消せます。</li>
-<li><strong>Build dub</strong> は確定したテイクを原音のタイムライン上に配置し、その言語の吹き替えとして追加します（<strong>Original</strong> の場合は <strong>Replace original</strong>）。その後、モデルをインストールしなくても、単語のタイミングが 1 行ずつテイクに合わせて設定されます。さらに正確なタイミングが必要な場合は、<strong>Qwen3</strong> の単語タイミング（Additional Models）をインストールしてください。</li>
+<li><strong>Build dub</strong> は確定したテイクを原音のタイムライン上に配置し、その言語の吹き替えとして追加します（<strong>Original</strong> の場合は <strong>Replace original</strong>）。その後、モデルをインストールしなくても、単語のタイミングが 1 行ずつテイクに合わせて設定されます。さらに正確なタイミングが必要な場合は、<strong>Qwen3</strong> の単語タイミング（Local Models）をインストールしてください。</li>
 </ol>
 <h4 id="テイクを聞いて比べる">テイクを聞いて比べる</h4>
 <table>
@@ -578,6 +578,42 @@ SubVox.Play(myVoiceLine);
 <li>ボイスライン全体の<strong>コンテキスト</strong>（吹き出しボタン）。</li>
 <li>必要に応じて、個々の字幕への注釈（リスト内の該当する字幕の吹き出しボタン）。</li>
 </ul>
+<h4 id="用語集">用語集</h4>
+<p>用語集を使うと、名前、地名、ゲーム用語がすべての翻訳で同じ語に統一されます。たとえば「Aria」は「Aria」のまま、「Iron Gate」は常に「鉄の門」に翻訳されます。</p>
+<ol>
+<li><strong>Tools ▸ SubVox Pro ▸ Glossaries</strong>（Hubのタイルからも開けます）を開き、「<strong>New</strong>」をクリックします。用語集はいくつでも作成できます。たとえばゲームごと、キャラクターごとに作成できます。</li>
+<li><strong>Source language</strong>でボイスラインの言語を選択し、翻訳する言語ごとに「<strong>Add a language…</strong>」で追加します。</li>
+<li>「<strong>Add term</strong>」をクリックして行を入力します。ソースの字幕に書かれているとおりの<strong>Term</strong>、翻訳者向けの任意の<strong>Note</strong>（誰か、何か）、各言語の訳語です。決して翻訳してはならない名前には<strong>Keep</strong>にチェックを入れます。</li>
+<li>「<strong>Translation</strong>」タブの<strong>Glossary</strong>で用語集を選択します（「<strong>Edit</strong>」で開きます）。<strong>Batch Processing</strong>には専用の<strong>Glossary</strong>の選択があります。</li>
+</ol>
+<p>送信されるのは、翻訳する字幕に含まれる用語だけなので、大きな用語集でも処理が遅くなることはありません。各プロバイダーには、最も理解しやすい形式で渡されます。</p>
+<table>
+<thead>
+<tr>
+<th>プロバイダー</th>
+<th>用語集の使われ方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DeepL</strong></td>
+<td>DeepL独自の用語集機能（一度作成して再利用）</td>
+</tr>
+<tr>
+<td><strong>OpenAI、Claude、Gemini、DeepSeek</strong></td>
+<td>必須の指示として渡されます。文法（複数形、性、格）は引き続き調整されます</td>
+</tr>
+<tr>
+<td><strong>Hy-MT2</strong>（オフライン）</td>
+<td>参考訳として渡されます</td>
+</tr>
+<tr>
+<td><strong>Google Translate</strong></td>
+<td><strong>Keep</strong>の用語だけが保護され、訳語は適用されません</td>
+</tr>
+</tbody>
+</table>
+<p>翻訳のたびに、SubVox Proは結果を確認し、字幕に用語が含まれていない場合に警告します（例：<code>Glossary (ja): "鉄の門" missing in 1 line.</code>）。自動では何も変更されないので、該当する字幕を確認し、必要に応じて修正してください。「<strong>Fix splits</strong>」で用語集の用語が分割されることはありません。</p>
 <h4 id="翻訳の同期">翻訳の同期</h4>
 <table>
 <thead>
@@ -1426,7 +1462,7 @@ private void Shake()
 <hr/>
 <h2 id="offline-engines-no-account-no-api-key">オフラインエンジン（アカウント不要、API key不要） </h2>
 <p><strong>Windows</strong>のUnityエディターでは、SubVox Proのすべての処理を、お使いのマシン上でオフラインかつ無料で実行できます。各エンジンは一度ダウンロードするだけで（プロバイダーの横のボタンには「<strong>Setup model</strong>」または「<strong>Install…</strong>」と表示されます）、すべてのプロジェクトで共有されます。グラフィックスカードがあると処理速度が大幅に向上しますが、なくても動作します。</p>
-<p>「<strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>」（Hubのタイルからも開けます）では、すべてのエンジンが1つのウィンドウに一覧表示され、各エンジンのステータスと、その説明を表示する<strong>?</strong>が確認できます。</p>
+<p>「<strong>Tools ▸ SubVox Pro ▸ Local Models</strong>」（Hubのタイルからも開けます）では、すべてのエンジンが1つのウィンドウに一覧表示され、各エンジンのステータスと、その説明を表示する<strong>?</strong>が確認できます。</p>
 <ul>
 <li>エンジン名をクリックすると展開され、モデルの選択、<strong>System requirements</strong>（最小および推奨のPC環境。既定では折りたたまれています）、「<strong>Download</strong>」ボタンが表示されます。Chatterboxの日本語モジュールは、Chatterboxをインストールするとここに表示されます。</li>
 <li>右側のフォルダーアイコンで、インストール先のフォルダーを開きます。</li>
@@ -1635,8 +1671,8 @@ private void Shake()
 </li>
 <li><strong>Project languages</strong> — ゲームの言語です。言語を選ぶすべての場所（Voice Line Managerの<strong>Current Language</strong>など）で一覧の先頭に表示され、その他の言語もその下から選べます。既定は英語です。<strong>Add languages</strong>をクリックして必要な言語をチェックし、外すにはチェックを外します。</li>
 <li><strong>Data folder</strong> — 新しいボイスライン、話者、吹き替え音声の作成先です。</li>
-<li><strong>Cloud Model Catalog</strong> — クラウドAIモデルとその価格を表示し、オンラインで更新します。<strong>Manage models</strong>では、まだ一覧にないモデルを追加できます。ローカルモデルは<strong>Additional Models</strong>と各プロバイダーの操作機能を使って選択・インストールします。</li>
-<li><strong>Local models &amp; services</strong> — インストール済みの各オフラインエンジンと、そのオプション（グラフィックスカードの使用、Chatterboxの表現力）、インストール画面を開く小さな設定ボタンが表示されます。ほかのエンジンは<strong>Additional Models…</strong>でインストールします。また、ElevenLabsのボイスクローンを整理・削除できます。</li>
+<li><strong>Cloud Model Catalog</strong> — クラウドAIモデルとその価格を表示し、オンラインで更新します。<strong>Manage models</strong>では、まだ一覧にないモデルを追加できます。ローカルモデルは<strong>Local Models</strong>と各プロバイダーの操作機能を使って選択・インストールします。</li>
+<li><strong>Local models &amp; services</strong> — インストール済みの各オフラインエンジンと、そのオプション（グラフィックスカードの使用、Chatterboxの表現力）、インストール画面を開く小さな設定ボタンが表示されます。ほかのエンジンは<strong>Local Models…</strong>でインストールします。また、ElevenLabsのボイスクローンを整理・削除できます。</li>
 </ul>
 <hr/>
 <h2 id="keyboard-and-mouse">キーボードとマウス </h2>

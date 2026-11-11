@@ -141,9 +141,9 @@
 <h2 id="quick-start">快速入门 </h2>
 <p>只需几分钟，即可将一个音频剪辑转换为屏幕上的同步字幕。</p>
 <h4 id="hub">Hub</h4>
-<p>SubVox Pro 的所有功能也都可通过 <strong>Tools ▸ SubVox Pro ▸ Hub</strong> 一键访问：<strong>九张功能卡片</strong>可打开台词资源编辑器（及批量处理）、Dub Booth、Google Sheets、面向 AI 助手的 MCP 服务器、附加的离线模型、提供商比较、文档、示例场景和设置。</p>
+<p>SubVox Pro 的所有功能也都可通过 <strong>Tools ▸ SubVox Pro ▸ Hub</strong> 一键访问：<strong>九张功能卡片</strong>可打开台词资源编辑器（及批量处理）、Dub Booth、Google Sheets、面向 AI 助手的 MCP 服务器、模型（离线模型和提供商比较）、术语表、文档、示例场景和设置。</p>
 <p><img alt="SubVox Pro Hub 及其九张工具卡片" src="Images/subvoxpro-hub.png"/></p>
-<p>点击 <strong>Voice Lines</strong> 会打开第二个界面，其中包含 <strong>Voice Line Editor</strong> 和用于一次处理多个文件的 <strong>Batch Processing</strong>（点击 <strong>Back</strong> 可返回主界面）。点击 <strong>Documentation</strong> 会打开另一个界面：</p>
+<p>点击 <strong>Voice Lines</strong> 会打开第二个界面，其中包含 <strong>Voice Line Editor</strong> 和用于一次处理多个文件的 <strong>Batch Processing</strong>（点击 <strong>Back</strong> 可返回主界面）。点击 <strong>Models</strong> 可打开 <strong>Local Models</strong>（离线引擎）和 <strong>Provider Comparison</strong>。点击 <strong>Documentation</strong> 会打开另一个界面：</p>
 <table>
 <thead>
 <tr>
@@ -261,7 +261,7 @@ SubVox.Play(myVoiceLine);
 <p>如果台词已有字幕，录音窗口会在 <strong>Read along</strong> 中显示字幕，方便您一边朗读文本一边录制配音。在下拉菜单中选择要朗读的语言（或 <strong>Off</strong>）。</p>
 <p>说话时，被识别的词会变为<strong>绿色</strong>，被跳过的词会变为<strong>红色</strong>。文本每次滚动一行，并保留上一行可见。</p>
 <ul>
-<li>全部在您的电脑上免费运行：需要 <strong>Parakeet</strong> 或本地 <strong>Whisper</strong> 模型（<strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>）。如果安装了多个，可在语言旁边的菜单中选择要使用的一个。</li>
+<li>全部在您的电脑上免费运行：需要 <strong>Parakeet</strong> 或本地 <strong>Whisper</strong> 模型（<strong>Tools ▸ SubVox Pro ▸ Local Models</strong>）。如果安装了多个，可在语言旁边的菜单中选择要使用的一个。</li>
 <li><strong>Retake</strong> 会丢弃当前录音并立即重新开始录音。</li>
 <li><strong>Listen</strong> 从播放标记处播放录音。在波形上点击或拖动即可移动标记；<strong>Stop</strong> 会把标记留在停止的位置。按 <strong>Space</strong> 键也可以播放或停止录音。</li>
 <li>点击 <strong>Stop</strong> 后，会再次检查整段录音。对于您确实说出的红色词，可以点击接受。</li>
@@ -291,7 +291,7 @@ SubVox.Play(myVoiceLine);
 </li>
 <li>试听并比较（见下表），或点击 <strong>Redo</strong> 重录。左右拖动滚动条可移到想听的位置，然后按 <strong>Space</strong>。</li>
 <li><strong>Validate &amp; next</strong>（或 <strong>Enter</strong>）确认该录音并转到下一句待录台词。<strong>Unvalidate</strong> 可撤销确认。</li>
-<li><strong>Build dub</strong> 将保留的录音放到原声时间轴上，并作为该语言的配音添加（对于 <strong>Original</strong> 则为 <strong>Replace original</strong>）。随后会逐行按您的录音为各词定时，无需安装任何模型。如需更精确的时间，请安装 <strong>Qwen3</strong> 词级时间对齐（Additional Models）。</li>
+<li><strong>Build dub</strong> 将保留的录音放到原声时间轴上，并作为该语言的配音添加（对于 <strong>Original</strong> 则为 <strong>Replace original</strong>）。随后会逐行按您的录音为各词定时，无需安装任何模型。如需更精确的时间，请安装 <strong>Qwen3</strong> 词级时间对齐（Local Models）。</li>
 </ol>
 <h4 id="试听和比较录音">试听和比较录音</h4>
 <table>
@@ -577,6 +577,42 @@ SubVox.Play(myVoiceLine);
 <li>为整个台词资源填写<strong>整体上下文</strong>（通过对话气泡按钮）；</li>
 <li>如有需要，还可为单条字幕添加备注（通过列表中该字幕的对话气泡按钮）。</li>
 </ul>
+<h4 id="术语表">术语表</h4>
+<p>术语表可让每次翻译都对您的人名、地名和游戏术语使用相同的译法：“Aria”保持为“Aria”，“Iron Gate”始终译为“铁门”。</p>
+<ol>
+<li>打开 <strong>Tools ▸ SubVox Pro ▸ Glossaries</strong>（也可通过 Hub 中的卡片打开），然后点击 <strong>New</strong>。您可以创建任意数量的术语表，例如每个游戏或每个角色一个。</li>
+<li>在 <strong>Source language</strong> 中选择台词资源的语言，然后通过 <strong>Add a language…</strong> 添加每种翻译语言。</li>
+<li>点击 <strong>Add term</strong> 并填写一行：源字幕中写法的 <strong>Term</strong>、给译者的可选 <strong>Note</strong>（是谁或是什么），以及每种语言的译法。对于绝不能翻译的名称，请勾选 <strong>Keep</strong>。</li>
+<li>在 <strong>Translation</strong> 选项卡的 <strong>Glossary</strong> 中选择术语表（<strong>Edit</strong> 可将其打开）。<strong>Batch Processing</strong> 有自己的 <strong>Glossary</strong> 选项。</li>
+</ol>
+<p>只会发送待翻译字幕中出现的术语，因此大型术语表也不会拖慢速度。每个提供商都会以其最能理解的形式接收术语：</p>
+<table>
+<thead>
+<tr>
+<th>提供商</th>
+<th>术语表的使用方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DeepL</strong></td>
+<td>使用其自带的术语表功能，创建一次后重复使用</td>
+</tr>
+<tr>
+<td><strong>OpenAI、Claude、Gemini、DeepSeek</strong></td>
+<td>作为必须遵守的指令；语法仍会相应调整（复数、性、格）</td>
+</tr>
+<tr>
+<td><strong>Hy-MT2</strong>（离线）</td>
+<td>作为参考译文</td>
+</tr>
+<tr>
+<td><strong>Google Translate</strong></td>
+<td>仅保护 <strong>Keep</strong> 术语；不会套用译法</td>
+</tr>
+</tbody>
+</table>
+<p>每次翻译后，SubVox Pro 都会检查结果，并在某行缺少术语时提醒您（例如 <code>Glossary (zh): "铁门" missing in 1 line.</code>）。系统不会替您做任何修改：请检查该行，必要时自行修正。<strong>Fix splits</strong> 绝不会把术语表中的术语拆开。</p>
 <h4 id="保持翻译同步">保持翻译同步</h4>
 <table>
 <thead>
@@ -1432,7 +1468,7 @@ private void Shake()
 <hr/>
 <h2 id="offline-engines-no-account-no-api-key">离线引擎（无需账户，无需 API 密钥） </h2>
 <p>在 <strong>Windows</strong> 上的 Unity 编辑器中，SubVox Pro 可在本机免费离线完成所有操作。每个引擎只需下载一次（其提供商选项旁边的按钮显示为 <strong>Setup model</strong> 或 <strong>Install…</strong>），并可供所有项目共享。配备显卡可显著提升运行速度，但即使没有显卡也能运行。</p>
-<p><strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>（也是 Hub 中的一个功能卡片）会在一个窗口中列出所有引擎，显示其状态，以及用于查看说明的 <strong>?</strong>。</p>
+<p><strong>Tools ▸ SubVox Pro ▸ Local Models</strong>（也是 Hub 中的一个功能卡片）会在一个窗口中列出所有引擎，显示其状态，以及用于查看说明的 <strong>?</strong>。</p>
 <ul>
 <li>点击引擎名称即可展开：其中有模型选择、<strong>System requirements</strong>（最低配置和推荐配置，默认折叠）和 <strong>Download</strong> 按钮。安装 Chatterbox 后，其日语模块也会显示在这里。</li>
 <li>右侧的文件夹图标可打开引擎的安装文件夹。</li>
@@ -1640,7 +1676,7 @@ private void Shake()
 </li>
 <li><strong>Project languages</strong> — 游戏的语言。在所有选择语言的地方（例如 Voice Line Manager 的 <strong>Current Language</strong>），它们都排在最前面，其他语言仍可在下方选择。默认设置为英语。点击 <strong>Add languages</strong> 并勾选所需的语言；取消勾选即可移除。</li>
 <li><strong>Data folder</strong> — 新建台词资源、说话者资源和配音的存储位置。</li>
-<li><strong>Cloud Model Catalog</strong> — 云端 AI 模型及其价格，在线更新。通过 <strong>Manage models</strong> 可添加尚未列出的模型。本地模型通过 <strong>Additional Models</strong> 和相应提供商的控件来选择和安装。</li>
+<li><strong>Cloud Model Catalog</strong> — 云端 AI 模型及其价格，在线更新。通过 <strong>Manage models</strong> 可添加尚未列出的模型。本地模型通过 <strong>Local Models</strong> 和相应提供商的控件来选择和安装。</li>
 <li><strong>Local models &amp; services</strong> — 各离线引擎及其状态（<strong>Ready</strong> 或 <strong>Not installed</strong>）、相关选项（显卡使用设置、Chatterbox 表现力）以及用于安装或设置的按钮；此外还可清理
 ElevenLabs 克隆声音。</li>
 </ul>

@@ -150,11 +150,12 @@ sollten auch unter macOS und Linux funktionieren, wurden dort jedoch noch nicht 
 <h4 id="der-hub">Der Hub</h4>
 <p>Alle Funktionen von SubVox Pro erreichen Sie mit einem Klick über <strong>Tools ▸ SubVox Pro ▸ Hub</strong>. Seine <strong>neun Kacheln</strong>
 öffnen den Voice Line Editor (und die Stapelverarbeitung), die Dub Booth, Google Sheets, den MCP-Server für
-KI-Assistenten, die zusätzlichen Offline-Modelle, den Anbietervergleich, die Dokumentation, die Beispielszenen und die
-Einstellungen.</p>
+KI-Assistenten, die Modelle (Offline-Modelle und Anbietervergleich), die Glossare, die Dokumentation, die
+Beispielszenen und die Einstellungen.</p>
 <p><img alt="Der SubVox Pro Hub mit seinen neun Werkzeugkacheln" src="Images/subvoxpro-hub.png"/></p>
 <p><strong>Voice Lines</strong> öffnet einen zweiten Bildschirm mit dem <strong>Voice Line Editor</strong> und <strong>Batch Processing</strong> für
-viele Dateien auf einmal (<strong>Back</strong> führt zu den Kacheln zurück). <strong>Documentation</strong> öffnet einen weiteren:</p>
+viele Dateien auf einmal (<strong>Back</strong> führt zu den Kacheln zurück). <strong>Models</strong> öffnet <strong>Local Models</strong> (die
+Offline-Engines) und <strong>Provider Comparison</strong>. <strong>Documentation</strong> öffnet einen weiteren:</p>
 <table>
 <thead>
 <tr>
@@ -301,7 +302,7 @@ Synchronisation aufnehmen und dabei den Text lesen. Wählen Sie die Sprache in d
 Der Text scrollt Zeile für Zeile mit, die vorige Zeile bleibt sichtbar.</p>
 <ul>
 <li>Alles läuft kostenlos auf Ihrem Computer: Dafür wird <strong>Parakeet</strong> oder ein lokales <strong>Whisper</strong>-Modell benötigt
-(<strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>). Sind mehrere installiert, wählen Sie im Menü neben der Sprache aus,
+(<strong>Tools ▸ SubVox Pro ▸ Local Models</strong>). Sind mehrere installiert, wählen Sie im Menü neben der Sprache aus,
 welches verwendet wird.</li>
 <li><strong>Retake</strong> verwirft die Aufnahme und startet sofort eine neue.</li>
 <li><strong>Listen</strong> spielt die Aufnahme ab der Wiedergabemarke ab. Klicken oder ziehen Sie in der Wellenform, um sie zu
@@ -350,7 +351,7 @@ oder rechts zu der Stelle, die Sie hören möchten, und drücken Sie dann die <s
 <li><strong>Build dub</strong> legt die behaltenen Aufnahmen auf die Zeitleiste des Originals und fügt sie als Synchronisation
 dieser Sprache hinzu (bei <strong>Original</strong>: <strong>Replace original</strong>). Anschließend werden die Wörter Zeile für Zeile
 auf Ihre Aufnahmen getimt, ohne dass ein Modell installiert werden muss. Installieren Sie das <strong>Qwen3</strong>-Wort-Timing
-(Additional Models) für noch genauere Timings.</li>
+(Local Models) für noch genauere Timings.</li>
 </ol>
 <h4 id="aufnahmen-anhören-und-vergleichen">Aufnahmen anhören und vergleichen</h4>
 <table>
@@ -683,6 +684,50 @@ wiederzuverwenden;</li>
 <li>ein <strong>globaler Kontext</strong> für die ganze Voice Line (Schaltfläche mit Sprechblasensymbol);</li>
 <li>bei Bedarf eine Anmerkung zu einer einzelnen Zeile (ihre Sprechblasen-Schaltfläche in der Liste).</li>
 </ul>
+<h4 id="glossare">Glossare</h4>
+<p>Ein Glossar sorgt dafür, dass jede Übersetzung dieselben Wörter für Ihre Namen, Orte und Spielbegriffe verwendet:
+„Aria“ bleibt „Aria“, „Iron Gate“ wird immer zu „Eisentor“.</p>
+<ol>
+<li>Öffnen Sie <strong>Tools ▸ SubVox Pro ▸ Glossaries</strong> (auch eine Kachel im Hub) und klicken Sie auf <strong>New</strong>. Sie können
+beliebig viele Glossare anlegen, zum Beispiel eines pro Spiel oder pro Figur.</li>
+<li>Wählen Sie unter <strong>Source language</strong> die Sprache Ihrer Voice Lines und dann <strong>Add a language…</strong> für jede Übersetzungssprache.</li>
+<li>Klicken Sie auf <strong>Add term</strong> und füllen Sie eine Zeile aus: den <strong>Term</strong>, wie er in Ihren Quellzeilen steht, eine
+optionale <strong>Note</strong> für den Übersetzer (wer oder was es ist) und die Übersetzung in jeder Sprache. Aktivieren Sie
+<strong>Keep</strong> für Namen, die nie übersetzt werden dürfen.</li>
+<li>Wählen Sie im Tab <strong>Translation</strong> das Glossar unter <strong>Glossary</strong> (<strong>Edit</strong> öffnet es). <strong>Batch Processing</strong> hat
+eine eigene Auswahl <strong>Glossary</strong>.</li>
+</ol>
+<p>Nur die Begriffe, die in den übersetzten Zeilen vorkommen, werden gesendet, ein großes Glossar bremst also nichts.
+Jeder Anbieter erhält sie in der Form, die er am besten versteht:</p>
+<table>
+<thead>
+<tr>
+<th>Anbieter</th>
+<th>Verwendung des Glossars</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DeepL</strong></td>
+<td>Die eigene Glossarfunktion, einmal angelegt und wiederverwendet</td>
+</tr>
+<tr>
+<td><strong>OpenAI, Claude, Gemini, DeepSeek</strong></td>
+<td>Als verbindliche Anweisungen; die Grammatik passt sich weiterhin an (Plural, Genus, Kasus)</td>
+</tr>
+<tr>
+<td><strong>Hy-MT2</strong> (offline)</td>
+<td>Als Referenzübersetzungen</td>
+</tr>
+<tr>
+<td><strong>Google Translate</strong></td>
+<td>Nur <strong>Keep</strong>-Begriffe werden geschützt; übersetzte Begriffe werden nicht angewendet</td>
+</tr>
+</tbody>
+</table>
+<p>Nach jeder Übersetzung prüft SubVox Pro das Ergebnis und warnt Sie, wenn ein Begriff in einer Zeile fehlt (zum
+Beispiel <code>Glossary (de): "Eisentor" missing in 1 line.</code>). Es wird nichts für Sie geändert: Lesen Sie die Zeile und
+korrigieren Sie sie bei Bedarf. <strong>Fix splits</strong> trennt einen Glossarbegriff nie auf.</p>
 <h4 id="übersetzungen-aktuell-halten">Übersetzungen aktuell halten</h4>
 <table>
 <thead>
@@ -1698,7 +1743,7 @@ Speaker-Änderungen lassen sich mit <strong>Strg+Z</strong> rückgängig machen.
 Jede Engine wird einmal heruntergeladen (die Schaltfläche neben ihrem Anbieter lautet <strong>Setup model</strong> oder
 <strong>Install…</strong>) und dann von all Ihren Projekten genutzt. Mit einer Grafikkarte laufen sie deutlich schneller,
 funktionieren aber auch ohne.</p>
-<p><strong>Tools ▸ SubVox Pro ▸ Additional Models</strong> (auch eine Kachel im Hub) fasst sie alle in einem Fenster zusammen, mit
+<p><strong>Tools ▸ SubVox Pro ▸ Local Models</strong> (auch im Hub, unter <strong>Models</strong>) fasst sie alle in einem Fenster zusammen, mit
 ihrem Status und einem <strong>?</strong>, das jede Engine beschreibt:</p>
 <ul>
 <li>Klicken Sie auf den Namen einer Engine, um sie aufzuklappen: Modellauswahl, <strong>System requirements</strong> (Mindest- und
@@ -1978,9 +2023,9 @@ nötig; entfernen Sie den Haken, um eine zu entfernen.</li>
 <li><strong>Data folder</strong>: hier werden neue Voice Lines, Speaker und Sprachfassungen erstellt.</li>
 <li><strong>Cloud Model Catalog</strong>: Cloud-KI-Modelle und ihre Preise, online aktuell gehalten. Über <strong>Manage models</strong> fügen Sie
 ein Modell hinzu, das noch nicht aufgeführt ist. Lokale Modelle wählen und installieren Sie in
-<strong>Additional Models</strong> und mit den Schaltflächen ihres Anbieters.</li>
+<strong>Local Models</strong> und mit den Schaltflächen ihres Anbieters.</li>
 <li><strong>Local models &amp; services</strong>: jede installierte Offline-Engine mit ihren Optionen (Grafikkarte, Ausdruckskraft von
-Chatterbox) und einer kleinen Einstellungsschaltfläche, die ihre Einrichtung öffnet; <strong>Additional Models…</strong>
+Chatterbox) und einer kleinen Einstellungsschaltfläche, die ihre Einrichtung öffnet; <strong>Local Models…</strong>
 installiert die anderen. Dazu kommt die Bereinigung der ElevenLabs-Stimmklone.</li>
 </ul>
 <hr/>

@@ -157,11 +157,12 @@ translation and dubbing without any account) need the <strong>Windows</strong> e
 <p>From one audio clip to synced subtitles on screen in a few minutes.</p>
 <h4 id="the-hub">The Hub</h4>
 <p>Everything in SubVox Pro is one click away in <strong>Tools ▸ SubVox Pro ▸ Hub</strong>. Its <strong>nine tiles</strong> open the voice line
-editor (and batch processing), the Dub Booth, Google Sheets, the MCP server for AI assistants, the additional
-(offline) models, the provider comparison, the documentation, the example scenes and the settings.</p>
+editor (and batch processing), the Dub Booth, Google Sheets, the MCP server for AI assistants, the models (offline
+models and provider comparison), the glossaries, the documentation, the example scenes and the settings.</p>
 <p><img src="Images/subvoxpro-hub.png" alt="The SubVox Pro Hub with its nine tool tiles"></p>
 <p><strong>Voice Lines</strong> opens a second screen with the <strong>Voice Line Editor</strong> and <strong>Batch Processing</strong>, for many
-files at once (<strong>Back</strong> returns to the tiles). <strong>Documentation</strong> opens another one:</p>
+files at once (<strong>Back</strong> returns to the tiles). <strong>Models</strong> opens <strong>Local Models</strong> (the offline engines) and
+<strong>Provider Comparison</strong>. <strong>Documentation</strong> opens another one:</p>
 <table>
 <thead>
 <tr>
@@ -300,7 +301,7 @@ while reading the text. Pick the language to read in the dropdown (or <strong>Of
 line at a time, keeping the previous line in view.</p>
 <ul>
 <li>It runs on your computer, for free: it needs <strong>Parakeet</strong> or a local <strong>Whisper</strong> model (<strong>Tools ▸ SubVox Pro ▸
-Additional Models</strong>). When several are installed, pick the one to use in the menu next to the language.</li>
+Local Models</strong>). When several are installed, pick the one to use in the menu next to the language.</li>
 <li><strong>Retake</strong> throws the take away and starts recording again right away.</li>
 <li><strong>Listen</strong> plays the take from the playback marker. Click or drag on the waveform to move the marker; <strong>Stop</strong>
 leaves it where you stopped. <strong>Space</strong> also plays and stops the take.</li>
@@ -342,7 +343,7 @@ you want to hear, then press <strong>Space</strong>.</li>
 <strong>Unvalidate</strong> takes it back.</li>
 <li><strong>Build dub</strong> places the kept takes on the original timeline and adds them as that language's dub (or, for
 <strong>Original</strong>, <strong>Replace original</strong>). Words are then timed on your takes, line by line, with no model to
-install. Install <strong>Qwen3</strong> word timing (Additional Models) for even more precise timings.</li>
+install. Install <strong>Qwen3</strong> word timing (Local Models) for even more precise timings.</li>
 </ol>
 <h4 id="listening-and-comparing-takes">Listening and comparing takes</h4>
 <table>
@@ -663,6 +664,50 @@ Use local alignment or a provider with word timestamps when timing matters.</p>
 <li>a <strong>global context</strong> for the whole voice line (speech-bubble button);</li>
 <li>if needed, a note on a single line (its speech-bubble button in the list).</li>
 </ul>
+<h4 id="glossaries">Glossaries</h4>
+<p>A glossary makes every translation use the same words for your names, places and game terms: &quot;Aria&quot; stays
+&quot;Aria&quot;, &quot;Iron Gate&quot; always becomes &quot;Porte de fer&quot;.</p>
+<ol>
+<li>Open <strong>Tools ▸ SubVox Pro ▸ Glossaries</strong> (also a tile of the Hub) and click <strong>New</strong>. You can create as many
+glossaries as you want, for example one per game or per character.</li>
+<li>Pick the <strong>Source language</strong> of your voice lines, then <strong>Add a language…</strong> for each translation language.</li>
+<li>Click <strong>Add term</strong> and fill in a row: the <strong>Term</strong> as it is written in your source lines, an optional <strong>Note</strong>
+for the translator (who or what it is), and its translation in each language. Check <strong>Keep</strong> for names that must
+never be translated.</li>
+<li>In the <strong>Translation</strong> tab, choose the glossary in <strong>Glossary</strong> (<strong>Edit</strong> opens it). <strong>Batch Processing</strong> has
+its own <strong>Glossary</strong> choice.</li>
+</ol>
+<p>Only the terms that appear in the lines being translated are sent, so a large glossary does not slow anything
+down. Each provider gets them in the form it understands best:</p>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>How the glossary is used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DeepL</strong></td>
+<td>Its own glossary feature, created once and reused</td>
+</tr>
+<tr>
+<td><strong>OpenAI, Claude, Gemini, DeepSeek</strong></td>
+<td>Given as mandatory instructions; the grammar still adapts (plural, gender, case)</td>
+</tr>
+<tr>
+<td><strong>Hy-MT2</strong> (offline)</td>
+<td>Given as reference translations</td>
+</tr>
+<tr>
+<td><strong>Google Translate</strong></td>
+<td>Only <strong>Keep</strong> terms are protected; translated terms are not applied</td>
+</tr>
+</tbody>
+</table>
+<p>After each translation, SubVox Pro checks the result and warns you when a term is missing from a line (for example
+<code>Glossary (fr): &quot;Porte de fer&quot; missing in 1 line.</code>). Nothing is changed for you: read the line and fix it if needed.
+<strong>Fix splits</strong> never cuts a glossary term in two.</p>
 <h4 id="keep-translations-in-sync">Keep translations in sync</h4>
 <table>
 <thead>
@@ -1650,7 +1695,7 @@ speaker changes can be undone with <strong>Ctrl+Z</strong>.</p>
 <p>On the <strong>Windows</strong> editor, SubVox Pro can do everything offline, for free, on your own machine. Each engine is
 downloaded once (the button next to its provider says <strong>Setup model</strong> or <strong>Install…</strong>) and shared by all your
 projects. A graphics card makes them much faster, but they also run without one.</p>
-<p><strong>Tools ▸ SubVox Pro ▸ Additional Models</strong> (also a tile of the Hub) lists them all in one window, with their status
+<p><strong>Tools ▸ SubVox Pro ▸ Local Models</strong> (also in the Hub, under <strong>Models</strong>) lists them all in one window, with their status
 and a <strong>?</strong> describing each one:</p>
 <ul>
 <li>Click an engine's name to unfold it: model choice, <strong>System requirements</strong> (the minimum and recommended computer,
@@ -1912,9 +1957,9 @@ API keys, deleting ElevenLabs voice clones and deleting a voice line always ask.
 set by default. Click <strong>Add languages</strong> and tick as many languages as you need; untick one to remove it.</li>
 <li><strong>Data folder</strong> — where new voice lines, speakers and dubs are created.</li>
 <li><strong>Cloud Model Catalog</strong> — cloud AI models and their prices, updated online. <strong>Manage models</strong> lets you add one that isn't
-listed yet. Local models are selected and installed through <strong>Additional Models</strong> and their provider's controls.</li>
+listed yet. Local models are selected and installed through <strong>Local Models</strong> and their provider's controls.</li>
 <li><strong>Local models &amp; services</strong> — each installed offline engine with its options (graphics card use, Chatterbox
-expressiveness) and a small settings button that opens its setup; <strong>Additional Models…</strong> installs the others. Plus
+expressiveness) and a small settings button that opens its setup; <strong>Local Models…</strong> installs the others. Plus
 the cleanup of ElevenLabs voice clones.</li>
 </ul>
 <hr>

@@ -146,11 +146,12 @@ devraient aussi fonctionner sous macOS et Linux, mais n’y ont pas encore été
 <p>D’un clip audio à des sous-titres synchronisés à l’écran, en quelques minutes.</p>
 <h4 id="le-hub">Le Hub</h4>
 <p>Tout SubVox Pro est à un clic dans <strong>Tools ▸ SubVox Pro ▸ Hub</strong>. Ses <strong>neuf tuiles</strong> ouvrent l’éditeur de voicelines
-(et le traitement par lot), le Dub Booth, Google Sheets, le serveur MCP pour les assistants IA, les modèles locaux
-supplémentaires, la comparaison des fournisseurs, la documentation, les scènes d’exemple et les réglages.</p>
+(et le traitement par lot), le Dub Booth, Google Sheets, le serveur MCP pour les assistants IA, les modèles (modèles
+locaux et comparaison des fournisseurs), les glossaires, la documentation, les scènes d’exemple et les réglages.</p>
 <p><img alt="Le Hub SubVox Pro avec ses neuf tuiles" src="Images/subvoxpro-hub.png"/></p>
 <p><strong>Voice Lines</strong> ouvre un second écran avec le <strong>Voice Line Editor</strong> et <strong>Batch Processing</strong>, pour
-traiter plusieurs fichiers d’un coup (<strong>Back</strong> revient aux tuiles). <strong>Documentation</strong> en ouvre un autre :</p>
+traiter plusieurs fichiers d’un coup (<strong>Back</strong> revient aux tuiles). <strong>Models</strong> ouvre <strong>Local Models</strong> (les
+moteurs hors ligne) et <strong>Provider Comparison</strong>. <strong>Documentation</strong> en ouvre un autre :</p>
 <table>
 <thead>
 <tr>
@@ -295,7 +296,7 @@ doublage en lisant le texte. Choisissez la langue à lire dans la liste (ou <str
 Le texte défile une ligne à la fois, en gardant la ligne précédente visible.</p>
 <ul>
 <li>Tout se passe sur votre ordinateur, gratuitement : il faut <strong>Parakeet</strong> ou un modèle <strong>Whisper</strong> local
-(<strong>Tools ▸ SubVox Pro ▸ Additional Models</strong>). Si plusieurs sont installés, choisissez celui à utiliser dans le menu
+(<strong>Tools ▸ SubVox Pro ▸ Local Models</strong>). Si plusieurs sont installés, choisissez celui à utiliser dans le menu
 à côté de la langue.</li>
 <li><strong>Retake</strong> jette la prise et relance l’enregistrement aussitôt.</li>
 <li><strong>Listen</strong> lit la prise à partir du marqueur de lecture. Cliquez ou glissez sur la forme d’onde pour le déplacer ;
@@ -341,7 +342,7 @@ ou la droite jusqu’au passage à écouter, puis appuyez sur <strong>Espace</st
 <strong>Unvalidate</strong> retire la validation.</li>
 <li><strong>Build dub</strong> place les prises gardées sur la timeline de l’original et les ajoute comme doublage de cette langue
 (ou, pour <strong>Original</strong>, <strong>Replace original</strong>). Les mots sont ensuite calés sur vos prises, ligne par ligne,
-sans modèle à installer. Installez le timing des mots <strong>Qwen3</strong> (Additional Models) pour des timings encore plus
+sans modèle à installer. Installez le timing des mots <strong>Qwen3</strong> (Local Models) pour des timings encore plus
 précis.</li>
 </ol>
 <h4 id="écouter-et-comparer-les-prises">Écouter et comparer les prises</h4>
@@ -664,6 +665,50 @@ durée du clip. Utilisez l’alignement local ou un fournisseur avec horodatage 
 <li>un <strong>contexte global</strong> pour toute la voiceline (bouton bulle) ;</li>
 <li>au besoin, une note sur une seule ligne (son bouton bulle dans la liste).</li>
 </ul>
+<h4 id="glossaires">Glossaires</h4>
+<p>Un glossaire fait employer à chaque traduction les mêmes mots pour vos noms, lieux et termes de jeu : « Aria » reste
+« Aria », « Iron Gate » devient toujours « Porte de fer ».</p>
+<ol>
+<li>Ouvrez <strong>Tools ▸ SubVox Pro ▸ Glossaries</strong> (aussi une tuile du Hub) et cliquez sur <strong>New</strong>. Vous pouvez créer
+autant de glossaires que vous voulez, par exemple un par jeu ou par personnage.</li>
+<li>Choisissez dans <strong>Source language</strong> la langue de vos voicelines, puis <strong>Add a language…</strong> pour chaque langue de traduction.</li>
+<li>Cliquez sur <strong>Add term</strong> et remplissez une ligne : le <strong>Term</strong> tel qu’il est écrit dans vos lignes source, une
+<strong>Note</strong> facultative pour le traducteur (qui ou ce que c’est) et sa traduction dans chaque langue. Cochez <strong>Keep</strong>
+pour les noms qui ne doivent jamais être traduits.</li>
+<li>Dans l’onglet <strong>Translation</strong>, choisissez le glossaire dans <strong>Glossary</strong> (<strong>Edit</strong> l’ouvre). <strong>Batch Processing</strong>
+a son propre choix <strong>Glossary</strong>.</li>
+</ol>
+<p>Seuls les termes présents dans les lignes traduites sont envoyés : un grand glossaire ne ralentit rien. Chaque
+fournisseur les reçoit sous la forme qu’il comprend le mieux :</p>
+<table>
+<thead>
+<tr>
+<th>Fournisseur</th>
+<th>Utilisation du glossaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DeepL</strong></td>
+<td>Sa propre fonction de glossaire, créée une fois puis réutilisée</td>
+</tr>
+<tr>
+<td><strong>OpenAI, Claude, Gemini, DeepSeek</strong></td>
+<td>Consignes obligatoires ; la grammaire s’adapte toujours (pluriel, genre, cas)</td>
+</tr>
+<tr>
+<td><strong>Hy-MT2</strong> (hors ligne)</td>
+<td>Traductions de référence</td>
+</tr>
+<tr>
+<td><strong>Google Translate</strong></td>
+<td>Seuls les termes <strong>Keep</strong> sont protégés ; les termes traduits ne sont pas appliqués</td>
+</tr>
+</tbody>
+</table>
+<p>Après chaque traduction, SubVox Pro vérifie le résultat et vous prévient quand un terme manque dans une ligne (par
+exemple <code>Glossary (fr): "Porte de fer" missing in 1 line.</code>). Rien n’est modifié à votre place : relisez la ligne et
+corrigez-la si besoin. <strong>Fix splits</strong> ne coupe jamais un terme du glossaire en deux.</p>
 <h4 id="garder-les-traductions-à-jour">Garder les traductions à jour</h4>
 <table>
 <thead>
@@ -1652,7 +1697,7 @@ traductions et les changements de texte ou de speaker s’annulent avec <strong>
 <p>Dans l’éditeur <strong>Windows</strong>, SubVox Pro peut tout faire sur votre machine, gratuitement et sans connexion. Chaque
 moteur se télécharge une seule fois (le bouton à côté de son fournisseur indique <strong>Setup model</strong> ou <strong>Install…</strong>) et
 sert ensuite à tous vos projets. Une carte graphique les accélère beaucoup, mais ils fonctionnent aussi sans.</p>
-<p><strong>Tools ▸ SubVox Pro ▸ Additional Models</strong> (aussi une tuile du Hub) les réunit tous dans une fenêtre, avec leur état
+<p><strong>Tools ▸ SubVox Pro ▸ Local Models</strong> (aussi dans le Hub, sous <strong>Models</strong>) les réunit tous dans une fenêtre, avec leur état
 et un <strong>?</strong> qui décrit chacun :</p>
 <ul>
 <li>Cliquez sur le nom d’un moteur pour le déplier : choix du modèle, <strong>System requirements</strong> (l’ordinateur minimum et
@@ -1924,9 +1969,9 @@ décochez-en une pour la retirer.</li>
 <li><strong>Data folder</strong> : dossier de création des nouvelles voicelines, des speakers et des doublages.</li>
 <li><strong>Cloud Model Catalog</strong> : les modèles d’IA cloud et leurs prix, tenus à jour en ligne. <strong>Manage models</strong> permet
 d’en ajouter un qui n’est pas encore listé. Les modèles locaux se sélectionnent et s’installent dans
-<strong>Additional Models</strong> et avec les boutons de leur fournisseur.</li>
+<strong>Local Models</strong> et avec les boutons de leur fournisseur.</li>
 <li><strong>Local models &amp; services</strong> : chaque moteur local installé, avec ses options (carte graphique, expressivité de
-Chatterbox) et un petit bouton de réglages qui ouvre son installation ; <strong>Additional Models…</strong> installe les autres.
+Chatterbox) et un petit bouton de réglages qui ouvre son installation ; <strong>Local Models…</strong> installe les autres.
 S’y ajoute le nettoyage des voix clonées sur ElevenLabs.</li>
 </ul>
 <hr/>
