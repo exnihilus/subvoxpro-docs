@@ -1592,6 +1592,8 @@ private void Shake()
 <li>点击 <strong>Sync with Sheet</strong>：SubVox Pro 会显示所有差异，一侧是 Unity，另一侧是表格。</li>
 <li>选择保留哪一方的内容：在此之前不会写入任何内容。</li>
 </ol>
+<p>差异窗口顶部的工具栏会统计每类变更的数量（将鼠标悬停在数量上可查看说明），并提供 <strong>Expand all</strong> / <strong>Collapse all</strong> 以及 <strong>Keep everywhere: Unity / Google Sheet</strong>，一次为所有行做出选择。在某条语音台词上点击 <strong>Ignore</strong>，即可将其排除在所有同步之外，直到你点击 <strong>Include</strong>：它在表格中的行和 Unity 资源都保持不变。</p>
+<p>默认会同步项目中的所有语音台词。在 <strong>Voice lines</strong> 下点击 <strong>Add folder…</strong> 可只同步部分文件夹（含子文件夹）；<strong>Whole project</strong> 恢复默认。这些文件夹之外的语音台词在表格中的行保持不变。</p>
 <p>在表格中：</p>
 <ul>
 <li><code>asset_name</code> 和 <code>id</code> 已被锁定。译员可以编辑翻译、<code>context</code> 备注和 <code>source</code> 文本；修改过的 <code>context</code> 或 <code>source</code> 会在下次同步时显示，由您选择保留哪个版本。</li>
