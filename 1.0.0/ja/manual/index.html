@@ -1587,8 +1587,8 @@ private void Shake()
 <li><strong>Sync with Sheet</strong>をクリックすると、SubVox ProがUnityとシートの内容を左右に並べてすべての相違点を表示します。</li>
 <li>採用する内容を選択します。それまでは何も書き込まれません。</li>
 </ol>
-<p>相違点ウィンドウ上部のバーには変更の種類ごとの件数が表示されます（件数にカーソルを合わせると詳細が出ます）。<strong>View</strong>メニューには<strong>Expand all</strong>、<strong>Expand voice lines</strong>（ラインのみ展開し、各ラインのセルは展開しない）、<strong>Collapse all</strong>があります。<strong>Keep everywhere: Unity / Google Sheet</strong>で全ラインをまとめて選べます。ボイスラインの<strong>Ignore</strong>をクリックすると、<strong>Include</strong>をクリックするまですべての同期から除外されます。シート上の行とUnityのアセットはそのまま残ります。</p>
-<p>既定ではプロジェクトのすべてのボイスラインが同期されます。<strong>Voice lines</strong>で<strong>Add folder…</strong>をクリックすると、特定のフォルダー（サブフォルダーを含む）だけを同期できます。<strong>Whole project</strong>で既定に戻ります。これらのフォルダー外のボイスラインは、シート上の行が変更されません。</p>
+<p>相違点ウィンドウ上部のバーには変更の種類ごとの件数が表示されます（件数にカーソルを合わせると詳細が出ます）。<strong>View</strong>メニューには<strong>Expand all</strong>、<strong>Expand voice lines</strong>（ラインのみ展開し、各ラインのセルは展開しない）、<strong>Collapse all</strong>があります。<strong>Keep everywhere: Unity / Google Sheet</strong>で全ラインをまとめて選べます。ボイスラインの<strong>Ignore</strong>をクリックすると、<strong>Include</strong>をクリックするまですべての同期から除外されます。シート上の行とUnityのアセットはそのまま残り、ラインはグレー表示になります。<strong>Keep</strong>、<strong>Push</strong>、<strong>Drop</strong>、<strong>Unity</strong>、<strong>Sheet</strong>の各ボタンにカーソルを合わせると、その働きが表示されます。</p>
+<p>既定ではプロジェクトのすべてのボイスラインが同期されます。特定のフォルダー（サブフォルダーを含む）だけを同期するには、<strong>Voice lines</strong>のドロップダウンを<strong>Selected folders</strong>にし、Projectウィンドウからフォルダーをエリアにドラッグするか、<strong>Add folder…</strong>をクリックします。これらのフォルダー外のボイスラインは、シート上の行が変更されません。<strong>Whole project</strong>に戻してもフォルダーの一覧は保持されます。</p>
 <p>シートでは：</p>
 <ul>
 <li><code>asset_name</code> と <code>id</code> はロックされています。翻訳者は翻訳、<code>context</code> のメモ、<code>source</code> のテキストを編集できます。変更された <code>context</code> や <code>source</code> は次回の同期で表示され、どちらを残すかを選べます。</li>
