@@ -1592,7 +1592,7 @@ private void Shake()
 <li>点击 <strong>Sync with Sheet</strong>：SubVox Pro 会显示所有差异，一侧是 Unity，另一侧是表格。</li>
 <li>选择保留哪一方的内容：在此之前不会写入任何内容。</li>
 </ol>
-<p>差异窗口顶部的工具栏会统计每类变更的数量（将鼠标悬停在数量上可查看说明），其 <strong>View</strong> 菜单提供 <strong>Expand all</strong>、<strong>Expand voice lines</strong>（只展开台词行，不展开每行的单元格）和 <strong>Collapse all</strong>；<strong>Keep everywhere: Unity / Google Sheet</strong> 一次为所有行做出选择。在某条语音台词上点击 <strong>Ignore</strong>，即可将其排除在所有同步之外，直到你点击 <strong>Include</strong>：它在表格中的行和 Unity 资源都保持不变，其各行显示为灰色。右上角的 <strong>Ignore all</strong> 可一次忽略所有语音台词（<strong>Include all</strong> 将其恢复）。将鼠标悬停在 <strong>Keep</strong>、<strong>Push</strong>、<strong>Skip</strong>、<strong>Drop</strong>、<strong>Unity</strong> 或 <strong>Sheet</strong> 按钮上，可查看其作用。</p>
+<p>差异窗口顶部的工具栏会统计每类变更的数量（将鼠标悬停在数量上可查看说明），其 <strong>View</strong> 菜单提供 <strong>Expand all</strong>、<strong>Expand voice lines</strong>（只展开台词行，不展开每行的单元格）和 <strong>Collapse all</strong>；<strong>Conflicts: Unity / Google Sheet</strong> 一次为所有差异选择一方。如有其他情况，第三行会分别处理：<strong>New Unity lines: Push / Skip</strong> 和 <strong>Sheet-only rows: Drop / Keep</strong>。在某条语音台词上点击 <strong>Ignore</strong>，即可将其排除在所有同步之外，直到你点击 <strong>Include</strong>：它在表格中的行和 Unity 资源都保持不变，其各行显示为灰色。右上角的 <strong>Ignore all</strong> 可一次忽略所有语音台词（<strong>Include all</strong> 将其恢复）。将鼠标悬停在 <strong>Keep</strong>、<strong>Push</strong>、<strong>Skip</strong>、<strong>Drop</strong>、<strong>Unity</strong> 或 <strong>Sheet</strong> 按钮上，可查看其作用。</p>
 <p>默认会同步项目中的所有语音台词。若只同步部分文件夹（含子文件夹），请将 <strong>Voice lines</strong> 的下拉菜单设为 <strong>Selected folders</strong>，然后从 Project 窗口将文件夹拖入该区域，或点击 <strong>Add folder…</strong>。这些文件夹之外的语音台词在表格中的行保持不变。切回 <strong>Whole project</strong> 时会保留你的文件夹列表。</p>
 <p>在表格中：</p>
 <ul>
