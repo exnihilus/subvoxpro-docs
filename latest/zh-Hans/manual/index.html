@@ -222,7 +222,7 @@ SubVox.Play(myVoiceLine);
 </ul>
 <p><img alt="源语言选择器显示语言名称、代码和旗帜" src="Images/subvoxpro-language-picker.png"/></p>
 <h3 id="starting-without-audio">无音频起步 </h3>
-<img alt="Add a subtitles track: import an .srt file, import a .txt file or add lines manually" src="Images/subvoxpro-new-voice-line-subtitles.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<img alt="Add a subtitles track: import an .srt file, import a .txt file or write a new track" src="Images/subvoxpro-new-voice-line-subtitles.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p>台词资源可以从文本开始，而不使用音频。选择 <strong>Add a subtitles track</strong>，然后：</p>
 <table>
 <thead>
@@ -241,8 +241,8 @@ SubVox.Play(myVoiceLine);
 <td>每行一条字幕，按适宜的阅读速度自动设置时间</td>
 </tr>
 <tr>
-<td>手动输入</td>
-<td>你自己输入的字幕文本</td>
+<td><strong>Write a new track</strong></td>
+<td>一条空轨道，由你自己输入台词</td>
 </tr>
 </tbody>
 </table>
@@ -377,6 +377,7 @@ SubVox.Play(myVoiceLine);
 <li><strong>Add a new track</strong>：选择其语言，将其添加为新的翻译。</li>
 </ul>
 <p>翻译会保留原始台词的时间轴：每条导入的台词会对应到相同位置的原始台词；如果 <code>.srt</code> 的行数不同，则对应到该时刻正在播放的原始台词。</p>
+<p>同一 <strong>+</strong> 菜单中的 <strong>Write a new track</strong> 会添加一条空轨道：对于还没有台词的台词资源，它是原始字幕；否则是你所选语言的翻译，你在其中输入每条原始台词的文本。要向正在编辑的字幕添加一条台词，请点击 Subtitles 列表顶部 <strong>Export SRT</strong> 下方的 <strong>+ Add line</strong>。</p>
 <h3 id="checking-your-subtitles">检查字幕 </h3>
 <ul>
 <li><strong>Show CPS</strong>（位于 <a href="#settings">Settings</a>）会显示每条字幕的阅读速度，并标记阅读速度过快的字幕。</li>

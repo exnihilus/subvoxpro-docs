@@ -223,7 +223,7 @@ SubVox.Play(myVoiceLine);
 </ul>
 <p><img alt="言語名、コード、旗アイコンが表示されたソース言語ピッカー" src="Images/subvoxpro-language-picker.png"/></p>
 <h3 id="starting-without-audio">オーディオなしで開始 </h3>
-<img alt="Add a subtitles track: import an .srt file, import a .txt file or add lines manually" src="Images/subvoxpro-new-voice-line-subtitles.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
+<img alt="Add a subtitles track: import an .srt file, import a .txt file or write a new track" src="Images/subvoxpro-new-voice-line-subtitles.png" style="display: block; max-width: 100%; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 8px; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.10); margin: 10px 0 18px;"/>
 <p>ボイスラインは、オーディオではなくテキストから作成できます。「<strong>Add a subtitles track</strong>」を選択し、次のいずれかを選びます。</p>
 <table>
 <thead>
@@ -242,8 +242,8 @@ SubVox.Play(myVoiceLine);
 <td>1行につき1つの字幕。読みやすい速度になるようにタイミングが自動設定されます</td>
 </tr>
 <tr>
-<td>字幕を直接入力</td>
-<td>自分で入力したライン</td>
+<td><strong>Write a new track</strong></td>
+<td>空のトラック。ラインは自分で入力します</td>
 </tr>
 </tbody>
 </table>
@@ -378,6 +378,7 @@ SubVox.Play(myVoiceLine);
 <li><strong>Add a new track</strong>：言語を選択して、新しい翻訳として追加します。</li>
 </ul>
 <p>翻訳は元のラインのタイミングを保持します。インポートされた各ラインは同じ位置にある元のラインに割り当てられます。ライン数が異なる<code>.srt</code>の場合は、その時刻に再生されている元のラインに割り当てられます。</p>
+<p>同じ<strong>+</strong>メニューの「<strong>Write a new track</strong>」は空のトラックを追加します。ラインのないボイスラインでは元の字幕、それ以外では選んだ言語の翻訳になり、元の各ラインのテキストを入力します。編集中の字幕にラインを1つ追加するには、Subtitlesリスト上部の「<strong>Export SRT</strong>」の下にある「<strong>+ Add line</strong>」をクリックします。</p>
 <h3 id="checking-your-subtitles">字幕の確認 </h3>
 <ul>
 <li>「<strong>Show CPS</strong>」（<a href="#settings">「Settings」</a>内）を有効にすると、各字幕の読み取り速度が表示され、速すぎる字幕が示されます。</li>
