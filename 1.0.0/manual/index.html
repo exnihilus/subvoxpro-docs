@@ -671,11 +671,12 @@ Use local alignment or a provider with word timestamps when timing matters.</p>
 <li>Open <strong>Tools ▸ SubVox Pro ▸ Glossaries</strong> (also a tile of the Hub) and click <strong>New</strong>. You can create as many
 glossaries as you want, for example one per game or per character.</li>
 <li>Pick the <strong>Source language</strong> of your voice lines, then tick every translation language in <strong>Target languages</strong>, or click a translation preset to use exactly its languages. Removing a
-language that has translations asks first.</li>
+language that has translations asks first. Pick <strong>Any language</strong> if your voice lines are written in several
+languages: each language column is then used both to find the term and as its translation, in every direction.</li>
 <li>Click <strong>Add term</strong> and fill in a row: the <strong>Term</strong> as it is written in your source lines, an optional <strong>Note</strong>
 for the translator (who or what it is), and its translation in each language. <strong>Keep</strong> is ticked for every new
 term: leave it for names that must never be translated, untick it to give translations. <strong>Enter</strong> or <strong>Tab</strong> moves to the next cell, <strong>Shift+Tab</strong> to the previous one.</li>
-<li>In the <strong>Translation</strong> tab, choose the glossary in <strong>Glossary</strong> (<strong>Edit</strong> opens it). <strong>Batch Processing</strong> has
+<li>In the <strong>Translation</strong> tab, choose the glossary in <strong>Glossary</strong> (the pencil button opens it). <strong>Batch Processing</strong> has
 its own <strong>Glossary</strong> choice.</li>
 </ol>
 <p>You can also add a term straight from the Voice Line Editor, without opening the Glossaries window: select one or
@@ -714,7 +715,8 @@ down. Each provider gets them in the form it understands best:</p>
 <p>After each translation, SubVox Pro checks the result and warns you when a term is missing from a line (for example
 <code>Glossary (fr): &quot;Porte de fer&quot; missing in 1 line.</code>). Nothing is changed for you: read the line and fix it if needed.
 <strong>Fix splits</strong> never cuts a glossary term in two. A glossary only applies to voice lines in its <strong>Source language</strong>:
-for a voice line in another language it is skipped, and a warning tells you so.</p>
+for a voice line in another language it is skipped, and a warning tells you so. An <strong>Any language</strong> glossary applies
+to every voice line.</p>
 <h4 id="keep-translations-in-sync">Keep translations in sync</h4>
 <table>
 <thead>

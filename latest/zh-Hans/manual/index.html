@@ -581,9 +581,9 @@ SubVox.Play(myVoiceLine);
 <p>术语表可让每次翻译都对您的人名、地名和游戏术语使用相同的译法：“Aria”保持为“Aria”，“Iron Gate”始终译为“铁门”。</p>
 <ol>
 <li>打开 <strong>Tools ▸ SubVox Pro ▸ Glossaries</strong>（也可通过 Hub 中的卡片打开），然后点击 <strong>New</strong>。您可以创建任意数量的术语表，例如每个游戏或每个角色一个。</li>
-<li>在 <strong>Source language</strong> 中选择台词资源的语言，然后在 <strong>Target languages</strong> 中勾选每种翻译语言，或点击某个翻译预设，改为恰好使用其语言。移除已有译法的语言时会先确认。</li>
+<li>在 <strong>Source language</strong> 中选择台词资源的语言，然后在 <strong>Target languages</strong> 中勾选每种翻译语言，或点击某个翻译预设，改为恰好使用其语言。移除已有译法的语言时会先确认。如果您的语音台词使用多种语言编写，请选择 <strong>Any language</strong>：此时每个语言列既用于查找术语，也作为其译法，适用于所有翻译方向。</li>
 <li>点击 <strong>Add term</strong> 并填写一行：源字幕中写法的 <strong>Term</strong>、给译者的可选 <strong>Note</strong>（是谁或是什么），以及每种语言的译法。每个新术语都会默认勾选 <strong>Keep</strong>：绝不能翻译的名称保持勾选，需要填写译法时取消勾选。按 <strong>Enter</strong> 或 <strong>Tab</strong> 移到下一个单元格，按 <strong>Shift+Tab</strong> 移到上一个。</li>
-<li>在 <strong>Translation</strong> 选项卡的 <strong>Glossary</strong> 中选择术语表（<strong>Edit</strong> 可将其打开）。<strong>Batch Processing</strong> 有自己的 <strong>Glossary</strong> 选项。</li>
+<li>在 <strong>Translation</strong> 选项卡的 <strong>Glossary</strong> 中选择术语表（铅笔按钮可将其打开）。<strong>Batch Processing</strong> 有自己的 <strong>Glossary</strong> 选项。</li>
 </ol>
 <p>也可以不打开 Glossaries 窗口，直接在 Voice Line Editor 中添加术语：在列表的字幕中选中一个或多个词，右键选择 <strong>Add "…" to glossary</strong>（未选中时使用鼠标下的词；菜单中也有 <strong>Cut</strong>、<strong>Copy</strong> 和 <strong>Paste</strong>），或在预览中按住 <strong>Alt</strong> 点击或拖过这些词（它们会高亮），松开 <strong>Alt</strong> 即可将它们作为一个术语添加。术语会以勾选 <strong>Keep</strong> 的状态加入当前术语表；如果没有术语表，会自动创建并设为当前术语表。仅适用于源字幕。</p>
 <p>只会发送待翻译字幕中出现的术语，因此大型术语表也不会拖慢速度。每个提供商都会以其最能理解的形式接收术语：</p>
@@ -613,7 +613,7 @@ SubVox.Play(myVoiceLine);
 </tr>
 </tbody>
 </table>
-<p>每次翻译后，SubVox Pro 都会检查结果，并在某行缺少术语时提醒您（例如 <code>Glossary (zh): "铁门" missing in 1 line.</code>）。系统不会替您做任何修改：请检查该行，必要时自行修正。<strong>Fix splits</strong> 绝不会把术语表中的术语拆开。术语表只适用于与其 <strong>Source language</strong> 相同语言的语音台词：其他语言的语音台词会跳过该术语表，并显示一条警告。</p>
+<p>每次翻译后，SubVox Pro 都会检查结果，并在某行缺少术语时提醒您（例如 <code>Glossary (zh): "铁门" missing in 1 line.</code>）。系统不会替您做任何修改：请检查该行，必要时自行修正。<strong>Fix splits</strong> 绝不会把术语表中的术语拆开。术语表只适用于与其 <strong>Source language</strong> 相同语言的语音台词：其他语言的语音台词会跳过该术语表，并显示一条警告。<strong>Any language</strong> 术语表适用于所有语音台词。</p>
 <h4 id="保持翻译同步">保持翻译同步</h4>
 <table>
 <thead>

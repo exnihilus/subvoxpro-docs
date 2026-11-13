@@ -582,9 +582,9 @@ SubVox.Play(myVoiceLine);
 <p>用語集を使うと、名前、地名、ゲーム用語がすべての翻訳で同じ語に統一されます。たとえば「Aria」は「Aria」のまま、「Iron Gate」は常に「鉄の門」に翻訳されます。</p>
 <ol>
 <li><strong>Tools ▸ SubVox Pro ▸ Glossaries</strong>（Hubのタイルからも開けます）を開き、「<strong>New</strong>」をクリックします。用語集はいくつでも作成できます。たとえばゲームごと、キャラクターごとに作成できます。</li>
-<li><strong>Source language</strong>でボイスラインの言語を選択し、<strong>Target languages</strong>で翻訳する言語をすべてチェックするか、翻訳プリセットをクリックしてその言語だけに置き換えます。訳語が入力されている言語を外す場合は確認が表示されます。</li>
+<li><strong>Source language</strong>でボイスラインの言語を選択し、<strong>Target languages</strong>で翻訳する言語をすべてチェックするか、翻訳プリセットをクリックしてその言語だけに置き換えます。訳語が入力されている言語を外す場合は確認が表示されます。ボイスラインが複数の言語で書かれている場合は<strong>Any language</strong>を選択します。各言語の列が、用語の検索と訳語の両方に、すべての方向で使われます。</li>
 <li>「<strong>Add term</strong>」をクリックして行を入力します。ソースの字幕に書かれているとおりの<strong>Term</strong>、翻訳者向けの任意の<strong>Note</strong>（誰か、何か）、各言語の訳語です。新しい用語では<strong>Keep</strong>に最初からチェックが入っています。決して翻訳してはならない名前はそのままにし、訳語を指定する場合はチェックを外します。<strong>Enter</strong>または<strong>Tab</strong>で次のセルへ、<strong>Shift+Tab</strong>で前のセルへ移動します。</li>
-<li>「<strong>Translation</strong>」タブの<strong>Glossary</strong>で用語集を選択します（「<strong>Edit</strong>」で開きます）。<strong>Batch Processing</strong>には専用の<strong>Glossary</strong>の選択があります。</li>
+<li>「<strong>Translation</strong>」タブの<strong>Glossary</strong>で用語集を選択します（鉛筆ボタンで開きます）。<strong>Batch Processing</strong>には専用の<strong>Glossary</strong>の選択があります。</li>
 </ol>
 <p>Glossariesウィンドウを開かずに、Voice Line Editorから直接用語を追加することもできます。リストの字幕で1つ以上の単語を選択して右クリックし、「<strong>Add "…" to glossary</strong>」を選びます（選択がない場合はマウスの下の単語。メニューには<strong>Cut</strong>、<strong>Copy</strong>、<strong>Paste</strong>もあります）。またはプレビューで<strong>Alt</strong>を押したまま単語をクリックまたはドラッグし（単語がハイライトされます）、<strong>Alt</strong>を離すと1つの用語として追加されます。用語は<strong>Keep</strong>にチェックが入った状態でアクティブな用語集に追加されます。用語集がない場合は作成され、アクティブになります。ソースの字幕でのみ使えます。</p>
 <p>送信されるのは、翻訳する字幕に含まれる用語だけなので、大きな用語集でも処理が遅くなることはありません。各プロバイダーには、最も理解しやすい形式で渡されます。</p>
@@ -614,7 +614,7 @@ SubVox.Play(myVoiceLine);
 </tr>
 </tbody>
 </table>
-<p>翻訳のたびに、SubVox Proは結果を確認し、字幕に用語が含まれていない場合に警告します（例：<code>Glossary (ja): "鉄の門" missing in 1 line.</code>）。自動では何も変更されないので、該当する字幕を確認し、必要に応じて修正してください。「<strong>Fix splits</strong>」で用語集の用語が分割されることはありません。用語集は<strong>Source language</strong>と同じ言語のボイスラインにのみ適用されます。別の言語のボイスラインではスキップされ、警告でお知らせします。</p>
+<p>翻訳のたびに、SubVox Proは結果を確認し、字幕に用語が含まれていない場合に警告します（例：<code>Glossary (ja): "鉄の門" missing in 1 line.</code>）。自動では何も変更されないので、該当する字幕を確認し、必要に応じて修正してください。「<strong>Fix splits</strong>」で用語集の用語が分割されることはありません。用語集は<strong>Source language</strong>と同じ言語のボイスラインにのみ適用されます。別の言語のボイスラインではスキップされ、警告でお知らせします。<strong>Any language</strong>の用語集はすべてのボイスラインに適用されます。</p>
 <h4 id="翻訳の同期">翻訳の同期</h4>
 <table>
 <thead>
